@@ -76,6 +76,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(false.B)
 
 
+
   //Setting the viewbox control outputs to zero
   io.viewBoxX := 0.U
   io.viewBoxY := 0.U
