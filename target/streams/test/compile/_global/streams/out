@@ -1,0 +1,11 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\GameLogicTester.scala:37:32: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : GameLogic[0m
+[0m[[0m[31merror[0m] [0m[0m required: GraphicEngineVGA[0m
+[0m[[0m[31merror[0m] [0m[0m      c => new GameLogicTester(c)[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\GameLogicTester.scala:37:12: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : GameLogicTester[0m
+[0m[[0m[31merror[0m] [0m[0m required: chisel3.iotesters.PeekPokeTester[GameLogic][0m
+[0m[[0m[31merror[0m] [0m[0m      c => new GameLogicTester(c)[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

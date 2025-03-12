@@ -107,7 +107,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   //A registers holding the sprite horizontal flip
   val sprite0FlipHorizontalReg = RegInit(false.B)
-  val sprite0RotationReg = RegInit(false.B)
 
 
   //Sprite 1
@@ -123,9 +122,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val sprite2YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
-  io.spriteRotation(2) := sprite0RotationReg
+  io.spriteRotation(2) := true.B
 
-  sprite0RotationReg := true.B
 
 
 
@@ -136,7 +134,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(0) := sprite0XReg
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
-  io.spriteRotation(0) := sprite0RotationReg
 
   io.spriteScaleHorizontal(0) := 2.U
   //io.spriteScaleHorizontal(1) := 1.U
@@ -156,7 +153,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       when(io.btnD){
         when(sprite0YReg < (480 - 32 - 24).S) {
           sprite0YReg := sprite0YReg + 2.S
-          sprite0RotationReg := true.B
           sprite0FlipHorizontalReg := false.B
 
 
@@ -164,7 +160,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       } .elsewhen(io.btnU){
         when(sprite0YReg > (96).S) {
           sprite0YReg := sprite0YReg - 2.S
-          sprite0RotationReg := true.B
           sprite0FlipHorizontalReg := true.B
 
 
@@ -177,14 +172,12 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
         when(sprite0XReg < (640 - 32 - 32).S) {
           sprite0XReg := sprite0XReg + 2.S
           sprite0FlipHorizontalReg := false.B
-          sprite0RotationReg := false.B
 
         }
       } .elsewhen(io.btnL){
         when(sprite0XReg > 32.S) {
           sprite0XReg := sprite0XReg - 2.S
           sprite0FlipHorizontalReg := true.B
-          sprite0RotationReg := false.B
 
 
         }

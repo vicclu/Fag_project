@@ -280,8 +280,6 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     }
   }
 
-
-
   val lutX = VecInit(RotXTable)
   val lutY = VecInit(RotYTable)
 
@@ -290,26 +288,59 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val spriteActive = RegInit(false.B)
   val spriteXCounter = RegInit(0.U(6.W)) // Track X-axis movement within the sprite
   val spriteYCounter = RegInit(0.U(6.W)) // Track Y-axis movement within the sprite
-  val indexcounter = RegInit(0.U(10.W))
 
   // Check if current VGA position matches the sprite's position
-  when(pixelX === (spriteXPositionReg(2) + 15.S + lutX(indexcounter)).asUInt() && pixelY === (spriteYPositionReg(2) +15.S + lutY(indexcounter)).asUInt) {
+  when(pixelX === (spriteXPositionReg(2)).asUInt() && pixelY === spriteYPositionReg(2).asUInt() ){
     spriteActive := true.B  // Start counting
-    indexcounter := indexcounter + 1.U
-  }.otherwise(false.B)
+  }
+
+  val indexcounter = RegInit(0.U(10.W))
 
   when(spriteActive) {
-    when(indexcounter < 1023.U) {
-      indexcounter := indexcounter + 1.U
-    }.otherwise {
+    when(indexcounter < 1023.U) { // Limit to 1024 entries
+      when (spriteXCounter < 31.U) {
+        indexcounter := indexcounter + 1.U  // Correct Chisel update
+        spriteXCounter := spriteXCounter + 1.U
+      } .otherwise {
+        when(CounterXReg === 0.U) { // Wait for VGA Y to increment
+          spriteXCounter := 0.U
+          spriteYCounter := spriteYCounter + 1.U
+          indexcounter := indexcounter + 1.U
+        }
+      }
+    } .otherwise {
       spriteActive := false.B
-      indexcounter := 0.U
+      spriteXCounter := 0.U
+      spriteYCounter := 0.U
+      indexcounter := 0.U  // Reset indexcounter correctly
     }
-  }.elsewhen(pixelX === (spriteXPositionReg(2) + 15.S).asUInt() &&
-    pixelY === (spriteYPositionReg(2) + 15.S).asUInt) {
-    spriteActive := true.B
-    indexcounter := 0.U
   }
+//
+//  val lutX = VecInit(RotXTable)
+//  val lutY = VecInit(RotYTable)
+//
+//
+//  // Register to track when we start counting
+//  val spriteActive = RegInit(false.B)
+//  val spriteXCounter = RegInit(0.U(6.W)) // Track X-axis movement within the sprite
+//  val spriteYCounter = RegInit(0.U(6.W)) // Track Y-axis movement within the sprite
+//  val indexcounter = RegInit(0.U(10.W))
+//
+//  // Check if current VGA position matches the sprite's position
+//  when(pixelX === (spriteXPositionReg(2) + 15.S + lutX(indexcounter)).asUInt() && pixelY === (spriteYPositionReg(2) + 15.S + lutY(indexcounter)).asUInt) {
+//    spriteActive := true.B // Start counting
+//    indexcounter := indexcounter + 1.U
+//
+//  }.otherwise(false.B)
+//
+//  when(spriteActive) {
+//    when(indexcounter < 1023.U) {
+//      //indexcounter := indexcounter + 1.U
+//    }.otherwise {
+//      spriteActive := false.B
+//      indexcounter := 0.U
+//    }
+//  }
 
 
 
