@@ -23,6 +23,11 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     //Leds
     val led = Output(Vec(8, Bool()))
 
+    //Sound
+    val songInput = Output(UInt(4.W))
+    val songStop = Output(UInt(4.W))
+    val songSpeed = Output(UInt(4.W))
+
     //GraphicEngineVGA
     //Sprite control input
     val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W))) //-1024 to 1023
@@ -80,7 +85,9 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.B)
   io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.B)
   io.spriteRotation := Seq.fill(SpriteNumber)(false.B)
-
+ io.songInput:= 0.U
+ io.songStop := 0.U
+ io.songSpeed:= 0.U
 
 
 
@@ -154,30 +161,34 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
         when(sprite0YReg < (480 - 32 - 24).S) {
           sprite0YReg := sprite0YReg + 2.S
           sprite0FlipHorizontalReg := false.B
-
+          io.songInput:=3.U
 
         }
       } .elsewhen(io.btnU){
         when(sprite0YReg > (96).S) {
           sprite0YReg := sprite0YReg - 2.S
           sprite0FlipHorizontalReg := true.B
+          io.songInput:=2.U
 
 
 
         }
       }
       when(io.btnC){
+        io.songInput:=1.U
       }
       when(io.btnR) {
         when(sprite0XReg < (640 - 32 - 32).S) {
           sprite0XReg := sprite0XReg + 2.S
           sprite0FlipHorizontalReg := false.B
+          io.songInput:=4.U
 
         }
       } .elsewhen(io.btnL){
         when(sprite0XReg > 32.S) {
           sprite0XReg := sprite0XReg - 2.S
           sprite0FlipHorizontalReg := true.B
+          io.songStop:=1.U
 
 
         }

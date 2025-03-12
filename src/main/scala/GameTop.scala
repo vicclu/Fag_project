@@ -32,6 +32,9 @@ class GameTop extends Module {
     //Leds
     val led = Output(Vec(8, Bool()))
 
+    //Sound
+    val soundOutput = Output(Vec(1, Bool()))
+
     //Errors
     val missingFrameError = Output(Bool())
     val backBufferWriteError = Output(Bool())
@@ -41,6 +44,8 @@ class GameTop extends Module {
   val SPRITE_NUMBER = 16
   val BACK_TILE_NUMBER = 32
   val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  val SOUND_NUMBER = 8
+  val soundEngine = Module(new SoundEngine(SOUND_NUMBER))
 
   //Uncomment one of the following lines to use the module related to the learning tasks
   //Use the module GameLogic to implement your game
@@ -109,6 +114,12 @@ class GameTop extends Module {
 
   //Leds
   io.led := gameLogic.io.led
+
+  //Sound
+  soundEngine.io.input := gameLogic.io.songInput
+  soundEngine.io.stop :=gameLogic.io.songStop
+  soundEngine.io.speed :=gameLogic.io.songSpeed
+  io.soundOutput := soundEngine.io.output
 
   //Errors
   io.missingFrameError := graphicEngineVGA.io.missingFrameError
