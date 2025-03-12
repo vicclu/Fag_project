@@ -4,3 +4,11 @@
 /.vscode/
 /.bsp/
 /project/
+vivado/Basys3Game/Basys3Game.cache/wt/project.wpc
+target/streams/compile/packageBin/_global/streams/inputs
+target/streams/compile/incOptions/_global/streams/out
+target/streams/compile/compile/_global/streams/out
+target/scala-2.12/zinc/inc_compile_2.12.zip
+Top.v
+Top.fir
+Top.anno.json
