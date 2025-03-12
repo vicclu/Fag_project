@@ -30,6 +30,7 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteVisible = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
+
     val spriteScaleHorizontal = Output(Vec(SpriteNumber, Bool()))
 
 

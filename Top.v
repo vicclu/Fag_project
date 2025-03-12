@@ -1371,8 +1371,10 @@ module GraphicEngineVGA(
   input         clock,
   input         reset,
   input  [10:0] io_spriteXPosition_0,
-  input  [10:0] io_spriteXPosition_1,
   input  [9:0]  io_spriteYPosition_0,
+  input         io_spriteFlipHorizontal_0,
+  input         io_spriteRotation_0,
+  input         io_spriteRotation_2,
   output        io_newFrame,
   input         io_frameUpdateDone,
   output        io_missingFrameError,
@@ -1556,218 +1558,225 @@ module GraphicEngineVGA(
   reg [31:0] _RAND_170;
   reg [31:0] _RAND_171;
   reg [31:0] _RAND_172;
+  reg [31:0] _RAND_173;
+  reg [31:0] _RAND_174;
+  reg [31:0] _RAND_175;
+  reg [31:0] _RAND_176;
+  reg [31:0] _RAND_177;
+  reg [31:0] _RAND_178;
+  reg [31:0] _RAND_179;
 `endif // RANDOMIZE_REG_INIT
-  wire  backTileMemories_0_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_0_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_0_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_1_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_1_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_1_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_2_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_2_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_2_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_3_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_3_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_3_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_4_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_4_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_4_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_5_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_5_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_5_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_6_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_6_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_6_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_7_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_7_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_7_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_8_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_8_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_8_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_9_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_9_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_9_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_10_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_10_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_10_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_11_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_11_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_11_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_12_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_12_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_12_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_13_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_13_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_13_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_14_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_14_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_14_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_15_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_15_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_15_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_16_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_16_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_16_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_17_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_17_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_17_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_18_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_18_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_18_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_19_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_19_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_19_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_20_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_20_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_20_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_21_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_21_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_21_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_22_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_22_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_22_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_23_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_23_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_23_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_24_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_24_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_24_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_25_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_25_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_25_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_26_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_26_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_26_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_27_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_27_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_27_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_28_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_28_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_28_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_29_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_29_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_29_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_30_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_30_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_30_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backTileMemories_31_clock; // @[GraphicEngineVGA.scala 155:32]
-  wire [9:0] backTileMemories_31_io_address; // @[GraphicEngineVGA.scala 155:32]
-  wire [6:0] backTileMemories_31_io_dataRead; // @[GraphicEngineVGA.scala 155:32]
-  wire  backBufferMemory_clock; // @[GraphicEngineVGA.scala 172:32]
-  wire [10:0] backBufferMemory_io_address; // @[GraphicEngineVGA.scala 172:32]
-  wire [4:0] backBufferMemory_io_dataRead; // @[GraphicEngineVGA.scala 172:32]
-  wire  backBufferMemory_io_writeEnable; // @[GraphicEngineVGA.scala 172:32]
-  wire [4:0] backBufferMemory_io_dataWrite; // @[GraphicEngineVGA.scala 172:32]
-  wire  backBufferShadowMemory_clock; // @[GraphicEngineVGA.scala 173:38]
-  wire [10:0] backBufferShadowMemory_io_address; // @[GraphicEngineVGA.scala 173:38]
-  wire [4:0] backBufferShadowMemory_io_dataRead; // @[GraphicEngineVGA.scala 173:38]
-  wire  backBufferShadowMemory_io_writeEnable; // @[GraphicEngineVGA.scala 173:38]
-  wire [4:0] backBufferShadowMemory_io_dataWrite; // @[GraphicEngineVGA.scala 173:38]
-  wire  backBufferRestoreMemory_clock; // @[GraphicEngineVGA.scala 174:39]
-  wire [10:0] backBufferRestoreMemory_io_address; // @[GraphicEngineVGA.scala 174:39]
-  wire [4:0] backBufferRestoreMemory_io_dataRead; // @[GraphicEngineVGA.scala 174:39]
-  wire  spriteMemories_0_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_0_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_0_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_1_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_1_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_1_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_2_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_2_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_2_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_3_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_3_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_3_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_4_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_4_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_4_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_5_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_5_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_5_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_6_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_6_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_6_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_7_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_7_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_7_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_8_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_8_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_8_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_9_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_9_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_9_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_10_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_10_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_10_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_11_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_11_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_11_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_12_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_12_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_12_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_13_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_13_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_13_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_14_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_14_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_14_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire  spriteMemories_15_clock; // @[GraphicEngineVGA.scala 244:30]
-  wire [9:0] spriteMemories_15_io_address; // @[GraphicEngineVGA.scala 244:30]
-  wire [6:0] spriteMemories_15_io_dataRead; // @[GraphicEngineVGA.scala 244:30]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[GraphicEngineVGA.scala 284:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[GraphicEngineVGA.scala 284:44]
-  wire  multiHotPriortyReductionTree_io_selectOutput; // @[GraphicEngineVGA.scala 284:44]
-  reg [1:0] ScaleCounterReg; // @[GraphicEngineVGA.scala 64:32]
-  reg [9:0] CounterXReg; // @[GraphicEngineVGA.scala 65:28]
-  reg [9:0] CounterYReg; // @[GraphicEngineVGA.scala 66:28]
-  wire  _T = ScaleCounterReg == 2'h3; // @[GraphicEngineVGA.scala 71:26]
-  wire  _T_1 = CounterXReg == 10'h31f; // @[GraphicEngineVGA.scala 73:24]
-  wire  _T_2 = CounterYReg == 10'h20c; // @[GraphicEngineVGA.scala 75:26]
-  wire [9:0] _T_4 = CounterYReg + 10'h1; // @[GraphicEngineVGA.scala 79:38]
-  wire [9:0] _T_6 = CounterXReg + 10'h1; // @[GraphicEngineVGA.scala 82:36]
-  wire  _GEN_4 = _T_1 & _T_2; // @[GraphicEngineVGA.scala 73:129]
-  wire [1:0] _T_8 = ScaleCounterReg + 2'h1; // @[GraphicEngineVGA.scala 85:42]
-  wire  _GEN_8 = _T & _GEN_4; // @[GraphicEngineVGA.scala 71:52]
-  reg [11:0] backMemoryRestoreCounter; // @[GraphicEngineVGA.scala 196:41]
-  wire  restoreEnabled = backMemoryRestoreCounter < 12'h800; // @[GraphicEngineVGA.scala 199:33]
-  wire  run = restoreEnabled ? 1'h0 : 1'h1; // @[GraphicEngineVGA.scala 199:70]
-  wire  _T_9 = CounterXReg >= 10'h290; // @[GraphicEngineVGA.scala 89:28]
-  wire  _T_10 = CounterXReg < 10'h2f0; // @[GraphicEngineVGA.scala 89:95]
-  wire  Hsync = _T_9 & _T_10; // @[GraphicEngineVGA.scala 89:79]
-  wire  _T_11 = CounterYReg >= 10'h1ea; // @[GraphicEngineVGA.scala 90:28]
-  wire  _T_12 = CounterYReg < 10'h1ec; // @[GraphicEngineVGA.scala 90:95]
-  wire  Vsync = _T_11 & _T_12; // @[GraphicEngineVGA.scala 90:79]
+  wire  backTileMemories_0_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_0_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_0_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_1_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_1_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_1_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_2_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_2_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_2_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_3_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_3_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_3_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_4_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_4_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_4_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_5_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_5_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_5_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_6_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_6_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_6_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_7_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_7_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_7_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_8_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_8_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_8_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_9_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_9_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_9_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_10_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_10_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_10_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_11_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_11_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_11_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_12_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_12_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_12_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_13_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_13_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_13_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_14_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_14_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_14_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_15_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_15_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_15_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_16_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_16_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_16_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_17_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_17_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_17_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_18_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_18_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_18_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_19_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_19_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_19_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_20_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_20_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_20_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_21_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_21_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_21_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_22_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_22_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_22_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_23_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_23_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_23_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_24_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_24_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_24_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_25_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_25_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_25_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_26_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_26_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_26_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_27_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_27_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_27_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_28_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_28_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_28_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_29_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_29_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_29_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_30_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_30_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_30_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backTileMemories_31_clock; // @[GraphicEngineVGA.scala 163:32]
+  wire [9:0] backTileMemories_31_io_address; // @[GraphicEngineVGA.scala 163:32]
+  wire [6:0] backTileMemories_31_io_dataRead; // @[GraphicEngineVGA.scala 163:32]
+  wire  backBufferMemory_clock; // @[GraphicEngineVGA.scala 180:32]
+  wire [10:0] backBufferMemory_io_address; // @[GraphicEngineVGA.scala 180:32]
+  wire [4:0] backBufferMemory_io_dataRead; // @[GraphicEngineVGA.scala 180:32]
+  wire  backBufferMemory_io_writeEnable; // @[GraphicEngineVGA.scala 180:32]
+  wire [4:0] backBufferMemory_io_dataWrite; // @[GraphicEngineVGA.scala 180:32]
+  wire  backBufferShadowMemory_clock; // @[GraphicEngineVGA.scala 181:38]
+  wire [10:0] backBufferShadowMemory_io_address; // @[GraphicEngineVGA.scala 181:38]
+  wire [4:0] backBufferShadowMemory_io_dataRead; // @[GraphicEngineVGA.scala 181:38]
+  wire  backBufferShadowMemory_io_writeEnable; // @[GraphicEngineVGA.scala 181:38]
+  wire [4:0] backBufferShadowMemory_io_dataWrite; // @[GraphicEngineVGA.scala 181:38]
+  wire  backBufferRestoreMemory_clock; // @[GraphicEngineVGA.scala 182:39]
+  wire [10:0] backBufferRestoreMemory_io_address; // @[GraphicEngineVGA.scala 182:39]
+  wire [4:0] backBufferRestoreMemory_io_dataRead; // @[GraphicEngineVGA.scala 182:39]
+  wire  spriteMemories_0_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_0_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_0_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_1_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_1_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_1_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_2_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_2_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_2_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_3_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_3_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_3_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_4_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_4_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_4_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_5_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_5_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_5_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_6_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_6_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_6_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_7_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_7_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_7_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_8_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_8_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_8_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_9_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_9_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_9_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_10_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_10_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_10_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_11_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_11_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_11_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_12_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_12_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_12_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_13_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_13_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_13_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_14_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_14_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_14_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire  spriteMemories_15_clock; // @[GraphicEngineVGA.scala 252:30]
+  wire [9:0] spriteMemories_15_io_address; // @[GraphicEngineVGA.scala 252:30]
+  wire [6:0] spriteMemories_15_io_dataRead; // @[GraphicEngineVGA.scala 252:30]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[GraphicEngineVGA.scala 361:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[GraphicEngineVGA.scala 361:44]
+  wire  multiHotPriortyReductionTree_io_selectOutput; // @[GraphicEngineVGA.scala 361:44]
+  reg [1:0] ScaleCounterReg; // @[GraphicEngineVGA.scala 68:32]
+  reg [9:0] CounterXReg; // @[GraphicEngineVGA.scala 69:28]
+  reg [9:0] CounterYReg; // @[GraphicEngineVGA.scala 70:28]
+  wire  _T = ScaleCounterReg == 2'h3; // @[GraphicEngineVGA.scala 75:26]
+  wire  _T_1 = CounterXReg == 10'h31f; // @[GraphicEngineVGA.scala 77:24]
+  wire  _T_2 = CounterYReg == 10'h20c; // @[GraphicEngineVGA.scala 79:26]
+  wire [9:0] _T_4 = CounterYReg + 10'h1; // @[GraphicEngineVGA.scala 83:38]
+  wire [9:0] _T_6 = CounterXReg + 10'h1; // @[GraphicEngineVGA.scala 86:36]
+  wire  _GEN_4 = _T_1 & _T_2; // @[GraphicEngineVGA.scala 77:129]
+  wire [1:0] _T_8 = ScaleCounterReg + 2'h1; // @[GraphicEngineVGA.scala 89:42]
+  wire  _GEN_8 = _T & _GEN_4; // @[GraphicEngineVGA.scala 75:52]
+  reg [11:0] backMemoryRestoreCounter; // @[GraphicEngineVGA.scala 204:41]
+  wire  restoreEnabled = backMemoryRestoreCounter < 12'h800; // @[GraphicEngineVGA.scala 207:33]
+  wire  run = restoreEnabled ? 1'h0 : 1'h1; // @[GraphicEngineVGA.scala 207:70]
+  wire  _T_9 = CounterXReg >= 10'h290; // @[GraphicEngineVGA.scala 93:28]
+  wire  _T_10 = CounterXReg < 10'h2f0; // @[GraphicEngineVGA.scala 93:95]
+  wire  Hsync = _T_9 & _T_10; // @[GraphicEngineVGA.scala 93:79]
+  wire  _T_11 = CounterYReg >= 10'h1ea; // @[GraphicEngineVGA.scala 94:28]
+  wire  _T_12 = CounterYReg < 10'h1ec; // @[GraphicEngineVGA.scala 94:95]
+  wire  Vsync = _T_11 & _T_12; // @[GraphicEngineVGA.scala 94:79]
   reg  _T_14_0; // @[GameUtilities.scala 21:24]
   reg  _T_14_1; // @[GameUtilities.scala 21:24]
   reg  _T_14_2; // @[GameUtilities.scala 21:24]
@@ -1776,17 +1785,18 @@ module GraphicEngineVGA(
   reg  _T_16_1; // @[GameUtilities.scala 21:24]
   reg  _T_16_2; // @[GameUtilities.scala 21:24]
   reg  _T_16_3; // @[GameUtilities.scala 21:24]
-  wire  _T_17 = CounterXReg < 10'h280; // @[GraphicEngineVGA.scala 94:36]
-  wire  _T_18 = CounterYReg < 10'h1e0; // @[GraphicEngineVGA.scala 94:76]
-  reg [20:0] frameClockCount; // @[GraphicEngineVGA.scala 101:32]
-  wire  _T_19 = frameClockCount == 21'h19a27f; // @[GraphicEngineVGA.scala 102:42]
-  wire [20:0] _T_21 = frameClockCount + 21'h1; // @[GraphicEngineVGA.scala 102:92]
-  wire  preDisplayArea = frameClockCount >= 21'h199a1b; // @[GraphicEngineVGA.scala 103:40]
+  wire  _T_17 = CounterXReg < 10'h280; // @[GraphicEngineVGA.scala 98:36]
+  wire  _T_18 = CounterYReg < 10'h1e0; // @[GraphicEngineVGA.scala 98:76]
+  reg [20:0] frameClockCount; // @[GraphicEngineVGA.scala 105:32]
+  wire  _T_19 = frameClockCount == 21'h19a27f; // @[GraphicEngineVGA.scala 106:42]
+  wire [20:0] _T_21 = frameClockCount + 21'h1; // @[GraphicEngineVGA.scala 106:92]
+  wire  preDisplayArea = frameClockCount >= 21'h199a1b; // @[GraphicEngineVGA.scala 107:40]
   reg [10:0] spriteXPositionReg_0; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_1; // @[Reg.scala 27:20]
+  reg [10:0] spriteXPositionReg_2; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_0; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_1; // @[Reg.scala 27:20]
-  reg  spriteVisibleReg_2; // @[Reg.scala 27:20]
+  reg [9:0] spriteYPositionReg_2; // @[Reg.scala 27:20]
   reg  spriteVisibleReg_3; // @[Reg.scala 27:20]
   reg  spriteVisibleReg_4; // @[Reg.scala 27:20]
   reg  spriteVisibleReg_5; // @[Reg.scala 27:20]
@@ -1800,7 +1810,6 @@ module GraphicEngineVGA(
   reg  spriteVisibleReg_13; // @[Reg.scala 27:20]
   reg  spriteVisibleReg_14; // @[Reg.scala 27:20]
   reg  spriteVisibleReg_15; // @[Reg.scala 27:20]
-  wire  _GEN_47 = io_newFrame ? 1'h0 : spriteVisibleReg_2; // @[Reg.scala 28:19]
   wire  _GEN_48 = io_newFrame ? 1'h0 : spriteVisibleReg_3; // @[Reg.scala 28:19]
   wire  _GEN_49 = io_newFrame ? 1'h0 : spriteVisibleReg_4; // @[Reg.scala 28:19]
   wire  _GEN_50 = io_newFrame ? 1'h0 : spriteVisibleReg_5; // @[Reg.scala 28:19]
@@ -1814,538 +1823,2652 @@ module GraphicEngineVGA(
   wire  _GEN_58 = io_newFrame ? 1'h0 : spriteVisibleReg_13; // @[Reg.scala 28:19]
   wire  _GEN_59 = io_newFrame ? 1'h0 : spriteVisibleReg_14; // @[Reg.scala 28:19]
   wire  _GEN_60 = io_newFrame ? 1'h0 : spriteVisibleReg_15; // @[Reg.scala 28:19]
-  reg  missingFrameErrorReg; // @[GraphicEngineVGA.scala 122:37]
-  wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[GraphicEngineVGA.scala 133:27]
-  wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[GraphicEngineVGA.scala 134:27]
-  reg  newFrameStikyReg; // @[GraphicEngineVGA.scala 141:33]
-  wire  _GEN_112 = io_newFrame | newFrameStikyReg; // @[GraphicEngineVGA.scala 142:21]
-  reg  _T_34; // @[GraphicEngineVGA.scala 145:16]
-  wire  _T_35 = newFrameStikyReg & io_newFrame; // @[GraphicEngineVGA.scala 148:26]
-  wire  _GEN_114 = _T_35 | missingFrameErrorReg; // @[GraphicEngineVGA.scala 148:41]
-  wire [5:0] _GEN_204 = {{1'd0}, pixelYBack[4:0]}; // @[GraphicEngineVGA.scala 166:75]
-  wire [10:0] _T_38 = 6'h20 * _GEN_204; // @[GraphicEngineVGA.scala 166:75]
-  wire [10:0] _GEN_205 = {{6'd0}, pixelXBack[4:0]}; // @[GraphicEngineVGA.scala 166:62]
-  wire [11:0] _T_39 = _GEN_205 + _T_38; // @[GraphicEngineVGA.scala 166:62]
-  reg [6:0] backTileMemoryDataRead_0; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_1; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_2; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_3; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_4; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_5; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_6; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_7; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_8; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_9; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_10; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_11; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_12; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_13; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_14; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_15; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_16; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_17; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_18; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_19; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_20; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_21; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_22; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_23; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_24; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_25; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_26; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_27; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_28; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_29; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_30; // @[GraphicEngineVGA.scala 167:41]
-  reg [6:0] backTileMemoryDataRead_31; // @[GraphicEngineVGA.scala 167:41]
-  reg [11:0] backMemoryCopyCounter; // @[GraphicEngineVGA.scala 177:38]
-  wire  _T_196 = backMemoryCopyCounter < 12'h800; // @[GraphicEngineVGA.scala 181:32]
-  wire [11:0] _T_198 = backMemoryCopyCounter + 12'h1; // @[GraphicEngineVGA.scala 182:54]
-  wire  copyEnabled = preDisplayArea & _T_196; // @[GraphicEngineVGA.scala 180:23]
-  reg  copyEnabledReg; // @[GraphicEngineVGA.scala 194:31]
-  wire [11:0] _T_201 = backMemoryRestoreCounter + 12'h1; // @[GraphicEngineVGA.scala 200:58]
-  reg [10:0] _T_204; // @[GraphicEngineVGA.scala 215:67]
-  wire [10:0] _T_207 = copyEnabled ? backMemoryCopyCounter[10:0] : 11'h0; // @[GraphicEngineVGA.scala 215:105]
-  reg  _T_209; // @[GraphicEngineVGA.scala 217:71]
-  reg [10:0] _T_216; // @[GraphicEngineVGA.scala 220:61]
-  wire [11:0] _T_219 = 6'h28 * pixelYBack[10:5]; // @[GraphicEngineVGA.scala 220:130]
-  wire [11:0] _GEN_268 = {{6'd0}, pixelXBack[10:5]}; // @[GraphicEngineVGA.scala 220:117]
-  wire [12:0] _T_220 = _GEN_268 + _T_219; // @[GraphicEngineVGA.scala 220:117]
-  wire [12:0] _T_221 = copyEnabledReg ? {{2'd0}, _T_216} : _T_220; // @[GraphicEngineVGA.scala 220:37]
-  reg [4:0] _T_223; // @[GraphicEngineVGA.scala 237:56]
-  wire [6:0] _GEN_125 = 5'h1 == _T_223 ? backTileMemoryDataRead_1 : backTileMemoryDataRead_0; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_126 = 5'h2 == _T_223 ? backTileMemoryDataRead_2 : _GEN_125; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_127 = 5'h3 == _T_223 ? backTileMemoryDataRead_3 : _GEN_126; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_128 = 5'h4 == _T_223 ? backTileMemoryDataRead_4 : _GEN_127; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_129 = 5'h5 == _T_223 ? backTileMemoryDataRead_5 : _GEN_128; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_130 = 5'h6 == _T_223 ? backTileMemoryDataRead_6 : _GEN_129; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_131 = 5'h7 == _T_223 ? backTileMemoryDataRead_7 : _GEN_130; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_132 = 5'h8 == _T_223 ? backTileMemoryDataRead_8 : _GEN_131; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_133 = 5'h9 == _T_223 ? backTileMemoryDataRead_9 : _GEN_132; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_134 = 5'ha == _T_223 ? backTileMemoryDataRead_10 : _GEN_133; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_135 = 5'hb == _T_223 ? backTileMemoryDataRead_11 : _GEN_134; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_136 = 5'hc == _T_223 ? backTileMemoryDataRead_12 : _GEN_135; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_137 = 5'hd == _T_223 ? backTileMemoryDataRead_13 : _GEN_136; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_138 = 5'he == _T_223 ? backTileMemoryDataRead_14 : _GEN_137; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_139 = 5'hf == _T_223 ? backTileMemoryDataRead_15 : _GEN_138; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_140 = 5'h10 == _T_223 ? backTileMemoryDataRead_16 : _GEN_139; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_141 = 5'h11 == _T_223 ? backTileMemoryDataRead_17 : _GEN_140; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_142 = 5'h12 == _T_223 ? backTileMemoryDataRead_18 : _GEN_141; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_143 = 5'h13 == _T_223 ? backTileMemoryDataRead_19 : _GEN_142; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_144 = 5'h14 == _T_223 ? backTileMemoryDataRead_20 : _GEN_143; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_145 = 5'h15 == _T_223 ? backTileMemoryDataRead_21 : _GEN_144; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_146 = 5'h16 == _T_223 ? backTileMemoryDataRead_22 : _GEN_145; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_147 = 5'h17 == _T_223 ? backTileMemoryDataRead_23 : _GEN_146; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_148 = 5'h18 == _T_223 ? backTileMemoryDataRead_24 : _GEN_147; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_149 = 5'h19 == _T_223 ? backTileMemoryDataRead_25 : _GEN_148; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_150 = 5'h1a == _T_223 ? backTileMemoryDataRead_26 : _GEN_149; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_151 = 5'h1b == _T_223 ? backTileMemoryDataRead_27 : _GEN_150; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_152 = 5'h1c == _T_223 ? backTileMemoryDataRead_28 : _GEN_151; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_153 = 5'h1d == _T_223 ? backTileMemoryDataRead_29 : _GEN_152; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] _GEN_154 = 5'h1e == _T_223 ? backTileMemoryDataRead_30 : _GEN_153; // @[GraphicEngineVGA.scala 237:23]
-  wire [6:0] fullBackgroundColor = 5'h1f == _T_223 ? backTileMemoryDataRead_31 : _GEN_154; // @[GraphicEngineVGA.scala 237:23]
-  reg [5:0] pixelColorBack; // @[GraphicEngineVGA.scala 239:31]
-  wire [10:0] _T_230 = {1'h0,CounterXReg}; // @[GraphicEngineVGA.scala 252:47]
-  wire [11:0] _T_231 = $signed(_T_230) - $signed(spriteXPositionReg_0); // @[GraphicEngineVGA.scala 252:54]
-  wire [14:0] _GEN_157 = {{3{_T_231[11]}},_T_231}; // @[GraphicEngineVGA.scala 258:38]
-  wire [10:0] _T_247 = {1'h0,CounterYReg}; // @[GraphicEngineVGA.scala 265:47]
-  wire [10:0] _GEN_269 = {{1{spriteYPositionReg_0[9]}},spriteYPositionReg_0}; // @[GraphicEngineVGA.scala 265:54]
-  wire [11:0] _T_248 = $signed(_T_247) - $signed(_GEN_269); // @[GraphicEngineVGA.scala 265:54]
-  wire [11:0] inSpriteX_0 = _GEN_157[11:0]; // @[GraphicEngineVGA.scala 249:23 GraphicEngineVGA.scala 254:20 GraphicEngineVGA.scala 256:20 GraphicEngineVGA.scala 259:20 GraphicEngineVGA.scala 260:20 GraphicEngineVGA.scala 262:20]
-  wire  _T_252 = $signed(inSpriteX_0) >= 12'sh0; // @[GraphicEngineVGA.scala 271:33]
-  wire  _T_253 = $signed(inSpriteX_0) < 12'sh20; // @[GraphicEngineVGA.scala 271:56]
-  wire  _T_254 = _T_252 & _T_253; // @[GraphicEngineVGA.scala 271:40]
-  wire [10:0] inSpriteY_0 = _T_248[10:0]; // @[GraphicEngineVGA.scala 250:23 GraphicEngineVGA.scala 267:20 GraphicEngineVGA.scala 269:20]
-  wire  _T_255 = $signed(inSpriteY_0) >= 11'sh0; // @[GraphicEngineVGA.scala 271:79]
-  wire  _T_256 = _T_254 & _T_255; // @[GraphicEngineVGA.scala 271:63]
-  wire  _T_257 = $signed(inSpriteY_0) < 11'sh20; // @[GraphicEngineVGA.scala 271:102]
-  wire [11:0] _T_261 = $signed(_T_230) - $signed(spriteXPositionReg_1); // @[GraphicEngineVGA.scala 252:54]
-  wire [14:0] _GEN_160 = {{3{_T_261[11]}},_T_261}; // @[GraphicEngineVGA.scala 258:38]
-  wire [10:0] _GEN_272 = {{1{spriteYPositionReg_1[9]}},spriteYPositionReg_1}; // @[GraphicEngineVGA.scala 265:54]
-  wire [11:0] _T_278 = $signed(_T_247) - $signed(_GEN_272); // @[GraphicEngineVGA.scala 265:54]
-  wire [11:0] inSpriteX_1 = _GEN_160[11:0]; // @[GraphicEngineVGA.scala 249:23 GraphicEngineVGA.scala 254:20 GraphicEngineVGA.scala 256:20 GraphicEngineVGA.scala 259:20 GraphicEngineVGA.scala 260:20 GraphicEngineVGA.scala 262:20]
-  wire  _T_282 = $signed(inSpriteX_1) >= 12'sh0; // @[GraphicEngineVGA.scala 271:33]
-  wire  _T_283 = $signed(inSpriteX_1) < 12'sh20; // @[GraphicEngineVGA.scala 271:56]
-  wire  _T_284 = _T_282 & _T_283; // @[GraphicEngineVGA.scala 271:40]
-  wire [10:0] inSpriteY_1 = _T_278[10:0]; // @[GraphicEngineVGA.scala 250:23 GraphicEngineVGA.scala 267:20 GraphicEngineVGA.scala 269:20]
-  wire  _T_285 = $signed(inSpriteY_1) >= 11'sh0; // @[GraphicEngineVGA.scala 271:79]
-  wire  _T_286 = _T_284 & _T_285; // @[GraphicEngineVGA.scala 271:63]
-  wire  _T_287 = $signed(inSpriteY_1) < 11'sh20; // @[GraphicEngineVGA.scala 271:102]
-  wire [11:0] _T_291 = $signed(_T_230) - 11'sh0; // @[GraphicEngineVGA.scala 252:54]
-  wire [14:0] _GEN_163 = {{3{_T_291[11]}},_T_291}; // @[GraphicEngineVGA.scala 258:38]
-  wire [11:0] _T_308 = $signed(_T_247) - 11'sh0; // @[GraphicEngineVGA.scala 265:54]
-  wire [11:0] inSpriteX_2 = _GEN_163[11:0]; // @[GraphicEngineVGA.scala 249:23 GraphicEngineVGA.scala 254:20 GraphicEngineVGA.scala 256:20 GraphicEngineVGA.scala 259:20 GraphicEngineVGA.scala 260:20 GraphicEngineVGA.scala 262:20]
-  wire  _T_312 = $signed(inSpriteX_2) >= 12'sh0; // @[GraphicEngineVGA.scala 271:33]
-  wire  _T_313 = $signed(inSpriteX_2) < 12'sh20; // @[GraphicEngineVGA.scala 271:56]
-  wire  _T_314 = _T_312 & _T_313; // @[GraphicEngineVGA.scala 271:40]
-  wire [10:0] inSpriteY_2 = _T_308[10:0]; // @[GraphicEngineVGA.scala 250:23 GraphicEngineVGA.scala 267:20 GraphicEngineVGA.scala 269:20]
-  wire  _T_315 = $signed(inSpriteY_2) >= 11'sh0; // @[GraphicEngineVGA.scala 271:79]
-  wire  _T_316 = _T_314 & _T_315; // @[GraphicEngineVGA.scala 271:63]
-  wire  _T_317 = $signed(inSpriteY_2) < 11'sh20; // @[GraphicEngineVGA.scala 271:102]
-  wire [5:0] _GEN_303 = {{1'd0}, inSpriteY_0[4:0]}; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _T_711 = 6'h20 * _GEN_303; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _GEN_304 = {{6'd0}, inSpriteX_0[4:0]}; // @[GraphicEngineVGA.scala 279:62]
-  wire [10:0] _T_713 = _GEN_304 + _T_711; // @[GraphicEngineVGA.scala 279:62]
-  wire [5:0] _GEN_305 = {{1'd0}, inSpriteY_1[4:0]}; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _T_716 = 6'h20 * _GEN_305; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _GEN_306 = {{6'd0}, inSpriteX_1[4:0]}; // @[GraphicEngineVGA.scala 279:62]
-  wire [10:0] _T_718 = _GEN_306 + _T_716; // @[GraphicEngineVGA.scala 279:62]
-  wire [5:0] _GEN_307 = {{1'd0}, inSpriteY_2[4:0]}; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _T_721 = 6'h20 * _GEN_307; // @[GraphicEngineVGA.scala 279:74]
-  wire [10:0] _GEN_308 = {{6'd0}, inSpriteX_2[4:0]}; // @[GraphicEngineVGA.scala 279:62]
-  wire [10:0] _T_723 = _GEN_308 + _T_721; // @[GraphicEngineVGA.scala 279:62]
-  reg [5:0] _T_790; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_792_0; // @[GameUtilities.scala 21:24]
-  reg  _T_792_1; // @[GameUtilities.scala 21:24]
-  reg  _T_795; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_796 = ~_T_795; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_799; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_801_0; // @[GameUtilities.scala 21:24]
-  reg  _T_801_1; // @[GameUtilities.scala 21:24]
-  reg  _T_804; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_805 = ~_T_804; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_808; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_809_0; // @[GameUtilities.scala 21:24]
-  reg  _T_809_1; // @[GameUtilities.scala 21:24]
-  reg  _T_810_0; // @[GameUtilities.scala 21:24]
-  reg  _T_810_1; // @[GameUtilities.scala 21:24]
-  wire  _T_811 = _T_809_0 & _T_810_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_813; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_814 = ~_T_813; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_817; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_818_0; // @[GameUtilities.scala 21:24]
-  reg  _T_818_1; // @[GameUtilities.scala 21:24]
-  reg  _T_819_0; // @[GameUtilities.scala 21:24]
-  reg  _T_819_1; // @[GameUtilities.scala 21:24]
-  wire  _T_820 = _T_818_0 & _T_819_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_822; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_823 = ~_T_822; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_826; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_827_0; // @[GameUtilities.scala 21:24]
-  reg  _T_827_1; // @[GameUtilities.scala 21:24]
-  reg  _T_828_0; // @[GameUtilities.scala 21:24]
-  reg  _T_828_1; // @[GameUtilities.scala 21:24]
-  wire  _T_829 = _T_827_0 & _T_828_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_831; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_832 = ~_T_831; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_835; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_836_0; // @[GameUtilities.scala 21:24]
-  reg  _T_836_1; // @[GameUtilities.scala 21:24]
-  reg  _T_837_0; // @[GameUtilities.scala 21:24]
-  reg  _T_837_1; // @[GameUtilities.scala 21:24]
-  wire  _T_838 = _T_836_0 & _T_837_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_840; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_841 = ~_T_840; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_844; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_845_0; // @[GameUtilities.scala 21:24]
-  reg  _T_845_1; // @[GameUtilities.scala 21:24]
-  reg  _T_846_0; // @[GameUtilities.scala 21:24]
-  reg  _T_846_1; // @[GameUtilities.scala 21:24]
-  wire  _T_847 = _T_845_0 & _T_846_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_849; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_850 = ~_T_849; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_853; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_854_0; // @[GameUtilities.scala 21:24]
-  reg  _T_854_1; // @[GameUtilities.scala 21:24]
-  reg  _T_855_0; // @[GameUtilities.scala 21:24]
-  reg  _T_855_1; // @[GameUtilities.scala 21:24]
-  wire  _T_856 = _T_854_0 & _T_855_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_858; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_859 = ~_T_858; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_862; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_863_0; // @[GameUtilities.scala 21:24]
-  reg  _T_863_1; // @[GameUtilities.scala 21:24]
-  reg  _T_864_0; // @[GameUtilities.scala 21:24]
-  reg  _T_864_1; // @[GameUtilities.scala 21:24]
-  wire  _T_865 = _T_863_0 & _T_864_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_867; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_868 = ~_T_867; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_871; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_872_0; // @[GameUtilities.scala 21:24]
-  reg  _T_872_1; // @[GameUtilities.scala 21:24]
-  reg  _T_873_0; // @[GameUtilities.scala 21:24]
-  reg  _T_873_1; // @[GameUtilities.scala 21:24]
-  wire  _T_874 = _T_872_0 & _T_873_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_876; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_877 = ~_T_876; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_880; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_881_0; // @[GameUtilities.scala 21:24]
-  reg  _T_881_1; // @[GameUtilities.scala 21:24]
-  reg  _T_882_0; // @[GameUtilities.scala 21:24]
-  reg  _T_882_1; // @[GameUtilities.scala 21:24]
-  wire  _T_883 = _T_881_0 & _T_882_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_885; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_886 = ~_T_885; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_889; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_890_0; // @[GameUtilities.scala 21:24]
-  reg  _T_890_1; // @[GameUtilities.scala 21:24]
-  reg  _T_891_0; // @[GameUtilities.scala 21:24]
-  reg  _T_891_1; // @[GameUtilities.scala 21:24]
-  wire  _T_892 = _T_890_0 & _T_891_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_894; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_895 = ~_T_894; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_898; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_899_0; // @[GameUtilities.scala 21:24]
-  reg  _T_899_1; // @[GameUtilities.scala 21:24]
-  reg  _T_900_0; // @[GameUtilities.scala 21:24]
-  reg  _T_900_1; // @[GameUtilities.scala 21:24]
-  wire  _T_901 = _T_899_0 & _T_900_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_903; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_904 = ~_T_903; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_907; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_908_0; // @[GameUtilities.scala 21:24]
-  reg  _T_908_1; // @[GameUtilities.scala 21:24]
-  reg  _T_909_0; // @[GameUtilities.scala 21:24]
-  reg  _T_909_1; // @[GameUtilities.scala 21:24]
-  wire  _T_910 = _T_908_0 & _T_909_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_912; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_913 = ~_T_912; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_916; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_917_0; // @[GameUtilities.scala 21:24]
-  reg  _T_917_1; // @[GameUtilities.scala 21:24]
-  reg  _T_918_0; // @[GameUtilities.scala 21:24]
-  reg  _T_918_1; // @[GameUtilities.scala 21:24]
-  wire  _T_919 = _T_917_0 & _T_918_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_921; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_922 = ~_T_921; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] _T_925; // @[GraphicEngineVGA.scala 286:60]
-  reg  _T_926_0; // @[GameUtilities.scala 21:24]
-  reg  _T_926_1; // @[GameUtilities.scala 21:24]
-  reg  _T_927_0; // @[GameUtilities.scala 21:24]
-  reg  _T_927_1; // @[GameUtilities.scala 21:24]
-  wire  _T_928 = _T_926_0 & _T_927_0; // @[GraphicEngineVGA.scala 287:91]
-  reg  _T_930; // @[GraphicEngineVGA.scala 287:132]
-  wire  _T_931 = ~_T_930; // @[GraphicEngineVGA.scala 287:123]
-  reg [5:0] pixelColorSprite; // @[GraphicEngineVGA.scala 289:33]
-  reg  pixelColorSpriteValid; // @[GraphicEngineVGA.scala 290:38]
-  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[GraphicEngineVGA.scala 294:32]
-  reg  _T_933_0; // @[GameUtilities.scala 21:24]
-  reg  _T_933_1; // @[GameUtilities.scala 21:24]
-  reg  _T_933_2; // @[GameUtilities.scala 21:24]
-  wire [5:0] pixelColourVGA = _T_933_0 ? pixelColorInDisplay : 6'h0; // @[GraphicEngineVGA.scala 295:27]
-  reg [3:0] _T_940; // @[GraphicEngineVGA.scala 299:23]
-  reg [3:0] _T_941; // @[GraphicEngineVGA.scala 300:25]
-  reg [3:0] _T_942; // @[GraphicEngineVGA.scala 301:24]
-  Memory backTileMemories_0 ( // @[GraphicEngineVGA.scala 155:32]
+  reg  spriteFlipHorizontalReg_0; // @[Reg.scala 27:20]
+  reg  spriteFlipHorizontalReg_1; // @[Reg.scala 27:20]
+  wire  _GEN_62 = io_newFrame | spriteFlipHorizontalReg_1; // @[Reg.scala 28:19]
+  reg [1:0] spriteScaleHorizontalReg_0; // @[Reg.scala 27:20]
+  reg [1:0] spriteScaleVerticalReg_0; // @[Reg.scala 27:20]
+  reg  spriteRotationReg_0; // @[Reg.scala 27:20]
+  reg  spriteRotationReg_2; // @[Reg.scala 27:20]
+  reg  missingFrameErrorReg; // @[GraphicEngineVGA.scala 130:37]
+  wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[GraphicEngineVGA.scala 141:27]
+  wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[GraphicEngineVGA.scala 142:27]
+  reg  newFrameStikyReg; // @[GraphicEngineVGA.scala 149:33]
+  wire  _GEN_144 = io_newFrame | newFrameStikyReg; // @[GraphicEngineVGA.scala 150:21]
+  reg  _T_36; // @[GraphicEngineVGA.scala 153:16]
+  wire  _T_37 = newFrameStikyReg & io_newFrame; // @[GraphicEngineVGA.scala 156:26]
+  wire  _GEN_146 = _T_37 | missingFrameErrorReg; // @[GraphicEngineVGA.scala 156:41]
+  wire [5:0] _GEN_2244 = {{1'd0}, pixelYBack[4:0]}; // @[GraphicEngineVGA.scala 174:75]
+  wire [10:0] _T_40 = 6'h20 * _GEN_2244; // @[GraphicEngineVGA.scala 174:75]
+  wire [10:0] _GEN_2245 = {{6'd0}, pixelXBack[4:0]}; // @[GraphicEngineVGA.scala 174:62]
+  wire [11:0] _T_41 = _GEN_2245 + _T_40; // @[GraphicEngineVGA.scala 174:62]
+  reg [6:0] backTileMemoryDataRead_0; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_1; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_2; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_3; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_4; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_5; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_6; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_7; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_8; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_9; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_10; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_11; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_12; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_13; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_14; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_15; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_16; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_17; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_18; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_19; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_20; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_21; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_22; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_23; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_24; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_25; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_26; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_27; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_28; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_29; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_30; // @[GraphicEngineVGA.scala 175:41]
+  reg [6:0] backTileMemoryDataRead_31; // @[GraphicEngineVGA.scala 175:41]
+  reg [11:0] backMemoryCopyCounter; // @[GraphicEngineVGA.scala 185:38]
+  wire  _T_198 = backMemoryCopyCounter < 12'h800; // @[GraphicEngineVGA.scala 189:32]
+  wire [11:0] _T_200 = backMemoryCopyCounter + 12'h1; // @[GraphicEngineVGA.scala 190:54]
+  wire  copyEnabled = preDisplayArea & _T_198; // @[GraphicEngineVGA.scala 188:23]
+  reg  copyEnabledReg; // @[GraphicEngineVGA.scala 202:31]
+  wire [11:0] _T_203 = backMemoryRestoreCounter + 12'h1; // @[GraphicEngineVGA.scala 208:58]
+  reg [10:0] _T_206; // @[GraphicEngineVGA.scala 223:67]
+  wire [10:0] _T_209 = copyEnabled ? backMemoryCopyCounter[10:0] : 11'h0; // @[GraphicEngineVGA.scala 223:105]
+  reg  _T_211; // @[GraphicEngineVGA.scala 225:71]
+  reg [10:0] _T_218; // @[GraphicEngineVGA.scala 228:61]
+  wire [11:0] _T_221 = 6'h28 * pixelYBack[10:5]; // @[GraphicEngineVGA.scala 228:130]
+  wire [11:0] _GEN_2308 = {{6'd0}, pixelXBack[10:5]}; // @[GraphicEngineVGA.scala 228:117]
+  wire [12:0] _T_222 = _GEN_2308 + _T_221; // @[GraphicEngineVGA.scala 228:117]
+  wire [12:0] _T_223 = copyEnabledReg ? {{2'd0}, _T_218} : _T_222; // @[GraphicEngineVGA.scala 228:37]
+  reg [4:0] _T_225; // @[GraphicEngineVGA.scala 245:56]
+  wire [6:0] _GEN_157 = 5'h1 == _T_225 ? backTileMemoryDataRead_1 : backTileMemoryDataRead_0; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_158 = 5'h2 == _T_225 ? backTileMemoryDataRead_2 : _GEN_157; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_159 = 5'h3 == _T_225 ? backTileMemoryDataRead_3 : _GEN_158; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_160 = 5'h4 == _T_225 ? backTileMemoryDataRead_4 : _GEN_159; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_161 = 5'h5 == _T_225 ? backTileMemoryDataRead_5 : _GEN_160; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_162 = 5'h6 == _T_225 ? backTileMemoryDataRead_6 : _GEN_161; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_163 = 5'h7 == _T_225 ? backTileMemoryDataRead_7 : _GEN_162; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_164 = 5'h8 == _T_225 ? backTileMemoryDataRead_8 : _GEN_163; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_165 = 5'h9 == _T_225 ? backTileMemoryDataRead_9 : _GEN_164; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_166 = 5'ha == _T_225 ? backTileMemoryDataRead_10 : _GEN_165; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_167 = 5'hb == _T_225 ? backTileMemoryDataRead_11 : _GEN_166; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_168 = 5'hc == _T_225 ? backTileMemoryDataRead_12 : _GEN_167; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_169 = 5'hd == _T_225 ? backTileMemoryDataRead_13 : _GEN_168; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_170 = 5'he == _T_225 ? backTileMemoryDataRead_14 : _GEN_169; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_171 = 5'hf == _T_225 ? backTileMemoryDataRead_15 : _GEN_170; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_172 = 5'h10 == _T_225 ? backTileMemoryDataRead_16 : _GEN_171; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_173 = 5'h11 == _T_225 ? backTileMemoryDataRead_17 : _GEN_172; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_174 = 5'h12 == _T_225 ? backTileMemoryDataRead_18 : _GEN_173; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_175 = 5'h13 == _T_225 ? backTileMemoryDataRead_19 : _GEN_174; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_176 = 5'h14 == _T_225 ? backTileMemoryDataRead_20 : _GEN_175; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_177 = 5'h15 == _T_225 ? backTileMemoryDataRead_21 : _GEN_176; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_178 = 5'h16 == _T_225 ? backTileMemoryDataRead_22 : _GEN_177; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_179 = 5'h17 == _T_225 ? backTileMemoryDataRead_23 : _GEN_178; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_180 = 5'h18 == _T_225 ? backTileMemoryDataRead_24 : _GEN_179; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_181 = 5'h19 == _T_225 ? backTileMemoryDataRead_25 : _GEN_180; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_182 = 5'h1a == _T_225 ? backTileMemoryDataRead_26 : _GEN_181; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_183 = 5'h1b == _T_225 ? backTileMemoryDataRead_27 : _GEN_182; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_184 = 5'h1c == _T_225 ? backTileMemoryDataRead_28 : _GEN_183; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_185 = 5'h1d == _T_225 ? backTileMemoryDataRead_29 : _GEN_184; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] _GEN_186 = 5'h1e == _T_225 ? backTileMemoryDataRead_30 : _GEN_185; // @[GraphicEngineVGA.scala 245:23]
+  wire [6:0] fullBackgroundColor = 5'h1f == _T_225 ? backTileMemoryDataRead_31 : _GEN_186; // @[GraphicEngineVGA.scala 245:23]
+  reg [5:0] pixelColorBack; // @[GraphicEngineVGA.scala 247:31]
+  reg  spriteActive; // @[GraphicEngineVGA.scala 290:29]
+  reg [9:0] indexcounter; // @[GraphicEngineVGA.scala 293:29]
+  wire [10:0] _T_233 = $signed(spriteXPositionReg_2) + 11'shf; // @[GraphicEngineVGA.scala 296:42]
+  wire [5:0] _GEN_189 = 10'h1 == indexcounter ? $signed(-6'sh15) : $signed(-6'sh16); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_190 = 10'h2 == indexcounter ? $signed(-6'sh15) : $signed(_GEN_189); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_191 = 10'h3 == indexcounter ? $signed(-6'sh14) : $signed(_GEN_190); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_192 = 10'h4 == indexcounter ? $signed(-6'sh13) : $signed(_GEN_191); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_193 = 10'h5 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_192); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_194 = 10'h6 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_193); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_195 = 10'h7 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_194); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_196 = 10'h8 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_195); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_197 = 10'h9 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_196); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_198 = 10'ha == indexcounter ? $signed(-6'shf) : $signed(_GEN_197); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_199 = 10'hb == indexcounter ? $signed(-6'she) : $signed(_GEN_198); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_200 = 10'hc == indexcounter ? $signed(-6'shd) : $signed(_GEN_199); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_201 = 10'hd == indexcounter ? $signed(-6'shd) : $signed(_GEN_200); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_202 = 10'he == indexcounter ? $signed(-6'shc) : $signed(_GEN_201); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_203 = 10'hf == indexcounter ? $signed(-6'shb) : $signed(_GEN_202); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_204 = 10'h10 == indexcounter ? $signed(-6'shb) : $signed(_GEN_203); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_205 = 10'h11 == indexcounter ? $signed(-6'sha) : $signed(_GEN_204); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_206 = 10'h12 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_205); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_207 = 10'h13 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_206); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_208 = 10'h14 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_207); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_209 = 10'h15 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_208); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_210 = 10'h16 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_209); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_211 = 10'h17 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_210); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_212 = 10'h18 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_211); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_213 = 10'h19 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_212); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_214 = 10'h1a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_213); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_215 = 10'h1b == indexcounter ? $signed(-6'sh3) : $signed(_GEN_214); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_216 = 10'h1c == indexcounter ? $signed(-6'sh2) : $signed(_GEN_215); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_217 = 10'h1d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_216); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_218 = 10'h1e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_217); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_219 = 10'h1f == indexcounter ? $signed(6'sh0) : $signed(_GEN_218); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_220 = 10'h20 == indexcounter ? $signed(-6'sh15) : $signed(_GEN_219); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_221 = 10'h21 == indexcounter ? $signed(-6'sh15) : $signed(_GEN_220); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_222 = 10'h22 == indexcounter ? $signed(-6'sh14) : $signed(_GEN_221); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_223 = 10'h23 == indexcounter ? $signed(-6'sh13) : $signed(_GEN_222); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_224 = 10'h24 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_223); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_225 = 10'h25 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_224); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_226 = 10'h26 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_225); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_227 = 10'h27 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_226); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_228 = 10'h28 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_227); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_229 = 10'h29 == indexcounter ? $signed(-6'shf) : $signed(_GEN_228); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_230 = 10'h2a == indexcounter ? $signed(-6'she) : $signed(_GEN_229); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_231 = 10'h2b == indexcounter ? $signed(-6'shd) : $signed(_GEN_230); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_232 = 10'h2c == indexcounter ? $signed(-6'shd) : $signed(_GEN_231); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_233 = 10'h2d == indexcounter ? $signed(-6'shc) : $signed(_GEN_232); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_234 = 10'h2e == indexcounter ? $signed(-6'shb) : $signed(_GEN_233); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_235 = 10'h2f == indexcounter ? $signed(-6'shb) : $signed(_GEN_234); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_236 = 10'h30 == indexcounter ? $signed(-6'sha) : $signed(_GEN_235); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_237 = 10'h31 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_236); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_238 = 10'h32 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_237); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_239 = 10'h33 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_238); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_240 = 10'h34 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_239); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_241 = 10'h35 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_240); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_242 = 10'h36 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_241); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_243 = 10'h37 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_242); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_244 = 10'h38 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_243); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_245 = 10'h39 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_244); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_246 = 10'h3a == indexcounter ? $signed(-6'sh3) : $signed(_GEN_245); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_247 = 10'h3b == indexcounter ? $signed(-6'sh2) : $signed(_GEN_246); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_248 = 10'h3c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_247); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_249 = 10'h3d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_248); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_250 = 10'h3e == indexcounter ? $signed(6'sh0) : $signed(_GEN_249); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_251 = 10'h3f == indexcounter ? $signed(6'sh1) : $signed(_GEN_250); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_252 = 10'h40 == indexcounter ? $signed(-6'sh15) : $signed(_GEN_251); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_253 = 10'h41 == indexcounter ? $signed(-6'sh14) : $signed(_GEN_252); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_254 = 10'h42 == indexcounter ? $signed(-6'sh13) : $signed(_GEN_253); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_255 = 10'h43 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_254); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_256 = 10'h44 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_255); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_257 = 10'h45 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_256); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_258 = 10'h46 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_257); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_259 = 10'h47 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_258); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_260 = 10'h48 == indexcounter ? $signed(-6'shf) : $signed(_GEN_259); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_261 = 10'h49 == indexcounter ? $signed(-6'she) : $signed(_GEN_260); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_262 = 10'h4a == indexcounter ? $signed(-6'shd) : $signed(_GEN_261); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_263 = 10'h4b == indexcounter ? $signed(-6'shd) : $signed(_GEN_262); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_264 = 10'h4c == indexcounter ? $signed(-6'shc) : $signed(_GEN_263); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_265 = 10'h4d == indexcounter ? $signed(-6'shb) : $signed(_GEN_264); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_266 = 10'h4e == indexcounter ? $signed(-6'shb) : $signed(_GEN_265); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_267 = 10'h4f == indexcounter ? $signed(-6'sha) : $signed(_GEN_266); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_268 = 10'h50 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_267); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_269 = 10'h51 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_268); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_270 = 10'h52 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_269); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_271 = 10'h53 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_270); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_272 = 10'h54 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_271); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_273 = 10'h55 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_272); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_274 = 10'h56 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_273); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_275 = 10'h57 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_274); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_276 = 10'h58 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_275); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_277 = 10'h59 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_276); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_278 = 10'h5a == indexcounter ? $signed(-6'sh2) : $signed(_GEN_277); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_279 = 10'h5b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_278); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_280 = 10'h5c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_279); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_281 = 10'h5d == indexcounter ? $signed(6'sh0) : $signed(_GEN_280); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_282 = 10'h5e == indexcounter ? $signed(6'sh1) : $signed(_GEN_281); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_283 = 10'h5f == indexcounter ? $signed(6'sh1) : $signed(_GEN_282); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_284 = 10'h60 == indexcounter ? $signed(-6'sh14) : $signed(_GEN_283); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_285 = 10'h61 == indexcounter ? $signed(-6'sh13) : $signed(_GEN_284); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_286 = 10'h62 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_285); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_287 = 10'h63 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_286); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_288 = 10'h64 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_287); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_289 = 10'h65 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_288); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_290 = 10'h66 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_289); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_291 = 10'h67 == indexcounter ? $signed(-6'shf) : $signed(_GEN_290); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_292 = 10'h68 == indexcounter ? $signed(-6'she) : $signed(_GEN_291); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_293 = 10'h69 == indexcounter ? $signed(-6'shd) : $signed(_GEN_292); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_294 = 10'h6a == indexcounter ? $signed(-6'shd) : $signed(_GEN_293); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_295 = 10'h6b == indexcounter ? $signed(-6'shc) : $signed(_GEN_294); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_296 = 10'h6c == indexcounter ? $signed(-6'shb) : $signed(_GEN_295); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_297 = 10'h6d == indexcounter ? $signed(-6'shb) : $signed(_GEN_296); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_298 = 10'h6e == indexcounter ? $signed(-6'sha) : $signed(_GEN_297); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_299 = 10'h6f == indexcounter ? $signed(-6'sh9) : $signed(_GEN_298); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_300 = 10'h70 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_299); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_301 = 10'h71 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_300); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_302 = 10'h72 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_301); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_303 = 10'h73 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_302); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_304 = 10'h74 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_303); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_305 = 10'h75 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_304); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_306 = 10'h76 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_305); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_307 = 10'h77 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_306); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_308 = 10'h78 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_307); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_309 = 10'h79 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_308); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_310 = 10'h7a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_309); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_311 = 10'h7b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_310); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_312 = 10'h7c == indexcounter ? $signed(6'sh0) : $signed(_GEN_311); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_313 = 10'h7d == indexcounter ? $signed(6'sh1) : $signed(_GEN_312); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_314 = 10'h7e == indexcounter ? $signed(6'sh1) : $signed(_GEN_313); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_315 = 10'h7f == indexcounter ? $signed(6'sh2) : $signed(_GEN_314); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_316 = 10'h80 == indexcounter ? $signed(-6'sh13) : $signed(_GEN_315); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_317 = 10'h81 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_316); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_318 = 10'h82 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_317); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_319 = 10'h83 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_318); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_320 = 10'h84 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_319); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_321 = 10'h85 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_320); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_322 = 10'h86 == indexcounter ? $signed(-6'shf) : $signed(_GEN_321); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_323 = 10'h87 == indexcounter ? $signed(-6'she) : $signed(_GEN_322); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_324 = 10'h88 == indexcounter ? $signed(-6'shd) : $signed(_GEN_323); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_325 = 10'h89 == indexcounter ? $signed(-6'shd) : $signed(_GEN_324); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_326 = 10'h8a == indexcounter ? $signed(-6'shc) : $signed(_GEN_325); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_327 = 10'h8b == indexcounter ? $signed(-6'shb) : $signed(_GEN_326); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_328 = 10'h8c == indexcounter ? $signed(-6'shb) : $signed(_GEN_327); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_329 = 10'h8d == indexcounter ? $signed(-6'sha) : $signed(_GEN_328); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_330 = 10'h8e == indexcounter ? $signed(-6'sh9) : $signed(_GEN_329); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_331 = 10'h8f == indexcounter ? $signed(-6'sh8) : $signed(_GEN_330); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_332 = 10'h90 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_331); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_333 = 10'h91 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_332); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_334 = 10'h92 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_333); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_335 = 10'h93 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_334); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_336 = 10'h94 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_335); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_337 = 10'h95 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_336); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_338 = 10'h96 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_337); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_339 = 10'h97 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_338); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_340 = 10'h98 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_339); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_341 = 10'h99 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_340); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_342 = 10'h9a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_341); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_343 = 10'h9b == indexcounter ? $signed(6'sh0) : $signed(_GEN_342); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_344 = 10'h9c == indexcounter ? $signed(6'sh1) : $signed(_GEN_343); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_345 = 10'h9d == indexcounter ? $signed(6'sh1) : $signed(_GEN_344); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_346 = 10'h9e == indexcounter ? $signed(6'sh2) : $signed(_GEN_345); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_347 = 10'h9f == indexcounter ? $signed(6'sh3) : $signed(_GEN_346); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_348 = 10'ha0 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_347); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_349 = 10'ha1 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_348); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_350 = 10'ha2 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_349); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_351 = 10'ha3 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_350); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_352 = 10'ha4 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_351); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_353 = 10'ha5 == indexcounter ? $signed(-6'shf) : $signed(_GEN_352); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_354 = 10'ha6 == indexcounter ? $signed(-6'she) : $signed(_GEN_353); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_355 = 10'ha7 == indexcounter ? $signed(-6'shd) : $signed(_GEN_354); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_356 = 10'ha8 == indexcounter ? $signed(-6'shd) : $signed(_GEN_355); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_357 = 10'ha9 == indexcounter ? $signed(-6'shc) : $signed(_GEN_356); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_358 = 10'haa == indexcounter ? $signed(-6'shb) : $signed(_GEN_357); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_359 = 10'hab == indexcounter ? $signed(-6'shb) : $signed(_GEN_358); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_360 = 10'hac == indexcounter ? $signed(-6'sha) : $signed(_GEN_359); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_361 = 10'had == indexcounter ? $signed(-6'sh9) : $signed(_GEN_360); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_362 = 10'hae == indexcounter ? $signed(-6'sh8) : $signed(_GEN_361); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_363 = 10'haf == indexcounter ? $signed(-6'sh8) : $signed(_GEN_362); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_364 = 10'hb0 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_363); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_365 = 10'hb1 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_364); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_366 = 10'hb2 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_365); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_367 = 10'hb3 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_366); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_368 = 10'hb4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_367); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_369 = 10'hb5 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_368); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_370 = 10'hb6 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_369); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_371 = 10'hb7 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_370); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_372 = 10'hb8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_371); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_373 = 10'hb9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_372); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_374 = 10'hba == indexcounter ? $signed(6'sh0) : $signed(_GEN_373); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_375 = 10'hbb == indexcounter ? $signed(6'sh1) : $signed(_GEN_374); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_376 = 10'hbc == indexcounter ? $signed(6'sh1) : $signed(_GEN_375); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_377 = 10'hbd == indexcounter ? $signed(6'sh2) : $signed(_GEN_376); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_378 = 10'hbe == indexcounter ? $signed(6'sh3) : $signed(_GEN_377); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_379 = 10'hbf == indexcounter ? $signed(6'sh4) : $signed(_GEN_378); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_380 = 10'hc0 == indexcounter ? $signed(-6'sh12) : $signed(_GEN_379); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_381 = 10'hc1 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_380); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_382 = 10'hc2 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_381); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_383 = 10'hc3 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_382); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_384 = 10'hc4 == indexcounter ? $signed(-6'shf) : $signed(_GEN_383); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_385 = 10'hc5 == indexcounter ? $signed(-6'she) : $signed(_GEN_384); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_386 = 10'hc6 == indexcounter ? $signed(-6'shd) : $signed(_GEN_385); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_387 = 10'hc7 == indexcounter ? $signed(-6'shd) : $signed(_GEN_386); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_388 = 10'hc8 == indexcounter ? $signed(-6'shc) : $signed(_GEN_387); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_389 = 10'hc9 == indexcounter ? $signed(-6'shb) : $signed(_GEN_388); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_390 = 10'hca == indexcounter ? $signed(-6'shb) : $signed(_GEN_389); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_391 = 10'hcb == indexcounter ? $signed(-6'sha) : $signed(_GEN_390); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_392 = 10'hcc == indexcounter ? $signed(-6'sh9) : $signed(_GEN_391); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_393 = 10'hcd == indexcounter ? $signed(-6'sh8) : $signed(_GEN_392); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_394 = 10'hce == indexcounter ? $signed(-6'sh8) : $signed(_GEN_393); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_395 = 10'hcf == indexcounter ? $signed(-6'sh7) : $signed(_GEN_394); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_396 = 10'hd0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_395); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_397 = 10'hd1 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_396); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_398 = 10'hd2 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_397); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_399 = 10'hd3 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_398); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_400 = 10'hd4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_399); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_401 = 10'hd5 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_400); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_402 = 10'hd6 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_401); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_403 = 10'hd7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_402); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_404 = 10'hd8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_403); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_405 = 10'hd9 == indexcounter ? $signed(6'sh0) : $signed(_GEN_404); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_406 = 10'hda == indexcounter ? $signed(6'sh1) : $signed(_GEN_405); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_407 = 10'hdb == indexcounter ? $signed(6'sh1) : $signed(_GEN_406); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_408 = 10'hdc == indexcounter ? $signed(6'sh2) : $signed(_GEN_407); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_409 = 10'hdd == indexcounter ? $signed(6'sh3) : $signed(_GEN_408); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_410 = 10'hde == indexcounter ? $signed(6'sh4) : $signed(_GEN_409); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_411 = 10'hdf == indexcounter ? $signed(6'sh4) : $signed(_GEN_410); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_412 = 10'he0 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_411); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_413 = 10'he1 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_412); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_414 = 10'he2 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_413); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_415 = 10'he3 == indexcounter ? $signed(-6'shf) : $signed(_GEN_414); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_416 = 10'he4 == indexcounter ? $signed(-6'she) : $signed(_GEN_415); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_417 = 10'he5 == indexcounter ? $signed(-6'shd) : $signed(_GEN_416); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_418 = 10'he6 == indexcounter ? $signed(-6'shd) : $signed(_GEN_417); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_419 = 10'he7 == indexcounter ? $signed(-6'shc) : $signed(_GEN_418); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_420 = 10'he8 == indexcounter ? $signed(-6'shb) : $signed(_GEN_419); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_421 = 10'he9 == indexcounter ? $signed(-6'shb) : $signed(_GEN_420); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_422 = 10'hea == indexcounter ? $signed(-6'sha) : $signed(_GEN_421); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_423 = 10'heb == indexcounter ? $signed(-6'sh9) : $signed(_GEN_422); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_424 = 10'hec == indexcounter ? $signed(-6'sh8) : $signed(_GEN_423); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_425 = 10'hed == indexcounter ? $signed(-6'sh8) : $signed(_GEN_424); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_426 = 10'hee == indexcounter ? $signed(-6'sh7) : $signed(_GEN_425); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_427 = 10'hef == indexcounter ? $signed(-6'sh6) : $signed(_GEN_426); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_428 = 10'hf0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_427); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_429 = 10'hf1 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_428); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_430 = 10'hf2 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_429); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_431 = 10'hf3 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_430); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_432 = 10'hf4 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_431); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_433 = 10'hf5 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_432); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_434 = 10'hf6 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_433); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_435 = 10'hf7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_434); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_436 = 10'hf8 == indexcounter ? $signed(6'sh0) : $signed(_GEN_435); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_437 = 10'hf9 == indexcounter ? $signed(6'sh1) : $signed(_GEN_436); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_438 = 10'hfa == indexcounter ? $signed(6'sh1) : $signed(_GEN_437); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_439 = 10'hfb == indexcounter ? $signed(6'sh2) : $signed(_GEN_438); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_440 = 10'hfc == indexcounter ? $signed(6'sh3) : $signed(_GEN_439); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_441 = 10'hfd == indexcounter ? $signed(6'sh4) : $signed(_GEN_440); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_442 = 10'hfe == indexcounter ? $signed(6'sh4) : $signed(_GEN_441); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_443 = 10'hff == indexcounter ? $signed(6'sh5) : $signed(_GEN_442); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_444 = 10'h100 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_443); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_445 = 10'h101 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_444); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_446 = 10'h102 == indexcounter ? $signed(-6'shf) : $signed(_GEN_445); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_447 = 10'h103 == indexcounter ? $signed(-6'she) : $signed(_GEN_446); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_448 = 10'h104 == indexcounter ? $signed(-6'shd) : $signed(_GEN_447); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_449 = 10'h105 == indexcounter ? $signed(-6'shd) : $signed(_GEN_448); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_450 = 10'h106 == indexcounter ? $signed(-6'shc) : $signed(_GEN_449); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_451 = 10'h107 == indexcounter ? $signed(-6'shb) : $signed(_GEN_450); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_452 = 10'h108 == indexcounter ? $signed(-6'shb) : $signed(_GEN_451); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_453 = 10'h109 == indexcounter ? $signed(-6'sha) : $signed(_GEN_452); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_454 = 10'h10a == indexcounter ? $signed(-6'sh9) : $signed(_GEN_453); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_455 = 10'h10b == indexcounter ? $signed(-6'sh8) : $signed(_GEN_454); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_456 = 10'h10c == indexcounter ? $signed(-6'sh8) : $signed(_GEN_455); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_457 = 10'h10d == indexcounter ? $signed(-6'sh7) : $signed(_GEN_456); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_458 = 10'h10e == indexcounter ? $signed(-6'sh6) : $signed(_GEN_457); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_459 = 10'h10f == indexcounter ? $signed(-6'sh6) : $signed(_GEN_458); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_460 = 10'h110 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_459); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_461 = 10'h111 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_460); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_462 = 10'h112 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_461); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_463 = 10'h113 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_462); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_464 = 10'h114 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_463); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_465 = 10'h115 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_464); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_466 = 10'h116 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_465); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_467 = 10'h117 == indexcounter ? $signed(6'sh0) : $signed(_GEN_466); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_468 = 10'h118 == indexcounter ? $signed(6'sh1) : $signed(_GEN_467); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_469 = 10'h119 == indexcounter ? $signed(6'sh1) : $signed(_GEN_468); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_470 = 10'h11a == indexcounter ? $signed(6'sh2) : $signed(_GEN_469); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_471 = 10'h11b == indexcounter ? $signed(6'sh3) : $signed(_GEN_470); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_472 = 10'h11c == indexcounter ? $signed(6'sh4) : $signed(_GEN_471); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_473 = 10'h11d == indexcounter ? $signed(6'sh4) : $signed(_GEN_472); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_474 = 10'h11e == indexcounter ? $signed(6'sh5) : $signed(_GEN_473); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_475 = 10'h11f == indexcounter ? $signed(6'sh6) : $signed(_GEN_474); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_476 = 10'h120 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_475); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_477 = 10'h121 == indexcounter ? $signed(-6'shf) : $signed(_GEN_476); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_478 = 10'h122 == indexcounter ? $signed(-6'she) : $signed(_GEN_477); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_479 = 10'h123 == indexcounter ? $signed(-6'shd) : $signed(_GEN_478); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_480 = 10'h124 == indexcounter ? $signed(-6'shd) : $signed(_GEN_479); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_481 = 10'h125 == indexcounter ? $signed(-6'shc) : $signed(_GEN_480); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_482 = 10'h126 == indexcounter ? $signed(-6'shb) : $signed(_GEN_481); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_483 = 10'h127 == indexcounter ? $signed(-6'shb) : $signed(_GEN_482); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_484 = 10'h128 == indexcounter ? $signed(-6'sha) : $signed(_GEN_483); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_485 = 10'h129 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_484); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_486 = 10'h12a == indexcounter ? $signed(-6'sh8) : $signed(_GEN_485); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_487 = 10'h12b == indexcounter ? $signed(-6'sh8) : $signed(_GEN_486); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_488 = 10'h12c == indexcounter ? $signed(-6'sh7) : $signed(_GEN_487); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_489 = 10'h12d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_488); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_490 = 10'h12e == indexcounter ? $signed(-6'sh6) : $signed(_GEN_489); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_491 = 10'h12f == indexcounter ? $signed(-6'sh5) : $signed(_GEN_490); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_492 = 10'h130 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_491); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_493 = 10'h131 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_492); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_494 = 10'h132 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_493); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_495 = 10'h133 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_494); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_496 = 10'h134 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_495); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_497 = 10'h135 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_496); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_498 = 10'h136 == indexcounter ? $signed(6'sh0) : $signed(_GEN_497); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_499 = 10'h137 == indexcounter ? $signed(6'sh1) : $signed(_GEN_498); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_500 = 10'h138 == indexcounter ? $signed(6'sh1) : $signed(_GEN_499); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_501 = 10'h139 == indexcounter ? $signed(6'sh2) : $signed(_GEN_500); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_502 = 10'h13a == indexcounter ? $signed(6'sh3) : $signed(_GEN_501); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_503 = 10'h13b == indexcounter ? $signed(6'sh4) : $signed(_GEN_502); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_504 = 10'h13c == indexcounter ? $signed(6'sh4) : $signed(_GEN_503); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_505 = 10'h13d == indexcounter ? $signed(6'sh5) : $signed(_GEN_504); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_506 = 10'h13e == indexcounter ? $signed(6'sh6) : $signed(_GEN_505); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_507 = 10'h13f == indexcounter ? $signed(6'sh6) : $signed(_GEN_506); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_508 = 10'h140 == indexcounter ? $signed(-6'shf) : $signed(_GEN_507); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_509 = 10'h141 == indexcounter ? $signed(-6'she) : $signed(_GEN_508); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_510 = 10'h142 == indexcounter ? $signed(-6'shd) : $signed(_GEN_509); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_511 = 10'h143 == indexcounter ? $signed(-6'shd) : $signed(_GEN_510); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_512 = 10'h144 == indexcounter ? $signed(-6'shc) : $signed(_GEN_511); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_513 = 10'h145 == indexcounter ? $signed(-6'shb) : $signed(_GEN_512); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_514 = 10'h146 == indexcounter ? $signed(-6'shb) : $signed(_GEN_513); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_515 = 10'h147 == indexcounter ? $signed(-6'sha) : $signed(_GEN_514); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_516 = 10'h148 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_515); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_517 = 10'h149 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_516); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_518 = 10'h14a == indexcounter ? $signed(-6'sh8) : $signed(_GEN_517); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_519 = 10'h14b == indexcounter ? $signed(-6'sh7) : $signed(_GEN_518); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_520 = 10'h14c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_519); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_521 = 10'h14d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_520); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_522 = 10'h14e == indexcounter ? $signed(-6'sh5) : $signed(_GEN_521); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_523 = 10'h14f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_522); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_524 = 10'h150 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_523); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_525 = 10'h151 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_524); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_526 = 10'h152 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_525); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_527 = 10'h153 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_526); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_528 = 10'h154 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_527); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_529 = 10'h155 == indexcounter ? $signed(6'sh0) : $signed(_GEN_528); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_530 = 10'h156 == indexcounter ? $signed(6'sh1) : $signed(_GEN_529); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_531 = 10'h157 == indexcounter ? $signed(6'sh1) : $signed(_GEN_530); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_532 = 10'h158 == indexcounter ? $signed(6'sh2) : $signed(_GEN_531); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_533 = 10'h159 == indexcounter ? $signed(6'sh3) : $signed(_GEN_532); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_534 = 10'h15a == indexcounter ? $signed(6'sh4) : $signed(_GEN_533); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_535 = 10'h15b == indexcounter ? $signed(6'sh4) : $signed(_GEN_534); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_536 = 10'h15c == indexcounter ? $signed(6'sh5) : $signed(_GEN_535); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_537 = 10'h15d == indexcounter ? $signed(6'sh6) : $signed(_GEN_536); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_538 = 10'h15e == indexcounter ? $signed(6'sh6) : $signed(_GEN_537); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_539 = 10'h15f == indexcounter ? $signed(6'sh7) : $signed(_GEN_538); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_540 = 10'h160 == indexcounter ? $signed(-6'she) : $signed(_GEN_539); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_541 = 10'h161 == indexcounter ? $signed(-6'shd) : $signed(_GEN_540); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_542 = 10'h162 == indexcounter ? $signed(-6'shd) : $signed(_GEN_541); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_543 = 10'h163 == indexcounter ? $signed(-6'shc) : $signed(_GEN_542); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_544 = 10'h164 == indexcounter ? $signed(-6'shb) : $signed(_GEN_543); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_545 = 10'h165 == indexcounter ? $signed(-6'shb) : $signed(_GEN_544); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_546 = 10'h166 == indexcounter ? $signed(-6'sha) : $signed(_GEN_545); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_547 = 10'h167 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_546); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_548 = 10'h168 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_547); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_549 = 10'h169 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_548); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_550 = 10'h16a == indexcounter ? $signed(-6'sh7) : $signed(_GEN_549); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_551 = 10'h16b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_550); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_552 = 10'h16c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_551); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_553 = 10'h16d == indexcounter ? $signed(-6'sh5) : $signed(_GEN_552); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_554 = 10'h16e == indexcounter ? $signed(-6'sh4) : $signed(_GEN_553); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_555 = 10'h16f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_554); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_556 = 10'h170 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_555); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_557 = 10'h171 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_556); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_558 = 10'h172 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_557); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_559 = 10'h173 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_558); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_560 = 10'h174 == indexcounter ? $signed(6'sh0) : $signed(_GEN_559); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_561 = 10'h175 == indexcounter ? $signed(6'sh1) : $signed(_GEN_560); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_562 = 10'h176 == indexcounter ? $signed(6'sh1) : $signed(_GEN_561); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_563 = 10'h177 == indexcounter ? $signed(6'sh2) : $signed(_GEN_562); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_564 = 10'h178 == indexcounter ? $signed(6'sh3) : $signed(_GEN_563); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_565 = 10'h179 == indexcounter ? $signed(6'sh4) : $signed(_GEN_564); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_566 = 10'h17a == indexcounter ? $signed(6'sh4) : $signed(_GEN_565); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_567 = 10'h17b == indexcounter ? $signed(6'sh5) : $signed(_GEN_566); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_568 = 10'h17c == indexcounter ? $signed(6'sh6) : $signed(_GEN_567); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_569 = 10'h17d == indexcounter ? $signed(6'sh6) : $signed(_GEN_568); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_570 = 10'h17e == indexcounter ? $signed(6'sh7) : $signed(_GEN_569); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_571 = 10'h17f == indexcounter ? $signed(6'sh8) : $signed(_GEN_570); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_572 = 10'h180 == indexcounter ? $signed(-6'shd) : $signed(_GEN_571); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_573 = 10'h181 == indexcounter ? $signed(-6'shd) : $signed(_GEN_572); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_574 = 10'h182 == indexcounter ? $signed(-6'shc) : $signed(_GEN_573); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_575 = 10'h183 == indexcounter ? $signed(-6'shb) : $signed(_GEN_574); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_576 = 10'h184 == indexcounter ? $signed(-6'shb) : $signed(_GEN_575); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_577 = 10'h185 == indexcounter ? $signed(-6'sha) : $signed(_GEN_576); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_578 = 10'h186 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_577); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_579 = 10'h187 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_578); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_580 = 10'h188 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_579); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_581 = 10'h189 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_580); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_582 = 10'h18a == indexcounter ? $signed(-6'sh6) : $signed(_GEN_581); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_583 = 10'h18b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_582); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_584 = 10'h18c == indexcounter ? $signed(-6'sh5) : $signed(_GEN_583); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_585 = 10'h18d == indexcounter ? $signed(-6'sh4) : $signed(_GEN_584); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_586 = 10'h18e == indexcounter ? $signed(-6'sh4) : $signed(_GEN_585); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_587 = 10'h18f == indexcounter ? $signed(-6'sh3) : $signed(_GEN_586); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_588 = 10'h190 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_587); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_589 = 10'h191 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_588); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_590 = 10'h192 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_589); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_591 = 10'h193 == indexcounter ? $signed(6'sh0) : $signed(_GEN_590); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_592 = 10'h194 == indexcounter ? $signed(6'sh1) : $signed(_GEN_591); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_593 = 10'h195 == indexcounter ? $signed(6'sh1) : $signed(_GEN_592); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_594 = 10'h196 == indexcounter ? $signed(6'sh2) : $signed(_GEN_593); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_595 = 10'h197 == indexcounter ? $signed(6'sh3) : $signed(_GEN_594); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_596 = 10'h198 == indexcounter ? $signed(6'sh4) : $signed(_GEN_595); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_597 = 10'h199 == indexcounter ? $signed(6'sh4) : $signed(_GEN_596); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_598 = 10'h19a == indexcounter ? $signed(6'sh5) : $signed(_GEN_597); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_599 = 10'h19b == indexcounter ? $signed(6'sh6) : $signed(_GEN_598); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_600 = 10'h19c == indexcounter ? $signed(6'sh6) : $signed(_GEN_599); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_601 = 10'h19d == indexcounter ? $signed(6'sh7) : $signed(_GEN_600); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_602 = 10'h19e == indexcounter ? $signed(6'sh8) : $signed(_GEN_601); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_603 = 10'h19f == indexcounter ? $signed(6'sh8) : $signed(_GEN_602); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_604 = 10'h1a0 == indexcounter ? $signed(-6'shd) : $signed(_GEN_603); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_605 = 10'h1a1 == indexcounter ? $signed(-6'shc) : $signed(_GEN_604); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_606 = 10'h1a2 == indexcounter ? $signed(-6'shb) : $signed(_GEN_605); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_607 = 10'h1a3 == indexcounter ? $signed(-6'shb) : $signed(_GEN_606); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_608 = 10'h1a4 == indexcounter ? $signed(-6'sha) : $signed(_GEN_607); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_609 = 10'h1a5 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_608); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_610 = 10'h1a6 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_609); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_611 = 10'h1a7 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_610); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_612 = 10'h1a8 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_611); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_613 = 10'h1a9 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_612); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_614 = 10'h1aa == indexcounter ? $signed(-6'sh6) : $signed(_GEN_613); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_615 = 10'h1ab == indexcounter ? $signed(-6'sh5) : $signed(_GEN_614); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_616 = 10'h1ac == indexcounter ? $signed(-6'sh4) : $signed(_GEN_615); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_617 = 10'h1ad == indexcounter ? $signed(-6'sh4) : $signed(_GEN_616); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_618 = 10'h1ae == indexcounter ? $signed(-6'sh3) : $signed(_GEN_617); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_619 = 10'h1af == indexcounter ? $signed(-6'sh2) : $signed(_GEN_618); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_620 = 10'h1b0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_619); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_621 = 10'h1b1 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_620); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_622 = 10'h1b2 == indexcounter ? $signed(6'sh0) : $signed(_GEN_621); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_623 = 10'h1b3 == indexcounter ? $signed(6'sh1) : $signed(_GEN_622); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_624 = 10'h1b4 == indexcounter ? $signed(6'sh1) : $signed(_GEN_623); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_625 = 10'h1b5 == indexcounter ? $signed(6'sh2) : $signed(_GEN_624); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_626 = 10'h1b6 == indexcounter ? $signed(6'sh3) : $signed(_GEN_625); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_627 = 10'h1b7 == indexcounter ? $signed(6'sh4) : $signed(_GEN_626); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_628 = 10'h1b8 == indexcounter ? $signed(6'sh4) : $signed(_GEN_627); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_629 = 10'h1b9 == indexcounter ? $signed(6'sh5) : $signed(_GEN_628); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_630 = 10'h1ba == indexcounter ? $signed(6'sh6) : $signed(_GEN_629); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_631 = 10'h1bb == indexcounter ? $signed(6'sh6) : $signed(_GEN_630); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_632 = 10'h1bc == indexcounter ? $signed(6'sh7) : $signed(_GEN_631); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_633 = 10'h1bd == indexcounter ? $signed(6'sh8) : $signed(_GEN_632); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_634 = 10'h1be == indexcounter ? $signed(6'sh8) : $signed(_GEN_633); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_635 = 10'h1bf == indexcounter ? $signed(6'sh9) : $signed(_GEN_634); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_636 = 10'h1c0 == indexcounter ? $signed(-6'shc) : $signed(_GEN_635); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_637 = 10'h1c1 == indexcounter ? $signed(-6'shb) : $signed(_GEN_636); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_638 = 10'h1c2 == indexcounter ? $signed(-6'shb) : $signed(_GEN_637); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_639 = 10'h1c3 == indexcounter ? $signed(-6'sha) : $signed(_GEN_638); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_640 = 10'h1c4 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_639); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_641 = 10'h1c5 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_640); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_642 = 10'h1c6 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_641); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_643 = 10'h1c7 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_642); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_644 = 10'h1c8 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_643); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_645 = 10'h1c9 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_644); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_646 = 10'h1ca == indexcounter ? $signed(-6'sh5) : $signed(_GEN_645); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_647 = 10'h1cb == indexcounter ? $signed(-6'sh4) : $signed(_GEN_646); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_648 = 10'h1cc == indexcounter ? $signed(-6'sh4) : $signed(_GEN_647); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_649 = 10'h1cd == indexcounter ? $signed(-6'sh3) : $signed(_GEN_648); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_650 = 10'h1ce == indexcounter ? $signed(-6'sh2) : $signed(_GEN_649); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_651 = 10'h1cf == indexcounter ? $signed(-6'sh1) : $signed(_GEN_650); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_652 = 10'h1d0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_651); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_653 = 10'h1d1 == indexcounter ? $signed(6'sh0) : $signed(_GEN_652); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_654 = 10'h1d2 == indexcounter ? $signed(6'sh1) : $signed(_GEN_653); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_655 = 10'h1d3 == indexcounter ? $signed(6'sh1) : $signed(_GEN_654); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_656 = 10'h1d4 == indexcounter ? $signed(6'sh2) : $signed(_GEN_655); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_657 = 10'h1d5 == indexcounter ? $signed(6'sh3) : $signed(_GEN_656); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_658 = 10'h1d6 == indexcounter ? $signed(6'sh4) : $signed(_GEN_657); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_659 = 10'h1d7 == indexcounter ? $signed(6'sh4) : $signed(_GEN_658); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_660 = 10'h1d8 == indexcounter ? $signed(6'sh5) : $signed(_GEN_659); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_661 = 10'h1d9 == indexcounter ? $signed(6'sh6) : $signed(_GEN_660); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_662 = 10'h1da == indexcounter ? $signed(6'sh6) : $signed(_GEN_661); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_663 = 10'h1db == indexcounter ? $signed(6'sh7) : $signed(_GEN_662); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_664 = 10'h1dc == indexcounter ? $signed(6'sh8) : $signed(_GEN_663); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_665 = 10'h1dd == indexcounter ? $signed(6'sh8) : $signed(_GEN_664); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_666 = 10'h1de == indexcounter ? $signed(6'sh9) : $signed(_GEN_665); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_667 = 10'h1df == indexcounter ? $signed(6'sha) : $signed(_GEN_666); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_668 = 10'h1e0 == indexcounter ? $signed(-6'shb) : $signed(_GEN_667); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_669 = 10'h1e1 == indexcounter ? $signed(-6'shb) : $signed(_GEN_668); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_670 = 10'h1e2 == indexcounter ? $signed(-6'sha) : $signed(_GEN_669); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_671 = 10'h1e3 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_670); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_672 = 10'h1e4 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_671); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_673 = 10'h1e5 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_672); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_674 = 10'h1e6 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_673); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_675 = 10'h1e7 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_674); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_676 = 10'h1e8 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_675); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_677 = 10'h1e9 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_676); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_678 = 10'h1ea == indexcounter ? $signed(-6'sh4) : $signed(_GEN_677); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_679 = 10'h1eb == indexcounter ? $signed(-6'sh4) : $signed(_GEN_678); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_680 = 10'h1ec == indexcounter ? $signed(-6'sh3) : $signed(_GEN_679); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_681 = 10'h1ed == indexcounter ? $signed(-6'sh2) : $signed(_GEN_680); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_682 = 10'h1ee == indexcounter ? $signed(-6'sh1) : $signed(_GEN_681); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_683 = 10'h1ef == indexcounter ? $signed(-6'sh1) : $signed(_GEN_682); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_684 = 10'h1f0 == indexcounter ? $signed(6'sh0) : $signed(_GEN_683); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_685 = 10'h1f1 == indexcounter ? $signed(6'sh1) : $signed(_GEN_684); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_686 = 10'h1f2 == indexcounter ? $signed(6'sh1) : $signed(_GEN_685); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_687 = 10'h1f3 == indexcounter ? $signed(6'sh2) : $signed(_GEN_686); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_688 = 10'h1f4 == indexcounter ? $signed(6'sh3) : $signed(_GEN_687); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_689 = 10'h1f5 == indexcounter ? $signed(6'sh4) : $signed(_GEN_688); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_690 = 10'h1f6 == indexcounter ? $signed(6'sh4) : $signed(_GEN_689); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_691 = 10'h1f7 == indexcounter ? $signed(6'sh5) : $signed(_GEN_690); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_692 = 10'h1f8 == indexcounter ? $signed(6'sh6) : $signed(_GEN_691); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_693 = 10'h1f9 == indexcounter ? $signed(6'sh6) : $signed(_GEN_692); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_694 = 10'h1fa == indexcounter ? $signed(6'sh7) : $signed(_GEN_693); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_695 = 10'h1fb == indexcounter ? $signed(6'sh8) : $signed(_GEN_694); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_696 = 10'h1fc == indexcounter ? $signed(6'sh8) : $signed(_GEN_695); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_697 = 10'h1fd == indexcounter ? $signed(6'sh9) : $signed(_GEN_696); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_698 = 10'h1fe == indexcounter ? $signed(6'sha) : $signed(_GEN_697); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_699 = 10'h1ff == indexcounter ? $signed(6'shb) : $signed(_GEN_698); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_700 = 10'h200 == indexcounter ? $signed(-6'shb) : $signed(_GEN_699); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_701 = 10'h201 == indexcounter ? $signed(-6'sha) : $signed(_GEN_700); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_702 = 10'h202 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_701); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_703 = 10'h203 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_702); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_704 = 10'h204 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_703); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_705 = 10'h205 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_704); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_706 = 10'h206 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_705); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_707 = 10'h207 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_706); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_708 = 10'h208 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_707); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_709 = 10'h209 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_708); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_710 = 10'h20a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_709); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_711 = 10'h20b == indexcounter ? $signed(-6'sh3) : $signed(_GEN_710); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_712 = 10'h20c == indexcounter ? $signed(-6'sh2) : $signed(_GEN_711); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_713 = 10'h20d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_712); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_714 = 10'h20e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_713); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_715 = 10'h20f == indexcounter ? $signed(6'sh0) : $signed(_GEN_714); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_716 = 10'h210 == indexcounter ? $signed(6'sh1) : $signed(_GEN_715); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_717 = 10'h211 == indexcounter ? $signed(6'sh1) : $signed(_GEN_716); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_718 = 10'h212 == indexcounter ? $signed(6'sh2) : $signed(_GEN_717); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_719 = 10'h213 == indexcounter ? $signed(6'sh3) : $signed(_GEN_718); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_720 = 10'h214 == indexcounter ? $signed(6'sh4) : $signed(_GEN_719); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_721 = 10'h215 == indexcounter ? $signed(6'sh4) : $signed(_GEN_720); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_722 = 10'h216 == indexcounter ? $signed(6'sh5) : $signed(_GEN_721); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_723 = 10'h217 == indexcounter ? $signed(6'sh6) : $signed(_GEN_722); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_724 = 10'h218 == indexcounter ? $signed(6'sh6) : $signed(_GEN_723); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_725 = 10'h219 == indexcounter ? $signed(6'sh7) : $signed(_GEN_724); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_726 = 10'h21a == indexcounter ? $signed(6'sh8) : $signed(_GEN_725); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_727 = 10'h21b == indexcounter ? $signed(6'sh8) : $signed(_GEN_726); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_728 = 10'h21c == indexcounter ? $signed(6'sh9) : $signed(_GEN_727); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_729 = 10'h21d == indexcounter ? $signed(6'sha) : $signed(_GEN_728); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_730 = 10'h21e == indexcounter ? $signed(6'shb) : $signed(_GEN_729); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_731 = 10'h21f == indexcounter ? $signed(6'shb) : $signed(_GEN_730); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_732 = 10'h220 == indexcounter ? $signed(-6'sha) : $signed(_GEN_731); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_733 = 10'h221 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_732); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_734 = 10'h222 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_733); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_735 = 10'h223 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_734); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_736 = 10'h224 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_735); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_737 = 10'h225 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_736); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_738 = 10'h226 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_737); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_739 = 10'h227 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_738); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_740 = 10'h228 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_739); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_741 = 10'h229 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_740); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_742 = 10'h22a == indexcounter ? $signed(-6'sh3) : $signed(_GEN_741); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_743 = 10'h22b == indexcounter ? $signed(-6'sh2) : $signed(_GEN_742); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_744 = 10'h22c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_743); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_745 = 10'h22d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_744); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_746 = 10'h22e == indexcounter ? $signed(6'sh0) : $signed(_GEN_745); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_747 = 10'h22f == indexcounter ? $signed(6'sh1) : $signed(_GEN_746); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_748 = 10'h230 == indexcounter ? $signed(6'sh1) : $signed(_GEN_747); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_749 = 10'h231 == indexcounter ? $signed(6'sh2) : $signed(_GEN_748); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_750 = 10'h232 == indexcounter ? $signed(6'sh3) : $signed(_GEN_749); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_751 = 10'h233 == indexcounter ? $signed(6'sh4) : $signed(_GEN_750); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_752 = 10'h234 == indexcounter ? $signed(6'sh4) : $signed(_GEN_751); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_753 = 10'h235 == indexcounter ? $signed(6'sh5) : $signed(_GEN_752); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_754 = 10'h236 == indexcounter ? $signed(6'sh6) : $signed(_GEN_753); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_755 = 10'h237 == indexcounter ? $signed(6'sh6) : $signed(_GEN_754); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_756 = 10'h238 == indexcounter ? $signed(6'sh7) : $signed(_GEN_755); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_757 = 10'h239 == indexcounter ? $signed(6'sh8) : $signed(_GEN_756); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_758 = 10'h23a == indexcounter ? $signed(6'sh8) : $signed(_GEN_757); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_759 = 10'h23b == indexcounter ? $signed(6'sh9) : $signed(_GEN_758); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_760 = 10'h23c == indexcounter ? $signed(6'sha) : $signed(_GEN_759); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_761 = 10'h23d == indexcounter ? $signed(6'shb) : $signed(_GEN_760); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_762 = 10'h23e == indexcounter ? $signed(6'shb) : $signed(_GEN_761); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_763 = 10'h23f == indexcounter ? $signed(6'shc) : $signed(_GEN_762); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_764 = 10'h240 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_763); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_765 = 10'h241 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_764); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_766 = 10'h242 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_765); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_767 = 10'h243 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_766); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_768 = 10'h244 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_767); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_769 = 10'h245 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_768); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_770 = 10'h246 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_769); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_771 = 10'h247 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_770); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_772 = 10'h248 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_771); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_773 = 10'h249 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_772); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_774 = 10'h24a == indexcounter ? $signed(-6'sh2) : $signed(_GEN_773); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_775 = 10'h24b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_774); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_776 = 10'h24c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_775); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_777 = 10'h24d == indexcounter ? $signed(6'sh0) : $signed(_GEN_776); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_778 = 10'h24e == indexcounter ? $signed(6'sh1) : $signed(_GEN_777); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_779 = 10'h24f == indexcounter ? $signed(6'sh1) : $signed(_GEN_778); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_780 = 10'h250 == indexcounter ? $signed(6'sh2) : $signed(_GEN_779); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_781 = 10'h251 == indexcounter ? $signed(6'sh3) : $signed(_GEN_780); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_782 = 10'h252 == indexcounter ? $signed(6'sh4) : $signed(_GEN_781); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_783 = 10'h253 == indexcounter ? $signed(6'sh4) : $signed(_GEN_782); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_784 = 10'h254 == indexcounter ? $signed(6'sh5) : $signed(_GEN_783); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_785 = 10'h255 == indexcounter ? $signed(6'sh6) : $signed(_GEN_784); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_786 = 10'h256 == indexcounter ? $signed(6'sh6) : $signed(_GEN_785); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_787 = 10'h257 == indexcounter ? $signed(6'sh7) : $signed(_GEN_786); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_788 = 10'h258 == indexcounter ? $signed(6'sh8) : $signed(_GEN_787); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_789 = 10'h259 == indexcounter ? $signed(6'sh8) : $signed(_GEN_788); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_790 = 10'h25a == indexcounter ? $signed(6'sh9) : $signed(_GEN_789); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_791 = 10'h25b == indexcounter ? $signed(6'sha) : $signed(_GEN_790); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_792 = 10'h25c == indexcounter ? $signed(6'shb) : $signed(_GEN_791); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_793 = 10'h25d == indexcounter ? $signed(6'shb) : $signed(_GEN_792); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_794 = 10'h25e == indexcounter ? $signed(6'shc) : $signed(_GEN_793); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_795 = 10'h25f == indexcounter ? $signed(6'shd) : $signed(_GEN_794); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_796 = 10'h260 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_795); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_797 = 10'h261 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_796); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_798 = 10'h262 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_797); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_799 = 10'h263 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_798); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_800 = 10'h264 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_799); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_801 = 10'h265 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_800); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_802 = 10'h266 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_801); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_803 = 10'h267 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_802); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_804 = 10'h268 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_803); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_805 = 10'h269 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_804); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_806 = 10'h26a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_805); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_807 = 10'h26b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_806); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_808 = 10'h26c == indexcounter ? $signed(6'sh0) : $signed(_GEN_807); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_809 = 10'h26d == indexcounter ? $signed(6'sh1) : $signed(_GEN_808); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_810 = 10'h26e == indexcounter ? $signed(6'sh1) : $signed(_GEN_809); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_811 = 10'h26f == indexcounter ? $signed(6'sh2) : $signed(_GEN_810); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_812 = 10'h270 == indexcounter ? $signed(6'sh3) : $signed(_GEN_811); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_813 = 10'h271 == indexcounter ? $signed(6'sh4) : $signed(_GEN_812); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_814 = 10'h272 == indexcounter ? $signed(6'sh4) : $signed(_GEN_813); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_815 = 10'h273 == indexcounter ? $signed(6'sh5) : $signed(_GEN_814); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_816 = 10'h274 == indexcounter ? $signed(6'sh6) : $signed(_GEN_815); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_817 = 10'h275 == indexcounter ? $signed(6'sh6) : $signed(_GEN_816); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_818 = 10'h276 == indexcounter ? $signed(6'sh7) : $signed(_GEN_817); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_819 = 10'h277 == indexcounter ? $signed(6'sh8) : $signed(_GEN_818); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_820 = 10'h278 == indexcounter ? $signed(6'sh8) : $signed(_GEN_819); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_821 = 10'h279 == indexcounter ? $signed(6'sh9) : $signed(_GEN_820); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_822 = 10'h27a == indexcounter ? $signed(6'sha) : $signed(_GEN_821); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_823 = 10'h27b == indexcounter ? $signed(6'shb) : $signed(_GEN_822); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_824 = 10'h27c == indexcounter ? $signed(6'shb) : $signed(_GEN_823); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_825 = 10'h27d == indexcounter ? $signed(6'shc) : $signed(_GEN_824); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_826 = 10'h27e == indexcounter ? $signed(6'shd) : $signed(_GEN_825); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_827 = 10'h27f == indexcounter ? $signed(6'shd) : $signed(_GEN_826); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_828 = 10'h280 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_827); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_829 = 10'h281 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_828); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_830 = 10'h282 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_829); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_831 = 10'h283 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_830); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_832 = 10'h284 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_831); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_833 = 10'h285 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_832); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_834 = 10'h286 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_833); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_835 = 10'h287 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_834); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_836 = 10'h288 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_835); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_837 = 10'h289 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_836); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_838 = 10'h28a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_837); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_839 = 10'h28b == indexcounter ? $signed(6'sh0) : $signed(_GEN_838); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_840 = 10'h28c == indexcounter ? $signed(6'sh1) : $signed(_GEN_839); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_841 = 10'h28d == indexcounter ? $signed(6'sh1) : $signed(_GEN_840); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_842 = 10'h28e == indexcounter ? $signed(6'sh2) : $signed(_GEN_841); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_843 = 10'h28f == indexcounter ? $signed(6'sh3) : $signed(_GEN_842); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_844 = 10'h290 == indexcounter ? $signed(6'sh4) : $signed(_GEN_843); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_845 = 10'h291 == indexcounter ? $signed(6'sh4) : $signed(_GEN_844); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_846 = 10'h292 == indexcounter ? $signed(6'sh5) : $signed(_GEN_845); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_847 = 10'h293 == indexcounter ? $signed(6'sh6) : $signed(_GEN_846); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_848 = 10'h294 == indexcounter ? $signed(6'sh6) : $signed(_GEN_847); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_849 = 10'h295 == indexcounter ? $signed(6'sh7) : $signed(_GEN_848); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_850 = 10'h296 == indexcounter ? $signed(6'sh8) : $signed(_GEN_849); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_851 = 10'h297 == indexcounter ? $signed(6'sh8) : $signed(_GEN_850); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_852 = 10'h298 == indexcounter ? $signed(6'sh9) : $signed(_GEN_851); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_853 = 10'h299 == indexcounter ? $signed(6'sha) : $signed(_GEN_852); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_854 = 10'h29a == indexcounter ? $signed(6'shb) : $signed(_GEN_853); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_855 = 10'h29b == indexcounter ? $signed(6'shb) : $signed(_GEN_854); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_856 = 10'h29c == indexcounter ? $signed(6'shc) : $signed(_GEN_855); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_857 = 10'h29d == indexcounter ? $signed(6'shd) : $signed(_GEN_856); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_858 = 10'h29e == indexcounter ? $signed(6'shd) : $signed(_GEN_857); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_859 = 10'h29f == indexcounter ? $signed(6'she) : $signed(_GEN_858); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_860 = 10'h2a0 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_859); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_861 = 10'h2a1 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_860); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_862 = 10'h2a2 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_861); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_863 = 10'h2a3 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_862); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_864 = 10'h2a4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_863); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_865 = 10'h2a5 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_864); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_866 = 10'h2a6 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_865); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_867 = 10'h2a7 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_866); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_868 = 10'h2a8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_867); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_869 = 10'h2a9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_868); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_870 = 10'h2aa == indexcounter ? $signed(6'sh0) : $signed(_GEN_869); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_871 = 10'h2ab == indexcounter ? $signed(6'sh1) : $signed(_GEN_870); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_872 = 10'h2ac == indexcounter ? $signed(6'sh1) : $signed(_GEN_871); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_873 = 10'h2ad == indexcounter ? $signed(6'sh2) : $signed(_GEN_872); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_874 = 10'h2ae == indexcounter ? $signed(6'sh3) : $signed(_GEN_873); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_875 = 10'h2af == indexcounter ? $signed(6'sh4) : $signed(_GEN_874); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_876 = 10'h2b0 == indexcounter ? $signed(6'sh4) : $signed(_GEN_875); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_877 = 10'h2b1 == indexcounter ? $signed(6'sh5) : $signed(_GEN_876); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_878 = 10'h2b2 == indexcounter ? $signed(6'sh6) : $signed(_GEN_877); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_879 = 10'h2b3 == indexcounter ? $signed(6'sh6) : $signed(_GEN_878); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_880 = 10'h2b4 == indexcounter ? $signed(6'sh7) : $signed(_GEN_879); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_881 = 10'h2b5 == indexcounter ? $signed(6'sh8) : $signed(_GEN_880); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_882 = 10'h2b6 == indexcounter ? $signed(6'sh8) : $signed(_GEN_881); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_883 = 10'h2b7 == indexcounter ? $signed(6'sh9) : $signed(_GEN_882); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_884 = 10'h2b8 == indexcounter ? $signed(6'sha) : $signed(_GEN_883); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_885 = 10'h2b9 == indexcounter ? $signed(6'shb) : $signed(_GEN_884); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_886 = 10'h2ba == indexcounter ? $signed(6'shb) : $signed(_GEN_885); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_887 = 10'h2bb == indexcounter ? $signed(6'shc) : $signed(_GEN_886); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_888 = 10'h2bc == indexcounter ? $signed(6'shd) : $signed(_GEN_887); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_889 = 10'h2bd == indexcounter ? $signed(6'shd) : $signed(_GEN_888); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_890 = 10'h2be == indexcounter ? $signed(6'she) : $signed(_GEN_889); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_891 = 10'h2bf == indexcounter ? $signed(6'shf) : $signed(_GEN_890); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_892 = 10'h2c0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_891); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_893 = 10'h2c1 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_892); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_894 = 10'h2c2 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_893); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_895 = 10'h2c3 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_894); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_896 = 10'h2c4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_895); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_897 = 10'h2c5 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_896); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_898 = 10'h2c6 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_897); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_899 = 10'h2c7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_898); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_900 = 10'h2c8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_899); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_901 = 10'h2c9 == indexcounter ? $signed(6'sh0) : $signed(_GEN_900); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_902 = 10'h2ca == indexcounter ? $signed(6'sh1) : $signed(_GEN_901); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_903 = 10'h2cb == indexcounter ? $signed(6'sh1) : $signed(_GEN_902); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_904 = 10'h2cc == indexcounter ? $signed(6'sh2) : $signed(_GEN_903); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_905 = 10'h2cd == indexcounter ? $signed(6'sh3) : $signed(_GEN_904); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_906 = 10'h2ce == indexcounter ? $signed(6'sh4) : $signed(_GEN_905); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_907 = 10'h2cf == indexcounter ? $signed(6'sh4) : $signed(_GEN_906); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_908 = 10'h2d0 == indexcounter ? $signed(6'sh5) : $signed(_GEN_907); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_909 = 10'h2d1 == indexcounter ? $signed(6'sh6) : $signed(_GEN_908); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_910 = 10'h2d2 == indexcounter ? $signed(6'sh6) : $signed(_GEN_909); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_911 = 10'h2d3 == indexcounter ? $signed(6'sh7) : $signed(_GEN_910); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_912 = 10'h2d4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_911); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_913 = 10'h2d5 == indexcounter ? $signed(6'sh8) : $signed(_GEN_912); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_914 = 10'h2d6 == indexcounter ? $signed(6'sh9) : $signed(_GEN_913); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_915 = 10'h2d7 == indexcounter ? $signed(6'sha) : $signed(_GEN_914); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_916 = 10'h2d8 == indexcounter ? $signed(6'shb) : $signed(_GEN_915); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_917 = 10'h2d9 == indexcounter ? $signed(6'shb) : $signed(_GEN_916); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_918 = 10'h2da == indexcounter ? $signed(6'shc) : $signed(_GEN_917); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_919 = 10'h2db == indexcounter ? $signed(6'shd) : $signed(_GEN_918); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_920 = 10'h2dc == indexcounter ? $signed(6'shd) : $signed(_GEN_919); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_921 = 10'h2dd == indexcounter ? $signed(6'she) : $signed(_GEN_920); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_922 = 10'h2de == indexcounter ? $signed(6'shf) : $signed(_GEN_921); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_923 = 10'h2df == indexcounter ? $signed(6'sh10) : $signed(_GEN_922); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_924 = 10'h2e0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_923); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_925 = 10'h2e1 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_924); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_926 = 10'h2e2 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_925); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_927 = 10'h2e3 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_926); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_928 = 10'h2e4 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_927); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_929 = 10'h2e5 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_928); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_930 = 10'h2e6 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_929); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_931 = 10'h2e7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_930); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_932 = 10'h2e8 == indexcounter ? $signed(6'sh0) : $signed(_GEN_931); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_933 = 10'h2e9 == indexcounter ? $signed(6'sh1) : $signed(_GEN_932); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_934 = 10'h2ea == indexcounter ? $signed(6'sh1) : $signed(_GEN_933); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_935 = 10'h2eb == indexcounter ? $signed(6'sh2) : $signed(_GEN_934); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_936 = 10'h2ec == indexcounter ? $signed(6'sh3) : $signed(_GEN_935); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_937 = 10'h2ed == indexcounter ? $signed(6'sh4) : $signed(_GEN_936); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_938 = 10'h2ee == indexcounter ? $signed(6'sh4) : $signed(_GEN_937); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_939 = 10'h2ef == indexcounter ? $signed(6'sh5) : $signed(_GEN_938); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_940 = 10'h2f0 == indexcounter ? $signed(6'sh6) : $signed(_GEN_939); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_941 = 10'h2f1 == indexcounter ? $signed(6'sh6) : $signed(_GEN_940); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_942 = 10'h2f2 == indexcounter ? $signed(6'sh7) : $signed(_GEN_941); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_943 = 10'h2f3 == indexcounter ? $signed(6'sh8) : $signed(_GEN_942); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_944 = 10'h2f4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_943); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_945 = 10'h2f5 == indexcounter ? $signed(6'sh9) : $signed(_GEN_944); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_946 = 10'h2f6 == indexcounter ? $signed(6'sha) : $signed(_GEN_945); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_947 = 10'h2f7 == indexcounter ? $signed(6'shb) : $signed(_GEN_946); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_948 = 10'h2f8 == indexcounter ? $signed(6'shb) : $signed(_GEN_947); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_949 = 10'h2f9 == indexcounter ? $signed(6'shc) : $signed(_GEN_948); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_950 = 10'h2fa == indexcounter ? $signed(6'shd) : $signed(_GEN_949); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_951 = 10'h2fb == indexcounter ? $signed(6'shd) : $signed(_GEN_950); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_952 = 10'h2fc == indexcounter ? $signed(6'she) : $signed(_GEN_951); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_953 = 10'h2fd == indexcounter ? $signed(6'shf) : $signed(_GEN_952); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_954 = 10'h2fe == indexcounter ? $signed(6'sh10) : $signed(_GEN_953); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_955 = 10'h2ff == indexcounter ? $signed(6'sh10) : $signed(_GEN_954); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_956 = 10'h300 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_955); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_957 = 10'h301 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_956); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_958 = 10'h302 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_957); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_959 = 10'h303 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_958); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_960 = 10'h304 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_959); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_961 = 10'h305 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_960); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_962 = 10'h306 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_961); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_963 = 10'h307 == indexcounter ? $signed(6'sh0) : $signed(_GEN_962); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_964 = 10'h308 == indexcounter ? $signed(6'sh1) : $signed(_GEN_963); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_965 = 10'h309 == indexcounter ? $signed(6'sh1) : $signed(_GEN_964); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_966 = 10'h30a == indexcounter ? $signed(6'sh2) : $signed(_GEN_965); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_967 = 10'h30b == indexcounter ? $signed(6'sh3) : $signed(_GEN_966); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_968 = 10'h30c == indexcounter ? $signed(6'sh4) : $signed(_GEN_967); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_969 = 10'h30d == indexcounter ? $signed(6'sh4) : $signed(_GEN_968); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_970 = 10'h30e == indexcounter ? $signed(6'sh5) : $signed(_GEN_969); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_971 = 10'h30f == indexcounter ? $signed(6'sh6) : $signed(_GEN_970); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_972 = 10'h310 == indexcounter ? $signed(6'sh6) : $signed(_GEN_971); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_973 = 10'h311 == indexcounter ? $signed(6'sh7) : $signed(_GEN_972); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_974 = 10'h312 == indexcounter ? $signed(6'sh8) : $signed(_GEN_973); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_975 = 10'h313 == indexcounter ? $signed(6'sh8) : $signed(_GEN_974); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_976 = 10'h314 == indexcounter ? $signed(6'sh9) : $signed(_GEN_975); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_977 = 10'h315 == indexcounter ? $signed(6'sha) : $signed(_GEN_976); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_978 = 10'h316 == indexcounter ? $signed(6'shb) : $signed(_GEN_977); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_979 = 10'h317 == indexcounter ? $signed(6'shb) : $signed(_GEN_978); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_980 = 10'h318 == indexcounter ? $signed(6'shc) : $signed(_GEN_979); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_981 = 10'h319 == indexcounter ? $signed(6'shd) : $signed(_GEN_980); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_982 = 10'h31a == indexcounter ? $signed(6'shd) : $signed(_GEN_981); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_983 = 10'h31b == indexcounter ? $signed(6'she) : $signed(_GEN_982); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_984 = 10'h31c == indexcounter ? $signed(6'shf) : $signed(_GEN_983); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_985 = 10'h31d == indexcounter ? $signed(6'sh10) : $signed(_GEN_984); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_986 = 10'h31e == indexcounter ? $signed(6'sh10) : $signed(_GEN_985); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_987 = 10'h31f == indexcounter ? $signed(6'sh11) : $signed(_GEN_986); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_988 = 10'h320 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_987); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_989 = 10'h321 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_988); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_990 = 10'h322 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_989); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_991 = 10'h323 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_990); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_992 = 10'h324 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_991); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_993 = 10'h325 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_992); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_994 = 10'h326 == indexcounter ? $signed(6'sh0) : $signed(_GEN_993); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_995 = 10'h327 == indexcounter ? $signed(6'sh1) : $signed(_GEN_994); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_996 = 10'h328 == indexcounter ? $signed(6'sh1) : $signed(_GEN_995); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_997 = 10'h329 == indexcounter ? $signed(6'sh2) : $signed(_GEN_996); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_998 = 10'h32a == indexcounter ? $signed(6'sh3) : $signed(_GEN_997); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_999 = 10'h32b == indexcounter ? $signed(6'sh4) : $signed(_GEN_998); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1000 = 10'h32c == indexcounter ? $signed(6'sh4) : $signed(_GEN_999); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1001 = 10'h32d == indexcounter ? $signed(6'sh5) : $signed(_GEN_1000); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1002 = 10'h32e == indexcounter ? $signed(6'sh6) : $signed(_GEN_1001); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1003 = 10'h32f == indexcounter ? $signed(6'sh6) : $signed(_GEN_1002); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1004 = 10'h330 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1003); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1005 = 10'h331 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1004); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1006 = 10'h332 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1005); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1007 = 10'h333 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1006); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1008 = 10'h334 == indexcounter ? $signed(6'sha) : $signed(_GEN_1007); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1009 = 10'h335 == indexcounter ? $signed(6'shb) : $signed(_GEN_1008); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1010 = 10'h336 == indexcounter ? $signed(6'shb) : $signed(_GEN_1009); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1011 = 10'h337 == indexcounter ? $signed(6'shc) : $signed(_GEN_1010); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1012 = 10'h338 == indexcounter ? $signed(6'shd) : $signed(_GEN_1011); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1013 = 10'h339 == indexcounter ? $signed(6'shd) : $signed(_GEN_1012); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1014 = 10'h33a == indexcounter ? $signed(6'she) : $signed(_GEN_1013); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1015 = 10'h33b == indexcounter ? $signed(6'shf) : $signed(_GEN_1014); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1016 = 10'h33c == indexcounter ? $signed(6'sh10) : $signed(_GEN_1015); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1017 = 10'h33d == indexcounter ? $signed(6'sh10) : $signed(_GEN_1016); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1018 = 10'h33e == indexcounter ? $signed(6'sh11) : $signed(_GEN_1017); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1019 = 10'h33f == indexcounter ? $signed(6'sh12) : $signed(_GEN_1018); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1020 = 10'h340 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1019); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1021 = 10'h341 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1020); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1022 = 10'h342 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1021); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1023 = 10'h343 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1022); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1024 = 10'h344 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1023); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1025 = 10'h345 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1024); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1026 = 10'h346 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1025); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1027 = 10'h347 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1026); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1028 = 10'h348 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1027); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1029 = 10'h349 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1028); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1030 = 10'h34a == indexcounter ? $signed(6'sh4) : $signed(_GEN_1029); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1031 = 10'h34b == indexcounter ? $signed(6'sh4) : $signed(_GEN_1030); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1032 = 10'h34c == indexcounter ? $signed(6'sh5) : $signed(_GEN_1031); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1033 = 10'h34d == indexcounter ? $signed(6'sh6) : $signed(_GEN_1032); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1034 = 10'h34e == indexcounter ? $signed(6'sh6) : $signed(_GEN_1033); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1035 = 10'h34f == indexcounter ? $signed(6'sh7) : $signed(_GEN_1034); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1036 = 10'h350 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1035); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1037 = 10'h351 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1036); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1038 = 10'h352 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1037); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1039 = 10'h353 == indexcounter ? $signed(6'sha) : $signed(_GEN_1038); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1040 = 10'h354 == indexcounter ? $signed(6'shb) : $signed(_GEN_1039); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1041 = 10'h355 == indexcounter ? $signed(6'shb) : $signed(_GEN_1040); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1042 = 10'h356 == indexcounter ? $signed(6'shc) : $signed(_GEN_1041); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1043 = 10'h357 == indexcounter ? $signed(6'shd) : $signed(_GEN_1042); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1044 = 10'h358 == indexcounter ? $signed(6'shd) : $signed(_GEN_1043); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1045 = 10'h359 == indexcounter ? $signed(6'she) : $signed(_GEN_1044); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1046 = 10'h35a == indexcounter ? $signed(6'shf) : $signed(_GEN_1045); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1047 = 10'h35b == indexcounter ? $signed(6'sh10) : $signed(_GEN_1046); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1048 = 10'h35c == indexcounter ? $signed(6'sh10) : $signed(_GEN_1047); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1049 = 10'h35d == indexcounter ? $signed(6'sh11) : $signed(_GEN_1048); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1050 = 10'h35e == indexcounter ? $signed(6'sh12) : $signed(_GEN_1049); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1051 = 10'h35f == indexcounter ? $signed(6'sh12) : $signed(_GEN_1050); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1052 = 10'h360 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1051); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1053 = 10'h361 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1052); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1054 = 10'h362 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1053); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1055 = 10'h363 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1054); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1056 = 10'h364 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1055); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1057 = 10'h365 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1056); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1058 = 10'h366 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1057); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1059 = 10'h367 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1058); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1060 = 10'h368 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1059); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1061 = 10'h369 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1060); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1062 = 10'h36a == indexcounter ? $signed(6'sh4) : $signed(_GEN_1061); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1063 = 10'h36b == indexcounter ? $signed(6'sh5) : $signed(_GEN_1062); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1064 = 10'h36c == indexcounter ? $signed(6'sh6) : $signed(_GEN_1063); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1065 = 10'h36d == indexcounter ? $signed(6'sh6) : $signed(_GEN_1064); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1066 = 10'h36e == indexcounter ? $signed(6'sh7) : $signed(_GEN_1065); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1067 = 10'h36f == indexcounter ? $signed(6'sh8) : $signed(_GEN_1066); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1068 = 10'h370 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1067); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1069 = 10'h371 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1068); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1070 = 10'h372 == indexcounter ? $signed(6'sha) : $signed(_GEN_1069); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1071 = 10'h373 == indexcounter ? $signed(6'shb) : $signed(_GEN_1070); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1072 = 10'h374 == indexcounter ? $signed(6'shb) : $signed(_GEN_1071); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1073 = 10'h375 == indexcounter ? $signed(6'shc) : $signed(_GEN_1072); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1074 = 10'h376 == indexcounter ? $signed(6'shd) : $signed(_GEN_1073); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1075 = 10'h377 == indexcounter ? $signed(6'shd) : $signed(_GEN_1074); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1076 = 10'h378 == indexcounter ? $signed(6'she) : $signed(_GEN_1075); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1077 = 10'h379 == indexcounter ? $signed(6'shf) : $signed(_GEN_1076); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1078 = 10'h37a == indexcounter ? $signed(6'sh10) : $signed(_GEN_1077); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1079 = 10'h37b == indexcounter ? $signed(6'sh10) : $signed(_GEN_1078); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1080 = 10'h37c == indexcounter ? $signed(6'sh11) : $signed(_GEN_1079); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1081 = 10'h37d == indexcounter ? $signed(6'sh12) : $signed(_GEN_1080); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1082 = 10'h37e == indexcounter ? $signed(6'sh12) : $signed(_GEN_1081); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1083 = 10'h37f == indexcounter ? $signed(6'sh13) : $signed(_GEN_1082); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1084 = 10'h380 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1083); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1085 = 10'h381 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1084); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1086 = 10'h382 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1085); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1087 = 10'h383 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1086); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1088 = 10'h384 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1087); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1089 = 10'h385 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1088); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1090 = 10'h386 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1089); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1091 = 10'h387 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1090); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1092 = 10'h388 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1091); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1093 = 10'h389 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1092); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1094 = 10'h38a == indexcounter ? $signed(6'sh5) : $signed(_GEN_1093); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1095 = 10'h38b == indexcounter ? $signed(6'sh6) : $signed(_GEN_1094); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1096 = 10'h38c == indexcounter ? $signed(6'sh6) : $signed(_GEN_1095); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1097 = 10'h38d == indexcounter ? $signed(6'sh7) : $signed(_GEN_1096); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1098 = 10'h38e == indexcounter ? $signed(6'sh8) : $signed(_GEN_1097); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1099 = 10'h38f == indexcounter ? $signed(6'sh8) : $signed(_GEN_1098); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1100 = 10'h390 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1099); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1101 = 10'h391 == indexcounter ? $signed(6'sha) : $signed(_GEN_1100); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1102 = 10'h392 == indexcounter ? $signed(6'shb) : $signed(_GEN_1101); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1103 = 10'h393 == indexcounter ? $signed(6'shb) : $signed(_GEN_1102); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1104 = 10'h394 == indexcounter ? $signed(6'shc) : $signed(_GEN_1103); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1105 = 10'h395 == indexcounter ? $signed(6'shd) : $signed(_GEN_1104); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1106 = 10'h396 == indexcounter ? $signed(6'shd) : $signed(_GEN_1105); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1107 = 10'h397 == indexcounter ? $signed(6'she) : $signed(_GEN_1106); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1108 = 10'h398 == indexcounter ? $signed(6'shf) : $signed(_GEN_1107); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1109 = 10'h399 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1108); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1110 = 10'h39a == indexcounter ? $signed(6'sh10) : $signed(_GEN_1109); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1111 = 10'h39b == indexcounter ? $signed(6'sh11) : $signed(_GEN_1110); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1112 = 10'h39c == indexcounter ? $signed(6'sh12) : $signed(_GEN_1111); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1113 = 10'h39d == indexcounter ? $signed(6'sh12) : $signed(_GEN_1112); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1114 = 10'h39e == indexcounter ? $signed(6'sh13) : $signed(_GEN_1113); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1115 = 10'h39f == indexcounter ? $signed(6'sh14) : $signed(_GEN_1114); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1116 = 10'h3a0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1115); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1117 = 10'h3a1 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1116); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1118 = 10'h3a2 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1117); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1119 = 10'h3a3 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1118); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1120 = 10'h3a4 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1119); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1121 = 10'h3a5 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1120); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1122 = 10'h3a6 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1121); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1123 = 10'h3a7 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1122); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1124 = 10'h3a8 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1123); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1125 = 10'h3a9 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1124); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1126 = 10'h3aa == indexcounter ? $signed(6'sh6) : $signed(_GEN_1125); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1127 = 10'h3ab == indexcounter ? $signed(6'sh6) : $signed(_GEN_1126); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1128 = 10'h3ac == indexcounter ? $signed(6'sh7) : $signed(_GEN_1127); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1129 = 10'h3ad == indexcounter ? $signed(6'sh8) : $signed(_GEN_1128); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1130 = 10'h3ae == indexcounter ? $signed(6'sh8) : $signed(_GEN_1129); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1131 = 10'h3af == indexcounter ? $signed(6'sh9) : $signed(_GEN_1130); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1132 = 10'h3b0 == indexcounter ? $signed(6'sha) : $signed(_GEN_1131); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1133 = 10'h3b1 == indexcounter ? $signed(6'shb) : $signed(_GEN_1132); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1134 = 10'h3b2 == indexcounter ? $signed(6'shb) : $signed(_GEN_1133); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1135 = 10'h3b3 == indexcounter ? $signed(6'shc) : $signed(_GEN_1134); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1136 = 10'h3b4 == indexcounter ? $signed(6'shd) : $signed(_GEN_1135); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1137 = 10'h3b5 == indexcounter ? $signed(6'shd) : $signed(_GEN_1136); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1138 = 10'h3b6 == indexcounter ? $signed(6'she) : $signed(_GEN_1137); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1139 = 10'h3b7 == indexcounter ? $signed(6'shf) : $signed(_GEN_1138); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1140 = 10'h3b8 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1139); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1141 = 10'h3b9 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1140); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1142 = 10'h3ba == indexcounter ? $signed(6'sh11) : $signed(_GEN_1141); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1143 = 10'h3bb == indexcounter ? $signed(6'sh12) : $signed(_GEN_1142); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1144 = 10'h3bc == indexcounter ? $signed(6'sh12) : $signed(_GEN_1143); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1145 = 10'h3bd == indexcounter ? $signed(6'sh13) : $signed(_GEN_1144); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1146 = 10'h3be == indexcounter ? $signed(6'sh14) : $signed(_GEN_1145); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1147 = 10'h3bf == indexcounter ? $signed(6'sh15) : $signed(_GEN_1146); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1148 = 10'h3c0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1147); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1149 = 10'h3c1 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1148); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1150 = 10'h3c2 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1149); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1151 = 10'h3c3 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1150); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1152 = 10'h3c4 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1151); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1153 = 10'h3c5 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1152); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1154 = 10'h3c6 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1153); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1155 = 10'h3c7 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1154); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1156 = 10'h3c8 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1155); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1157 = 10'h3c9 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1156); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1158 = 10'h3ca == indexcounter ? $signed(6'sh6) : $signed(_GEN_1157); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1159 = 10'h3cb == indexcounter ? $signed(6'sh7) : $signed(_GEN_1158); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1160 = 10'h3cc == indexcounter ? $signed(6'sh8) : $signed(_GEN_1159); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1161 = 10'h3cd == indexcounter ? $signed(6'sh8) : $signed(_GEN_1160); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1162 = 10'h3ce == indexcounter ? $signed(6'sh9) : $signed(_GEN_1161); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1163 = 10'h3cf == indexcounter ? $signed(6'sha) : $signed(_GEN_1162); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1164 = 10'h3d0 == indexcounter ? $signed(6'shb) : $signed(_GEN_1163); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1165 = 10'h3d1 == indexcounter ? $signed(6'shb) : $signed(_GEN_1164); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1166 = 10'h3d2 == indexcounter ? $signed(6'shc) : $signed(_GEN_1165); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1167 = 10'h3d3 == indexcounter ? $signed(6'shd) : $signed(_GEN_1166); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1168 = 10'h3d4 == indexcounter ? $signed(6'shd) : $signed(_GEN_1167); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1169 = 10'h3d5 == indexcounter ? $signed(6'she) : $signed(_GEN_1168); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1170 = 10'h3d6 == indexcounter ? $signed(6'shf) : $signed(_GEN_1169); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1171 = 10'h3d7 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1170); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1172 = 10'h3d8 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1171); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1173 = 10'h3d9 == indexcounter ? $signed(6'sh11) : $signed(_GEN_1172); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1174 = 10'h3da == indexcounter ? $signed(6'sh12) : $signed(_GEN_1173); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1175 = 10'h3db == indexcounter ? $signed(6'sh12) : $signed(_GEN_1174); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1176 = 10'h3dc == indexcounter ? $signed(6'sh13) : $signed(_GEN_1175); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1177 = 10'h3dd == indexcounter ? $signed(6'sh14) : $signed(_GEN_1176); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1178 = 10'h3de == indexcounter ? $signed(6'sh15) : $signed(_GEN_1177); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1179 = 10'h3df == indexcounter ? $signed(6'sh15) : $signed(_GEN_1178); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1180 = 10'h3e0 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1179); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1181 = 10'h3e1 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1180); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1182 = 10'h3e2 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1181); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1183 = 10'h3e3 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1182); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1184 = 10'h3e4 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1183); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1185 = 10'h3e5 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1184); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1186 = 10'h3e6 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1185); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1187 = 10'h3e7 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1186); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1188 = 10'h3e8 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1187); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1189 = 10'h3e9 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1188); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1190 = 10'h3ea == indexcounter ? $signed(6'sh7) : $signed(_GEN_1189); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1191 = 10'h3eb == indexcounter ? $signed(6'sh8) : $signed(_GEN_1190); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1192 = 10'h3ec == indexcounter ? $signed(6'sh8) : $signed(_GEN_1191); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1193 = 10'h3ed == indexcounter ? $signed(6'sh9) : $signed(_GEN_1192); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1194 = 10'h3ee == indexcounter ? $signed(6'sha) : $signed(_GEN_1193); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1195 = 10'h3ef == indexcounter ? $signed(6'shb) : $signed(_GEN_1194); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1196 = 10'h3f0 == indexcounter ? $signed(6'shb) : $signed(_GEN_1195); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1197 = 10'h3f1 == indexcounter ? $signed(6'shc) : $signed(_GEN_1196); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1198 = 10'h3f2 == indexcounter ? $signed(6'shd) : $signed(_GEN_1197); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1199 = 10'h3f3 == indexcounter ? $signed(6'shd) : $signed(_GEN_1198); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1200 = 10'h3f4 == indexcounter ? $signed(6'she) : $signed(_GEN_1199); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1201 = 10'h3f5 == indexcounter ? $signed(6'shf) : $signed(_GEN_1200); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1202 = 10'h3f6 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1201); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1203 = 10'h3f7 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1202); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1204 = 10'h3f8 == indexcounter ? $signed(6'sh11) : $signed(_GEN_1203); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1205 = 10'h3f9 == indexcounter ? $signed(6'sh12) : $signed(_GEN_1204); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1206 = 10'h3fa == indexcounter ? $signed(6'sh12) : $signed(_GEN_1205); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1207 = 10'h3fb == indexcounter ? $signed(6'sh13) : $signed(_GEN_1206); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1208 = 10'h3fc == indexcounter ? $signed(6'sh14) : $signed(_GEN_1207); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1209 = 10'h3fd == indexcounter ? $signed(6'sh15) : $signed(_GEN_1208); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1210 = 10'h3fe == indexcounter ? $signed(6'sh15) : $signed(_GEN_1209); // @[GraphicEngineVGA.scala 296:49]
+  wire [5:0] _GEN_1211 = 10'h3ff == indexcounter ? $signed(6'sh16) : $signed(_GEN_1210); // @[GraphicEngineVGA.scala 296:49]
+  wire [10:0] _GEN_2309 = {{5{_GEN_1211[5]}},_GEN_1211}; // @[GraphicEngineVGA.scala 296:49]
+  wire [10:0] _T_237 = $signed(_T_233) + $signed(_GEN_2309); // @[GraphicEngineVGA.scala 296:77]
+  wire  _T_238 = pixelXBack == _T_237; // @[GraphicEngineVGA.scala 296:15]
+  wire [9:0] _T_241 = $signed(spriteYPositionReg_2) + 10'shf; // @[GraphicEngineVGA.scala 296:117]
+  wire [5:0] _GEN_1213 = 10'h1 == indexcounter ? $signed(6'sh0) : $signed(6'sh1); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1214 = 10'h2 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1213); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1215 = 10'h3 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1214); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1216 = 10'h4 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1215); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1217 = 10'h5 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1216); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1218 = 10'h6 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1217); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1219 = 10'h7 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1218); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1220 = 10'h8 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1219); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1221 = 10'h9 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1220); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1222 = 10'ha == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1221); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1223 = 10'hb == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1222); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1224 = 10'hc == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1223); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1225 = 10'hd == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1224); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1226 = 10'he == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1225); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1227 = 10'hf == indexcounter ? $signed(-6'sha) : $signed(_GEN_1226); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1228 = 10'h10 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1227); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1229 = 10'h11 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1228); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1230 = 10'h12 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1229); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1231 = 10'h13 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1230); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1232 = 10'h14 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1231); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1233 = 10'h15 == indexcounter ? $signed(-6'she) : $signed(_GEN_1232); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1234 = 10'h16 == indexcounter ? $signed(-6'shf) : $signed(_GEN_1233); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1235 = 10'h17 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1234); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1236 = 10'h18 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1235); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1237 = 10'h19 == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1236); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1238 = 10'h1a == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1237); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1239 = 10'h1b == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1238); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1240 = 10'h1c == indexcounter ? $signed(-6'sh13) : $signed(_GEN_1239); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1241 = 10'h1d == indexcounter ? $signed(-6'sh14) : $signed(_GEN_1240); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1242 = 10'h1e == indexcounter ? $signed(-6'sh15) : $signed(_GEN_1241); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1243 = 10'h1f == indexcounter ? $signed(-6'sh15) : $signed(_GEN_1242); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1244 = 10'h20 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1243); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1245 = 10'h21 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1244); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1246 = 10'h22 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1245); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1247 = 10'h23 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1246); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1248 = 10'h24 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1247); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1249 = 10'h25 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1248); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1250 = 10'h26 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1249); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1251 = 10'h27 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1250); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1252 = 10'h28 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1251); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1253 = 10'h29 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1252); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1254 = 10'h2a == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1253); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1255 = 10'h2b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1254); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1256 = 10'h2c == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1255); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1257 = 10'h2d == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1256); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1258 = 10'h2e == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1257); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1259 = 10'h2f == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1258); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1260 = 10'h30 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1259); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1261 = 10'h31 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1260); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1262 = 10'h32 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1261); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1263 = 10'h33 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1262); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1264 = 10'h34 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1263); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1265 = 10'h35 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1264); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1266 = 10'h36 == indexcounter ? $signed(-6'she) : $signed(_GEN_1265); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1267 = 10'h37 == indexcounter ? $signed(-6'shf) : $signed(_GEN_1266); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1268 = 10'h38 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1267); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1269 = 10'h39 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1268); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1270 = 10'h3a == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1269); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1271 = 10'h3b == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1270); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1272 = 10'h3c == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1271); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1273 = 10'h3d == indexcounter ? $signed(-6'sh13) : $signed(_GEN_1272); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1274 = 10'h3e == indexcounter ? $signed(-6'sh14) : $signed(_GEN_1273); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1275 = 10'h3f == indexcounter ? $signed(-6'sh15) : $signed(_GEN_1274); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1276 = 10'h40 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1275); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1277 = 10'h41 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1276); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1278 = 10'h42 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1277); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1279 = 10'h43 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1278); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1280 = 10'h44 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1279); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1281 = 10'h45 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1280); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1282 = 10'h46 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1281); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1283 = 10'h47 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1282); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1284 = 10'h48 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1283); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1285 = 10'h49 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1284); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1286 = 10'h4a == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1285); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1287 = 10'h4b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1286); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1288 = 10'h4c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1287); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1289 = 10'h4d == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1288); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1290 = 10'h4e == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1289); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1291 = 10'h4f == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1290); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1292 = 10'h50 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1291); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1293 = 10'h51 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1292); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1294 = 10'h52 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1293); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1295 = 10'h53 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1294); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1296 = 10'h54 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1295); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1297 = 10'h55 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1296); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1298 = 10'h56 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1297); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1299 = 10'h57 == indexcounter ? $signed(-6'she) : $signed(_GEN_1298); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1300 = 10'h58 == indexcounter ? $signed(-6'shf) : $signed(_GEN_1299); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1301 = 10'h59 == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1300); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1302 = 10'h5a == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1301); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1303 = 10'h5b == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1302); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1304 = 10'h5c == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1303); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1305 = 10'h5d == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1304); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1306 = 10'h5e == indexcounter ? $signed(-6'sh13) : $signed(_GEN_1305); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1307 = 10'h5f == indexcounter ? $signed(-6'sh14) : $signed(_GEN_1306); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1308 = 10'h60 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1307); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1309 = 10'h61 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1308); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1310 = 10'h62 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1309); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1311 = 10'h63 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1310); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1312 = 10'h64 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1311); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1313 = 10'h65 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1312); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1314 = 10'h66 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1313); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1315 = 10'h67 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1314); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1316 = 10'h68 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1315); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1317 = 10'h69 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1316); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1318 = 10'h6a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1317); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1319 = 10'h6b == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1318); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1320 = 10'h6c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1319); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1321 = 10'h6d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1320); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1322 = 10'h6e == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1321); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1323 = 10'h6f == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1322); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1324 = 10'h70 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1323); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1325 = 10'h71 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1324); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1326 = 10'h72 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1325); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1327 = 10'h73 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1326); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1328 = 10'h74 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1327); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1329 = 10'h75 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1328); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1330 = 10'h76 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1329); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1331 = 10'h77 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1330); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1332 = 10'h78 == indexcounter ? $signed(-6'she) : $signed(_GEN_1331); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1333 = 10'h79 == indexcounter ? $signed(-6'shf) : $signed(_GEN_1332); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1334 = 10'h7a == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1333); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1335 = 10'h7b == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1334); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1336 = 10'h7c == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1335); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1337 = 10'h7d == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1336); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1338 = 10'h7e == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1337); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1339 = 10'h7f == indexcounter ? $signed(-6'sh13) : $signed(_GEN_1338); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1340 = 10'h80 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1339); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1341 = 10'h81 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1340); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1342 = 10'h82 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1341); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1343 = 10'h83 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1342); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1344 = 10'h84 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1343); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1345 = 10'h85 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1344); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1346 = 10'h86 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1345); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1347 = 10'h87 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1346); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1348 = 10'h88 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1347); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1349 = 10'h89 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1348); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1350 = 10'h8a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1349); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1351 = 10'h8b == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1350); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1352 = 10'h8c == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1351); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1353 = 10'h8d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1352); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1354 = 10'h8e == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1353); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1355 = 10'h8f == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1354); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1356 = 10'h90 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1355); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1357 = 10'h91 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1356); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1358 = 10'h92 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1357); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1359 = 10'h93 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1358); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1360 = 10'h94 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1359); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1361 = 10'h95 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1360); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1362 = 10'h96 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1361); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1363 = 10'h97 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1362); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1364 = 10'h98 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1363); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1365 = 10'h99 == indexcounter ? $signed(-6'she) : $signed(_GEN_1364); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1366 = 10'h9a == indexcounter ? $signed(-6'shf) : $signed(_GEN_1365); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1367 = 10'h9b == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1366); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1368 = 10'h9c == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1367); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1369 = 10'h9d == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1368); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1370 = 10'h9e == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1369); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1371 = 10'h9f == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1370); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1372 = 10'ha0 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1371); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1373 = 10'ha1 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1372); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1374 = 10'ha2 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1373); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1375 = 10'ha3 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1374); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1376 = 10'ha4 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1375); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1377 = 10'ha5 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1376); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1378 = 10'ha6 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1377); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1379 = 10'ha7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1378); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1380 = 10'ha8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1379); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1381 = 10'ha9 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1380); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1382 = 10'haa == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1381); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1383 = 10'hab == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1382); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1384 = 10'hac == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1383); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1385 = 10'had == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1384); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1386 = 10'hae == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1385); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1387 = 10'haf == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1386); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1388 = 10'hb0 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1387); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1389 = 10'hb1 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1388); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1390 = 10'hb2 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1389); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1391 = 10'hb3 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1390); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1392 = 10'hb4 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1391); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1393 = 10'hb5 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1392); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1394 = 10'hb6 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1393); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1395 = 10'hb7 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1394); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1396 = 10'hb8 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1395); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1397 = 10'hb9 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1396); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1398 = 10'hba == indexcounter ? $signed(-6'she) : $signed(_GEN_1397); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1399 = 10'hbb == indexcounter ? $signed(-6'shf) : $signed(_GEN_1398); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1400 = 10'hbc == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1399); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1401 = 10'hbd == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1400); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1402 = 10'hbe == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1401); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1403 = 10'hbf == indexcounter ? $signed(-6'sh12) : $signed(_GEN_1402); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1404 = 10'hc0 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1403); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1405 = 10'hc1 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1404); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1406 = 10'hc2 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1405); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1407 = 10'hc3 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1406); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1408 = 10'hc4 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1407); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1409 = 10'hc5 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1408); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1410 = 10'hc6 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1409); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1411 = 10'hc7 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1410); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1412 = 10'hc8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1411); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1413 = 10'hc9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1412); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1414 = 10'hca == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1413); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1415 = 10'hcb == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1414); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1416 = 10'hcc == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1415); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1417 = 10'hcd == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1416); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1418 = 10'hce == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1417); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1419 = 10'hcf == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1418); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1420 = 10'hd0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1419); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1421 = 10'hd1 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1420); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1422 = 10'hd2 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1421); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1423 = 10'hd3 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1422); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1424 = 10'hd4 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1423); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1425 = 10'hd5 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1424); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1426 = 10'hd6 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1425); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1427 = 10'hd7 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1426); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1428 = 10'hd8 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1427); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1429 = 10'hd9 == indexcounter ? $signed(-6'shd) : $signed(_GEN_1428); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1430 = 10'hda == indexcounter ? $signed(-6'shd) : $signed(_GEN_1429); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1431 = 10'hdb == indexcounter ? $signed(-6'she) : $signed(_GEN_1430); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1432 = 10'hdc == indexcounter ? $signed(-6'shf) : $signed(_GEN_1431); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1433 = 10'hdd == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1432); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1434 = 10'hde == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1433); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1435 = 10'hdf == indexcounter ? $signed(-6'sh11) : $signed(_GEN_1434); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1436 = 10'he0 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1435); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1437 = 10'he1 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1436); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1438 = 10'he2 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1437); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1439 = 10'he3 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1438); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1440 = 10'he4 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1439); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1441 = 10'he5 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1440); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1442 = 10'he6 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1441); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1443 = 10'he7 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1442); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1444 = 10'he8 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1443); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1445 = 10'he9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1444); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1446 = 10'hea == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1445); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1447 = 10'heb == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1446); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1448 = 10'hec == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1447); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1449 = 10'hed == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1448); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1450 = 10'hee == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1449); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1451 = 10'hef == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1450); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1452 = 10'hf0 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1451); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1453 = 10'hf1 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1452); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1454 = 10'hf2 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1453); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1455 = 10'hf3 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1454); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1456 = 10'hf4 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1455); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1457 = 10'hf5 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1456); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1458 = 10'hf6 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1457); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1459 = 10'hf7 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1458); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1460 = 10'hf8 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1459); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1461 = 10'hf9 == indexcounter ? $signed(-6'shc) : $signed(_GEN_1460); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1462 = 10'hfa == indexcounter ? $signed(-6'shd) : $signed(_GEN_1461); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1463 = 10'hfb == indexcounter ? $signed(-6'shd) : $signed(_GEN_1462); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1464 = 10'hfc == indexcounter ? $signed(-6'she) : $signed(_GEN_1463); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1465 = 10'hfd == indexcounter ? $signed(-6'shf) : $signed(_GEN_1464); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1466 = 10'hfe == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1465); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1467 = 10'hff == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1466); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1468 = 10'h100 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1467); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1469 = 10'h101 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1468); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1470 = 10'h102 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1469); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1471 = 10'h103 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1470); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1472 = 10'h104 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1471); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1473 = 10'h105 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1472); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1474 = 10'h106 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1473); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1475 = 10'h107 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1474); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1476 = 10'h108 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1475); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1477 = 10'h109 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1476); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1478 = 10'h10a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1477); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1479 = 10'h10b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1478); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1480 = 10'h10c == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1479); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1481 = 10'h10d == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1480); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1482 = 10'h10e == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1481); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1483 = 10'h10f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1482); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1484 = 10'h110 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1483); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1485 = 10'h111 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1484); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1486 = 10'h112 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1485); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1487 = 10'h113 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1486); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1488 = 10'h114 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1487); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1489 = 10'h115 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1488); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1490 = 10'h116 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1489); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1491 = 10'h117 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1490); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1492 = 10'h118 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1491); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1493 = 10'h119 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1492); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1494 = 10'h11a == indexcounter ? $signed(-6'shc) : $signed(_GEN_1493); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1495 = 10'h11b == indexcounter ? $signed(-6'shd) : $signed(_GEN_1494); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1496 = 10'h11c == indexcounter ? $signed(-6'shd) : $signed(_GEN_1495); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1497 = 10'h11d == indexcounter ? $signed(-6'she) : $signed(_GEN_1496); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1498 = 10'h11e == indexcounter ? $signed(-6'shf) : $signed(_GEN_1497); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1499 = 10'h11f == indexcounter ? $signed(-6'sh10) : $signed(_GEN_1498); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1500 = 10'h120 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1499); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1501 = 10'h121 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1500); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1502 = 10'h122 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1501); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1503 = 10'h123 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1502); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1504 = 10'h124 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1503); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1505 = 10'h125 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1504); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1506 = 10'h126 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1505); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1507 = 10'h127 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1506); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1508 = 10'h128 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1507); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1509 = 10'h129 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1508); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1510 = 10'h12a == indexcounter ? $signed(6'sh0) : $signed(_GEN_1509); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1511 = 10'h12b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1510); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1512 = 10'h12c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1511); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1513 = 10'h12d == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1512); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1514 = 10'h12e == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1513); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1515 = 10'h12f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1514); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1516 = 10'h130 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1515); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1517 = 10'h131 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1516); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1518 = 10'h132 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1517); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1519 = 10'h133 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1518); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1520 = 10'h134 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1519); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1521 = 10'h135 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1520); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1522 = 10'h136 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1521); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1523 = 10'h137 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1522); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1524 = 10'h138 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1523); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1525 = 10'h139 == indexcounter ? $signed(-6'shb) : $signed(_GEN_1524); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1526 = 10'h13a == indexcounter ? $signed(-6'shb) : $signed(_GEN_1525); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1527 = 10'h13b == indexcounter ? $signed(-6'shc) : $signed(_GEN_1526); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1528 = 10'h13c == indexcounter ? $signed(-6'shd) : $signed(_GEN_1527); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1529 = 10'h13d == indexcounter ? $signed(-6'shd) : $signed(_GEN_1528); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1530 = 10'h13e == indexcounter ? $signed(-6'she) : $signed(_GEN_1529); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1531 = 10'h13f == indexcounter ? $signed(-6'shf) : $signed(_GEN_1530); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1532 = 10'h140 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1531); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1533 = 10'h141 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1532); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1534 = 10'h142 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1533); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1535 = 10'h143 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1534); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1536 = 10'h144 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1535); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1537 = 10'h145 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1536); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1538 = 10'h146 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1537); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1539 = 10'h147 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1538); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1540 = 10'h148 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1539); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1541 = 10'h149 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1540); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1542 = 10'h14a == indexcounter ? $signed(6'sh1) : $signed(_GEN_1541); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1543 = 10'h14b == indexcounter ? $signed(6'sh0) : $signed(_GEN_1542); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1544 = 10'h14c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1543); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1545 = 10'h14d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1544); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1546 = 10'h14e == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1545); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1547 = 10'h14f == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1546); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1548 = 10'h150 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1547); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1549 = 10'h151 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1548); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1550 = 10'h152 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1549); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1551 = 10'h153 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1550); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1552 = 10'h154 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1551); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1553 = 10'h155 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1552); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1554 = 10'h156 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1553); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1555 = 10'h157 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1554); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1556 = 10'h158 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1555); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1557 = 10'h159 == indexcounter ? $signed(-6'sha) : $signed(_GEN_1556); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1558 = 10'h15a == indexcounter ? $signed(-6'shb) : $signed(_GEN_1557); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1559 = 10'h15b == indexcounter ? $signed(-6'shb) : $signed(_GEN_1558); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1560 = 10'h15c == indexcounter ? $signed(-6'shc) : $signed(_GEN_1559); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1561 = 10'h15d == indexcounter ? $signed(-6'shd) : $signed(_GEN_1560); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1562 = 10'h15e == indexcounter ? $signed(-6'shd) : $signed(_GEN_1561); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1563 = 10'h15f == indexcounter ? $signed(-6'she) : $signed(_GEN_1562); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1564 = 10'h160 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1563); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1565 = 10'h161 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1564); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1566 = 10'h162 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1565); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1567 = 10'h163 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1566); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1568 = 10'h164 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1567); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1569 = 10'h165 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1568); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1570 = 10'h166 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1569); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1571 = 10'h167 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1570); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1572 = 10'h168 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1571); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1573 = 10'h169 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1572); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1574 = 10'h16a == indexcounter ? $signed(6'sh1) : $signed(_GEN_1573); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1575 = 10'h16b == indexcounter ? $signed(6'sh1) : $signed(_GEN_1574); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1576 = 10'h16c == indexcounter ? $signed(6'sh0) : $signed(_GEN_1575); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1577 = 10'h16d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1576); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1578 = 10'h16e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1577); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1579 = 10'h16f == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1578); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1580 = 10'h170 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1579); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1581 = 10'h171 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1580); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1582 = 10'h172 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1581); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1583 = 10'h173 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1582); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1584 = 10'h174 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1583); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1585 = 10'h175 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1584); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1586 = 10'h176 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1585); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1587 = 10'h177 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1586); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1588 = 10'h178 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1587); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1589 = 10'h179 == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1588); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1590 = 10'h17a == indexcounter ? $signed(-6'sha) : $signed(_GEN_1589); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1591 = 10'h17b == indexcounter ? $signed(-6'shb) : $signed(_GEN_1590); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1592 = 10'h17c == indexcounter ? $signed(-6'shb) : $signed(_GEN_1591); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1593 = 10'h17d == indexcounter ? $signed(-6'shc) : $signed(_GEN_1592); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1594 = 10'h17e == indexcounter ? $signed(-6'shd) : $signed(_GEN_1593); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1595 = 10'h17f == indexcounter ? $signed(-6'shd) : $signed(_GEN_1594); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1596 = 10'h180 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1595); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1597 = 10'h181 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1596); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1598 = 10'h182 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1597); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1599 = 10'h183 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1598); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1600 = 10'h184 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1599); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1601 = 10'h185 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1600); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1602 = 10'h186 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1601); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1603 = 10'h187 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1602); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1604 = 10'h188 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1603); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1605 = 10'h189 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1604); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1606 = 10'h18a == indexcounter ? $signed(6'sh2) : $signed(_GEN_1605); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1607 = 10'h18b == indexcounter ? $signed(6'sh1) : $signed(_GEN_1606); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1608 = 10'h18c == indexcounter ? $signed(6'sh1) : $signed(_GEN_1607); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1609 = 10'h18d == indexcounter ? $signed(6'sh0) : $signed(_GEN_1608); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1610 = 10'h18e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1609); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1611 = 10'h18f == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1610); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1612 = 10'h190 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1611); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1613 = 10'h191 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1612); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1614 = 10'h192 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1613); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1615 = 10'h193 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1614); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1616 = 10'h194 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1615); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1617 = 10'h195 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1616); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1618 = 10'h196 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1617); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1619 = 10'h197 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1618); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1620 = 10'h198 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1619); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1621 = 10'h199 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1620); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1622 = 10'h19a == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1621); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1623 = 10'h19b == indexcounter ? $signed(-6'sha) : $signed(_GEN_1622); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1624 = 10'h19c == indexcounter ? $signed(-6'shb) : $signed(_GEN_1623); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1625 = 10'h19d == indexcounter ? $signed(-6'shb) : $signed(_GEN_1624); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1626 = 10'h19e == indexcounter ? $signed(-6'shc) : $signed(_GEN_1625); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1627 = 10'h19f == indexcounter ? $signed(-6'shd) : $signed(_GEN_1626); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1628 = 10'h1a0 == indexcounter ? $signed(6'sha) : $signed(_GEN_1627); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1629 = 10'h1a1 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1628); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1630 = 10'h1a2 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1629); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1631 = 10'h1a3 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1630); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1632 = 10'h1a4 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1631); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1633 = 10'h1a5 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1632); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1634 = 10'h1a6 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1633); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1635 = 10'h1a7 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1634); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1636 = 10'h1a8 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1635); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1637 = 10'h1a9 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1636); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1638 = 10'h1aa == indexcounter ? $signed(6'sh3) : $signed(_GEN_1637); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1639 = 10'h1ab == indexcounter ? $signed(6'sh2) : $signed(_GEN_1638); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1640 = 10'h1ac == indexcounter ? $signed(6'sh1) : $signed(_GEN_1639); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1641 = 10'h1ad == indexcounter ? $signed(6'sh1) : $signed(_GEN_1640); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1642 = 10'h1ae == indexcounter ? $signed(6'sh0) : $signed(_GEN_1641); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1643 = 10'h1af == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1642); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1644 = 10'h1b0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1643); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1645 = 10'h1b1 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1644); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1646 = 10'h1b2 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1645); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1647 = 10'h1b3 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1646); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1648 = 10'h1b4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1647); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1649 = 10'h1b5 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1648); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1650 = 10'h1b6 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1649); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1651 = 10'h1b7 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1650); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1652 = 10'h1b8 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1651); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1653 = 10'h1b9 == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1652); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1654 = 10'h1ba == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1653); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1655 = 10'h1bb == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1654); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1656 = 10'h1bc == indexcounter ? $signed(-6'sha) : $signed(_GEN_1655); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1657 = 10'h1bd == indexcounter ? $signed(-6'shb) : $signed(_GEN_1656); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1658 = 10'h1be == indexcounter ? $signed(-6'shb) : $signed(_GEN_1657); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1659 = 10'h1bf == indexcounter ? $signed(-6'shc) : $signed(_GEN_1658); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1660 = 10'h1c0 == indexcounter ? $signed(6'shb) : $signed(_GEN_1659); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1661 = 10'h1c1 == indexcounter ? $signed(6'sha) : $signed(_GEN_1660); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1662 = 10'h1c2 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1661); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1663 = 10'h1c3 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1662); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1664 = 10'h1c4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1663); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1665 = 10'h1c5 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1664); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1666 = 10'h1c6 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1665); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1667 = 10'h1c7 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1666); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1668 = 10'h1c8 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1667); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1669 = 10'h1c9 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1668); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1670 = 10'h1ca == indexcounter ? $signed(6'sh4) : $signed(_GEN_1669); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1671 = 10'h1cb == indexcounter ? $signed(6'sh3) : $signed(_GEN_1670); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1672 = 10'h1cc == indexcounter ? $signed(6'sh2) : $signed(_GEN_1671); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1673 = 10'h1cd == indexcounter ? $signed(6'sh1) : $signed(_GEN_1672); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1674 = 10'h1ce == indexcounter ? $signed(6'sh1) : $signed(_GEN_1673); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1675 = 10'h1cf == indexcounter ? $signed(6'sh0) : $signed(_GEN_1674); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1676 = 10'h1d0 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1675); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1677 = 10'h1d1 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1676); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1678 = 10'h1d2 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1677); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1679 = 10'h1d3 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1678); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1680 = 10'h1d4 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1679); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1681 = 10'h1d5 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1680); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1682 = 10'h1d6 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1681); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1683 = 10'h1d7 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1682); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1684 = 10'h1d8 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1683); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1685 = 10'h1d9 == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1684); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1686 = 10'h1da == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1685); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1687 = 10'h1db == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1686); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1688 = 10'h1dc == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1687); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1689 = 10'h1dd == indexcounter ? $signed(-6'sha) : $signed(_GEN_1688); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1690 = 10'h1de == indexcounter ? $signed(-6'shb) : $signed(_GEN_1689); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1691 = 10'h1df == indexcounter ? $signed(-6'shb) : $signed(_GEN_1690); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1692 = 10'h1e0 == indexcounter ? $signed(6'shb) : $signed(_GEN_1691); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1693 = 10'h1e1 == indexcounter ? $signed(6'shb) : $signed(_GEN_1692); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1694 = 10'h1e2 == indexcounter ? $signed(6'sha) : $signed(_GEN_1693); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1695 = 10'h1e3 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1694); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1696 = 10'h1e4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1695); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1697 = 10'h1e5 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1696); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1698 = 10'h1e6 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1697); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1699 = 10'h1e7 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1698); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1700 = 10'h1e8 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1699); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1701 = 10'h1e9 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1700); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1702 = 10'h1ea == indexcounter ? $signed(6'sh4) : $signed(_GEN_1701); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1703 = 10'h1eb == indexcounter ? $signed(6'sh4) : $signed(_GEN_1702); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1704 = 10'h1ec == indexcounter ? $signed(6'sh3) : $signed(_GEN_1703); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1705 = 10'h1ed == indexcounter ? $signed(6'sh2) : $signed(_GEN_1704); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1706 = 10'h1ee == indexcounter ? $signed(6'sh1) : $signed(_GEN_1705); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1707 = 10'h1ef == indexcounter ? $signed(6'sh1) : $signed(_GEN_1706); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1708 = 10'h1f0 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1707); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1709 = 10'h1f1 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1708); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1710 = 10'h1f2 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1709); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1711 = 10'h1f3 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1710); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1712 = 10'h1f4 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1711); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1713 = 10'h1f5 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1712); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1714 = 10'h1f6 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1713); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1715 = 10'h1f7 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1714); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1716 = 10'h1f8 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1715); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1717 = 10'h1f9 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1716); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1718 = 10'h1fa == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1717); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1719 = 10'h1fb == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1718); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1720 = 10'h1fc == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1719); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1721 = 10'h1fd == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1720); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1722 = 10'h1fe == indexcounter ? $signed(-6'sha) : $signed(_GEN_1721); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1723 = 10'h1ff == indexcounter ? $signed(-6'shb) : $signed(_GEN_1722); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1724 = 10'h200 == indexcounter ? $signed(6'shc) : $signed(_GEN_1723); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1725 = 10'h201 == indexcounter ? $signed(6'shb) : $signed(_GEN_1724); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1726 = 10'h202 == indexcounter ? $signed(6'shb) : $signed(_GEN_1725); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1727 = 10'h203 == indexcounter ? $signed(6'sha) : $signed(_GEN_1726); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1728 = 10'h204 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1727); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1729 = 10'h205 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1728); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1730 = 10'h206 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1729); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1731 = 10'h207 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1730); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1732 = 10'h208 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1731); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1733 = 10'h209 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1732); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1734 = 10'h20a == indexcounter ? $signed(6'sh5) : $signed(_GEN_1733); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1735 = 10'h20b == indexcounter ? $signed(6'sh4) : $signed(_GEN_1734); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1736 = 10'h20c == indexcounter ? $signed(6'sh4) : $signed(_GEN_1735); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1737 = 10'h20d == indexcounter ? $signed(6'sh3) : $signed(_GEN_1736); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1738 = 10'h20e == indexcounter ? $signed(6'sh2) : $signed(_GEN_1737); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1739 = 10'h20f == indexcounter ? $signed(6'sh1) : $signed(_GEN_1738); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1740 = 10'h210 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1739); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1741 = 10'h211 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1740); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1742 = 10'h212 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1741); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1743 = 10'h213 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1742); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1744 = 10'h214 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1743); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1745 = 10'h215 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1744); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1746 = 10'h216 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1745); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1747 = 10'h217 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1746); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1748 = 10'h218 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1747); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1749 = 10'h219 == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1748); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1750 = 10'h21a == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1749); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1751 = 10'h21b == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1750); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1752 = 10'h21c == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1751); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1753 = 10'h21d == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1752); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1754 = 10'h21e == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1753); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1755 = 10'h21f == indexcounter ? $signed(-6'sha) : $signed(_GEN_1754); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1756 = 10'h220 == indexcounter ? $signed(6'shd) : $signed(_GEN_1755); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1757 = 10'h221 == indexcounter ? $signed(6'shc) : $signed(_GEN_1756); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1758 = 10'h222 == indexcounter ? $signed(6'shb) : $signed(_GEN_1757); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1759 = 10'h223 == indexcounter ? $signed(6'shb) : $signed(_GEN_1758); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1760 = 10'h224 == indexcounter ? $signed(6'sha) : $signed(_GEN_1759); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1761 = 10'h225 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1760); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1762 = 10'h226 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1761); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1763 = 10'h227 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1762); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1764 = 10'h228 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1763); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1765 = 10'h229 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1764); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1766 = 10'h22a == indexcounter ? $signed(6'sh6) : $signed(_GEN_1765); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1767 = 10'h22b == indexcounter ? $signed(6'sh5) : $signed(_GEN_1766); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1768 = 10'h22c == indexcounter ? $signed(6'sh4) : $signed(_GEN_1767); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1769 = 10'h22d == indexcounter ? $signed(6'sh4) : $signed(_GEN_1768); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1770 = 10'h22e == indexcounter ? $signed(6'sh3) : $signed(_GEN_1769); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1771 = 10'h22f == indexcounter ? $signed(6'sh2) : $signed(_GEN_1770); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1772 = 10'h230 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1771); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1773 = 10'h231 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1772); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1774 = 10'h232 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1773); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1775 = 10'h233 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1774); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1776 = 10'h234 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1775); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1777 = 10'h235 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1776); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1778 = 10'h236 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1777); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1779 = 10'h237 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1778); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1780 = 10'h238 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1779); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1781 = 10'h239 == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1780); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1782 = 10'h23a == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1781); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1783 = 10'h23b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1782); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1784 = 10'h23c == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1783); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1785 = 10'h23d == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1784); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1786 = 10'h23e == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1785); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1787 = 10'h23f == indexcounter ? $signed(-6'sh9) : $signed(_GEN_1786); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1788 = 10'h240 == indexcounter ? $signed(6'shd) : $signed(_GEN_1787); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1789 = 10'h241 == indexcounter ? $signed(6'shd) : $signed(_GEN_1788); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1790 = 10'h242 == indexcounter ? $signed(6'shc) : $signed(_GEN_1789); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1791 = 10'h243 == indexcounter ? $signed(6'shb) : $signed(_GEN_1790); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1792 = 10'h244 == indexcounter ? $signed(6'shb) : $signed(_GEN_1791); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1793 = 10'h245 == indexcounter ? $signed(6'sha) : $signed(_GEN_1792); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1794 = 10'h246 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1793); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1795 = 10'h247 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1794); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1796 = 10'h248 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1795); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1797 = 10'h249 == indexcounter ? $signed(6'sh7) : $signed(_GEN_1796); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1798 = 10'h24a == indexcounter ? $signed(6'sh6) : $signed(_GEN_1797); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1799 = 10'h24b == indexcounter ? $signed(6'sh6) : $signed(_GEN_1798); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1800 = 10'h24c == indexcounter ? $signed(6'sh5) : $signed(_GEN_1799); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1801 = 10'h24d == indexcounter ? $signed(6'sh4) : $signed(_GEN_1800); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1802 = 10'h24e == indexcounter ? $signed(6'sh4) : $signed(_GEN_1801); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1803 = 10'h24f == indexcounter ? $signed(6'sh3) : $signed(_GEN_1802); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1804 = 10'h250 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1803); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1805 = 10'h251 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1804); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1806 = 10'h252 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1805); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1807 = 10'h253 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1806); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1808 = 10'h254 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1807); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1809 = 10'h255 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1808); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1810 = 10'h256 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1809); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1811 = 10'h257 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1810); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1812 = 10'h258 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1811); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1813 = 10'h259 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1812); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1814 = 10'h25a == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1813); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1815 = 10'h25b == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1814); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1816 = 10'h25c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1815); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1817 = 10'h25d == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1816); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1818 = 10'h25e == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1817); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1819 = 10'h25f == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1818); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1820 = 10'h260 == indexcounter ? $signed(6'she) : $signed(_GEN_1819); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1821 = 10'h261 == indexcounter ? $signed(6'shd) : $signed(_GEN_1820); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1822 = 10'h262 == indexcounter ? $signed(6'shd) : $signed(_GEN_1821); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1823 = 10'h263 == indexcounter ? $signed(6'shc) : $signed(_GEN_1822); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1824 = 10'h264 == indexcounter ? $signed(6'shb) : $signed(_GEN_1823); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1825 = 10'h265 == indexcounter ? $signed(6'shb) : $signed(_GEN_1824); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1826 = 10'h266 == indexcounter ? $signed(6'sha) : $signed(_GEN_1825); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1827 = 10'h267 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1826); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1828 = 10'h268 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1827); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1829 = 10'h269 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1828); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1830 = 10'h26a == indexcounter ? $signed(6'sh7) : $signed(_GEN_1829); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1831 = 10'h26b == indexcounter ? $signed(6'sh6) : $signed(_GEN_1830); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1832 = 10'h26c == indexcounter ? $signed(6'sh6) : $signed(_GEN_1831); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1833 = 10'h26d == indexcounter ? $signed(6'sh5) : $signed(_GEN_1832); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1834 = 10'h26e == indexcounter ? $signed(6'sh4) : $signed(_GEN_1833); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1835 = 10'h26f == indexcounter ? $signed(6'sh4) : $signed(_GEN_1834); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1836 = 10'h270 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1835); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1837 = 10'h271 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1836); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1838 = 10'h272 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1837); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1839 = 10'h273 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1838); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1840 = 10'h274 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1839); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1841 = 10'h275 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1840); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1842 = 10'h276 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1841); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1843 = 10'h277 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1842); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1844 = 10'h278 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1843); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1845 = 10'h279 == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1844); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1846 = 10'h27a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1845); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1847 = 10'h27b == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1846); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1848 = 10'h27c == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1847); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1849 = 10'h27d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1848); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1850 = 10'h27e == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1849); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1851 = 10'h27f == indexcounter ? $signed(-6'sh8) : $signed(_GEN_1850); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1852 = 10'h280 == indexcounter ? $signed(6'shf) : $signed(_GEN_1851); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1853 = 10'h281 == indexcounter ? $signed(6'she) : $signed(_GEN_1852); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1854 = 10'h282 == indexcounter ? $signed(6'shd) : $signed(_GEN_1853); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1855 = 10'h283 == indexcounter ? $signed(6'shd) : $signed(_GEN_1854); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1856 = 10'h284 == indexcounter ? $signed(6'shc) : $signed(_GEN_1855); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1857 = 10'h285 == indexcounter ? $signed(6'shb) : $signed(_GEN_1856); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1858 = 10'h286 == indexcounter ? $signed(6'shb) : $signed(_GEN_1857); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1859 = 10'h287 == indexcounter ? $signed(6'sha) : $signed(_GEN_1858); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1860 = 10'h288 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1859); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1861 = 10'h289 == indexcounter ? $signed(6'sh8) : $signed(_GEN_1860); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1862 = 10'h28a == indexcounter ? $signed(6'sh8) : $signed(_GEN_1861); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1863 = 10'h28b == indexcounter ? $signed(6'sh7) : $signed(_GEN_1862); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1864 = 10'h28c == indexcounter ? $signed(6'sh6) : $signed(_GEN_1863); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1865 = 10'h28d == indexcounter ? $signed(6'sh6) : $signed(_GEN_1864); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1866 = 10'h28e == indexcounter ? $signed(6'sh5) : $signed(_GEN_1865); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1867 = 10'h28f == indexcounter ? $signed(6'sh4) : $signed(_GEN_1866); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1868 = 10'h290 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1867); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1869 = 10'h291 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1868); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1870 = 10'h292 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1869); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1871 = 10'h293 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1870); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1872 = 10'h294 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1871); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1873 = 10'h295 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1872); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1874 = 10'h296 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1873); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1875 = 10'h297 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1874); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1876 = 10'h298 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1875); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1877 = 10'h299 == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1876); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1878 = 10'h29a == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1877); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1879 = 10'h29b == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1878); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1880 = 10'h29c == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1879); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1881 = 10'h29d == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1880); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1882 = 10'h29e == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1881); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1883 = 10'h29f == indexcounter ? $signed(-6'sh7) : $signed(_GEN_1882); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1884 = 10'h2a0 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1883); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1885 = 10'h2a1 == indexcounter ? $signed(6'shf) : $signed(_GEN_1884); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1886 = 10'h2a2 == indexcounter ? $signed(6'she) : $signed(_GEN_1885); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1887 = 10'h2a3 == indexcounter ? $signed(6'shd) : $signed(_GEN_1886); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1888 = 10'h2a4 == indexcounter ? $signed(6'shd) : $signed(_GEN_1887); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1889 = 10'h2a5 == indexcounter ? $signed(6'shc) : $signed(_GEN_1888); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1890 = 10'h2a6 == indexcounter ? $signed(6'shb) : $signed(_GEN_1889); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1891 = 10'h2a7 == indexcounter ? $signed(6'shb) : $signed(_GEN_1890); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1892 = 10'h2a8 == indexcounter ? $signed(6'sha) : $signed(_GEN_1891); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1893 = 10'h2a9 == indexcounter ? $signed(6'sh9) : $signed(_GEN_1892); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1894 = 10'h2aa == indexcounter ? $signed(6'sh8) : $signed(_GEN_1893); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1895 = 10'h2ab == indexcounter ? $signed(6'sh8) : $signed(_GEN_1894); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1896 = 10'h2ac == indexcounter ? $signed(6'sh7) : $signed(_GEN_1895); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1897 = 10'h2ad == indexcounter ? $signed(6'sh6) : $signed(_GEN_1896); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1898 = 10'h2ae == indexcounter ? $signed(6'sh6) : $signed(_GEN_1897); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1899 = 10'h2af == indexcounter ? $signed(6'sh5) : $signed(_GEN_1898); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1900 = 10'h2b0 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1899); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1901 = 10'h2b1 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1900); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1902 = 10'h2b2 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1901); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1903 = 10'h2b3 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1902); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1904 = 10'h2b4 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1903); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1905 = 10'h2b5 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1904); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1906 = 10'h2b6 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1905); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1907 = 10'h2b7 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1906); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1908 = 10'h2b8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1907); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1909 = 10'h2b9 == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1908); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1910 = 10'h2ba == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1909); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1911 = 10'h2bb == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1910); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1912 = 10'h2bc == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1911); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1913 = 10'h2bd == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1912); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1914 = 10'h2be == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1913); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1915 = 10'h2bf == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1914); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1916 = 10'h2c0 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1915); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1917 = 10'h2c1 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1916); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1918 = 10'h2c2 == indexcounter ? $signed(6'shf) : $signed(_GEN_1917); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1919 = 10'h2c3 == indexcounter ? $signed(6'she) : $signed(_GEN_1918); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1920 = 10'h2c4 == indexcounter ? $signed(6'shd) : $signed(_GEN_1919); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1921 = 10'h2c5 == indexcounter ? $signed(6'shd) : $signed(_GEN_1920); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1922 = 10'h2c6 == indexcounter ? $signed(6'shc) : $signed(_GEN_1921); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1923 = 10'h2c7 == indexcounter ? $signed(6'shb) : $signed(_GEN_1922); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1924 = 10'h2c8 == indexcounter ? $signed(6'shb) : $signed(_GEN_1923); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1925 = 10'h2c9 == indexcounter ? $signed(6'sha) : $signed(_GEN_1924); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1926 = 10'h2ca == indexcounter ? $signed(6'sh9) : $signed(_GEN_1925); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1927 = 10'h2cb == indexcounter ? $signed(6'sh8) : $signed(_GEN_1926); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1928 = 10'h2cc == indexcounter ? $signed(6'sh8) : $signed(_GEN_1927); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1929 = 10'h2cd == indexcounter ? $signed(6'sh7) : $signed(_GEN_1928); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1930 = 10'h2ce == indexcounter ? $signed(6'sh6) : $signed(_GEN_1929); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1931 = 10'h2cf == indexcounter ? $signed(6'sh6) : $signed(_GEN_1930); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1932 = 10'h2d0 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1931); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1933 = 10'h2d1 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1932); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1934 = 10'h2d2 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1933); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1935 = 10'h2d3 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1934); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1936 = 10'h2d4 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1935); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1937 = 10'h2d5 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1936); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1938 = 10'h2d6 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1937); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1939 = 10'h2d7 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1938); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1940 = 10'h2d8 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1939); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1941 = 10'h2d9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1940); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1942 = 10'h2da == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1941); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1943 = 10'h2db == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1942); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1944 = 10'h2dc == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1943); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1945 = 10'h2dd == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1944); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1946 = 10'h2de == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1945); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1947 = 10'h2df == indexcounter ? $signed(-6'sh6) : $signed(_GEN_1946); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1948 = 10'h2e0 == indexcounter ? $signed(6'sh11) : $signed(_GEN_1947); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1949 = 10'h2e1 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1948); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1950 = 10'h2e2 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1949); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1951 = 10'h2e3 == indexcounter ? $signed(6'shf) : $signed(_GEN_1950); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1952 = 10'h2e4 == indexcounter ? $signed(6'she) : $signed(_GEN_1951); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1953 = 10'h2e5 == indexcounter ? $signed(6'shd) : $signed(_GEN_1952); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1954 = 10'h2e6 == indexcounter ? $signed(6'shd) : $signed(_GEN_1953); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1955 = 10'h2e7 == indexcounter ? $signed(6'shc) : $signed(_GEN_1954); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1956 = 10'h2e8 == indexcounter ? $signed(6'shb) : $signed(_GEN_1955); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1957 = 10'h2e9 == indexcounter ? $signed(6'shb) : $signed(_GEN_1956); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1958 = 10'h2ea == indexcounter ? $signed(6'sha) : $signed(_GEN_1957); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1959 = 10'h2eb == indexcounter ? $signed(6'sh9) : $signed(_GEN_1958); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1960 = 10'h2ec == indexcounter ? $signed(6'sh8) : $signed(_GEN_1959); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1961 = 10'h2ed == indexcounter ? $signed(6'sh8) : $signed(_GEN_1960); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1962 = 10'h2ee == indexcounter ? $signed(6'sh7) : $signed(_GEN_1961); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1963 = 10'h2ef == indexcounter ? $signed(6'sh6) : $signed(_GEN_1962); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1964 = 10'h2f0 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1963); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1965 = 10'h2f1 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1964); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1966 = 10'h2f2 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1965); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1967 = 10'h2f3 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1966); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1968 = 10'h2f4 == indexcounter ? $signed(6'sh3) : $signed(_GEN_1967); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1969 = 10'h2f5 == indexcounter ? $signed(6'sh2) : $signed(_GEN_1968); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1970 = 10'h2f6 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1969); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1971 = 10'h2f7 == indexcounter ? $signed(6'sh1) : $signed(_GEN_1970); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1972 = 10'h2f8 == indexcounter ? $signed(6'sh0) : $signed(_GEN_1971); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1973 = 10'h2f9 == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1972); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1974 = 10'h2fa == indexcounter ? $signed(-6'sh1) : $signed(_GEN_1973); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1975 = 10'h2fb == indexcounter ? $signed(-6'sh2) : $signed(_GEN_1974); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1976 = 10'h2fc == indexcounter ? $signed(-6'sh3) : $signed(_GEN_1975); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1977 = 10'h2fd == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1976); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1978 = 10'h2fe == indexcounter ? $signed(-6'sh4) : $signed(_GEN_1977); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1979 = 10'h2ff == indexcounter ? $signed(-6'sh5) : $signed(_GEN_1978); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1980 = 10'h300 == indexcounter ? $signed(6'sh12) : $signed(_GEN_1979); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1981 = 10'h301 == indexcounter ? $signed(6'sh11) : $signed(_GEN_1980); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1982 = 10'h302 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1981); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1983 = 10'h303 == indexcounter ? $signed(6'sh10) : $signed(_GEN_1982); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1984 = 10'h304 == indexcounter ? $signed(6'shf) : $signed(_GEN_1983); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1985 = 10'h305 == indexcounter ? $signed(6'she) : $signed(_GEN_1984); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1986 = 10'h306 == indexcounter ? $signed(6'shd) : $signed(_GEN_1985); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1987 = 10'h307 == indexcounter ? $signed(6'shd) : $signed(_GEN_1986); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1988 = 10'h308 == indexcounter ? $signed(6'shc) : $signed(_GEN_1987); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1989 = 10'h309 == indexcounter ? $signed(6'shb) : $signed(_GEN_1988); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1990 = 10'h30a == indexcounter ? $signed(6'shb) : $signed(_GEN_1989); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1991 = 10'h30b == indexcounter ? $signed(6'sha) : $signed(_GEN_1990); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1992 = 10'h30c == indexcounter ? $signed(6'sh9) : $signed(_GEN_1991); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1993 = 10'h30d == indexcounter ? $signed(6'sh8) : $signed(_GEN_1992); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1994 = 10'h30e == indexcounter ? $signed(6'sh8) : $signed(_GEN_1993); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1995 = 10'h30f == indexcounter ? $signed(6'sh7) : $signed(_GEN_1994); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1996 = 10'h310 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1995); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1997 = 10'h311 == indexcounter ? $signed(6'sh6) : $signed(_GEN_1996); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1998 = 10'h312 == indexcounter ? $signed(6'sh5) : $signed(_GEN_1997); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_1999 = 10'h313 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1998); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2000 = 10'h314 == indexcounter ? $signed(6'sh4) : $signed(_GEN_1999); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2001 = 10'h315 == indexcounter ? $signed(6'sh3) : $signed(_GEN_2000); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2002 = 10'h316 == indexcounter ? $signed(6'sh2) : $signed(_GEN_2001); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2003 = 10'h317 == indexcounter ? $signed(6'sh1) : $signed(_GEN_2002); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2004 = 10'h318 == indexcounter ? $signed(6'sh1) : $signed(_GEN_2003); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2005 = 10'h319 == indexcounter ? $signed(6'sh0) : $signed(_GEN_2004); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2006 = 10'h31a == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2005); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2007 = 10'h31b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2006); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2008 = 10'h31c == indexcounter ? $signed(-6'sh2) : $signed(_GEN_2007); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2009 = 10'h31d == indexcounter ? $signed(-6'sh3) : $signed(_GEN_2008); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2010 = 10'h31e == indexcounter ? $signed(-6'sh4) : $signed(_GEN_2009); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2011 = 10'h31f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_2010); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2012 = 10'h320 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2011); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2013 = 10'h321 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2012); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2014 = 10'h322 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2013); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2015 = 10'h323 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2014); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2016 = 10'h324 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2015); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2017 = 10'h325 == indexcounter ? $signed(6'shf) : $signed(_GEN_2016); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2018 = 10'h326 == indexcounter ? $signed(6'she) : $signed(_GEN_2017); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2019 = 10'h327 == indexcounter ? $signed(6'shd) : $signed(_GEN_2018); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2020 = 10'h328 == indexcounter ? $signed(6'shd) : $signed(_GEN_2019); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2021 = 10'h329 == indexcounter ? $signed(6'shc) : $signed(_GEN_2020); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2022 = 10'h32a == indexcounter ? $signed(6'shb) : $signed(_GEN_2021); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2023 = 10'h32b == indexcounter ? $signed(6'shb) : $signed(_GEN_2022); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2024 = 10'h32c == indexcounter ? $signed(6'sha) : $signed(_GEN_2023); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2025 = 10'h32d == indexcounter ? $signed(6'sh9) : $signed(_GEN_2024); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2026 = 10'h32e == indexcounter ? $signed(6'sh8) : $signed(_GEN_2025); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2027 = 10'h32f == indexcounter ? $signed(6'sh8) : $signed(_GEN_2026); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2028 = 10'h330 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2027); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2029 = 10'h331 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2028); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2030 = 10'h332 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2029); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2031 = 10'h333 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2030); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2032 = 10'h334 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2031); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2033 = 10'h335 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2032); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2034 = 10'h336 == indexcounter ? $signed(6'sh3) : $signed(_GEN_2033); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2035 = 10'h337 == indexcounter ? $signed(6'sh2) : $signed(_GEN_2034); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2036 = 10'h338 == indexcounter ? $signed(6'sh1) : $signed(_GEN_2035); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2037 = 10'h339 == indexcounter ? $signed(6'sh1) : $signed(_GEN_2036); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2038 = 10'h33a == indexcounter ? $signed(6'sh0) : $signed(_GEN_2037); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2039 = 10'h33b == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2038); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2040 = 10'h33c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2039); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2041 = 10'h33d == indexcounter ? $signed(-6'sh2) : $signed(_GEN_2040); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2042 = 10'h33e == indexcounter ? $signed(-6'sh3) : $signed(_GEN_2041); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2043 = 10'h33f == indexcounter ? $signed(-6'sh4) : $signed(_GEN_2042); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2044 = 10'h340 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2043); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2045 = 10'h341 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2044); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2046 = 10'h342 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2045); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2047 = 10'h343 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2046); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2048 = 10'h344 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2047); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2049 = 10'h345 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2048); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2050 = 10'h346 == indexcounter ? $signed(6'shf) : $signed(_GEN_2049); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2051 = 10'h347 == indexcounter ? $signed(6'she) : $signed(_GEN_2050); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2052 = 10'h348 == indexcounter ? $signed(6'shd) : $signed(_GEN_2051); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2053 = 10'h349 == indexcounter ? $signed(6'shd) : $signed(_GEN_2052); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2054 = 10'h34a == indexcounter ? $signed(6'shc) : $signed(_GEN_2053); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2055 = 10'h34b == indexcounter ? $signed(6'shb) : $signed(_GEN_2054); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2056 = 10'h34c == indexcounter ? $signed(6'shb) : $signed(_GEN_2055); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2057 = 10'h34d == indexcounter ? $signed(6'sha) : $signed(_GEN_2056); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2058 = 10'h34e == indexcounter ? $signed(6'sh9) : $signed(_GEN_2057); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2059 = 10'h34f == indexcounter ? $signed(6'sh8) : $signed(_GEN_2058); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2060 = 10'h350 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2059); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2061 = 10'h351 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2060); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2062 = 10'h352 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2061); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2063 = 10'h353 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2062); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2064 = 10'h354 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2063); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2065 = 10'h355 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2064); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2066 = 10'h356 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2065); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2067 = 10'h357 == indexcounter ? $signed(6'sh3) : $signed(_GEN_2066); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2068 = 10'h358 == indexcounter ? $signed(6'sh2) : $signed(_GEN_2067); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2069 = 10'h359 == indexcounter ? $signed(6'sh1) : $signed(_GEN_2068); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2070 = 10'h35a == indexcounter ? $signed(6'sh1) : $signed(_GEN_2069); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2071 = 10'h35b == indexcounter ? $signed(6'sh0) : $signed(_GEN_2070); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2072 = 10'h35c == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2071); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2073 = 10'h35d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2072); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2074 = 10'h35e == indexcounter ? $signed(-6'sh2) : $signed(_GEN_2073); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2075 = 10'h35f == indexcounter ? $signed(-6'sh3) : $signed(_GEN_2074); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2076 = 10'h360 == indexcounter ? $signed(6'sh14) : $signed(_GEN_2075); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2077 = 10'h361 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2076); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2078 = 10'h362 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2077); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2079 = 10'h363 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2078); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2080 = 10'h364 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2079); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2081 = 10'h365 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2080); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2082 = 10'h366 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2081); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2083 = 10'h367 == indexcounter ? $signed(6'shf) : $signed(_GEN_2082); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2084 = 10'h368 == indexcounter ? $signed(6'she) : $signed(_GEN_2083); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2085 = 10'h369 == indexcounter ? $signed(6'shd) : $signed(_GEN_2084); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2086 = 10'h36a == indexcounter ? $signed(6'shd) : $signed(_GEN_2085); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2087 = 10'h36b == indexcounter ? $signed(6'shc) : $signed(_GEN_2086); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2088 = 10'h36c == indexcounter ? $signed(6'shb) : $signed(_GEN_2087); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2089 = 10'h36d == indexcounter ? $signed(6'shb) : $signed(_GEN_2088); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2090 = 10'h36e == indexcounter ? $signed(6'sha) : $signed(_GEN_2089); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2091 = 10'h36f == indexcounter ? $signed(6'sh9) : $signed(_GEN_2090); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2092 = 10'h370 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2091); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2093 = 10'h371 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2092); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2094 = 10'h372 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2093); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2095 = 10'h373 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2094); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2096 = 10'h374 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2095); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2097 = 10'h375 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2096); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2098 = 10'h376 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2097); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2099 = 10'h377 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2098); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2100 = 10'h378 == indexcounter ? $signed(6'sh3) : $signed(_GEN_2099); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2101 = 10'h379 == indexcounter ? $signed(6'sh2) : $signed(_GEN_2100); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2102 = 10'h37a == indexcounter ? $signed(6'sh1) : $signed(_GEN_2101); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2103 = 10'h37b == indexcounter ? $signed(6'sh1) : $signed(_GEN_2102); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2104 = 10'h37c == indexcounter ? $signed(6'sh0) : $signed(_GEN_2103); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2105 = 10'h37d == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2104); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2106 = 10'h37e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2105); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2107 = 10'h37f == indexcounter ? $signed(-6'sh2) : $signed(_GEN_2106); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2108 = 10'h380 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2107); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2109 = 10'h381 == indexcounter ? $signed(6'sh14) : $signed(_GEN_2108); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2110 = 10'h382 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2109); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2111 = 10'h383 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2110); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2112 = 10'h384 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2111); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2113 = 10'h385 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2112); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2114 = 10'h386 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2113); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2115 = 10'h387 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2114); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2116 = 10'h388 == indexcounter ? $signed(6'shf) : $signed(_GEN_2115); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2117 = 10'h389 == indexcounter ? $signed(6'she) : $signed(_GEN_2116); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2118 = 10'h38a == indexcounter ? $signed(6'shd) : $signed(_GEN_2117); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2119 = 10'h38b == indexcounter ? $signed(6'shd) : $signed(_GEN_2118); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2120 = 10'h38c == indexcounter ? $signed(6'shc) : $signed(_GEN_2119); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2121 = 10'h38d == indexcounter ? $signed(6'shb) : $signed(_GEN_2120); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2122 = 10'h38e == indexcounter ? $signed(6'shb) : $signed(_GEN_2121); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2123 = 10'h38f == indexcounter ? $signed(6'sha) : $signed(_GEN_2122); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2124 = 10'h390 == indexcounter ? $signed(6'sh9) : $signed(_GEN_2123); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2125 = 10'h391 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2124); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2126 = 10'h392 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2125); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2127 = 10'h393 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2126); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2128 = 10'h394 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2127); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2129 = 10'h395 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2128); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2130 = 10'h396 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2129); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2131 = 10'h397 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2130); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2132 = 10'h398 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2131); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2133 = 10'h399 == indexcounter ? $signed(6'sh3) : $signed(_GEN_2132); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2134 = 10'h39a == indexcounter ? $signed(6'sh2) : $signed(_GEN_2133); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2135 = 10'h39b == indexcounter ? $signed(6'sh1) : $signed(_GEN_2134); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2136 = 10'h39c == indexcounter ? $signed(6'sh1) : $signed(_GEN_2135); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2137 = 10'h39d == indexcounter ? $signed(6'sh0) : $signed(_GEN_2136); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2138 = 10'h39e == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2137); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2139 = 10'h39f == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2138); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2140 = 10'h3a0 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2139); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2141 = 10'h3a1 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2140); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2142 = 10'h3a2 == indexcounter ? $signed(6'sh14) : $signed(_GEN_2141); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2143 = 10'h3a3 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2142); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2144 = 10'h3a4 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2143); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2145 = 10'h3a5 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2144); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2146 = 10'h3a6 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2145); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2147 = 10'h3a7 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2146); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2148 = 10'h3a8 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2147); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2149 = 10'h3a9 == indexcounter ? $signed(6'shf) : $signed(_GEN_2148); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2150 = 10'h3aa == indexcounter ? $signed(6'she) : $signed(_GEN_2149); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2151 = 10'h3ab == indexcounter ? $signed(6'shd) : $signed(_GEN_2150); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2152 = 10'h3ac == indexcounter ? $signed(6'shd) : $signed(_GEN_2151); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2153 = 10'h3ad == indexcounter ? $signed(6'shc) : $signed(_GEN_2152); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2154 = 10'h3ae == indexcounter ? $signed(6'shb) : $signed(_GEN_2153); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2155 = 10'h3af == indexcounter ? $signed(6'shb) : $signed(_GEN_2154); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2156 = 10'h3b0 == indexcounter ? $signed(6'sha) : $signed(_GEN_2155); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2157 = 10'h3b1 == indexcounter ? $signed(6'sh9) : $signed(_GEN_2156); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2158 = 10'h3b2 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2157); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2159 = 10'h3b3 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2158); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2160 = 10'h3b4 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2159); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2161 = 10'h3b5 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2160); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2162 = 10'h3b6 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2161); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2163 = 10'h3b7 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2162); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2164 = 10'h3b8 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2163); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2165 = 10'h3b9 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2164); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2166 = 10'h3ba == indexcounter ? $signed(6'sh3) : $signed(_GEN_2165); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2167 = 10'h3bb == indexcounter ? $signed(6'sh2) : $signed(_GEN_2166); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2168 = 10'h3bc == indexcounter ? $signed(6'sh1) : $signed(_GEN_2167); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2169 = 10'h3bd == indexcounter ? $signed(6'sh1) : $signed(_GEN_2168); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2170 = 10'h3be == indexcounter ? $signed(6'sh0) : $signed(_GEN_2169); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2171 = 10'h3bf == indexcounter ? $signed(-6'sh1) : $signed(_GEN_2170); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2172 = 10'h3c0 == indexcounter ? $signed(6'sh16) : $signed(_GEN_2171); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2173 = 10'h3c1 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2172); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2174 = 10'h3c2 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2173); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2175 = 10'h3c3 == indexcounter ? $signed(6'sh14) : $signed(_GEN_2174); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2176 = 10'h3c4 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2175); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2177 = 10'h3c5 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2176); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2178 = 10'h3c6 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2177); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2179 = 10'h3c7 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2178); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2180 = 10'h3c8 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2179); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2181 = 10'h3c9 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2180); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2182 = 10'h3ca == indexcounter ? $signed(6'shf) : $signed(_GEN_2181); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2183 = 10'h3cb == indexcounter ? $signed(6'she) : $signed(_GEN_2182); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2184 = 10'h3cc == indexcounter ? $signed(6'shd) : $signed(_GEN_2183); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2185 = 10'h3cd == indexcounter ? $signed(6'shd) : $signed(_GEN_2184); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2186 = 10'h3ce == indexcounter ? $signed(6'shc) : $signed(_GEN_2185); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2187 = 10'h3cf == indexcounter ? $signed(6'shb) : $signed(_GEN_2186); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2188 = 10'h3d0 == indexcounter ? $signed(6'shb) : $signed(_GEN_2187); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2189 = 10'h3d1 == indexcounter ? $signed(6'sha) : $signed(_GEN_2188); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2190 = 10'h3d2 == indexcounter ? $signed(6'sh9) : $signed(_GEN_2189); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2191 = 10'h3d3 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2190); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2192 = 10'h3d4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2191); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2193 = 10'h3d5 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2192); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2194 = 10'h3d6 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2193); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2195 = 10'h3d7 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2194); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2196 = 10'h3d8 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2195); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2197 = 10'h3d9 == indexcounter ? $signed(6'sh4) : $signed(_GEN_2196); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2198 = 10'h3da == indexcounter ? $signed(6'sh4) : $signed(_GEN_2197); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2199 = 10'h3db == indexcounter ? $signed(6'sh3) : $signed(_GEN_2198); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2200 = 10'h3dc == indexcounter ? $signed(6'sh2) : $signed(_GEN_2199); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2201 = 10'h3dd == indexcounter ? $signed(6'sh1) : $signed(_GEN_2200); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2202 = 10'h3de == indexcounter ? $signed(6'sh1) : $signed(_GEN_2201); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2203 = 10'h3df == indexcounter ? $signed(6'sh0) : $signed(_GEN_2202); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2204 = 10'h3e0 == indexcounter ? $signed(6'sh17) : $signed(_GEN_2203); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2205 = 10'h3e1 == indexcounter ? $signed(6'sh16) : $signed(_GEN_2204); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2206 = 10'h3e2 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2205); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2207 = 10'h3e3 == indexcounter ? $signed(6'sh15) : $signed(_GEN_2206); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2208 = 10'h3e4 == indexcounter ? $signed(6'sh14) : $signed(_GEN_2207); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2209 = 10'h3e5 == indexcounter ? $signed(6'sh13) : $signed(_GEN_2208); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2210 = 10'h3e6 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2209); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2211 = 10'h3e7 == indexcounter ? $signed(6'sh12) : $signed(_GEN_2210); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2212 = 10'h3e8 == indexcounter ? $signed(6'sh11) : $signed(_GEN_2211); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2213 = 10'h3e9 == indexcounter ? $signed(6'sh10) : $signed(_GEN_2212); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2214 = 10'h3ea == indexcounter ? $signed(6'sh10) : $signed(_GEN_2213); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2215 = 10'h3eb == indexcounter ? $signed(6'shf) : $signed(_GEN_2214); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2216 = 10'h3ec == indexcounter ? $signed(6'she) : $signed(_GEN_2215); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2217 = 10'h3ed == indexcounter ? $signed(6'shd) : $signed(_GEN_2216); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2218 = 10'h3ee == indexcounter ? $signed(6'shd) : $signed(_GEN_2217); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2219 = 10'h3ef == indexcounter ? $signed(6'shc) : $signed(_GEN_2218); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2220 = 10'h3f0 == indexcounter ? $signed(6'shb) : $signed(_GEN_2219); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2221 = 10'h3f1 == indexcounter ? $signed(6'shb) : $signed(_GEN_2220); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2222 = 10'h3f2 == indexcounter ? $signed(6'sha) : $signed(_GEN_2221); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2223 = 10'h3f3 == indexcounter ? $signed(6'sh9) : $signed(_GEN_2222); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2224 = 10'h3f4 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2223); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2225 = 10'h3f5 == indexcounter ? $signed(6'sh8) : $signed(_GEN_2224); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2226 = 10'h3f6 == indexcounter ? $signed(6'sh7) : $signed(_GEN_2225); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2227 = 10'h3f7 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2226); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2228 = 10'h3f8 == indexcounter ? $signed(6'sh6) : $signed(_GEN_2227); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2229 = 10'h3f9 == indexcounter ? $signed(6'sh5) : $signed(_GEN_2228); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2230 = 10'h3fa == indexcounter ? $signed(6'sh4) : $signed(_GEN_2229); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2231 = 10'h3fb == indexcounter ? $signed(6'sh4) : $signed(_GEN_2230); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2232 = 10'h3fc == indexcounter ? $signed(6'sh3) : $signed(_GEN_2231); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2233 = 10'h3fd == indexcounter ? $signed(6'sh2) : $signed(_GEN_2232); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2234 = 10'h3fe == indexcounter ? $signed(6'sh1) : $signed(_GEN_2233); // @[GraphicEngineVGA.scala 296:123]
+  wire [5:0] _GEN_2235 = 10'h3ff == indexcounter ? $signed(6'sh1) : $signed(_GEN_2234); // @[GraphicEngineVGA.scala 296:123]
+  wire [9:0] _GEN_2311 = {{4{_GEN_2235[5]}},_GEN_2235}; // @[GraphicEngineVGA.scala 296:123]
+  wire [9:0] _T_245 = $signed(_T_241) + $signed(_GEN_2311); // @[GraphicEngineVGA.scala 296:145]
+  wire  _T_246 = CounterYReg == _T_245; // @[GraphicEngineVGA.scala 296:90]
+  wire  _T_247 = _T_238 & _T_246; // @[GraphicEngineVGA.scala 296:80]
+  wire [9:0] _T_249 = indexcounter + 10'h1; // @[GraphicEngineVGA.scala 298:34]
+  wire  _GEN_2236 = _T_247 | spriteActive; // @[GraphicEngineVGA.scala 296:153]
+  wire  _T_250 = indexcounter < 10'h3ff; // @[GraphicEngineVGA.scala 302:23]
+  wire  _GEN_2239 = _T_250 & _GEN_2236; // @[GraphicEngineVGA.scala 302:33]
+  wire [10:0] _T_256 = $signed(spriteXPositionReg_2) + 11'shf; // @[GraphicEngineVGA.scala 308:62]
+  wire  _T_257 = pixelXBack == _T_256; // @[GraphicEngineVGA.scala 308:21]
+  wire [9:0] _T_261 = $signed(spriteYPositionReg_2) + 10'shf; // @[GraphicEngineVGA.scala 309:47]
+  wire  _T_262 = CounterYReg == _T_261; // @[GraphicEngineVGA.scala 309:12]
+  wire  _T_263 = _T_257 & _T_262; // @[GraphicEngineVGA.scala 308:65]
+  wire  _GEN_2240 = _T_263 | _GEN_2236; // @[GraphicEngineVGA.scala 309:55]
+  wire  _T_264 = ~spriteRotationReg_0; // @[GraphicEngineVGA.scala 320:53]
+  wire [10:0] _T_266 = {1'h0,CounterXReg}; // @[GraphicEngineVGA.scala 321:29]
+  wire [10:0] _T_269 = $signed(_T_266) - $signed(spriteXPositionReg_0); // @[GraphicEngineVGA.scala 321:36]
+  wire [10:0] _T_277 = $signed(_T_269) - 11'shf; // @[GraphicEngineVGA.scala 322:61]
+  wire [10:0] _T_280 = $signed(_T_277) - $signed(_GEN_2309); // @[GraphicEngineVGA.scala 322:68]
+  wire [10:0] _T_281 = _T_264 ? $signed(_T_269) : $signed(_T_280); // @[GraphicEngineVGA.scala 320:31]
+  wire [10:0] _T_284 = {1'h0,CounterYReg}; // @[GraphicEngineVGA.scala 326:29]
+  wire [10:0] _GEN_2314 = {{1{spriteYPositionReg_0[9]}},spriteYPositionReg_0}; // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_287 = $signed(_T_284) - $signed(_GEN_2314); // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_295 = $signed(_T_287) - 11'shf; // @[GraphicEngineVGA.scala 327:61]
+  wire [10:0] _GEN_2316 = {{5{_GEN_2235[5]}},_GEN_2235}; // @[GraphicEngineVGA.scala 327:68]
+  wire [10:0] _T_298 = $signed(_T_295) - $signed(_GEN_2316); // @[GraphicEngineVGA.scala 327:68]
+  wire [10:0] _T_299 = _T_264 ? $signed(_T_287) : $signed(_T_298); // @[GraphicEngineVGA.scala 325:31]
+  wire [10:0] _T_302 = 11'sh1f - $signed(_T_281); // @[GraphicEngineVGA.scala 331:61]
+  wire [10:0] _T_303 = spriteFlipHorizontalReg_0 ? $signed(_T_302) : $signed(_T_281); // @[GraphicEngineVGA.scala 331:27]
+  wire  _T_308 = spriteScaleHorizontalReg_0 == 2'h2; // @[GraphicEngineVGA.scala 337:48]
+  wire  _T_309 = spriteScaleHorizontalReg_0 == 2'h0; // @[GraphicEngineVGA.scala 337:95]
+  wire [6:0] _T_310 = _T_309 ? $signed(7'sh20) : $signed(7'sh10); // @[GraphicEngineVGA.scala 337:66]
+  wire [7:0] _T_311 = _T_308 ? $signed(8'sh40) : $signed({{1{_T_310[6]}},_T_310}); // @[GraphicEngineVGA.scala 337:19]
+  wire  _T_312 = spriteScaleVerticalReg_0 == 2'h2; // @[GraphicEngineVGA.scala 338:46]
+  wire  _T_313 = spriteScaleVerticalReg_0 == 2'h0; // @[GraphicEngineVGA.scala 338:91]
+  wire [6:0] _T_314 = _T_313 ? $signed(7'sh20) : $signed(7'sh10); // @[GraphicEngineVGA.scala 338:64]
+  wire [7:0] _T_315 = _T_312 ? $signed(8'sh40) : $signed({{1{_T_314[6]}},_T_314}); // @[GraphicEngineVGA.scala 338:19]
+  wire  _T_316 = $signed(_T_303) >= 11'sh0; // @[GraphicEngineVGA.scala 340:34]
+  wire [10:0] _GEN_2317 = {{3{_T_311[7]}},_T_311}; // @[GraphicEngineVGA.scala 340:57]
+  wire  _T_317 = $signed(_T_303) < $signed(_GEN_2317); // @[GraphicEngineVGA.scala 340:57]
+  wire  _T_318 = _T_316 & _T_317; // @[GraphicEngineVGA.scala 340:41]
+  wire  _T_319 = $signed(_T_299) >= 11'sh0; // @[GraphicEngineVGA.scala 340:82]
+  wire [10:0] _GEN_2318 = {{3{_T_315[7]}},_T_315}; // @[GraphicEngineVGA.scala 340:105]
+  wire  _T_320 = $signed(_T_299) < $signed(_GEN_2318); // @[GraphicEngineVGA.scala 340:105]
+  wire  _T_321 = _T_319 & _T_320; // @[GraphicEngineVGA.scala 340:89]
+  wire [9:0] _T_324 = _T_303[10:1]; // @[GraphicEngineVGA.scala 343:71]
+  wire [6:0] _T_329 = _T_303[4:0] * 5'h2; // @[GraphicEngineVGA.scala 344:105]
+  wire [6:0] _T_330 = _T_309 ? {{2'd0}, _T_303[4:0]} : _T_329; // @[GraphicEngineVGA.scala 344:16]
+  wire [6:0] _T_331 = _T_308 ? {{2'd0}, _T_324[4:0]} : _T_330; // @[GraphicEngineVGA.scala 343:19]
+  wire [9:0] _T_333 = _T_299[10:1]; // @[GraphicEngineVGA.scala 346:69]
+  wire [6:0] _T_338 = _T_299[4:0] * 5'h2; // @[GraphicEngineVGA.scala 347:103]
+  wire [6:0] _T_339 = _T_313 ? {{2'd0}, _T_299[4:0]} : _T_338; // @[GraphicEngineVGA.scala 347:16]
+  wire [6:0] _T_340 = _T_312 ? {{2'd0}, _T_333[4:0]} : _T_339; // @[GraphicEngineVGA.scala 346:19]
+  wire [12:0] _T_341 = 7'h20 * _T_340; // @[GraphicEngineVGA.scala 354:54]
+  wire [12:0] _GEN_2319 = {{6'd0}, _T_331}; // @[GraphicEngineVGA.scala 354:42]
+  wire [12:0] _T_343 = _GEN_2319 + _T_341; // @[GraphicEngineVGA.scala 354:42]
+  wire [10:0] _T_349 = $signed(_T_266) - $signed(spriteXPositionReg_1); // @[GraphicEngineVGA.scala 321:36]
+  wire [10:0] _GEN_2321 = {{1{spriteYPositionReg_1[9]}},spriteYPositionReg_1}; // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_367 = $signed(_T_284) - $signed(_GEN_2321); // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_382 = 11'sh1f - $signed(_T_349); // @[GraphicEngineVGA.scala 331:61]
+  wire [10:0] _T_383 = spriteFlipHorizontalReg_1 ? $signed(_T_382) : $signed(_T_349); // @[GraphicEngineVGA.scala 331:27]
+  wire  _T_396 = $signed(_T_383) >= 11'sh0; // @[GraphicEngineVGA.scala 340:34]
+  wire  _T_397 = $signed(_T_383) < 11'sh20; // @[GraphicEngineVGA.scala 340:57]
+  wire  _T_398 = _T_396 & _T_397; // @[GraphicEngineVGA.scala 340:41]
+  wire  _T_399 = $signed(_T_367) >= 11'sh0; // @[GraphicEngineVGA.scala 340:82]
+  wire  _T_400 = $signed(_T_367) < 11'sh20; // @[GraphicEngineVGA.scala 340:105]
+  wire  _T_401 = _T_399 & _T_400; // @[GraphicEngineVGA.scala 340:89]
+  wire [6:0] _T_410 = {{2'd0}, _T_383[4:0]}; // @[GraphicEngineVGA.scala 344:16]
+  wire [6:0] _T_419 = {{2'd0}, _T_367[4:0]}; // @[GraphicEngineVGA.scala 347:16]
+  wire [12:0] _T_421 = 7'h20 * _T_419; // @[GraphicEngineVGA.scala 354:54]
+  wire [12:0] _GEN_2324 = {{6'd0}, _T_410}; // @[GraphicEngineVGA.scala 354:42]
+  wire [12:0] _T_423 = _GEN_2324 + _T_421; // @[GraphicEngineVGA.scala 354:42]
+  wire  _T_424 = ~spriteRotationReg_2; // @[GraphicEngineVGA.scala 320:53]
+  wire [10:0] _T_429 = $signed(_T_266) - $signed(spriteXPositionReg_2); // @[GraphicEngineVGA.scala 321:36]
+  wire [10:0] _T_437 = $signed(_T_429) - 11'shf; // @[GraphicEngineVGA.scala 322:61]
+  wire [10:0] _T_440 = $signed(_T_437) - $signed(_GEN_2309); // @[GraphicEngineVGA.scala 322:68]
+  wire [10:0] _T_441 = _T_424 ? $signed(_T_429) : $signed(_T_440); // @[GraphicEngineVGA.scala 320:31]
+  wire [10:0] _GEN_2326 = {{1{spriteYPositionReg_2[9]}},spriteYPositionReg_2}; // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_447 = $signed(_T_284) - $signed(_GEN_2326); // @[GraphicEngineVGA.scala 326:36]
+  wire [10:0] _T_455 = $signed(_T_447) - 11'shf; // @[GraphicEngineVGA.scala 327:61]
+  wire [10:0] _T_458 = $signed(_T_455) - $signed(_GEN_2316); // @[GraphicEngineVGA.scala 327:68]
+  wire [10:0] _T_459 = _T_424 ? $signed(_T_447) : $signed(_T_458); // @[GraphicEngineVGA.scala 325:31]
+  wire  _T_476 = $signed(_T_441) >= 11'sh0; // @[GraphicEngineVGA.scala 340:34]
+  wire  _T_477 = $signed(_T_441) < 11'sh20; // @[GraphicEngineVGA.scala 340:57]
+  wire  _T_478 = _T_476 & _T_477; // @[GraphicEngineVGA.scala 340:41]
+  wire  _T_479 = $signed(_T_459) >= 11'sh0; // @[GraphicEngineVGA.scala 340:82]
+  wire  _T_480 = $signed(_T_459) < 11'sh20; // @[GraphicEngineVGA.scala 340:105]
+  wire  _T_481 = _T_479 & _T_480; // @[GraphicEngineVGA.scala 340:89]
+  wire [6:0] _T_490 = {{2'd0}, _T_441[4:0]}; // @[GraphicEngineVGA.scala 344:16]
+  wire [6:0] _T_499 = {{2'd0}, _T_459[4:0]}; // @[GraphicEngineVGA.scala 347:16]
+  wire [12:0] _T_501 = 7'h20 * _T_499; // @[GraphicEngineVGA.scala 354:54]
+  wire [12:0] _GEN_2329 = {{6'd0}, _T_490}; // @[GraphicEngineVGA.scala 354:42]
+  wire [12:0] _T_503 = _GEN_2329 + _T_501; // @[GraphicEngineVGA.scala 354:42]
+  wire [10:0] _T_509 = $signed(_T_266) - 11'sh0; // @[GraphicEngineVGA.scala 321:36]
+  wire [10:0] _T_527 = $signed(_T_284) - 11'sh0; // @[GraphicEngineVGA.scala 326:36]
+  wire  _T_556 = $signed(_T_509) >= 11'sh0; // @[GraphicEngineVGA.scala 340:34]
+  wire  _T_557 = $signed(_T_509) < 11'sh20; // @[GraphicEngineVGA.scala 340:57]
+  wire  _T_558 = _T_556 & _T_557; // @[GraphicEngineVGA.scala 340:41]
+  wire  _T_559 = $signed(_T_527) >= 11'sh0; // @[GraphicEngineVGA.scala 340:82]
+  wire  _T_560 = $signed(_T_527) < 11'sh20; // @[GraphicEngineVGA.scala 340:105]
+  wire  _T_561 = _T_559 & _T_560; // @[GraphicEngineVGA.scala 340:89]
+  wire [6:0] _T_570 = {{2'd0}, _T_509[4:0]}; // @[GraphicEngineVGA.scala 344:16]
+  wire [6:0] _T_579 = {{2'd0}, _T_527[4:0]}; // @[GraphicEngineVGA.scala 347:16]
+  wire [12:0] _T_581 = 7'h20 * _T_579; // @[GraphicEngineVGA.scala 354:54]
+  wire [12:0] _GEN_2332 = {{6'd0}, _T_570}; // @[GraphicEngineVGA.scala 354:42]
+  wire [12:0] _T_583 = _GEN_2332 + _T_581; // @[GraphicEngineVGA.scala 354:42]
+  reg [5:0] _T_1545; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1547_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1547_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1550; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1551 = ~_T_1550; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1554; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1556_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1556_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1559; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1560 = ~_T_1559; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1563; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1565_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1565_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1568; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1569 = ~_T_1568; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1572; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1573_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1573_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1574_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1574_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1575 = _T_1573_0 & _T_1574_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1577; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1578 = ~_T_1577; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1581; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1582_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1582_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1583_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1583_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1584 = _T_1582_0 & _T_1583_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1586; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1587 = ~_T_1586; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1590; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1591_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1591_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1592_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1592_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1593 = _T_1591_0 & _T_1592_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1595; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1596 = ~_T_1595; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1599; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1600_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1600_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1601_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1601_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1602 = _T_1600_0 & _T_1601_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1604; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1605 = ~_T_1604; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1608; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1609_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1609_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1610_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1610_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1611 = _T_1609_0 & _T_1610_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1613; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1614 = ~_T_1613; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1617; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1618_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1618_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1619_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1619_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1620 = _T_1618_0 & _T_1619_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1622; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1623 = ~_T_1622; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1626; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1627_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1627_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1628_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1628_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1629 = _T_1627_0 & _T_1628_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1631; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1632 = ~_T_1631; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1635; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1636_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1636_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1637_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1637_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1638 = _T_1636_0 & _T_1637_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1640; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1641 = ~_T_1640; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1644; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1645_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1645_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1646_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1646_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1647 = _T_1645_0 & _T_1646_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1649; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1650 = ~_T_1649; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1653; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1654_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1654_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1655_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1655_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1656 = _T_1654_0 & _T_1655_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1658; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1659 = ~_T_1658; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1662; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1663_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1663_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1664_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1664_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1665 = _T_1663_0 & _T_1664_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1667; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1668 = ~_T_1667; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1671; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1672_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1672_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1673_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1673_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1674 = _T_1672_0 & _T_1673_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1676; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1677 = ~_T_1676; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] _T_1680; // @[GraphicEngineVGA.scala 363:60]
+  reg  _T_1681_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1681_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1682_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1682_1; // @[GameUtilities.scala 21:24]
+  wire  _T_1683 = _T_1681_0 & _T_1682_0; // @[GraphicEngineVGA.scala 364:91]
+  reg  _T_1685; // @[GraphicEngineVGA.scala 364:132]
+  wire  _T_1686 = ~_T_1685; // @[GraphicEngineVGA.scala 364:123]
+  reg [5:0] pixelColorSprite; // @[GraphicEngineVGA.scala 366:33]
+  reg  pixelColorSpriteValid; // @[GraphicEngineVGA.scala 367:38]
+  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[GraphicEngineVGA.scala 371:32]
+  reg  _T_1688_0; // @[GameUtilities.scala 21:24]
+  reg  _T_1688_1; // @[GameUtilities.scala 21:24]
+  reg  _T_1688_2; // @[GameUtilities.scala 21:24]
+  wire [5:0] pixelColourVGA = _T_1688_0 ? pixelColorInDisplay : 6'h0; // @[GraphicEngineVGA.scala 372:27]
+  reg [3:0] _T_1695; // @[GraphicEngineVGA.scala 376:23]
+  reg [3:0] _T_1696; // @[GraphicEngineVGA.scala 377:25]
+  reg [3:0] _T_1697; // @[GraphicEngineVGA.scala 378:24]
+  Memory backTileMemories_0 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_0_clock),
     .io_address(backTileMemories_0_io_address),
     .io_dataRead(backTileMemories_0_io_dataRead)
   );
-  Memory_1 backTileMemories_1 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_1 backTileMemories_1 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_1_clock),
     .io_address(backTileMemories_1_io_address),
     .io_dataRead(backTileMemories_1_io_dataRead)
   );
-  Memory_2 backTileMemories_2 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_2 backTileMemories_2 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_2_clock),
     .io_address(backTileMemories_2_io_address),
     .io_dataRead(backTileMemories_2_io_dataRead)
   );
-  Memory_3 backTileMemories_3 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_3 backTileMemories_3 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_3_clock),
     .io_address(backTileMemories_3_io_address),
     .io_dataRead(backTileMemories_3_io_dataRead)
   );
-  Memory_4 backTileMemories_4 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_4 backTileMemories_4 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_4_clock),
     .io_address(backTileMemories_4_io_address),
     .io_dataRead(backTileMemories_4_io_dataRead)
   );
-  Memory_5 backTileMemories_5 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_5 backTileMemories_5 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_5_clock),
     .io_address(backTileMemories_5_io_address),
     .io_dataRead(backTileMemories_5_io_dataRead)
   );
-  Memory_6 backTileMemories_6 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_6 backTileMemories_6 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_6_clock),
     .io_address(backTileMemories_6_io_address),
     .io_dataRead(backTileMemories_6_io_dataRead)
   );
-  Memory_7 backTileMemories_7 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_7 backTileMemories_7 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_7_clock),
     .io_address(backTileMemories_7_io_address),
     .io_dataRead(backTileMemories_7_io_dataRead)
   );
-  Memory_8 backTileMemories_8 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_8 backTileMemories_8 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_8_clock),
     .io_address(backTileMemories_8_io_address),
     .io_dataRead(backTileMemories_8_io_dataRead)
   );
-  Memory_9 backTileMemories_9 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_9 backTileMemories_9 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_9_clock),
     .io_address(backTileMemories_9_io_address),
     .io_dataRead(backTileMemories_9_io_dataRead)
   );
-  Memory_10 backTileMemories_10 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_10 backTileMemories_10 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_10_clock),
     .io_address(backTileMemories_10_io_address),
     .io_dataRead(backTileMemories_10_io_dataRead)
   );
-  Memory_11 backTileMemories_11 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_11 backTileMemories_11 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_11_clock),
     .io_address(backTileMemories_11_io_address),
     .io_dataRead(backTileMemories_11_io_dataRead)
   );
-  Memory_12 backTileMemories_12 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_12 backTileMemories_12 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_12_clock),
     .io_address(backTileMemories_12_io_address),
     .io_dataRead(backTileMemories_12_io_dataRead)
   );
-  Memory_13 backTileMemories_13 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_13 backTileMemories_13 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_13_clock),
     .io_address(backTileMemories_13_io_address),
     .io_dataRead(backTileMemories_13_io_dataRead)
   );
-  Memory_14 backTileMemories_14 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_14 backTileMemories_14 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_14_clock),
     .io_address(backTileMemories_14_io_address),
     .io_dataRead(backTileMemories_14_io_dataRead)
   );
-  Memory_15 backTileMemories_15 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_15 backTileMemories_15 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_15_clock),
     .io_address(backTileMemories_15_io_address),
     .io_dataRead(backTileMemories_15_io_dataRead)
   );
-  Memory_16 backTileMemories_16 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_16 backTileMemories_16 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_16_clock),
     .io_address(backTileMemories_16_io_address),
     .io_dataRead(backTileMemories_16_io_dataRead)
   );
-  Memory_17 backTileMemories_17 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_17 backTileMemories_17 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_17_clock),
     .io_address(backTileMemories_17_io_address),
     .io_dataRead(backTileMemories_17_io_dataRead)
   );
-  Memory_18 backTileMemories_18 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_18 backTileMemories_18 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_18_clock),
     .io_address(backTileMemories_18_io_address),
     .io_dataRead(backTileMemories_18_io_dataRead)
   );
-  Memory_19 backTileMemories_19 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_19 backTileMemories_19 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_19_clock),
     .io_address(backTileMemories_19_io_address),
     .io_dataRead(backTileMemories_19_io_dataRead)
   );
-  Memory_20 backTileMemories_20 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_20 backTileMemories_20 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_20_clock),
     .io_address(backTileMemories_20_io_address),
     .io_dataRead(backTileMemories_20_io_dataRead)
   );
-  Memory_21 backTileMemories_21 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_21 backTileMemories_21 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_21_clock),
     .io_address(backTileMemories_21_io_address),
     .io_dataRead(backTileMemories_21_io_dataRead)
   );
-  Memory_22 backTileMemories_22 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_22 backTileMemories_22 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_22_clock),
     .io_address(backTileMemories_22_io_address),
     .io_dataRead(backTileMemories_22_io_dataRead)
   );
-  Memory_23 backTileMemories_23 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_23 backTileMemories_23 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_23_clock),
     .io_address(backTileMemories_23_io_address),
     .io_dataRead(backTileMemories_23_io_dataRead)
   );
-  Memory_24 backTileMemories_24 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_24 backTileMemories_24 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_24_clock),
     .io_address(backTileMemories_24_io_address),
     .io_dataRead(backTileMemories_24_io_dataRead)
   );
-  Memory_25 backTileMemories_25 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_25 backTileMemories_25 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_25_clock),
     .io_address(backTileMemories_25_io_address),
     .io_dataRead(backTileMemories_25_io_dataRead)
   );
-  Memory_26 backTileMemories_26 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_26 backTileMemories_26 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_26_clock),
     .io_address(backTileMemories_26_io_address),
     .io_dataRead(backTileMemories_26_io_dataRead)
   );
-  Memory_27 backTileMemories_27 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_27 backTileMemories_27 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_27_clock),
     .io_address(backTileMemories_27_io_address),
     .io_dataRead(backTileMemories_27_io_dataRead)
   );
-  Memory_28 backTileMemories_28 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_28 backTileMemories_28 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_28_clock),
     .io_address(backTileMemories_28_io_address),
     .io_dataRead(backTileMemories_28_io_dataRead)
   );
-  Memory_29 backTileMemories_29 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_29 backTileMemories_29 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_29_clock),
     .io_address(backTileMemories_29_io_address),
     .io_dataRead(backTileMemories_29_io_dataRead)
   );
-  Memory_30 backTileMemories_30 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_30 backTileMemories_30 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_30_clock),
     .io_address(backTileMemories_30_io_address),
     .io_dataRead(backTileMemories_30_io_dataRead)
   );
-  Memory_31 backTileMemories_31 ( // @[GraphicEngineVGA.scala 155:32]
+  Memory_31 backTileMemories_31 ( // @[GraphicEngineVGA.scala 163:32]
     .clock(backTileMemories_31_clock),
     .io_address(backTileMemories_31_io_address),
     .io_dataRead(backTileMemories_31_io_dataRead)
   );
-  Memory_32 backBufferMemory ( // @[GraphicEngineVGA.scala 172:32]
+  Memory_32 backBufferMemory ( // @[GraphicEngineVGA.scala 180:32]
     .clock(backBufferMemory_clock),
     .io_address(backBufferMemory_io_address),
     .io_dataRead(backBufferMemory_io_dataRead),
     .io_writeEnable(backBufferMemory_io_writeEnable),
     .io_dataWrite(backBufferMemory_io_dataWrite)
   );
-  Memory_32 backBufferShadowMemory ( // @[GraphicEngineVGA.scala 173:38]
+  Memory_32 backBufferShadowMemory ( // @[GraphicEngineVGA.scala 181:38]
     .clock(backBufferShadowMemory_clock),
     .io_address(backBufferShadowMemory_io_address),
     .io_dataRead(backBufferShadowMemory_io_dataRead),
     .io_writeEnable(backBufferShadowMemory_io_writeEnable),
     .io_dataWrite(backBufferShadowMemory_io_dataWrite)
   );
-  Memory_34 backBufferRestoreMemory ( // @[GraphicEngineVGA.scala 174:39]
+  Memory_34 backBufferRestoreMemory ( // @[GraphicEngineVGA.scala 182:39]
     .clock(backBufferRestoreMemory_clock),
     .io_address(backBufferRestoreMemory_io_address),
     .io_dataRead(backBufferRestoreMemory_io_dataRead)
   );
-  Memory_35 spriteMemories_0 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_35 spriteMemories_0 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_0_clock),
     .io_address(spriteMemories_0_io_address),
     .io_dataRead(spriteMemories_0_io_dataRead)
   );
-  Memory_36 spriteMemories_1 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_36 spriteMemories_1 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_1_clock),
     .io_address(spriteMemories_1_io_address),
     .io_dataRead(spriteMemories_1_io_dataRead)
   );
-  Memory_37 spriteMemories_2 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_37 spriteMemories_2 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_2_clock),
     .io_address(spriteMemories_2_io_address),
     .io_dataRead(spriteMemories_2_io_dataRead)
   );
-  Memory_38 spriteMemories_3 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_38 spriteMemories_3 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_3_clock),
     .io_address(spriteMemories_3_io_address),
     .io_dataRead(spriteMemories_3_io_dataRead)
   );
-  Memory_39 spriteMemories_4 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_39 spriteMemories_4 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_4_clock),
     .io_address(spriteMemories_4_io_address),
     .io_dataRead(spriteMemories_4_io_dataRead)
   );
-  Memory_40 spriteMemories_5 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_40 spriteMemories_5 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_5_clock),
     .io_address(spriteMemories_5_io_address),
     .io_dataRead(spriteMemories_5_io_dataRead)
   );
-  Memory_41 spriteMemories_6 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_41 spriteMemories_6 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_6_clock),
     .io_address(spriteMemories_6_io_address),
     .io_dataRead(spriteMemories_6_io_dataRead)
   );
-  Memory_42 spriteMemories_7 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_42 spriteMemories_7 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_7_clock),
     .io_address(spriteMemories_7_io_address),
     .io_dataRead(spriteMemories_7_io_dataRead)
   );
-  Memory_43 spriteMemories_8 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_43 spriteMemories_8 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_8_clock),
     .io_address(spriteMemories_8_io_address),
     .io_dataRead(spriteMemories_8_io_dataRead)
   );
-  Memory_44 spriteMemories_9 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_44 spriteMemories_9 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_9_clock),
     .io_address(spriteMemories_9_io_address),
     .io_dataRead(spriteMemories_9_io_dataRead)
   );
-  Memory_45 spriteMemories_10 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_45 spriteMemories_10 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_10_clock),
     .io_address(spriteMemories_10_io_address),
     .io_dataRead(spriteMemories_10_io_dataRead)
   );
-  Memory_46 spriteMemories_11 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_46 spriteMemories_11 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_11_clock),
     .io_address(spriteMemories_11_io_address),
     .io_dataRead(spriteMemories_11_io_dataRead)
   );
-  Memory_47 spriteMemories_12 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_47 spriteMemories_12 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_12_clock),
     .io_address(spriteMemories_12_io_address),
     .io_dataRead(spriteMemories_12_io_dataRead)
   );
-  Memory_48 spriteMemories_13 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_48 spriteMemories_13 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_13_clock),
     .io_address(spriteMemories_13_io_address),
     .io_dataRead(spriteMemories_13_io_dataRead)
   );
-  Memory_49 spriteMemories_14 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_49 spriteMemories_14 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_14_clock),
     .io_address(spriteMemories_14_io_address),
     .io_dataRead(spriteMemories_14_io_dataRead)
   );
-  Memory_50 spriteMemories_15 ( // @[GraphicEngineVGA.scala 244:30]
+  Memory_50 spriteMemories_15 ( // @[GraphicEngineVGA.scala 252:30]
     .clock(spriteMemories_15_clock),
     .io_address(spriteMemories_15_io_address),
     .io_dataRead(spriteMemories_15_io_dataRead)
   );
-  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[GraphicEngineVGA.scala 284:44]
+  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[GraphicEngineVGA.scala 361:44]
     .io_dataInput_0(multiHotPriortyReductionTree_io_dataInput_0),
     .io_dataInput_1(multiHotPriortyReductionTree_io_dataInput_1),
     .io_dataInput_2(multiHotPriortyReductionTree_io_dataInput_2),
@@ -2381,151 +4504,151 @@ module GraphicEngineVGA(
     .io_dataOutput(multiHotPriortyReductionTree_io_dataOutput),
     .io_selectOutput(multiHotPriortyReductionTree_io_selectOutput)
   );
-  assign io_newFrame = run & _GEN_8; // @[GraphicEngineVGA.scala 68:15 GraphicEngineVGA.scala 77:23]
-  assign io_missingFrameError = missingFrameErrorReg; // @[GraphicEngineVGA.scala 125:24]
-  assign io_vgaRed = _T_940; // @[GraphicEngineVGA.scala 299:13]
-  assign io_vgaBlue = _T_942; // @[GraphicEngineVGA.scala 301:14]
-  assign io_vgaGreen = _T_941; // @[GraphicEngineVGA.scala 300:15]
-  assign io_Hsync = _T_14_0; // @[GraphicEngineVGA.scala 91:12]
-  assign io_Vsync = _T_16_0; // @[GraphicEngineVGA.scala 92:12]
+  assign io_newFrame = run & _GEN_8; // @[GraphicEngineVGA.scala 72:15 GraphicEngineVGA.scala 81:23]
+  assign io_missingFrameError = missingFrameErrorReg; // @[GraphicEngineVGA.scala 133:24]
+  assign io_vgaRed = _T_1695; // @[GraphicEngineVGA.scala 376:13]
+  assign io_vgaBlue = _T_1697; // @[GraphicEngineVGA.scala 378:14]
+  assign io_vgaGreen = _T_1696; // @[GraphicEngineVGA.scala 377:15]
+  assign io_Hsync = _T_14_0; // @[GraphicEngineVGA.scala 95:12]
+  assign io_Vsync = _T_16_0; // @[GraphicEngineVGA.scala 96:12]
   assign backTileMemories_0_clock = clock;
-  assign backTileMemories_0_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_0_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_1_clock = clock;
-  assign backTileMemories_1_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_1_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_2_clock = clock;
-  assign backTileMemories_2_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_2_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_3_clock = clock;
-  assign backTileMemories_3_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_3_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_4_clock = clock;
-  assign backTileMemories_4_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_4_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_5_clock = clock;
-  assign backTileMemories_5_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_5_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_6_clock = clock;
-  assign backTileMemories_6_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_6_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_7_clock = clock;
-  assign backTileMemories_7_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_7_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_8_clock = clock;
-  assign backTileMemories_8_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_8_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_9_clock = clock;
-  assign backTileMemories_9_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_9_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_10_clock = clock;
-  assign backTileMemories_10_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_10_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_11_clock = clock;
-  assign backTileMemories_11_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_11_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_12_clock = clock;
-  assign backTileMemories_12_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_12_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_13_clock = clock;
-  assign backTileMemories_13_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_13_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_14_clock = clock;
-  assign backTileMemories_14_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_14_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_15_clock = clock;
-  assign backTileMemories_15_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_15_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_16_clock = clock;
-  assign backTileMemories_16_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_16_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_17_clock = clock;
-  assign backTileMemories_17_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_17_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_18_clock = clock;
-  assign backTileMemories_18_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_18_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_19_clock = clock;
-  assign backTileMemories_19_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_19_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_20_clock = clock;
-  assign backTileMemories_20_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_20_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_21_clock = clock;
-  assign backTileMemories_21_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_21_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_22_clock = clock;
-  assign backTileMemories_22_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_22_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_23_clock = clock;
-  assign backTileMemories_23_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_23_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_24_clock = clock;
-  assign backTileMemories_24_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_24_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_25_clock = clock;
-  assign backTileMemories_25_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_25_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_26_clock = clock;
-  assign backTileMemories_26_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_26_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_27_clock = clock;
-  assign backTileMemories_27_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_27_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_28_clock = clock;
-  assign backTileMemories_28_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_28_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_29_clock = clock;
-  assign backTileMemories_29_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_29_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_30_clock = clock;
-  assign backTileMemories_30_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_30_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backTileMemories_31_clock = clock;
-  assign backTileMemories_31_io_address = _T_39[9:0]; // @[GraphicEngineVGA.scala 166:36]
+  assign backTileMemories_31_io_address = _T_41[9:0]; // @[GraphicEngineVGA.scala 174:36]
   assign backBufferMemory_clock = clock;
-  assign backBufferMemory_io_address = _T_221[10:0]; // @[GraphicEngineVGA.scala 220:31]
-  assign backBufferMemory_io_writeEnable = copyEnabledReg; // @[GraphicEngineVGA.scala 222:35]
-  assign backBufferMemory_io_dataWrite = backBufferShadowMemory_io_dataRead; // @[GraphicEngineVGA.scala 223:33]
+  assign backBufferMemory_io_address = _T_223[10:0]; // @[GraphicEngineVGA.scala 228:31]
+  assign backBufferMemory_io_writeEnable = copyEnabledReg; // @[GraphicEngineVGA.scala 230:35]
+  assign backBufferMemory_io_dataWrite = backBufferShadowMemory_io_dataRead; // @[GraphicEngineVGA.scala 231:33]
   assign backBufferShadowMemory_clock = clock;
-  assign backBufferShadowMemory_io_address = restoreEnabled ? _T_204 : _T_207; // @[GraphicEngineVGA.scala 215:37]
-  assign backBufferShadowMemory_io_writeEnable = restoreEnabled & _T_209; // @[GraphicEngineVGA.scala 217:41]
-  assign backBufferShadowMemory_io_dataWrite = restoreEnabled ? backBufferRestoreMemory_io_dataRead : 5'h0; // @[GraphicEngineVGA.scala 218:39]
+  assign backBufferShadowMemory_io_address = restoreEnabled ? _T_206 : _T_209; // @[GraphicEngineVGA.scala 223:37]
+  assign backBufferShadowMemory_io_writeEnable = restoreEnabled & _T_211; // @[GraphicEngineVGA.scala 225:41]
+  assign backBufferShadowMemory_io_dataWrite = restoreEnabled ? backBufferRestoreMemory_io_dataRead : 5'h0; // @[GraphicEngineVGA.scala 226:39]
   assign backBufferRestoreMemory_clock = clock;
-  assign backBufferRestoreMemory_io_address = backMemoryRestoreCounter[10:0]; // @[GraphicEngineVGA.scala 210:38]
+  assign backBufferRestoreMemory_io_address = backMemoryRestoreCounter[10:0]; // @[GraphicEngineVGA.scala 218:38]
   assign spriteMemories_0_clock = clock;
-  assign spriteMemories_0_io_address = _T_713[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_0_io_address = _T_343[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_1_clock = clock;
-  assign spriteMemories_1_io_address = _T_718[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_1_io_address = _T_423[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_2_clock = clock;
-  assign spriteMemories_2_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_2_io_address = _T_503[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_3_clock = clock;
-  assign spriteMemories_3_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_3_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_4_clock = clock;
-  assign spriteMemories_4_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_4_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_5_clock = clock;
-  assign spriteMemories_5_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_5_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_6_clock = clock;
-  assign spriteMemories_6_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_6_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_7_clock = clock;
-  assign spriteMemories_7_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_7_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_8_clock = clock;
-  assign spriteMemories_8_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_8_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_9_clock = clock;
-  assign spriteMemories_9_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_9_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_10_clock = clock;
-  assign spriteMemories_10_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_10_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_11_clock = clock;
-  assign spriteMemories_11_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_11_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_12_clock = clock;
-  assign spriteMemories_12_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_12_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_13_clock = clock;
-  assign spriteMemories_13_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_13_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_14_clock = clock;
-  assign spriteMemories_14_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
+  assign spriteMemories_14_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
   assign spriteMemories_15_clock = clock;
-  assign spriteMemories_15_io_address = _T_723[9:0]; // @[GraphicEngineVGA.scala 279:34]
-  assign multiHotPriortyReductionTree_io_dataInput_0 = _T_790; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_1 = _T_799; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_2 = _T_808; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_3 = _T_817; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_4 = _T_826; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_5 = _T_835; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_6 = _T_844; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_7 = _T_853; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_8 = _T_862; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_9 = _T_871; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_10 = _T_880; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_11 = _T_889; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_12 = _T_898; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_13 = _T_907; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_14 = _T_916; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_dataInput_15 = _T_925; // @[GraphicEngineVGA.scala 286:50]
-  assign multiHotPriortyReductionTree_io_selectInput_0 = _T_792_0 & _T_796; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_1 = _T_801_0 & _T_805; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_2 = _T_811 & _T_814; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_3 = _T_820 & _T_823; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_4 = _T_829 & _T_832; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_5 = _T_838 & _T_841; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_6 = _T_847 & _T_850; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_7 = _T_856 & _T_859; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_8 = _T_865 & _T_868; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_9 = _T_874 & _T_877; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_10 = _T_883 & _T_886; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_11 = _T_892 & _T_895; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_12 = _T_901 & _T_904; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_13 = _T_910 & _T_913; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_14 = _T_919 & _T_922; // @[GraphicEngineVGA.scala 287:52]
-  assign multiHotPriortyReductionTree_io_selectInput_15 = _T_928 & _T_931; // @[GraphicEngineVGA.scala 287:52]
+  assign spriteMemories_15_io_address = _T_583[9:0]; // @[GraphicEngineVGA.scala 354:34]
+  assign multiHotPriortyReductionTree_io_dataInput_0 = _T_1545; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_1 = _T_1554; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_2 = _T_1563; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_3 = _T_1572; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_4 = _T_1581; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_5 = _T_1590; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_6 = _T_1599; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_7 = _T_1608; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_8 = _T_1617; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_9 = _T_1626; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_10 = _T_1635; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_11 = _T_1644; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_12 = _T_1653; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_13 = _T_1662; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_14 = _T_1671; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_dataInput_15 = _T_1680; // @[GraphicEngineVGA.scala 363:50]
+  assign multiHotPriortyReductionTree_io_selectInput_0 = _T_1547_0 & _T_1551; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_1 = _T_1556_0 & _T_1560; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_2 = _T_1565_0 & _T_1569; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_3 = _T_1575 & _T_1578; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_4 = _T_1584 & _T_1587; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_5 = _T_1593 & _T_1596; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_6 = _T_1602 & _T_1605; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_7 = _T_1611 & _T_1614; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_8 = _T_1620 & _T_1623; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_9 = _T_1629 & _T_1632; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_10 = _T_1638 & _T_1641; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_11 = _T_1647 & _T_1650; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_12 = _T_1656 & _T_1659; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_13 = _T_1665 & _T_1668; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_14 = _T_1674 & _T_1677; // @[GraphicEngineVGA.scala 364:52]
+  assign multiHotPriortyReductionTree_io_selectInput_15 = _T_1683 & _T_1686; // @[GraphicEngineVGA.scala 364:52]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -2592,321 +4715,335 @@ initial begin
   _RAND_14 = {1{`RANDOM}};
   spriteXPositionReg_1 = _RAND_14[10:0];
   _RAND_15 = {1{`RANDOM}};
-  spriteYPositionReg_0 = _RAND_15[9:0];
+  spriteXPositionReg_2 = _RAND_15[10:0];
   _RAND_16 = {1{`RANDOM}};
-  spriteYPositionReg_1 = _RAND_16[9:0];
+  spriteYPositionReg_0 = _RAND_16[9:0];
   _RAND_17 = {1{`RANDOM}};
-  spriteVisibleReg_2 = _RAND_17[0:0];
+  spriteYPositionReg_1 = _RAND_17[9:0];
   _RAND_18 = {1{`RANDOM}};
-  spriteVisibleReg_3 = _RAND_18[0:0];
+  spriteYPositionReg_2 = _RAND_18[9:0];
   _RAND_19 = {1{`RANDOM}};
-  spriteVisibleReg_4 = _RAND_19[0:0];
+  spriteVisibleReg_3 = _RAND_19[0:0];
   _RAND_20 = {1{`RANDOM}};
-  spriteVisibleReg_5 = _RAND_20[0:0];
+  spriteVisibleReg_4 = _RAND_20[0:0];
   _RAND_21 = {1{`RANDOM}};
-  spriteVisibleReg_6 = _RAND_21[0:0];
+  spriteVisibleReg_5 = _RAND_21[0:0];
   _RAND_22 = {1{`RANDOM}};
-  spriteVisibleReg_7 = _RAND_22[0:0];
+  spriteVisibleReg_6 = _RAND_22[0:0];
   _RAND_23 = {1{`RANDOM}};
-  spriteVisibleReg_8 = _RAND_23[0:0];
+  spriteVisibleReg_7 = _RAND_23[0:0];
   _RAND_24 = {1{`RANDOM}};
-  spriteVisibleReg_9 = _RAND_24[0:0];
+  spriteVisibleReg_8 = _RAND_24[0:0];
   _RAND_25 = {1{`RANDOM}};
-  spriteVisibleReg_10 = _RAND_25[0:0];
+  spriteVisibleReg_9 = _RAND_25[0:0];
   _RAND_26 = {1{`RANDOM}};
-  spriteVisibleReg_11 = _RAND_26[0:0];
+  spriteVisibleReg_10 = _RAND_26[0:0];
   _RAND_27 = {1{`RANDOM}};
-  spriteVisibleReg_12 = _RAND_27[0:0];
+  spriteVisibleReg_11 = _RAND_27[0:0];
   _RAND_28 = {1{`RANDOM}};
-  spriteVisibleReg_13 = _RAND_28[0:0];
+  spriteVisibleReg_12 = _RAND_28[0:0];
   _RAND_29 = {1{`RANDOM}};
-  spriteVisibleReg_14 = _RAND_29[0:0];
+  spriteVisibleReg_13 = _RAND_29[0:0];
   _RAND_30 = {1{`RANDOM}};
-  spriteVisibleReg_15 = _RAND_30[0:0];
+  spriteVisibleReg_14 = _RAND_30[0:0];
   _RAND_31 = {1{`RANDOM}};
-  missingFrameErrorReg = _RAND_31[0:0];
+  spriteVisibleReg_15 = _RAND_31[0:0];
   _RAND_32 = {1{`RANDOM}};
-  newFrameStikyReg = _RAND_32[0:0];
+  spriteFlipHorizontalReg_0 = _RAND_32[0:0];
   _RAND_33 = {1{`RANDOM}};
-  _T_34 = _RAND_33[0:0];
+  spriteFlipHorizontalReg_1 = _RAND_33[0:0];
   _RAND_34 = {1{`RANDOM}};
-  backTileMemoryDataRead_0 = _RAND_34[6:0];
+  spriteScaleHorizontalReg_0 = _RAND_34[1:0];
   _RAND_35 = {1{`RANDOM}};
-  backTileMemoryDataRead_1 = _RAND_35[6:0];
+  spriteScaleVerticalReg_0 = _RAND_35[1:0];
   _RAND_36 = {1{`RANDOM}};
-  backTileMemoryDataRead_2 = _RAND_36[6:0];
+  spriteRotationReg_0 = _RAND_36[0:0];
   _RAND_37 = {1{`RANDOM}};
-  backTileMemoryDataRead_3 = _RAND_37[6:0];
+  spriteRotationReg_2 = _RAND_37[0:0];
   _RAND_38 = {1{`RANDOM}};
-  backTileMemoryDataRead_4 = _RAND_38[6:0];
+  missingFrameErrorReg = _RAND_38[0:0];
   _RAND_39 = {1{`RANDOM}};
-  backTileMemoryDataRead_5 = _RAND_39[6:0];
+  newFrameStikyReg = _RAND_39[0:0];
   _RAND_40 = {1{`RANDOM}};
-  backTileMemoryDataRead_6 = _RAND_40[6:0];
+  _T_36 = _RAND_40[0:0];
   _RAND_41 = {1{`RANDOM}};
-  backTileMemoryDataRead_7 = _RAND_41[6:0];
+  backTileMemoryDataRead_0 = _RAND_41[6:0];
   _RAND_42 = {1{`RANDOM}};
-  backTileMemoryDataRead_8 = _RAND_42[6:0];
+  backTileMemoryDataRead_1 = _RAND_42[6:0];
   _RAND_43 = {1{`RANDOM}};
-  backTileMemoryDataRead_9 = _RAND_43[6:0];
+  backTileMemoryDataRead_2 = _RAND_43[6:0];
   _RAND_44 = {1{`RANDOM}};
-  backTileMemoryDataRead_10 = _RAND_44[6:0];
+  backTileMemoryDataRead_3 = _RAND_44[6:0];
   _RAND_45 = {1{`RANDOM}};
-  backTileMemoryDataRead_11 = _RAND_45[6:0];
+  backTileMemoryDataRead_4 = _RAND_45[6:0];
   _RAND_46 = {1{`RANDOM}};
-  backTileMemoryDataRead_12 = _RAND_46[6:0];
+  backTileMemoryDataRead_5 = _RAND_46[6:0];
   _RAND_47 = {1{`RANDOM}};
-  backTileMemoryDataRead_13 = _RAND_47[6:0];
+  backTileMemoryDataRead_6 = _RAND_47[6:0];
   _RAND_48 = {1{`RANDOM}};
-  backTileMemoryDataRead_14 = _RAND_48[6:0];
+  backTileMemoryDataRead_7 = _RAND_48[6:0];
   _RAND_49 = {1{`RANDOM}};
-  backTileMemoryDataRead_15 = _RAND_49[6:0];
+  backTileMemoryDataRead_8 = _RAND_49[6:0];
   _RAND_50 = {1{`RANDOM}};
-  backTileMemoryDataRead_16 = _RAND_50[6:0];
+  backTileMemoryDataRead_9 = _RAND_50[6:0];
   _RAND_51 = {1{`RANDOM}};
-  backTileMemoryDataRead_17 = _RAND_51[6:0];
+  backTileMemoryDataRead_10 = _RAND_51[6:0];
   _RAND_52 = {1{`RANDOM}};
-  backTileMemoryDataRead_18 = _RAND_52[6:0];
+  backTileMemoryDataRead_11 = _RAND_52[6:0];
   _RAND_53 = {1{`RANDOM}};
-  backTileMemoryDataRead_19 = _RAND_53[6:0];
+  backTileMemoryDataRead_12 = _RAND_53[6:0];
   _RAND_54 = {1{`RANDOM}};
-  backTileMemoryDataRead_20 = _RAND_54[6:0];
+  backTileMemoryDataRead_13 = _RAND_54[6:0];
   _RAND_55 = {1{`RANDOM}};
-  backTileMemoryDataRead_21 = _RAND_55[6:0];
+  backTileMemoryDataRead_14 = _RAND_55[6:0];
   _RAND_56 = {1{`RANDOM}};
-  backTileMemoryDataRead_22 = _RAND_56[6:0];
+  backTileMemoryDataRead_15 = _RAND_56[6:0];
   _RAND_57 = {1{`RANDOM}};
-  backTileMemoryDataRead_23 = _RAND_57[6:0];
+  backTileMemoryDataRead_16 = _RAND_57[6:0];
   _RAND_58 = {1{`RANDOM}};
-  backTileMemoryDataRead_24 = _RAND_58[6:0];
+  backTileMemoryDataRead_17 = _RAND_58[6:0];
   _RAND_59 = {1{`RANDOM}};
-  backTileMemoryDataRead_25 = _RAND_59[6:0];
+  backTileMemoryDataRead_18 = _RAND_59[6:0];
   _RAND_60 = {1{`RANDOM}};
-  backTileMemoryDataRead_26 = _RAND_60[6:0];
+  backTileMemoryDataRead_19 = _RAND_60[6:0];
   _RAND_61 = {1{`RANDOM}};
-  backTileMemoryDataRead_27 = _RAND_61[6:0];
+  backTileMemoryDataRead_20 = _RAND_61[6:0];
   _RAND_62 = {1{`RANDOM}};
-  backTileMemoryDataRead_28 = _RAND_62[6:0];
+  backTileMemoryDataRead_21 = _RAND_62[6:0];
   _RAND_63 = {1{`RANDOM}};
-  backTileMemoryDataRead_29 = _RAND_63[6:0];
+  backTileMemoryDataRead_22 = _RAND_63[6:0];
   _RAND_64 = {1{`RANDOM}};
-  backTileMemoryDataRead_30 = _RAND_64[6:0];
+  backTileMemoryDataRead_23 = _RAND_64[6:0];
   _RAND_65 = {1{`RANDOM}};
-  backTileMemoryDataRead_31 = _RAND_65[6:0];
+  backTileMemoryDataRead_24 = _RAND_65[6:0];
   _RAND_66 = {1{`RANDOM}};
-  backMemoryCopyCounter = _RAND_66[11:0];
+  backTileMemoryDataRead_25 = _RAND_66[6:0];
   _RAND_67 = {1{`RANDOM}};
-  copyEnabledReg = _RAND_67[0:0];
+  backTileMemoryDataRead_26 = _RAND_67[6:0];
   _RAND_68 = {1{`RANDOM}};
-  _T_204 = _RAND_68[10:0];
+  backTileMemoryDataRead_27 = _RAND_68[6:0];
   _RAND_69 = {1{`RANDOM}};
-  _T_209 = _RAND_69[0:0];
+  backTileMemoryDataRead_28 = _RAND_69[6:0];
   _RAND_70 = {1{`RANDOM}};
-  _T_216 = _RAND_70[10:0];
+  backTileMemoryDataRead_29 = _RAND_70[6:0];
   _RAND_71 = {1{`RANDOM}};
-  _T_223 = _RAND_71[4:0];
+  backTileMemoryDataRead_30 = _RAND_71[6:0];
   _RAND_72 = {1{`RANDOM}};
-  pixelColorBack = _RAND_72[5:0];
+  backTileMemoryDataRead_31 = _RAND_72[6:0];
   _RAND_73 = {1{`RANDOM}};
-  _T_790 = _RAND_73[5:0];
+  backMemoryCopyCounter = _RAND_73[11:0];
   _RAND_74 = {1{`RANDOM}};
-  _T_792_0 = _RAND_74[0:0];
+  copyEnabledReg = _RAND_74[0:0];
   _RAND_75 = {1{`RANDOM}};
-  _T_792_1 = _RAND_75[0:0];
+  _T_206 = _RAND_75[10:0];
   _RAND_76 = {1{`RANDOM}};
-  _T_795 = _RAND_76[0:0];
+  _T_211 = _RAND_76[0:0];
   _RAND_77 = {1{`RANDOM}};
-  _T_799 = _RAND_77[5:0];
+  _T_218 = _RAND_77[10:0];
   _RAND_78 = {1{`RANDOM}};
-  _T_801_0 = _RAND_78[0:0];
+  _T_225 = _RAND_78[4:0];
   _RAND_79 = {1{`RANDOM}};
-  _T_801_1 = _RAND_79[0:0];
+  pixelColorBack = _RAND_79[5:0];
   _RAND_80 = {1{`RANDOM}};
-  _T_804 = _RAND_80[0:0];
+  spriteActive = _RAND_80[0:0];
   _RAND_81 = {1{`RANDOM}};
-  _T_808 = _RAND_81[5:0];
+  indexcounter = _RAND_81[9:0];
   _RAND_82 = {1{`RANDOM}};
-  _T_809_0 = _RAND_82[0:0];
+  _T_1545 = _RAND_82[5:0];
   _RAND_83 = {1{`RANDOM}};
-  _T_809_1 = _RAND_83[0:0];
+  _T_1547_0 = _RAND_83[0:0];
   _RAND_84 = {1{`RANDOM}};
-  _T_810_0 = _RAND_84[0:0];
+  _T_1547_1 = _RAND_84[0:0];
   _RAND_85 = {1{`RANDOM}};
-  _T_810_1 = _RAND_85[0:0];
+  _T_1550 = _RAND_85[0:0];
   _RAND_86 = {1{`RANDOM}};
-  _T_813 = _RAND_86[0:0];
+  _T_1554 = _RAND_86[5:0];
   _RAND_87 = {1{`RANDOM}};
-  _T_817 = _RAND_87[5:0];
+  _T_1556_0 = _RAND_87[0:0];
   _RAND_88 = {1{`RANDOM}};
-  _T_818_0 = _RAND_88[0:0];
+  _T_1556_1 = _RAND_88[0:0];
   _RAND_89 = {1{`RANDOM}};
-  _T_818_1 = _RAND_89[0:0];
+  _T_1559 = _RAND_89[0:0];
   _RAND_90 = {1{`RANDOM}};
-  _T_819_0 = _RAND_90[0:0];
+  _T_1563 = _RAND_90[5:0];
   _RAND_91 = {1{`RANDOM}};
-  _T_819_1 = _RAND_91[0:0];
+  _T_1565_0 = _RAND_91[0:0];
   _RAND_92 = {1{`RANDOM}};
-  _T_822 = _RAND_92[0:0];
+  _T_1565_1 = _RAND_92[0:0];
   _RAND_93 = {1{`RANDOM}};
-  _T_826 = _RAND_93[5:0];
+  _T_1568 = _RAND_93[0:0];
   _RAND_94 = {1{`RANDOM}};
-  _T_827_0 = _RAND_94[0:0];
+  _T_1572 = _RAND_94[5:0];
   _RAND_95 = {1{`RANDOM}};
-  _T_827_1 = _RAND_95[0:0];
+  _T_1573_0 = _RAND_95[0:0];
   _RAND_96 = {1{`RANDOM}};
-  _T_828_0 = _RAND_96[0:0];
+  _T_1573_1 = _RAND_96[0:0];
   _RAND_97 = {1{`RANDOM}};
-  _T_828_1 = _RAND_97[0:0];
+  _T_1574_0 = _RAND_97[0:0];
   _RAND_98 = {1{`RANDOM}};
-  _T_831 = _RAND_98[0:0];
+  _T_1574_1 = _RAND_98[0:0];
   _RAND_99 = {1{`RANDOM}};
-  _T_835 = _RAND_99[5:0];
+  _T_1577 = _RAND_99[0:0];
   _RAND_100 = {1{`RANDOM}};
-  _T_836_0 = _RAND_100[0:0];
+  _T_1581 = _RAND_100[5:0];
   _RAND_101 = {1{`RANDOM}};
-  _T_836_1 = _RAND_101[0:0];
+  _T_1582_0 = _RAND_101[0:0];
   _RAND_102 = {1{`RANDOM}};
-  _T_837_0 = _RAND_102[0:0];
+  _T_1582_1 = _RAND_102[0:0];
   _RAND_103 = {1{`RANDOM}};
-  _T_837_1 = _RAND_103[0:0];
+  _T_1583_0 = _RAND_103[0:0];
   _RAND_104 = {1{`RANDOM}};
-  _T_840 = _RAND_104[0:0];
+  _T_1583_1 = _RAND_104[0:0];
   _RAND_105 = {1{`RANDOM}};
-  _T_844 = _RAND_105[5:0];
+  _T_1586 = _RAND_105[0:0];
   _RAND_106 = {1{`RANDOM}};
-  _T_845_0 = _RAND_106[0:0];
+  _T_1590 = _RAND_106[5:0];
   _RAND_107 = {1{`RANDOM}};
-  _T_845_1 = _RAND_107[0:0];
+  _T_1591_0 = _RAND_107[0:0];
   _RAND_108 = {1{`RANDOM}};
-  _T_846_0 = _RAND_108[0:0];
+  _T_1591_1 = _RAND_108[0:0];
   _RAND_109 = {1{`RANDOM}};
-  _T_846_1 = _RAND_109[0:0];
+  _T_1592_0 = _RAND_109[0:0];
   _RAND_110 = {1{`RANDOM}};
-  _T_849 = _RAND_110[0:0];
+  _T_1592_1 = _RAND_110[0:0];
   _RAND_111 = {1{`RANDOM}};
-  _T_853 = _RAND_111[5:0];
+  _T_1595 = _RAND_111[0:0];
   _RAND_112 = {1{`RANDOM}};
-  _T_854_0 = _RAND_112[0:0];
+  _T_1599 = _RAND_112[5:0];
   _RAND_113 = {1{`RANDOM}};
-  _T_854_1 = _RAND_113[0:0];
+  _T_1600_0 = _RAND_113[0:0];
   _RAND_114 = {1{`RANDOM}};
-  _T_855_0 = _RAND_114[0:0];
+  _T_1600_1 = _RAND_114[0:0];
   _RAND_115 = {1{`RANDOM}};
-  _T_855_1 = _RAND_115[0:0];
+  _T_1601_0 = _RAND_115[0:0];
   _RAND_116 = {1{`RANDOM}};
-  _T_858 = _RAND_116[0:0];
+  _T_1601_1 = _RAND_116[0:0];
   _RAND_117 = {1{`RANDOM}};
-  _T_862 = _RAND_117[5:0];
+  _T_1604 = _RAND_117[0:0];
   _RAND_118 = {1{`RANDOM}};
-  _T_863_0 = _RAND_118[0:0];
+  _T_1608 = _RAND_118[5:0];
   _RAND_119 = {1{`RANDOM}};
-  _T_863_1 = _RAND_119[0:0];
+  _T_1609_0 = _RAND_119[0:0];
   _RAND_120 = {1{`RANDOM}};
-  _T_864_0 = _RAND_120[0:0];
+  _T_1609_1 = _RAND_120[0:0];
   _RAND_121 = {1{`RANDOM}};
-  _T_864_1 = _RAND_121[0:0];
+  _T_1610_0 = _RAND_121[0:0];
   _RAND_122 = {1{`RANDOM}};
-  _T_867 = _RAND_122[0:0];
+  _T_1610_1 = _RAND_122[0:0];
   _RAND_123 = {1{`RANDOM}};
-  _T_871 = _RAND_123[5:0];
+  _T_1613 = _RAND_123[0:0];
   _RAND_124 = {1{`RANDOM}};
-  _T_872_0 = _RAND_124[0:0];
+  _T_1617 = _RAND_124[5:0];
   _RAND_125 = {1{`RANDOM}};
-  _T_872_1 = _RAND_125[0:0];
+  _T_1618_0 = _RAND_125[0:0];
   _RAND_126 = {1{`RANDOM}};
-  _T_873_0 = _RAND_126[0:0];
+  _T_1618_1 = _RAND_126[0:0];
   _RAND_127 = {1{`RANDOM}};
-  _T_873_1 = _RAND_127[0:0];
+  _T_1619_0 = _RAND_127[0:0];
   _RAND_128 = {1{`RANDOM}};
-  _T_876 = _RAND_128[0:0];
+  _T_1619_1 = _RAND_128[0:0];
   _RAND_129 = {1{`RANDOM}};
-  _T_880 = _RAND_129[5:0];
+  _T_1622 = _RAND_129[0:0];
   _RAND_130 = {1{`RANDOM}};
-  _T_881_0 = _RAND_130[0:0];
+  _T_1626 = _RAND_130[5:0];
   _RAND_131 = {1{`RANDOM}};
-  _T_881_1 = _RAND_131[0:0];
+  _T_1627_0 = _RAND_131[0:0];
   _RAND_132 = {1{`RANDOM}};
-  _T_882_0 = _RAND_132[0:0];
+  _T_1627_1 = _RAND_132[0:0];
   _RAND_133 = {1{`RANDOM}};
-  _T_882_1 = _RAND_133[0:0];
+  _T_1628_0 = _RAND_133[0:0];
   _RAND_134 = {1{`RANDOM}};
-  _T_885 = _RAND_134[0:0];
+  _T_1628_1 = _RAND_134[0:0];
   _RAND_135 = {1{`RANDOM}};
-  _T_889 = _RAND_135[5:0];
+  _T_1631 = _RAND_135[0:0];
   _RAND_136 = {1{`RANDOM}};
-  _T_890_0 = _RAND_136[0:0];
+  _T_1635 = _RAND_136[5:0];
   _RAND_137 = {1{`RANDOM}};
-  _T_890_1 = _RAND_137[0:0];
+  _T_1636_0 = _RAND_137[0:0];
   _RAND_138 = {1{`RANDOM}};
-  _T_891_0 = _RAND_138[0:0];
+  _T_1636_1 = _RAND_138[0:0];
   _RAND_139 = {1{`RANDOM}};
-  _T_891_1 = _RAND_139[0:0];
+  _T_1637_0 = _RAND_139[0:0];
   _RAND_140 = {1{`RANDOM}};
-  _T_894 = _RAND_140[0:0];
+  _T_1637_1 = _RAND_140[0:0];
   _RAND_141 = {1{`RANDOM}};
-  _T_898 = _RAND_141[5:0];
+  _T_1640 = _RAND_141[0:0];
   _RAND_142 = {1{`RANDOM}};
-  _T_899_0 = _RAND_142[0:0];
+  _T_1644 = _RAND_142[5:0];
   _RAND_143 = {1{`RANDOM}};
-  _T_899_1 = _RAND_143[0:0];
+  _T_1645_0 = _RAND_143[0:0];
   _RAND_144 = {1{`RANDOM}};
-  _T_900_0 = _RAND_144[0:0];
+  _T_1645_1 = _RAND_144[0:0];
   _RAND_145 = {1{`RANDOM}};
-  _T_900_1 = _RAND_145[0:0];
+  _T_1646_0 = _RAND_145[0:0];
   _RAND_146 = {1{`RANDOM}};
-  _T_903 = _RAND_146[0:0];
+  _T_1646_1 = _RAND_146[0:0];
   _RAND_147 = {1{`RANDOM}};
-  _T_907 = _RAND_147[5:0];
+  _T_1649 = _RAND_147[0:0];
   _RAND_148 = {1{`RANDOM}};
-  _T_908_0 = _RAND_148[0:0];
+  _T_1653 = _RAND_148[5:0];
   _RAND_149 = {1{`RANDOM}};
-  _T_908_1 = _RAND_149[0:0];
+  _T_1654_0 = _RAND_149[0:0];
   _RAND_150 = {1{`RANDOM}};
-  _T_909_0 = _RAND_150[0:0];
+  _T_1654_1 = _RAND_150[0:0];
   _RAND_151 = {1{`RANDOM}};
-  _T_909_1 = _RAND_151[0:0];
+  _T_1655_0 = _RAND_151[0:0];
   _RAND_152 = {1{`RANDOM}};
-  _T_912 = _RAND_152[0:0];
+  _T_1655_1 = _RAND_152[0:0];
   _RAND_153 = {1{`RANDOM}};
-  _T_916 = _RAND_153[5:0];
+  _T_1658 = _RAND_153[0:0];
   _RAND_154 = {1{`RANDOM}};
-  _T_917_0 = _RAND_154[0:0];
+  _T_1662 = _RAND_154[5:0];
   _RAND_155 = {1{`RANDOM}};
-  _T_917_1 = _RAND_155[0:0];
+  _T_1663_0 = _RAND_155[0:0];
   _RAND_156 = {1{`RANDOM}};
-  _T_918_0 = _RAND_156[0:0];
+  _T_1663_1 = _RAND_156[0:0];
   _RAND_157 = {1{`RANDOM}};
-  _T_918_1 = _RAND_157[0:0];
+  _T_1664_0 = _RAND_157[0:0];
   _RAND_158 = {1{`RANDOM}};
-  _T_921 = _RAND_158[0:0];
+  _T_1664_1 = _RAND_158[0:0];
   _RAND_159 = {1{`RANDOM}};
-  _T_925 = _RAND_159[5:0];
+  _T_1667 = _RAND_159[0:0];
   _RAND_160 = {1{`RANDOM}};
-  _T_926_0 = _RAND_160[0:0];
+  _T_1671 = _RAND_160[5:0];
   _RAND_161 = {1{`RANDOM}};
-  _T_926_1 = _RAND_161[0:0];
+  _T_1672_0 = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
-  _T_927_0 = _RAND_162[0:0];
+  _T_1672_1 = _RAND_162[0:0];
   _RAND_163 = {1{`RANDOM}};
-  _T_927_1 = _RAND_163[0:0];
+  _T_1673_0 = _RAND_163[0:0];
   _RAND_164 = {1{`RANDOM}};
-  _T_930 = _RAND_164[0:0];
+  _T_1673_1 = _RAND_164[0:0];
   _RAND_165 = {1{`RANDOM}};
-  pixelColorSprite = _RAND_165[5:0];
+  _T_1676 = _RAND_165[0:0];
   _RAND_166 = {1{`RANDOM}};
-  pixelColorSpriteValid = _RAND_166[0:0];
+  _T_1680 = _RAND_166[5:0];
   _RAND_167 = {1{`RANDOM}};
-  _T_933_0 = _RAND_167[0:0];
+  _T_1681_0 = _RAND_167[0:0];
   _RAND_168 = {1{`RANDOM}};
-  _T_933_1 = _RAND_168[0:0];
+  _T_1681_1 = _RAND_168[0:0];
   _RAND_169 = {1{`RANDOM}};
-  _T_933_2 = _RAND_169[0:0];
+  _T_1682_0 = _RAND_169[0:0];
   _RAND_170 = {1{`RANDOM}};
-  _T_940 = _RAND_170[3:0];
+  _T_1682_1 = _RAND_170[0:0];
   _RAND_171 = {1{`RANDOM}};
-  _T_941 = _RAND_171[3:0];
+  _T_1685 = _RAND_171[0:0];
   _RAND_172 = {1{`RANDOM}};
-  _T_942 = _RAND_172[3:0];
+  pixelColorSprite = _RAND_172[5:0];
+  _RAND_173 = {1{`RANDOM}};
+  pixelColorSpriteValid = _RAND_173[0:0];
+  _RAND_174 = {1{`RANDOM}};
+  _T_1688_0 = _RAND_174[0:0];
+  _RAND_175 = {1{`RANDOM}};
+  _T_1688_1 = _RAND_175[0:0];
+  _RAND_176 = {1{`RANDOM}};
+  _T_1688_2 = _RAND_176[0:0];
+  _RAND_177 = {1{`RANDOM}};
+  _T_1695 = _RAND_177[3:0];
+  _RAND_178 = {1{`RANDOM}};
+  _T_1696 = _RAND_178[3:0];
+  _RAND_179 = {1{`RANDOM}};
+  _T_1697 = _RAND_179[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -2951,7 +5088,7 @@ end // initial
     if (reset) begin
       backMemoryRestoreCounter <= 12'h0;
     end else if (restoreEnabled) begin
-      backMemoryRestoreCounter <= _T_201;
+      backMemoryRestoreCounter <= _T_203;
     end
     _T_14_0 <= _T_14_1;
     _T_14_1 <= _T_14_2;
@@ -2976,7 +5113,12 @@ end // initial
     if (reset) begin
       spriteXPositionReg_1 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_1 <= io_spriteXPosition_1;
+      spriteXPositionReg_1 <= 11'sh96;
+    end
+    if (reset) begin
+      spriteXPositionReg_2 <= 11'sh0;
+    end else if (io_newFrame) begin
+      spriteXPositionReg_2 <= 11'sh96;
     end
     if (reset) begin
       spriteYPositionReg_0 <= 10'sh0;
@@ -2988,7 +5130,11 @@ end // initial
     end else if (io_newFrame) begin
       spriteYPositionReg_1 <= 10'sh148;
     end
-    spriteVisibleReg_2 <= reset | _GEN_47;
+    if (reset) begin
+      spriteYPositionReg_2 <= 10'sh0;
+    end else if (io_newFrame) begin
+      spriteYPositionReg_2 <= 10'sh148;
+    end
     spriteVisibleReg_3 <= reset | _GEN_48;
     spriteVisibleReg_4 <= reset | _GEN_49;
     spriteVisibleReg_5 <= reset | _GEN_50;
@@ -3003,18 +5149,48 @@ end // initial
     spriteVisibleReg_14 <= reset | _GEN_59;
     spriteVisibleReg_15 <= reset | _GEN_60;
     if (reset) begin
+      spriteFlipHorizontalReg_0 <= 1'h0;
+    end else if (io_newFrame) begin
+      spriteFlipHorizontalReg_0 <= io_spriteFlipHorizontal_0;
+    end
+    if (reset) begin
+      spriteFlipHorizontalReg_1 <= 1'h0;
+    end else begin
+      spriteFlipHorizontalReg_1 <= _GEN_62;
+    end
+    if (reset) begin
+      spriteScaleHorizontalReg_0 <= 2'h0;
+    end else if (io_newFrame) begin
+      spriteScaleHorizontalReg_0 <= 2'h2;
+    end
+    if (reset) begin
+      spriteScaleVerticalReg_0 <= 2'h0;
+    end else if (io_newFrame) begin
+      spriteScaleVerticalReg_0 <= 2'h2;
+    end
+    if (reset) begin
+      spriteRotationReg_0 <= 1'h0;
+    end else if (io_newFrame) begin
+      spriteRotationReg_0 <= io_spriteRotation_0;
+    end
+    if (reset) begin
+      spriteRotationReg_2 <= 1'h0;
+    end else if (io_newFrame) begin
+      spriteRotationReg_2 <= io_spriteRotation_2;
+    end
+    if (reset) begin
       missingFrameErrorReg <= 1'h0;
     end else begin
-      missingFrameErrorReg <= _GEN_114;
+      missingFrameErrorReg <= _GEN_146;
     end
     if (reset) begin
       newFrameStikyReg <= 1'h0;
-    end else if (_T_34) begin
+    end else if (_T_36) begin
       newFrameStikyReg <= 1'h0;
     end else begin
-      newFrameStikyReg <= _GEN_112;
+      newFrameStikyReg <= _GEN_144;
     end
-    _T_34 <= io_frameUpdateDone;
+    _T_36 <= io_frameUpdateDone;
     backTileMemoryDataRead_0 <= backTileMemories_0_io_dataRead;
     backTileMemoryDataRead_1 <= backTileMemories_1_io_dataRead;
     backTileMemoryDataRead_2 <= backTileMemories_2_io_dataRead;
@@ -3050,122 +5226,140 @@ end // initial
     if (reset) begin
       backMemoryCopyCounter <= 12'h0;
     end else if (preDisplayArea) begin
-      if (_T_196) begin
-        backMemoryCopyCounter <= _T_198;
+      if (_T_198) begin
+        backMemoryCopyCounter <= _T_200;
       end
     end else begin
       backMemoryCopyCounter <= 12'h0;
     end
-    copyEnabledReg <= preDisplayArea & _T_196;
-    _T_204 <= backMemoryRestoreCounter[10:0];
-    _T_209 <= backMemoryRestoreCounter < 12'h800;
-    _T_216 <= backMemoryCopyCounter[10:0];
-    _T_223 <= backBufferMemory_io_dataRead;
+    copyEnabledReg <= preDisplayArea & _T_198;
+    _T_206 <= backMemoryRestoreCounter[10:0];
+    _T_211 <= backMemoryRestoreCounter < 12'h800;
+    _T_218 <= backMemoryCopyCounter[10:0];
+    _T_225 <= backBufferMemory_io_dataRead;
     if (fullBackgroundColor[6]) begin
       pixelColorBack <= 6'h0;
     end else begin
       pixelColorBack <= fullBackgroundColor[5:0];
     end
-    _T_790 <= spriteMemories_0_io_dataRead[5:0];
-    _T_792_0 <= _T_792_1;
-    _T_792_1 <= _T_256 & _T_257;
-    _T_795 <= spriteMemories_0_io_dataRead[6];
-    _T_799 <= spriteMemories_1_io_dataRead[5:0];
-    _T_801_0 <= _T_801_1;
-    _T_801_1 <= _T_286 & _T_287;
-    _T_804 <= spriteMemories_1_io_dataRead[6];
-    _T_808 <= spriteMemories_2_io_dataRead[5:0];
-    _T_809_0 <= _T_809_1;
-    _T_809_1 <= spriteVisibleReg_2;
-    _T_810_0 <= _T_810_1;
-    _T_810_1 <= _T_316 & _T_317;
-    _T_813 <= spriteMemories_2_io_dataRead[6];
-    _T_817 <= spriteMemories_3_io_dataRead[5:0];
-    _T_818_0 <= _T_818_1;
-    _T_818_1 <= spriteVisibleReg_3;
-    _T_819_0 <= _T_819_1;
-    _T_819_1 <= _T_316 & _T_317;
-    _T_822 <= spriteMemories_3_io_dataRead[6];
-    _T_826 <= spriteMemories_4_io_dataRead[5:0];
-    _T_827_0 <= _T_827_1;
-    _T_827_1 <= spriteVisibleReg_4;
-    _T_828_0 <= _T_828_1;
-    _T_828_1 <= _T_316 & _T_317;
-    _T_831 <= spriteMemories_4_io_dataRead[6];
-    _T_835 <= spriteMemories_5_io_dataRead[5:0];
-    _T_836_0 <= _T_836_1;
-    _T_836_1 <= spriteVisibleReg_5;
-    _T_837_0 <= _T_837_1;
-    _T_837_1 <= _T_316 & _T_317;
-    _T_840 <= spriteMemories_5_io_dataRead[6];
-    _T_844 <= spriteMemories_6_io_dataRead[5:0];
-    _T_845_0 <= _T_845_1;
-    _T_845_1 <= spriteVisibleReg_6;
-    _T_846_0 <= _T_846_1;
-    _T_846_1 <= _T_316 & _T_317;
-    _T_849 <= spriteMemories_6_io_dataRead[6];
-    _T_853 <= spriteMemories_7_io_dataRead[5:0];
-    _T_854_0 <= _T_854_1;
-    _T_854_1 <= spriteVisibleReg_7;
-    _T_855_0 <= _T_855_1;
-    _T_855_1 <= _T_316 & _T_317;
-    _T_858 <= spriteMemories_7_io_dataRead[6];
-    _T_862 <= spriteMemories_8_io_dataRead[5:0];
-    _T_863_0 <= _T_863_1;
-    _T_863_1 <= spriteVisibleReg_8;
-    _T_864_0 <= _T_864_1;
-    _T_864_1 <= _T_316 & _T_317;
-    _T_867 <= spriteMemories_8_io_dataRead[6];
-    _T_871 <= spriteMemories_9_io_dataRead[5:0];
-    _T_872_0 <= _T_872_1;
-    _T_872_1 <= spriteVisibleReg_9;
-    _T_873_0 <= _T_873_1;
-    _T_873_1 <= _T_316 & _T_317;
-    _T_876 <= spriteMemories_9_io_dataRead[6];
-    _T_880 <= spriteMemories_10_io_dataRead[5:0];
-    _T_881_0 <= _T_881_1;
-    _T_881_1 <= spriteVisibleReg_10;
-    _T_882_0 <= _T_882_1;
-    _T_882_1 <= _T_316 & _T_317;
-    _T_885 <= spriteMemories_10_io_dataRead[6];
-    _T_889 <= spriteMemories_11_io_dataRead[5:0];
-    _T_890_0 <= _T_890_1;
-    _T_890_1 <= spriteVisibleReg_11;
-    _T_891_0 <= _T_891_1;
-    _T_891_1 <= _T_316 & _T_317;
-    _T_894 <= spriteMemories_11_io_dataRead[6];
-    _T_898 <= spriteMemories_12_io_dataRead[5:0];
-    _T_899_0 <= _T_899_1;
-    _T_899_1 <= spriteVisibleReg_12;
-    _T_900_0 <= _T_900_1;
-    _T_900_1 <= _T_316 & _T_317;
-    _T_903 <= spriteMemories_12_io_dataRead[6];
-    _T_907 <= spriteMemories_13_io_dataRead[5:0];
-    _T_908_0 <= _T_908_1;
-    _T_908_1 <= spriteVisibleReg_13;
-    _T_909_0 <= _T_909_1;
-    _T_909_1 <= _T_316 & _T_317;
-    _T_912 <= spriteMemories_13_io_dataRead[6];
-    _T_916 <= spriteMemories_14_io_dataRead[5:0];
-    _T_917_0 <= _T_917_1;
-    _T_917_1 <= spriteVisibleReg_14;
-    _T_918_0 <= _T_918_1;
-    _T_918_1 <= _T_316 & _T_317;
-    _T_921 <= spriteMemories_14_io_dataRead[6];
-    _T_925 <= spriteMemories_15_io_dataRead[5:0];
-    _T_926_0 <= _T_926_1;
-    _T_926_1 <= spriteVisibleReg_15;
-    _T_927_0 <= _T_927_1;
-    _T_927_1 <= _T_316 & _T_317;
-    _T_930 <= spriteMemories_15_io_dataRead[6];
+    if (reset) begin
+      spriteActive <= 1'h0;
+    end else if (spriteActive) begin
+      spriteActive <= _GEN_2239;
+    end else begin
+      spriteActive <= _GEN_2240;
+    end
+    if (reset) begin
+      indexcounter <= 10'h0;
+    end else if (spriteActive) begin
+      if (_T_250) begin
+        indexcounter <= _T_249;
+      end else begin
+        indexcounter <= 10'h0;
+      end
+    end else if (_T_263) begin
+      indexcounter <= 10'h0;
+    end else if (_T_247) begin
+      indexcounter <= _T_249;
+    end
+    _T_1545 <= spriteMemories_0_io_dataRead[5:0];
+    _T_1547_0 <= _T_1547_1;
+    _T_1547_1 <= _T_318 & _T_321;
+    _T_1550 <= spriteMemories_0_io_dataRead[6];
+    _T_1554 <= spriteMemories_1_io_dataRead[5:0];
+    _T_1556_0 <= _T_1556_1;
+    _T_1556_1 <= _T_398 & _T_401;
+    _T_1559 <= spriteMemories_1_io_dataRead[6];
+    _T_1563 <= spriteMemories_2_io_dataRead[5:0];
+    _T_1565_0 <= _T_1565_1;
+    _T_1565_1 <= _T_478 & _T_481;
+    _T_1568 <= spriteMemories_2_io_dataRead[6];
+    _T_1572 <= spriteMemories_3_io_dataRead[5:0];
+    _T_1573_0 <= _T_1573_1;
+    _T_1573_1 <= spriteVisibleReg_3;
+    _T_1574_0 <= _T_1574_1;
+    _T_1574_1 <= _T_558 & _T_561;
+    _T_1577 <= spriteMemories_3_io_dataRead[6];
+    _T_1581 <= spriteMemories_4_io_dataRead[5:0];
+    _T_1582_0 <= _T_1582_1;
+    _T_1582_1 <= spriteVisibleReg_4;
+    _T_1583_0 <= _T_1583_1;
+    _T_1583_1 <= _T_558 & _T_561;
+    _T_1586 <= spriteMemories_4_io_dataRead[6];
+    _T_1590 <= spriteMemories_5_io_dataRead[5:0];
+    _T_1591_0 <= _T_1591_1;
+    _T_1591_1 <= spriteVisibleReg_5;
+    _T_1592_0 <= _T_1592_1;
+    _T_1592_1 <= _T_558 & _T_561;
+    _T_1595 <= spriteMemories_5_io_dataRead[6];
+    _T_1599 <= spriteMemories_6_io_dataRead[5:0];
+    _T_1600_0 <= _T_1600_1;
+    _T_1600_1 <= spriteVisibleReg_6;
+    _T_1601_0 <= _T_1601_1;
+    _T_1601_1 <= _T_558 & _T_561;
+    _T_1604 <= spriteMemories_6_io_dataRead[6];
+    _T_1608 <= spriteMemories_7_io_dataRead[5:0];
+    _T_1609_0 <= _T_1609_1;
+    _T_1609_1 <= spriteVisibleReg_7;
+    _T_1610_0 <= _T_1610_1;
+    _T_1610_1 <= _T_558 & _T_561;
+    _T_1613 <= spriteMemories_7_io_dataRead[6];
+    _T_1617 <= spriteMemories_8_io_dataRead[5:0];
+    _T_1618_0 <= _T_1618_1;
+    _T_1618_1 <= spriteVisibleReg_8;
+    _T_1619_0 <= _T_1619_1;
+    _T_1619_1 <= _T_558 & _T_561;
+    _T_1622 <= spriteMemories_8_io_dataRead[6];
+    _T_1626 <= spriteMemories_9_io_dataRead[5:0];
+    _T_1627_0 <= _T_1627_1;
+    _T_1627_1 <= spriteVisibleReg_9;
+    _T_1628_0 <= _T_1628_1;
+    _T_1628_1 <= _T_558 & _T_561;
+    _T_1631 <= spriteMemories_9_io_dataRead[6];
+    _T_1635 <= spriteMemories_10_io_dataRead[5:0];
+    _T_1636_0 <= _T_1636_1;
+    _T_1636_1 <= spriteVisibleReg_10;
+    _T_1637_0 <= _T_1637_1;
+    _T_1637_1 <= _T_558 & _T_561;
+    _T_1640 <= spriteMemories_10_io_dataRead[6];
+    _T_1644 <= spriteMemories_11_io_dataRead[5:0];
+    _T_1645_0 <= _T_1645_1;
+    _T_1645_1 <= spriteVisibleReg_11;
+    _T_1646_0 <= _T_1646_1;
+    _T_1646_1 <= _T_558 & _T_561;
+    _T_1649 <= spriteMemories_11_io_dataRead[6];
+    _T_1653 <= spriteMemories_12_io_dataRead[5:0];
+    _T_1654_0 <= _T_1654_1;
+    _T_1654_1 <= spriteVisibleReg_12;
+    _T_1655_0 <= _T_1655_1;
+    _T_1655_1 <= _T_558 & _T_561;
+    _T_1658 <= spriteMemories_12_io_dataRead[6];
+    _T_1662 <= spriteMemories_13_io_dataRead[5:0];
+    _T_1663_0 <= _T_1663_1;
+    _T_1663_1 <= spriteVisibleReg_13;
+    _T_1664_0 <= _T_1664_1;
+    _T_1664_1 <= _T_558 & _T_561;
+    _T_1667 <= spriteMemories_13_io_dataRead[6];
+    _T_1671 <= spriteMemories_14_io_dataRead[5:0];
+    _T_1672_0 <= _T_1672_1;
+    _T_1672_1 <= spriteVisibleReg_14;
+    _T_1673_0 <= _T_1673_1;
+    _T_1673_1 <= _T_558 & _T_561;
+    _T_1676 <= spriteMemories_14_io_dataRead[6];
+    _T_1680 <= spriteMemories_15_io_dataRead[5:0];
+    _T_1681_0 <= _T_1681_1;
+    _T_1681_1 <= spriteVisibleReg_15;
+    _T_1682_0 <= _T_1682_1;
+    _T_1682_1 <= _T_558 & _T_561;
+    _T_1685 <= spriteMemories_15_io_dataRead[6];
     pixelColorSprite <= multiHotPriortyReductionTree_io_dataOutput;
     pixelColorSpriteValid <= multiHotPriortyReductionTree_io_selectOutput;
-    _T_933_0 <= _T_933_1;
-    _T_933_1 <= _T_933_2;
-    _T_933_2 <= _T_17 & _T_18;
-    _T_940 <= {pixelColourVGA[5:4],pixelColourVGA[5:4]};
-    _T_941 <= {pixelColourVGA[3:2],pixelColourVGA[3:2]};
-    _T_942 <= {pixelColourVGA[1:0],pixelColourVGA[1:0]};
+    _T_1688_0 <= _T_1688_1;
+    _T_1688_1 <= _T_1688_2;
+    _T_1688_2 <= _T_17 & _T_18;
+    _T_1695 <= {pixelColourVGA[5:4],pixelColourVGA[5:4]};
+    _T_1696 <= {pixelColourVGA[3:2],pixelColourVGA[3:2]};
+    _T_1697 <= {pixelColourVGA[1:0],pixelColourVGA[1:0]};
   end
 endmodule
 module GameLogicTask3(
@@ -3176,8 +5370,10 @@ module GameLogicTask3(
   input         io_btnR,
   input         io_btnD,
   output [10:0] io_spriteXPosition_0,
-  output [10:0] io_spriteXPosition_1,
   output [9:0]  io_spriteYPosition_0,
+  output        io_spriteFlipHorizontal_0,
+  output        io_spriteRotation_0,
+  output        io_spriteRotation_2,
   input         io_newFrame,
   output        io_frameUpdateDone
 );
@@ -3188,32 +5384,40 @@ module GameLogicTask3(
   reg [31:0] _RAND_3;
   reg [31:0] _RAND_4;
 `endif // RANDOMIZE_REG_INIT
-  reg [1:0] stateReg; // @[GameLogicTask3.scala 94:25]
-  reg [10:0] sprite0XReg; // @[GameLogicTask3.scala 97:28]
-  reg [9:0] sprite0YReg; // @[GameLogicTask3.scala 98:28]
-  reg [10:0] sprite1XReg; // @[GameLogicTask3.scala 105:28]
-  reg [6:0] count; // @[GameLogicTask3.scala 109:22]
+  reg [1:0] stateReg; // @[GameLogicTask3.scala 102:25]
+  reg [10:0] sprite0XReg; // @[GameLogicTask3.scala 105:28]
+  reg [9:0] sprite0YReg; // @[GameLogicTask3.scala 106:28]
+  reg  sprite0FlipHorizontalReg; // @[GameLogicTask3.scala 109:41]
+  reg  sprite0RotationReg; // @[GameLogicTask3.scala 110:35]
   wire  _T = 2'h0 == stateReg; // @[Conditional.scala 37:30]
   wire  _T_1 = 2'h1 == stateReg; // @[Conditional.scala 37:30]
-  wire  _T_2 = $signed(sprite0YReg) < 10'sh1a8; // @[GameLogicTask3.scala 132:26]
-  wire [9:0] _T_5 = $signed(sprite0YReg) + 10'sh2; // @[GameLogicTask3.scala 133:38]
-  wire  _T_6 = $signed(sprite0YReg) > 10'sh60; // @[GameLogicTask3.scala 136:26]
-  wire [9:0] _T_9 = $signed(sprite0YReg) - 10'sh2; // @[GameLogicTask3.scala 137:38]
-  wire  _T_10 = $signed(sprite0XReg) < 11'sh240; // @[GameLogicTask3.scala 141:26]
-  wire [10:0] _T_13 = $signed(sprite0XReg) + 11'sh2; // @[GameLogicTask3.scala 142:38]
-  wire  _T_14 = $signed(sprite0XReg) > 11'sh20; // @[GameLogicTask3.scala 146:26]
-  wire [10:0] _T_17 = $signed(sprite0XReg) - 11'sh2; // @[GameLogicTask3.scala 147:38]
-  wire  _T_18 = count <= 7'h28; // @[GameLogicTask3.scala 151:19]
-  wire [10:0] _T_21 = $signed(sprite1XReg) + 11'sh2; // @[GameLogicTask3.scala 152:36]
-  wire [6:0] _T_23 = count + 7'h1; // @[GameLogicTask3.scala 153:24]
-  wire [10:0] _T_26 = $signed(sprite1XReg) - 11'sh2; // @[GameLogicTask3.scala 155:36]
-  wire  _T_29 = count == 7'h53; // @[GameLogicTask3.scala 157:21]
-  wire  _T_30 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
-  wire  _GEN_24 = _T_1 ? 1'h0 : _T_30; // @[Conditional.scala 39:67]
-  assign io_spriteXPosition_0 = sprite0XReg; // @[GameLogicTask3.scala 71:22 GameLogicTask3.scala 118:25]
-  assign io_spriteXPosition_1 = sprite1XReg; // @[GameLogicTask3.scala 71:22 GameLogicTask3.scala 107:25]
-  assign io_spriteYPosition_0 = sprite0YReg; // @[GameLogicTask3.scala 72:22 GameLogicTask3.scala 119:25]
-  assign io_frameUpdateDone = _T ? 1'h0 : _GEN_24; // @[GameLogicTask3.scala 89:22 GameLogicTask3.scala 168:26]
+  wire  _T_2 = $signed(sprite0YReg) < 10'sh1a8; // @[GameLogicTask3.scala 157:26]
+  wire [9:0] _T_5 = $signed(sprite0YReg) + 10'sh2; // @[GameLogicTask3.scala 158:38]
+  wire  _GEN_3 = _T_2 ? 1'h0 : sprite0FlipHorizontalReg; // @[GameLogicTask3.scala 157:47]
+  wire  _T_6 = $signed(sprite0YReg) > 10'sh60; // @[GameLogicTask3.scala 165:26]
+  wire [9:0] _T_9 = $signed(sprite0YReg) - 10'sh2; // @[GameLogicTask3.scala 166:38]
+  wire  _GEN_6 = _T_6 | sprite0FlipHorizontalReg; // @[GameLogicTask3.scala 165:36]
+  wire  _GEN_9 = io_btnU ? _GEN_6 : sprite0FlipHorizontalReg; // @[GameLogicTask3.scala 164:27]
+  wire  _GEN_12 = io_btnD ? _GEN_3 : _GEN_9; // @[GameLogicTask3.scala 156:20]
+  wire  _T_10 = $signed(sprite0XReg) < 11'sh240; // @[GameLogicTask3.scala 177:26]
+  wire [10:0] _T_13 = $signed(sprite0XReg) + 11'sh2; // @[GameLogicTask3.scala 178:38]
+  wire  _GEN_15 = _T_10 ? 1'h0 : 1'h1; // @[GameLogicTask3.scala 177:47]
+  wire  _T_14 = $signed(sprite0XReg) > 11'sh20; // @[GameLogicTask3.scala 184:26]
+  wire [10:0] _T_17 = $signed(sprite0XReg) - 11'sh2; // @[GameLogicTask3.scala 185:38]
+  wire  _GEN_17 = _T_14 | _GEN_12; // @[GameLogicTask3.scala 184:34]
+  wire  _GEN_18 = _T_14 ? 1'h0 : 1'h1; // @[GameLogicTask3.scala 184:34]
+  wire  _GEN_21 = io_btnL ? _GEN_18 : 1'h1; // @[GameLogicTask3.scala 183:27]
+  wire  _GEN_24 = io_btnR ? _GEN_15 : _GEN_21; // @[GameLogicTask3.scala 176:21]
+  wire  _T_18 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
+  wire  _GEN_28 = _T_1 ? _GEN_24 : 1'h1; // @[Conditional.scala 39:67]
+  wire  _GEN_32 = _T_1 ? 1'h0 : _T_18; // @[Conditional.scala 39:67]
+  wire  _GEN_35 = _T | _GEN_28; // @[Conditional.scala 40:58]
+  assign io_spriteXPosition_0 = sprite0XReg; // @[GameLogicTask3.scala 74:22 GameLogicTask3.scala 136:25]
+  assign io_spriteYPosition_0 = sprite0YReg; // @[GameLogicTask3.scala 75:22 GameLogicTask3.scala 137:25]
+  assign io_spriteFlipHorizontal_0 = sprite0FlipHorizontalReg; // @[GameLogicTask3.scala 77:27 GameLogicTask3.scala 138:30]
+  assign io_spriteRotation_0 = sprite0RotationReg; // @[GameLogicTask3.scala 82:21 GameLogicTask3.scala 139:24]
+  assign io_spriteRotation_2 = sprite0RotationReg; // @[GameLogicTask3.scala 82:21 GameLogicTask3.scala 126:24]
+  assign io_frameUpdateDone = _T ? 1'h0 : _GEN_32; // @[GameLogicTask3.scala 97:22 GameLogicTask3.scala 209:26]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -3256,9 +5460,9 @@ initial begin
   _RAND_2 = {1{`RANDOM}};
   sprite0YReg = _RAND_2[9:0];
   _RAND_3 = {1{`RANDOM}};
-  sprite1XReg = _RAND_3[10:0];
+  sprite0FlipHorizontalReg = _RAND_3[0:0];
   _RAND_4 = {1{`RANDOM}};
-  count = _RAND_4[6:0];
+  sprite0RotationReg = _RAND_4[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3275,7 +5479,7 @@ end // initial
       end
     end else if (_T_1) begin
       stateReg <= 2'h2;
-    end else if (_T_30) begin
+    end else if (_T_18) begin
       stateReg <= 2'h0;
     end
     if (reset) begin
@@ -3309,28 +5513,34 @@ end // initial
       end
     end
     if (reset) begin
-      sprite1XReg <= 11'sh96;
+      sprite0FlipHorizontalReg <= 1'h0;
     end else if (!(_T)) begin
       if (_T_1) begin
-        if (_T_18) begin
-          sprite1XReg <= _T_21;
-        end else begin
-          sprite1XReg <= _T_26;
+        if (io_btnR) begin
+          if (_T_10) begin
+            sprite0FlipHorizontalReg <= 1'h0;
+          end else if (io_btnD) begin
+            if (_T_2) begin
+              sprite0FlipHorizontalReg <= 1'h0;
+            end
+          end else if (io_btnU) begin
+            sprite0FlipHorizontalReg <= _GEN_6;
+          end
+        end else if (io_btnL) begin
+          sprite0FlipHorizontalReg <= _GEN_17;
+        end else if (io_btnD) begin
+          if (_T_2) begin
+            sprite0FlipHorizontalReg <= 1'h0;
+          end
+        end else if (io_btnU) begin
+          sprite0FlipHorizontalReg <= _GEN_6;
         end
       end
     end
     if (reset) begin
-      count <= 7'h0;
-    end else if (!(_T)) begin
-      if (_T_1) begin
-        if (_T_18) begin
-          count <= _T_23;
-        end else if (_T_29) begin
-          count <= 7'h0;
-        end else begin
-          count <= _T_23;
-        end
-      end
+      sprite0RotationReg <= 1'h0;
+    end else begin
+      sprite0RotationReg <= _GEN_35;
     end
   end
 endmodule
@@ -3371,8 +5581,10 @@ module GameTop(
   wire  graphicEngineVGA_clock; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_reset; // @[GameTop.scala 43:32]
   wire [10:0] graphicEngineVGA_io_spriteXPosition_0; // @[GameTop.scala 43:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_1; // @[GameTop.scala 43:32]
   wire [9:0] graphicEngineVGA_io_spriteYPosition_0; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteFlipHorizontal_0; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteRotation_0; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteRotation_2; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_newFrame; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 43:32]
@@ -3388,8 +5600,10 @@ module GameTop(
   wire  gameLogic_io_btnR; // @[GameTop.scala 51:25]
   wire  gameLogic_io_btnD; // @[GameTop.scala 51:25]
   wire [10:0] gameLogic_io_spriteXPosition_0; // @[GameTop.scala 51:25]
-  wire [10:0] gameLogic_io_spriteXPosition_1; // @[GameTop.scala 51:25]
   wire [9:0] gameLogic_io_spriteYPosition_0; // @[GameTop.scala 51:25]
+  wire  gameLogic_io_spriteFlipHorizontal_0; // @[GameTop.scala 51:25]
+  wire  gameLogic_io_spriteRotation_0; // @[GameTop.scala 51:25]
+  wire  gameLogic_io_spriteRotation_2; // @[GameTop.scala 51:25]
   wire  gameLogic_io_newFrame; // @[GameTop.scala 51:25]
   wire  gameLogic_io_frameUpdateDone; // @[GameTop.scala 51:25]
   reg [20:0] debounceCounter; // @[GameTop.scala 62:32]
@@ -3418,8 +5632,10 @@ module GameTop(
     .clock(graphicEngineVGA_clock),
     .reset(graphicEngineVGA_reset),
     .io_spriteXPosition_0(graphicEngineVGA_io_spriteXPosition_0),
-    .io_spriteXPosition_1(graphicEngineVGA_io_spriteXPosition_1),
     .io_spriteYPosition_0(graphicEngineVGA_io_spriteYPosition_0),
+    .io_spriteFlipHorizontal_0(graphicEngineVGA_io_spriteFlipHorizontal_0),
+    .io_spriteRotation_0(graphicEngineVGA_io_spriteRotation_0),
+    .io_spriteRotation_2(graphicEngineVGA_io_spriteRotation_2),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -3437,8 +5653,10 @@ module GameTop(
     .io_btnR(gameLogic_io_btnR),
     .io_btnD(gameLogic_io_btnD),
     .io_spriteXPosition_0(gameLogic_io_spriteXPosition_0),
-    .io_spriteXPosition_1(gameLogic_io_spriteXPosition_1),
     .io_spriteYPosition_0(gameLogic_io_spriteYPosition_0),
+    .io_spriteFlipHorizontal_0(gameLogic_io_spriteFlipHorizontal_0),
+    .io_spriteRotation_0(gameLogic_io_spriteRotation_0),
+    .io_spriteRotation_2(gameLogic_io_spriteRotation_2),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone)
   );
@@ -3451,16 +5669,18 @@ module GameTop(
   assign graphicEngineVGA_clock = clock;
   assign graphicEngineVGA_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 83:26]
   assign graphicEngineVGA_io_spriteXPosition_0 = gameLogic_io_spriteXPosition_0; // @[GameTop.scala 119:39]
-  assign graphicEngineVGA_io_spriteXPosition_1 = gameLogic_io_spriteXPosition_1; // @[GameTop.scala 119:39]
   assign graphicEngineVGA_io_spriteYPosition_0 = gameLogic_io_spriteYPosition_0; // @[GameTop.scala 120:39]
-  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 138:39]
+  assign graphicEngineVGA_io_spriteFlipHorizontal_0 = gameLogic_io_spriteFlipHorizontal_0; // @[GameTop.scala 122:44]
+  assign graphicEngineVGA_io_spriteRotation_0 = gameLogic_io_spriteRotation_0; // @[GameTop.scala 128:38]
+  assign graphicEngineVGA_io_spriteRotation_2 = gameLogic_io_spriteRotation_2; // @[GameTop.scala 128:38]
+  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 143:39]
   assign gameLogic_clock = clock;
   assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 84:19]
   assign gameLogic_io_btnU = btnUState; // @[GameTop.scala 93:21]
   assign gameLogic_io_btnL = btnLState; // @[GameTop.scala 94:21]
   assign gameLogic_io_btnR = btnRState; // @[GameTop.scala 95:21]
   assign gameLogic_io_btnD = btnDState; // @[GameTop.scala 96:21]
-  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 137:25]
+  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 142:25]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif

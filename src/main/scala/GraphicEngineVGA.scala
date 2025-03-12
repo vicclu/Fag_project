@@ -16,7 +16,11 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteVisible = Input(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Input(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Input(Vec(SpriteNumber, Bool()))
-    val spriteScaleHorizontal = Input(Vec(SpriteNumber, Bool()))
+
+    //new
+    val spriteScaleHorizontal = Input(Vec(SpriteNumber, UInt(2.W)))
+    val spriteRotation = Input(Vec(SpriteNumber, Bool()))
+    val spriteScaleVertical = Input(Vec(SpriteNumber, UInt(2.W)))
 
     //Viewbox control input
     val viewBoxX = Input(UInt(10.W)) //0 to 640
@@ -113,7 +117,11 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val spriteVisibleReg = RegEnable(io.spriteVisible, VecInit(Seq.fill(SpriteNumber)(true.B)), io.newFrame)
   val spriteFlipHorizontalReg = RegEnable(io.spriteFlipHorizontal, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
   val spriteFlipVerticalReg = RegEnable(io.spriteFlipVertical, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
-  val spriteScaleHorizontalReg = RegEnable(io.spriteScaleHorizontal, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
+
+  val spriteScaleHorizontalReg = RegEnable(io.spriteScaleHorizontal, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
+  val spriteScaleVerticalReg = RegEnable(io.spriteScaleVertical, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
+  val spriteRotationReg = RegEnable(io.spriteRotation, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
+
   val viewBoxXReg = RegEnable(io.viewBoxX, 0.U(10.W), io.newFrame)
   val viewBoxYReg = RegEnable(io.viewBoxY, 0.U(9.W), io.newFrame)
 
@@ -246,38 +254,107 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   }
 
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
-  val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
-  val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
-  for(i <- 0 until SpriteNumber) {
-    val inSpriteXValue = (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
-    when(spriteFlipHorizontalReg(i)){
-      inSpriteX(i) := 31.S - inSpriteXValue
-    } .otherwise {
-      inSpriteX(i) := inSpriteXValue
-    }
-    when(spriteScaleHorizontalReg(i)){
-      inSpriteX(i) := (31.S - inSpriteXValue) * 2.S
-      inSpriteX(i) := (31.S - inSpriteXValue) * 2.S + 1.S
-    } .otherwise{
-      inSpriteX(i) := inSpriteXValue
-    }
+//
+  val RotXTable = Array.fill(32*32)(0.S(10.W))
+  val RotYTable = Array.fill(32*32)(0.S(10.W))
 
-    val inSpriteYValue = (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
-    when(spriteFlipVerticalReg(i)){
-      inSpriteY(i) := 31.S - inSpriteYValue
-    } .otherwise {
-      inSpriteY(i) := inSpriteYValue
+  val count = RegInit(0.U(6.W))
+  // Precompute x' and y' for each (x, y)
+  for (py <- 0 until 32) {
+    for (px <- 0 until 32) {
+      val index = (px << 5) | py
+
+      val x1 = px - 15
+      val y1 = 16 - py
+
+      //Since 45 degrees, sin cos is sqrt(2)/2
+      val xf = x1 * math.sqrt(2)/2 - y1 * math.sqrt(2)/2
+      val yf = x1 * math.sqrt(2)/2 + y1 * math.sqrt(2)/2
+
+      // Round to nearest integer / floor, / head choose
+      val xi = xf.round.toInt
+      val yi = yf.round.toInt
+
+      RotXTable(index) = xi.S
+      RotYTable(index) = yi.S
     }
-    inSprite(i) := inSpriteX(i) >= 0.S && inSpriteX(i) < 32.S && inSpriteY(i) >= 0.S && inSpriteY(i) < 32.S
   }
 
-  // Sprite memory connection
-  for(i <- 0 until SpriteNumber){
+
+
+  val lutX = VecInit(RotXTable)
+  val lutY = VecInit(RotYTable)
+
+
+  // Register to track when we start counting
+  val spriteActive = RegInit(false.B)
+  val spriteXCounter = RegInit(0.U(6.W)) // Track X-axis movement within the sprite
+  val spriteYCounter = RegInit(0.U(6.W)) // Track Y-axis movement within the sprite
+  val indexcounter = RegInit(0.U(10.W))
+
+  // Check if current VGA position matches the sprite's position
+  when(pixelX === (spriteXPositionReg(2) + 15.S + lutX(indexcounter)).asUInt() && pixelY === (spriteYPositionReg(2) +15.S + lutY(indexcounter)).asUInt) {
+    spriteActive := true.B  // Start counting
+    indexcounter := indexcounter + 1.U
+  }.otherwise(false.B)
+
+  when(spriteActive) {
+    when(indexcounter < 1023.U) {
+      indexcounter := indexcounter + 1.U
+    }.otherwise {
+      spriteActive := false.B
+      indexcounter := 0.U
+    }
+  }.elsewhen(pixelX === (spriteXPositionReg(2) + 15.S).asUInt() &&
+    pixelY === (spriteYPositionReg(2) + 15.S).asUInt) {
+    spriteActive := true.B
+    indexcounter := 0.U
+  }
+
+
+
+
+  for(i <- 0 until SpriteNumber) {
+
+            //If 90 rotation  is enabled
+    val baseSpriteXValue = Mux(spriteRotationReg(i) === false.B,
+      ((0.U(1.W) ## pixelX).asSInt - spriteXPositionReg(i) ) ,
+      ((0.U(1.W) ## pixelX)).asSInt - spriteXPositionReg(i) - 15.S - lutX(indexcounter) )
+      //(0.U(1.W) ## pixelY).asSInt - spriteYPositionReg(i))
+
+    val baseSpriteYValue = Mux(spriteRotationReg(i) === false.B,
+      ((0.U(1.W) ## pixelY).asSInt - spriteYPositionReg(i)),
+      ((0.U(1.W) ## pixelY)).asSInt - spriteYPositionReg(i) - 15.S - lutY(indexcounter))
+      //(0.U(1.W) ## pixelX).asSInt - spriteXPositionReg(i))
+
+    //Horizontalflip if enabled
+    val spriteXDrawn = Mux(spriteFlipHorizontalReg(i), 31.S - baseSpriteXValue, baseSpriteXValue)
+
+    //Verticalflip if enabled
+    val spriteYDrawn = Mux(spriteFlipVerticalReg(i), 31.S - baseSpriteYValue, baseSpriteYValue)
+
+    // Scaling size sprite.
+    val xLim = Mux(spriteScaleHorizontalReg(i) === 2.U, 64.S, Mux(spriteScaleHorizontalReg(i) === 0.U, 32.S, 16.S))
+    val yLim = Mux(spriteScaleVerticalReg(i) === 2.U, 64.S, Mux(spriteScaleVerticalReg(i) === 0.U, 32.S, 16.S))
+
+    inSprite(i) := (spriteXDrawn >= 0.S && spriteXDrawn < xLim) && (spriteYDrawn >= 0.S && spriteYDrawn < yLim)
+
+    // Memory addresse, Scaling, if scaling 2x the memory is twice, and vice versa.
+    val memX = Mux(spriteScaleHorizontalReg(i) === 2.U, (spriteXDrawn >> 1)(4,0).asUInt,
+            Mux(spriteScaleHorizontalReg(i) === 0.U, spriteXDrawn(4,0).asUInt, spriteXDrawn(4,0).asUInt * 2.U))
+
+    val memY = Mux(spriteScaleVerticalReg(i) === 2.U, (spriteYDrawn >> 1)(4,0).asUInt,
+            Mux(spriteScaleVerticalReg(i) === 0.U, spriteYDrawn(4,0).asUInt, spriteYDrawn(4,0).asUInt * 2.U))
+
+
+
     spriteMemories(i).io.enable := true.B
     spriteMemories(i).io.dataWrite := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address := inSpriteX(i)(4,0).asUInt + 32.U(6.W) * inSpriteY(i)(4,0).asUInt
+    spriteMemories(i).io.address := memX + 32.U(6.W) * memY
   }
+
+
 
 
   //Reduction tree for the pixel colour from the sprite memories

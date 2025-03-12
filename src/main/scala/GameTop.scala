@@ -121,7 +121,12 @@ class GameTop extends Module {
   graphicEngineVGA.io.spriteVisible := gameLogic.io.spriteVisible
   graphicEngineVGA.io.spriteFlipHorizontal := gameLogic.io.spriteFlipHorizontal
   graphicEngineVGA.io.spriteFlipVertical := gameLogic.io.spriteFlipVertical
+
+  //new
   graphicEngineVGA.io.spriteScaleHorizontal := gameLogic.io.spriteScaleHorizontal
+  graphicEngineVGA.io.spriteScaleVertical := gameLogic.io.spriteScaleVertical
+  graphicEngineVGA.io.spriteRotation := gameLogic.io.spriteRotation
+
 
 
   //Viewbox control input

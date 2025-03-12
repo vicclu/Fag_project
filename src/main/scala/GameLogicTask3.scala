@@ -30,7 +30,10 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteVisible = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
-    val spriteScaleHorizontal = Output(Vec(SpriteNumber, Bool()))
+
+    val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
+    val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
+    val spriteRotation = Output(Vec(SpriteNumber, Bool()))
 
 
     //Viewbox control output
@@ -73,7 +76,11 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
-  io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(false.B)
+
+  io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.B)
+  io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.B)
+  io.spriteRotation := Seq.fill(SpriteNumber)(false.B)
+
 
 
 
@@ -100,6 +107,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   //A registers holding the sprite horizontal flip
   val sprite0FlipHorizontalReg = RegInit(false.B)
+  val sprite0RotationReg = RegInit(false.B)
+
 
   //Sprite 1
   io.spriteVisible(1) := true.B
@@ -107,8 +116,16 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val sprite1YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(1) := sprite1XReg
   io.spriteYPosition(1) := sprite1YReg
-  val count = RegInit(0.U(7.W))
+  io.spriteFlipHorizontal(1) := true.B
 
+  io.spriteVisible(2) := true.B
+  val sprite2XReg = RegInit(150.S(11.W))
+  val sprite2YReg = RegInit((360-32).S(10.W))
+  io.spriteXPosition(2) := sprite2XReg
+  io.spriteYPosition(2) := sprite2YReg
+  io.spriteRotation(2) := sprite0RotationReg
+
+  sprite0RotationReg := true.B
 
 
 
@@ -119,6 +136,13 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(0) := sprite0XReg
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
+  io.spriteRotation(0) := sprite0RotationReg
+
+  io.spriteScaleHorizontal(0) := 2.U
+  //io.spriteScaleHorizontal(1) := 1.U
+
+  io.spriteScaleVertical(0) := 2.U
+  //io.spriteScaleVertical(1) := 1.U
 
   //FSMD switch
   switch(stateReg) {
@@ -132,34 +156,50 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       when(io.btnD){
         when(sprite0YReg < (480 - 32 - 24).S) {
           sprite0YReg := sprite0YReg + 2.S
+          sprite0RotationReg := true.B
+          sprite0FlipHorizontalReg := false.B
+
+
         }
       } .elsewhen(io.btnU){
         when(sprite0YReg > (96).S) {
           sprite0YReg := sprite0YReg - 2.S
+          sprite0RotationReg := true.B
+          sprite0FlipHorizontalReg := true.B
+
+
+
         }
+      }
+      when(io.btnC){
       }
       when(io.btnR) {
         when(sprite0XReg < (640 - 32 - 32).S) {
           sprite0XReg := sprite0XReg + 2.S
           sprite0FlipHorizontalReg := false.B
+          sprite0RotationReg := false.B
+
         }
       } .elsewhen(io.btnL){
         when(sprite0XReg > 32.S) {
           sprite0XReg := sprite0XReg - 2.S
           sprite0FlipHorizontalReg := true.B
+          sprite0RotationReg := false.B
+
+
         }
       }
-      when (count <= 40.U) {
-        sprite1XReg := sprite1XReg + 2.S
-        count := count + 1.U
-      } .otherwise {
-        sprite1XReg := sprite1XReg - 2.S
-        count := count + 1.U
-        when (count === 83.U){
-          // Reset count to 0 when it reaches 10
-          count := 0.U
-        }
-      }
+//      when (count <= 40.U) {
+//        sprite1XReg := sprite1XReg + 2.S
+//        count := count + 1.U
+//      } .otherwise {
+//        sprite1XReg := sprite1XReg - 2.S
+//        count := count + 1.U
+//        when (count === 83.U){
+//          // Reset count to 0 when it reaches 10
+//          count := 0.U
+//        }
+//      }
 
 
       stateReg := done
