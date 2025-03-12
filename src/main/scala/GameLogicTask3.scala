@@ -188,7 +188,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
         when(sprite0XReg > 32.S) {
           sprite0XReg := sprite0XReg - 2.S
           sprite0FlipHorizontalReg := true.B
-          io.songStop:=1.U
+          io.songStop:=2.U
 
 
         }
