@@ -8,6 +8,10 @@ class SoundEngine (Size: Int) extends Module {
     val stop = Input(UInt(4.W))
     val speed = Input(UInt(4.W))
   })
+//Bool start
+//TuneID(log(toneNr))
+//Bool Stop
+
 
   val channel       = RegInit(VecInit(Seq.fill(Size)(false.B)))
   val cntMilliSecond    = RegInit(VecInit(Seq.fill(Size)(0.U(20.W))))

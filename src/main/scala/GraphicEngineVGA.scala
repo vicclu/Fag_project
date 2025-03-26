@@ -69,10 +69,12 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val CounterXReg = RegInit(0.U(10.W))
   val CounterYReg = RegInit(0.U(10.W))
 
+
   io.newFrame := false.B
   val run = Wire(Bool())
   when(run) {
     when(ScaleCounterReg === (SCALE_FACTOR - 1).U) {
+
       ScaleCounterReg := 0.U
       when(CounterXReg === (VGA_H_DISPLAY_SIZE + VGA_H_FRONT_PORCH_SIZE + VGA_H_SYNC_PULSE_SIZE + VGA_H_BACK_PORCH_SIZE - 1).U) { // CounterXMax = 800.U // 640 + 16 +  96 + 48
         CounterXReg := 0.U
@@ -103,7 +105,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val PRE_DISPLAY_COUNT = 2048 + 100 // 2^11 + 100 margin
   val FRAME_CLOCK_COUNT_MAX = SCALE_FACTOR * (VGA_H_DISPLAY_SIZE + VGA_H_FRONT_PORCH_SIZE + VGA_H_SYNC_PULSE_SIZE + VGA_H_BACK_PORCH_SIZE) * (VGA_V_DISPLAY_SIZE + VGA_V_FRONT_PORCH_SIZE + VGA_V_SYNC_PULSE_SIZE + VGA_V_BACK_PORCH_SIZE) - 1
   val frameClockCount = RegInit(0.U(log2Up(FRAME_CLOCK_COUNT_MAX + 1).W))
-  frameClockCount := Mux(frameClockCount === FRAME_CLOCK_COUNT_MAX.U, 0.U, frameClockCount + 1.U )
+  frameClockCount := Mux(frameClockCount === FRAME_CLOCK_COUNT_MAX.U, 0.U, frameClockCount + 1.U)
   val preDisplayArea = frameClockCount >= (FRAME_CLOCK_COUNT_MAX - PRE_DISPLAY_COUNT).U
 
 
@@ -140,20 +142,20 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val viewBoxYClipped = Mux(viewBoxYReg >= 480.U, 480.U, viewBoxYReg)
   val pixelXBack = pixelX +& viewBoxXClipped
   val pixelYBack = pixelY +& viewBoxYClipped
-  when(viewBoxXReg > 640.U || viewBoxYReg > 480.U){
+  when(viewBoxXReg > 640.U || viewBoxYReg > 480.U) {
     viewBoxOutOfRangeErrorReg := true.B
   }
 
 
   //Missing frame error
   val newFrameStikyReg = RegInit(false.B)
-  when (io.newFrame){
+  when(io.newFrame) {
     newFrameStikyReg := true.B
   }
-  when (RegNext(io.frameUpdateDone)){
+  when(RegNext(io.frameUpdateDone)) {
     newFrameStikyReg := false.B
   }
-  when (newFrameStikyReg && io.newFrame){
+  when(newFrameStikyReg && io.newFrame) {
     missingFrameErrorReg := true.B
   }
 
@@ -171,8 +173,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     backTileMemories(i).io.enable := true.B
     backTileMemories(i).io.dataWrite := 0.U
     backTileMemories(i).io.writeEnable := false.B
-    backTileMemories(i).io.address := pixelXBack(4,0).asUInt +& 32.U(6.W) * pixelYBack(4,0).asUInt
-    backTileMemoryDataRead(i) := RegNext(backTileMemories(i).io.dataRead)  //Pipelining the backTileMemories output
+    backTileMemories(i).io.address := pixelXBack(4, 0).asUInt +& 32.U(6.W) * pixelYBack(4, 0).asUInt
+    backTileMemoryDataRead(i) := RegNext(backTileMemories(i).io.dataRead) //Pipelining the backTileMemories output
   }
 
 
@@ -185,16 +187,16 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val backMemoryCopyCounter = RegInit(0.U(12.W))
   val BACK_MEMORY_COPY_COUNTER_MAX = 2048 //2^11 number of mem locations to be copied
   val copyEnabled = Wire(Bool())
-  when(preDisplayArea){
+  when(preDisplayArea) {
     when(backMemoryCopyCounter < BACK_MEMORY_COPY_COUNTER_MAX.U) {
       backMemoryCopyCounter := backMemoryCopyCounter + 1.U
       //Copy content
       copyEnabled := true.B
-    } .otherwise {
+    }.otherwise {
       //Done copying
       copyEnabled := false.B
     }
-  } .otherwise {
+  }.otherwise {
     //Not copying
     backMemoryCopyCounter := 0.U
     copyEnabled := false.B
@@ -225,7 +227,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   backBufferShadowMemory.io.writeEnable := Mux(restoreEnabled, RegNext(restoreEnabled), Mux(copyEnabled, false.B, RegNext(io.backBufferWriteEnable)))
   backBufferShadowMemory.io.dataWrite := Mux(restoreEnabled, backBufferRestoreMemory.io.dataRead, RegNext(io.backBufferWriteData))
 
-  backBufferMemory.io.address := Mux(copyEnabledReg, RegNext(backMemoryCopyCounter(10, 0)), pixelXBack(10,5).asUInt +& 40.U(6.W) * pixelYBack(10,5).asUInt)
+  backBufferMemory.io.address := Mux(copyEnabledReg, RegNext(backMemoryCopyCounter(10, 0)), pixelXBack(10, 5).asUInt +& 40.U(6.W) * pixelYBack(10, 5).asUInt)
   backBufferMemory.io.enable := true.B
   backBufferMemory.io.writeEnable := copyEnabledReg
   backBufferMemory.io.dataWrite := backBufferShadowMemory.io.dataRead
@@ -243,7 +245,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val backgroundColor = Wire(UInt(6.W))
   val fullBackgroundColor = Wire(UInt(7.W))
   fullBackgroundColor := backTileMemoryDataRead(RegNext(backBufferMemory.io.dataRead)) //Pipelining the backBufferMemory output
-  backgroundColor := Mux(fullBackgroundColor(6), 0.U(6.W), fullBackgroundColor(5,0))
+  backgroundColor := Mux(fullBackgroundColor(6), 0.U(6.W), fullBackgroundColor(5, 0))
   val pixelColorBack = RegNext(backgroundColor)
 
 
@@ -253,139 +255,117 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteMemory
   }
 
+//  val rotation45deg = Module(new Memory(16, 12, "rotationMem/rotation45deg.mem"))
+
+
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
-//
-  val RotXTable = Array.fill(32*32)(0.S(10.W))
-  val RotYTable = Array.fill(32*32)(0.S(10.W))
+  val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
+  val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
 
-  val count = RegInit(0.U(6.W))
-  // Precompute x' and y' for each (x, y)
-  for (py <- 0 until 32) {
-    for (px <- 0 until 32) {
-      val index = (px << 5) | py
+  val boundingWidth = 46
 
-      val x1 = px - 15
-      val y1 = 16 - py
+  val RotXTable = Array.fill(46*46)(0.S(12.W))
+  val RotYTable = Array.fill(46*46)(0.S(12.W))
 
-      //Since 45 degrees, sin cos is sqrt(2)/2
-      val xf = x1 * math.sqrt(2)/2 - y1 * math.sqrt(2)/2
-      val yf = x1 * math.sqrt(2)/2 + y1 * math.sqrt(2)/2
 
-      // Round to nearest integer / floor, / head choose
-      val xi = xf.round.toInt
-      val yi = yf.round.toInt
 
-      RotXTable(index) = xi.S
-      RotYTable(index) = yi.S
+  for (py <- 0 until boundingWidth) {
+    for (px <- 0 until boundingWidth) {
+      val index = py * boundingWidth + px
+
+      // Center at (23,23) in the 46×46 space
+      val dx = px - 23
+      val dy = py - 23
+
+      // 45° clockwise rotation:
+      //   x' =  dx*(√2/2) + dy*(√2/2)
+      //   y' = -dx*(√2/2) + dy*(√2/2)
+      // Then shift so original 32×32 sprite’s center = (16,16).
+      val xFloat = dx * (math.sqrt(2)/2) + dy * (math.sqrt(2)/2)
+      val yFloat = -dx * (math.sqrt(2)/2) + dy * (math.sqrt(2)/2)
+
+      val originalX = (xFloat.round + 16).toInt
+      val originalY = (yFloat.round + 16).toInt
+
+      RotXTable(index) = originalX.S
+      RotYTable(index) = originalY.S
     }
   }
+
 
   val lutX = VecInit(RotXTable)
   val lutY = VecInit(RotYTable)
 
+    for(i <- 0 until SpriteNumber) {
 
-  // Register to track when we start counting
-  val spriteActive = RegInit(false.B)
-  val spriteXCounter = RegInit(0.U(6.W)) // Track X-axis movement within the sprite
-  val spriteYCounter = RegInit(0.U(6.W)) // Track Y-axis movement within the sprite
-
-  // Check if current VGA position matches the sprite's position
-  when(pixelX === (spriteXPositionReg(2)).asUInt() && pixelY === spriteYPositionReg(2).asUInt() ){
-    spriteActive := true.B  // Start counting
-  }
-
-  val indexcounter = RegInit(0.U(10.W))
-
-  when(spriteActive) {
-    when(indexcounter < 1023.U) { // Limit to 1024 entries
-      when (spriteXCounter < 31.U) {
-        indexcounter := indexcounter + 1.U  // Correct Chisel update
-        spriteXCounter := spriteXCounter + 1.U
-      } .otherwise {
-        when(CounterXReg === 0.U) { // Wait for VGA Y to increment
-          spriteXCounter := 0.U
-          spriteYCounter := spriteYCounter + 1.U
-          indexcounter := indexcounter + 1.U
-        }
-      }
-    } .otherwise {
-      spriteActive := false.B
-      spriteXCounter := 0.U
-      spriteYCounter := 0.U
-      indexcounter := 0.U  // Reset indexcounter correctly
-    }
-  }
-//
-//  val lutX = VecInit(RotXTable)
-//  val lutY = VecInit(RotYTable)
-//
-//
-//  // Register to track when we start counting
-//  val spriteActive = RegInit(false.B)
-//  val spriteXCounter = RegInit(0.U(6.W)) // Track X-axis movement within the sprite
-//  val spriteYCounter = RegInit(0.U(6.W)) // Track Y-axis movement within the sprite
-//  val indexcounter = RegInit(0.U(10.W))
-//
-//  // Check if current VGA position matches the sprite's position
-//  when(pixelX === (spriteXPositionReg(2) + 15.S + lutX(indexcounter)).asUInt() && pixelY === (spriteYPositionReg(2) + 15.S + lutY(indexcounter)).asUInt) {
-//    spriteActive := true.B // Start counting
-//    indexcounter := indexcounter + 1.U
-//
-//  }.otherwise(false.B)
-//
-//  when(spriteActive) {
-//    when(indexcounter < 1023.U) {
-//      //indexcounter := indexcounter + 1.U
-//    }.otherwise {
-//      spriteActive := false.B
-//      indexcounter := 0.U
-//    }
-//  }
+    val offsetX = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i) + 7.S,(0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i))
+    val offsetY = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i) + 7.S,(0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i))
 
 
 
+    // so we need 6 bits (because 46 > 32). For safety, do .asUInt:
+    val boxIndex = (offsetY(5,0) * boundingWidth.U) + offsetX(5,0)
 
-  for(i <- 0 until SpriteNumber) {
+//    rotation45deg.io.enable := true.B
+//    rotation45deg.io.dataWrite := 0.U
+//    rotation45deg.io.writeEnable := false.B
+//    rotation45deg.io.address := boxIndex
 
-            //If 90 rotation  is enabled
-    val baseSpriteXValue = Mux(spriteRotationReg(i) === false.B,
-      ((0.U(1.W) ## pixelX).asSInt - spriteXPositionReg(i) ) ,
-      ((0.U(1.W) ## pixelX)).asSInt - spriteXPositionReg(i) - 15.S - lutX(indexcounter) )
-      //(0.U(1.W) ## pixelY).asSInt - spriteYPositionReg(i))
-
-    val baseSpriteYValue = Mux(spriteRotationReg(i) === false.B,
-      ((0.U(1.W) ## pixelY).asSInt - spriteYPositionReg(i)),
-      ((0.U(1.W) ## pixelY)).asSInt - spriteYPositionReg(i) - 15.S - lutY(indexcounter))
-      //(0.U(1.W) ## pixelX).asSInt - spriteXPositionReg(i))
-
-    //Horizontalflip if enabled
-    val spriteXDrawn = Mux(spriteFlipHorizontalReg(i), 31.S - baseSpriteXValue, baseSpriteXValue)
-
-    //Verticalflip if enabled
-    val spriteYDrawn = Mux(spriteFlipVerticalReg(i), 31.S - baseSpriteYValue, baseSpriteYValue)
-
-    // Scaling size sprite.
-    val xLim = Mux(spriteScaleHorizontalReg(i) === 2.U, 64.S, Mux(spriteScaleHorizontalReg(i) === 0.U, 32.S, 16.S))
-    val yLim = Mux(spriteScaleVerticalReg(i) === 2.U, 64.S, Mux(spriteScaleVerticalReg(i) === 0.U, 32.S, 16.S))
-
-    inSprite(i) := (spriteXDrawn >= 0.S && spriteXDrawn < xLim) && (spriteYDrawn >= 0.S && spriteYDrawn < yLim)
-
-    // Memory addresse, Scaling, if scaling 2x the memory is twice, and vice versa.
-    val memX = Mux(spriteScaleHorizontalReg(i) === 2.U, (spriteXDrawn >> 1)(4,0).asUInt,
-            Mux(spriteScaleHorizontalReg(i) === 0.U, spriteXDrawn(4,0).asUInt, spriteXDrawn(4,0).asUInt * 2.U))
-
-    val memY = Mux(spriteScaleVerticalReg(i) === 2.U, (spriteYDrawn >> 1)(4,0).asUInt,
-            Mux(spriteScaleVerticalReg(i) === 0.U, spriteYDrawn(4,0).asUInt, spriteYDrawn(4,0).asUInt * 2.U))
+//    val rotation = rotation45deg.io.dataRead
+//    val rotX = rotation(15,8).asSInt
+//    val rotY = rotation(7,0).asSInt
 
 
 
-    spriteMemories(i).io.enable := true.B
-    spriteMemories(i).io.dataWrite := 0.U
+    // Then pick the rotated vs. unrotated offsets:
+    inSpriteX(i) := Mux(spriteRotationReg(i), lutX(boxIndex), offsetX)
+    inSpriteY(i) := Mux(spriteRotationReg(i), lutY(boxIndex), offsetY)
+
+
+    // Scaling (unchanged):
+    val xLim = MuxLookup(spriteScaleHorizontalReg(i), 32.S, Seq(
+      2.U -> 64.S,
+      1.U -> 16.S,
+      0.U -> 32.S
+    ))
+    val yLim = MuxLookup(spriteScaleVerticalReg(i), 32.S, Seq(
+      2.U -> 64.S,
+      1.U -> 16.S,
+      0.U -> 32.S
+    ))
+
+    // Flipping (unchanged):
+    val flippedX = Mux(spriteFlipHorizontalReg(i), (xLim - 1.S) - inSpriteX(i), inSpriteX(i))
+    val flippedY = Mux(spriteFlipVerticalReg(i),   (yLim - 1.S) - inSpriteY(i), inSpriteY(i))
+
+
+    // Replace with 46×46 bounding box check:
+    val inBoxX = (offsetX >= 0.S) && (offsetX < boundingWidth.S)
+    val inBoxY = (offsetY >= 0.S) && (offsetY < boundingWidth.S)
+    val inBoundingBox = inBoxX && inBoxY
+
+    val inScaledX = (flippedX >= 0.S) && (flippedX < xLim)
+    val inScaledY = (flippedY >= 0.S) && (flippedY < yLim)
+
+    inSprite(i) := Mux(spriteRotationReg(i),inBoundingBox && inScaledX && inScaledY , inScaledX && inScaledY)
+
+    // Memory address:
+    val memX = MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq(
+      2.U -> (flippedX >> 1)(4,0).asUInt,
+      1.U -> (flippedX(4,0).asUInt * 2.U),
+      0.U -> flippedX(4,0).asUInt
+    ))
+    val memY = MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
+      2.U -> (flippedY >> 1)(4,0).asUInt,
+      1.U -> (flippedY(4,0).asUInt * 2.U),
+      0.U -> flippedY(4,0).asUInt
+    ))
+
+    spriteMemories(i).io.enable      := true.B
+    spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address := memX + 32.U(6.W) * memY
+    spriteMemories(i).io.address     := memX + 32.U(6.W) * memY
   }
-
-
 
 
   //Reduction tree for the pixel colour from the sprite memories

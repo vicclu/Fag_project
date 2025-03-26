@@ -123,14 +123,46 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(1) := sprite1XReg
   io.spriteYPosition(1) := sprite1YReg
   io.spriteFlipHorizontal(1) := true.B
+  io.spriteScaleHorizontal(1) := 1.U
+  io.spriteScaleVertical(1) := 1.U
 
   io.spriteVisible(2) := true.B
   val sprite2XReg = RegInit(150.S(11.W))
   val sprite2YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
-  io.spriteRotation(2) := true.B
+  io.spriteFlipVertical(2) := true.B
+  io.spriteScaleHorizontal(2) := 1.U
+  io.spriteScaleVertical(2) := 1.U
 
+
+  io.spriteVisible(3) := true.B
+  val sprite3XReg = RegInit(150.S(11.W))
+  val sprite3YReg = RegInit((360-32).S(10.W))
+  io.spriteXPosition(3) := sprite3XReg
+  io.spriteYPosition(3) := sprite3YReg
+
+  io.spriteVisible(4) := true.B
+  val sprite4XReg = RegInit(300.S(11.W))
+  val sprite4YReg = RegInit((360-32).S(10.W))
+  io.spriteXPosition(4) := sprite4XReg
+  io.spriteYPosition(4) := sprite4YReg
+  io.spriteFlipHorizontal(4) := true.B
+  io.spriteScaleHorizontal(4) := 1.U
+  io.spriteScaleVertical(4) := 1.U
+  io.spriteRotation(4) := true.B
+
+
+  io.spriteVisible(5) := true.B
+  io.spriteXPosition(5) := sprite4XReg
+  io.spriteYPosition(5) := sprite4YReg
+  io.spriteFlipVertical(5) := true.B
+
+
+  io.spriteVisible(6) := true.B
+  io.spriteRotation(6) := true.B
+  io.spriteXPosition(6) := sprite4XReg
+  io.spriteYPosition(6) := sprite4YReg
 
 
 
@@ -141,8 +173,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(0) := sprite0XReg
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
-
-  io.spriteScaleHorizontal(0) := 2.U
+  io.spriteScaleHorizontal(0) := 1.U
   //io.spriteScaleHorizontal(1) := 1.U
 
   io.spriteScaleVertical(0) := 2.U
