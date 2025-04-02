@@ -1,30 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\GameLogicTester.scala:36:13: not enough arguments for constructor GraphicEngineVGA: (SpriteNumber: Int, BackTileNumber: Int)GraphicEngineVGA.[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\GameLogicTester.scala:26:15: object Driver is not a member of package chiseltest.iotesters[0m
+[0m[[0m[31merror[0m] [0m[0m    iotesters.Driver.execute([0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\GameLogicTester.scala:30:13: not enough arguments for constructor GraphicEngineVGA: (SpriteNumber: Int, BackTileNumber: Int): GraphicEngineVGA.[0m
 [0m[[0m[31merror[0m] [0m[0mUnspecified value parameters SpriteNumber, BackTileNumber.[0m
 [0m[[0m[31merror[0m] [0m[0m      () => new GraphicEngineVGA()(16, 32)) {[0m
 [0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:2:8: not found: object chiseltest[0m
-[0m[[0m[31merror[0m] [0m[0mimport chiseltest._[0m
-[0m[[0m[31merror[0m] [0m[0m       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:3:22: object flatspec is not a member of package org.scalatest[0m
-[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.flatspec.AnyFlatSpec[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:5:25: not found: type AnyFlatSpec[0m
-[0m[[0m[31merror[0m] [0m[0mclass HelloSpec extends AnyFlatSpec with ChiselScalatestTester {[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:5:42: not found: type ChiselScalatestTester[0m
-[0m[[0m[31merror[0m] [0m[0mclass HelloSpec extends AnyFlatSpec with ChiselScalatestTester {[0m
-[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:6:17: value should is not a member of String[0m
-[0m[[0m[31merror[0m] [0m[0m  "Bullet test" should "pass" in {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:7:5: not found: value test[0m
-[0m[[0m[31merror[0m] [0m[0m    test(new GraphicEngineVGA())[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:7:10: not enough arguments for constructor GraphicEngineVGA: (SpriteNumber: Int, BackTileNumber: Int)GraphicEngineVGA.[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameters SpriteNumber, BackTileNumber.[0m
-[0m[[0m[31merror[0m] [0m[0m    test(new GraphicEngineVGA())[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\test\scala\HelloSpec.scala:8:28: not found: value WriteVcdAnnotation[0m
-[0m[[0m[31merror[0m] [0m[0m      .withAnnotations(Seq(WriteVcdAnnotation)) { dut =>[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m9 errors found[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

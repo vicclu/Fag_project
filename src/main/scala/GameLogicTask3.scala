@@ -150,7 +150,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteFlipHorizontal(4) := true.B
   io.spriteScaleHorizontal(4) := 1.U
   io.spriteScaleVertical(4) := 1.U
-  io.spriteRotation(4) := true.B
+//  io.spriteRotation(4) := true.B
 
 
   io.spriteVisible(5) := true.B
@@ -164,6 +164,9 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(6) := sprite4XReg
   io.spriteYPosition(6) := sprite4YReg
 
+  io.spriteVisible(14) := true.B
+  val sprite14XReg = RegInit(50.S(11.W))
+  io.spriteXPosition(14) := sprite14XReg
 
 
   //Making sprite 0 visible

@@ -7,10 +7,7 @@ class HelloSpec extends AnyFlatSpec with ChiselScalatestTester {
     test(new GameTop())
       .withAnnotations(Seq(WriteVcdAnnotation)) { dut =>
         println("We are generating a VCD file with the test of the Bullet module")
-        dut.clock.step(1)
-        dut.io.Holder.poke(true.B)
-        dut.clock.step(120)
-
+        dut.clock.step(100)
 
       }
   }

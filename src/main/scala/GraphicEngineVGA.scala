@@ -248,78 +248,40 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   backgroundColor := Mux(fullBackgroundColor(6), 0.U(6.W), fullBackgroundColor(5, 0))
   val pixelColorBack = RegNext(backgroundColor)
 
-
   //Generating sprite memories
   val spriteMemories = for (i <- 0 until SpriteNumber) yield {
     val spriteMemory = Module(new Memory(7, 10, "memory_init/sprite_init_" + i.toString + ".mem"))
     spriteMemory
   }
 
-//  val rotation45deg = Module(new Memory(16, 12, "rotationMem/rotation45deg.mem"))
-
+  val rotation45deg = Module(new Memory(14, 12, "memory_init/rotation45deg.mem"))
 
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
   val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
   val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
-
   val boundingWidth = 46
+  val bindex = RegInit(0.U(12.W))
 
-  val RotXTable = Array.fill(46*46)(0.S(12.W))
-  val RotYTable = Array.fill(46*46)(0.S(12.W))
-
-
-
-  for (py <- 0 until boundingWidth) {
-    for (px <- 0 until boundingWidth) {
-      val index = py * boundingWidth + px
-
-      // Center at (23,23) in the 46×46 space
-      val dx = px - 23
-      val dy = py - 23
-
-      // 45° clockwise rotation:
-      //   x' =  dx*(√2/2) + dy*(√2/2)
-      //   y' = -dx*(√2/2) + dy*(√2/2)
-      // Then shift so original 32×32 sprite’s center = (16,16).
-      val xFloat = dx * (math.sqrt(2)/2) + dy * (math.sqrt(2)/2)
-      val yFloat = -dx * (math.sqrt(2)/2) + dy * (math.sqrt(2)/2)
-
-      val originalX = (xFloat.round + 16).toInt
-      val originalY = (yFloat.round + 16).toInt
-
-      RotXTable(index) = originalX.S
-      RotYTable(index) = originalY.S
-    }
-  }
-
-
-  val lutX = VecInit(RotXTable)
-  val lutY = VecInit(RotYTable)
-
+  rotation45deg.io.enable := true.B
+  rotation45deg.io.dataWrite := 0.U
+  rotation45deg.io.writeEnable := false.B
+  
     for(i <- 0 until SpriteNumber) {
 
-    val offsetX = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i) + 7.S,(0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i))
-    val offsetY = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i) + 7.S,(0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i))
+    val offsetX = (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
+    val offsetY = (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
 
+     //what da heck?
+    val boxIndex = (pixelY * boundingWidth.U) + pixelX + 1325.U
 
-
-    // so we need 6 bits (because 46 > 32). For safety, do .asUInt:
-    val boxIndex = (offsetY(5,0) * boundingWidth.U) + offsetX(5,0)
-
-//    rotation45deg.io.enable := true.B
-//    rotation45deg.io.dataWrite := 0.U
-//    rotation45deg.io.writeEnable := false.B
-//    rotation45deg.io.address := boxIndex
-
-//    val rotation = rotation45deg.io.dataRead
-//    val rotX = rotation(15,8).asSInt
-//    val rotY = rotation(7,0).asSInt
-
-
+    rotation45deg.io.address := boxIndex
+    val rotation = rotation45deg.io.dataRead
+    val rotX = rotation(13,7).asSInt
+    val rotY = rotation(6,0).asSInt
 
     // Then pick the rotated vs. unrotated offsets:
-    inSpriteX(i) := Mux(spriteRotationReg(i), lutX(boxIndex), offsetX)
-    inSpriteY(i) := Mux(spriteRotationReg(i), lutY(boxIndex), offsetY)
+    inSpriteX(i) := Mux(spriteRotationReg(i), rotX, offsetX)
+    inSpriteY(i) := Mux(spriteRotationReg(i), rotY, offsetY)
 
 
     // Scaling (unchanged):
