@@ -59,6 +59,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
 
+
+
   // Or one by one...
   //io.led(0) := false.B
   //io.led(0) := false.B
@@ -111,25 +113,76 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   //Two registers holding the sprite sprite X and Y with the sprite initial position
   val sprite0XReg = RegInit(32.S(11.W))
   val sprite0YReg = RegInit((360-32).S(10.W))
-
+  val sprite1XReg = RegInit(150.S(11.W))
+  val sprite1YReg = RegInit((360-32).S(10.W))
+  val sprite2XReg = RegInit((150+32).S(11.W))
+  val sprite2YReg = RegInit((360-32).S(10.W))
   //A registers holding the sprite horizontal flip
   val sprite0FlipHorizontalReg = RegInit(false.B)
 
+  val boxDetection = Module(new BoxDetection2(16))
+  // Connect each hitbox to each sprite, and assume it is 32x32
+  for (i <- 0 until 16) {
+    boxDetection.io.boxXPosition(i) := io.spriteXPosition(i)
+    boxDetection.io.boxYPosition(i) := io.spriteYPosition(i)
+    boxDetection.io.boxXLength(i) := 32.U
+    boxDetection.io.boxYLength(i) := 32.U
+  }
+
+  // here with two for loops I ri
+  for (i <- 0 until 16) {
+    val overlaps = (for (j <- 0 until 16 if i != j)
+      yield boxDetection.io.overlap(i)(j)
+      ).reduce(_ || _)
+
+    io.spriteVisible(i) := !overlaps
+  }
+
+
+//  }
+//
+//    boxDetection.io.mainBoxYLength := 32.U
+//  boxDetection.io.mainBoxXPosition := sprite0XReg
+//  boxDetection.io.mainBoxYPosition := sprite0YReg
+//  boxDetection.io.boxXLength(0) := 32.U
+//  boxDetection.io.boxXLength(1) := 32.U
+//  boxDetection.io.boxYLength(0) := 32.U
+//  boxDetection.io.boxYLength(1) := 32.U
+//
+//  boxDetection.io.boxXPosition(0) :=   sprite1XReg
+//  boxDetection.io.boxYPosition(0) :=   sprite1YReg
+//  boxDetection.io.boxXPosition(1) :=   sprite2XReg
+//  boxDetection.io.boxYPosition(1) :=   sprite2YReg
 
   //Sprite 1
-  io.spriteVisible(1) := true.B
-  val sprite1XReg = RegInit(150.S(11.W))
-  val sprite1YReg = RegInit((360-32).S(10.W))
-  io.spriteXPosition(1) := sprite1XReg
-  io.spriteYPosition(1) := sprite1YReg
+  io.spriteVisible(1) := !boxDetection.io.overlap(0)(1)
+
+
   io.spriteFlipHorizontal(1) := true.B
 
-  io.spriteVisible(2) := true.B
-  val sprite2XReg = RegInit(150.S(11.W))
-  val sprite2YReg = RegInit((360-32).S(10.W))
+  io.spriteVisible(2) :=  ~boxDetection.io.overlap(0)(2)
+
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
-  io.spriteRotation(2) := true.B
+  io.spriteRotation(2) := false.B
+
+  for (i <- 0 until 16) {
+    val overlaps = (for (j <- 0 until 16 if i != j)
+      yield boxDetection.io.overlap(i)(j)
+      ).reduce(_ || _)
+
+    io.spriteVisible(i) := !overlaps
+
+
+when(i.U > 1.U){
+  io.spriteXPosition(i) := (32*i).S
+  io.spriteYPosition(i) := 200.S
+}
+
+  }
+  io.spriteVisible(1):= !boxDetection.io.overlap(1)(0)
+  io.spriteVisible(15):= !boxDetection.io.overlap(1)(15)
+
 
 
 
@@ -142,12 +195,19 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
-  io.spriteScaleHorizontal(0) := 2.U
+  io.spriteScaleHorizontal(0) := 0.U
   //io.spriteScaleHorizontal(1) := 1.U
 
-  io.spriteScaleVertical(0) := 2.U
+  io.spriteScaleVertical(0) := 0.U
   //io.spriteScaleVertical(1) := 1.U
+  val movingPos = RegInit(VecInit(Seq.fill(16)(32.S(11.W))))
 
+  for(i<-1 until 16){
+    io.spriteXPosition(i) := movingPos(i)
+    io.spriteYPosition(i) := 200.S
+  }
+
+val turn = RegInit(VecInit(Seq.fill(16)(false.B)))
   //FSMD switch
   switch(stateReg) {
     is(idle) {
@@ -157,6 +217,17 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     }
 
     is(compute1) {
+      for(i<-1 until 16){
+        movingPos(i) := movingPos(i) + Mux(turn(i), -i.S, i.S)
+        io.spriteYPosition(i) := 200.S
+        when(movingPos(i) > 480.S){
+          turn(i) := true.B
+        }
+        when(movingPos(i)< 64.S){
+          turn(i):= false.B
+        }
+      }
+
       when(io.btnD){
         when(sprite0YReg < (480 - 32 - 24).S) {
           sprite0YReg := sprite0YReg + 2.S
@@ -218,7 +289,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // Write here your game logic
   // (you might need to change the initialization values above)
   /////////////////////////////////////////////////////////////////
-
 
 }
 
