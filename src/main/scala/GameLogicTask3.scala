@@ -167,6 +167,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
   io.spriteRotation(2) := true.B
+  io.spriteRotation(0) := true.B
 
 
 
@@ -179,7 +180,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
-  io.spriteScaleHorizontal(0) := 2.U
+  io.spriteScaleHorizontal(0) := 0.U
   //io.spriteScaleHorizontal(1) := 1.U
 
   io.spriteScaleVertical(0) := 0.U

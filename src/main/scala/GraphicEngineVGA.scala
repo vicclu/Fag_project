@@ -254,46 +254,36 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteMemory
   }
 
-  val rotation45deg = Module(new Memory(14, 12, "memory_init/rotation45deg.mem"))
-
+  val rotation45deg = for (i <- 0 until SpriteNumber) yield {
+    val spriteMemory = Module(new Memory(15, 12, "memory_init/rotation45deg.mem"))
+    spriteMemory
+  }
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
   val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
   val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
-  val boundingWidth = 46
-  val bindex = RegInit(0.U(12.W))
-
-  rotation45deg.io.enable := true.B
-  rotation45deg.io.dataWrite := 0.U
-  rotation45deg.io.writeEnable := false.B
   
     for(i <- 0 until SpriteNumber) {
+      rotation45deg(i).io.enable := true.B
+      rotation45deg(i).io.dataWrite := 0.U
+      rotation45deg(i).io.writeEnable := false.B
+      val boundingWidth = Mux(spriteRotationReg(i), 46.S, 32.S)
 
-    val offsetX = (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
-    val offsetY = (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
+    inSpriteX(i) := (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
+    inSpriteY(i) := (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
 
-     //what da heck?
-    val boxIndex = (pixelY * boundingWidth.U) + pixelX
 
-    rotation45deg.io.address := boxIndex
-    val rotation = rotation45deg.io.dataRead
-    val rotX = rotation(13,7).asSInt
-    val rotY = rotation(6,0).asSInt
-
-    // Then pick the rotated vs. unrotated offsets:
-    inSpriteX(i) := Mux(spriteRotationReg(i), rotX, offsetX)
-    inSpriteY(i) := Mux(spriteRotationReg(i), rotY, offsetY)
 
 
     // Scaling (unchanged):
-    val xLim = MuxLookup(spriteScaleHorizontalReg(i), 32.S, Seq(
-      2.U -> 64.S,
-      1.U -> 16.S,
-      0.U -> 32.S
+    val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
+      2.U -> (boundingWidth<<1).asSInt,
+      1.U -> (boundingWidth>>1).asSInt,
+      0.U -> (boundingWidth).asSInt
     ))
-    val yLim = MuxLookup(spriteScaleVerticalReg(i), 32.S, Seq(
-      2.U -> 64.S,
-      1.U -> 16.S,
-      0.U -> 32.S
+    val yLim = MuxLookup(spriteScaleVerticalReg(i), boundingWidth, Seq(
+      2.U -> (boundingWidth<<1).asSInt,
+      1.U -> (boundingWidth>>1).asSInt,
+      0.U -> (boundingWidth).asSInt
     ))
 
     // Flipping (unchanged):
@@ -302,9 +292,9 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
 
     // Replace with 46×46 bounding box check:
-    val inBoxX = (offsetX >= 0.S) && (offsetX < boundingWidth.S)
-    val inBoxY = (offsetY >= 0.S) && (offsetY < boundingWidth.S)
-    val inBoundingBox = inBoxX && inBoxY
+    val inBoxX = (inSpriteX(i) >= 0.S) && (inSpriteX(i) < boundingWidth)
+    val inBoxY = (inSpriteY(i) >= 0.S) && (inSpriteY(i) < boundingWidth)
+    val inBoundingBox = inBoxX && inBoxY && rotation45deg(i).io.dataRead(14) === 0.U
 
     val inScaledX = (flippedX >= 0.S) && (flippedX < xLim)
     val inScaledY = (flippedY >= 0.S) && (flippedY < yLim)
@@ -322,11 +312,13 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       1.U -> (flippedY(4,0).asUInt * 2.U),
       0.U -> flippedY(4,0).asUInt
     ))
+      val boxIndex = (inSpriteY(i).asUInt * boundingWidth.asUInt) + inSpriteX(i).asUInt
 
+      rotation45deg(i).io.address := boxIndex
     spriteMemories(i).io.enable      := true.B
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := memX + 32.U(6.W) * memY
+    spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,inSpriteX(i)(4,0).asUInt + 32.U(6.W) * inSpriteY(i)(4,0).asUInt)
   }
 
 
