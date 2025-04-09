@@ -10,3 +10,7 @@ target/streams/compile/incOptions/_global/streams/out
 target/streams/compile/compile/_global/streams/out
 target/scala-2.12/zinc/inc_compile_2.12.zip
 
+vivado/Basys3Game/Basys3Game.runs/synth_1/runme.log
+vivado/Basys3Game/Basys3Game.runs/synth_1/Top.vds
+vivado/Basys3Game/Basys3Game.runs/synth_1/vivado.jou
+vivado/Basys3Game/Basys3Game.runs/synth_1/vivado.pb

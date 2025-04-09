@@ -11,3 +11,4 @@
 # Journal file: C:/Users/soren/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1\vivado.jou
 # Running On: Loff-pc, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16976 MB
 #-----------------------------------------------------------
+source Top.tcl -notrace
