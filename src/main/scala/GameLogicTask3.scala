@@ -159,30 +159,14 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
 
   io.spriteFlipHorizontal(1) := true.B
+  io.spriteScaleHorizontal(1) := 1.U
+  io.spriteScaleVertical(1) := 1.U
 
   io.spriteVisible(2) :=  ~boxDetection.io.overlap(0)(2)
 
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
-  io.spriteRotation(2) := false.B
-
-  for (i <- 0 until 16) {
-    val overlaps = (for (j <- 0 until 16 if i != j)
-      yield boxDetection.io.overlap(i)(j)
-      ).reduce(_ || _)
-
-    io.spriteVisible(i) := !overlaps
-
-
-when(i.U > 1.U){
-  io.spriteXPosition(i) := (32*i).S
-  io.spriteYPosition(i) := 200.S
-}
-
-  }
-  io.spriteVisible(1):= !boxDetection.io.overlap(1)(0)
-  io.spriteVisible(15):= !boxDetection.io.overlap(1)(15)
-
+  io.spriteRotation(2) := true.B
 
 
 
@@ -195,7 +179,7 @@ when(i.U > 1.U){
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
-  io.spriteScaleHorizontal(0) := 0.U
+  io.spriteScaleHorizontal(0) := 2.U
   //io.spriteScaleHorizontal(1) := 1.U
 
   io.spriteScaleVertical(0) := 0.U

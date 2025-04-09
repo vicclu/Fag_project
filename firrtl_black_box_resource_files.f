@@ -1,2 +1,2 @@
-C:\Users\soren\Fag_project\RamInitSpWf.v
-C:\Users\soren\Fag_project\RamSpWf.v
+C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\RamInitSpWf.v
+C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\RamSpWf.v
