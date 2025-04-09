@@ -1,0 +1,21 @@
+  val rotation45deg = Module(new Memory(14, 12, "memory_init/rotation45deg.mem"))
+
+      rotation45deg.io.enable := true.B
+      rotation45deg.io.dataWrite := 0.U
+      rotation45deg.io.writeEnable := false.B
+    for(i <- 0 until SpriteNumber) {
+
+    val offsetX = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i) + 7.S,(0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i))
+    val offsetY = Mux(spriteRotationReg(i), (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i) + 7.S,(0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i))
+
+
+
+
+    val boxIndex = (offsetY(5,0).asUInt * boundingWidth.U) + offsetX(5,0).asUInt
+
+    rotation45deg.io.address := boxIndex
+
+    val rotation = rotation45deg.io.dataRead
+    val rotX = rotation(13,7).asSInt
+    val rotY = rotation(6,0).asSInt
+    }
