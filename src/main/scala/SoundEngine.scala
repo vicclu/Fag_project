@@ -32,7 +32,7 @@ class SoundEngine (Size: Int) extends Module {
   }
 
   //Generating sprite memories
-  val tone = for (ip <- 0 until Size) yield {
+  val tone = for (i <- 0 until Size) yield {
     val tones = Module(new Memory(32, 9, s"memory_init/tone_init_" + i.toString + ".mem"))
     tones
   }

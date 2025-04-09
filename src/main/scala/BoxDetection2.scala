@@ -15,14 +15,14 @@ class BoxDetection2(Size: Int) extends Module {
   for (i <- 0 until Size) {
     val xMinA = io.boxXPosition(i)
     val yMinA = io.boxYPosition(i)
-    val xMaxA = io.boxXPosition(i) + io.boxXLength(i).zext()
-    val yMaxA = io.boxYPosition(i) + io.boxYLength(i).zext()
+    val xMaxA = io.boxXPosition(i) + io.boxXLength(i)
+    val yMaxA = io.boxYPosition(i) + io.boxYLength(i)
 
     for (j <- 0 until Size) {
       val xMinB = io.boxXPosition(j)
       val yMinB = io.boxYPosition(j)
-      val xMaxB = io.boxXPosition(j) + io.boxXLength(j).zext()
-      val yMaxB = io.boxYPosition(j) + io.boxYLength(j).zext()
+      val xMaxB = io.boxXPosition(j) + io.boxXLength(j)
+      val yMaxB = io.boxYPosition(j) + io.boxYLength(j)
 
       overlaps(i)(j) := (xMinA < xMaxB) && (xMinB < xMaxA) &&
         (yMinA < yMaxB) && (yMinB < yMaxA)

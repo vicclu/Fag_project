@@ -272,7 +272,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val offsetY = (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
 
      //what da heck?
-    val boxIndex = (pixelY * boundingWidth.U) + pixelX + 1325.U
+    val boxIndex = (pixelY * boundingWidth.U) + pixelX
 
     rotation45deg.io.address := boxIndex
     val rotation = rotation45deg.io.dataRead

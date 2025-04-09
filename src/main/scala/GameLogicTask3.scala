@@ -125,8 +125,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   for (i <- 0 until 16) {
     boxDetection.io.boxXPosition(i) := io.spriteXPosition(i)
     boxDetection.io.boxYPosition(i) := io.spriteYPosition(i)
-    boxDetection.io.boxXLength(i) := 32.U
-    boxDetection.io.boxYLength(i) := 32.U
+    boxDetection.io.boxXLength(i) := 32.S
+    boxDetection.io.boxYLength(i) := 32.S
   }
 
   // here with two for loops I ri
@@ -184,12 +184,13 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   io.spriteScaleVertical(0) := 0.U
   //io.spriteScaleVertical(1) := 1.U
-  val movingPos = RegInit(VecInit(Seq.fill(16)(32.S(11.W))))
+  val movingPos = RegInit(VecInit(Seq.fill(16)(0.S(11.W))))
 
   for(i<-1 until 16){
     io.spriteXPosition(i) := movingPos(i)
-    io.spriteYPosition(i) := 200.S
+    io.spriteYPosition(i) := 0.S
   }
+
 
 val turn = RegInit(VecInit(Seq.fill(16)(false.B)))
   //FSMD switch
@@ -204,10 +205,10 @@ val turn = RegInit(VecInit(Seq.fill(16)(false.B)))
       for(i<-1 until 16){
         movingPos(i) := movingPos(i) + Mux(turn(i), -i.S, i.S)
         io.spriteYPosition(i) := 200.S
-        when(movingPos(i) > 480.S){
+        when(movingPos(i) > 640.S){
           turn(i) := true.B
         }
-        when(movingPos(i)< 64.S){
+        when(movingPos(i)< 0.S){
           turn(i):= false.B
         }
       }
