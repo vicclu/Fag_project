@@ -1664,6 +1664,86 @@ module GraphicEngineVGA(
   reg [31:0] _RAND_207;
   reg [31:0] _RAND_208;
   reg [31:0] _RAND_209;
+  reg [31:0] _RAND_210;
+  reg [31:0] _RAND_211;
+  reg [31:0] _RAND_212;
+  reg [31:0] _RAND_213;
+  reg [31:0] _RAND_214;
+  reg [31:0] _RAND_215;
+  reg [31:0] _RAND_216;
+  reg [31:0] _RAND_217;
+  reg [31:0] _RAND_218;
+  reg [31:0] _RAND_219;
+  reg [31:0] _RAND_220;
+  reg [31:0] _RAND_221;
+  reg [31:0] _RAND_222;
+  reg [31:0] _RAND_223;
+  reg [31:0] _RAND_224;
+  reg [31:0] _RAND_225;
+  reg [31:0] _RAND_226;
+  reg [31:0] _RAND_227;
+  reg [31:0] _RAND_228;
+  reg [31:0] _RAND_229;
+  reg [31:0] _RAND_230;
+  reg [31:0] _RAND_231;
+  reg [31:0] _RAND_232;
+  reg [31:0] _RAND_233;
+  reg [31:0] _RAND_234;
+  reg [31:0] _RAND_235;
+  reg [31:0] _RAND_236;
+  reg [31:0] _RAND_237;
+  reg [31:0] _RAND_238;
+  reg [31:0] _RAND_239;
+  reg [31:0] _RAND_240;
+  reg [31:0] _RAND_241;
+  reg [31:0] _RAND_242;
+  reg [31:0] _RAND_243;
+  reg [31:0] _RAND_244;
+  reg [31:0] _RAND_245;
+  reg [31:0] _RAND_246;
+  reg [31:0] _RAND_247;
+  reg [31:0] _RAND_248;
+  reg [31:0] _RAND_249;
+  reg [31:0] _RAND_250;
+  reg [31:0] _RAND_251;
+  reg [31:0] _RAND_252;
+  reg [31:0] _RAND_253;
+  reg [31:0] _RAND_254;
+  reg [31:0] _RAND_255;
+  reg [31:0] _RAND_256;
+  reg [31:0] _RAND_257;
+  reg [31:0] _RAND_258;
+  reg [31:0] _RAND_259;
+  reg [31:0] _RAND_260;
+  reg [31:0] _RAND_261;
+  reg [31:0] _RAND_262;
+  reg [31:0] _RAND_263;
+  reg [31:0] _RAND_264;
+  reg [31:0] _RAND_265;
+  reg [31:0] _RAND_266;
+  reg [31:0] _RAND_267;
+  reg [31:0] _RAND_268;
+  reg [31:0] _RAND_269;
+  reg [31:0] _RAND_270;
+  reg [31:0] _RAND_271;
+  reg [31:0] _RAND_272;
+  reg [31:0] _RAND_273;
+  reg [31:0] _RAND_274;
+  reg [31:0] _RAND_275;
+  reg [31:0] _RAND_276;
+  reg [31:0] _RAND_277;
+  reg [31:0] _RAND_278;
+  reg [31:0] _RAND_279;
+  reg [31:0] _RAND_280;
+  reg [31:0] _RAND_281;
+  reg [31:0] _RAND_282;
+  reg [31:0] _RAND_283;
+  reg [31:0] _RAND_284;
+  reg [31:0] _RAND_285;
+  reg [31:0] _RAND_286;
+  reg [31:0] _RAND_287;
+  reg [31:0] _RAND_288;
+  reg [31:0] _RAND_289;
 `endif // RANDOMIZE_REG_INIT
   wire  backTileMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
   wire [9:0] backTileMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
@@ -1870,40 +1950,40 @@ module GraphicEngineVGA(
   wire  rotation45deg_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
   wire [11:0] rotation45deg_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
   wire [14:0] rotation45deg_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
-  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
   reg [1:0] ScaleCounterReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
   reg [9:0] CounterXReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:28]
   reg [9:0] CounterYReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
@@ -2095,379 +2175,421 @@ module GraphicEngineVGA(
   wire [10:0] _GEN_221 = {{1{spriteYPositionReg_0[9]}},spriteYPositionReg_0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [11:0] _inSpriteY_0_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_221); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [7:0] _xLim_T_3 = {{1{boundingWidth[6]}},boundingWidth}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _flippedX_T_2 = $signed(_xLim_T_3) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:58]
-  wire [11:0] _GEN_222 = {{4{_flippedX_T_2[7]}},_flippedX_T_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:65]
-  wire [11:0] _flippedX_T_5 = $signed(_GEN_222) - $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:65]
-  wire [11:0] flippedX = spriteFlipHorizontalReg_0 ? $signed(_flippedX_T_5) : $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:23]
+  wire [7:0] _flippedX_T_2 = $signed(_xLim_T_3) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:58]
+  wire [11:0] _GEN_222 = {{4{_flippedX_T_2[7]}},_flippedX_T_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
+  wire [11:0] _flippedX_T_5 = $signed(_GEN_222) - $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
+  wire [11:0] flippedX = spriteFlipHorizontalReg_0 ? $signed(_flippedX_T_5) : $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:23]
   wire [10:0] inSpriteY_0 = _inSpriteY_0_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire [11:0] _GEN_225 = {{5{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:57]
-  wire  inBoxX = $signed(inSpriteX_0) >= 12'sh0 & $signed(inSpriteX_0) < $signed(_GEN_225); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  _inBoxY_T = $signed(inSpriteY_0) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:32]
-  wire [10:0] _GEN_226 = {{4{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:57]
-  wire  inBoxY = $signed(inSpriteY_0) >= 11'sh0 & $signed(inSpriteY_0) < $signed(_GEN_226); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire  inBoundingBox = inBoxX & inBoxY & ~rotation45deg_0_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:42]
-  wire [11:0] _GEN_227 = {{4{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:52]
-  wire  inScaledX = $signed(flippedX) >= 12'sh0 & $signed(flippedX) < $signed(_GEN_227); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:39]
-  wire [10:0] _GEN_228 = {{3{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:52]
-  wire  inScaledY = _inBoxY_T & $signed(inSpriteY_0) < $signed(_GEN_228); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:39]
-  wire [10:0] _boxIndex_T = _inSpriteY_0_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [6:0] _boxIndex_T_1 = spriteRotationReg_0 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:59]
-  wire [17:0] _boxIndex_T_2 = _boxIndex_T * _boxIndex_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_3 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_229 = {{6'd0}, _boxIndex_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex = _boxIndex_T_2 + _GEN_229; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_0_io_address_T_4 = 6'h20 * rotation45deg_0_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:127]
-  wire [10:0] _GEN_230 = {{6'd0}, rotation45deg_0_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:115]
-  wire [10:0] _spriteMemories_0_io_address_T_6 = _GEN_230 + _spriteMemories_0_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:115]
-  wire [10:0] _spriteMemories_0_io_address_T_9 = 6'h20 * inSpriteY_0[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_231 = {{6'd0}, inSpriteX_0[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_0_io_address_T_11 = _GEN_231 + _spriteMemories_0_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_0_io_address_T_12 = spriteRotationReg_0 ? _spriteMemories_0_io_address_T_6 :
-    _spriteMemories_0_io_address_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:44]
+  wire [11:0] _GEN_225 = {{5{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  inBoxX = $signed(inSpriteX_0) >= 12'sh0 & $signed(inSpriteX_0) < $signed(_GEN_225); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:40]
+  wire  _inBoxY_T = $signed(inSpriteY_0) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire [10:0] _GEN_226 = {{4{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  wire  inBoxY = $signed(inSpriteY_0) >= 11'sh0 & $signed(inSpriteY_0) < $signed(_GEN_226); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:40]
+  wire  inBoundingBox = inBoxX & inBoxY & ~rotation45deg_0_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:42]
+  wire [11:0] _GEN_227 = {{4{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
+  reg  inScaledX; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  wire [10:0] _GEN_228 = {{3{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
+  reg  inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T = spriteFlipHorizontalReg_0 ? $signed(_flippedX_T_5) : $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_3 = _inSpriteY_0_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [6:0] _boxIndex_T = spriteRotationReg_0 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:52]
+  wire [19:0] _boxIndex_T_1 = memY * _boxIndex_T; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_229 = {{6'd0}, memX}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
+  wire [10:0] _spriteMemories_0_io_address_T_4 = 6'h20 * rotation45deg_0_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:127]
+  wire [10:0] _GEN_230 = {{6'd0}, rotation45deg_0_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
+  wire [10:0] _spriteMemories_0_io_address_T_6 = _GEN_230 + _spriteMemories_0_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
+  wire [19:0] _spriteMemories_0_io_address_T_7 = spriteRotationReg_0 ? {{9'd0}, _spriteMemories_0_io_address_T_6} :
+    boxIndex; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:44]
   wire [11:0] inSpriteX_1 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_232 = {{1{spriteYPositionReg_1[9]}},spriteYPositionReg_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_1_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_232); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_231 = {{1{spriteYPositionReg_1[9]}},spriteYPositionReg_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_1_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_231); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [7:0] _xLim_T_10 = 2'h2 == spriteScaleHorizontalReg_1 ? $signed(8'sh40) : $signed(8'sh20); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [7:0] _xLim_T_12 = 2'h1 == spriteScaleHorizontalReg_1 ? $signed(8'sh10) : $signed(_xLim_T_10); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [7:0] xLim_1 = 2'h0 == spriteScaleHorizontalReg_1 ? $signed(8'sh20) : $signed(_xLim_T_12); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [7:0] _yLim_T_10 = 2'h2 == spriteScaleVerticalReg_1 ? $signed(8'sh40) : $signed(8'sh20); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [7:0] _yLim_T_12 = 2'h1 == spriteScaleVerticalReg_1 ? $signed(8'sh10) : $signed(_yLim_T_10); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [7:0] yLim_1 = 2'h0 == spriteScaleVerticalReg_1 ? $signed(8'sh20) : $signed(_yLim_T_12); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _flippedX_T_8 = $signed(xLim_1) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:58]
-  wire [11:0] _GEN_233 = {{4{_flippedX_T_8[7]}},_flippedX_T_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:65]
-  wire [11:0] _flippedX_T_11 = $signed(_GEN_233) - $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:65]
-  wire [11:0] flippedX_1 = spriteFlipHorizontalReg_1 ? $signed(_flippedX_T_11) : $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:23]
+  wire [7:0] _flippedX_T_8 = $signed(xLim_1) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:58]
+  wire [11:0] _GEN_232 = {{4{_flippedX_T_8[7]}},_flippedX_T_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
+  wire [11:0] _flippedX_T_11 = $signed(_GEN_232) - $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
+  wire [11:0] flippedX_1 = spriteFlipHorizontalReg_1 ? $signed(_flippedX_T_11) : $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:23]
   wire [10:0] inSpriteY_1 = _inSpriteY_1_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxY_T_2 = $signed(inSpriteY_1) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:32]
-  wire [11:0] _GEN_236 = {{4{xLim_1[7]}},xLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:52]
-  wire  inScaledX_1 = $signed(flippedX_1) >= 12'sh0 & $signed(flippedX_1) < $signed(_GEN_236); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:39]
-  wire [10:0] _GEN_237 = {{3{yLim_1[7]}},yLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:52]
-  wire  inScaledY_1 = _inBoxY_T_2 & $signed(inSpriteY_1) < $signed(_GEN_237); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:39]
-  wire [10:0] _boxIndex_T_5 = _inSpriteY_1_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_7 = _boxIndex_T_5 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_8 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_238 = {{6'd0}, _boxIndex_T_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_1 = _boxIndex_T_7 + _GEN_238; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_1_io_address_T_9 = 6'h20 * inSpriteY_1[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_240 = {{6'd0}, inSpriteX_1[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_1_io_address_T_11 = _GEN_240 + _spriteMemories_1_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxY_T_2 = $signed(inSpriteY_1) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire [11:0] _GEN_235 = {{4{xLim_1[7]}},xLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
+  reg  inScaledX_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  wire [10:0] _GEN_236 = {{3{yLim_1[7]}},yLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
+  reg  inScaledY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_12 = spriteFlipHorizontalReg_1 ? $signed(_flippedX_T_11) : $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  wire [10:0] _memX_T_14 = flippedX_1[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:30]
+  wire [13:0] _memX_T_16 = _memX_T_12 * 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:31]
+  wire [11:0] _memX_T_19 = 2'h2 == spriteScaleHorizontalReg_1 ? {{1'd0}, _memX_T_14} : _memX_T_12; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  reg [13:0] memX_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [9:0] _memY_T_14 = inSpriteY_1[10:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 307:30]
+  wire [10:0] _memY_T_15 = _inSpriteY_1_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  wire [12:0] _memY_T_16 = _memY_T_15 * 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:31]
+  wire [9:0] _memY_T_19 = 2'h2 == spriteScaleVerticalReg_1 ? _memY_T_14 : {{5'd0}, inSpriteY_1[4:0]}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  reg [12:0] memY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_5 = memY_1 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_237 = {{6'd0}, memX_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [6:0] boundingWidth_2 = spriteRotationReg_2 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 269:30]
   wire [11:0] inSpriteX_2 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_2); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_241 = {{1{spriteYPositionReg_2[9]}},spriteYPositionReg_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_2_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_241); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_239 = {{1{spriteYPositionReg_2[9]}},spriteYPositionReg_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_2_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_239); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [7:0] _xLim_T_17 = {{1{boundingWidth_2[6]}},boundingWidth_2}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
   wire [10:0] inSpriteY_2 = _inSpriteY_2_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_4 = $signed(inSpriteX_2) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:32]
-  wire [11:0] _GEN_245 = {{5{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:57]
-  wire  inBoxX_2 = $signed(inSpriteX_2) >= 12'sh0 & $signed(inSpriteX_2) < $signed(_GEN_245); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  _inBoxY_T_4 = $signed(inSpriteY_2) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:32]
-  wire [10:0] _GEN_246 = {{4{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:57]
-  wire  inBoxY_2 = $signed(inSpriteY_2) >= 11'sh0 & $signed(inSpriteY_2) < $signed(_GEN_246); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire  inBoundingBox_2 = inBoxX_2 & inBoxY_2 & ~rotation45deg_2_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:42]
-  wire [11:0] _GEN_247 = {{4{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:52]
-  wire  inScaledX_2 = _inBoxX_T_4 & $signed(inSpriteX_2) < $signed(_GEN_247); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 299:39]
-  wire [10:0] _GEN_248 = {{3{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:52]
-  wire  inScaledY_2 = _inBoxY_T_4 & $signed(inSpriteY_2) < $signed(_GEN_248); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:39]
-  wire [10:0] _boxIndex_T_10 = _inSpriteY_2_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [6:0] _boxIndex_T_11 = spriteRotationReg_2 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:59]
-  wire [17:0] _boxIndex_T_12 = _boxIndex_T_10 * _boxIndex_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_13 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_2); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_249 = {{6'd0}, _boxIndex_T_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_2 = _boxIndex_T_12 + _GEN_249; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_2_io_address_T_4 = 6'h20 * rotation45deg_2_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:127]
-  wire [10:0] _GEN_250 = {{6'd0}, rotation45deg_2_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:115]
-  wire [10:0] _spriteMemories_2_io_address_T_6 = _GEN_250 + _spriteMemories_2_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:115]
-  wire [10:0] _spriteMemories_2_io_address_T_9 = 6'h20 * inSpriteY_2[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_251 = {{6'd0}, inSpriteX_2[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_2_io_address_T_11 = _GEN_251 + _spriteMemories_2_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_2_io_address_T_12 = spriteRotationReg_2 ? _spriteMemories_2_io_address_T_6 :
-    _spriteMemories_2_io_address_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:44]
+  wire  _inBoxX_T_4 = $signed(inSpriteX_2) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire [11:0] _GEN_243 = {{5{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  inBoxX_2 = $signed(inSpriteX_2) >= 12'sh0 & $signed(inSpriteX_2) < $signed(_GEN_243); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:40]
+  wire  _inBoxY_T_4 = $signed(inSpriteY_2) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire [10:0] _GEN_244 = {{4{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  wire  inBoxY_2 = $signed(inSpriteY_2) >= 11'sh0 & $signed(inSpriteY_2) < $signed(_GEN_244); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:40]
+  wire  inBoundingBox_2 = inBoxX_2 & inBoxY_2 & ~rotation45deg_2_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:42]
+  wire [11:0] _GEN_245 = {{4{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
+  reg  inScaledX_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  wire [10:0] _GEN_246 = {{3{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
+  reg  inScaledY_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_24 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_2); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_27 = _inSpriteY_2_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [6:0] _boxIndex_T_8 = spriteRotationReg_2 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:52]
+  wire [19:0] _boxIndex_T_9 = memY_2 * _boxIndex_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_247 = {{6'd0}, memX_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
+  wire [10:0] _spriteMemories_2_io_address_T_4 = 6'h20 * rotation45deg_2_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:127]
+  wire [10:0] _GEN_248 = {{6'd0}, rotation45deg_2_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
+  wire [10:0] _spriteMemories_2_io_address_T_6 = _GEN_248 + _spriteMemories_2_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
+  wire [19:0] _spriteMemories_2_io_address_T_7 = spriteRotationReg_2 ? {{9'd0}, _spriteMemories_2_io_address_T_6} :
+    boxIndex_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:44]
   wire [11:0] inSpriteX_3 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_252 = {{1{spriteYPositionReg_3[9]}},spriteYPositionReg_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_3_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_252); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_249 = {{1{spriteYPositionReg_3[9]}},spriteYPositionReg_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_3_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_249); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_3 = _inSpriteY_3_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_3 = $signed(inSpriteX_3) >= 12'sh0 & $signed(inSpriteX_3) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_3 = $signed(inSpriteY_3) >= 11'sh0 & $signed(inSpriteY_3) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_15 = _inSpriteY_3_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_17 = _boxIndex_T_15 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_18 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_256 = {{6'd0}, _boxIndex_T_18}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_3 = _boxIndex_T_17 + _GEN_256; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_3_io_address_T_9 = 6'h20 * inSpriteY_3[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_258 = {{6'd0}, inSpriteX_3[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_3_io_address_T_11 = _GEN_258 + _spriteMemories_3_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_6 = $signed(inSpriteX_3) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_7 = $signed(inSpriteX_3) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_6 = $signed(inSpriteY_3) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_7 = $signed(inSpriteY_3) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_36 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_39 = _inSpriteY_3_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_13 = memY_3 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_253 = {{6'd0}, memX_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_4 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_259 = {{1{spriteYPositionReg_4[9]}},spriteYPositionReg_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_4_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_259); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_255 = {{1{spriteYPositionReg_4[9]}},spriteYPositionReg_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_4_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_255); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_4 = _inSpriteY_4_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_4 = $signed(inSpriteX_4) >= 12'sh0 & $signed(inSpriteX_4) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_4 = $signed(inSpriteY_4) >= 11'sh0 & $signed(inSpriteY_4) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_20 = _inSpriteY_4_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_22 = _boxIndex_T_20 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_23 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_263 = {{6'd0}, _boxIndex_T_23}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_4 = _boxIndex_T_22 + _GEN_263; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_4_io_address_T_9 = 6'h20 * inSpriteY_4[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_265 = {{6'd0}, inSpriteX_4[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_4_io_address_T_11 = _GEN_265 + _spriteMemories_4_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_8 = $signed(inSpriteX_4) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_9 = $signed(inSpriteX_4) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_8 = $signed(inSpriteY_4) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_9 = $signed(inSpriteY_4) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_48 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_51 = _inSpriteY_4_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_17 = memY_4 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_259 = {{6'd0}, memX_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_5 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_266 = {{1{spriteYPositionReg_5[9]}},spriteYPositionReg_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_5_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_266); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_261 = {{1{spriteYPositionReg_5[9]}},spriteYPositionReg_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_5_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_261); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_5 = _inSpriteY_5_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_5 = $signed(inSpriteX_5) >= 12'sh0 & $signed(inSpriteX_5) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_5 = $signed(inSpriteY_5) >= 11'sh0 & $signed(inSpriteY_5) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_25 = _inSpriteY_5_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_27 = _boxIndex_T_25 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_28 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_270 = {{6'd0}, _boxIndex_T_28}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_5 = _boxIndex_T_27 + _GEN_270; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_5_io_address_T_9 = 6'h20 * inSpriteY_5[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_272 = {{6'd0}, inSpriteX_5[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_5_io_address_T_11 = _GEN_272 + _spriteMemories_5_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_10 = $signed(inSpriteX_5) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_11 = $signed(inSpriteX_5) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_10 = $signed(inSpriteY_5) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_11 = $signed(inSpriteY_5) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_60 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_63 = _inSpriteY_5_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_21 = memY_5 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_265 = {{6'd0}, memX_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_6 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_6); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_273 = {{1{spriteYPositionReg_6[9]}},spriteYPositionReg_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_6_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_273); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_267 = {{1{spriteYPositionReg_6[9]}},spriteYPositionReg_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_6_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_267); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_6 = _inSpriteY_6_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_6 = $signed(inSpriteX_6) >= 12'sh0 & $signed(inSpriteX_6) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_6 = $signed(inSpriteY_6) >= 11'sh0 & $signed(inSpriteY_6) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_30 = _inSpriteY_6_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_32 = _boxIndex_T_30 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_33 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_6); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_277 = {{6'd0}, _boxIndex_T_33}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_6 = _boxIndex_T_32 + _GEN_277; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_6_io_address_T_9 = 6'h20 * inSpriteY_6[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_279 = {{6'd0}, inSpriteX_6[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_6_io_address_T_11 = _GEN_279 + _spriteMemories_6_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_12 = $signed(inSpriteX_6) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_13 = $signed(inSpriteX_6) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_12 = $signed(inSpriteY_6) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_13 = $signed(inSpriteY_6) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_72 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_6); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_75 = _inSpriteY_6_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_25 = memY_6 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_271 = {{6'd0}, memX_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_7 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_7); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_280 = {{1{spriteYPositionReg_7[9]}},spriteYPositionReg_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_7_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_280); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_273 = {{1{spriteYPositionReg_7[9]}},spriteYPositionReg_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_7_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_273); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_7 = _inSpriteY_7_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_7 = $signed(inSpriteX_7) >= 12'sh0 & $signed(inSpriteX_7) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_7 = $signed(inSpriteY_7) >= 11'sh0 & $signed(inSpriteY_7) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_35 = _inSpriteY_7_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_37 = _boxIndex_T_35 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_38 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_7); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_284 = {{6'd0}, _boxIndex_T_38}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_7 = _boxIndex_T_37 + _GEN_284; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_7_io_address_T_9 = 6'h20 * inSpriteY_7[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_286 = {{6'd0}, inSpriteX_7[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_7_io_address_T_11 = _GEN_286 + _spriteMemories_7_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_14 = $signed(inSpriteX_7) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_15 = $signed(inSpriteX_7) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_14 = $signed(inSpriteY_7) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_15 = $signed(inSpriteY_7) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_84 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_7); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_87 = _inSpriteY_7_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_29 = memY_7 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_277 = {{6'd0}, memX_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_8 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_8); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_287 = {{1{spriteYPositionReg_8[9]}},spriteYPositionReg_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_8_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_287); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_279 = {{1{spriteYPositionReg_8[9]}},spriteYPositionReg_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_8_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_279); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_8 = _inSpriteY_8_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_8 = $signed(inSpriteX_8) >= 12'sh0 & $signed(inSpriteX_8) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_8 = $signed(inSpriteY_8) >= 11'sh0 & $signed(inSpriteY_8) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_40 = _inSpriteY_8_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_42 = _boxIndex_T_40 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_43 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_8); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_291 = {{6'd0}, _boxIndex_T_43}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_8 = _boxIndex_T_42 + _GEN_291; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_8_io_address_T_9 = 6'h20 * inSpriteY_8[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_293 = {{6'd0}, inSpriteX_8[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_8_io_address_T_11 = _GEN_293 + _spriteMemories_8_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_16 = $signed(inSpriteX_8) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_17 = $signed(inSpriteX_8) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_16 = $signed(inSpriteY_8) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_17 = $signed(inSpriteY_8) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_96 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_8); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_99 = _inSpriteY_8_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_33 = memY_8 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_283 = {{6'd0}, memX_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_9 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_9); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_294 = {{1{spriteYPositionReg_9[9]}},spriteYPositionReg_9}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_9_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_294); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_285 = {{1{spriteYPositionReg_9[9]}},spriteYPositionReg_9}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_9_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_285); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_9 = _inSpriteY_9_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_9 = $signed(inSpriteX_9) >= 12'sh0 & $signed(inSpriteX_9) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_9 = $signed(inSpriteY_9) >= 11'sh0 & $signed(inSpriteY_9) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_45 = _inSpriteY_9_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_47 = _boxIndex_T_45 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_48 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_9); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_298 = {{6'd0}, _boxIndex_T_48}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_9 = _boxIndex_T_47 + _GEN_298; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_9_io_address_T_9 = 6'h20 * inSpriteY_9[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_300 = {{6'd0}, inSpriteX_9[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_9_io_address_T_11 = _GEN_300 + _spriteMemories_9_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_18 = $signed(inSpriteX_9) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_19 = $signed(inSpriteX_9) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_18 = $signed(inSpriteY_9) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_19 = $signed(inSpriteY_9) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_108 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_9); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_111 = _inSpriteY_9_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_37 = memY_9 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_289 = {{6'd0}, memX_9}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_10 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_10); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_301 = {{1{spriteYPositionReg_10[9]}},spriteYPositionReg_10}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_10_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_301); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_291 = {{1{spriteYPositionReg_10[9]}},spriteYPositionReg_10}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_10_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_291); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_10 = _inSpriteY_10_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_10 = $signed(inSpriteX_10) >= 12'sh0 & $signed(inSpriteX_10) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_10 = $signed(inSpriteY_10) >= 11'sh0 & $signed(inSpriteY_10) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_50 = _inSpriteY_10_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_52 = _boxIndex_T_50 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_53 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_10); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_305 = {{6'd0}, _boxIndex_T_53}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_10 = _boxIndex_T_52 + _GEN_305; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_10_io_address_T_9 = 6'h20 * inSpriteY_10[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_307 = {{6'd0}, inSpriteX_10[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_10_io_address_T_11 = _GEN_307 + _spriteMemories_10_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_20 = $signed(inSpriteX_10) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_21 = $signed(inSpriteX_10) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_20 = $signed(inSpriteY_10) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_21 = $signed(inSpriteY_10) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_120 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_10); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_123 = _inSpriteY_10_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_41 = memY_10 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_295 = {{6'd0}, memX_10}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_11 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_11); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_308 = {{1{spriteYPositionReg_11[9]}},spriteYPositionReg_11}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_11_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_308); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_297 = {{1{spriteYPositionReg_11[9]}},spriteYPositionReg_11}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_11_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_297); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_11 = _inSpriteY_11_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_11 = $signed(inSpriteX_11) >= 12'sh0 & $signed(inSpriteX_11) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_11 = $signed(inSpriteY_11) >= 11'sh0 & $signed(inSpriteY_11) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_55 = _inSpriteY_11_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_57 = _boxIndex_T_55 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_58 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_11); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_312 = {{6'd0}, _boxIndex_T_58}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_11 = _boxIndex_T_57 + _GEN_312; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_11_io_address_T_9 = 6'h20 * inSpriteY_11[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_314 = {{6'd0}, inSpriteX_11[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_11_io_address_T_11 = _GEN_314 + _spriteMemories_11_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_22 = $signed(inSpriteX_11) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_23 = $signed(inSpriteX_11) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_22 = $signed(inSpriteY_11) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_23 = $signed(inSpriteY_11) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_132 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_11); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_135 = _inSpriteY_11_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_45 = memY_11 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_301 = {{6'd0}, memX_11}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_12 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_12); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_315 = {{1{spriteYPositionReg_12[9]}},spriteYPositionReg_12}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_12_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_315); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_303 = {{1{spriteYPositionReg_12[9]}},spriteYPositionReg_12}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_12_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_303); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_12 = _inSpriteY_12_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_12 = $signed(inSpriteX_12) >= 12'sh0 & $signed(inSpriteX_12) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_12 = $signed(inSpriteY_12) >= 11'sh0 & $signed(inSpriteY_12) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_60 = _inSpriteY_12_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_62 = _boxIndex_T_60 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_63 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_12); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_319 = {{6'd0}, _boxIndex_T_63}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_12 = _boxIndex_T_62 + _GEN_319; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_12_io_address_T_9 = 6'h20 * inSpriteY_12[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_321 = {{6'd0}, inSpriteX_12[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_12_io_address_T_11 = _GEN_321 + _spriteMemories_12_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_24 = $signed(inSpriteX_12) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_25 = $signed(inSpriteX_12) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_24 = $signed(inSpriteY_12) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_25 = $signed(inSpriteY_12) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_144 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_12); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_147 = _inSpriteY_12_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_49 = memY_12 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_307 = {{6'd0}, memX_12}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_13 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_13); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_322 = {{1{spriteYPositionReg_13[9]}},spriteYPositionReg_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_13_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_322); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_309 = {{1{spriteYPositionReg_13[9]}},spriteYPositionReg_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_13_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_309); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_13 = _inSpriteY_13_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_13 = $signed(inSpriteX_13) >= 12'sh0 & $signed(inSpriteX_13) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_13 = $signed(inSpriteY_13) >= 11'sh0 & $signed(inSpriteY_13) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_65 = _inSpriteY_13_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_67 = _boxIndex_T_65 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_68 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_13); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_326 = {{6'd0}, _boxIndex_T_68}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_13 = _boxIndex_T_67 + _GEN_326; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_13_io_address_T_9 = 6'h20 * inSpriteY_13[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_328 = {{6'd0}, inSpriteX_13[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_13_io_address_T_11 = _GEN_328 + _spriteMemories_13_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_26 = $signed(inSpriteX_13) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_27 = $signed(inSpriteX_13) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_26 = $signed(inSpriteY_13) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_27 = $signed(inSpriteY_13) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_156 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_13); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_159 = _inSpriteY_13_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_53 = memY_13 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_313 = {{6'd0}, memX_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_14 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_14); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_329 = {{1{spriteYPositionReg_14[9]}},spriteYPositionReg_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_14_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_329); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_315 = {{1{spriteYPositionReg_14[9]}},spriteYPositionReg_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_14_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_315); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_14 = _inSpriteY_14_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_14 = $signed(inSpriteX_14) >= 12'sh0 & $signed(inSpriteX_14) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_14 = $signed(inSpriteY_14) >= 11'sh0 & $signed(inSpriteY_14) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_70 = _inSpriteY_14_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_72 = _boxIndex_T_70 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_73 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_14); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_333 = {{6'd0}, _boxIndex_T_73}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_14 = _boxIndex_T_72 + _GEN_333; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_14_io_address_T_9 = 6'h20 * inSpriteY_14[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_335 = {{6'd0}, inSpriteX_14[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_14_io_address_T_11 = _GEN_335 + _spriteMemories_14_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
+  wire  _inBoxX_T_28 = $signed(inSpriteX_14) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_29 = $signed(inSpriteX_14) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_28 = $signed(inSpriteY_14) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_29 = $signed(inSpriteY_14) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_168 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_14); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_171 = _inSpriteY_14_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_57 = memY_14 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_319 = {{6'd0}, memX_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
   wire [11:0] inSpriteX_15 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_15); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_336 = {{1{spriteYPositionReg_15[9]}},spriteYPositionReg_15}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_15_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_336); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [10:0] _GEN_321 = {{1{spriteYPositionReg_15[9]}},spriteYPositionReg_15}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
+  wire [11:0] _inSpriteY_15_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_321); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
   wire [10:0] inSpriteY_15 = _inSpriteY_15_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  inBoxX_15 = $signed(inSpriteX_15) >= 12'sh0 & $signed(inSpriteX_15) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:40]
-  wire  inBoxY_15 = $signed(inSpriteY_15) >= 11'sh0 & $signed(inSpriteY_15) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 296:40]
-  wire [10:0] _boxIndex_T_75 = _inSpriteY_15_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:36]
-  wire [17:0] _boxIndex_T_77 = _boxIndex_T_75 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:43]
-  wire [11:0] _boxIndex_T_78 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_15); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:82]
-  wire [17:0] _GEN_340 = {{6'd0}, _boxIndex_T_78}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [17:0] boxIndex_15 = _boxIndex_T_77 + _GEN_340; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 315:67]
-  wire [10:0] _spriteMemories_15_io_address_T_9 = 6'h20 * inSpriteY_15[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:212]
-  wire [10:0] _GEN_342 = {{6'd0}, inSpriteX_15[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  wire [10:0] _spriteMemories_15_io_address_T_11 = _GEN_342 + _spriteMemories_15_io_address_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:200]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  wire  _inBoxX_T_30 = $signed(inSpriteX_15) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
+  wire  _inBoxX_T_31 = $signed(inSpriteX_15) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
+  wire  _inBoxY_T_30 = $signed(inSpriteY_15) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
+  wire  _inBoxY_T_31 = $signed(inSpriteY_15) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
+  reg  inScaledX_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
+  reg  inScaledY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
+  wire [11:0] _memX_T_180 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_15); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
+  reg [13:0] memX_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
+  wire [10:0] _memY_T_183 = _inSpriteY_15_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
+  reg [12:0] memY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
+  wire [19:0] _boxIndex_T_61 = memY_15 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
+  wire [19:0] _GEN_325 = {{6'd0}, memX_15}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+  reg [19:0] boxIndex_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:132]
-  reg [5:0] pixelColorSprite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:33]
-  reg  pixelColorSpriteValid; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 331:38]
-  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 335:32]
+  reg  multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
+  reg [5:0] pixelColorSprite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:33]
+  reg  pixelColorSpriteValid; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 329:38]
+  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:32]
   reg  pixelColourVGA_pipeReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  pixelColourVGA_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  pixelColourVGA_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  wire [5:0] pixelColourVGA = pixelColourVGA_pipeReg_0 ? pixelColorInDisplay : 6'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:27]
-  reg [3:0] io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:23]
-  reg [3:0] io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 341:25]
-  reg [3:0] io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 342:24]
+  wire [5:0] pixelColourVGA = pixelColourVGA_pipeReg_0 ? pixelColorInDisplay : 6'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 334:27]
+  reg [3:0] io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:23]
+  reg [3:0] io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:25]
+  reg [3:0] io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:24]
   Memory backTileMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
     .clock(backTileMemories_0_clock),
     .io_address(backTileMemories_0_io_address),
@@ -2807,7 +2929,7 @@ module GraphicEngineVGA(
     .io_address(rotation45deg_15_io_address),
     .io_dataRead(rotation45deg_15_io_dataRead)
   );
-  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:44]
+  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
     .io_dataInput_0(multiHotPriortyReductionTree_io_dataInput_0),
     .io_dataInput_1(multiHotPriortyReductionTree_io_dataInput_1),
     .io_dataInput_2(multiHotPriortyReductionTree_io_dataInput_2),
@@ -2845,9 +2967,9 @@ module GraphicEngineVGA(
   );
   assign io_newFrame = run & _GEN_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 75:13 73:15]
   assign io_missingFrameError = missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 135:24]
-  assign io_vgaRed = io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:13]
-  assign io_vgaBlue = io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 342:14]
-  assign io_vgaGreen = io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 341:15]
+  assign io_vgaRed = io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:13]
+  assign io_vgaBlue = io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:14]
+  assign io_vgaGreen = io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:15]
   assign io_Hsync = io_Hsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 97:12]
   assign io_Vsync = io_Vsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:12]
   assign backTileMemories_0_clock = clock;
@@ -2926,117 +3048,117 @@ module GraphicEngineVGA(
   assign backBufferRestoreMemory_clock = clock;
   assign backBufferRestoreMemory_io_address = backMemoryRestoreCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 220:65]
   assign spriteMemories_0_clock = clock;
-  assign spriteMemories_0_io_address = _spriteMemories_0_io_address_T_12[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_0_io_address = _spriteMemories_0_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_1_clock = clock;
-  assign spriteMemories_1_io_address = _spriteMemories_1_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_1_io_address = boxIndex_1[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_2_clock = clock;
-  assign spriteMemories_2_io_address = _spriteMemories_2_io_address_T_12[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_2_io_address = _spriteMemories_2_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_3_clock = clock;
-  assign spriteMemories_3_io_address = _spriteMemories_3_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_3_io_address = boxIndex_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_4_clock = clock;
-  assign spriteMemories_4_io_address = _spriteMemories_4_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_4_io_address = boxIndex_4[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_5_clock = clock;
-  assign spriteMemories_5_io_address = _spriteMemories_5_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_5_io_address = boxIndex_5[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_6_clock = clock;
-  assign spriteMemories_6_io_address = _spriteMemories_6_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_6_io_address = boxIndex_6[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_7_clock = clock;
-  assign spriteMemories_7_io_address = _spriteMemories_7_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_7_io_address = boxIndex_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_8_clock = clock;
-  assign spriteMemories_8_io_address = _spriteMemories_8_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_8_io_address = boxIndex_8[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_9_clock = clock;
-  assign spriteMemories_9_io_address = _spriteMemories_9_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_9_io_address = boxIndex_9[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_10_clock = clock;
-  assign spriteMemories_10_io_address = _spriteMemories_10_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_10_io_address = boxIndex_10[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_11_clock = clock;
-  assign spriteMemories_11_io_address = _spriteMemories_11_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_11_io_address = boxIndex_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_12_clock = clock;
-  assign spriteMemories_12_io_address = _spriteMemories_12_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_12_io_address = boxIndex_12[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_13_clock = clock;
-  assign spriteMemories_13_io_address = _spriteMemories_13_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_13_io_address = boxIndex_13[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_14_clock = clock;
-  assign spriteMemories_14_io_address = _spriteMemories_14_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_14_io_address = boxIndex_14[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign spriteMemories_15_clock = clock;
-  assign spriteMemories_15_io_address = _spriteMemories_15_io_address_T_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:38]
+  assign spriteMemories_15_io_address = boxIndex_15[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
   assign rotation45deg_0_clock = clock;
-  assign rotation45deg_0_io_address = boxIndex[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_0_io_address = boxIndex[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_1_clock = clock;
-  assign rotation45deg_1_io_address = boxIndex_1[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_1_io_address = boxIndex_1[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_2_clock = clock;
-  assign rotation45deg_2_io_address = boxIndex_2[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_2_io_address = boxIndex_2[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_3_clock = clock;
-  assign rotation45deg_3_io_address = boxIndex_3[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_3_io_address = boxIndex_3[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_4_clock = clock;
-  assign rotation45deg_4_io_address = boxIndex_4[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_4_io_address = boxIndex_4[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_5_clock = clock;
-  assign rotation45deg_5_io_address = boxIndex_5[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_5_io_address = boxIndex_5[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_6_clock = clock;
-  assign rotation45deg_6_io_address = boxIndex_6[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_6_io_address = boxIndex_6[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_7_clock = clock;
-  assign rotation45deg_7_io_address = boxIndex_7[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_7_io_address = boxIndex_7[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_8_clock = clock;
-  assign rotation45deg_8_io_address = boxIndex_8[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_8_io_address = boxIndex_8[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_9_clock = clock;
-  assign rotation45deg_9_io_address = boxIndex_9[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_9_io_address = boxIndex_9[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_10_clock = clock;
-  assign rotation45deg_10_io_address = boxIndex_10[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_10_io_address = boxIndex_10[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_11_clock = clock;
-  assign rotation45deg_11_io_address = boxIndex_11[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_11_io_address = boxIndex_11[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_12_clock = clock;
-  assign rotation45deg_12_io_address = boxIndex_12[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_12_io_address = boxIndex_12[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_13_clock = clock;
-  assign rotation45deg_13_io_address = boxIndex_13[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_13_io_address = boxIndex_13[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_14_clock = clock;
-  assign rotation45deg_14_io_address = boxIndex_14[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
+  assign rotation45deg_14_io_address = boxIndex_14[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
   assign rotation45deg_15_clock = clock;
-  assign rotation45deg_15_io_address = boxIndex_15[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 316:35]
-  assign multiHotPriortyReductionTree_io_dataInput_0 = multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_1 = multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_2 = multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_3 = multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_4 = multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_5 = multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_6 = multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_7 = multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_8 = multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_9 = multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_10 = multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_11 = multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_12 = multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_13 = multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_14 = multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
-  assign multiHotPriortyReductionTree_io_dataInput_15 = multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:50]
+  assign rotation45deg_15_io_address = boxIndex_15[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign multiHotPriortyReductionTree_io_dataInput_0 = multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_1 = multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_2 = multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_3 = multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_4 = multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_5 = multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_6 = multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_7 = multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_8 = multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_9 = multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_10 = multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_11 = multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_12 = multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_13 = multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_14 = multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
+  assign multiHotPriortyReductionTree_io_dataInput_15 = multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
   assign multiHotPriortyReductionTree_io_selectInput_0 = multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 & ~
-    multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_1 = multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_2 = multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_3 = multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_4 = multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_5 = multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_6 = multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_7 = multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_8 = multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_9 = multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_10 = multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_11 = multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_12 = multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_13 = multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_14 = multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   assign multiHotPriortyReductionTree_io_selectInput_15 = multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:121]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
   always @(posedge clock) begin
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
       ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
@@ -3356,147 +3478,239 @@ module GraphicEngineVGA(
     end else begin
       pixelColorBack <= fullBackgroundColor[5:0];
     end
-    multiHotPriortyReductionTree_io_dataInput_0_REG <= spriteMemories_0_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    inScaledX <= $signed(flippedX) >= 12'sh0 & $signed(flippedX) < $signed(_GEN_227); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY <= _inBoxY_T & $signed(inSpriteY_0) < $signed(_GEN_228); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX <= {{2'd0}, _memX_T}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY <= {{2'd0}, _memY_T_3}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex <= _boxIndex_T_1 + _GEN_229; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_1 <= $signed(flippedX_1) >= 12'sh0 & $signed(flippedX_1) < $signed(_GEN_235); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_1 <= _inBoxY_T_2 & $signed(inSpriteY_1) < $signed(_GEN_236); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    if (2'h0 == spriteScaleHorizontalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+      memX_1 <= {{2'd0}, _memX_T_12};
+    end else if (2'h1 == spriteScaleHorizontalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+      memX_1 <= _memX_T_16;
+    end else begin
+      memX_1 <= {{2'd0}, _memX_T_19};
+    end
+    if (2'h0 == spriteScaleVerticalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+      memY_1 <= {{2'd0}, _memY_T_15};
+    end else if (2'h1 == spriteScaleVerticalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+      memY_1 <= _memY_T_16;
+    end else begin
+      memY_1 <= {{3'd0}, _memY_T_19};
+    end
+    boxIndex_1 <= _boxIndex_T_5 + _GEN_237; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_2 <= _inBoxX_T_4 & $signed(inSpriteX_2) < $signed(_GEN_245); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_2 <= _inBoxY_T_4 & $signed(inSpriteY_2) < $signed(_GEN_246); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_2 <= {{2'd0}, _memX_T_24}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_2 <= {{2'd0}, _memY_T_27}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_2 <= _boxIndex_T_9 + _GEN_247; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_3 <= _inBoxX_T_6 & _inBoxX_T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_3 <= _inBoxY_T_6 & _inBoxY_T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_3 <= {{2'd0}, _memX_T_36}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_3 <= {{2'd0}, _memY_T_39}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_3 <= _boxIndex_T_13 + _GEN_253; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_4 <= _inBoxX_T_8 & _inBoxX_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_4 <= _inBoxY_T_8 & _inBoxY_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_4 <= {{2'd0}, _memX_T_48}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_4 <= {{2'd0}, _memY_T_51}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_4 <= _boxIndex_T_17 + _GEN_259; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_5 <= _inBoxX_T_10 & _inBoxX_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_5 <= _inBoxY_T_10 & _inBoxY_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_5 <= {{2'd0}, _memX_T_60}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_5 <= {{2'd0}, _memY_T_63}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_5 <= _boxIndex_T_21 + _GEN_265; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_6 <= _inBoxX_T_12 & _inBoxX_T_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_6 <= _inBoxY_T_12 & _inBoxY_T_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_6 <= {{2'd0}, _memX_T_72}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_6 <= {{2'd0}, _memY_T_75}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_6 <= _boxIndex_T_25 + _GEN_271; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_7 <= _inBoxX_T_14 & _inBoxX_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_7 <= _inBoxY_T_14 & _inBoxY_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_7 <= {{2'd0}, _memX_T_84}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_7 <= {{2'd0}, _memY_T_87}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_7 <= _boxIndex_T_29 + _GEN_277; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_8 <= _inBoxX_T_16 & _inBoxX_T_17; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_8 <= _inBoxY_T_16 & _inBoxY_T_17; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_8 <= {{2'd0}, _memX_T_96}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_8 <= {{2'd0}, _memY_T_99}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_8 <= _boxIndex_T_33 + _GEN_283; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_9 <= _inBoxX_T_18 & _inBoxX_T_19; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_9 <= _inBoxY_T_18 & _inBoxY_T_19; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_9 <= {{2'd0}, _memX_T_108}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_9 <= {{2'd0}, _memY_T_111}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_9 <= _boxIndex_T_37 + _GEN_289; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_10 <= _inBoxX_T_20 & _inBoxX_T_21; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_10 <= _inBoxY_T_20 & _inBoxY_T_21; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_10 <= {{2'd0}, _memX_T_120}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_10 <= {{2'd0}, _memY_T_123}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_10 <= _boxIndex_T_41 + _GEN_295; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_11 <= _inBoxX_T_22 & _inBoxX_T_23; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_11 <= _inBoxY_T_22 & _inBoxY_T_23; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_11 <= {{2'd0}, _memX_T_132}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_11 <= {{2'd0}, _memY_T_135}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_11 <= _boxIndex_T_45 + _GEN_301; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_12 <= _inBoxX_T_24 & _inBoxX_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_12 <= _inBoxY_T_24 & _inBoxY_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_12 <= {{2'd0}, _memX_T_144}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_12 <= {{2'd0}, _memY_T_147}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_12 <= _boxIndex_T_49 + _GEN_307; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_13 <= _inBoxX_T_26 & _inBoxX_T_27; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_13 <= _inBoxY_T_26 & _inBoxY_T_27; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_13 <= {{2'd0}, _memX_T_156}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_13 <= {{2'd0}, _memY_T_159}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_13 <= _boxIndex_T_53 + _GEN_313; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_14 <= _inBoxX_T_28 & _inBoxX_T_29; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_14 <= _inBoxY_T_28 & _inBoxY_T_29; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_14 <= {{2'd0}, _memX_T_168}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_14 <= {{2'd0}, _memY_T_171}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_14 <= _boxIndex_T_57 + _GEN_319; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    inScaledX_15 <= _inBoxX_T_30 & _inBoxX_T_31; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
+    inScaledY_15 <= _inBoxY_T_30 & _inBoxY_T_31; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
+    memX_15 <= {{2'd0}, _memX_T_180}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    memY_15 <= {{2'd0}, _memY_T_183}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+    boxIndex_15 <= _boxIndex_T_61 + _GEN_325; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
+    multiHotPriortyReductionTree_io_dataInput_0_REG <= spriteMemories_0_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    if (spriteRotationReg_0) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:23]
+    if (spriteRotationReg_0) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:23]
       multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= inBoundingBox & inScaledX & inScaledY;
     end else begin
       multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= inScaledX & inScaledY;
     end
-    multiHotPriortyReductionTree_io_selectInput_0_REG <= spriteMemories_0_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_1_REG <= spriteMemories_1_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_0_REG <= spriteMemories_0_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_1_REG <= spriteMemories_1_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 <= spriteVisibleReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 <= inScaledX_1 & inScaledY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_1_REG <= spriteMemories_1_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_2_REG <= spriteMemories_2_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 <= inScaledX_1 & inScaledY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_1_REG <= spriteMemories_1_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_2_REG <= spriteMemories_2_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 <= spriteVisibleReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    if (spriteRotationReg_2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:23]
+    if (spriteRotationReg_2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:23]
       multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= inBoundingBox_2 & inScaledX_2 & inScaledY_2;
     end else begin
       multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= inScaledX_2 & inScaledY_2;
     end
-    multiHotPriortyReductionTree_io_selectInput_2_REG <= spriteMemories_2_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_3_REG <= spriteMemories_3_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_2_REG <= spriteMemories_2_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_3_REG <= spriteMemories_3_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1 <= spriteVisibleReg_3; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= inBoxX_3 & inBoxY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_3_REG <= spriteMemories_3_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_4_REG <= spriteMemories_4_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= inScaledX_3 & inScaledY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_3_REG <= spriteMemories_3_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_4_REG <= spriteMemories_4_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1 <= spriteVisibleReg_4; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= inBoxX_4 & inBoxY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_4_REG <= spriteMemories_4_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_5_REG <= spriteMemories_5_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= inScaledX_4 & inScaledY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_4_REG <= spriteMemories_4_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_5_REG <= spriteMemories_5_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1 <= spriteVisibleReg_5; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= inBoxX_5 & inBoxY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_5_REG <= spriteMemories_5_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_6_REG <= spriteMemories_6_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= inScaledX_5 & inScaledY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_5_REG <= spriteMemories_5_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_6_REG <= spriteMemories_6_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 <= spriteVisibleReg_6; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 <= inBoxX_6 & inBoxY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_6_REG <= spriteMemories_6_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_7_REG <= spriteMemories_7_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 <= inScaledX_6 & inScaledY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_6_REG <= spriteMemories_6_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_7_REG <= spriteMemories_7_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 <= spriteVisibleReg_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 <= inBoxX_7 & inBoxY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_7_REG <= spriteMemories_7_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_8_REG <= spriteMemories_8_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 <= inScaledX_7 & inScaledY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_7_REG <= spriteMemories_7_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_8_REG <= spriteMemories_8_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 <= spriteVisibleReg_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 <= inBoxX_8 & inBoxY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_8_REG <= spriteMemories_8_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_9_REG <= spriteMemories_9_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 <= inScaledX_8 & inScaledY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_8_REG <= spriteMemories_8_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_9_REG <= spriteMemories_9_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 <= spriteVisibleReg_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 <= inBoxX_9 & inBoxY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_9_REG <= spriteMemories_9_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_10_REG <= spriteMemories_10_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 <= inScaledX_9 & inScaledY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_9_REG <= spriteMemories_9_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_10_REG <= spriteMemories_10_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 <= spriteVisibleReg_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 <= inBoxX_10 & inBoxY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_10_REG <= spriteMemories_10_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_11_REG <= spriteMemories_11_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 <= inScaledX_10 & inScaledY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_10_REG <= spriteMemories_10_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_11_REG <= spriteMemories_11_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 <= spriteVisibleReg_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 <= inBoxX_11 & inBoxY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_11_REG <= spriteMemories_11_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_12_REG <= spriteMemories_12_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 <= inScaledX_11 & inScaledY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_11_REG <= spriteMemories_11_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_12_REG <= spriteMemories_12_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 <= spriteVisibleReg_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 <= inBoxX_12 & inBoxY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_12_REG <= spriteMemories_12_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_13_REG <= spriteMemories_13_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 <= inScaledX_12 & inScaledY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_12_REG <= spriteMemories_12_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_13_REG <= spriteMemories_13_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 <= spriteVisibleReg_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 <= inBoxX_13 & inBoxY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_13_REG <= spriteMemories_13_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_14_REG <= spriteMemories_14_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 <= inScaledX_13 & inScaledY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_13_REG <= spriteMemories_13_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_14_REG <= spriteMemories_14_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 <= spriteVisibleReg_14; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 <= inBoxX_14 & inBoxY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_14_REG <= spriteMemories_14_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    multiHotPriortyReductionTree_io_dataInput_15_REG <= spriteMemories_15_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 327:90]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 <= inScaledX_14 & inScaledY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_14_REG <= spriteMemories_14_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    multiHotPriortyReductionTree_io_dataInput_15_REG <= spriteMemories_15_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 <= spriteVisibleReg_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 <= inBoxX_15 & inBoxY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:97]
-    multiHotPriortyReductionTree_io_selectInput_15_REG <= spriteMemories_15_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:162]
-    pixelColorSprite <= multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:33]
-    pixelColorSpriteValid <= multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 331:38]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 <= inScaledX_15 & inScaledY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
+    multiHotPriortyReductionTree_io_selectInput_15_REG <= spriteMemories_15_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
+    pixelColorSprite <= multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:33]
+    pixelColorSpriteValid <= multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 329:38]
     pixelColourVGA_pipeReg_0 <= pixelColourVGA_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     pixelColourVGA_pipeReg_1 <= pixelColourVGA_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     pixelColourVGA_pipeReg_2 <= CounterXReg < 10'h280 & CounterYReg < 10'h1e0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 100:60]
-    io_vgaRed_REG <= {pixelColourVGA[5:4],pixelColourVGA[5:4]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 337:26]
-    io_vgaGreen_REG <= {pixelColourVGA[3:2],pixelColourVGA[3:2]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:28]
-    io_vgaBlue_REG <= {pixelColourVGA[1:0],pixelColourVGA[1:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:27]
+    io_vgaRed_REG <= {pixelColourVGA[5:4],pixelColourVGA[5:4]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 335:26]
+    io_vgaGreen_REG <= {pixelColourVGA[3:2],pixelColourVGA[3:2]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:28]
+    io_vgaBlue_REG <= {pixelColourVGA[1:0],pixelColourVGA[1:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 337:27]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -3751,209 +3965,369 @@ initial begin
   _RAND_107 = {1{`RANDOM}};
   pixelColorBack = _RAND_107[5:0];
   _RAND_108 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_0_REG = _RAND_108[5:0];
+  inScaledX = _RAND_108[0:0];
   _RAND_109 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_109[0:0];
+  inScaledY = _RAND_109[0:0];
   _RAND_110 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_110[0:0];
+  memX = _RAND_110[13:0];
   _RAND_111 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_REG = _RAND_111[0:0];
+  memY = _RAND_111[12:0];
   _RAND_112 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_1_REG = _RAND_112[5:0];
+  boxIndex = _RAND_112[19:0];
   _RAND_113 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 = _RAND_113[0:0];
+  inScaledX_1 = _RAND_113[0:0];
   _RAND_114 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 = _RAND_114[0:0];
+  inScaledY_1 = _RAND_114[0:0];
   _RAND_115 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 = _RAND_115[0:0];
+  memX_1 = _RAND_115[13:0];
   _RAND_116 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 = _RAND_116[0:0];
+  memY_1 = _RAND_116[12:0];
   _RAND_117 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_REG = _RAND_117[0:0];
+  boxIndex_1 = _RAND_117[19:0];
   _RAND_118 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_2_REG = _RAND_118[5:0];
+  inScaledX_2 = _RAND_118[0:0];
   _RAND_119 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 = _RAND_119[0:0];
+  inScaledY_2 = _RAND_119[0:0];
   _RAND_120 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 = _RAND_120[0:0];
+  memX_2 = _RAND_120[13:0];
   _RAND_121 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_121[0:0];
+  memY_2 = _RAND_121[12:0];
   _RAND_122 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_122[0:0];
+  boxIndex_2 = _RAND_122[19:0];
   _RAND_123 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_REG = _RAND_123[0:0];
+  inScaledX_3 = _RAND_123[0:0];
   _RAND_124 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_3_REG = _RAND_124[5:0];
+  inScaledY_3 = _RAND_124[0:0];
   _RAND_125 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 = _RAND_125[0:0];
+  memX_3 = _RAND_125[13:0];
   _RAND_126 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1 = _RAND_126[0:0];
+  memY_3 = _RAND_126[12:0];
   _RAND_127 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_127[0:0];
+  boxIndex_3 = _RAND_127[19:0];
   _RAND_128 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_128[0:0];
+  inScaledX_4 = _RAND_128[0:0];
   _RAND_129 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_REG = _RAND_129[0:0];
+  inScaledY_4 = _RAND_129[0:0];
   _RAND_130 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_4_REG = _RAND_130[5:0];
+  memX_4 = _RAND_130[13:0];
   _RAND_131 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 = _RAND_131[0:0];
+  memY_4 = _RAND_131[12:0];
   _RAND_132 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1 = _RAND_132[0:0];
+  boxIndex_4 = _RAND_132[19:0];
   _RAND_133 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_133[0:0];
+  inScaledX_5 = _RAND_133[0:0];
   _RAND_134 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_134[0:0];
+  inScaledY_5 = _RAND_134[0:0];
   _RAND_135 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_REG = _RAND_135[0:0];
+  memX_5 = _RAND_135[13:0];
   _RAND_136 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_5_REG = _RAND_136[5:0];
+  memY_5 = _RAND_136[12:0];
   _RAND_137 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 = _RAND_137[0:0];
+  boxIndex_5 = _RAND_137[19:0];
   _RAND_138 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1 = _RAND_138[0:0];
+  inScaledX_6 = _RAND_138[0:0];
   _RAND_139 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_139[0:0];
+  inScaledY_6 = _RAND_139[0:0];
   _RAND_140 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_140[0:0];
+  memX_6 = _RAND_140[13:0];
   _RAND_141 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_REG = _RAND_141[0:0];
+  memY_6 = _RAND_141[12:0];
   _RAND_142 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_6_REG = _RAND_142[5:0];
+  boxIndex_6 = _RAND_142[19:0];
   _RAND_143 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 = _RAND_143[0:0];
+  inScaledX_7 = _RAND_143[0:0];
   _RAND_144 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 = _RAND_144[0:0];
+  inScaledY_7 = _RAND_144[0:0];
   _RAND_145 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_145[0:0];
+  memX_7 = _RAND_145[13:0];
   _RAND_146 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_146[0:0];
+  memY_7 = _RAND_146[12:0];
   _RAND_147 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_REG = _RAND_147[0:0];
+  boxIndex_7 = _RAND_147[19:0];
   _RAND_148 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_7_REG = _RAND_148[5:0];
+  inScaledX_8 = _RAND_148[0:0];
   _RAND_149 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_149[0:0];
+  inScaledY_8 = _RAND_149[0:0];
   _RAND_150 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_150[0:0];
+  memX_8 = _RAND_150[13:0];
   _RAND_151 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_151[0:0];
+  memY_8 = _RAND_151[12:0];
   _RAND_152 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_152[0:0];
+  boxIndex_8 = _RAND_152[19:0];
   _RAND_153 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_REG = _RAND_153[0:0];
+  inScaledX_9 = _RAND_153[0:0];
   _RAND_154 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_8_REG = _RAND_154[5:0];
+  inScaledY_9 = _RAND_154[0:0];
   _RAND_155 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_155[0:0];
+  memX_9 = _RAND_155[13:0];
   _RAND_156 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_156[0:0];
+  memY_9 = _RAND_156[12:0];
   _RAND_157 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_157[0:0];
+  boxIndex_9 = _RAND_157[19:0];
   _RAND_158 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_158[0:0];
+  inScaledX_10 = _RAND_158[0:0];
   _RAND_159 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_REG = _RAND_159[0:0];
+  inScaledY_10 = _RAND_159[0:0];
   _RAND_160 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_9_REG = _RAND_160[5:0];
+  memX_10 = _RAND_160[13:0];
   _RAND_161 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_161[0:0];
+  memY_10 = _RAND_161[12:0];
   _RAND_162 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_162[0:0];
+  boxIndex_10 = _RAND_162[19:0];
   _RAND_163 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_163[0:0];
+  inScaledX_11 = _RAND_163[0:0];
   _RAND_164 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_164[0:0];
+  inScaledY_11 = _RAND_164[0:0];
   _RAND_165 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_REG = _RAND_165[0:0];
+  memX_11 = _RAND_165[13:0];
   _RAND_166 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_10_REG = _RAND_166[5:0];
+  memY_11 = _RAND_166[12:0];
   _RAND_167 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_167[0:0];
+  boxIndex_11 = _RAND_167[19:0];
   _RAND_168 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_168[0:0];
+  inScaledX_12 = _RAND_168[0:0];
   _RAND_169 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_169[0:0];
+  inScaledY_12 = _RAND_169[0:0];
   _RAND_170 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_170[0:0];
+  memX_12 = _RAND_170[13:0];
   _RAND_171 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_REG = _RAND_171[0:0];
+  memY_12 = _RAND_171[12:0];
   _RAND_172 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_11_REG = _RAND_172[5:0];
+  boxIndex_12 = _RAND_172[19:0];
   _RAND_173 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_173[0:0];
+  inScaledX_13 = _RAND_173[0:0];
   _RAND_174 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_174[0:0];
+  inScaledY_13 = _RAND_174[0:0];
   _RAND_175 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_175[0:0];
+  memX_13 = _RAND_175[13:0];
   _RAND_176 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_176[0:0];
+  memY_13 = _RAND_176[12:0];
   _RAND_177 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_REG = _RAND_177[0:0];
+  boxIndex_13 = _RAND_177[19:0];
   _RAND_178 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_12_REG = _RAND_178[5:0];
+  inScaledX_14 = _RAND_178[0:0];
   _RAND_179 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_179[0:0];
+  inScaledY_14 = _RAND_179[0:0];
   _RAND_180 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_180[0:0];
+  memX_14 = _RAND_180[13:0];
   _RAND_181 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_181[0:0];
+  memY_14 = _RAND_181[12:0];
   _RAND_182 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_182[0:0];
+  boxIndex_14 = _RAND_182[19:0];
   _RAND_183 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_REG = _RAND_183[0:0];
+  inScaledX_15 = _RAND_183[0:0];
   _RAND_184 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_13_REG = _RAND_184[5:0];
+  inScaledY_15 = _RAND_184[0:0];
   _RAND_185 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_185[0:0];
+  memX_15 = _RAND_185[13:0];
   _RAND_186 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_186[0:0];
+  memY_15 = _RAND_186[12:0];
   _RAND_187 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_187[0:0];
+  boxIndex_15 = _RAND_187[19:0];
   _RAND_188 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_188[0:0];
+  multiHotPriortyReductionTree_io_dataInput_0_REG = _RAND_188[5:0];
   _RAND_189 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_REG = _RAND_189[0:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_189[0:0];
   _RAND_190 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_14_REG = _RAND_190[5:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_190[0:0];
   _RAND_191 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 = _RAND_191[0:0];
+  multiHotPriortyReductionTree_io_selectInput_0_REG = _RAND_191[0:0];
   _RAND_192 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 = _RAND_192[0:0];
+  multiHotPriortyReductionTree_io_dataInput_1_REG = _RAND_192[5:0];
   _RAND_193 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_193[0:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 = _RAND_193[0:0];
   _RAND_194 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_194[0:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 = _RAND_194[0:0];
   _RAND_195 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_REG = _RAND_195[0:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 = _RAND_195[0:0];
   _RAND_196 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_15_REG = _RAND_196[5:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 = _RAND_196[0:0];
   _RAND_197 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_197[0:0];
+  multiHotPriortyReductionTree_io_selectInput_1_REG = _RAND_197[0:0];
   _RAND_198 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_198[0:0];
+  multiHotPriortyReductionTree_io_dataInput_2_REG = _RAND_198[5:0];
   _RAND_199 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_199[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 = _RAND_199[0:0];
   _RAND_200 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_200[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 = _RAND_200[0:0];
   _RAND_201 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_REG = _RAND_201[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_201[0:0];
   _RAND_202 = {1{`RANDOM}};
-  pixelColorSprite = _RAND_202[5:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_202[0:0];
   _RAND_203 = {1{`RANDOM}};
-  pixelColorSpriteValid = _RAND_203[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_REG = _RAND_203[0:0];
   _RAND_204 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_0 = _RAND_204[0:0];
+  multiHotPriortyReductionTree_io_dataInput_3_REG = _RAND_204[5:0];
   _RAND_205 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_1 = _RAND_205[0:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 = _RAND_205[0:0];
   _RAND_206 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_2 = _RAND_206[0:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1 = _RAND_206[0:0];
   _RAND_207 = {1{`RANDOM}};
-  io_vgaRed_REG = _RAND_207[3:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_207[0:0];
   _RAND_208 = {1{`RANDOM}};
-  io_vgaGreen_REG = _RAND_208[3:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_208[0:0];
   _RAND_209 = {1{`RANDOM}};
-  io_vgaBlue_REG = _RAND_209[3:0];
+  multiHotPriortyReductionTree_io_selectInput_3_REG = _RAND_209[0:0];
+  _RAND_210 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_4_REG = _RAND_210[5:0];
+  _RAND_211 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 = _RAND_211[0:0];
+  _RAND_212 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1 = _RAND_212[0:0];
+  _RAND_213 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_213[0:0];
+  _RAND_214 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_214[0:0];
+  _RAND_215 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_4_REG = _RAND_215[0:0];
+  _RAND_216 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_5_REG = _RAND_216[5:0];
+  _RAND_217 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 = _RAND_217[0:0];
+  _RAND_218 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1 = _RAND_218[0:0];
+  _RAND_219 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_219[0:0];
+  _RAND_220 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_220[0:0];
+  _RAND_221 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_5_REG = _RAND_221[0:0];
+  _RAND_222 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_6_REG = _RAND_222[5:0];
+  _RAND_223 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 = _RAND_223[0:0];
+  _RAND_224 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 = _RAND_224[0:0];
+  _RAND_225 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_225[0:0];
+  _RAND_226 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_226[0:0];
+  _RAND_227 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_6_REG = _RAND_227[0:0];
+  _RAND_228 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_7_REG = _RAND_228[5:0];
+  _RAND_229 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_229[0:0];
+  _RAND_230 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_230[0:0];
+  _RAND_231 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_231[0:0];
+  _RAND_232 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_232[0:0];
+  _RAND_233 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_7_REG = _RAND_233[0:0];
+  _RAND_234 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_8_REG = _RAND_234[5:0];
+  _RAND_235 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_235[0:0];
+  _RAND_236 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_236[0:0];
+  _RAND_237 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_237[0:0];
+  _RAND_238 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_238[0:0];
+  _RAND_239 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_8_REG = _RAND_239[0:0];
+  _RAND_240 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_9_REG = _RAND_240[5:0];
+  _RAND_241 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_241[0:0];
+  _RAND_242 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_242[0:0];
+  _RAND_243 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_243[0:0];
+  _RAND_244 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_244[0:0];
+  _RAND_245 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_9_REG = _RAND_245[0:0];
+  _RAND_246 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_10_REG = _RAND_246[5:0];
+  _RAND_247 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_247[0:0];
+  _RAND_248 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_248[0:0];
+  _RAND_249 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_249[0:0];
+  _RAND_250 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_250[0:0];
+  _RAND_251 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_10_REG = _RAND_251[0:0];
+  _RAND_252 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_11_REG = _RAND_252[5:0];
+  _RAND_253 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_253[0:0];
+  _RAND_254 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_254[0:0];
+  _RAND_255 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_255[0:0];
+  _RAND_256 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_256[0:0];
+  _RAND_257 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_11_REG = _RAND_257[0:0];
+  _RAND_258 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_12_REG = _RAND_258[5:0];
+  _RAND_259 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_259[0:0];
+  _RAND_260 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_260[0:0];
+  _RAND_261 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_261[0:0];
+  _RAND_262 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_262[0:0];
+  _RAND_263 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_12_REG = _RAND_263[0:0];
+  _RAND_264 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_13_REG = _RAND_264[5:0];
+  _RAND_265 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_265[0:0];
+  _RAND_266 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_266[0:0];
+  _RAND_267 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_267[0:0];
+  _RAND_268 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_268[0:0];
+  _RAND_269 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_13_REG = _RAND_269[0:0];
+  _RAND_270 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_14_REG = _RAND_270[5:0];
+  _RAND_271 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 = _RAND_271[0:0];
+  _RAND_272 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 = _RAND_272[0:0];
+  _RAND_273 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_273[0:0];
+  _RAND_274 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_274[0:0];
+  _RAND_275 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_14_REG = _RAND_275[0:0];
+  _RAND_276 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_dataInput_15_REG = _RAND_276[5:0];
+  _RAND_277 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_277[0:0];
+  _RAND_278 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_278[0:0];
+  _RAND_279 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_279[0:0];
+  _RAND_280 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_280[0:0];
+  _RAND_281 = {1{`RANDOM}};
+  multiHotPriortyReductionTree_io_selectInput_15_REG = _RAND_281[0:0];
+  _RAND_282 = {1{`RANDOM}};
+  pixelColorSprite = _RAND_282[5:0];
+  _RAND_283 = {1{`RANDOM}};
+  pixelColorSpriteValid = _RAND_283[0:0];
+  _RAND_284 = {1{`RANDOM}};
+  pixelColourVGA_pipeReg_0 = _RAND_284[0:0];
+  _RAND_285 = {1{`RANDOM}};
+  pixelColourVGA_pipeReg_1 = _RAND_285[0:0];
+  _RAND_286 = {1{`RANDOM}};
+  pixelColourVGA_pipeReg_2 = _RAND_286[0:0];
+  _RAND_287 = {1{`RANDOM}};
+  io_vgaRed_REG = _RAND_287[3:0];
+  _RAND_288 = {1{`RANDOM}};
+  io_vgaGreen_REG = _RAND_288[3:0];
+  _RAND_289 = {1{`RANDOM}};
+  io_vgaBlue_REG = _RAND_289[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

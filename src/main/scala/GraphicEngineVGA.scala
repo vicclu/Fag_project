@@ -271,9 +271,6 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     inSpriteX(i) := (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
     inSpriteY(i) := (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
 
-
-
-
     // Scaling (unchanged):
     val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
       2.U -> (boundingWidth<<1).asSInt,
@@ -286,39 +283,39 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       0.U -> (boundingWidth).asSInt
     ))
 
-    // Flipping (unchanged):
     val flippedX = Mux(spriteFlipHorizontalReg(i), (xLim - 1.S) - inSpriteX(i), inSpriteX(i))
     val flippedY = Mux(spriteFlipVerticalReg(i),   (yLim - 1.S) - inSpriteY(i), inSpriteY(i))
-
 
     // Replace with 46×46 bounding box check:
     val inBoxX = (inSpriteX(i) >= 0.S) && (inSpriteX(i) < boundingWidth)
     val inBoxY = (inSpriteY(i) >= 0.S) && (inSpriteY(i) < boundingWidth)
     val inBoundingBox = inBoxX && inBoxY && rotation45deg(i).io.dataRead(14) === 0.U
 
-    val inScaledX = (flippedX >= 0.S) && (flippedX < xLim)
-    val inScaledY = (flippedY >= 0.S) && (flippedY < yLim)
+    val inScaledX = RegNext((flippedX >= 0.S) && (flippedX < xLim))
+    val inScaledY = RegNext((flippedY >= 0.S) && (flippedY < yLim))
 
     inSprite(i) := Mux(spriteRotationReg(i),inBoundingBox && inScaledX && inScaledY , inScaledX && inScaledY)
 
+      //Ændre flipped x og y
     // Memory address:
-    val memX = MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq(
-      2.U -> (flippedX >> 1)(4,0).asUInt,
-      1.U -> (flippedX(4,0).asUInt * 2.U),
-      0.U -> flippedX(4,0).asUInt
+    val memX = RegNext(MuxLookup(spriteScaleHorizontalReg(i), flippedX.asUInt, Seq(
+      2.U -> (flippedX >> 1).asUInt,
+      1.U -> (flippedX.asUInt * 2.U),
+      0.U -> flippedX.asUInt)
     ))
-    val memY = MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
-      2.U -> (flippedY >> 1)(4,0).asUInt,
-      1.U -> (flippedY(4,0).asUInt * 2.U),
-      0.U -> flippedY(4,0).asUInt
+    val memY = RegNext(MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
+      2.U -> (flippedY >> 1).asUInt,
+      1.U -> (flippedY.asUInt * 2.U),
+      0.U -> flippedY.asUInt)
     ))
-      val boxIndex = (inSpriteY(i).asUInt * boundingWidth.asUInt) + inSpriteX(i).asUInt
+
+      val boxIndex = RegNext((memY * boundingWidth.asUInt) + memX)
 
       rotation45deg(i).io.address := boxIndex
     spriteMemories(i).io.enable      := true.B
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,inSpriteX(i)(4,0).asUInt + 32.U(6.W) * inSpriteY(i)(4,0).asUInt)
+    spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
   }
 
 
