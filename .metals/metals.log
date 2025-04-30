@@ -834,3 +834,48 @@ java.nio.file.FileSystemNotFoundException: Provider "git" not installed
 2025.04.30 15:32:35 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\.metals\lsp.trace.json or C:\Users\dingv\AppData\Local\scalameta\metals\cache\lsp.trace.json
 2025.04.30 15:32:40 INFO  logging to files C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\.metals\metals.log
 2025.04.30 15:32:40 INFO  Started: Metals version 1.5.2 in folders 'C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt' for client Visual Studio Code 1.98.2.
+Apr 30, 2025 3:34:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "git:/c%3A/Users/dingv/OneDrive/Uni/4.Semester/02123/Fagprojekt/src/main/scala/GraphicEngineVGA.scala?%7B%22path%22%3A%22c%3A%5C%5CUsers%5C%5Cdingv%5C%5COneDrive%5C%5CUni%5C%5C4.Semester%5C%5C02123%5C%5CFagprojekt%5C%5Csrc%5C%5Cmain%5C%5Cscala%5C%5CGraphicEngineVGA.scala%22%2C%22ref%22%3A%22ba0948922f687e65b3e63ab957f18d61fc57f1e8%22%7D"
+  ]
+}
+java.nio.file.FileSystemNotFoundException: Provider "git" not installed
+	at java.base/java.nio.file.Path.of(Path.java:212)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:130)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:190)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:777)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:774)
+	at scala.meta.internal.metals.WorkspaceLspService.didFocus(WorkspaceLspService.scala:775)
+	at scala.meta.metals.lsp.DelegatingScalaService.didFocus(DelegatingScalaService.scala:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2025.04.30 16:33:27 INFO  Shutting down server
+2025.04.30 16:33:27 INFO  shutting down Metals
+2025.04.30 16:33:27 INFO  Exiting server
+2025.04.30 16:37:00 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\.metals\lsp.trace.json
+2025.04.30 16:37:14 INFO  logging to files C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\.metals\metals.log
+2025.04.30 16:37:14 INFO  Started: Metals version 1.5.2 in folders 'C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt' for client Visual Studio Code 1.98.2.
+2025.04.30 16:40:01 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.04.30 16:40:01 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.04.30 16:40:08 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+Apr 30, 2025 4:40:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
