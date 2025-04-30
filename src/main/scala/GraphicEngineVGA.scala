@@ -31,6 +31,10 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val backBufferWriteAddress = Input(UInt(11.W))
     val backBufferWriteEnable = Input(Bool())
 
+    //Opacity
+    val spriteOpacityLevel = Input(UInt(2.W))
+
+
     //Status
     val newFrame = Output(Bool())
     val frameUpdateDone = Input(Bool())
@@ -39,6 +43,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val missingFrameError = Output(Bool())
     val backBufferWriteError = Output(Bool())
     val viewBoxOutOfRangeError = Output(Bool())
+
+
 
     //VGA output
     val vgaRed = Output(UInt(4.W))
@@ -261,8 +267,22 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
   val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
   val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
-  
-    for(i <- 0 until SpriteNumber) {
+
+
+  val spriteBlender = Module(new SpriteBlender(SpriteNumber))
+
+
+  spriteBlender.io.spriteOpacityLevel := io.spriteOpacityLevel
+  spriteBlender.io.pixelColorBack := pixelColorBack
+  spriteBlender.io.spriteVisibleReg := spriteVisibleReg
+  spriteBlender.io.inSprite:= inSprite
+  spriteBlender.io.spriteXPosition:=spriteXPositionReg
+  spriteBlender.io.spriteYPosition:=spriteYPositionReg
+  spriteBlender.io.pixelX:=pixelX
+  spriteBlender.io.pixelY:=pixelY
+
+
+  for(i <- 0 until SpriteNumber) {
       rotation45deg(i).io.enable := true.B
       rotation45deg(i).io.dataWrite := 0.U
       rotation45deg(i).io.writeEnable := false.B
@@ -316,6 +336,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
     spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+    spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
+
   }
 
 
@@ -335,10 +357,12 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val pixelColorRed = Cat(pixelColourVGA(5,4), pixelColourVGA(5,4))
   val pixelColorGreen = Cat(pixelColourVGA(3,2), pixelColourVGA(3,2))
   val pixelColorBlue = Cat(pixelColourVGA(1,0), pixelColourVGA(1,0))
-  io.vgaRed := RegNext(pixelColorRed)
-  io.vgaGreen := RegNext(pixelColorGreen)
-  io.vgaBlue := RegNext(pixelColorBlue)
-
+//  io.vgaRed := RegNext(pixelColorRed)
+//  io.vgaGreen := RegNext(pixelColorGreen)
+//  io.vgaBlue := RegNext(pixelColorBlue)
+  io.vgaRed :=  Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaRed,0.U)
+    io.vgaGreen:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaGreen,0.U)
+  io.vgaBlue:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaBlue,0.U)
 }
 
 //////////////////////////////////////////////////////////////////////////////

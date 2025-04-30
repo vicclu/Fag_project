@@ -53,6 +53,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     //Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
+    val spriteOpacityLevel = Output(UInt(2.W))
+
   })
 
   // Setting all led outputs to zero
@@ -157,6 +159,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   //Sprite 1
   io.spriteVisible(1) := !boxDetection.io.overlap(0)(1)
 
+  io.spriteOpacityLevel := (io.sw(1) ## io.sw(0)).asUInt
 
   io.spriteFlipHorizontal(1) := true.B
   io.spriteScaleHorizontal(1) := 1.U
