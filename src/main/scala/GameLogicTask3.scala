@@ -38,7 +38,9 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
     val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
-    val spriteRotation = Output(Vec(SpriteNumber, Bool()))
+    val spriteRotation45 = Output(Vec(SpriteNumber, Bool()))
+    val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
+
 
 
     //Viewbox control output
@@ -86,7 +88,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.B)
   io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.B)
-  io.spriteRotation := Seq.fill(SpriteNumber)(false.B)
+  io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
  io.songInput:= 0.U
  io.songStop := 0.U
  io.songSpeed:= 0.U
@@ -166,8 +168,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
-  io.spriteRotation(2) := true.B
-  io.spriteRotation(0) := true.B
+  io.spriteRotation45(2) := true.B
+  io.spriteRotation45(0) := true.B
 
 
 

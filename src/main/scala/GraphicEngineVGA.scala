@@ -19,7 +19,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
     //new
     val spriteScaleHorizontal = Input(Vec(SpriteNumber, UInt(2.W)))
-    val spriteRotation = Input(Vec(SpriteNumber, Bool()))
+    val spriteRotation45 = Input(Vec(SpriteNumber, Bool()))
+    val spriteRotation90 = Input(Vec(SpriteNumber, Bool()))
     val spriteScaleVertical = Input(Vec(SpriteNumber, UInt(2.W)))
 
     //Viewbox control input
@@ -122,7 +123,9 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   val spriteScaleHorizontalReg = RegEnable(io.spriteScaleHorizontal, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
   val spriteScaleVerticalReg = RegEnable(io.spriteScaleVertical, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
-  val spriteRotationReg = RegEnable(io.spriteRotation, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
+  val spriteRotationReg45 = RegEnable(io.spriteRotation45, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
+  val spriteRotationReg90 = RegEnable(io.spriteRotation90, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
+
 
   val viewBoxXReg = RegEnable(io.viewBoxX, 0.U(10.W), io.newFrame)
   val viewBoxYReg = RegEnable(io.viewBoxY, 0.U(9.W), io.newFrame)
@@ -260,18 +263,20 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   }
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
   val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
-  val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
+  val inSpriteY = Wire(Vec(SpriteNumber, SInt(12.W)))
   
     for(i <- 0 until SpriteNumber) {
       rotation45deg(i).io.enable := true.B
       rotation45deg(i).io.dataWrite := 0.U
       rotation45deg(i).io.writeEnable := false.B
-      val boundingWidth = Mux(spriteRotationReg(i), 46.S, 32.S)
+      val boundingWidth = Mux(spriteRotationReg45(i), 46.S, 32.S)
 
-    inSpriteX(i) := (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
-    inSpriteY(i) := (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
+      val spriteXpositiontmp = Mux(spriteRotationReg45(i), spriteXPositionReg(i) - 7.S,spriteXPositionReg(i))
+      val spriteYpositiontmp = Mux(spriteRotationReg45(i), spriteYPositionReg(i) - 7.S,spriteYPositionReg(i))
 
-    // Scaling (unchanged):
+      inSpriteX(i) := (0.U(1.W) ## pixelX).asSInt -& spriteXpositiontmp
+      inSpriteY(i) := (0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp
+
     val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
       2.U -> (boundingWidth<<1).asSInt,
       1.U -> (boundingWidth>>1).asSInt,
@@ -283,39 +288,40 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       0.U -> (boundingWidth).asSInt
     ))
 
-    val flippedX = Mux(spriteFlipHorizontalReg(i), (xLim - 1.S) - inSpriteX(i), inSpriteX(i))
-    val flippedY = Mux(spriteFlipVerticalReg(i),   (yLim - 1.S) - inSpriteY(i), inSpriteY(i))
+    val rot90X = Mux(spriteRotationReg90(i), inSpriteY(i), inSpriteX(i))
+    val rot90Y = Mux(spriteRotationReg90(i), (xLim - 1.S)  - inSpriteX(i), inSpriteY(i))
 
-    // Replace with 46×46 bounding box check:
-    val inBoxX = (inSpriteX(i) >= 0.S) && (inSpriteX(i) < boundingWidth)
-    val inBoxY = (inSpriteY(i) >= 0.S) && (inSpriteY(i) < boundingWidth)
-    val inBoundingBox = inBoxX && inBoxY && rotation45deg(i).io.dataRead(14) === 0.U
+    val flippedX = Mux(spriteFlipHorizontalReg(i), (xLim - 1.S) - rot90X, rot90X)
+    val flippedY = Mux(spriteFlipVerticalReg(i),   (yLim - 1.S) - rot90Y, rot90Y)
 
-    val inScaledX = RegNext((flippedX >= 0.S) && (flippedX < xLim))
-    val inScaledY = RegNext((flippedY >= 0.S) && (flippedY < yLim))
+    val inScaledX = (flippedX >= 0.S) && (flippedX < xLim)
+    val inScaledY = (flippedY >= 0.S) && (flippedY < yLim)
+      //Reading dataread(14) because it is a visible bit for the rotation 45 deg
+    val inBoundingBox = Mux(spriteScaleVerticalReg(i) === 2.U,inScaledX && inScaledY && rotation45deg(i).io.dataRead(14) === 0.U,
+      ((flippedX >= 1.S) && (flippedX < xLim )) && ((flippedY >= 0.S) && (flippedY < yLim -1.S)) && rotation45deg(i).io.dataRead(14) === 0.U)
+     // ((flippedY >= 1.S) && (flippedY < yLim - 1.S))
+    inSprite(i) := (Mux(spriteRotationReg45(i),inBoundingBox , inScaledX && inScaledY))
 
-    inSprite(i) := Mux(spriteRotationReg(i),inBoundingBox && inScaledX && inScaledY , inScaledX && inScaledY)
-
-      //Ændre flipped x og y
     // Memory address:
-    val memX = RegNext(MuxLookup(spriteScaleHorizontalReg(i), flippedX.asUInt, Seq(
+    val memX = (MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq(
       2.U -> (flippedX >> 1).asUInt,
       1.U -> (flippedX.asUInt * 2.U),
-      0.U -> flippedX.asUInt)
-    ))
-    val memY = RegNext(MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
+      0.U -> flippedX.asUInt))
+    )
+    val memY = (MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
       2.U -> (flippedY >> 1).asUInt,
       1.U -> (flippedY.asUInt * 2.U),
       0.U -> flippedY.asUInt)
     ))
 
-      val boxIndex = RegNext((memY * boundingWidth.asUInt) + memX)
+    val boxIndex = ((memY * boundingWidth.asUInt) + memX)
 
-      rotation45deg(i).io.address := boxIndex
+
+    rotation45deg(i).io.address := (boxIndex)
     spriteMemories(i).io.enable      := true.B
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+    spriteMemories(i).io.address     := (Mux(spriteRotationReg45(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex))
   }
 
 
@@ -338,7 +344,6 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.vgaRed := RegNext(pixelColorRed)
   io.vgaGreen := RegNext(pixelColorGreen)
   io.vgaBlue := RegNext(pixelColorBlue)
-
 }
 
 //////////////////////////////////////////////////////////////////////////////

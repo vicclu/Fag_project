@@ -1396,54 +1396,12 @@ endmodule
 module GraphicEngineVGA(
   input         clock,
   input         reset,
-  input  [10:0] io_spriteXPosition_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_1, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_2, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input  [10:0] io_spriteXPosition_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_4, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_5, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_6, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_7, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_8, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_9, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_10, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_11, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_12, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_13, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_14, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [10:0] io_spriteXPosition_15, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_1, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_2, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input  [9:0]  io_spriteYPosition_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_4, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_5, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_6, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_7, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_8, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_9, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_10, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_11, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_12, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_13, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_14, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [9:0]  io_spriteYPosition_15, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_1, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_2, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_4, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_5, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_6, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_7, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_8, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_9, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_10, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_11, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_12, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_13, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_14, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteVisible_15, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input         io_spriteFlipHorizontal_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input         io_spriteFlipHorizontal_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input         io_spriteFlipVertical_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input         io_spriteRotation45_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input         io_spriteRotation90_3, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   output        io_newFrame, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input         io_frameUpdateDone, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   output        io_missingFrameError, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
@@ -1638,367 +1596,261 @@ module GraphicEngineVGA(
   reg [31:0] _RAND_181;
   reg [31:0] _RAND_182;
   reg [31:0] _RAND_183;
-  reg [31:0] _RAND_184;
-  reg [31:0] _RAND_185;
-  reg [31:0] _RAND_186;
-  reg [31:0] _RAND_187;
-  reg [31:0] _RAND_188;
-  reg [31:0] _RAND_189;
-  reg [31:0] _RAND_190;
-  reg [31:0] _RAND_191;
-  reg [31:0] _RAND_192;
-  reg [31:0] _RAND_193;
-  reg [31:0] _RAND_194;
-  reg [31:0] _RAND_195;
-  reg [31:0] _RAND_196;
-  reg [31:0] _RAND_197;
-  reg [31:0] _RAND_198;
-  reg [31:0] _RAND_199;
-  reg [31:0] _RAND_200;
-  reg [31:0] _RAND_201;
-  reg [31:0] _RAND_202;
-  reg [31:0] _RAND_203;
-  reg [31:0] _RAND_204;
-  reg [31:0] _RAND_205;
-  reg [31:0] _RAND_206;
-  reg [31:0] _RAND_207;
-  reg [31:0] _RAND_208;
-  reg [31:0] _RAND_209;
-  reg [31:0] _RAND_210;
-  reg [31:0] _RAND_211;
-  reg [31:0] _RAND_212;
-  reg [31:0] _RAND_213;
-  reg [31:0] _RAND_214;
-  reg [31:0] _RAND_215;
-  reg [31:0] _RAND_216;
-  reg [31:0] _RAND_217;
-  reg [31:0] _RAND_218;
-  reg [31:0] _RAND_219;
-  reg [31:0] _RAND_220;
-  reg [31:0] _RAND_221;
-  reg [31:0] _RAND_222;
-  reg [31:0] _RAND_223;
-  reg [31:0] _RAND_224;
-  reg [31:0] _RAND_225;
-  reg [31:0] _RAND_226;
-  reg [31:0] _RAND_227;
-  reg [31:0] _RAND_228;
-  reg [31:0] _RAND_229;
-  reg [31:0] _RAND_230;
-  reg [31:0] _RAND_231;
-  reg [31:0] _RAND_232;
-  reg [31:0] _RAND_233;
-  reg [31:0] _RAND_234;
-  reg [31:0] _RAND_235;
-  reg [31:0] _RAND_236;
-  reg [31:0] _RAND_237;
-  reg [31:0] _RAND_238;
-  reg [31:0] _RAND_239;
-  reg [31:0] _RAND_240;
-  reg [31:0] _RAND_241;
-  reg [31:0] _RAND_242;
-  reg [31:0] _RAND_243;
-  reg [31:0] _RAND_244;
-  reg [31:0] _RAND_245;
-  reg [31:0] _RAND_246;
-  reg [31:0] _RAND_247;
-  reg [31:0] _RAND_248;
-  reg [31:0] _RAND_249;
-  reg [31:0] _RAND_250;
-  reg [31:0] _RAND_251;
-  reg [31:0] _RAND_252;
-  reg [31:0] _RAND_253;
-  reg [31:0] _RAND_254;
-  reg [31:0] _RAND_255;
-  reg [31:0] _RAND_256;
-  reg [31:0] _RAND_257;
-  reg [31:0] _RAND_258;
-  reg [31:0] _RAND_259;
-  reg [31:0] _RAND_260;
-  reg [31:0] _RAND_261;
-  reg [31:0] _RAND_262;
-  reg [31:0] _RAND_263;
-  reg [31:0] _RAND_264;
-  reg [31:0] _RAND_265;
-  reg [31:0] _RAND_266;
-  reg [31:0] _RAND_267;
-  reg [31:0] _RAND_268;
-  reg [31:0] _RAND_269;
-  reg [31:0] _RAND_270;
-  reg [31:0] _RAND_271;
-  reg [31:0] _RAND_272;
-  reg [31:0] _RAND_273;
-  reg [31:0] _RAND_274;
-  reg [31:0] _RAND_275;
-  reg [31:0] _RAND_276;
-  reg [31:0] _RAND_277;
-  reg [31:0] _RAND_278;
-  reg [31:0] _RAND_279;
-  reg [31:0] _RAND_280;
-  reg [31:0] _RAND_281;
-  reg [31:0] _RAND_282;
-  reg [31:0] _RAND_283;
-  reg [31:0] _RAND_284;
-  reg [31:0] _RAND_285;
-  reg [31:0] _RAND_286;
-  reg [31:0] _RAND_287;
-  reg [31:0] _RAND_288;
-  reg [31:0] _RAND_289;
 `endif // RANDOMIZE_REG_INIT
-  wire  backTileMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_16_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_16_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_16_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_17_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_17_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_17_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_18_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_18_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_18_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_19_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_19_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_19_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_20_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_20_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_20_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_21_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_21_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_21_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_22_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_22_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_22_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_23_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_23_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_23_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_24_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_24_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_24_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_25_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_25_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_25_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_26_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_26_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_26_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_27_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_27_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_27_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_28_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_28_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_28_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_29_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_29_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_29_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_30_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_30_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_30_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backTileMemories_31_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [9:0] backTileMemories_31_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire [6:0] backTileMemories_31_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
-  wire  backBufferMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
-  wire [10:0] backBufferMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
-  wire [4:0] backBufferMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
-  wire  backBufferMemory_io_writeEnable; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
-  wire [4:0] backBufferMemory_io_dataWrite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
-  wire  backBufferShadowMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
-  wire [10:0] backBufferShadowMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
-  wire [4:0] backBufferShadowMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
-  wire  backBufferShadowMemory_io_writeEnable; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
-  wire [4:0] backBufferShadowMemory_io_dataWrite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
-  wire  backBufferRestoreMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 184:39]
-  wire [10:0] backBufferRestoreMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 184:39]
-  wire [4:0] backBufferRestoreMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 184:39]
-  wire  spriteMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  spriteMemories_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [9:0] spriteMemories_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire [6:0] spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
-  wire  rotation45deg_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire  rotation45deg_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [11:0] rotation45deg_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [14:0] rotation45deg_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
-  reg [1:0] ScaleCounterReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
-  reg [9:0] CounterXReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:28]
-  reg [9:0] CounterYReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
-  wire  _T_2 = CounterYReg == 10'h20c; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 81:26]
-  wire [9:0] _CounterYReg_T_1 = CounterYReg + 10'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 85:38]
-  wire [9:0] _GEN_0 = CounterYReg == 10'h20c ? 10'h0 : _CounterYReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 81:131 82:23 85:23]
-  wire [9:0] _CounterXReg_T_1 = CounterXReg + 10'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 88:36]
-  wire  _GEN_4 = CounterXReg == 10'h31f & _T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 79:129 73:15]
-  wire [1:0] _ScaleCounterReg_T_1 = ScaleCounterReg + 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 91:42]
-  wire  _GEN_8 = ScaleCounterReg == 2'h3 & _GEN_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 73:15 76:52]
-  reg [11:0] backMemoryRestoreCounter; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 206:41]
-  wire  restoreEnabled = backMemoryRestoreCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:33]
-  wire  run = restoreEnabled ? 1'h0 : 1'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:70 213:9 217:9]
-  wire  Hsync = CounterXReg >= 10'h290 & CounterXReg < 10'h2f0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 95:79]
-  wire  Vsync = CounterYReg >= 10'h1ea & CounterYReg < 10'h1ec; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 96:79]
+  wire  backTileMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_16_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_16_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_16_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_17_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_17_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_17_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_18_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_18_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_18_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_19_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_19_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_19_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_20_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_20_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_20_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_21_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_21_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_21_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_22_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_22_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_22_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_23_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_23_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_23_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_24_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_24_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_24_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_25_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_25_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_25_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_26_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_26_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_26_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_27_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_27_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_27_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_28_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_28_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_28_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_29_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_29_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_29_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_30_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_30_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_30_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backTileMemories_31_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [9:0] backTileMemories_31_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire [6:0] backTileMemories_31_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
+  wire  backBufferMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
+  wire [10:0] backBufferMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
+  wire [4:0] backBufferMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
+  wire  backBufferMemory_io_writeEnable; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
+  wire [4:0] backBufferMemory_io_dataWrite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
+  wire  backBufferShadowMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
+  wire [10:0] backBufferShadowMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
+  wire [4:0] backBufferShadowMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
+  wire  backBufferShadowMemory_io_writeEnable; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
+  wire [4:0] backBufferShadowMemory_io_dataWrite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
+  wire  backBufferRestoreMemory_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:39]
+  wire [10:0] backBufferRestoreMemory_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:39]
+  wire [4:0] backBufferRestoreMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:39]
+  wire  spriteMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  spriteMemories_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [9:0] spriteMemories_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire [6:0] spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
+  wire  rotation45deg_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_1_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_1_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_2_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_2_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_3_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_3_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_4_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_4_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_5_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_5_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_6_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_6_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_7_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_7_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_8_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_8_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_9_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_9_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_10_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_10_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_11_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_11_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_12_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_12_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_13_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_13_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_14_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_14_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire  rotation45deg_15_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [11:0] rotation45deg_15_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [14:0] rotation45deg_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire [5:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
+  reg [1:0] ScaleCounterReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
+  reg [9:0] CounterXReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
+  reg [9:0] CounterYReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 71:28]
+  wire  _T_2 = CounterYReg == 10'h20c; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 82:26]
+  wire [9:0] _CounterYReg_T_1 = CounterYReg + 10'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 86:38]
+  wire [9:0] _GEN_0 = CounterYReg == 10'h20c ? 10'h0 : _CounterYReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 82:131 83:23 86:23]
+  wire [9:0] _CounterXReg_T_1 = CounterXReg + 10'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 89:36]
+  wire  _GEN_4 = CounterXReg == 10'h31f & _T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 80:129 74:15]
+  wire [1:0] _ScaleCounterReg_T_1 = ScaleCounterReg + 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 92:42]
+  wire  _GEN_8 = ScaleCounterReg == 2'h3 & _GEN_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 74:15 77:52]
+  reg [11:0] backMemoryRestoreCounter; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:41]
+  wire  restoreEnabled = backMemoryRestoreCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 212:33]
+  wire  run = restoreEnabled ? 1'h0 : 1'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 212:70 216:9 220:9]
+  wire  Hsync = CounterXReg >= 10'h290 & CounterXReg < 10'h2f0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 96:79]
+  wire  Vsync = CounterYReg >= 10'h1ea & CounterYReg < 10'h1ec; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 97:79]
   reg  io_Hsync_pipeReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  io_Hsync_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  io_Hsync_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -2007,929 +1859,786 @@ module GraphicEngineVGA(
   reg  io_Vsync_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  io_Vsync_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  io_Vsync_pipeReg_3; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg [20:0] frameClockCount; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 107:32]
-  wire [20:0] _frameClockCount_T_2 = frameClockCount + 21'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 108:92]
-  wire  preDisplayArea = frameClockCount >= 21'h199a1b; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 109:40]
-  reg [10:0] spriteXPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [10:0] spriteXPositionReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-  reg [9:0] spriteYPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg [9:0] spriteYPositionReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-  reg  spriteVisibleReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  reg  spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:35]
-  wire  _GEN_46 = io_newFrame ? io_spriteVisible_1 : spriteVisibleReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_47 = io_newFrame ? io_spriteVisible_2 : spriteVisibleReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_48 = io_newFrame ? io_spriteVisible_3 : spriteVisibleReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_49 = io_newFrame ? io_spriteVisible_4 : spriteVisibleReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_50 = io_newFrame ? io_spriteVisible_5 : spriteVisibleReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_51 = io_newFrame ? io_spriteVisible_6 : spriteVisibleReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_52 = io_newFrame ? io_spriteVisible_7 : spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_53 = io_newFrame ? io_spriteVisible_8 : spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_54 = io_newFrame ? io_spriteVisible_9 : spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_55 = io_newFrame ? io_spriteVisible_10 : spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_56 = io_newFrame ? io_spriteVisible_11 : spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_57 = io_newFrame ? io_spriteVisible_12 : spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_58 = io_newFrame ? io_spriteVisible_13 : spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_59 = io_newFrame ? io_spriteVisible_14 : spriteVisibleReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  wire  _GEN_60 = io_newFrame ? io_spriteVisible_15 : spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35,35}]
-  reg  spriteFlipHorizontalReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-  reg  spriteFlipHorizontalReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-  reg [1:0] spriteScaleHorizontalReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 123:43]
-  reg [1:0] spriteScaleVerticalReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:41]
-  reg  spriteRotationReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
-  reg  spriteRotationReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
-  reg  missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 132:37]
-  wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 143:27]
-  wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 144:27]
-  reg  newFrameStikyReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 151:33]
-  wire  _GEN_144 = io_newFrame | newFrameStikyReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 152:21 153:22 151:33]
-  reg  REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 155:15]
-  wire  _GEN_146 = newFrameStikyReg & io_newFrame | missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 158:41 159:26 132:37]
-  wire [10:0] _backTileMemories_0_io_address_T_2 = 6'h20 * pixelYBack[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:76]
-  wire [10:0] _GEN_188 = {{6'd0}, pixelXBack[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:63]
-  wire [11:0] _backTileMemories_0_io_address_T_3 = _GEN_188 + _backTileMemories_0_io_address_T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:63]
-  reg [6:0] backTileMemoryDataRead_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_16_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_17_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_18_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_19_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_20_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_21_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_22_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_23_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_24_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_25_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_26_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_27_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_28_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_29_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_30_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [6:0] backTileMemoryDataRead_31_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-  reg [11:0] backMemoryCopyCounter; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:38]
-  wire  _T_7 = backMemoryCopyCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 191:32]
-  wire [11:0] _backMemoryCopyCounter_T_1 = backMemoryCopyCounter + 12'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 192:54]
-  wire  copyEnabled = preDisplayArea & _T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:24 202:17]
-  reg  copyEnabledReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 204:31]
-  wire [11:0] _backMemoryRestoreCounter_T_1 = backMemoryRestoreCounter + 12'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 210:58]
-  reg [10:0] backBufferShadowMemory_io_address_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 225:67]
-  wire [10:0] _backBufferShadowMemory_io_address_T_2 = copyEnabled ? backMemoryCopyCounter[10:0] : 11'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 225:105]
-  reg  backBufferShadowMemory_io_writeEnable_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 227:71]
-  reg [10:0] backBufferMemory_io_address_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:61]
-  wire [11:0] _backBufferMemory_io_address_T_3 = 6'h28 * pixelYBack[10:5]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:131]
-  wire [11:0] _GEN_220 = {{6'd0}, pixelXBack[10:5]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:118]
-  wire [12:0] _backBufferMemory_io_address_T_4 = _GEN_220 + _backBufferMemory_io_address_T_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:118]
+  reg [20:0] frameClockCount; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 108:32]
+  wire [20:0] _frameClockCount_T_2 = frameClockCount + 21'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 109:92]
+  wire  preDisplayArea = frameClockCount >= 21'h199a1b; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 110:40]
+  reg [10:0] spriteXPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+  reg [10:0] spriteXPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+  reg [10:0] spriteXPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+  reg [9:0] spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+  reg [9:0] spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+  reg [9:0] spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+  reg  spriteVisibleReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  reg  spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:35]
+  wire  _GEN_45 = io_newFrame ? 1'h0 : spriteVisibleReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_46 = io_newFrame ? 1'h0 : spriteVisibleReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_47 = io_newFrame ? 1'h0 : spriteVisibleReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_51 = io_newFrame ? 1'h0 : spriteVisibleReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_52 = io_newFrame ? 1'h0 : spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_53 = io_newFrame ? 1'h0 : spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_54 = io_newFrame ? 1'h0 : spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_55 = io_newFrame ? 1'h0 : spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_56 = io_newFrame ? 1'h0 : spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_57 = io_newFrame ? 1'h0 : spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_58 = io_newFrame ? 1'h0 : spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_59 = io_newFrame ? 1'h0 : spriteVisibleReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  wire  _GEN_60 = io_newFrame ? 1'h0 : spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35,35}]
+  reg  spriteFlipHorizontalReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 121:42]
+  reg  spriteFlipVerticalReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 122:40]
+  reg [1:0] spriteScaleHorizontalReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+  reg [1:0] spriteScaleHorizontalReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+  reg [1:0] spriteScaleHorizontalReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+  reg [1:0] spriteScaleVerticalReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+  reg [1:0] spriteScaleVerticalReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+  reg [1:0] spriteScaleVerticalReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+  reg  spriteRotationReg45_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+  reg  spriteRotationReg45_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+  reg  spriteRotationReg45_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+  reg  spriteRotationReg90_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 127:38]
+  reg  missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 135:37]
+  wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 146:27]
+  wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 147:27]
+  reg  newFrameStikyReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 154:33]
+  wire  _GEN_160 = io_newFrame | newFrameStikyReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 155:21 156:22 154:33]
+  reg  REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 158:15]
+  wire  _GEN_162 = newFrameStikyReg & io_newFrame | missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 161:41 162:26 135:37]
+  wire [10:0] _backTileMemories_0_io_address_T_2 = 6'h20 * pixelYBack[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:76]
+  wire [10:0] _GEN_204 = {{6'd0}, pixelXBack[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:63]
+  wire [11:0] _backTileMemories_0_io_address_T_3 = _GEN_204 + _backTileMemories_0_io_address_T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:63]
+  reg [6:0] backTileMemoryDataRead_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_16_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_17_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_18_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_19_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_20_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_21_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_22_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_23_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_24_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_25_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_26_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_27_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_28_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_29_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_30_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [6:0] backTileMemoryDataRead_31_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+  reg [11:0] backMemoryCopyCounter; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:38]
+  wire  _T_7 = backMemoryCopyCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 194:32]
+  wire [11:0] _backMemoryCopyCounter_T_1 = backMemoryCopyCounter + 12'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 195:54]
+  wire  copyEnabled = preDisplayArea & _T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 193:24 205:17]
+  reg  copyEnabledReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 207:31]
+  wire [11:0] _backMemoryRestoreCounter_T_1 = backMemoryRestoreCounter + 12'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 213:58]
+  reg [10:0] backBufferShadowMemory_io_address_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 228:67]
+  wire [10:0] _backBufferShadowMemory_io_address_T_2 = copyEnabled ? backMemoryCopyCounter[10:0] : 11'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 228:105]
+  reg  backBufferShadowMemory_io_writeEnable_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:71]
+  reg [10:0] backBufferMemory_io_address_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:61]
+  wire [11:0] _backBufferMemory_io_address_T_3 = 6'h28 * pixelYBack[10:5]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:131]
+  wire [11:0] _GEN_236 = {{6'd0}, pixelXBack[10:5]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:118]
+  wire [12:0] _backBufferMemory_io_address_T_4 = _GEN_236 + _backBufferMemory_io_address_T_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:118]
   wire [12:0] _backBufferMemory_io_address_T_5 = copyEnabledReg ? {{2'd0}, backBufferMemory_io_address_REG} :
-    _backBufferMemory_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:37]
-  reg [4:0] fullBackgroundColor_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:56]
-  wire [6:0] _GEN_157 = 5'h1 == fullBackgroundColor_REG ? backTileMemoryDataRead_1_REG : backTileMemoryDataRead_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_158 = 5'h2 == fullBackgroundColor_REG ? backTileMemoryDataRead_2_REG : _GEN_157; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_159 = 5'h3 == fullBackgroundColor_REG ? backTileMemoryDataRead_3_REG : _GEN_158; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_160 = 5'h4 == fullBackgroundColor_REG ? backTileMemoryDataRead_4_REG : _GEN_159; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_161 = 5'h5 == fullBackgroundColor_REG ? backTileMemoryDataRead_5_REG : _GEN_160; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_162 = 5'h6 == fullBackgroundColor_REG ? backTileMemoryDataRead_6_REG : _GEN_161; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_163 = 5'h7 == fullBackgroundColor_REG ? backTileMemoryDataRead_7_REG : _GEN_162; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_164 = 5'h8 == fullBackgroundColor_REG ? backTileMemoryDataRead_8_REG : _GEN_163; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_165 = 5'h9 == fullBackgroundColor_REG ? backTileMemoryDataRead_9_REG : _GEN_164; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_166 = 5'ha == fullBackgroundColor_REG ? backTileMemoryDataRead_10_REG : _GEN_165; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_167 = 5'hb == fullBackgroundColor_REG ? backTileMemoryDataRead_11_REG : _GEN_166; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_168 = 5'hc == fullBackgroundColor_REG ? backTileMemoryDataRead_12_REG : _GEN_167; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_169 = 5'hd == fullBackgroundColor_REG ? backTileMemoryDataRead_13_REG : _GEN_168; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_170 = 5'he == fullBackgroundColor_REG ? backTileMemoryDataRead_14_REG : _GEN_169; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_171 = 5'hf == fullBackgroundColor_REG ? backTileMemoryDataRead_15_REG : _GEN_170; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_172 = 5'h10 == fullBackgroundColor_REG ? backTileMemoryDataRead_16_REG : _GEN_171; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_173 = 5'h11 == fullBackgroundColor_REG ? backTileMemoryDataRead_17_REG : _GEN_172; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_174 = 5'h12 == fullBackgroundColor_REG ? backTileMemoryDataRead_18_REG : _GEN_173; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_175 = 5'h13 == fullBackgroundColor_REG ? backTileMemoryDataRead_19_REG : _GEN_174; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_176 = 5'h14 == fullBackgroundColor_REG ? backTileMemoryDataRead_20_REG : _GEN_175; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_177 = 5'h15 == fullBackgroundColor_REG ? backTileMemoryDataRead_21_REG : _GEN_176; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_178 = 5'h16 == fullBackgroundColor_REG ? backTileMemoryDataRead_22_REG : _GEN_177; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_179 = 5'h17 == fullBackgroundColor_REG ? backTileMemoryDataRead_23_REG : _GEN_178; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_180 = 5'h18 == fullBackgroundColor_REG ? backTileMemoryDataRead_24_REG : _GEN_179; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_181 = 5'h19 == fullBackgroundColor_REG ? backTileMemoryDataRead_25_REG : _GEN_180; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_182 = 5'h1a == fullBackgroundColor_REG ? backTileMemoryDataRead_26_REG : _GEN_181; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_183 = 5'h1b == fullBackgroundColor_REG ? backTileMemoryDataRead_27_REG : _GEN_182; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_184 = 5'h1c == fullBackgroundColor_REG ? backTileMemoryDataRead_28_REG : _GEN_183; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_185 = 5'h1d == fullBackgroundColor_REG ? backTileMemoryDataRead_29_REG : _GEN_184; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] _GEN_186 = 5'h1e == fullBackgroundColor_REG ? backTileMemoryDataRead_30_REG : _GEN_185; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  wire [6:0] fullBackgroundColor = 5'h1f == fullBackgroundColor_REG ? backTileMemoryDataRead_31_REG : _GEN_186; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:{23,23}]
-  reg [5:0] pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 249:31]
-  wire [6:0] boundingWidth = spriteRotationReg_0 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 269:30]
-  wire [10:0] _inSpriteX_0_T_1 = {1'h0,CounterXReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:42]
-  wire [11:0] inSpriteX_0 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _inSpriteY_0_T_1 = {1'h0,CounterYReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:42]
-  wire [10:0] _GEN_221 = {{1{spriteYPositionReg_0[9]}},spriteYPositionReg_0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_0_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_221); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [7:0] _xLim_T_3 = {{1{boundingWidth[6]}},boundingWidth}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _flippedX_T_2 = $signed(_xLim_T_3) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:58]
-  wire [11:0] _GEN_222 = {{4{_flippedX_T_2[7]}},_flippedX_T_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
-  wire [11:0] _flippedX_T_5 = $signed(_GEN_222) - $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
-  wire [11:0] flippedX = spriteFlipHorizontalReg_0 ? $signed(_flippedX_T_5) : $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:23]
-  wire [10:0] inSpriteY_0 = _inSpriteY_0_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire [11:0] _GEN_225 = {{5{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  inBoxX = $signed(inSpriteX_0) >= 12'sh0 & $signed(inSpriteX_0) < $signed(_GEN_225); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:40]
-  wire  _inBoxY_T = $signed(inSpriteY_0) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire [10:0] _GEN_226 = {{4{boundingWidth[6]}},boundingWidth}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  wire  inBoxY = $signed(inSpriteY_0) >= 11'sh0 & $signed(inSpriteY_0) < $signed(_GEN_226); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:40]
-  wire  inBoundingBox = inBoxX & inBoxY & ~rotation45deg_0_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:42]
-  wire [11:0] _GEN_227 = {{4{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
-  reg  inScaledX; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  wire [10:0] _GEN_228 = {{3{_xLim_T_3[7]}},_xLim_T_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
-  reg  inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T = spriteFlipHorizontalReg_0 ? $signed(_flippedX_T_5) : $signed(inSpriteX_0); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_3 = _inSpriteY_0_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [6:0] _boxIndex_T = spriteRotationReg_0 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:52]
-  wire [19:0] _boxIndex_T_1 = memY * _boxIndex_T; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_229 = {{6'd0}, memX}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [10:0] _spriteMemories_0_io_address_T_4 = 6'h20 * rotation45deg_0_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:127]
-  wire [10:0] _GEN_230 = {{6'd0}, rotation45deg_0_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
-  wire [10:0] _spriteMemories_0_io_address_T_6 = _GEN_230 + _spriteMemories_0_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
-  wire [19:0] _spriteMemories_0_io_address_T_7 = spriteRotationReg_0 ? {{9'd0}, _spriteMemories_0_io_address_T_6} :
-    boxIndex; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:44]
-  wire [11:0] inSpriteX_1 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_231 = {{1{spriteYPositionReg_1[9]}},spriteYPositionReg_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_1_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_231); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [7:0] _xLim_T_10 = 2'h2 == spriteScaleHorizontalReg_1 ? $signed(8'sh40) : $signed(8'sh20); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _xLim_T_12 = 2'h1 == spriteScaleHorizontalReg_1 ? $signed(8'sh10) : $signed(_xLim_T_10); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] xLim_1 = 2'h0 == spriteScaleHorizontalReg_1 ? $signed(8'sh20) : $signed(_xLim_T_12); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _yLim_T_10 = 2'h2 == spriteScaleVerticalReg_1 ? $signed(8'sh40) : $signed(8'sh20); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _yLim_T_12 = 2'h1 == spriteScaleVerticalReg_1 ? $signed(8'sh10) : $signed(_yLim_T_10); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] yLim_1 = 2'h0 == spriteScaleVerticalReg_1 ? $signed(8'sh20) : $signed(_yLim_T_12); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [7:0] _flippedX_T_8 = $signed(xLim_1) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:58]
-  wire [11:0] _GEN_232 = {{4{_flippedX_T_8[7]}},_flippedX_T_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
-  wire [11:0] _flippedX_T_11 = $signed(_GEN_232) - $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:65]
-  wire [11:0] flippedX_1 = spriteFlipHorizontalReg_1 ? $signed(_flippedX_T_11) : $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 286:23]
-  wire [10:0] inSpriteY_1 = _inSpriteY_1_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxY_T_2 = $signed(inSpriteY_1) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire [11:0] _GEN_235 = {{4{xLim_1[7]}},xLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
-  reg  inScaledX_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  wire [10:0] _GEN_236 = {{3{yLim_1[7]}},yLim_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
-  reg  inScaledY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_12 = spriteFlipHorizontalReg_1 ? $signed(_flippedX_T_11) : $signed(inSpriteX_1); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  wire [10:0] _memX_T_14 = flippedX_1[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 302:30]
-  wire [13:0] _memX_T_16 = _memX_T_12 * 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:31]
-  wire [11:0] _memX_T_19 = 2'h2 == spriteScaleHorizontalReg_1 ? {{1'd0}, _memX_T_14} : _memX_T_12; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  reg [13:0] memX_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [9:0] _memY_T_14 = inSpriteY_1[10:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 307:30]
-  wire [10:0] _memY_T_15 = _inSpriteY_1_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  wire [12:0] _memY_T_16 = _memY_T_15 * 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:31]
-  wire [9:0] _memY_T_19 = 2'h2 == spriteScaleVerticalReg_1 ? _memY_T_14 : {{5'd0}, inSpriteY_1[4:0]}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  reg [12:0] memY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_5 = memY_1 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_237 = {{6'd0}, memX_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [6:0] boundingWidth_2 = spriteRotationReg_2 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 269:30]
-  wire [11:0] inSpriteX_2 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_2); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_239 = {{1{spriteYPositionReg_2[9]}},spriteYPositionReg_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_2_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_239); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [7:0] _xLim_T_17 = {{1{boundingWidth_2[6]}},boundingWidth_2}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-  wire [10:0] inSpriteY_2 = _inSpriteY_2_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_4 = $signed(inSpriteX_2) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire [11:0] _GEN_243 = {{5{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  inBoxX_2 = $signed(inSpriteX_2) >= 12'sh0 & $signed(inSpriteX_2) < $signed(_GEN_243); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:40]
-  wire  _inBoxY_T_4 = $signed(inSpriteY_2) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire [10:0] _GEN_244 = {{4{boundingWidth_2[6]}},boundingWidth_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  wire  inBoxY_2 = $signed(inSpriteY_2) >= 11'sh0 & $signed(inSpriteY_2) < $signed(_GEN_244); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:40]
-  wire  inBoundingBox_2 = inBoxX_2 & inBoxY_2 & ~rotation45deg_2_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:42]
-  wire [11:0] _GEN_245 = {{4{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:60]
-  reg  inScaledX_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  wire [10:0] _GEN_246 = {{3{_xLim_T_17[7]}},_xLim_T_17}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:60]
-  reg  inScaledY_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_24 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_2); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_27 = _inSpriteY_2_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [6:0] _boxIndex_T_8 = spriteRotationReg_2 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:52]
-  wire [19:0] _boxIndex_T_9 = memY_2 * _boxIndex_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_247 = {{6'd0}, memX_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [10:0] _spriteMemories_2_io_address_T_4 = 6'h20 * rotation45deg_2_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:127]
-  wire [10:0] _GEN_248 = {{6'd0}, rotation45deg_2_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
-  wire [10:0] _spriteMemories_2_io_address_T_6 = _GEN_248 + _spriteMemories_2_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:115]
-  wire [19:0] _spriteMemories_2_io_address_T_7 = spriteRotationReg_2 ? {{9'd0}, _spriteMemories_2_io_address_T_6} :
-    boxIndex_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:44]
-  wire [11:0] inSpriteX_3 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_249 = {{1{spriteYPositionReg_3[9]}},spriteYPositionReg_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_3_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_249); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_3 = _inSpriteY_3_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_6 = $signed(inSpriteX_3) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_7 = $signed(inSpriteX_3) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_6 = $signed(inSpriteY_3) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_7 = $signed(inSpriteY_3) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_36 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_39 = _inSpriteY_3_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_13 = memY_3 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_253 = {{6'd0}, memX_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_4 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_255 = {{1{spriteYPositionReg_4[9]}},spriteYPositionReg_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_4_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_255); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_4 = _inSpriteY_4_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_8 = $signed(inSpriteX_4) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_9 = $signed(inSpriteX_4) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_8 = $signed(inSpriteY_4) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_9 = $signed(inSpriteY_4) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_48 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_51 = _inSpriteY_4_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_17 = memY_4 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_259 = {{6'd0}, memX_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_5 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_261 = {{1{spriteYPositionReg_5[9]}},spriteYPositionReg_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_5_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_261); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_5 = _inSpriteY_5_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_10 = $signed(inSpriteX_5) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_11 = $signed(inSpriteX_5) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_10 = $signed(inSpriteY_5) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_11 = $signed(inSpriteY_5) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_60 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_63 = _inSpriteY_5_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_21 = memY_5 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_265 = {{6'd0}, memX_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_6 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_6); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_267 = {{1{spriteYPositionReg_6[9]}},spriteYPositionReg_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_6_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_267); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_6 = _inSpriteY_6_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_12 = $signed(inSpriteX_6) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_13 = $signed(inSpriteX_6) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_12 = $signed(inSpriteY_6) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_13 = $signed(inSpriteY_6) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_72 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_6); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_75 = _inSpriteY_6_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_25 = memY_6 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_271 = {{6'd0}, memX_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_7 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_7); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_273 = {{1{spriteYPositionReg_7[9]}},spriteYPositionReg_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_7_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_273); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_7 = _inSpriteY_7_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_14 = $signed(inSpriteX_7) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_15 = $signed(inSpriteX_7) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_14 = $signed(inSpriteY_7) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_15 = $signed(inSpriteY_7) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_84 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_7); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_87 = _inSpriteY_7_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_29 = memY_7 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_277 = {{6'd0}, memX_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_8 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_8); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_279 = {{1{spriteYPositionReg_8[9]}},spriteYPositionReg_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_8_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_279); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_8 = _inSpriteY_8_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_16 = $signed(inSpriteX_8) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_17 = $signed(inSpriteX_8) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_16 = $signed(inSpriteY_8) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_17 = $signed(inSpriteY_8) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_96 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_8); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_99 = _inSpriteY_8_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_33 = memY_8 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_283 = {{6'd0}, memX_8}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_9 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_9); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_285 = {{1{spriteYPositionReg_9[9]}},spriteYPositionReg_9}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_9_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_285); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_9 = _inSpriteY_9_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_18 = $signed(inSpriteX_9) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_19 = $signed(inSpriteX_9) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_18 = $signed(inSpriteY_9) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_19 = $signed(inSpriteY_9) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_108 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_9); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_111 = _inSpriteY_9_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_37 = memY_9 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_289 = {{6'd0}, memX_9}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_10 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_10); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_291 = {{1{spriteYPositionReg_10[9]}},spriteYPositionReg_10}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_10_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_291); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_10 = _inSpriteY_10_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_20 = $signed(inSpriteX_10) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_21 = $signed(inSpriteX_10) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_20 = $signed(inSpriteY_10) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_21 = $signed(inSpriteY_10) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_120 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_10); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_123 = _inSpriteY_10_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_41 = memY_10 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_295 = {{6'd0}, memX_10}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_11 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_11); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_297 = {{1{spriteYPositionReg_11[9]}},spriteYPositionReg_11}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_11_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_297); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_11 = _inSpriteY_11_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_22 = $signed(inSpriteX_11) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_23 = $signed(inSpriteX_11) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_22 = $signed(inSpriteY_11) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_23 = $signed(inSpriteY_11) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_132 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_11); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_135 = _inSpriteY_11_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_45 = memY_11 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_301 = {{6'd0}, memX_11}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_12 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_12); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_303 = {{1{spriteYPositionReg_12[9]}},spriteYPositionReg_12}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_12_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_303); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_12 = _inSpriteY_12_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_24 = $signed(inSpriteX_12) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_25 = $signed(inSpriteX_12) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_24 = $signed(inSpriteY_12) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_25 = $signed(inSpriteY_12) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_144 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_12); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_147 = _inSpriteY_12_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_49 = memY_12 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_307 = {{6'd0}, memX_12}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_13 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_13); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_309 = {{1{spriteYPositionReg_13[9]}},spriteYPositionReg_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_13_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_309); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_13 = _inSpriteY_13_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_26 = $signed(inSpriteX_13) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_27 = $signed(inSpriteX_13) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_26 = $signed(inSpriteY_13) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_27 = $signed(inSpriteY_13) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_156 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_13); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_159 = _inSpriteY_13_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_53 = memY_13 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_313 = {{6'd0}, memX_13}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_14 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_14); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_315 = {{1{spriteYPositionReg_14[9]}},spriteYPositionReg_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_14_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_315); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_14 = _inSpriteY_14_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_28 = $signed(inSpriteX_14) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_29 = $signed(inSpriteX_14) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_28 = $signed(inSpriteY_14) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_29 = $signed(inSpriteY_14) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_168 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_14); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_171 = _inSpriteY_14_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_57 = memY_14 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_319 = {{6'd0}, memX_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  wire [11:0] inSpriteX_15 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_15); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 271:49]
-  wire [10:0] _GEN_321 = {{1{spriteYPositionReg_15[9]}},spriteYPositionReg_15}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [11:0] _inSpriteY_15_T_2 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_321); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:49]
-  wire [10:0] inSpriteY_15 = _inSpriteY_15_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 263:23 272:18]
-  wire  _inBoxX_T_30 = $signed(inSpriteX_15) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:32]
-  wire  _inBoxX_T_31 = $signed(inSpriteX_15) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 290:57]
-  wire  _inBoxY_T_30 = $signed(inSpriteY_15) >= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:32]
-  wire  _inBoxY_T_31 = $signed(inSpriteY_15) < 11'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:57]
-  reg  inScaledX_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:28]
-  reg  inScaledY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:28]
-  wire [11:0] _memX_T_180 = $signed(_inSpriteX_0_T_1) - $signed(spriteXPositionReg_15); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:72]
-  reg [13:0] memX_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:23]
-  wire [10:0] _memY_T_183 = _inSpriteY_15_T_2[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 308:24]
-  reg [12:0] memY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 306:23]
-  wire [19:0] _boxIndex_T_61 = memY_15 * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:36]
-  wire [19:0] _GEN_325 = {{6'd0}, memX_15}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-  reg [19:0] boxIndex_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:29]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+    _backBufferMemory_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:37]
+  reg [4:0] fullBackgroundColor_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:56]
+  wire [6:0] _GEN_173 = 5'h1 == fullBackgroundColor_REG ? backTileMemoryDataRead_1_REG : backTileMemoryDataRead_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_174 = 5'h2 == fullBackgroundColor_REG ? backTileMemoryDataRead_2_REG : _GEN_173; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_175 = 5'h3 == fullBackgroundColor_REG ? backTileMemoryDataRead_3_REG : _GEN_174; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_176 = 5'h4 == fullBackgroundColor_REG ? backTileMemoryDataRead_4_REG : _GEN_175; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_177 = 5'h5 == fullBackgroundColor_REG ? backTileMemoryDataRead_5_REG : _GEN_176; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_178 = 5'h6 == fullBackgroundColor_REG ? backTileMemoryDataRead_6_REG : _GEN_177; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_179 = 5'h7 == fullBackgroundColor_REG ? backTileMemoryDataRead_7_REG : _GEN_178; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_180 = 5'h8 == fullBackgroundColor_REG ? backTileMemoryDataRead_8_REG : _GEN_179; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_181 = 5'h9 == fullBackgroundColor_REG ? backTileMemoryDataRead_9_REG : _GEN_180; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_182 = 5'ha == fullBackgroundColor_REG ? backTileMemoryDataRead_10_REG : _GEN_181; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_183 = 5'hb == fullBackgroundColor_REG ? backTileMemoryDataRead_11_REG : _GEN_182; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_184 = 5'hc == fullBackgroundColor_REG ? backTileMemoryDataRead_12_REG : _GEN_183; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_185 = 5'hd == fullBackgroundColor_REG ? backTileMemoryDataRead_13_REG : _GEN_184; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_186 = 5'he == fullBackgroundColor_REG ? backTileMemoryDataRead_14_REG : _GEN_185; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_187 = 5'hf == fullBackgroundColor_REG ? backTileMemoryDataRead_15_REG : _GEN_186; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_188 = 5'h10 == fullBackgroundColor_REG ? backTileMemoryDataRead_16_REG : _GEN_187; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_189 = 5'h11 == fullBackgroundColor_REG ? backTileMemoryDataRead_17_REG : _GEN_188; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_190 = 5'h12 == fullBackgroundColor_REG ? backTileMemoryDataRead_18_REG : _GEN_189; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_191 = 5'h13 == fullBackgroundColor_REG ? backTileMemoryDataRead_19_REG : _GEN_190; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_192 = 5'h14 == fullBackgroundColor_REG ? backTileMemoryDataRead_20_REG : _GEN_191; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_193 = 5'h15 == fullBackgroundColor_REG ? backTileMemoryDataRead_21_REG : _GEN_192; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_194 = 5'h16 == fullBackgroundColor_REG ? backTileMemoryDataRead_22_REG : _GEN_193; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_195 = 5'h17 == fullBackgroundColor_REG ? backTileMemoryDataRead_23_REG : _GEN_194; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_196 = 5'h18 == fullBackgroundColor_REG ? backTileMemoryDataRead_24_REG : _GEN_195; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_197 = 5'h19 == fullBackgroundColor_REG ? backTileMemoryDataRead_25_REG : _GEN_196; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_198 = 5'h1a == fullBackgroundColor_REG ? backTileMemoryDataRead_26_REG : _GEN_197; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_199 = 5'h1b == fullBackgroundColor_REG ? backTileMemoryDataRead_27_REG : _GEN_198; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_200 = 5'h1c == fullBackgroundColor_REG ? backTileMemoryDataRead_28_REG : _GEN_199; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_201 = 5'h1d == fullBackgroundColor_REG ? backTileMemoryDataRead_29_REG : _GEN_200; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] _GEN_202 = 5'h1e == fullBackgroundColor_REG ? backTileMemoryDataRead_30_REG : _GEN_201; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  wire [6:0] fullBackgroundColor = 5'h1f == fullBackgroundColor_REG ? backTileMemoryDataRead_31_REG : _GEN_202; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:{23,23}]
+  reg [5:0] pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 252:31]
+  wire [10:0] _inSpriteX_0_T_1 = {1'h0,CounterXReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 277:44]
+  wire [11:0] inSpriteX_0 = $signed(_inSpriteX_0_T_1) - 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 277:51]
+  wire [10:0] _inSpriteY_0_T_1 = {1'h0,CounterYReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:44]
+  wire [11:0] inSpriteY_0 = $signed(_inSpriteY_0_T_1) - 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire  inScaledX = $signed(inSpriteX_0) >= 12'sh0 & $signed(inSpriteX_0) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:39]
+  wire  inScaledY = $signed(inSpriteY_0) >= 12'sh0 & $signed(inSpriteY_0) < 12'sh20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:39]
+  wire [12:0] _normX_T_5 = {{1{inSpriteX_0[11]}},inSpriteX_0}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normY_T_5 = {{1{inSpriteY_0[11]}},inSpriteY_0}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [11:0] _normBoxIndex_T_2 = _normY_T_5[4:0] * 7'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:45]
+  wire [11:0] _GEN_241 = {{7'd0}, _normX_T_5[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [11:0] normBoxIndex = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [6:0] boundingWidth_3 = spriteRotationReg45_3 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:30]
+  wire [10:0] _spriteXpositiontmp_T_11 = $signed(spriteXPositionReg_3) - 11'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:82]
+  wire [10:0] spriteXpositiontmp_3 = spriteRotationReg45_3 ? $signed(_spriteXpositiontmp_T_11) : $signed(
+    spriteXPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:35]
+  wire [9:0] _spriteYpositiontmp_T_11 = $signed(spriteYPositionReg_3) - 10'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:82]
+  wire [9:0] spriteYpositiontmp_3 = spriteRotationReg45_3 ? $signed(_spriteYpositiontmp_T_11) : $signed(
+    spriteYPositionReg_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:35]
+  wire [11:0] inSpriteX_3 = $signed(_inSpriteX_0_T_1) - $signed(spriteXpositiontmp_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 277:51]
+  wire [10:0] _GEN_255 = {{1{spriteYpositiontmp_3[9]}},spriteYpositiontmp_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [11:0] inSpriteY_3 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_255); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [7:0] _xLim_T_21 = {$signed(boundingWidth_3), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 281:28]
+  wire [5:0] _xLim_T_22 = boundingWidth_3[6:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 282:28]
+  wire [7:0] _xLim_T_24 = 2'h2 == spriteScaleHorizontalReg_3 ? $signed(_xLim_T_21) : $signed({{1{boundingWidth_3[6]}},
+    boundingWidth_3}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _xLim_T_26 = 2'h1 == spriteScaleHorizontalReg_3 ? $signed({{2{_xLim_T_22[5]}},_xLim_T_22}) : $signed(
+    _xLim_T_24); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] xLim_3 = 2'h0 == spriteScaleHorizontalReg_3 ? $signed({{1{boundingWidth_3[6]}},boundingWidth_3}) : $signed(
+    _xLim_T_26); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_24 = 2'h2 == spriteScaleVerticalReg_3 ? $signed(_xLim_T_21) : $signed({{1{boundingWidth_3[6]}},
+    boundingWidth_3}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_26 = 2'h1 == spriteScaleVerticalReg_3 ? $signed({{2{_xLim_T_22[5]}},_xLim_T_22}) : $signed(
+    _yLim_T_24); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] yLim_3 = 2'h0 == spriteScaleVerticalReg_3 ? $signed({{1{boundingWidth_3[6]}},boundingWidth_3}) : $signed(
+    _yLim_T_26); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [11:0] rot90X_3 = spriteRotationReg90_3 ? $signed(inSpriteY_3) : $signed(inSpriteX_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 291:21]
+  wire [7:0] _rot90Y_T_20 = $signed(xLim_3) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:52]
+  wire [11:0] _GEN_256 = {{4{_rot90Y_T_20[7]}},_rot90Y_T_20}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:60]
+  wire [11:0] _rot90Y_T_23 = $signed(_GEN_256) - $signed(inSpriteX_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:60]
+  wire [11:0] rot90Y_3 = spriteRotationReg90_3 ? $signed(_rot90Y_T_23) : $signed(inSpriteY_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 292:21]
+  wire [11:0] _flippedX_T_23 = $signed(_GEN_256) - $signed(rot90X_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:65]
+  wire [11:0] flippedX_3 = spriteFlipHorizontalReg_3 ? $signed(_flippedX_T_23) : $signed(rot90X_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:23]
+  wire [7:0] _flippedY_T_20 = $signed(yLim_3) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:58]
+  wire [11:0] _GEN_258 = {{4{_flippedY_T_20[7]}},_flippedY_T_20}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:65]
+  wire [11:0] _flippedY_T_23 = $signed(_GEN_258) - $signed(rot90Y_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:65]
+  wire [11:0] flippedY_3 = spriteFlipVerticalReg_3 ? $signed(_flippedY_T_23) : $signed(rot90Y_3); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:23]
+  wire [11:0] _GEN_259 = {{4{xLim_3[7]}},xLim_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  _inScaledX_T_7 = $signed(flippedX_3) < $signed(_GEN_259); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  inScaledX_3 = $signed(flippedX_3) >= 12'sh0 & $signed(flippedX_3) < $signed(_GEN_259); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:39]
+  wire  _inScaledY_T_6 = $signed(flippedY_3) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:31]
+  wire [11:0] _GEN_260 = {{4{yLim_3[7]}},yLim_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:52]
+  wire  inScaledY_3 = $signed(flippedY_3) >= 12'sh0 & $signed(flippedY_3) < $signed(_GEN_260); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:39]
+  wire  _inBoundingBox_T_55 = inScaledX_3 & inScaledY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:73]
+  wire  _inBoundingBox_T_57 = ~rotation45deg_3_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:122]
+  wire  _inBoundingBox_T_71 = $signed(flippedX_3) >= 12'sh1 & _inScaledX_T_7 & (_inScaledY_T_6 & $signed(flippedY_3) <
+    $signed(_GEN_258)) & _inBoundingBox_T_57; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:98]
+  wire [10:0] _normX_T_21 = flippedX_3[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 319:26]
+  wire [12:0] _normX_T_22 = {$signed(flippedX_3), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:26]
+  wire [11:0] _normX_T_24 = 2'h2 == spriteScaleHorizontalReg_3 ? $signed({{1{_normX_T_21[10]}},_normX_T_21}) : $signed(
+    flippedX_3); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normX_T_26 = 2'h1 == spriteScaleHorizontalReg_3 ? $signed(_normX_T_22) : $signed({{1{_normX_T_24[11]}},
+    _normX_T_24}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normX_3 = 2'h0 == spriteScaleHorizontalReg_3 ? $signed({{1{flippedX_3[11]}},flippedX_3}) : $signed(
+    _normX_T_26); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [10:0] _normY_T_21 = flippedY_3[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:26]
+  wire [12:0] _normY_T_22 = {$signed(flippedY_3), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:26]
+  wire [11:0] _normY_T_24 = 2'h2 == spriteScaleVerticalReg_3 ? $signed({{1{_normY_T_21[10]}},_normY_T_21}) : $signed(
+    flippedY_3); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normY_T_26 = 2'h1 == spriteScaleVerticalReg_3 ? $signed(_normY_T_22) : $signed({{1{_normY_T_24[11]}},
+    _normY_T_24}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normY_3 = 2'h0 == spriteScaleVerticalReg_3 ? $signed({{1{flippedY_3[11]}},flippedY_3}) : $signed(
+    _normY_T_26); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [6:0] _normBoxIndex_T_16 = spriteRotationReg45_3 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:61]
+  wire [11:0] _normBoxIndex_T_17 = normY_3[4:0] * _normBoxIndex_T_16; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:45]
+  wire [11:0] _GEN_263 = {{7'd0}, normX_3[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [11:0] normBoxIndex_3 = _normBoxIndex_T_17 + _GEN_263; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [10:0] _spriteMemories_3_io_address_T_4 = 6'h20 * rotation45deg_3_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:130]
+  wire [10:0] _GEN_264 = {{6'd0}, rotation45deg_3_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [10:0] _spriteMemories_3_io_address_T_6 = _GEN_264 + _spriteMemories_3_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [11:0] _spriteMemories_3_io_address_T_7 = spriteRotationReg45_3 ? {{1'd0}, _spriteMemories_3_io_address_T_6} :
+    normBoxIndex_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:45]
+  wire [6:0] boundingWidth_4 = spriteRotationReg45_4 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:30]
+  wire [10:0] _spriteXpositiontmp_T_14 = $signed(spriteXPositionReg_4) - 11'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:82]
+  wire [10:0] spriteXpositiontmp_4 = spriteRotationReg45_4 ? $signed(_spriteXpositiontmp_T_14) : $signed(
+    spriteXPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:35]
+  wire [9:0] _spriteYpositiontmp_T_14 = $signed(spriteYPositionReg_4) - 10'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:82]
+  wire [9:0] spriteYpositiontmp_4 = spriteRotationReg45_4 ? $signed(_spriteYpositiontmp_T_14) : $signed(
+    spriteYPositionReg_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:35]
+  wire [11:0] inSpriteX_4 = $signed(_inSpriteX_0_T_1) - $signed(spriteXpositiontmp_4); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 277:51]
+  wire [10:0] _GEN_265 = {{1{spriteYpositiontmp_4[9]}},spriteYpositiontmp_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [11:0] inSpriteY_4 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_265); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [7:0] _xLim_T_28 = {$signed(boundingWidth_4), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 281:28]
+  wire [5:0] _xLim_T_29 = boundingWidth_4[6:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 282:28]
+  wire [7:0] _xLim_T_31 = 2'h2 == spriteScaleHorizontalReg_4 ? $signed(_xLim_T_28) : $signed({{1{boundingWidth_4[6]}},
+    boundingWidth_4}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _xLim_T_33 = 2'h1 == spriteScaleHorizontalReg_4 ? $signed({{2{_xLim_T_29[5]}},_xLim_T_29}) : $signed(
+    _xLim_T_31); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] xLim_4 = 2'h0 == spriteScaleHorizontalReg_4 ? $signed({{1{boundingWidth_4[6]}},boundingWidth_4}) : $signed(
+    _xLim_T_33); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_31 = 2'h2 == spriteScaleVerticalReg_4 ? $signed(_xLim_T_28) : $signed({{1{boundingWidth_4[6]}},
+    boundingWidth_4}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_33 = 2'h1 == spriteScaleVerticalReg_4 ? $signed({{2{_xLim_T_29[5]}},_xLim_T_29}) : $signed(
+    _yLim_T_31); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] yLim_4 = 2'h0 == spriteScaleVerticalReg_4 ? $signed({{1{boundingWidth_4[6]}},boundingWidth_4}) : $signed(
+    _yLim_T_33); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _flippedY_T_26 = $signed(yLim_4) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:58]
+  wire [11:0] _GEN_268 = {{4{_flippedY_T_26[7]}},_flippedY_T_26}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:65]
+  wire [11:0] _GEN_269 = {{4{xLim_4[7]}},xLim_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  _inScaledX_T_9 = $signed(inSpriteX_4) < $signed(_GEN_269); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  inScaledX_4 = $signed(inSpriteX_4) >= 12'sh0 & $signed(inSpriteX_4) < $signed(_GEN_269); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:39]
+  wire  _inScaledY_T_8 = $signed(inSpriteY_4) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:31]
+  wire [11:0] _GEN_270 = {{4{yLim_4[7]}},yLim_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:52]
+  wire  inScaledY_4 = $signed(inSpriteY_4) >= 12'sh0 & $signed(inSpriteY_4) < $signed(_GEN_270); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:39]
+  wire  _inBoundingBox_T_73 = inScaledX_4 & inScaledY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:73]
+  wire  _inBoundingBox_T_75 = ~rotation45deg_4_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:122]
+  wire  _inBoundingBox_T_89 = $signed(inSpriteX_4) >= 12'sh1 & _inScaledX_T_9 & (_inScaledY_T_8 & $signed(inSpriteY_4)
+     < $signed(_GEN_268)) & _inBoundingBox_T_75; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:98]
+  wire [10:0] _normX_T_28 = inSpriteX_4[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 319:26]
+  wire [12:0] _normX_T_29 = {$signed(inSpriteX_4), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:26]
+  wire [11:0] _normX_T_31 = 2'h2 == spriteScaleHorizontalReg_4 ? $signed({{1{_normX_T_28[10]}},_normX_T_28}) : $signed(
+    inSpriteX_4); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normX_T_33 = 2'h1 == spriteScaleHorizontalReg_4 ? $signed(_normX_T_29) : $signed({{1{_normX_T_31[11]}},
+    _normX_T_31}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normX_4 = 2'h0 == spriteScaleHorizontalReg_4 ? $signed({{1{inSpriteX_4[11]}},inSpriteX_4}) : $signed(
+    _normX_T_33); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [10:0] _normY_T_28 = inSpriteY_4[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:26]
+  wire [12:0] _normY_T_29 = {$signed(inSpriteY_4), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:26]
+  wire [11:0] _normY_T_31 = 2'h2 == spriteScaleVerticalReg_4 ? $signed({{1{_normY_T_28[10]}},_normY_T_28}) : $signed(
+    inSpriteY_4); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normY_T_33 = 2'h1 == spriteScaleVerticalReg_4 ? $signed(_normY_T_29) : $signed({{1{_normY_T_31[11]}},
+    _normY_T_31}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normY_4 = 2'h0 == spriteScaleVerticalReg_4 ? $signed({{1{inSpriteY_4[11]}},inSpriteY_4}) : $signed(
+    _normY_T_33); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [6:0] _normBoxIndex_T_21 = spriteRotationReg45_4 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:61]
+  wire [11:0] _normBoxIndex_T_22 = normY_4[4:0] * _normBoxIndex_T_21; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:45]
+  wire [11:0] _GEN_273 = {{7'd0}, normX_4[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [11:0] normBoxIndex_4 = _normBoxIndex_T_22 + _GEN_273; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [10:0] _spriteMemories_4_io_address_T_4 = 6'h20 * rotation45deg_4_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:130]
+  wire [10:0] _GEN_274 = {{6'd0}, rotation45deg_4_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [10:0] _spriteMemories_4_io_address_T_6 = _GEN_274 + _spriteMemories_4_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [11:0] _spriteMemories_4_io_address_T_7 = spriteRotationReg45_4 ? {{1'd0}, _spriteMemories_4_io_address_T_6} :
+    normBoxIndex_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:45]
+  wire [6:0] boundingWidth_5 = spriteRotationReg45_5 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 272:30]
+  wire [10:0] _spriteXpositiontmp_T_17 = $signed(spriteXPositionReg_5) - 11'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:82]
+  wire [10:0] spriteXpositiontmp_5 = spriteRotationReg45_5 ? $signed(_spriteXpositiontmp_T_17) : $signed(
+    spriteXPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 274:35]
+  wire [9:0] _spriteYpositiontmp_T_17 = $signed(spriteYPositionReg_5) - 10'sh7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:82]
+  wire [9:0] spriteYpositiontmp_5 = spriteRotationReg45_5 ? $signed(_spriteYpositiontmp_T_17) : $signed(
+    spriteYPositionReg_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 275:35]
+  wire [11:0] inSpriteX_5 = $signed(_inSpriteX_0_T_1) - $signed(spriteXpositiontmp_5); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 277:51]
+  wire [10:0] _GEN_275 = {{1{spriteYpositiontmp_5[9]}},spriteYpositiontmp_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [11:0] inSpriteY_5 = $signed(_inSpriteY_0_T_1) - $signed(_GEN_275); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:51]
+  wire [7:0] _xLim_T_35 = {$signed(boundingWidth_5), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 281:28]
+  wire [5:0] _xLim_T_36 = boundingWidth_5[6:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 282:28]
+  wire [7:0] _xLim_T_38 = 2'h2 == spriteScaleHorizontalReg_5 ? $signed(_xLim_T_35) : $signed({{1{boundingWidth_5[6]}},
+    boundingWidth_5}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _xLim_T_40 = 2'h1 == spriteScaleHorizontalReg_5 ? $signed({{2{_xLim_T_36[5]}},_xLim_T_36}) : $signed(
+    _xLim_T_38); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] xLim_5 = 2'h0 == spriteScaleHorizontalReg_5 ? $signed({{1{boundingWidth_5[6]}},boundingWidth_5}) : $signed(
+    _xLim_T_40); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_38 = 2'h2 == spriteScaleVerticalReg_5 ? $signed(_xLim_T_35) : $signed({{1{boundingWidth_5[6]}},
+    boundingWidth_5}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _yLim_T_40 = 2'h1 == spriteScaleVerticalReg_5 ? $signed({{2{_xLim_T_36[5]}},_xLim_T_36}) : $signed(
+    _yLim_T_38); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] yLim_5 = 2'h0 == spriteScaleVerticalReg_5 ? $signed({{1{boundingWidth_5[6]}},boundingWidth_5}) : $signed(
+    _yLim_T_40); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [7:0] _flippedY_T_32 = $signed(yLim_5) - 8'sh1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:58]
+  wire [11:0] _GEN_278 = {{4{_flippedY_T_32[7]}},_flippedY_T_32}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:65]
+  wire [11:0] _GEN_279 = {{4{xLim_5[7]}},xLim_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  _inScaledX_T_11 = $signed(inSpriteX_5) < $signed(_GEN_279); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:52]
+  wire  inScaledX_5 = $signed(inSpriteX_5) >= 12'sh0 & $signed(inSpriteX_5) < $signed(_GEN_279); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:39]
+  wire  _inScaledY_T_10 = $signed(inSpriteY_5) >= 12'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:31]
+  wire [11:0] _GEN_280 = {{4{yLim_5[7]}},yLim_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:52]
+  wire  inScaledY_5 = $signed(inSpriteY_5) >= 12'sh0 & $signed(inSpriteY_5) < $signed(_GEN_280); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 298:39]
+  wire  _inBoundingBox_T_91 = inScaledX_5 & inScaledY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:73]
+  wire  _inBoundingBox_T_93 = ~rotation45deg_5_io_dataRead[14]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:122]
+  wire  _inBoundingBox_T_107 = $signed(inSpriteX_5) >= 12'sh1 & _inScaledX_T_11 & (_inScaledY_T_10 & $signed(inSpriteY_5
+    ) < $signed(_GEN_278)) & _inBoundingBox_T_93; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 301:98]
+  wire [10:0] _normX_T_35 = inSpriteX_5[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 319:26]
+  wire [12:0] _normX_T_36 = {$signed(inSpriteX_5), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 320:26]
+  wire [11:0] _normX_T_38 = 2'h2 == spriteScaleHorizontalReg_5 ? $signed({{1{_normX_T_35[10]}},_normX_T_35}) : $signed(
+    inSpriteX_5); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normX_T_40 = 2'h1 == spriteScaleHorizontalReg_5 ? $signed(_normX_T_36) : $signed({{1{_normX_T_38[11]}},
+    _normX_T_38}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normX_5 = 2'h0 == spriteScaleHorizontalReg_5 ? $signed({{1{inSpriteX_5[11]}},inSpriteX_5}) : $signed(
+    _normX_T_40); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [10:0] _normY_T_35 = inSpriteY_5[11:1]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:26]
+  wire [12:0] _normY_T_36 = {$signed(inSpriteY_5), 1'h0}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:26]
+  wire [11:0] _normY_T_38 = 2'h2 == spriteScaleVerticalReg_5 ? $signed({{1{_normY_T_35[10]}},_normY_T_35}) : $signed(
+    inSpriteY_5); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] _normY_T_40 = 2'h1 == spriteScaleVerticalReg_5 ? $signed(_normY_T_36) : $signed({{1{_normY_T_38[11]}},
+    _normY_T_38}); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [12:0] normY_5 = 2'h0 == spriteScaleVerticalReg_5 ? $signed({{1{inSpriteY_5[11]}},inSpriteY_5}) : $signed(
+    _normY_T_40); // @[src/main/scala/chisel3/util/Mux.scala 77:13]
+  wire [6:0] _normBoxIndex_T_26 = spriteRotationReg45_5 ? $signed(7'sh2e) : $signed(7'sh20); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:61]
+  wire [11:0] _normBoxIndex_T_27 = normY_5[4:0] * _normBoxIndex_T_26; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:45]
+  wire [11:0] _GEN_283 = {{7'd0}, normX_5[4:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [11:0] normBoxIndex_5 = _normBoxIndex_T_27 + _GEN_283; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  wire [10:0] _spriteMemories_5_io_address_T_4 = 6'h20 * rotation45deg_5_io_dataRead[4:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:130]
+  wire [10:0] _GEN_284 = {{6'd0}, rotation45deg_5_io_dataRead[11:7]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [10:0] _spriteMemories_5_io_address_T_6 = _GEN_284 + _spriteMemories_5_io_address_T_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:118]
+  wire [11:0] _spriteMemories_5_io_address_T_7 = spriteRotationReg45_5 ? {{1'd0}, _spriteMemories_5_io_address_T_6} :
+    normBoxIndex_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:45]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
-  reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
-  reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
-  reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:60]
+  reg  multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:60]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  reg  multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:132]
-  reg [5:0] pixelColorSprite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:33]
-  reg  pixelColorSpriteValid; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 329:38]
-  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:32]
+  reg  multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:132]
+  reg [5:0] pixelColorSprite; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:33]
+  reg  pixelColorSpriteValid; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 349:38]
+  wire [5:0] pixelColorInDisplay = pixelColorSpriteValid ? pixelColorSprite : pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 353:32]
   reg  pixelColourVGA_pipeReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  pixelColourVGA_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  pixelColourVGA_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
-  wire [5:0] pixelColourVGA = pixelColourVGA_pipeReg_0 ? pixelColorInDisplay : 6'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 334:27]
-  reg [3:0] io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:23]
-  reg [3:0] io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:25]
-  reg [3:0] io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:24]
-  Memory backTileMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  wire [5:0] pixelColourVGA = pixelColourVGA_pipeReg_0 ? pixelColorInDisplay : 6'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:27]
+  reg [3:0] io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:23]
+  reg [3:0] io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
+  reg [3:0] io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 360:24]
+  Memory backTileMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_0_clock),
     .io_address(backTileMemories_0_io_address),
     .io_dataRead(backTileMemories_0_io_dataRead)
   );
-  Memory_1 backTileMemories_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_1 backTileMemories_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_1_clock),
     .io_address(backTileMemories_1_io_address),
     .io_dataRead(backTileMemories_1_io_dataRead)
   );
-  Memory_2 backTileMemories_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_2 backTileMemories_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_2_clock),
     .io_address(backTileMemories_2_io_address),
     .io_dataRead(backTileMemories_2_io_dataRead)
   );
-  Memory_3 backTileMemories_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_3 backTileMemories_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_3_clock),
     .io_address(backTileMemories_3_io_address),
     .io_dataRead(backTileMemories_3_io_dataRead)
   );
-  Memory_4 backTileMemories_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_4 backTileMemories_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_4_clock),
     .io_address(backTileMemories_4_io_address),
     .io_dataRead(backTileMemories_4_io_dataRead)
   );
-  Memory_5 backTileMemories_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_5 backTileMemories_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_5_clock),
     .io_address(backTileMemories_5_io_address),
     .io_dataRead(backTileMemories_5_io_dataRead)
   );
-  Memory_6 backTileMemories_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_6 backTileMemories_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_6_clock),
     .io_address(backTileMemories_6_io_address),
     .io_dataRead(backTileMemories_6_io_dataRead)
   );
-  Memory_7 backTileMemories_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_7 backTileMemories_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_7_clock),
     .io_address(backTileMemories_7_io_address),
     .io_dataRead(backTileMemories_7_io_dataRead)
   );
-  Memory_8 backTileMemories_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_8 backTileMemories_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_8_clock),
     .io_address(backTileMemories_8_io_address),
     .io_dataRead(backTileMemories_8_io_dataRead)
   );
-  Memory_9 backTileMemories_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_9 backTileMemories_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_9_clock),
     .io_address(backTileMemories_9_io_address),
     .io_dataRead(backTileMemories_9_io_dataRead)
   );
-  Memory_10 backTileMemories_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_10 backTileMemories_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_10_clock),
     .io_address(backTileMemories_10_io_address),
     .io_dataRead(backTileMemories_10_io_dataRead)
   );
-  Memory_11 backTileMemories_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_11 backTileMemories_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_11_clock),
     .io_address(backTileMemories_11_io_address),
     .io_dataRead(backTileMemories_11_io_dataRead)
   );
-  Memory_12 backTileMemories_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_12 backTileMemories_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_12_clock),
     .io_address(backTileMemories_12_io_address),
     .io_dataRead(backTileMemories_12_io_dataRead)
   );
-  Memory_13 backTileMemories_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_13 backTileMemories_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_13_clock),
     .io_address(backTileMemories_13_io_address),
     .io_dataRead(backTileMemories_13_io_dataRead)
   );
-  Memory_14 backTileMemories_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_14 backTileMemories_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_14_clock),
     .io_address(backTileMemories_14_io_address),
     .io_dataRead(backTileMemories_14_io_dataRead)
   );
-  Memory_15 backTileMemories_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_15 backTileMemories_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_15_clock),
     .io_address(backTileMemories_15_io_address),
     .io_dataRead(backTileMemories_15_io_dataRead)
   );
-  Memory_16 backTileMemories_16 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_16 backTileMemories_16 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_16_clock),
     .io_address(backTileMemories_16_io_address),
     .io_dataRead(backTileMemories_16_io_dataRead)
   );
-  Memory_17 backTileMemories_17 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_17 backTileMemories_17 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_17_clock),
     .io_address(backTileMemories_17_io_address),
     .io_dataRead(backTileMemories_17_io_dataRead)
   );
-  Memory_18 backTileMemories_18 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_18 backTileMemories_18 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_18_clock),
     .io_address(backTileMemories_18_io_address),
     .io_dataRead(backTileMemories_18_io_dataRead)
   );
-  Memory_19 backTileMemories_19 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_19 backTileMemories_19 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_19_clock),
     .io_address(backTileMemories_19_io_address),
     .io_dataRead(backTileMemories_19_io_dataRead)
   );
-  Memory_20 backTileMemories_20 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_20 backTileMemories_20 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_20_clock),
     .io_address(backTileMemories_20_io_address),
     .io_dataRead(backTileMemories_20_io_dataRead)
   );
-  Memory_21 backTileMemories_21 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_21 backTileMemories_21 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_21_clock),
     .io_address(backTileMemories_21_io_address),
     .io_dataRead(backTileMemories_21_io_dataRead)
   );
-  Memory_22 backTileMemories_22 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_22 backTileMemories_22 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_22_clock),
     .io_address(backTileMemories_22_io_address),
     .io_dataRead(backTileMemories_22_io_dataRead)
   );
-  Memory_23 backTileMemories_23 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_23 backTileMemories_23 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_23_clock),
     .io_address(backTileMemories_23_io_address),
     .io_dataRead(backTileMemories_23_io_dataRead)
   );
-  Memory_24 backTileMemories_24 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_24 backTileMemories_24 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_24_clock),
     .io_address(backTileMemories_24_io_address),
     .io_dataRead(backTileMemories_24_io_dataRead)
   );
-  Memory_25 backTileMemories_25 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_25 backTileMemories_25 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_25_clock),
     .io_address(backTileMemories_25_io_address),
     .io_dataRead(backTileMemories_25_io_dataRead)
   );
-  Memory_26 backTileMemories_26 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_26 backTileMemories_26 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_26_clock),
     .io_address(backTileMemories_26_io_address),
     .io_dataRead(backTileMemories_26_io_dataRead)
   );
-  Memory_27 backTileMemories_27 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_27 backTileMemories_27 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_27_clock),
     .io_address(backTileMemories_27_io_address),
     .io_dataRead(backTileMemories_27_io_dataRead)
   );
-  Memory_28 backTileMemories_28 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_28 backTileMemories_28 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_28_clock),
     .io_address(backTileMemories_28_io_address),
     .io_dataRead(backTileMemories_28_io_dataRead)
   );
-  Memory_29 backTileMemories_29 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_29 backTileMemories_29 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_29_clock),
     .io_address(backTileMemories_29_io_address),
     .io_dataRead(backTileMemories_29_io_dataRead)
   );
-  Memory_30 backTileMemories_30 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_30 backTileMemories_30 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_30_clock),
     .io_address(backTileMemories_30_io_address),
     .io_dataRead(backTileMemories_30_io_dataRead)
   );
-  Memory_31 backTileMemories_31 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 165:32]
+  Memory_31 backTileMemories_31 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 168:32]
     .clock(backTileMemories_31_clock),
     .io_address(backTileMemories_31_io_address),
     .io_dataRead(backTileMemories_31_io_dataRead)
   );
-  Memory_32 backBufferMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 182:32]
+  Memory_32 backBufferMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 185:32]
     .clock(backBufferMemory_clock),
     .io_address(backBufferMemory_io_address),
     .io_dataRead(backBufferMemory_io_dataRead),
     .io_writeEnable(backBufferMemory_io_writeEnable),
     .io_dataWrite(backBufferMemory_io_dataWrite)
   );
-  Memory_32 backBufferShadowMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 183:38]
+  Memory_32 backBufferShadowMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 186:38]
     .clock(backBufferShadowMemory_clock),
     .io_address(backBufferShadowMemory_io_address),
     .io_dataRead(backBufferShadowMemory_io_dataRead),
     .io_writeEnable(backBufferShadowMemory_io_writeEnable),
     .io_dataWrite(backBufferShadowMemory_io_dataWrite)
   );
-  Memory_34 backBufferRestoreMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 184:39]
+  Memory_34 backBufferRestoreMemory ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:39]
     .clock(backBufferRestoreMemory_clock),
     .io_address(backBufferRestoreMemory_io_address),
     .io_dataRead(backBufferRestoreMemory_io_dataRead)
   );
-  Memory_35 spriteMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_35 spriteMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_0_clock),
     .io_address(spriteMemories_0_io_address),
     .io_dataRead(spriteMemories_0_io_dataRead)
   );
-  Memory_36 spriteMemories_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_36 spriteMemories_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_1_clock),
     .io_address(spriteMemories_1_io_address),
     .io_dataRead(spriteMemories_1_io_dataRead)
   );
-  Memory_37 spriteMemories_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_37 spriteMemories_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_2_clock),
     .io_address(spriteMemories_2_io_address),
     .io_dataRead(spriteMemories_2_io_dataRead)
   );
-  Memory_38 spriteMemories_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_38 spriteMemories_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_3_clock),
     .io_address(spriteMemories_3_io_address),
     .io_dataRead(spriteMemories_3_io_dataRead)
   );
-  Memory_39 spriteMemories_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_39 spriteMemories_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_4_clock),
     .io_address(spriteMemories_4_io_address),
     .io_dataRead(spriteMemories_4_io_dataRead)
   );
-  Memory_40 spriteMemories_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_40 spriteMemories_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_5_clock),
     .io_address(spriteMemories_5_io_address),
     .io_dataRead(spriteMemories_5_io_dataRead)
   );
-  Memory_41 spriteMemories_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_41 spriteMemories_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_6_clock),
     .io_address(spriteMemories_6_io_address),
     .io_dataRead(spriteMemories_6_io_dataRead)
   );
-  Memory_42 spriteMemories_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_42 spriteMemories_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_7_clock),
     .io_address(spriteMemories_7_io_address),
     .io_dataRead(spriteMemories_7_io_dataRead)
   );
-  Memory_43 spriteMemories_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_43 spriteMemories_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_8_clock),
     .io_address(spriteMemories_8_io_address),
     .io_dataRead(spriteMemories_8_io_dataRead)
   );
-  Memory_44 spriteMemories_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_44 spriteMemories_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_9_clock),
     .io_address(spriteMemories_9_io_address),
     .io_dataRead(spriteMemories_9_io_dataRead)
   );
-  Memory_45 spriteMemories_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_45 spriteMemories_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_10_clock),
     .io_address(spriteMemories_10_io_address),
     .io_dataRead(spriteMemories_10_io_dataRead)
   );
-  Memory_46 spriteMemories_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_46 spriteMemories_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_11_clock),
     .io_address(spriteMemories_11_io_address),
     .io_dataRead(spriteMemories_11_io_dataRead)
   );
-  Memory_47 spriteMemories_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_47 spriteMemories_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_12_clock),
     .io_address(spriteMemories_12_io_address),
     .io_dataRead(spriteMemories_12_io_dataRead)
   );
-  Memory_48 spriteMemories_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_48 spriteMemories_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_13_clock),
     .io_address(spriteMemories_13_io_address),
     .io_dataRead(spriteMemories_13_io_dataRead)
   );
-  Memory_49 spriteMemories_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_49 spriteMemories_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_14_clock),
     .io_address(spriteMemories_14_io_address),
     .io_dataRead(spriteMemories_14_io_dataRead)
   );
-  Memory_50 spriteMemories_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 253:30]
+  Memory_50 spriteMemories_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 256:30]
     .clock(spriteMemories_15_clock),
     .io_address(spriteMemories_15_io_address),
     .io_dataRead(spriteMemories_15_io_dataRead)
   );
-  Memory_51 rotation45deg_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_0_clock),
     .io_address(rotation45deg_0_io_address),
     .io_dataRead(rotation45deg_0_io_dataRead)
   );
-  Memory_51 rotation45deg_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_1 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_1_clock),
     .io_address(rotation45deg_1_io_address),
     .io_dataRead(rotation45deg_1_io_dataRead)
   );
-  Memory_51 rotation45deg_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_2 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_2_clock),
     .io_address(rotation45deg_2_io_address),
     .io_dataRead(rotation45deg_2_io_dataRead)
   );
-  Memory_51 rotation45deg_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_3 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_3_clock),
     .io_address(rotation45deg_3_io_address),
     .io_dataRead(rotation45deg_3_io_dataRead)
   );
-  Memory_51 rotation45deg_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_4 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_4_clock),
     .io_address(rotation45deg_4_io_address),
     .io_dataRead(rotation45deg_4_io_dataRead)
   );
-  Memory_51 rotation45deg_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_5 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_5_clock),
     .io_address(rotation45deg_5_io_address),
     .io_dataRead(rotation45deg_5_io_dataRead)
   );
-  Memory_51 rotation45deg_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_6 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_6_clock),
     .io_address(rotation45deg_6_io_address),
     .io_dataRead(rotation45deg_6_io_dataRead)
   );
-  Memory_51 rotation45deg_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_7 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_7_clock),
     .io_address(rotation45deg_7_io_address),
     .io_dataRead(rotation45deg_7_io_dataRead)
   );
-  Memory_51 rotation45deg_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_8 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_8_clock),
     .io_address(rotation45deg_8_io_address),
     .io_dataRead(rotation45deg_8_io_dataRead)
   );
-  Memory_51 rotation45deg_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_9 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_9_clock),
     .io_address(rotation45deg_9_io_address),
     .io_dataRead(rotation45deg_9_io_dataRead)
   );
-  Memory_51 rotation45deg_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_10 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_10_clock),
     .io_address(rotation45deg_10_io_address),
     .io_dataRead(rotation45deg_10_io_dataRead)
   );
-  Memory_51 rotation45deg_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_11 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_11_clock),
     .io_address(rotation45deg_11_io_address),
     .io_dataRead(rotation45deg_11_io_dataRead)
   );
-  Memory_51 rotation45deg_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_12 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_12_clock),
     .io_address(rotation45deg_12_io_address),
     .io_dataRead(rotation45deg_12_io_dataRead)
   );
-  Memory_51 rotation45deg_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_13 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_13_clock),
     .io_address(rotation45deg_13_io_address),
     .io_dataRead(rotation45deg_13_io_dataRead)
   );
-  Memory_51 rotation45deg_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_14 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_14_clock),
     .io_address(rotation45deg_14_io_address),
     .io_dataRead(rotation45deg_14_io_dataRead)
   );
-  Memory_51 rotation45deg_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:30]
+  Memory_51 rotation45deg_15 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 261:30]
     .clock(rotation45deg_15_clock),
     .io_address(rotation45deg_15_io_address),
     .io_dataRead(rotation45deg_15_io_dataRead)
   );
-  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 323:44]
+  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 343:44]
     .io_dataInput_0(multiHotPriortyReductionTree_io_dataInput_0),
     .io_dataInput_1(multiHotPriortyReductionTree_io_dataInput_1),
     .io_dataInput_2(multiHotPriortyReductionTree_io_dataInput_2),
@@ -2965,752 +2674,571 @@ module GraphicEngineVGA(
     .io_dataOutput(multiHotPriortyReductionTree_io_dataOutput),
     .io_selectOutput(multiHotPriortyReductionTree_io_selectOutput)
   );
-  assign io_newFrame = run & _GEN_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 75:13 73:15]
-  assign io_missingFrameError = missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 135:24]
-  assign io_vgaRed = io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:13]
-  assign io_vgaBlue = io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:14]
-  assign io_vgaGreen = io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:15]
-  assign io_Hsync = io_Hsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 97:12]
-  assign io_Vsync = io_Vsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:12]
+  assign io_newFrame = run & _GEN_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:13 74:15]
+  assign io_missingFrameError = missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 138:24]
+  assign io_vgaRed = io_vgaRed_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:13]
+  assign io_vgaBlue = io_vgaBlue_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 360:14]
+  assign io_vgaGreen = io_vgaGreen_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:15]
+  assign io_Hsync = io_Hsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:12]
+  assign io_Vsync = io_Vsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 99:12]
   assign backTileMemories_0_clock = clock;
-  assign backTileMemories_0_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_0_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_1_clock = clock;
-  assign backTileMemories_1_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_1_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_2_clock = clock;
-  assign backTileMemories_2_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_2_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_3_clock = clock;
-  assign backTileMemories_3_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_3_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_4_clock = clock;
-  assign backTileMemories_4_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_4_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_5_clock = clock;
-  assign backTileMemories_5_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_5_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_6_clock = clock;
-  assign backTileMemories_6_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_6_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_7_clock = clock;
-  assign backTileMemories_7_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_7_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_8_clock = clock;
-  assign backTileMemories_8_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_8_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_9_clock = clock;
-  assign backTileMemories_9_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_9_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_10_clock = clock;
-  assign backTileMemories_10_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_10_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_11_clock = clock;
-  assign backTileMemories_11_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_11_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_12_clock = clock;
-  assign backTileMemories_12_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_12_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_13_clock = clock;
-  assign backTileMemories_13_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_13_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_14_clock = clock;
-  assign backTileMemories_14_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_14_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_15_clock = clock;
-  assign backTileMemories_15_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_15_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_16_clock = clock;
-  assign backTileMemories_16_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_16_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_17_clock = clock;
-  assign backTileMemories_17_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_17_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_18_clock = clock;
-  assign backTileMemories_18_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_18_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_19_clock = clock;
-  assign backTileMemories_19_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_19_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_20_clock = clock;
-  assign backTileMemories_20_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_20_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_21_clock = clock;
-  assign backTileMemories_21_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_21_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_22_clock = clock;
-  assign backTileMemories_22_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_22_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_23_clock = clock;
-  assign backTileMemories_23_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_23_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_24_clock = clock;
-  assign backTileMemories_24_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_24_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_25_clock = clock;
-  assign backTileMemories_25_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_25_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_26_clock = clock;
-  assign backTileMemories_26_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_26_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_27_clock = clock;
-  assign backTileMemories_27_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_27_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_28_clock = clock;
-  assign backTileMemories_28_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_28_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_29_clock = clock;
-  assign backTileMemories_29_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_29_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_30_clock = clock;
-  assign backTileMemories_30_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_30_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backTileMemories_31_clock = clock;
-  assign backTileMemories_31_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 176:36]
+  assign backTileMemories_31_io_address = _backTileMemories_0_io_address_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 179:36]
   assign backBufferMemory_clock = clock;
-  assign backBufferMemory_io_address = _backBufferMemory_io_address_T_5[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:31]
-  assign backBufferMemory_io_writeEnable = copyEnabledReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 232:35]
-  assign backBufferMemory_io_dataWrite = backBufferShadowMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:33]
+  assign backBufferMemory_io_address = _backBufferMemory_io_address_T_5[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:31]
+  assign backBufferMemory_io_writeEnable = copyEnabledReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 235:35]
+  assign backBufferMemory_io_dataWrite = backBufferShadowMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 236:33]
   assign backBufferShadowMemory_clock = clock;
   assign backBufferShadowMemory_io_address = restoreEnabled ? backBufferShadowMemory_io_address_REG :
-    _backBufferShadowMemory_io_address_T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 225:43]
-  assign backBufferShadowMemory_io_writeEnable = restoreEnabled & backBufferShadowMemory_io_writeEnable_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 227:47]
-  assign backBufferShadowMemory_io_dataWrite = restoreEnabled ? backBufferRestoreMemory_io_dataRead : 5'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 228:45]
+    _backBufferShadowMemory_io_address_T_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 228:43]
+  assign backBufferShadowMemory_io_writeEnable = restoreEnabled & backBufferShadowMemory_io_writeEnable_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:47]
+  assign backBufferShadowMemory_io_dataWrite = restoreEnabled ? backBufferRestoreMemory_io_dataRead : 5'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 231:45]
   assign backBufferRestoreMemory_clock = clock;
-  assign backBufferRestoreMemory_io_address = backMemoryRestoreCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 220:65]
+  assign backBufferRestoreMemory_io_address = backMemoryRestoreCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 223:65]
   assign spriteMemories_0_clock = clock;
-  assign spriteMemories_0_io_address = _spriteMemories_0_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_0_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_1_clock = clock;
-  assign spriteMemories_1_io_address = boxIndex_1[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_1_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_2_clock = clock;
-  assign spriteMemories_2_io_address = _spriteMemories_2_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_2_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_3_clock = clock;
-  assign spriteMemories_3_io_address = boxIndex_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_3_io_address = _spriteMemories_3_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_4_clock = clock;
-  assign spriteMemories_4_io_address = boxIndex_4[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_4_io_address = _spriteMemories_4_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_5_clock = clock;
-  assign spriteMemories_5_io_address = boxIndex_5[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_5_io_address = _spriteMemories_5_io_address_T_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_6_clock = clock;
-  assign spriteMemories_6_io_address = boxIndex_6[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_6_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_7_clock = clock;
-  assign spriteMemories_7_io_address = boxIndex_7[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_7_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_8_clock = clock;
-  assign spriteMemories_8_io_address = boxIndex_8[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_8_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_9_clock = clock;
-  assign spriteMemories_9_io_address = boxIndex_9[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_9_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_10_clock = clock;
-  assign spriteMemories_10_io_address = boxIndex_10[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_10_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_11_clock = clock;
-  assign spriteMemories_11_io_address = boxIndex_11[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_11_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_12_clock = clock;
-  assign spriteMemories_12_io_address = boxIndex_12[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_12_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_13_clock = clock;
-  assign spriteMemories_13_io_address = boxIndex_13[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_13_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_14_clock = clock;
-  assign spriteMemories_14_io_address = boxIndex_14[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_14_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign spriteMemories_15_clock = clock;
-  assign spriteMemories_15_io_address = boxIndex_15[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 318:38]
+  assign spriteMemories_15_io_address = normBoxIndex[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 338:38]
   assign rotation45deg_0_clock = clock;
-  assign rotation45deg_0_io_address = boxIndex[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_0_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_1_clock = clock;
-  assign rotation45deg_1_io_address = boxIndex_1[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_1_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_2_clock = clock;
-  assign rotation45deg_2_io_address = boxIndex_2[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_2_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_3_clock = clock;
-  assign rotation45deg_3_io_address = boxIndex_3[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_3_io_address = _normBoxIndex_T_17 + _GEN_263; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_4_clock = clock;
-  assign rotation45deg_4_io_address = boxIndex_4[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_4_io_address = _normBoxIndex_T_22 + _GEN_273; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_5_clock = clock;
-  assign rotation45deg_5_io_address = boxIndex_5[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_5_io_address = _normBoxIndex_T_27 + _GEN_283; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_6_clock = clock;
-  assign rotation45deg_6_io_address = boxIndex_6[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_6_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_7_clock = clock;
-  assign rotation45deg_7_io_address = boxIndex_7[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_7_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_8_clock = clock;
-  assign rotation45deg_8_io_address = boxIndex_8[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_8_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_9_clock = clock;
-  assign rotation45deg_9_io_address = boxIndex_9[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_9_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_10_clock = clock;
-  assign rotation45deg_10_io_address = boxIndex_10[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_10_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_11_clock = clock;
-  assign rotation45deg_11_io_address = boxIndex_11[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_11_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_12_clock = clock;
-  assign rotation45deg_12_io_address = boxIndex_12[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_12_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_13_clock = clock;
-  assign rotation45deg_13_io_address = boxIndex_13[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_13_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_14_clock = clock;
-  assign rotation45deg_14_io_address = boxIndex_14[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
+  assign rotation45deg_14_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
   assign rotation45deg_15_clock = clock;
-  assign rotation45deg_15_io_address = boxIndex_15[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 314:35]
-  assign multiHotPriortyReductionTree_io_dataInput_0 = multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_1 = multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_2 = multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_3 = multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_4 = multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_5 = multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_6 = multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_7 = multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_8 = multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_9 = multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_10 = multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_11 = multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_12 = multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_13 = multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_14 = multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_dataInput_15 = multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:50]
-  assign multiHotPriortyReductionTree_io_selectInput_0 = multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 & ~
-    multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+  assign rotation45deg_15_io_address = _normBoxIndex_T_2 + _GEN_241; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 330:69]
+  assign multiHotPriortyReductionTree_io_dataInput_0 = multiHotPriortyReductionTree_io_dataInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_1 = multiHotPriortyReductionTree_io_dataInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_2 = multiHotPriortyReductionTree_io_dataInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_3 = multiHotPriortyReductionTree_io_dataInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_4 = multiHotPriortyReductionTree_io_dataInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_5 = multiHotPriortyReductionTree_io_dataInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_6 = multiHotPriortyReductionTree_io_dataInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_7 = multiHotPriortyReductionTree_io_dataInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_8 = multiHotPriortyReductionTree_io_dataInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_9 = multiHotPriortyReductionTree_io_dataInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_10 = multiHotPriortyReductionTree_io_dataInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_11 = multiHotPriortyReductionTree_io_dataInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_12 = multiHotPriortyReductionTree_io_dataInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_13 = multiHotPriortyReductionTree_io_dataInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_14 = multiHotPriortyReductionTree_io_dataInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_dataInput_15 = multiHotPriortyReductionTree_io_dataInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:50]
+  assign multiHotPriortyReductionTree_io_selectInput_0 = multiHotPriortyReductionTree_io_selectInput_0_pipeReg__0 &
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_0_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_1 = multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_1_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_2 = multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
-  assign multiHotPriortyReductionTree_io_selectInput_3 = multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
-  assign multiHotPriortyReductionTree_io_selectInput_4 = multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
-  assign multiHotPriortyReductionTree_io_selectInput_5 = multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_2_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
+  assign multiHotPriortyReductionTree_io_selectInput_3 = multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 & ~
+    multiHotPriortyReductionTree_io_selectInput_3_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
+  assign multiHotPriortyReductionTree_io_selectInput_4 = multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 & ~
+    multiHotPriortyReductionTree_io_selectInput_4_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
+  assign multiHotPriortyReductionTree_io_selectInput_5 = multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 & ~
+    multiHotPriortyReductionTree_io_selectInput_5_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_6 = multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_6_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_7 = multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_7_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_8 = multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_8_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_9 = multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_9_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_10 = multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_10_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_11 = multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_11_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_12 = multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_12_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_13 = multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_13_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_14 = multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_14_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   assign multiHotPriortyReductionTree_io_selectInput_15 = multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 &
-    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:121]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 & ~multiHotPriortyReductionTree_io_selectInput_15_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:121]
   always @(posedge clock) begin
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
-      ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 68:32]
-    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 75:13]
-      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:52]
-        ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 78:23]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
+      ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
+    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:13]
+      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 77:52]
+        ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 79:23]
       end else begin
-        ScaleCounterReg <= _ScaleCounterReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 91:23]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:28]
-      CounterXReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:28]
-    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 75:13]
-      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:52]
-        if (CounterXReg == 10'h31f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 79:129]
-          CounterXReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 80:21]
-        end else begin
-          CounterXReg <= _CounterXReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 88:21]
-        end
+        ScaleCounterReg <= _ScaleCounterReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 92:23]
       end
     end
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
-      CounterYReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
-    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 75:13]
-      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:52]
-        if (CounterXReg == 10'h31f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 79:129]
+      CounterXReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
+    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:13]
+      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 77:52]
+        if (CounterXReg == 10'h31f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 80:129]
+          CounterXReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 81:21]
+        end else begin
+          CounterXReg <= _CounterXReg_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 89:21]
+        end
+      end
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 71:28]
+      CounterYReg <= 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 71:28]
+    end else if (run) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:13]
+      if (ScaleCounterReg == 2'h3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 77:52]
+        if (CounterXReg == 10'h31f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 80:129]
           CounterYReg <= _GEN_0;
         end
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 206:41]
-      backMemoryRestoreCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 206:41]
-    end else if (restoreEnabled) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:70]
-      backMemoryRestoreCounter <= _backMemoryRestoreCounter_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 210:30]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:41]
+      backMemoryRestoreCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:41]
+    end else if (restoreEnabled) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 212:70]
+      backMemoryRestoreCounter <= _backMemoryRestoreCounter_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 213:30]
     end
     io_Hsync_pipeReg_0 <= io_Hsync_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     io_Hsync_pipeReg_1 <= io_Hsync_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     io_Hsync_pipeReg_2 <= io_Hsync_pipeReg_3; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    io_Hsync_pipeReg_3 <= ~Hsync; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 97:27]
+    io_Hsync_pipeReg_3 <= ~Hsync; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:27]
     io_Vsync_pipeReg_0 <= io_Vsync_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     io_Vsync_pipeReg_1 <= io_Vsync_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     io_Vsync_pipeReg_2 <= io_Vsync_pipeReg_3; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    io_Vsync_pipeReg_3 <= ~Vsync; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:27]
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 107:32]
-      frameClockCount <= 21'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 107:32]
-    end else if (frameClockCount == 21'h19a27f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 108:25]
+    io_Vsync_pipeReg_3 <= ~Vsync; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 99:27]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 108:32]
+      frameClockCount <= 21'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 108:32]
+    end else if (frameClockCount == 21'h19a27f) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 109:25]
       frameClockCount <= 21'h0;
     end else begin
       frameClockCount <= _frameClockCount_T_2;
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_0 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_0 <= io_spriteXPosition_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_1 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_1 <= io_spriteXPosition_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_2 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_2 <= io_spriteXPosition_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_3 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_3 <= io_spriteXPosition_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_4 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_4 <= io_spriteXPosition_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_5 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_5 <= io_spriteXPosition_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_6 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_6 <= io_spriteXPosition_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_7 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_7 <= io_spriteXPosition_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_8 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_8 <= io_spriteXPosition_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_9 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_9 <= io_spriteXPosition_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_10 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_10 <= io_spriteXPosition_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_11 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_11 <= io_spriteXPosition_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_12 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_12 <= io_spriteXPosition_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_13 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_13 <= io_spriteXPosition_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_14 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_14 <= io_spriteXPosition_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_15 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
-      spriteXPositionReg_15 <= io_spriteXPosition_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 117:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_3 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_3 <= io_spriteXPosition_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_0 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_4 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_0 <= io_spriteYPosition_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_4 <= 11'sh64; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_1 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_5 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_1 <= io_spriteYPosition_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_5 <= 11'sh64; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_2 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_2 <= io_spriteYPosition_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_3 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_3 <= io_spriteYPosition_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_3 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_3 <= io_spriteYPosition_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_4 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_4 <= 10'sh64; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_4 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_4 <= io_spriteYPosition_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_5 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
+      spriteYPositionReg_5 <= 10'sh96; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:37]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_5 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_5 <= io_spriteYPosition_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    spriteVisibleReg_0 <= reset | _GEN_45; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_1 <= reset | _GEN_46; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_2 <= reset | _GEN_47; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_6 <= reset | _GEN_51; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_7 <= reset | _GEN_52; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_8 <= reset | _GEN_53; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_9 <= reset | _GEN_54; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_10 <= reset | _GEN_55; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_11 <= reset | _GEN_56; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_12 <= reset | _GEN_57; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_13 <= reset | _GEN_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_14 <= reset | _GEN_59; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    spriteVisibleReg_15 <= reset | _GEN_60; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:{35,35}]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 121:42]
+      spriteFlipHorizontalReg_3 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 121:42]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 121:42]
+      spriteFlipHorizontalReg_3 <= io_spriteFlipHorizontal_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 121:42]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_6 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_6 <= io_spriteYPosition_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 122:40]
+      spriteFlipVerticalReg_3 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 122:40]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 122:40]
+      spriteFlipVerticalReg_3 <= io_spriteFlipVertical_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 122:40]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_7 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_7 <= io_spriteYPosition_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_3 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_3 <= 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_8 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_8 <= io_spriteYPosition_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_4 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_4 <= 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_9 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_9 <= io_spriteYPosition_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_5 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
+      spriteScaleHorizontalReg_5 <= 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:43]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_10 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_10 <= io_spriteYPosition_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_3 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_3 <= 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_11 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_11 <= io_spriteYPosition_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_4 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_4 <= 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_12 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_12 <= io_spriteYPosition_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_5 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
+      spriteScaleVerticalReg_5 <= 2'h2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:41]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_13 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_13 <= io_spriteYPosition_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+      spriteRotationReg45_3 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+      spriteRotationReg45_3 <= io_spriteRotation45_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_14 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_14 <= io_spriteYPosition_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_15 <= 10'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteYPositionReg_15 <= io_spriteYPosition_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-    end
-    spriteVisibleReg_1 <= reset | _GEN_46; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_2 <= reset | _GEN_47; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_3 <= reset | _GEN_48; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_4 <= reset | _GEN_49; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_5 <= reset | _GEN_50; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_6 <= reset | _GEN_51; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_7 <= reset | _GEN_52; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_8 <= reset | _GEN_53; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_9 <= reset | _GEN_54; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_10 <= reset | _GEN_55; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_11 <= reset | _GEN_56; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_12 <= reset | _GEN_57; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_13 <= reset | _GEN_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_14 <= reset | _GEN_59; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    spriteVisibleReg_15 <= reset | _GEN_60; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 119:{35,35}]
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-      spriteFlipHorizontalReg_0 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-      spriteFlipHorizontalReg_0 <= io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
-      spriteFlipHorizontalReg_1 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 120:42]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+      spriteRotationReg45_4 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
     end else begin
-      spriteFlipHorizontalReg_1 <= io_newFrame | spriteFlipHorizontalReg_1;
+      spriteRotationReg45_4 <= io_newFrame | spriteRotationReg45_4;
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 123:43]
-      spriteScaleHorizontalReg_1 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 123:43]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 123:43]
-      spriteScaleHorizontalReg_1 <= 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 123:43]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:41]
-      spriteScaleVerticalReg_1 <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:41]
-    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:41]
-      spriteScaleVerticalReg_1 <= 2'h1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 124:41]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
-      spriteRotationReg_0 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
+      spriteRotationReg45_5 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 126:38]
     end else begin
-      spriteRotationReg_0 <= io_newFrame | spriteRotationReg_0;
+      spriteRotationReg45_5 <= io_newFrame | spriteRotationReg45_5;
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
-      spriteRotationReg_2 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 125:36]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 127:38]
+      spriteRotationReg90_3 <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 127:38]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 127:38]
+      spriteRotationReg90_3 <= io_spriteRotation90_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 127:38]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 135:37]
+      missingFrameErrorReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 135:37]
     end else begin
-      spriteRotationReg_2 <= io_newFrame | spriteRotationReg_2;
+      missingFrameErrorReg <= _GEN_162;
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 132:37]
-      missingFrameErrorReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 132:37]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 154:33]
+      newFrameStikyReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 154:33]
+    end else if (REG) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 158:37]
+      newFrameStikyReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 159:22]
     end else begin
-      missingFrameErrorReg <= _GEN_146;
+      newFrameStikyReg <= _GEN_160;
     end
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 151:33]
-      newFrameStikyReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 151:33]
-    end else if (REG) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 155:37]
-      newFrameStikyReg <= 1'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 156:22]
-    end else begin
-      newFrameStikyReg <= _GEN_144;
-    end
-    REG <= io_frameUpdateDone; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 155:15]
-    backTileMemoryDataRead_0_REG <= backTileMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_1_REG <= backTileMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_2_REG <= backTileMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_3_REG <= backTileMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_4_REG <= backTileMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_5_REG <= backTileMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_6_REG <= backTileMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_7_REG <= backTileMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_8_REG <= backTileMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_9_REG <= backTileMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_10_REG <= backTileMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_11_REG <= backTileMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_12_REG <= backTileMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_13_REG <= backTileMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_14_REG <= backTileMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_15_REG <= backTileMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_16_REG <= backTileMemories_16_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_17_REG <= backTileMemories_17_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_18_REG <= backTileMemories_18_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_19_REG <= backTileMemories_19_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_20_REG <= backTileMemories_20_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_21_REG <= backTileMemories_21_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_22_REG <= backTileMemories_22_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_23_REG <= backTileMemories_23_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_24_REG <= backTileMemories_24_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_25_REG <= backTileMemories_25_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_26_REG <= backTileMemories_26_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_27_REG <= backTileMemories_27_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_28_REG <= backTileMemories_28_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_29_REG <= backTileMemories_29_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_30_REG <= backTileMemories_30_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    backTileMemoryDataRead_31_REG <= backTileMemories_31_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 177:41]
-    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:38]
-      backMemoryCopyCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 187:38]
-    end else if (preDisplayArea) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:24]
-      if (backMemoryCopyCounter < 12'h800) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 191:66]
-        backMemoryCopyCounter <= _backMemoryCopyCounter_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 192:29]
+    REG <= io_frameUpdateDone; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 158:15]
+    backTileMemoryDataRead_0_REG <= backTileMemories_0_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_1_REG <= backTileMemories_1_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_2_REG <= backTileMemories_2_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_3_REG <= backTileMemories_3_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_4_REG <= backTileMemories_4_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_5_REG <= backTileMemories_5_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_6_REG <= backTileMemories_6_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_7_REG <= backTileMemories_7_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_8_REG <= backTileMemories_8_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_9_REG <= backTileMemories_9_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_10_REG <= backTileMemories_10_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_11_REG <= backTileMemories_11_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_12_REG <= backTileMemories_12_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_13_REG <= backTileMemories_13_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_14_REG <= backTileMemories_14_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_15_REG <= backTileMemories_15_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_16_REG <= backTileMemories_16_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_17_REG <= backTileMemories_17_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_18_REG <= backTileMemories_18_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_19_REG <= backTileMemories_19_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_20_REG <= backTileMemories_20_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_21_REG <= backTileMemories_21_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_22_REG <= backTileMemories_22_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_23_REG <= backTileMemories_23_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_24_REG <= backTileMemories_24_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_25_REG <= backTileMemories_25_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_26_REG <= backTileMemories_26_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_27_REG <= backTileMemories_27_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_28_REG <= backTileMemories_28_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_29_REG <= backTileMemories_29_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_30_REG <= backTileMemories_30_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    backTileMemoryDataRead_31_REG <= backTileMemories_31_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 180:41]
+    if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:38]
+      backMemoryCopyCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:38]
+    end else if (preDisplayArea) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 193:24]
+      if (backMemoryCopyCounter < 12'h800) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 194:66]
+        backMemoryCopyCounter <= _backMemoryCopyCounter_T_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 195:29]
       end
     end else begin
-      backMemoryCopyCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 201:27]
+      backMemoryCopyCounter <= 12'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 204:27]
     end
-    copyEnabledReg <= preDisplayArea & _T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 190:24 202:17]
-    backBufferShadowMemory_io_address_REG <= backMemoryRestoreCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 225:92]
-    backBufferShadowMemory_io_writeEnable_REG <= backMemoryRestoreCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 209:33]
-    backBufferMemory_io_address_REG <= backMemoryCopyCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 230:83]
-    fullBackgroundColor_REG <= backBufferMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 247:56]
-    if (fullBackgroundColor[6]) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 248:25]
+    copyEnabledReg <= preDisplayArea & _T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 193:24 205:17]
+    backBufferShadowMemory_io_address_REG <= backMemoryRestoreCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 228:92]
+    backBufferShadowMemory_io_writeEnable_REG <= backMemoryRestoreCounter < 12'h800; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 212:33]
+    backBufferMemory_io_address_REG <= backMemoryCopyCounter[10:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 233:83]
+    fullBackgroundColor_REG <= backBufferMemory_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 250:56]
+    if (fullBackgroundColor[6]) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 251:25]
       pixelColorBack <= 6'h0;
     end else begin
       pixelColorBack <= fullBackgroundColor[5:0];
     end
-    inScaledX <= $signed(flippedX) >= 12'sh0 & $signed(flippedX) < $signed(_GEN_227); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY <= _inBoxY_T & $signed(inSpriteY_0) < $signed(_GEN_228); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX <= {{2'd0}, _memX_T}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY <= {{2'd0}, _memY_T_3}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex <= _boxIndex_T_1 + _GEN_229; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_1 <= $signed(flippedX_1) >= 12'sh0 & $signed(flippedX_1) < $signed(_GEN_235); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_1 <= _inBoxY_T_2 & $signed(inSpriteY_1) < $signed(_GEN_236); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    if (2'h0 == spriteScaleHorizontalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-      memX_1 <= {{2'd0}, _memX_T_12};
-    end else if (2'h1 == spriteScaleHorizontalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-      memX_1 <= _memX_T_16;
-    end else begin
-      memX_1 <= {{2'd0}, _memX_T_19};
-    end
-    if (2'h0 == spriteScaleVerticalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-      memY_1 <= {{2'd0}, _memY_T_15};
-    end else if (2'h1 == spriteScaleVerticalReg_1) begin // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-      memY_1 <= _memY_T_16;
-    end else begin
-      memY_1 <= {{3'd0}, _memY_T_19};
-    end
-    boxIndex_1 <= _boxIndex_T_5 + _GEN_237; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_2 <= _inBoxX_T_4 & $signed(inSpriteX_2) < $signed(_GEN_245); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_2 <= _inBoxY_T_4 & $signed(inSpriteY_2) < $signed(_GEN_246); // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_2 <= {{2'd0}, _memX_T_24}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_2 <= {{2'd0}, _memY_T_27}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_2 <= _boxIndex_T_9 + _GEN_247; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_3 <= _inBoxX_T_6 & _inBoxX_T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_3 <= _inBoxY_T_6 & _inBoxY_T_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_3 <= {{2'd0}, _memX_T_36}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_3 <= {{2'd0}, _memY_T_39}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_3 <= _boxIndex_T_13 + _GEN_253; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_4 <= _inBoxX_T_8 & _inBoxX_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_4 <= _inBoxY_T_8 & _inBoxY_T_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_4 <= {{2'd0}, _memX_T_48}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_4 <= {{2'd0}, _memY_T_51}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_4 <= _boxIndex_T_17 + _GEN_259; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_5 <= _inBoxX_T_10 & _inBoxX_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_5 <= _inBoxY_T_10 & _inBoxY_T_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_5 <= {{2'd0}, _memX_T_60}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_5 <= {{2'd0}, _memY_T_63}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_5 <= _boxIndex_T_21 + _GEN_265; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_6 <= _inBoxX_T_12 & _inBoxX_T_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_6 <= _inBoxY_T_12 & _inBoxY_T_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_6 <= {{2'd0}, _memX_T_72}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_6 <= {{2'd0}, _memY_T_75}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_6 <= _boxIndex_T_25 + _GEN_271; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_7 <= _inBoxX_T_14 & _inBoxX_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_7 <= _inBoxY_T_14 & _inBoxY_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_7 <= {{2'd0}, _memX_T_84}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_7 <= {{2'd0}, _memY_T_87}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_7 <= _boxIndex_T_29 + _GEN_277; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_8 <= _inBoxX_T_16 & _inBoxX_T_17; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_8 <= _inBoxY_T_16 & _inBoxY_T_17; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_8 <= {{2'd0}, _memX_T_96}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_8 <= {{2'd0}, _memY_T_99}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_8 <= _boxIndex_T_33 + _GEN_283; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_9 <= _inBoxX_T_18 & _inBoxX_T_19; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_9 <= _inBoxY_T_18 & _inBoxY_T_19; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_9 <= {{2'd0}, _memX_T_108}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_9 <= {{2'd0}, _memY_T_111}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_9 <= _boxIndex_T_37 + _GEN_289; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_10 <= _inBoxX_T_20 & _inBoxX_T_21; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_10 <= _inBoxY_T_20 & _inBoxY_T_21; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_10 <= {{2'd0}, _memX_T_120}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_10 <= {{2'd0}, _memY_T_123}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_10 <= _boxIndex_T_41 + _GEN_295; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_11 <= _inBoxX_T_22 & _inBoxX_T_23; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_11 <= _inBoxY_T_22 & _inBoxY_T_23; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_11 <= {{2'd0}, _memX_T_132}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_11 <= {{2'd0}, _memY_T_135}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_11 <= _boxIndex_T_45 + _GEN_301; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_12 <= _inBoxX_T_24 & _inBoxX_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_12 <= _inBoxY_T_24 & _inBoxY_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_12 <= {{2'd0}, _memX_T_144}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_12 <= {{2'd0}, _memY_T_147}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_12 <= _boxIndex_T_49 + _GEN_307; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_13 <= _inBoxX_T_26 & _inBoxX_T_27; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_13 <= _inBoxY_T_26 & _inBoxY_T_27; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_13 <= {{2'd0}, _memX_T_156}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_13 <= {{2'd0}, _memY_T_159}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_13 <= _boxIndex_T_53 + _GEN_313; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_14 <= _inBoxX_T_28 & _inBoxX_T_29; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_14 <= _inBoxY_T_28 & _inBoxY_T_29; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_14 <= {{2'd0}, _memX_T_168}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_14 <= {{2'd0}, _memY_T_171}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_14 <= _boxIndex_T_57 + _GEN_319; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    inScaledX_15 <= _inBoxX_T_30 & _inBoxX_T_31; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 294:47]
-    inScaledY_15 <= _inBoxY_T_30 & _inBoxY_T_31; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 295:47]
-    memX_15 <= {{2'd0}, _memX_T_180}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    memY_15 <= {{2'd0}, _memY_T_183}; // @[src/main/scala/chisel3/util/Mux.scala 77:13]
-    boxIndex_15 <= _boxIndex_T_61 + _GEN_325; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 312:60]
-    multiHotPriortyReductionTree_io_dataInput_0_REG <= spriteMemories_0_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_dataInput_0_REG <= spriteMemories_0_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_0_pipeReg__1
+      ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg__1 <= spriteVisibleReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    if (spriteRotationReg_0) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:23]
-      multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= inBoundingBox & inScaledX & inScaledY;
-    end else begin
-      multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= inScaledX & inScaledY;
-    end
-    multiHotPriortyReductionTree_io_selectInput_0_REG <= spriteMemories_0_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_1_REG <= spriteMemories_1_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_0_REG <= spriteMemories_0_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_1_REG <= spriteMemories_1_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 <= spriteVisibleReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 <= inScaledX_1 & inScaledY_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_1_REG <= spriteMemories_1_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_2_REG <= spriteMemories_2_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_1_REG <= spriteMemories_1_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_2_REG <= spriteMemories_2_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 <= spriteVisibleReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    if (spriteRotationReg_2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:23]
-      multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= inBoundingBox_2 & inScaledX_2 & inScaledY_2;
-    end else begin
-      multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= inScaledX_2 & inScaledY_2;
-    end
-    multiHotPriortyReductionTree_io_selectInput_2_REG <= spriteMemories_2_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_3_REG <= spriteMemories_3_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1
-      ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1 <= spriteVisibleReg_3; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_2_REG <= spriteMemories_2_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_3_REG <= spriteMemories_3_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= inScaledX_3 & inScaledY_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_3_REG <= spriteMemories_3_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_4_REG <= spriteMemories_4_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1
-      ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1 <= spriteVisibleReg_4; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    if (spriteRotationReg45_3) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:24]
+      if (spriteScaleVerticalReg_3 == 2'h2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:28]
+        multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= inScaledX_3 & inScaledY_3 & ~
+          rotation45deg_3_io_dataRead[14];
+      end else begin
+        multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= _inBoundingBox_T_71;
+      end
+    end else begin
+      multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= _inBoundingBox_T_55;
+    end
+    multiHotPriortyReductionTree_io_selectInput_3_REG <= spriteMemories_3_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_4_REG <= spriteMemories_4_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= inScaledX_4 & inScaledY_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_4_REG <= spriteMemories_4_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_5_REG <= spriteMemories_5_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1
-      ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1 <= spriteVisibleReg_5; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    if (spriteRotationReg45_4) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:24]
+      if (spriteScaleVerticalReg_4 == 2'h2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:28]
+        multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= inScaledX_4 & inScaledY_4 & ~
+          rotation45deg_4_io_dataRead[14];
+      end else begin
+        multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= _inBoundingBox_T_89;
+      end
+    end else begin
+      multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= _inBoundingBox_T_73;
+    end
+    multiHotPriortyReductionTree_io_selectInput_4_REG <= spriteMemories_4_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_5_REG <= spriteMemories_5_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= inScaledX_5 & inScaledY_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_5_REG <= spriteMemories_5_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_6_REG <= spriteMemories_6_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    if (spriteRotationReg45_5) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:24]
+      if (spriteScaleVerticalReg_5 == 2'h2) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 300:28]
+        multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= inScaledX_5 & inScaledY_5 & ~
+          rotation45deg_5_io_dataRead[14];
+      end else begin
+        multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= _inBoundingBox_T_107;
+      end
+    end else begin
+      multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= _inBoundingBox_T_91;
+    end
+    multiHotPriortyReductionTree_io_selectInput_5_REG <= spriteMemories_5_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_6_REG <= spriteMemories_6_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 <= spriteVisibleReg_6; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 <= inScaledX_6 & inScaledY_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_6_REG <= spriteMemories_6_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_7_REG <= spriteMemories_7_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_6_REG <= spriteMemories_6_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_7_REG <= spriteMemories_7_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 <= spriteVisibleReg_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 <= inScaledX_7 & inScaledY_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_7_REG <= spriteMemories_7_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_8_REG <= spriteMemories_8_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_7_REG <= spriteMemories_7_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_8_REG <= spriteMemories_8_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 <= spriteVisibleReg_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 <= inScaledX_8 & inScaledY_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_8_REG <= spriteMemories_8_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_9_REG <= spriteMemories_9_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_8_REG <= spriteMemories_8_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_9_REG <= spriteMemories_9_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 <= spriteVisibleReg_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 <= inScaledX_9 & inScaledY_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_9_REG <= spriteMemories_9_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_10_REG <= spriteMemories_10_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_9_REG <= spriteMemories_9_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_10_REG <= spriteMemories_10_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 <= spriteVisibleReg_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 <= inScaledX_10 & inScaledY_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_10_REG <= spriteMemories_10_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_11_REG <= spriteMemories_11_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_10_REG <= spriteMemories_10_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_11_REG <= spriteMemories_11_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 <= spriteVisibleReg_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 <= inScaledX_11 & inScaledY_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_11_REG <= spriteMemories_11_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_12_REG <= spriteMemories_12_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_11_REG <= spriteMemories_11_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_12_REG <= spriteMemories_12_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 <= spriteVisibleReg_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 <= inScaledX_12 & inScaledY_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_12_REG <= spriteMemories_12_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_13_REG <= spriteMemories_13_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_12_REG <= spriteMemories_12_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_13_REG <= spriteMemories_13_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 <= spriteVisibleReg_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 <= inScaledX_13 & inScaledY_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_13_REG <= spriteMemories_13_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_14_REG <= spriteMemories_14_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_13_REG <= spriteMemories_13_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_14_REG <= spriteMemories_14_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 <= spriteVisibleReg_14; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 <= inScaledX_14 & inScaledY_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_14_REG <= spriteMemories_14_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    multiHotPriortyReductionTree_io_dataInput_15_REG <= spriteMemories_15_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 325:90]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_14_REG <= spriteMemories_14_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    multiHotPriortyReductionTree_io_dataInput_15_REG <= spriteMemories_15_io_dataRead[5:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:90]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 <= spriteVisibleReg_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 <= inScaledX_15 & inScaledY_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 297:97]
-    multiHotPriortyReductionTree_io_selectInput_15_REG <= spriteMemories_15_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 326:162]
-    pixelColorSprite <= multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 328:33]
-    pixelColorSpriteValid <= multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 329:38]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 <= inScaledX & inScaledY; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 303:74]
+    multiHotPriortyReductionTree_io_selectInput_15_REG <= spriteMemories_15_io_dataRead[6]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:162]
+    pixelColorSprite <= multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:33]
+    pixelColorSpriteValid <= multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 349:38]
     pixelColourVGA_pipeReg_0 <= pixelColourVGA_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     pixelColourVGA_pipeReg_1 <= pixelColourVGA_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
-    pixelColourVGA_pipeReg_2 <= CounterXReg < 10'h280 & CounterYReg < 10'h1e0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 100:60]
-    io_vgaRed_REG <= {pixelColourVGA[5:4],pixelColourVGA[5:4]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 335:26]
-    io_vgaGreen_REG <= {pixelColourVGA[3:2],pixelColourVGA[3:2]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:28]
-    io_vgaBlue_REG <= {pixelColourVGA[1:0],pixelColourVGA[1:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 337:27]
+    pixelColourVGA_pipeReg_2 <= CounterXReg < 10'h280 & CounterYReg < 10'h1e0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 101:60]
+    io_vgaRed_REG <= {pixelColourVGA[5:4],pixelColourVGA[5:4]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 355:26]
+    io_vgaGreen_REG <= {pixelColourVGA[3:2],pixelColourVGA[3:2]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 356:28]
+    io_vgaBlue_REG <= {pixelColourVGA[1:0],pixelColourVGA[1:0]}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 357:27]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -3775,559 +3303,347 @@ initial begin
   _RAND_12 = {1{`RANDOM}};
   frameClockCount = _RAND_12[20:0];
   _RAND_13 = {1{`RANDOM}};
-  spriteXPositionReg_0 = _RAND_13[10:0];
+  spriteXPositionReg_3 = _RAND_13[10:0];
   _RAND_14 = {1{`RANDOM}};
-  spriteXPositionReg_1 = _RAND_14[10:0];
+  spriteXPositionReg_4 = _RAND_14[10:0];
   _RAND_15 = {1{`RANDOM}};
-  spriteXPositionReg_2 = _RAND_15[10:0];
+  spriteXPositionReg_5 = _RAND_15[10:0];
   _RAND_16 = {1{`RANDOM}};
-  spriteXPositionReg_3 = _RAND_16[10:0];
+  spriteYPositionReg_3 = _RAND_16[9:0];
   _RAND_17 = {1{`RANDOM}};
-  spriteXPositionReg_4 = _RAND_17[10:0];
+  spriteYPositionReg_4 = _RAND_17[9:0];
   _RAND_18 = {1{`RANDOM}};
-  spriteXPositionReg_5 = _RAND_18[10:0];
+  spriteYPositionReg_5 = _RAND_18[9:0];
   _RAND_19 = {1{`RANDOM}};
-  spriteXPositionReg_6 = _RAND_19[10:0];
+  spriteVisibleReg_0 = _RAND_19[0:0];
   _RAND_20 = {1{`RANDOM}};
-  spriteXPositionReg_7 = _RAND_20[10:0];
+  spriteVisibleReg_1 = _RAND_20[0:0];
   _RAND_21 = {1{`RANDOM}};
-  spriteXPositionReg_8 = _RAND_21[10:0];
+  spriteVisibleReg_2 = _RAND_21[0:0];
   _RAND_22 = {1{`RANDOM}};
-  spriteXPositionReg_9 = _RAND_22[10:0];
+  spriteVisibleReg_6 = _RAND_22[0:0];
   _RAND_23 = {1{`RANDOM}};
-  spriteXPositionReg_10 = _RAND_23[10:0];
+  spriteVisibleReg_7 = _RAND_23[0:0];
   _RAND_24 = {1{`RANDOM}};
-  spriteXPositionReg_11 = _RAND_24[10:0];
+  spriteVisibleReg_8 = _RAND_24[0:0];
   _RAND_25 = {1{`RANDOM}};
-  spriteXPositionReg_12 = _RAND_25[10:0];
+  spriteVisibleReg_9 = _RAND_25[0:0];
   _RAND_26 = {1{`RANDOM}};
-  spriteXPositionReg_13 = _RAND_26[10:0];
+  spriteVisibleReg_10 = _RAND_26[0:0];
   _RAND_27 = {1{`RANDOM}};
-  spriteXPositionReg_14 = _RAND_27[10:0];
+  spriteVisibleReg_11 = _RAND_27[0:0];
   _RAND_28 = {1{`RANDOM}};
-  spriteXPositionReg_15 = _RAND_28[10:0];
+  spriteVisibleReg_12 = _RAND_28[0:0];
   _RAND_29 = {1{`RANDOM}};
-  spriteYPositionReg_0 = _RAND_29[9:0];
+  spriteVisibleReg_13 = _RAND_29[0:0];
   _RAND_30 = {1{`RANDOM}};
-  spriteYPositionReg_1 = _RAND_30[9:0];
+  spriteVisibleReg_14 = _RAND_30[0:0];
   _RAND_31 = {1{`RANDOM}};
-  spriteYPositionReg_2 = _RAND_31[9:0];
+  spriteVisibleReg_15 = _RAND_31[0:0];
   _RAND_32 = {1{`RANDOM}};
-  spriteYPositionReg_3 = _RAND_32[9:0];
+  spriteFlipHorizontalReg_3 = _RAND_32[0:0];
   _RAND_33 = {1{`RANDOM}};
-  spriteYPositionReg_4 = _RAND_33[9:0];
+  spriteFlipVerticalReg_3 = _RAND_33[0:0];
   _RAND_34 = {1{`RANDOM}};
-  spriteYPositionReg_5 = _RAND_34[9:0];
+  spriteScaleHorizontalReg_3 = _RAND_34[1:0];
   _RAND_35 = {1{`RANDOM}};
-  spriteYPositionReg_6 = _RAND_35[9:0];
+  spriteScaleHorizontalReg_4 = _RAND_35[1:0];
   _RAND_36 = {1{`RANDOM}};
-  spriteYPositionReg_7 = _RAND_36[9:0];
+  spriteScaleHorizontalReg_5 = _RAND_36[1:0];
   _RAND_37 = {1{`RANDOM}};
-  spriteYPositionReg_8 = _RAND_37[9:0];
+  spriteScaleVerticalReg_3 = _RAND_37[1:0];
   _RAND_38 = {1{`RANDOM}};
-  spriteYPositionReg_9 = _RAND_38[9:0];
+  spriteScaleVerticalReg_4 = _RAND_38[1:0];
   _RAND_39 = {1{`RANDOM}};
-  spriteYPositionReg_10 = _RAND_39[9:0];
+  spriteScaleVerticalReg_5 = _RAND_39[1:0];
   _RAND_40 = {1{`RANDOM}};
-  spriteYPositionReg_11 = _RAND_40[9:0];
+  spriteRotationReg45_3 = _RAND_40[0:0];
   _RAND_41 = {1{`RANDOM}};
-  spriteYPositionReg_12 = _RAND_41[9:0];
+  spriteRotationReg45_4 = _RAND_41[0:0];
   _RAND_42 = {1{`RANDOM}};
-  spriteYPositionReg_13 = _RAND_42[9:0];
+  spriteRotationReg45_5 = _RAND_42[0:0];
   _RAND_43 = {1{`RANDOM}};
-  spriteYPositionReg_14 = _RAND_43[9:0];
+  spriteRotationReg90_3 = _RAND_43[0:0];
   _RAND_44 = {1{`RANDOM}};
-  spriteYPositionReg_15 = _RAND_44[9:0];
+  missingFrameErrorReg = _RAND_44[0:0];
   _RAND_45 = {1{`RANDOM}};
-  spriteVisibleReg_1 = _RAND_45[0:0];
+  newFrameStikyReg = _RAND_45[0:0];
   _RAND_46 = {1{`RANDOM}};
-  spriteVisibleReg_2 = _RAND_46[0:0];
+  REG = _RAND_46[0:0];
   _RAND_47 = {1{`RANDOM}};
-  spriteVisibleReg_3 = _RAND_47[0:0];
+  backTileMemoryDataRead_0_REG = _RAND_47[6:0];
   _RAND_48 = {1{`RANDOM}};
-  spriteVisibleReg_4 = _RAND_48[0:0];
+  backTileMemoryDataRead_1_REG = _RAND_48[6:0];
   _RAND_49 = {1{`RANDOM}};
-  spriteVisibleReg_5 = _RAND_49[0:0];
+  backTileMemoryDataRead_2_REG = _RAND_49[6:0];
   _RAND_50 = {1{`RANDOM}};
-  spriteVisibleReg_6 = _RAND_50[0:0];
+  backTileMemoryDataRead_3_REG = _RAND_50[6:0];
   _RAND_51 = {1{`RANDOM}};
-  spriteVisibleReg_7 = _RAND_51[0:0];
+  backTileMemoryDataRead_4_REG = _RAND_51[6:0];
   _RAND_52 = {1{`RANDOM}};
-  spriteVisibleReg_8 = _RAND_52[0:0];
+  backTileMemoryDataRead_5_REG = _RAND_52[6:0];
   _RAND_53 = {1{`RANDOM}};
-  spriteVisibleReg_9 = _RAND_53[0:0];
+  backTileMemoryDataRead_6_REG = _RAND_53[6:0];
   _RAND_54 = {1{`RANDOM}};
-  spriteVisibleReg_10 = _RAND_54[0:0];
+  backTileMemoryDataRead_7_REG = _RAND_54[6:0];
   _RAND_55 = {1{`RANDOM}};
-  spriteVisibleReg_11 = _RAND_55[0:0];
+  backTileMemoryDataRead_8_REG = _RAND_55[6:0];
   _RAND_56 = {1{`RANDOM}};
-  spriteVisibleReg_12 = _RAND_56[0:0];
+  backTileMemoryDataRead_9_REG = _RAND_56[6:0];
   _RAND_57 = {1{`RANDOM}};
-  spriteVisibleReg_13 = _RAND_57[0:0];
+  backTileMemoryDataRead_10_REG = _RAND_57[6:0];
   _RAND_58 = {1{`RANDOM}};
-  spriteVisibleReg_14 = _RAND_58[0:0];
+  backTileMemoryDataRead_11_REG = _RAND_58[6:0];
   _RAND_59 = {1{`RANDOM}};
-  spriteVisibleReg_15 = _RAND_59[0:0];
+  backTileMemoryDataRead_12_REG = _RAND_59[6:0];
   _RAND_60 = {1{`RANDOM}};
-  spriteFlipHorizontalReg_0 = _RAND_60[0:0];
+  backTileMemoryDataRead_13_REG = _RAND_60[6:0];
   _RAND_61 = {1{`RANDOM}};
-  spriteFlipHorizontalReg_1 = _RAND_61[0:0];
+  backTileMemoryDataRead_14_REG = _RAND_61[6:0];
   _RAND_62 = {1{`RANDOM}};
-  spriteScaleHorizontalReg_1 = _RAND_62[1:0];
+  backTileMemoryDataRead_15_REG = _RAND_62[6:0];
   _RAND_63 = {1{`RANDOM}};
-  spriteScaleVerticalReg_1 = _RAND_63[1:0];
+  backTileMemoryDataRead_16_REG = _RAND_63[6:0];
   _RAND_64 = {1{`RANDOM}};
-  spriteRotationReg_0 = _RAND_64[0:0];
+  backTileMemoryDataRead_17_REG = _RAND_64[6:0];
   _RAND_65 = {1{`RANDOM}};
-  spriteRotationReg_2 = _RAND_65[0:0];
+  backTileMemoryDataRead_18_REG = _RAND_65[6:0];
   _RAND_66 = {1{`RANDOM}};
-  missingFrameErrorReg = _RAND_66[0:0];
+  backTileMemoryDataRead_19_REG = _RAND_66[6:0];
   _RAND_67 = {1{`RANDOM}};
-  newFrameStikyReg = _RAND_67[0:0];
+  backTileMemoryDataRead_20_REG = _RAND_67[6:0];
   _RAND_68 = {1{`RANDOM}};
-  REG = _RAND_68[0:0];
+  backTileMemoryDataRead_21_REG = _RAND_68[6:0];
   _RAND_69 = {1{`RANDOM}};
-  backTileMemoryDataRead_0_REG = _RAND_69[6:0];
+  backTileMemoryDataRead_22_REG = _RAND_69[6:0];
   _RAND_70 = {1{`RANDOM}};
-  backTileMemoryDataRead_1_REG = _RAND_70[6:0];
+  backTileMemoryDataRead_23_REG = _RAND_70[6:0];
   _RAND_71 = {1{`RANDOM}};
-  backTileMemoryDataRead_2_REG = _RAND_71[6:0];
+  backTileMemoryDataRead_24_REG = _RAND_71[6:0];
   _RAND_72 = {1{`RANDOM}};
-  backTileMemoryDataRead_3_REG = _RAND_72[6:0];
+  backTileMemoryDataRead_25_REG = _RAND_72[6:0];
   _RAND_73 = {1{`RANDOM}};
-  backTileMemoryDataRead_4_REG = _RAND_73[6:0];
+  backTileMemoryDataRead_26_REG = _RAND_73[6:0];
   _RAND_74 = {1{`RANDOM}};
-  backTileMemoryDataRead_5_REG = _RAND_74[6:0];
+  backTileMemoryDataRead_27_REG = _RAND_74[6:0];
   _RAND_75 = {1{`RANDOM}};
-  backTileMemoryDataRead_6_REG = _RAND_75[6:0];
+  backTileMemoryDataRead_28_REG = _RAND_75[6:0];
   _RAND_76 = {1{`RANDOM}};
-  backTileMemoryDataRead_7_REG = _RAND_76[6:0];
+  backTileMemoryDataRead_29_REG = _RAND_76[6:0];
   _RAND_77 = {1{`RANDOM}};
-  backTileMemoryDataRead_8_REG = _RAND_77[6:0];
+  backTileMemoryDataRead_30_REG = _RAND_77[6:0];
   _RAND_78 = {1{`RANDOM}};
-  backTileMemoryDataRead_9_REG = _RAND_78[6:0];
+  backTileMemoryDataRead_31_REG = _RAND_78[6:0];
   _RAND_79 = {1{`RANDOM}};
-  backTileMemoryDataRead_10_REG = _RAND_79[6:0];
+  backMemoryCopyCounter = _RAND_79[11:0];
   _RAND_80 = {1{`RANDOM}};
-  backTileMemoryDataRead_11_REG = _RAND_80[6:0];
+  copyEnabledReg = _RAND_80[0:0];
   _RAND_81 = {1{`RANDOM}};
-  backTileMemoryDataRead_12_REG = _RAND_81[6:0];
+  backBufferShadowMemory_io_address_REG = _RAND_81[10:0];
   _RAND_82 = {1{`RANDOM}};
-  backTileMemoryDataRead_13_REG = _RAND_82[6:0];
+  backBufferShadowMemory_io_writeEnable_REG = _RAND_82[0:0];
   _RAND_83 = {1{`RANDOM}};
-  backTileMemoryDataRead_14_REG = _RAND_83[6:0];
+  backBufferMemory_io_address_REG = _RAND_83[10:0];
   _RAND_84 = {1{`RANDOM}};
-  backTileMemoryDataRead_15_REG = _RAND_84[6:0];
+  fullBackgroundColor_REG = _RAND_84[4:0];
   _RAND_85 = {1{`RANDOM}};
-  backTileMemoryDataRead_16_REG = _RAND_85[6:0];
+  pixelColorBack = _RAND_85[5:0];
   _RAND_86 = {1{`RANDOM}};
-  backTileMemoryDataRead_17_REG = _RAND_86[6:0];
+  multiHotPriortyReductionTree_io_dataInput_0_REG = _RAND_86[5:0];
   _RAND_87 = {1{`RANDOM}};
-  backTileMemoryDataRead_18_REG = _RAND_87[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg__0 = _RAND_87[0:0];
   _RAND_88 = {1{`RANDOM}};
-  backTileMemoryDataRead_19_REG = _RAND_88[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg__1 = _RAND_88[0:0];
   _RAND_89 = {1{`RANDOM}};
-  backTileMemoryDataRead_20_REG = _RAND_89[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_89[0:0];
   _RAND_90 = {1{`RANDOM}};
-  backTileMemoryDataRead_21_REG = _RAND_90[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_90[0:0];
   _RAND_91 = {1{`RANDOM}};
-  backTileMemoryDataRead_22_REG = _RAND_91[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_REG = _RAND_91[0:0];
   _RAND_92 = {1{`RANDOM}};
-  backTileMemoryDataRead_23_REG = _RAND_92[6:0];
+  multiHotPriortyReductionTree_io_dataInput_1_REG = _RAND_92[5:0];
   _RAND_93 = {1{`RANDOM}};
-  backTileMemoryDataRead_24_REG = _RAND_93[6:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 = _RAND_93[0:0];
   _RAND_94 = {1{`RANDOM}};
-  backTileMemoryDataRead_25_REG = _RAND_94[6:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 = _RAND_94[0:0];
   _RAND_95 = {1{`RANDOM}};
-  backTileMemoryDataRead_26_REG = _RAND_95[6:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 = _RAND_95[0:0];
   _RAND_96 = {1{`RANDOM}};
-  backTileMemoryDataRead_27_REG = _RAND_96[6:0];
+  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 = _RAND_96[0:0];
   _RAND_97 = {1{`RANDOM}};
-  backTileMemoryDataRead_28_REG = _RAND_97[6:0];
+  multiHotPriortyReductionTree_io_selectInput_1_REG = _RAND_97[0:0];
   _RAND_98 = {1{`RANDOM}};
-  backTileMemoryDataRead_29_REG = _RAND_98[6:0];
+  multiHotPriortyReductionTree_io_dataInput_2_REG = _RAND_98[5:0];
   _RAND_99 = {1{`RANDOM}};
-  backTileMemoryDataRead_30_REG = _RAND_99[6:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 = _RAND_99[0:0];
   _RAND_100 = {1{`RANDOM}};
-  backTileMemoryDataRead_31_REG = _RAND_100[6:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 = _RAND_100[0:0];
   _RAND_101 = {1{`RANDOM}};
-  backMemoryCopyCounter = _RAND_101[11:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_101[0:0];
   _RAND_102 = {1{`RANDOM}};
-  copyEnabledReg = _RAND_102[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_102[0:0];
   _RAND_103 = {1{`RANDOM}};
-  backBufferShadowMemory_io_address_REG = _RAND_103[10:0];
+  multiHotPriortyReductionTree_io_selectInput_2_REG = _RAND_103[0:0];
   _RAND_104 = {1{`RANDOM}};
-  backBufferShadowMemory_io_writeEnable_REG = _RAND_104[0:0];
+  multiHotPriortyReductionTree_io_dataInput_3_REG = _RAND_104[5:0];
   _RAND_105 = {1{`RANDOM}};
-  backBufferMemory_io_address_REG = _RAND_105[10:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_105[0:0];
   _RAND_106 = {1{`RANDOM}};
-  fullBackgroundColor_REG = _RAND_106[4:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_106[0:0];
   _RAND_107 = {1{`RANDOM}};
-  pixelColorBack = _RAND_107[5:0];
+  multiHotPriortyReductionTree_io_selectInput_3_REG = _RAND_107[0:0];
   _RAND_108 = {1{`RANDOM}};
-  inScaledX = _RAND_108[0:0];
+  multiHotPriortyReductionTree_io_dataInput_4_REG = _RAND_108[5:0];
   _RAND_109 = {1{`RANDOM}};
-  inScaledY = _RAND_109[0:0];
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_109[0:0];
   _RAND_110 = {1{`RANDOM}};
-  memX = _RAND_110[13:0];
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_110[0:0];
   _RAND_111 = {1{`RANDOM}};
-  memY = _RAND_111[12:0];
+  multiHotPriortyReductionTree_io_selectInput_4_REG = _RAND_111[0:0];
   _RAND_112 = {1{`RANDOM}};
-  boxIndex = _RAND_112[19:0];
+  multiHotPriortyReductionTree_io_dataInput_5_REG = _RAND_112[5:0];
   _RAND_113 = {1{`RANDOM}};
-  inScaledX_1 = _RAND_113[0:0];
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_113[0:0];
   _RAND_114 = {1{`RANDOM}};
-  inScaledY_1 = _RAND_114[0:0];
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_114[0:0];
   _RAND_115 = {1{`RANDOM}};
-  memX_1 = _RAND_115[13:0];
+  multiHotPriortyReductionTree_io_selectInput_5_REG = _RAND_115[0:0];
   _RAND_116 = {1{`RANDOM}};
-  memY_1 = _RAND_116[12:0];
+  multiHotPriortyReductionTree_io_dataInput_6_REG = _RAND_116[5:0];
   _RAND_117 = {1{`RANDOM}};
-  boxIndex_1 = _RAND_117[19:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 = _RAND_117[0:0];
   _RAND_118 = {1{`RANDOM}};
-  inScaledX_2 = _RAND_118[0:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 = _RAND_118[0:0];
   _RAND_119 = {1{`RANDOM}};
-  inScaledY_2 = _RAND_119[0:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_119[0:0];
   _RAND_120 = {1{`RANDOM}};
-  memX_2 = _RAND_120[13:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_120[0:0];
   _RAND_121 = {1{`RANDOM}};
-  memY_2 = _RAND_121[12:0];
+  multiHotPriortyReductionTree_io_selectInput_6_REG = _RAND_121[0:0];
   _RAND_122 = {1{`RANDOM}};
-  boxIndex_2 = _RAND_122[19:0];
+  multiHotPriortyReductionTree_io_dataInput_7_REG = _RAND_122[5:0];
   _RAND_123 = {1{`RANDOM}};
-  inScaledX_3 = _RAND_123[0:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_123[0:0];
   _RAND_124 = {1{`RANDOM}};
-  inScaledY_3 = _RAND_124[0:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_124[0:0];
   _RAND_125 = {1{`RANDOM}};
-  memX_3 = _RAND_125[13:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_125[0:0];
   _RAND_126 = {1{`RANDOM}};
-  memY_3 = _RAND_126[12:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_126[0:0];
   _RAND_127 = {1{`RANDOM}};
-  boxIndex_3 = _RAND_127[19:0];
+  multiHotPriortyReductionTree_io_selectInput_7_REG = _RAND_127[0:0];
   _RAND_128 = {1{`RANDOM}};
-  inScaledX_4 = _RAND_128[0:0];
+  multiHotPriortyReductionTree_io_dataInput_8_REG = _RAND_128[5:0];
   _RAND_129 = {1{`RANDOM}};
-  inScaledY_4 = _RAND_129[0:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_129[0:0];
   _RAND_130 = {1{`RANDOM}};
-  memX_4 = _RAND_130[13:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_130[0:0];
   _RAND_131 = {1{`RANDOM}};
-  memY_4 = _RAND_131[12:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_131[0:0];
   _RAND_132 = {1{`RANDOM}};
-  boxIndex_4 = _RAND_132[19:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_132[0:0];
   _RAND_133 = {1{`RANDOM}};
-  inScaledX_5 = _RAND_133[0:0];
+  multiHotPriortyReductionTree_io_selectInput_8_REG = _RAND_133[0:0];
   _RAND_134 = {1{`RANDOM}};
-  inScaledY_5 = _RAND_134[0:0];
+  multiHotPriortyReductionTree_io_dataInput_9_REG = _RAND_134[5:0];
   _RAND_135 = {1{`RANDOM}};
-  memX_5 = _RAND_135[13:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_135[0:0];
   _RAND_136 = {1{`RANDOM}};
-  memY_5 = _RAND_136[12:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_136[0:0];
   _RAND_137 = {1{`RANDOM}};
-  boxIndex_5 = _RAND_137[19:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_137[0:0];
   _RAND_138 = {1{`RANDOM}};
-  inScaledX_6 = _RAND_138[0:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_138[0:0];
   _RAND_139 = {1{`RANDOM}};
-  inScaledY_6 = _RAND_139[0:0];
+  multiHotPriortyReductionTree_io_selectInput_9_REG = _RAND_139[0:0];
   _RAND_140 = {1{`RANDOM}};
-  memX_6 = _RAND_140[13:0];
+  multiHotPriortyReductionTree_io_dataInput_10_REG = _RAND_140[5:0];
   _RAND_141 = {1{`RANDOM}};
-  memY_6 = _RAND_141[12:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_141[0:0];
   _RAND_142 = {1{`RANDOM}};
-  boxIndex_6 = _RAND_142[19:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_142[0:0];
   _RAND_143 = {1{`RANDOM}};
-  inScaledX_7 = _RAND_143[0:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_143[0:0];
   _RAND_144 = {1{`RANDOM}};
-  inScaledY_7 = _RAND_144[0:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_144[0:0];
   _RAND_145 = {1{`RANDOM}};
-  memX_7 = _RAND_145[13:0];
+  multiHotPriortyReductionTree_io_selectInput_10_REG = _RAND_145[0:0];
   _RAND_146 = {1{`RANDOM}};
-  memY_7 = _RAND_146[12:0];
+  multiHotPriortyReductionTree_io_dataInput_11_REG = _RAND_146[5:0];
   _RAND_147 = {1{`RANDOM}};
-  boxIndex_7 = _RAND_147[19:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_147[0:0];
   _RAND_148 = {1{`RANDOM}};
-  inScaledX_8 = _RAND_148[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_148[0:0];
   _RAND_149 = {1{`RANDOM}};
-  inScaledY_8 = _RAND_149[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_149[0:0];
   _RAND_150 = {1{`RANDOM}};
-  memX_8 = _RAND_150[13:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_150[0:0];
   _RAND_151 = {1{`RANDOM}};
-  memY_8 = _RAND_151[12:0];
+  multiHotPriortyReductionTree_io_selectInput_11_REG = _RAND_151[0:0];
   _RAND_152 = {1{`RANDOM}};
-  boxIndex_8 = _RAND_152[19:0];
+  multiHotPriortyReductionTree_io_dataInput_12_REG = _RAND_152[5:0];
   _RAND_153 = {1{`RANDOM}};
-  inScaledX_9 = _RAND_153[0:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_153[0:0];
   _RAND_154 = {1{`RANDOM}};
-  inScaledY_9 = _RAND_154[0:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_154[0:0];
   _RAND_155 = {1{`RANDOM}};
-  memX_9 = _RAND_155[13:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_155[0:0];
   _RAND_156 = {1{`RANDOM}};
-  memY_9 = _RAND_156[12:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_156[0:0];
   _RAND_157 = {1{`RANDOM}};
-  boxIndex_9 = _RAND_157[19:0];
+  multiHotPriortyReductionTree_io_selectInput_12_REG = _RAND_157[0:0];
   _RAND_158 = {1{`RANDOM}};
-  inScaledX_10 = _RAND_158[0:0];
+  multiHotPriortyReductionTree_io_dataInput_13_REG = _RAND_158[5:0];
   _RAND_159 = {1{`RANDOM}};
-  inScaledY_10 = _RAND_159[0:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_159[0:0];
   _RAND_160 = {1{`RANDOM}};
-  memX_10 = _RAND_160[13:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_160[0:0];
   _RAND_161 = {1{`RANDOM}};
-  memY_10 = _RAND_161[12:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
-  boxIndex_10 = _RAND_162[19:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_162[0:0];
   _RAND_163 = {1{`RANDOM}};
-  inScaledX_11 = _RAND_163[0:0];
+  multiHotPriortyReductionTree_io_selectInput_13_REG = _RAND_163[0:0];
   _RAND_164 = {1{`RANDOM}};
-  inScaledY_11 = _RAND_164[0:0];
+  multiHotPriortyReductionTree_io_dataInput_14_REG = _RAND_164[5:0];
   _RAND_165 = {1{`RANDOM}};
-  memX_11 = _RAND_165[13:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 = _RAND_165[0:0];
   _RAND_166 = {1{`RANDOM}};
-  memY_11 = _RAND_166[12:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 = _RAND_166[0:0];
   _RAND_167 = {1{`RANDOM}};
-  boxIndex_11 = _RAND_167[19:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_167[0:0];
   _RAND_168 = {1{`RANDOM}};
-  inScaledX_12 = _RAND_168[0:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_168[0:0];
   _RAND_169 = {1{`RANDOM}};
-  inScaledY_12 = _RAND_169[0:0];
+  multiHotPriortyReductionTree_io_selectInput_14_REG = _RAND_169[0:0];
   _RAND_170 = {1{`RANDOM}};
-  memX_12 = _RAND_170[13:0];
+  multiHotPriortyReductionTree_io_dataInput_15_REG = _RAND_170[5:0];
   _RAND_171 = {1{`RANDOM}};
-  memY_12 = _RAND_171[12:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_171[0:0];
   _RAND_172 = {1{`RANDOM}};
-  boxIndex_12 = _RAND_172[19:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_172[0:0];
   _RAND_173 = {1{`RANDOM}};
-  inScaledX_13 = _RAND_173[0:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_173[0:0];
   _RAND_174 = {1{`RANDOM}};
-  inScaledY_13 = _RAND_174[0:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_174[0:0];
   _RAND_175 = {1{`RANDOM}};
-  memX_13 = _RAND_175[13:0];
+  multiHotPriortyReductionTree_io_selectInput_15_REG = _RAND_175[0:0];
   _RAND_176 = {1{`RANDOM}};
-  memY_13 = _RAND_176[12:0];
+  pixelColorSprite = _RAND_176[5:0];
   _RAND_177 = {1{`RANDOM}};
-  boxIndex_13 = _RAND_177[19:0];
+  pixelColorSpriteValid = _RAND_177[0:0];
   _RAND_178 = {1{`RANDOM}};
-  inScaledX_14 = _RAND_178[0:0];
+  pixelColourVGA_pipeReg_0 = _RAND_178[0:0];
   _RAND_179 = {1{`RANDOM}};
-  inScaledY_14 = _RAND_179[0:0];
+  pixelColourVGA_pipeReg_1 = _RAND_179[0:0];
   _RAND_180 = {1{`RANDOM}};
-  memX_14 = _RAND_180[13:0];
+  pixelColourVGA_pipeReg_2 = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
-  memY_14 = _RAND_181[12:0];
+  io_vgaRed_REG = _RAND_181[3:0];
   _RAND_182 = {1{`RANDOM}};
-  boxIndex_14 = _RAND_182[19:0];
+  io_vgaGreen_REG = _RAND_182[3:0];
   _RAND_183 = {1{`RANDOM}};
-  inScaledX_15 = _RAND_183[0:0];
-  _RAND_184 = {1{`RANDOM}};
-  inScaledY_15 = _RAND_184[0:0];
-  _RAND_185 = {1{`RANDOM}};
-  memX_15 = _RAND_185[13:0];
-  _RAND_186 = {1{`RANDOM}};
-  memY_15 = _RAND_186[12:0];
-  _RAND_187 = {1{`RANDOM}};
-  boxIndex_15 = _RAND_187[19:0];
-  _RAND_188 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_0_REG = _RAND_188[5:0];
-  _RAND_189 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_189[0:0];
-  _RAND_190 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_190[0:0];
-  _RAND_191 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_REG = _RAND_191[0:0];
-  _RAND_192 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_1_REG = _RAND_192[5:0];
-  _RAND_193 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__0 = _RAND_193[0:0];
-  _RAND_194 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg__1 = _RAND_194[0:0];
-  _RAND_195 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 = _RAND_195[0:0];
-  _RAND_196 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 = _RAND_196[0:0];
-  _RAND_197 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_1_REG = _RAND_197[0:0];
-  _RAND_198 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_2_REG = _RAND_198[5:0];
-  _RAND_199 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__0 = _RAND_199[0:0];
-  _RAND_200 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg__1 = _RAND_200[0:0];
-  _RAND_201 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_201[0:0];
-  _RAND_202 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_202[0:0];
-  _RAND_203 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_REG = _RAND_203[0:0];
-  _RAND_204 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_3_REG = _RAND_204[5:0];
-  _RAND_205 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__0 = _RAND_205[0:0];
-  _RAND_206 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg__1 = _RAND_206[0:0];
-  _RAND_207 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_207[0:0];
-  _RAND_208 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_208[0:0];
-  _RAND_209 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_REG = _RAND_209[0:0];
-  _RAND_210 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_4_REG = _RAND_210[5:0];
-  _RAND_211 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__0 = _RAND_211[0:0];
-  _RAND_212 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg__1 = _RAND_212[0:0];
-  _RAND_213 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_213[0:0];
-  _RAND_214 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_214[0:0];
-  _RAND_215 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_REG = _RAND_215[0:0];
-  _RAND_216 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_5_REG = _RAND_216[5:0];
-  _RAND_217 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__0 = _RAND_217[0:0];
-  _RAND_218 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg__1 = _RAND_218[0:0];
-  _RAND_219 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_219[0:0];
-  _RAND_220 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_220[0:0];
-  _RAND_221 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_REG = _RAND_221[0:0];
-  _RAND_222 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_6_REG = _RAND_222[5:0];
-  _RAND_223 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__0 = _RAND_223[0:0];
-  _RAND_224 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg__1 = _RAND_224[0:0];
-  _RAND_225 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_225[0:0];
-  _RAND_226 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_226[0:0];
-  _RAND_227 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_REG = _RAND_227[0:0];
-  _RAND_228 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_7_REG = _RAND_228[5:0];
-  _RAND_229 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_229[0:0];
-  _RAND_230 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_230[0:0];
-  _RAND_231 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_231[0:0];
-  _RAND_232 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_232[0:0];
-  _RAND_233 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_REG = _RAND_233[0:0];
-  _RAND_234 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_8_REG = _RAND_234[5:0];
-  _RAND_235 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_235[0:0];
-  _RAND_236 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_236[0:0];
-  _RAND_237 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_237[0:0];
-  _RAND_238 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_238[0:0];
-  _RAND_239 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_REG = _RAND_239[0:0];
-  _RAND_240 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_9_REG = _RAND_240[5:0];
-  _RAND_241 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_241[0:0];
-  _RAND_242 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_242[0:0];
-  _RAND_243 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_243[0:0];
-  _RAND_244 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_244[0:0];
-  _RAND_245 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_REG = _RAND_245[0:0];
-  _RAND_246 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_10_REG = _RAND_246[5:0];
-  _RAND_247 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_247[0:0];
-  _RAND_248 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_248[0:0];
-  _RAND_249 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_249[0:0];
-  _RAND_250 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_250[0:0];
-  _RAND_251 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_REG = _RAND_251[0:0];
-  _RAND_252 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_11_REG = _RAND_252[5:0];
-  _RAND_253 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_253[0:0];
-  _RAND_254 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_254[0:0];
-  _RAND_255 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_255[0:0];
-  _RAND_256 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_256[0:0];
-  _RAND_257 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_REG = _RAND_257[0:0];
-  _RAND_258 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_12_REG = _RAND_258[5:0];
-  _RAND_259 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_259[0:0];
-  _RAND_260 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_260[0:0];
-  _RAND_261 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_261[0:0];
-  _RAND_262 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_262[0:0];
-  _RAND_263 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_REG = _RAND_263[0:0];
-  _RAND_264 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_13_REG = _RAND_264[5:0];
-  _RAND_265 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_265[0:0];
-  _RAND_266 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_266[0:0];
-  _RAND_267 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_267[0:0];
-  _RAND_268 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_268[0:0];
-  _RAND_269 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_REG = _RAND_269[0:0];
-  _RAND_270 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_14_REG = _RAND_270[5:0];
-  _RAND_271 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__0 = _RAND_271[0:0];
-  _RAND_272 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg__1 = _RAND_272[0:0];
-  _RAND_273 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_273[0:0];
-  _RAND_274 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_274[0:0];
-  _RAND_275 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_REG = _RAND_275[0:0];
-  _RAND_276 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_dataInput_15_REG = _RAND_276[5:0];
-  _RAND_277 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_277[0:0];
-  _RAND_278 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_278[0:0];
-  _RAND_279 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_279[0:0];
-  _RAND_280 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_280[0:0];
-  _RAND_281 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_REG = _RAND_281[0:0];
-  _RAND_282 = {1{`RANDOM}};
-  pixelColorSprite = _RAND_282[5:0];
-  _RAND_283 = {1{`RANDOM}};
-  pixelColorSpriteValid = _RAND_283[0:0];
-  _RAND_284 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_0 = _RAND_284[0:0];
-  _RAND_285 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_1 = _RAND_285[0:0];
-  _RAND_286 = {1{`RANDOM}};
-  pixelColourVGA_pipeReg_2 = _RAND_286[0:0];
-  _RAND_287 = {1{`RANDOM}};
-  io_vgaRed_REG = _RAND_287[3:0];
-  _RAND_288 = {1{`RANDOM}};
-  io_vgaGreen_REG = _RAND_288[3:0];
-  _RAND_289 = {1{`RANDOM}};
-  io_vgaBlue_REG = _RAND_289[3:0];
+  io_vgaBlue_REG = _RAND_183[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -4545,11 +3861,9 @@ module Memory_74(
   assign ramsSpWf_di = 32'h0; // @[\\src\\main\\scala\\Memory.scala 70:20]
 endmodule
 module SoundEngine(
-  input        clock,
-  input        reset,
-  output       io_output_0, // @[\\src\\main\\scala\\SoundEngine.scala 5:14]
-  input  [3:0] io_input, // @[\\src\\main\\scala\\SoundEngine.scala 5:14]
-  input  [3:0] io_stop // @[\\src\\main\\scala\\SoundEngine.scala 5:14]
+  input   clock,
+  input   reset,
+  output  io_output_0 // @[\\src\\main\\scala\\SoundEngine.scala 5:14]
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -4608,14 +3922,6 @@ module SoundEngine(
   reg [31:0] _RAND_53;
   reg [31:0] _RAND_54;
   reg [31:0] _RAND_55;
-  reg [31:0] _RAND_56;
-  reg [31:0] _RAND_57;
-  reg [31:0] _RAND_58;
-  reg [31:0] _RAND_59;
-  reg [31:0] _RAND_60;
-  reg [31:0] _RAND_61;
-  reg [31:0] _RAND_62;
-  reg [31:0] _RAND_63;
 `endif // RANDOMIZE_REG_INIT
   wire  tone_0_clock; // @[\\src\\main\\scala\\SoundEngine.scala 36:23]
   wire [8:0] tone_0_io_address; // @[\\src\\main\\scala\\SoundEngine.scala 36:23]
@@ -4681,32 +3987,6 @@ module SoundEngine(
   reg [8:0] toneIndex_5; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
   reg [8:0] toneIndex_6; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
   reg [8:0] toneIndex_7; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-  reg  songPlaying_0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_1; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_2; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_3; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_4; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_5; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_6; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  reg  songPlaying_7; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-  wire [3:0] _T_4 = io_input - 4'h1; // @[\\src\\main\\scala\\SoundEngine.scala 28:25]
-  wire  _GEN_8 = 3'h0 == _T_4[2:0] | songPlaying_0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_9 = 3'h1 == _T_4[2:0] | songPlaying_1; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_10 = 3'h2 == _T_4[2:0] | songPlaying_2; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_11 = 3'h3 == _T_4[2:0] | songPlaying_3; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_12 = 3'h4 == _T_4[2:0] | songPlaying_4; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_13 = 3'h5 == _T_4[2:0] | songPlaying_5; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_14 = 3'h6 == _T_4[2:0] | songPlaying_6; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_15 = 3'h7 == _T_4[2:0] | songPlaying_7; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 28:{31,31}]
-  wire  _GEN_16 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_8 : songPlaying_0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_17 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_9 : songPlaying_1; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_18 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_10 : songPlaying_2; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_19 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_11 : songPlaying_3; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_20 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_12 : songPlaying_4; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_21 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_13 : songPlaying_5; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_22 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_14 : songPlaying_6; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire  _GEN_23 = io_input > 4'h0 & io_input <= 4'h8 ? _GEN_15 : songPlaying_7; // @[\\src\\main\\scala\\SoundEngine.scala 21:28 27:46]
-  wire [3:0] _T_10 = io_stop - 4'h1; // @[\\src\\main\\scala\\SoundEngine.scala 31:25]
   reg [19:0] freqReg_0; // @[\\src\\main\\scala\\SoundEngine.scala 49:24]
   reg [19:0] freqReg_1; // @[\\src\\main\\scala\\SoundEngine.scala 49:24]
   reg [19:0] freqReg_2; // @[\\src\\main\\scala\\SoundEngine.scala 49:24]
@@ -4726,50 +4006,58 @@ module SoundEngine(
   wire [19:0] _cntMilliSecond_0_T_1 = cntMilliSecond_0 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_0_T_1 = slowCounter_0 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_0_T_1 = waveCnt_0 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_98 = {{12'd0}, freqReg_0}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_99 = {{8'd0}, durReg_0}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_42 = {{12'd0}, freqReg_0}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_48 = waveCnt_0 >= _GEN_42 & ~channel_0; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_43 = {{8'd0}, durReg_0}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_0_T_1 = toneIndex_0 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_1_T_1 = cntMilliSecond_1 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_1_T_1 = slowCounter_1 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_1_T_1 = waveCnt_1 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_112 = {{12'd0}, freqReg_1}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_113 = {{8'd0}, durReg_1}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_56 = {{12'd0}, freqReg_1}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_62 = waveCnt_1 >= _GEN_56 & ~channel_1; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_57 = {{8'd0}, durReg_1}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_1_T_1 = toneIndex_1 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_2_T_1 = cntMilliSecond_2 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_2_T_1 = slowCounter_2 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_2_T_1 = waveCnt_2 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_126 = {{12'd0}, freqReg_2}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_127 = {{8'd0}, durReg_2}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_70 = {{12'd0}, freqReg_2}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_76 = waveCnt_2 >= _GEN_70 & ~channel_2; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_71 = {{8'd0}, durReg_2}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_2_T_1 = toneIndex_2 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_3_T_1 = cntMilliSecond_3 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_3_T_1 = slowCounter_3 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_3_T_1 = waveCnt_3 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_140 = {{12'd0}, freqReg_3}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_141 = {{8'd0}, durReg_3}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_84 = {{12'd0}, freqReg_3}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_90 = waveCnt_3 >= _GEN_84 & ~channel_3; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_85 = {{8'd0}, durReg_3}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_3_T_1 = toneIndex_3 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_4_T_1 = cntMilliSecond_4 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_4_T_1 = slowCounter_4 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_4_T_1 = waveCnt_4 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_152 = {{12'd0}, freqReg_4}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_153 = {{8'd0}, durReg_4}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_98 = {{12'd0}, freqReg_4}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_104 = waveCnt_4 >= _GEN_98 & ~channel_4; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_99 = {{8'd0}, durReg_4}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_4_T_1 = toneIndex_4 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_5_T_1 = cntMilliSecond_5 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_5_T_1 = slowCounter_5 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_5_T_1 = waveCnt_5 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_154 = {{12'd0}, freqReg_5}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_155 = {{8'd0}, durReg_5}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_112 = {{12'd0}, freqReg_5}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_118 = waveCnt_5 >= _GEN_112 & ~channel_5; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_113 = {{8'd0}, durReg_5}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_5_T_1 = toneIndex_5 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_6_T_1 = cntMilliSecond_6 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_6_T_1 = slowCounter_6 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_6_T_1 = waveCnt_6 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_156 = {{12'd0}, freqReg_6}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_157 = {{8'd0}, durReg_6}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_126 = {{12'd0}, freqReg_6}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_132 = waveCnt_6 >= _GEN_126 & ~channel_6; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_127 = {{8'd0}, durReg_6}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_6_T_1 = toneIndex_6 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   wire [19:0] _cntMilliSecond_7_T_1 = cntMilliSecond_7 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 68:46]
   wire [19:0] _slowCounter_7_T_1 = slowCounter_7 + 20'h1; // @[\\src\\main\\scala\\SoundEngine.scala 70:40]
   wire [31:0] _waveCnt_7_T_1 = waveCnt_7 + 32'h1; // @[\\src\\main\\scala\\SoundEngine.scala 80:32]
-  wire [31:0] _GEN_158 = {{12'd0}, freqReg_7}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
-  wire [19:0] _GEN_159 = {{8'd0}, durReg_7}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
+  wire [31:0] _GEN_140 = {{12'd0}, freqReg_7}; // @[\\src\\main\\scala\\SoundEngine.scala 81:23]
+  wire  _GEN_146 = waveCnt_7 >= _GEN_140 & ~channel_7; // @[\\src\\main\\scala\\SoundEngine.scala 81:38 83:20]
+  wire [19:0] _GEN_141 = {{8'd0}, durReg_7}; // @[\\src\\main\\scala\\SoundEngine.scala 88:28]
   wire [8:0] _toneIndex_7_T_1 = toneIndex_7 + 9'h1; // @[\\src\\main\\scala\\SoundEngine.scala 90:36]
   Memory_67 tone_0 ( // @[\\src\\main\\scala\\SoundEngine.scala 36:23]
     .clock(tone_0_clock),
@@ -4833,145 +4121,129 @@ module SoundEngine(
       channel_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_0 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_0 >= _GEN_98) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_0 <= ~channel_0; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_0) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_0 <= _GEN_48;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_1 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_1 >= _GEN_112) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_1 <= ~channel_1; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_1) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_1 <= _GEN_62;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_2 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_2 >= _GEN_126) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_2 <= ~channel_2; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_2) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_2 <= _GEN_76;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_3 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_3 >= _GEN_140) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_3 <= ~channel_3; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_3) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_3 <= _GEN_90;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_4 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_4 >= _GEN_152) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_4 <= ~channel_4; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_4) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_4 <= _GEN_104;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_5 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_5 >= _GEN_154) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_5 <= ~channel_5; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_5) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_5 <= _GEN_118;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_6 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_6 >= _GEN_156) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_6 <= ~channel_6; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_6) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_6 <= _GEN_132;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
       channel_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 16:30]
     end else if (freqReg_7 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       channel_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 77:18]
-    end else if (waveCnt_7 >= _GEN_158) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
-      channel_7 <= ~channel_7; // @[\\src\\main\\scala\\SoundEngine.scala 83:20]
-    end else if (~songPlaying_7) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      channel_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 57:18]
+    end else begin
+      channel_7 <= _GEN_146;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_0 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_0 >= _GEN_99) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_0 >= _GEN_43) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_0 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_0 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_0 <= _cntMilliSecond_0_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_0) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_0 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_0 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_1 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_1 >= _GEN_113) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_1 >= _GEN_57) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_1 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_1 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_1 <= _cntMilliSecond_1_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_1) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_1 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_1 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_2 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_2 >= _GEN_127) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_2 >= _GEN_71) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_2 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_2 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_2 <= _cntMilliSecond_2_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_2) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_2 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_2 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_3 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_3 >= _GEN_141) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_3 >= _GEN_85) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_3 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_3 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_3 <= _cntMilliSecond_3_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_3) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_3 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_3 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_4 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_4 >= _GEN_153) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_4 >= _GEN_99) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_4 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_4 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_4 <= _cntMilliSecond_4_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_4) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_4 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_4 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_5 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_5 >= _GEN_155) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_5 >= _GEN_113) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_5 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_5 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_5 <= _cntMilliSecond_5_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_5) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_5 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_5 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_6 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_6 >= _GEN_157) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_6 >= _GEN_127) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_6 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_6 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_6 <= _cntMilliSecond_6_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_6) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_6 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_6 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
       cntMilliSecond_7 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 17:34]
-    end else if (cntMilliSecond_7 >= _GEN_159) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_7 >= _GEN_141) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       cntMilliSecond_7 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 89:25]
     end else if (slowCounter_7 == 20'h186a0) begin // @[\\src\\main\\scala\\SoundEngine.scala 66:36]
       cntMilliSecond_7 <= _cntMilliSecond_7_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 68:25]
-    end else if (~songPlaying_7) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      cntMilliSecond_7 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 58:25]
+    end else begin
+      cntMilliSecond_7 <= 20'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 18:28]
       slowCounter_0 <= 20'h0; // @[\\src\\main\\scala\\SoundEngine.scala 18:28]
@@ -5033,7 +4305,7 @@ module SoundEngine(
       waveCnt_0 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_0 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_0 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_0 >= _GEN_98) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_0 >= _GEN_42) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_0 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_0 <= _waveCnt_0_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5042,7 +4314,7 @@ module SoundEngine(
       waveCnt_1 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_1 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_1 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_1 >= _GEN_112) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_1 >= _GEN_56) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_1 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_1 <= _waveCnt_1_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5051,7 +4323,7 @@ module SoundEngine(
       waveCnt_2 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_2 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_2 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_2 >= _GEN_126) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_2 >= _GEN_70) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_2 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_2 <= _waveCnt_2_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5060,7 +4332,7 @@ module SoundEngine(
       waveCnt_3 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_3 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_3 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_3 >= _GEN_140) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_3 >= _GEN_84) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_3 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_3 <= _waveCnt_3_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5069,7 +4341,7 @@ module SoundEngine(
       waveCnt_4 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_4 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_4 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_4 >= _GEN_152) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_4 >= _GEN_98) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_4 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_4 <= _waveCnt_4_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5078,7 +4350,7 @@ module SoundEngine(
       waveCnt_5 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_5 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_5 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_5 >= _GEN_154) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_5 >= _GEN_112) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_5 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_5 <= _waveCnt_5_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5087,7 +4359,7 @@ module SoundEngine(
       waveCnt_6 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_6 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_6 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_6 >= _GEN_156) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_6 >= _GEN_126) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_6 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_6 <= _waveCnt_6_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
@@ -5096,170 +4368,66 @@ module SoundEngine(
       waveCnt_7 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 19:28]
     end else if (freqReg_7 == 20'h0) begin // @[\\src\\main\\scala\\SoundEngine.scala 76:30]
       waveCnt_7 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 78:18]
-    end else if (waveCnt_7 >= _GEN_158) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
+    end else if (waveCnt_7 >= _GEN_140) begin // @[\\src\\main\\scala\\SoundEngine.scala 81:38]
       waveCnt_7 <= 32'h0; // @[\\src\\main\\scala\\SoundEngine.scala 82:20]
     end else begin
       waveCnt_7 <= _waveCnt_7_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 80:18]
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_0 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_0 >= _GEN_99) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_0 >= _GEN_43) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_0 <= _toneIndex_0_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_0) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_0 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_0 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_1 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_1 >= _GEN_113) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_1 >= _GEN_57) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_1 <= _toneIndex_1_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_1) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_1 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_1 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_2 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_2 >= _GEN_127) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_2 >= _GEN_71) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_2 <= _toneIndex_2_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_2) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_2 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_2 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_3 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_3 >= _GEN_141) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_3 >= _GEN_85) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_3 <= _toneIndex_3_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_3) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_3 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_3 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_4 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_4 >= _GEN_153) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_4 >= _GEN_99) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_4 <= _toneIndex_4_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_4) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_4 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_4 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_5 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_5 >= _GEN_155) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_5 >= _GEN_113) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_5 <= _toneIndex_5_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_5) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_5 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_5 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_6 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_6 >= _GEN_157) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_6 >= _GEN_127) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_6 <= _toneIndex_6_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_6) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_6 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
+    end else begin
+      toneIndex_6 <= 9'h0;
     end
     if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
       toneIndex_7 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 20:28]
-    end else if (cntMilliSecond_7 >= _GEN_159) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
+    end else if (cntMilliSecond_7 >= _GEN_141) begin // @[\\src\\main\\scala\\SoundEngine.scala 88:42]
       toneIndex_7 <= _toneIndex_7_T_1; // @[\\src\\main\\scala\\SoundEngine.scala 90:20]
-    end else if (~songPlaying_7) begin // @[\\src\\main\\scala\\SoundEngine.scala 56:37]
-      toneIndex_7 <= 9'h0; // @[\\src\\main\\scala\\SoundEngine.scala 61:20]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_0 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h0 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_0 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_0 <= _GEN_16;
-      end
     end else begin
-      songPlaying_0 <= _GEN_16;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_1 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h1 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_1 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_1 <= _GEN_17;
-      end
-    end else begin
-      songPlaying_1 <= _GEN_17;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_2 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h2 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_2 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_2 <= _GEN_18;
-      end
-    end else begin
-      songPlaying_2 <= _GEN_18;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_3 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h3 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_3 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_3 <= _GEN_19;
-      end
-    end else begin
-      songPlaying_3 <= _GEN_19;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_4 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h4 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_4 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_4 <= _GEN_20;
-      end
-    end else begin
-      songPlaying_4 <= _GEN_20;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_5 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h5 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_5 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_5 <= _GEN_21;
-      end
-    end else begin
-      songPlaying_5 <= _GEN_21;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_6 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h6 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_6 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_6 <= _GEN_22;
-      end
-    end else begin
-      songPlaying_6 <= _GEN_22;
-    end
-    if (reset) begin // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-      songPlaying_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 21:28]
-    end else if (durReg_7 == 12'hfff) begin // @[\\src\\main\\scala\\SoundEngine.scala 93:43]
-      songPlaying_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 94:22]
-    end else if (io_stop > 4'h0 & io_stop <= 4'h8) begin // @[\\src\\main\\scala\\SoundEngine.scala 30:44]
-      if (3'h7 == _T_10[2:0]) begin // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-        songPlaying_7 <= 1'h0; // @[\\src\\main\\scala\\SoundEngine.scala 31:32]
-      end else begin
-        songPlaying_7 <= _GEN_23;
-      end
-    end else begin
-      songPlaying_7 <= _GEN_23;
+      toneIndex_7 <= 9'h0;
     end
     freqReg_0 <= tone_0_io_dataRead[31:12]; // @[\\src\\main\\scala\\SoundEngine.scala 49:82]
     freqReg_1 <= tone_1_io_dataRead[31:12]; // @[\\src\\main\\scala\\SoundEngine.scala 49:82]
@@ -5395,53 +4563,37 @@ initial begin
   _RAND_39 = {1{`RANDOM}};
   toneIndex_7 = _RAND_39[8:0];
   _RAND_40 = {1{`RANDOM}};
-  songPlaying_0 = _RAND_40[0:0];
+  freqReg_0 = _RAND_40[19:0];
   _RAND_41 = {1{`RANDOM}};
-  songPlaying_1 = _RAND_41[0:0];
+  freqReg_1 = _RAND_41[19:0];
   _RAND_42 = {1{`RANDOM}};
-  songPlaying_2 = _RAND_42[0:0];
+  freqReg_2 = _RAND_42[19:0];
   _RAND_43 = {1{`RANDOM}};
-  songPlaying_3 = _RAND_43[0:0];
+  freqReg_3 = _RAND_43[19:0];
   _RAND_44 = {1{`RANDOM}};
-  songPlaying_4 = _RAND_44[0:0];
+  freqReg_4 = _RAND_44[19:0];
   _RAND_45 = {1{`RANDOM}};
-  songPlaying_5 = _RAND_45[0:0];
+  freqReg_5 = _RAND_45[19:0];
   _RAND_46 = {1{`RANDOM}};
-  songPlaying_6 = _RAND_46[0:0];
+  freqReg_6 = _RAND_46[19:0];
   _RAND_47 = {1{`RANDOM}};
-  songPlaying_7 = _RAND_47[0:0];
+  freqReg_7 = _RAND_47[19:0];
   _RAND_48 = {1{`RANDOM}};
-  freqReg_0 = _RAND_48[19:0];
+  durReg_0 = _RAND_48[11:0];
   _RAND_49 = {1{`RANDOM}};
-  freqReg_1 = _RAND_49[19:0];
+  durReg_1 = _RAND_49[11:0];
   _RAND_50 = {1{`RANDOM}};
-  freqReg_2 = _RAND_50[19:0];
+  durReg_2 = _RAND_50[11:0];
   _RAND_51 = {1{`RANDOM}};
-  freqReg_3 = _RAND_51[19:0];
+  durReg_3 = _RAND_51[11:0];
   _RAND_52 = {1{`RANDOM}};
-  freqReg_4 = _RAND_52[19:0];
+  durReg_4 = _RAND_52[11:0];
   _RAND_53 = {1{`RANDOM}};
-  freqReg_5 = _RAND_53[19:0];
+  durReg_5 = _RAND_53[11:0];
   _RAND_54 = {1{`RANDOM}};
-  freqReg_6 = _RAND_54[19:0];
+  durReg_6 = _RAND_54[11:0];
   _RAND_55 = {1{`RANDOM}};
-  freqReg_7 = _RAND_55[19:0];
-  _RAND_56 = {1{`RANDOM}};
-  durReg_0 = _RAND_56[11:0];
-  _RAND_57 = {1{`RANDOM}};
-  durReg_1 = _RAND_57[11:0];
-  _RAND_58 = {1{`RANDOM}};
-  durReg_2 = _RAND_58[11:0];
-  _RAND_59 = {1{`RANDOM}};
-  durReg_3 = _RAND_59[11:0];
-  _RAND_60 = {1{`RANDOM}};
-  durReg_4 = _RAND_60[11:0];
-  _RAND_61 = {1{`RANDOM}};
-  durReg_5 = _RAND_61[11:0];
-  _RAND_62 = {1{`RANDOM}};
-  durReg_6 = _RAND_62[11:0];
-  _RAND_63 = {1{`RANDOM}};
-  durReg_7 = _RAND_63[11:0];
+  durReg_7 = _RAND_55[11:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -5450,2151 +4602,21 @@ end // initial
 `endif
 `endif // SYNTHESIS
 endmodule
-module BoxDetection2(
-  input         clock,
-  input  [10:0] io_boxXPosition_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [10:0] io_boxXPosition_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  input  [9:0]  io_boxYPosition_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_0_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_0_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_3_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_4_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_5_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_6_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_7_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_8_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_9_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_10_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_11_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_12_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_14, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_13_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_14_15, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_0, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_1, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_2, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_3, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_4, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_5, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_6, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_7, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_8, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_9, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_10, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_11, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_12, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_13, // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-  output        io_overlap_15_14 // @[\\src\\main\\scala\\BoxDetection2.scala 5:14]
-);
-`ifdef RANDOMIZE_REG_INIT
-  reg [31:0] _RAND_0;
-  reg [31:0] _RAND_1;
-  reg [31:0] _RAND_2;
-  reg [31:0] _RAND_3;
-  reg [31:0] _RAND_4;
-  reg [31:0] _RAND_5;
-  reg [31:0] _RAND_6;
-  reg [31:0] _RAND_7;
-  reg [31:0] _RAND_8;
-  reg [31:0] _RAND_9;
-  reg [31:0] _RAND_10;
-  reg [31:0] _RAND_11;
-  reg [31:0] _RAND_12;
-  reg [31:0] _RAND_13;
-  reg [31:0] _RAND_14;
-  reg [31:0] _RAND_15;
-  reg [31:0] _RAND_16;
-  reg [31:0] _RAND_17;
-  reg [31:0] _RAND_18;
-  reg [31:0] _RAND_19;
-  reg [31:0] _RAND_20;
-  reg [31:0] _RAND_21;
-  reg [31:0] _RAND_22;
-  reg [31:0] _RAND_23;
-  reg [31:0] _RAND_24;
-  reg [31:0] _RAND_25;
-  reg [31:0] _RAND_26;
-  reg [31:0] _RAND_27;
-  reg [31:0] _RAND_28;
-  reg [31:0] _RAND_29;
-  reg [31:0] _RAND_30;
-  reg [31:0] _RAND_31;
-  reg [31:0] _RAND_32;
-  reg [31:0] _RAND_33;
-  reg [31:0] _RAND_34;
-  reg [31:0] _RAND_35;
-  reg [31:0] _RAND_36;
-  reg [31:0] _RAND_37;
-  reg [31:0] _RAND_38;
-  reg [31:0] _RAND_39;
-  reg [31:0] _RAND_40;
-  reg [31:0] _RAND_41;
-  reg [31:0] _RAND_42;
-  reg [31:0] _RAND_43;
-  reg [31:0] _RAND_44;
-  reg [31:0] _RAND_45;
-  reg [31:0] _RAND_46;
-  reg [31:0] _RAND_47;
-  reg [31:0] _RAND_48;
-  reg [31:0] _RAND_49;
-  reg [31:0] _RAND_50;
-  reg [31:0] _RAND_51;
-  reg [31:0] _RAND_52;
-  reg [31:0] _RAND_53;
-  reg [31:0] _RAND_54;
-  reg [31:0] _RAND_55;
-  reg [31:0] _RAND_56;
-  reg [31:0] _RAND_57;
-  reg [31:0] _RAND_58;
-  reg [31:0] _RAND_59;
-  reg [31:0] _RAND_60;
-  reg [31:0] _RAND_61;
-  reg [31:0] _RAND_62;
-  reg [31:0] _RAND_63;
-  reg [31:0] _RAND_64;
-  reg [31:0] _RAND_65;
-  reg [31:0] _RAND_66;
-  reg [31:0] _RAND_67;
-  reg [31:0] _RAND_68;
-  reg [31:0] _RAND_69;
-  reg [31:0] _RAND_70;
-  reg [31:0] _RAND_71;
-  reg [31:0] _RAND_72;
-  reg [31:0] _RAND_73;
-  reg [31:0] _RAND_74;
-  reg [31:0] _RAND_75;
-  reg [31:0] _RAND_76;
-  reg [31:0] _RAND_77;
-  reg [31:0] _RAND_78;
-  reg [31:0] _RAND_79;
-  reg [31:0] _RAND_80;
-  reg [31:0] _RAND_81;
-  reg [31:0] _RAND_82;
-  reg [31:0] _RAND_83;
-  reg [31:0] _RAND_84;
-  reg [31:0] _RAND_85;
-  reg [31:0] _RAND_86;
-  reg [31:0] _RAND_87;
-  reg [31:0] _RAND_88;
-  reg [31:0] _RAND_89;
-  reg [31:0] _RAND_90;
-  reg [31:0] _RAND_91;
-  reg [31:0] _RAND_92;
-  reg [31:0] _RAND_93;
-  reg [31:0] _RAND_94;
-  reg [31:0] _RAND_95;
-  reg [31:0] _RAND_96;
-  reg [31:0] _RAND_97;
-  reg [31:0] _RAND_98;
-  reg [31:0] _RAND_99;
-  reg [31:0] _RAND_100;
-  reg [31:0] _RAND_101;
-  reg [31:0] _RAND_102;
-  reg [31:0] _RAND_103;
-  reg [31:0] _RAND_104;
-  reg [31:0] _RAND_105;
-  reg [31:0] _RAND_106;
-  reg [31:0] _RAND_107;
-  reg [31:0] _RAND_108;
-  reg [31:0] _RAND_109;
-  reg [31:0] _RAND_110;
-  reg [31:0] _RAND_111;
-  reg [31:0] _RAND_112;
-  reg [31:0] _RAND_113;
-  reg [31:0] _RAND_114;
-  reg [31:0] _RAND_115;
-  reg [31:0] _RAND_116;
-  reg [31:0] _RAND_117;
-  reg [31:0] _RAND_118;
-  reg [31:0] _RAND_119;
-  reg [31:0] _RAND_120;
-  reg [31:0] _RAND_121;
-  reg [31:0] _RAND_122;
-  reg [31:0] _RAND_123;
-  reg [31:0] _RAND_124;
-  reg [31:0] _RAND_125;
-  reg [31:0] _RAND_126;
-  reg [31:0] _RAND_127;
-  reg [31:0] _RAND_128;
-  reg [31:0] _RAND_129;
-  reg [31:0] _RAND_130;
-  reg [31:0] _RAND_131;
-  reg [31:0] _RAND_132;
-  reg [31:0] _RAND_133;
-  reg [31:0] _RAND_134;
-  reg [31:0] _RAND_135;
-  reg [31:0] _RAND_136;
-  reg [31:0] _RAND_137;
-  reg [31:0] _RAND_138;
-  reg [31:0] _RAND_139;
-  reg [31:0] _RAND_140;
-  reg [31:0] _RAND_141;
-  reg [31:0] _RAND_142;
-  reg [31:0] _RAND_143;
-  reg [31:0] _RAND_144;
-  reg [31:0] _RAND_145;
-  reg [31:0] _RAND_146;
-  reg [31:0] _RAND_147;
-  reg [31:0] _RAND_148;
-  reg [31:0] _RAND_149;
-  reg [31:0] _RAND_150;
-  reg [31:0] _RAND_151;
-  reg [31:0] _RAND_152;
-  reg [31:0] _RAND_153;
-  reg [31:0] _RAND_154;
-  reg [31:0] _RAND_155;
-  reg [31:0] _RAND_156;
-  reg [31:0] _RAND_157;
-  reg [31:0] _RAND_158;
-  reg [31:0] _RAND_159;
-  reg [31:0] _RAND_160;
-  reg [31:0] _RAND_161;
-  reg [31:0] _RAND_162;
-  reg [31:0] _RAND_163;
-  reg [31:0] _RAND_164;
-  reg [31:0] _RAND_165;
-  reg [31:0] _RAND_166;
-  reg [31:0] _RAND_167;
-  reg [31:0] _RAND_168;
-  reg [31:0] _RAND_169;
-  reg [31:0] _RAND_170;
-  reg [31:0] _RAND_171;
-  reg [31:0] _RAND_172;
-  reg [31:0] _RAND_173;
-  reg [31:0] _RAND_174;
-  reg [31:0] _RAND_175;
-  reg [31:0] _RAND_176;
-  reg [31:0] _RAND_177;
-  reg [31:0] _RAND_178;
-  reg [31:0] _RAND_179;
-  reg [31:0] _RAND_180;
-  reg [31:0] _RAND_181;
-  reg [31:0] _RAND_182;
-  reg [31:0] _RAND_183;
-  reg [31:0] _RAND_184;
-  reg [31:0] _RAND_185;
-  reg [31:0] _RAND_186;
-  reg [31:0] _RAND_187;
-  reg [31:0] _RAND_188;
-  reg [31:0] _RAND_189;
-  reg [31:0] _RAND_190;
-  reg [31:0] _RAND_191;
-  reg [31:0] _RAND_192;
-  reg [31:0] _RAND_193;
-  reg [31:0] _RAND_194;
-  reg [31:0] _RAND_195;
-  reg [31:0] _RAND_196;
-`endif // RANDOMIZE_REG_INIT
-  wire [10:0] xMaxA = $signed(io_boxXPosition_0) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 18:36]
-  wire [9:0] yMaxA = $signed(io_boxYPosition_0) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 19:36]
-  wire [10:0] xMaxB_1 = $signed(io_boxXPosition_1) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_1 = $signed(io_boxYPosition_1) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_0_1_T_3 = $signed(io_boxYPosition_0) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_0_1_T_4 = $signed(io_boxXPosition_0) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(xMaxA)
-     & _overlaps_0_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire [10:0] xMaxB_2 = $signed(io_boxXPosition_2) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_2 = $signed(io_boxYPosition_2) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_0_2_T_3 = $signed(io_boxYPosition_0) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_0_2_T_4 = $signed(io_boxXPosition_0) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(xMaxA)
-     & _overlaps_0_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire [10:0] xMaxA_3 = $signed(io_boxXPosition_3) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 18:36]
-  wire [9:0] yMaxA_3 = $signed(io_boxYPosition_3) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 19:36]
-  wire  _overlaps_3_0_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_0_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxA_3)
-     & _overlaps_3_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_1_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_1_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(xMaxA_3
-    ) & _overlaps_3_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_2_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_2_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(xMaxA_3
-    ) & _overlaps_3_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire [10:0] xMaxB_52 = $signed(io_boxXPosition_4) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_52 = $signed(io_boxYPosition_4) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_4_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_4_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxA_3) & _overlaps_3_4_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_4_T_5 = $signed(io_boxYPosition_4) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_53 = $signed(io_boxXPosition_5) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_53 = $signed(io_boxYPosition_5) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_5_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_5_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxA_3) & _overlaps_3_5_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_5_T_5 = $signed(io_boxYPosition_5) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_54 = $signed(io_boxXPosition_6) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_54 = $signed(io_boxYPosition_6) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_6_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_6_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxA_3) & _overlaps_3_6_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_6_T_5 = $signed(io_boxYPosition_6) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_55 = $signed(io_boxXPosition_7) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_55 = $signed(io_boxYPosition_7) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_7_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_7_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxA_3) & _overlaps_3_7_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_7_T_5 = $signed(io_boxYPosition_7) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_56 = $signed(io_boxXPosition_8) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_56 = $signed(io_boxYPosition_8) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_8_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_8_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxA_3) & _overlaps_3_8_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_8_T_5 = $signed(io_boxYPosition_8) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_57 = $signed(io_boxXPosition_9) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_57 = $signed(io_boxYPosition_9) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_9_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_9_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxA_3) & _overlaps_3_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_58 = $signed(io_boxXPosition_10) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_58 = $signed(io_boxYPosition_10) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_10_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_10_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxA_3) & _overlaps_3_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_59 = $signed(io_boxXPosition_11) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_59 = $signed(io_boxYPosition_11) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_11_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_11_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxA_3) & _overlaps_3_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_60 = $signed(io_boxXPosition_12) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_60 = $signed(io_boxYPosition_12) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_12_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_12_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxA_3) & _overlaps_3_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_61 = $signed(io_boxXPosition_13) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_61 = $signed(io_boxYPosition_13) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_13_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_13_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxA_3) & _overlaps_3_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_62 = $signed(io_boxXPosition_14) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_62 = $signed(io_boxYPosition_14) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_14_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_14_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxA_3) & _overlaps_3_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire [10:0] xMaxB_63 = $signed(io_boxXPosition_15) + 11'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 24:38]
-  wire [9:0] yMaxB_63 = $signed(io_boxYPosition_15) + 10'sh20; // @[\\src\\main\\scala\\BoxDetection2.scala 25:38]
-  wire  _overlaps_3_15_T_3 = $signed(io_boxYPosition_3) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_3_15_T_4 = $signed(io_boxXPosition_3) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxA_3) & _overlaps_3_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_3_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_0_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_0_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_52)
-     & _overlaps_4_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_1_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_1_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_52) & _overlaps_4_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_2_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_2_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_52) & _overlaps_4_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_3_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_52) & _overlaps_3_4_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_5_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_5_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_52) & _overlaps_4_5_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_5_T_5 = $signed(io_boxYPosition_5) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_6_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_6_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_52) & _overlaps_4_6_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_6_T_5 = $signed(io_boxYPosition_6) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_7_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_7_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_52) & _overlaps_4_7_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_7_T_5 = $signed(io_boxYPosition_7) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_8_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_8_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_52) & _overlaps_4_8_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_8_T_5 = $signed(io_boxYPosition_8) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_9_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_9_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_52) & _overlaps_4_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_10_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_10_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_52) & _overlaps_4_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_11_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_11_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_52) & _overlaps_4_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_12_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_12_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_52) & _overlaps_4_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_13_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_13_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_52) & _overlaps_4_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_14_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_14_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_52) & _overlaps_4_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_4_15_T_3 = $signed(io_boxYPosition_4) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_4_15_T_4 = $signed(io_boxXPosition_4) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_52) & _overlaps_4_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_4_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_0_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_0_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_53)
-     & _overlaps_5_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_1_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_1_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_53) & _overlaps_5_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_2_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_2_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_53) & _overlaps_5_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_3_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_53) & _overlaps_3_5_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_4_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_53) & _overlaps_4_5_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_6_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_6_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_53) & _overlaps_5_6_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_6_T_5 = $signed(io_boxYPosition_6) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_7_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_7_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_53) & _overlaps_5_7_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_7_T_5 = $signed(io_boxYPosition_7) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_8_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_8_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_53) & _overlaps_5_8_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_8_T_5 = $signed(io_boxYPosition_8) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_9_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_9_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_53) & _overlaps_5_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_10_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_10_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_53) & _overlaps_5_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_11_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_11_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_53) & _overlaps_5_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_12_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_12_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_53) & _overlaps_5_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_13_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_13_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_53) & _overlaps_5_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_14_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_14_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_53) & _overlaps_5_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_5_15_T_3 = $signed(io_boxYPosition_5) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_5_15_T_4 = $signed(io_boxXPosition_5) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_53) & _overlaps_5_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_5_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_0_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_0_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_54)
-     & _overlaps_6_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_1_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_1_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_54) & _overlaps_6_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_2_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_2_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_54) & _overlaps_6_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_3_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_54) & _overlaps_3_6_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_4_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_54) & _overlaps_4_6_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_5_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_54) & _overlaps_5_6_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_7_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_7_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_54) & _overlaps_6_7_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_7_T_5 = $signed(io_boxYPosition_7) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_8_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_8_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_54) & _overlaps_6_8_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_8_T_5 = $signed(io_boxYPosition_8) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_9_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_9_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_54) & _overlaps_6_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_10_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_10_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_54) & _overlaps_6_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_11_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_11_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_54) & _overlaps_6_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_12_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_12_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_54) & _overlaps_6_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_13_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_13_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_54) & _overlaps_6_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_14_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_14_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_54) & _overlaps_6_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_6_15_T_3 = $signed(io_boxYPosition_6) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_6_15_T_4 = $signed(io_boxXPosition_6) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_54) & _overlaps_6_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_6_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_0_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_0_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_55)
-     & _overlaps_7_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_1_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_1_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_55) & _overlaps_7_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_2_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_2_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_55) & _overlaps_7_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_3_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_55) & _overlaps_3_7_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_4_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_55) & _overlaps_4_7_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_5_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_55) & _overlaps_5_7_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_6_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_55) & _overlaps_6_7_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_8_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_8_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_55) & _overlaps_7_8_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_8_T_5 = $signed(io_boxYPosition_8) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_9_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_9_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_55) & _overlaps_7_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_10_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_10_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_55) & _overlaps_7_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_11_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_11_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_55) & _overlaps_7_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_12_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_12_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_55) & _overlaps_7_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_13_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_13_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_55) & _overlaps_7_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_14_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_14_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_55) & _overlaps_7_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_7_15_T_3 = $signed(io_boxYPosition_7) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_7_15_T_4 = $signed(io_boxXPosition_7) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_55) & _overlaps_7_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_7_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_0_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_0_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_56)
-     & _overlaps_8_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_1_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_1_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_56) & _overlaps_8_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_2_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_2_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_56) & _overlaps_8_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_3_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_56) & _overlaps_3_8_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_4_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_56) & _overlaps_4_8_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_5_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_56) & _overlaps_5_8_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_6_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_56) & _overlaps_6_8_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_7_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_56) & _overlaps_7_8_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_9_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_9_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_56) & _overlaps_8_9_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_9_T_5 = $signed(io_boxYPosition_9) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_10_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_10_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_56) & _overlaps_8_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_11_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_11_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_56) & _overlaps_8_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_12_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_12_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_56) & _overlaps_8_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_13_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_13_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_56) & _overlaps_8_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_14_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_14_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_56) & _overlaps_8_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_8_15_T_3 = $signed(io_boxYPosition_8) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_8_15_T_4 = $signed(io_boxXPosition_8) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_56) & _overlaps_8_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_8_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_0_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_0_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(xMaxB_57)
-     & _overlaps_9_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_1_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_1_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_57) & _overlaps_9_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_2_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_2_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_57) & _overlaps_9_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_3_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_57) & _overlaps_3_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_4_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_57) & _overlaps_4_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_5_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_57) & _overlaps_5_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_6_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_57) & _overlaps_6_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_7_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_57) & _overlaps_7_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_8_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_57) & _overlaps_8_9_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_10_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_10_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_57) & _overlaps_9_10_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_10_T_5 = $signed(io_boxYPosition_10) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_11_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_11_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_57) & _overlaps_9_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_12_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_12_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_57) & _overlaps_9_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_13_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_13_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_57) & _overlaps_9_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_14_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_14_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_57) & _overlaps_9_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_9_15_T_3 = $signed(io_boxYPosition_9) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_9_15_T_4 = $signed(io_boxXPosition_9) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_57) & _overlaps_9_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_9_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_10_0_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_0_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_58) & _overlaps_10_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_1_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_1_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_58) & _overlaps_10_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_2_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_2_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_58) & _overlaps_10_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_3_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_58) & _overlaps_3_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_4_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_58) & _overlaps_4_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_5_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_58) & _overlaps_5_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_6_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_58) & _overlaps_6_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_7_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_58) & _overlaps_7_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_8_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_58) & _overlaps_8_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_9_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_58) & _overlaps_9_10_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_11_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_11_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_58) & _overlaps_10_11_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_11_T_5 = $signed(io_boxYPosition_11) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_10_12_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_12_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_58) & _overlaps_10_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_10_13_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_13_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_58) & _overlaps_10_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_10_14_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_14_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_58) & _overlaps_10_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_10_15_T_3 = $signed(io_boxYPosition_10) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_10_15_T_4 = $signed(io_boxXPosition_10) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_58) & _overlaps_10_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_10_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_11_0_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_0_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_59) & _overlaps_11_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_1_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_1_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_59) & _overlaps_11_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_2_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_2_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_59) & _overlaps_11_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_3_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_59) & _overlaps_3_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_4_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_59) & _overlaps_4_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_5_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_59) & _overlaps_5_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_6_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_59) & _overlaps_6_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_7_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_59) & _overlaps_7_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_8_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_59) & _overlaps_8_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_9_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_59) & _overlaps_9_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_10_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_59) & _overlaps_10_11_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_12_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_12_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_59) & _overlaps_11_12_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_12_T_5 = $signed(io_boxYPosition_12) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_11_13_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_13_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_59) & _overlaps_11_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_11_14_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_14_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_59) & _overlaps_11_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_11_15_T_3 = $signed(io_boxYPosition_11) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_11_15_T_4 = $signed(io_boxXPosition_11) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_59) & _overlaps_11_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_11_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_12_0_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_0_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_60) & _overlaps_12_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_1_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_1_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_60) & _overlaps_12_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_2_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_2_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_60) & _overlaps_12_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_3_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_60) & _overlaps_3_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_4_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_60) & _overlaps_4_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_5_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_60) & _overlaps_5_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_6_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_60) & _overlaps_6_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_7_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_60) & _overlaps_7_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_8_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_60) & _overlaps_8_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_9_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_60) & _overlaps_9_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_10_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_60) & _overlaps_10_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_11_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_60) & _overlaps_11_12_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_13_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_13_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_60) & _overlaps_12_13_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_13_T_5 = $signed(io_boxYPosition_13) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_12_14_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_14_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_60) & _overlaps_12_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_12_15_T_3 = $signed(io_boxYPosition_12) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_12_15_T_4 = $signed(io_boxXPosition_12) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_60) & _overlaps_12_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_12_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_13_0_T_3 = $signed(io_boxYPosition_13) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_13_0_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_61) & _overlaps_13_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_1_T_3 = $signed(io_boxYPosition_13) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_13_1_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_61) & _overlaps_13_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_2_T_3 = $signed(io_boxYPosition_13) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_13_2_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_61) & _overlaps_13_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_3_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_61) & _overlaps_3_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_4_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_61) & _overlaps_4_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_5_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_61) & _overlaps_5_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_6_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_61) & _overlaps_6_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_7_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_61) & _overlaps_7_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_8_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_61) & _overlaps_8_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_9_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_61) & _overlaps_9_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_10_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_61) & _overlaps_10_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_11_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_61) & _overlaps_11_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_12_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_61) & _overlaps_12_13_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_14_T_3 = $signed(io_boxYPosition_13) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_13_14_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_61) & _overlaps_13_14_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_14_T_5 = $signed(io_boxYPosition_14) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_13_15_T_3 = $signed(io_boxYPosition_13) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_13_15_T_4 = $signed(io_boxXPosition_13) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_61) & _overlaps_13_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_13_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_14_0_T_3 = $signed(io_boxYPosition_14) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_14_0_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_62) & _overlaps_14_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_1_T_3 = $signed(io_boxYPosition_14) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_14_1_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_62) & _overlaps_14_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_2_T_3 = $signed(io_boxYPosition_14) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_14_2_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_62) & _overlaps_14_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_3_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_62) & _overlaps_3_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_4_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_62) & _overlaps_4_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_5_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_62) & _overlaps_5_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_6_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_62) & _overlaps_6_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_7_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_62) & _overlaps_7_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_8_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_62) & _overlaps_8_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_9_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_62) & _overlaps_9_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_10_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_62) & _overlaps_10_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_11_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_62) & _overlaps_11_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_12_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_62) & _overlaps_12_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_13_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_62) & _overlaps_13_14_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_15_T_3 = $signed(io_boxYPosition_14) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_14_15_T_4 = $signed(io_boxXPosition_14) < $signed(xMaxB_63) & $signed(io_boxXPosition_15) < $signed(
-    xMaxB_62) & _overlaps_14_15_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_14_15_T_5 = $signed(io_boxYPosition_15) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:35]
-  wire  _overlaps_15_0_T_3 = $signed(io_boxYPosition_15) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_15_0_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxA) & $signed(io_boxXPosition_0) < $signed(
-    xMaxB_63) & _overlaps_15_0_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_1_T_3 = $signed(io_boxYPosition_15) < $signed(yMaxB_1); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_15_1_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_1) & $signed(io_boxXPosition_1) < $signed(
-    xMaxB_63) & _overlaps_15_1_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_2_T_3 = $signed(io_boxYPosition_15) < $signed(yMaxB_2); // @[\\src\\main\\scala\\BoxDetection2.scala 28:16]
-  wire  _overlaps_15_2_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_2) & $signed(io_boxXPosition_2) < $signed(
-    xMaxB_63) & _overlaps_15_2_T_3; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_3_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxA_3) & $signed(io_boxXPosition_3) < $signed(
-    xMaxB_63) & _overlaps_3_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_4_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_52) & $signed(io_boxXPosition_4) < $signed(
-    xMaxB_63) & _overlaps_4_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_5_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_53) & $signed(io_boxXPosition_5) < $signed(
-    xMaxB_63) & _overlaps_5_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_6_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_54) & $signed(io_boxXPosition_6) < $signed(
-    xMaxB_63) & _overlaps_6_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_7_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_55) & $signed(io_boxXPosition_7) < $signed(
-    xMaxB_63) & _overlaps_7_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_8_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_56) & $signed(io_boxXPosition_8) < $signed(
-    xMaxB_63) & _overlaps_8_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_9_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_57) & $signed(io_boxXPosition_9) < $signed(
-    xMaxB_63) & _overlaps_9_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_10_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_58) & $signed(io_boxXPosition_10) < $signed(
-    xMaxB_63) & _overlaps_10_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_11_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_59) & $signed(io_boxXPosition_11) < $signed(
-    xMaxB_63) & _overlaps_11_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_12_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_60) & $signed(io_boxXPosition_12) < $signed(
-    xMaxB_63) & _overlaps_12_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_13_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_61) & $signed(io_boxXPosition_13) < $signed(
-    xMaxB_63) & _overlaps_13_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  wire  _overlaps_15_14_T_4 = $signed(io_boxXPosition_15) < $signed(xMaxB_62) & $signed(io_boxXPosition_14) < $signed(
-    xMaxB_63) & _overlaps_14_15_T_5; // @[\\src\\main\\scala\\BoxDetection2.scala 27:60]
-  reg  REG_0_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_0_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_3_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_4_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_5_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_6_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_7_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_8_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_9_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_10_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_11_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_12_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_13_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_14_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  reg  REG_15_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:24]
-  assign io_overlap_0_1 = REG_0_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_0_2 = REG_0_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_0 = REG_3_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_1 = REG_3_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_2 = REG_3_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_4 = REG_3_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_5 = REG_3_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_6 = REG_3_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_7 = REG_3_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_8 = REG_3_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_9 = REG_3_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_10 = REG_3_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_11 = REG_3_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_12 = REG_3_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_13 = REG_3_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_14 = REG_3_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_3_15 = REG_3_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_0 = REG_4_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_1 = REG_4_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_2 = REG_4_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_3 = REG_4_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_5 = REG_4_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_6 = REG_4_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_7 = REG_4_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_8 = REG_4_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_9 = REG_4_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_10 = REG_4_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_11 = REG_4_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_12 = REG_4_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_13 = REG_4_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_14 = REG_4_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_4_15 = REG_4_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_0 = REG_5_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_1 = REG_5_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_2 = REG_5_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_3 = REG_5_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_4 = REG_5_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_6 = REG_5_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_7 = REG_5_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_8 = REG_5_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_9 = REG_5_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_10 = REG_5_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_11 = REG_5_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_12 = REG_5_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_13 = REG_5_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_14 = REG_5_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_5_15 = REG_5_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_0 = REG_6_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_1 = REG_6_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_2 = REG_6_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_3 = REG_6_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_4 = REG_6_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_5 = REG_6_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_7 = REG_6_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_8 = REG_6_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_9 = REG_6_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_10 = REG_6_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_11 = REG_6_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_12 = REG_6_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_13 = REG_6_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_14 = REG_6_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_6_15 = REG_6_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_0 = REG_7_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_1 = REG_7_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_2 = REG_7_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_3 = REG_7_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_4 = REG_7_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_5 = REG_7_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_6 = REG_7_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_8 = REG_7_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_9 = REG_7_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_10 = REG_7_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_11 = REG_7_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_12 = REG_7_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_13 = REG_7_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_14 = REG_7_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_7_15 = REG_7_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_0 = REG_8_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_1 = REG_8_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_2 = REG_8_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_3 = REG_8_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_4 = REG_8_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_5 = REG_8_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_6 = REG_8_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_7 = REG_8_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_9 = REG_8_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_10 = REG_8_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_11 = REG_8_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_12 = REG_8_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_13 = REG_8_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_14 = REG_8_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_8_15 = REG_8_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_0 = REG_9_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_1 = REG_9_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_2 = REG_9_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_3 = REG_9_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_4 = REG_9_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_5 = REG_9_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_6 = REG_9_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_7 = REG_9_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_8 = REG_9_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_10 = REG_9_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_11 = REG_9_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_12 = REG_9_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_13 = REG_9_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_14 = REG_9_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_9_15 = REG_9_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_0 = REG_10_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_1 = REG_10_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_2 = REG_10_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_3 = REG_10_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_4 = REG_10_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_5 = REG_10_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_6 = REG_10_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_7 = REG_10_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_8 = REG_10_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_9 = REG_10_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_11 = REG_10_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_12 = REG_10_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_13 = REG_10_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_14 = REG_10_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_10_15 = REG_10_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_0 = REG_11_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_1 = REG_11_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_2 = REG_11_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_3 = REG_11_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_4 = REG_11_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_5 = REG_11_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_6 = REG_11_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_7 = REG_11_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_8 = REG_11_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_9 = REG_11_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_10 = REG_11_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_12 = REG_11_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_13 = REG_11_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_14 = REG_11_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_11_15 = REG_11_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_0 = REG_12_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_1 = REG_12_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_2 = REG_12_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_3 = REG_12_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_4 = REG_12_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_5 = REG_12_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_6 = REG_12_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_7 = REG_12_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_8 = REG_12_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_9 = REG_12_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_10 = REG_12_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_11 = REG_12_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_13 = REG_12_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_14 = REG_12_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_12_15 = REG_12_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_0 = REG_13_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_1 = REG_13_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_2 = REG_13_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_3 = REG_13_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_4 = REG_13_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_5 = REG_13_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_6 = REG_13_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_7 = REG_13_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_8 = REG_13_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_9 = REG_13_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_10 = REG_13_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_11 = REG_13_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_12 = REG_13_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_14 = REG_13_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_13_15 = REG_13_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_0 = REG_14_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_1 = REG_14_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_2 = REG_14_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_3 = REG_14_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_4 = REG_14_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_5 = REG_14_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_6 = REG_14_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_7 = REG_14_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_8 = REG_14_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_9 = REG_14_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_10 = REG_14_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_11 = REG_14_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_12 = REG_14_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_13 = REG_14_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_14_15 = REG_14_15; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_0 = REG_15_0; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_1 = REG_15_1; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_2 = REG_15_2; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_3 = REG_15_3; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_4 = REG_15_4; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_5 = REG_15_5; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_6 = REG_15_6; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_7 = REG_15_7; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_8 = REG_15_8; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_9 = REG_15_9; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_10 = REG_15_10; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_11 = REG_15_11; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_12 = REG_15_12; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_13 = REG_15_13; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  assign io_overlap_15_14 = REG_15_14; // @[\\src\\main\\scala\\BoxDetection2.scala 32:14]
-  always @(posedge clock) begin
-    REG_0_1 <= _overlaps_0_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_0_2 <= _overlaps_0_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxA); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_0 <= _overlaps_3_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_1 <= _overlaps_3_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_2 <= _overlaps_3_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_4 <= _overlaps_3_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_5 <= _overlaps_3_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_6 <= _overlaps_3_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_7 <= _overlaps_3_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_8 <= _overlaps_3_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_9 <= _overlaps_3_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_10 <= _overlaps_3_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_11 <= _overlaps_3_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_12 <= _overlaps_3_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_13 <= _overlaps_3_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_14 <= _overlaps_3_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_3_15 <= _overlaps_3_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxA_3); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_0 <= _overlaps_4_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_1 <= _overlaps_4_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_2 <= _overlaps_4_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_3 <= _overlaps_4_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_5 <= _overlaps_4_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_6 <= _overlaps_4_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_7 <= _overlaps_4_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_8 <= _overlaps_4_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_9 <= _overlaps_4_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_10 <= _overlaps_4_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_11 <= _overlaps_4_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_12 <= _overlaps_4_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_13 <= _overlaps_4_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_14 <= _overlaps_4_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_4_15 <= _overlaps_4_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_52); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_0 <= _overlaps_5_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_1 <= _overlaps_5_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_2 <= _overlaps_5_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_3 <= _overlaps_5_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_4 <= _overlaps_5_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_6 <= _overlaps_5_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_7 <= _overlaps_5_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_8 <= _overlaps_5_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_9 <= _overlaps_5_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_10 <= _overlaps_5_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_11 <= _overlaps_5_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_12 <= _overlaps_5_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_13 <= _overlaps_5_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_14 <= _overlaps_5_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_5_15 <= _overlaps_5_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_53); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_0 <= _overlaps_6_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_1 <= _overlaps_6_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_2 <= _overlaps_6_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_3 <= _overlaps_6_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_4 <= _overlaps_6_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_5 <= _overlaps_6_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_7 <= _overlaps_6_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_8 <= _overlaps_6_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_9 <= _overlaps_6_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_10 <= _overlaps_6_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_11 <= _overlaps_6_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_12 <= _overlaps_6_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_13 <= _overlaps_6_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_14 <= _overlaps_6_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_6_15 <= _overlaps_6_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_54); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_0 <= _overlaps_7_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_1 <= _overlaps_7_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_2 <= _overlaps_7_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_3 <= _overlaps_7_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_4 <= _overlaps_7_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_5 <= _overlaps_7_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_6 <= _overlaps_7_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_8 <= _overlaps_7_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_9 <= _overlaps_7_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_10 <= _overlaps_7_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_11 <= _overlaps_7_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_12 <= _overlaps_7_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_13 <= _overlaps_7_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_14 <= _overlaps_7_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_7_15 <= _overlaps_7_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_55); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_0 <= _overlaps_8_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_1 <= _overlaps_8_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_2 <= _overlaps_8_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_3 <= _overlaps_8_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_4 <= _overlaps_8_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_5 <= _overlaps_8_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_6 <= _overlaps_8_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_7 <= _overlaps_8_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_9 <= _overlaps_8_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_10 <= _overlaps_8_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_11 <= _overlaps_8_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_12 <= _overlaps_8_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_13 <= _overlaps_8_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_14 <= _overlaps_8_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_8_15 <= _overlaps_8_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_56); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_0 <= _overlaps_9_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_1 <= _overlaps_9_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_2 <= _overlaps_9_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_3 <= _overlaps_9_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_4 <= _overlaps_9_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_5 <= _overlaps_9_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_6 <= _overlaps_9_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_7 <= _overlaps_9_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_8 <= _overlaps_9_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_10 <= _overlaps_9_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_11 <= _overlaps_9_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_12 <= _overlaps_9_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_13 <= _overlaps_9_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_14 <= _overlaps_9_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_9_15 <= _overlaps_9_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_57); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_0 <= _overlaps_10_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_1 <= _overlaps_10_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_2 <= _overlaps_10_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_3 <= _overlaps_10_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_4 <= _overlaps_10_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_5 <= _overlaps_10_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_6 <= _overlaps_10_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_7 <= _overlaps_10_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_8 <= _overlaps_10_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_9 <= _overlaps_10_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_11 <= _overlaps_10_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_12 <= _overlaps_10_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_13 <= _overlaps_10_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_14 <= _overlaps_10_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_10_15 <= _overlaps_10_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_58); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_0 <= _overlaps_11_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_1 <= _overlaps_11_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_2 <= _overlaps_11_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_3 <= _overlaps_11_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_4 <= _overlaps_11_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_5 <= _overlaps_11_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_6 <= _overlaps_11_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_7 <= _overlaps_11_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_8 <= _overlaps_11_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_9 <= _overlaps_11_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_10 <= _overlaps_11_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_12 <= _overlaps_11_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_13 <= _overlaps_11_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_14 <= _overlaps_11_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_11_15 <= _overlaps_11_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_59); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_0 <= _overlaps_12_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_1 <= _overlaps_12_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_2 <= _overlaps_12_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_3 <= _overlaps_12_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_4 <= _overlaps_12_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_5 <= _overlaps_12_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_6 <= _overlaps_12_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_7 <= _overlaps_12_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_8 <= _overlaps_12_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_9 <= _overlaps_12_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_10 <= _overlaps_12_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_11 <= _overlaps_12_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_13 <= _overlaps_12_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_14 <= _overlaps_12_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_12_15 <= _overlaps_12_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_60); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_0 <= _overlaps_13_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_1 <= _overlaps_13_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_2 <= _overlaps_13_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_3 <= _overlaps_13_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_4 <= _overlaps_13_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_5 <= _overlaps_13_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_6 <= _overlaps_13_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_7 <= _overlaps_13_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_8 <= _overlaps_13_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_9 <= _overlaps_13_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_10 <= _overlaps_13_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_11 <= _overlaps_13_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_12 <= _overlaps_13_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_14 <= _overlaps_13_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_13_15 <= _overlaps_13_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_61); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_0 <= _overlaps_14_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_1 <= _overlaps_14_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_2 <= _overlaps_14_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_3 <= _overlaps_14_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_4 <= _overlaps_14_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_5 <= _overlaps_14_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_6 <= _overlaps_14_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_7 <= _overlaps_14_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_8 <= _overlaps_14_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_9 <= _overlaps_14_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_10 <= _overlaps_14_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_11 <= _overlaps_14_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_12 <= _overlaps_14_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_13 <= _overlaps_14_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_14_15 <= _overlaps_14_15_T_4 & $signed(io_boxYPosition_15) < $signed(yMaxB_62); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_0 <= _overlaps_15_0_T_4 & $signed(io_boxYPosition_0) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_1 <= _overlaps_15_1_T_4 & $signed(io_boxYPosition_1) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_2 <= _overlaps_15_2_T_4 & $signed(io_boxYPosition_2) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_3 <= _overlaps_15_3_T_4 & $signed(io_boxYPosition_3) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_4 <= _overlaps_15_4_T_4 & $signed(io_boxYPosition_4) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_5 <= _overlaps_15_5_T_4 & $signed(io_boxYPosition_5) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_6 <= _overlaps_15_6_T_4 & $signed(io_boxYPosition_6) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_7 <= _overlaps_15_7_T_4 & $signed(io_boxYPosition_7) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_8 <= _overlaps_15_8_T_4 & $signed(io_boxYPosition_8) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_9 <= _overlaps_15_9_T_4 & $signed(io_boxYPosition_9) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_10 <= _overlaps_15_10_T_4 & $signed(io_boxYPosition_10) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_11 <= _overlaps_15_11_T_4 & $signed(io_boxYPosition_11) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_12 <= _overlaps_15_12_T_4 & $signed(io_boxYPosition_12) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_13 <= _overlaps_15_13_T_4 & $signed(io_boxYPosition_13) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-    REG_15_14 <= _overlaps_15_14_T_4 & $signed(io_boxYPosition_14) < $signed(yMaxB_63); // @[\\src\\main\\scala\\BoxDetection2.scala 28:25]
-  end
-// Register and memory initialization
-`ifdef RANDOMIZE_GARBAGE_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_INVALID_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_REG_INIT
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-`define RANDOMIZE
-`endif
-`ifndef RANDOM
-`define RANDOM $random
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-  integer initvar;
-`endif
-`ifndef SYNTHESIS
-`ifdef FIRRTL_BEFORE_INITIAL
-`FIRRTL_BEFORE_INITIAL
-`endif
-initial begin
-  `ifdef RANDOMIZE
-    `ifdef INIT_RANDOM
-      `INIT_RANDOM
-    `endif
-    `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
-    `endif
-`ifdef RANDOMIZE_REG_INIT
-  _RAND_0 = {1{`RANDOM}};
-  REG_0_1 = _RAND_0[0:0];
-  _RAND_1 = {1{`RANDOM}};
-  REG_0_2 = _RAND_1[0:0];
-  _RAND_2 = {1{`RANDOM}};
-  REG_3_0 = _RAND_2[0:0];
-  _RAND_3 = {1{`RANDOM}};
-  REG_3_1 = _RAND_3[0:0];
-  _RAND_4 = {1{`RANDOM}};
-  REG_3_2 = _RAND_4[0:0];
-  _RAND_5 = {1{`RANDOM}};
-  REG_3_4 = _RAND_5[0:0];
-  _RAND_6 = {1{`RANDOM}};
-  REG_3_5 = _RAND_6[0:0];
-  _RAND_7 = {1{`RANDOM}};
-  REG_3_6 = _RAND_7[0:0];
-  _RAND_8 = {1{`RANDOM}};
-  REG_3_7 = _RAND_8[0:0];
-  _RAND_9 = {1{`RANDOM}};
-  REG_3_8 = _RAND_9[0:0];
-  _RAND_10 = {1{`RANDOM}};
-  REG_3_9 = _RAND_10[0:0];
-  _RAND_11 = {1{`RANDOM}};
-  REG_3_10 = _RAND_11[0:0];
-  _RAND_12 = {1{`RANDOM}};
-  REG_3_11 = _RAND_12[0:0];
-  _RAND_13 = {1{`RANDOM}};
-  REG_3_12 = _RAND_13[0:0];
-  _RAND_14 = {1{`RANDOM}};
-  REG_3_13 = _RAND_14[0:0];
-  _RAND_15 = {1{`RANDOM}};
-  REG_3_14 = _RAND_15[0:0];
-  _RAND_16 = {1{`RANDOM}};
-  REG_3_15 = _RAND_16[0:0];
-  _RAND_17 = {1{`RANDOM}};
-  REG_4_0 = _RAND_17[0:0];
-  _RAND_18 = {1{`RANDOM}};
-  REG_4_1 = _RAND_18[0:0];
-  _RAND_19 = {1{`RANDOM}};
-  REG_4_2 = _RAND_19[0:0];
-  _RAND_20 = {1{`RANDOM}};
-  REG_4_3 = _RAND_20[0:0];
-  _RAND_21 = {1{`RANDOM}};
-  REG_4_5 = _RAND_21[0:0];
-  _RAND_22 = {1{`RANDOM}};
-  REG_4_6 = _RAND_22[0:0];
-  _RAND_23 = {1{`RANDOM}};
-  REG_4_7 = _RAND_23[0:0];
-  _RAND_24 = {1{`RANDOM}};
-  REG_4_8 = _RAND_24[0:0];
-  _RAND_25 = {1{`RANDOM}};
-  REG_4_9 = _RAND_25[0:0];
-  _RAND_26 = {1{`RANDOM}};
-  REG_4_10 = _RAND_26[0:0];
-  _RAND_27 = {1{`RANDOM}};
-  REG_4_11 = _RAND_27[0:0];
-  _RAND_28 = {1{`RANDOM}};
-  REG_4_12 = _RAND_28[0:0];
-  _RAND_29 = {1{`RANDOM}};
-  REG_4_13 = _RAND_29[0:0];
-  _RAND_30 = {1{`RANDOM}};
-  REG_4_14 = _RAND_30[0:0];
-  _RAND_31 = {1{`RANDOM}};
-  REG_4_15 = _RAND_31[0:0];
-  _RAND_32 = {1{`RANDOM}};
-  REG_5_0 = _RAND_32[0:0];
-  _RAND_33 = {1{`RANDOM}};
-  REG_5_1 = _RAND_33[0:0];
-  _RAND_34 = {1{`RANDOM}};
-  REG_5_2 = _RAND_34[0:0];
-  _RAND_35 = {1{`RANDOM}};
-  REG_5_3 = _RAND_35[0:0];
-  _RAND_36 = {1{`RANDOM}};
-  REG_5_4 = _RAND_36[0:0];
-  _RAND_37 = {1{`RANDOM}};
-  REG_5_6 = _RAND_37[0:0];
-  _RAND_38 = {1{`RANDOM}};
-  REG_5_7 = _RAND_38[0:0];
-  _RAND_39 = {1{`RANDOM}};
-  REG_5_8 = _RAND_39[0:0];
-  _RAND_40 = {1{`RANDOM}};
-  REG_5_9 = _RAND_40[0:0];
-  _RAND_41 = {1{`RANDOM}};
-  REG_5_10 = _RAND_41[0:0];
-  _RAND_42 = {1{`RANDOM}};
-  REG_5_11 = _RAND_42[0:0];
-  _RAND_43 = {1{`RANDOM}};
-  REG_5_12 = _RAND_43[0:0];
-  _RAND_44 = {1{`RANDOM}};
-  REG_5_13 = _RAND_44[0:0];
-  _RAND_45 = {1{`RANDOM}};
-  REG_5_14 = _RAND_45[0:0];
-  _RAND_46 = {1{`RANDOM}};
-  REG_5_15 = _RAND_46[0:0];
-  _RAND_47 = {1{`RANDOM}};
-  REG_6_0 = _RAND_47[0:0];
-  _RAND_48 = {1{`RANDOM}};
-  REG_6_1 = _RAND_48[0:0];
-  _RAND_49 = {1{`RANDOM}};
-  REG_6_2 = _RAND_49[0:0];
-  _RAND_50 = {1{`RANDOM}};
-  REG_6_3 = _RAND_50[0:0];
-  _RAND_51 = {1{`RANDOM}};
-  REG_6_4 = _RAND_51[0:0];
-  _RAND_52 = {1{`RANDOM}};
-  REG_6_5 = _RAND_52[0:0];
-  _RAND_53 = {1{`RANDOM}};
-  REG_6_7 = _RAND_53[0:0];
-  _RAND_54 = {1{`RANDOM}};
-  REG_6_8 = _RAND_54[0:0];
-  _RAND_55 = {1{`RANDOM}};
-  REG_6_9 = _RAND_55[0:0];
-  _RAND_56 = {1{`RANDOM}};
-  REG_6_10 = _RAND_56[0:0];
-  _RAND_57 = {1{`RANDOM}};
-  REG_6_11 = _RAND_57[0:0];
-  _RAND_58 = {1{`RANDOM}};
-  REG_6_12 = _RAND_58[0:0];
-  _RAND_59 = {1{`RANDOM}};
-  REG_6_13 = _RAND_59[0:0];
-  _RAND_60 = {1{`RANDOM}};
-  REG_6_14 = _RAND_60[0:0];
-  _RAND_61 = {1{`RANDOM}};
-  REG_6_15 = _RAND_61[0:0];
-  _RAND_62 = {1{`RANDOM}};
-  REG_7_0 = _RAND_62[0:0];
-  _RAND_63 = {1{`RANDOM}};
-  REG_7_1 = _RAND_63[0:0];
-  _RAND_64 = {1{`RANDOM}};
-  REG_7_2 = _RAND_64[0:0];
-  _RAND_65 = {1{`RANDOM}};
-  REG_7_3 = _RAND_65[0:0];
-  _RAND_66 = {1{`RANDOM}};
-  REG_7_4 = _RAND_66[0:0];
-  _RAND_67 = {1{`RANDOM}};
-  REG_7_5 = _RAND_67[0:0];
-  _RAND_68 = {1{`RANDOM}};
-  REG_7_6 = _RAND_68[0:0];
-  _RAND_69 = {1{`RANDOM}};
-  REG_7_8 = _RAND_69[0:0];
-  _RAND_70 = {1{`RANDOM}};
-  REG_7_9 = _RAND_70[0:0];
-  _RAND_71 = {1{`RANDOM}};
-  REG_7_10 = _RAND_71[0:0];
-  _RAND_72 = {1{`RANDOM}};
-  REG_7_11 = _RAND_72[0:0];
-  _RAND_73 = {1{`RANDOM}};
-  REG_7_12 = _RAND_73[0:0];
-  _RAND_74 = {1{`RANDOM}};
-  REG_7_13 = _RAND_74[0:0];
-  _RAND_75 = {1{`RANDOM}};
-  REG_7_14 = _RAND_75[0:0];
-  _RAND_76 = {1{`RANDOM}};
-  REG_7_15 = _RAND_76[0:0];
-  _RAND_77 = {1{`RANDOM}};
-  REG_8_0 = _RAND_77[0:0];
-  _RAND_78 = {1{`RANDOM}};
-  REG_8_1 = _RAND_78[0:0];
-  _RAND_79 = {1{`RANDOM}};
-  REG_8_2 = _RAND_79[0:0];
-  _RAND_80 = {1{`RANDOM}};
-  REG_8_3 = _RAND_80[0:0];
-  _RAND_81 = {1{`RANDOM}};
-  REG_8_4 = _RAND_81[0:0];
-  _RAND_82 = {1{`RANDOM}};
-  REG_8_5 = _RAND_82[0:0];
-  _RAND_83 = {1{`RANDOM}};
-  REG_8_6 = _RAND_83[0:0];
-  _RAND_84 = {1{`RANDOM}};
-  REG_8_7 = _RAND_84[0:0];
-  _RAND_85 = {1{`RANDOM}};
-  REG_8_9 = _RAND_85[0:0];
-  _RAND_86 = {1{`RANDOM}};
-  REG_8_10 = _RAND_86[0:0];
-  _RAND_87 = {1{`RANDOM}};
-  REG_8_11 = _RAND_87[0:0];
-  _RAND_88 = {1{`RANDOM}};
-  REG_8_12 = _RAND_88[0:0];
-  _RAND_89 = {1{`RANDOM}};
-  REG_8_13 = _RAND_89[0:0];
-  _RAND_90 = {1{`RANDOM}};
-  REG_8_14 = _RAND_90[0:0];
-  _RAND_91 = {1{`RANDOM}};
-  REG_8_15 = _RAND_91[0:0];
-  _RAND_92 = {1{`RANDOM}};
-  REG_9_0 = _RAND_92[0:0];
-  _RAND_93 = {1{`RANDOM}};
-  REG_9_1 = _RAND_93[0:0];
-  _RAND_94 = {1{`RANDOM}};
-  REG_9_2 = _RAND_94[0:0];
-  _RAND_95 = {1{`RANDOM}};
-  REG_9_3 = _RAND_95[0:0];
-  _RAND_96 = {1{`RANDOM}};
-  REG_9_4 = _RAND_96[0:0];
-  _RAND_97 = {1{`RANDOM}};
-  REG_9_5 = _RAND_97[0:0];
-  _RAND_98 = {1{`RANDOM}};
-  REG_9_6 = _RAND_98[0:0];
-  _RAND_99 = {1{`RANDOM}};
-  REG_9_7 = _RAND_99[0:0];
-  _RAND_100 = {1{`RANDOM}};
-  REG_9_8 = _RAND_100[0:0];
-  _RAND_101 = {1{`RANDOM}};
-  REG_9_10 = _RAND_101[0:0];
-  _RAND_102 = {1{`RANDOM}};
-  REG_9_11 = _RAND_102[0:0];
-  _RAND_103 = {1{`RANDOM}};
-  REG_9_12 = _RAND_103[0:0];
-  _RAND_104 = {1{`RANDOM}};
-  REG_9_13 = _RAND_104[0:0];
-  _RAND_105 = {1{`RANDOM}};
-  REG_9_14 = _RAND_105[0:0];
-  _RAND_106 = {1{`RANDOM}};
-  REG_9_15 = _RAND_106[0:0];
-  _RAND_107 = {1{`RANDOM}};
-  REG_10_0 = _RAND_107[0:0];
-  _RAND_108 = {1{`RANDOM}};
-  REG_10_1 = _RAND_108[0:0];
-  _RAND_109 = {1{`RANDOM}};
-  REG_10_2 = _RAND_109[0:0];
-  _RAND_110 = {1{`RANDOM}};
-  REG_10_3 = _RAND_110[0:0];
-  _RAND_111 = {1{`RANDOM}};
-  REG_10_4 = _RAND_111[0:0];
-  _RAND_112 = {1{`RANDOM}};
-  REG_10_5 = _RAND_112[0:0];
-  _RAND_113 = {1{`RANDOM}};
-  REG_10_6 = _RAND_113[0:0];
-  _RAND_114 = {1{`RANDOM}};
-  REG_10_7 = _RAND_114[0:0];
-  _RAND_115 = {1{`RANDOM}};
-  REG_10_8 = _RAND_115[0:0];
-  _RAND_116 = {1{`RANDOM}};
-  REG_10_9 = _RAND_116[0:0];
-  _RAND_117 = {1{`RANDOM}};
-  REG_10_11 = _RAND_117[0:0];
-  _RAND_118 = {1{`RANDOM}};
-  REG_10_12 = _RAND_118[0:0];
-  _RAND_119 = {1{`RANDOM}};
-  REG_10_13 = _RAND_119[0:0];
-  _RAND_120 = {1{`RANDOM}};
-  REG_10_14 = _RAND_120[0:0];
-  _RAND_121 = {1{`RANDOM}};
-  REG_10_15 = _RAND_121[0:0];
-  _RAND_122 = {1{`RANDOM}};
-  REG_11_0 = _RAND_122[0:0];
-  _RAND_123 = {1{`RANDOM}};
-  REG_11_1 = _RAND_123[0:0];
-  _RAND_124 = {1{`RANDOM}};
-  REG_11_2 = _RAND_124[0:0];
-  _RAND_125 = {1{`RANDOM}};
-  REG_11_3 = _RAND_125[0:0];
-  _RAND_126 = {1{`RANDOM}};
-  REG_11_4 = _RAND_126[0:0];
-  _RAND_127 = {1{`RANDOM}};
-  REG_11_5 = _RAND_127[0:0];
-  _RAND_128 = {1{`RANDOM}};
-  REG_11_6 = _RAND_128[0:0];
-  _RAND_129 = {1{`RANDOM}};
-  REG_11_7 = _RAND_129[0:0];
-  _RAND_130 = {1{`RANDOM}};
-  REG_11_8 = _RAND_130[0:0];
-  _RAND_131 = {1{`RANDOM}};
-  REG_11_9 = _RAND_131[0:0];
-  _RAND_132 = {1{`RANDOM}};
-  REG_11_10 = _RAND_132[0:0];
-  _RAND_133 = {1{`RANDOM}};
-  REG_11_12 = _RAND_133[0:0];
-  _RAND_134 = {1{`RANDOM}};
-  REG_11_13 = _RAND_134[0:0];
-  _RAND_135 = {1{`RANDOM}};
-  REG_11_14 = _RAND_135[0:0];
-  _RAND_136 = {1{`RANDOM}};
-  REG_11_15 = _RAND_136[0:0];
-  _RAND_137 = {1{`RANDOM}};
-  REG_12_0 = _RAND_137[0:0];
-  _RAND_138 = {1{`RANDOM}};
-  REG_12_1 = _RAND_138[0:0];
-  _RAND_139 = {1{`RANDOM}};
-  REG_12_2 = _RAND_139[0:0];
-  _RAND_140 = {1{`RANDOM}};
-  REG_12_3 = _RAND_140[0:0];
-  _RAND_141 = {1{`RANDOM}};
-  REG_12_4 = _RAND_141[0:0];
-  _RAND_142 = {1{`RANDOM}};
-  REG_12_5 = _RAND_142[0:0];
-  _RAND_143 = {1{`RANDOM}};
-  REG_12_6 = _RAND_143[0:0];
-  _RAND_144 = {1{`RANDOM}};
-  REG_12_7 = _RAND_144[0:0];
-  _RAND_145 = {1{`RANDOM}};
-  REG_12_8 = _RAND_145[0:0];
-  _RAND_146 = {1{`RANDOM}};
-  REG_12_9 = _RAND_146[0:0];
-  _RAND_147 = {1{`RANDOM}};
-  REG_12_10 = _RAND_147[0:0];
-  _RAND_148 = {1{`RANDOM}};
-  REG_12_11 = _RAND_148[0:0];
-  _RAND_149 = {1{`RANDOM}};
-  REG_12_13 = _RAND_149[0:0];
-  _RAND_150 = {1{`RANDOM}};
-  REG_12_14 = _RAND_150[0:0];
-  _RAND_151 = {1{`RANDOM}};
-  REG_12_15 = _RAND_151[0:0];
-  _RAND_152 = {1{`RANDOM}};
-  REG_13_0 = _RAND_152[0:0];
-  _RAND_153 = {1{`RANDOM}};
-  REG_13_1 = _RAND_153[0:0];
-  _RAND_154 = {1{`RANDOM}};
-  REG_13_2 = _RAND_154[0:0];
-  _RAND_155 = {1{`RANDOM}};
-  REG_13_3 = _RAND_155[0:0];
-  _RAND_156 = {1{`RANDOM}};
-  REG_13_4 = _RAND_156[0:0];
-  _RAND_157 = {1{`RANDOM}};
-  REG_13_5 = _RAND_157[0:0];
-  _RAND_158 = {1{`RANDOM}};
-  REG_13_6 = _RAND_158[0:0];
-  _RAND_159 = {1{`RANDOM}};
-  REG_13_7 = _RAND_159[0:0];
-  _RAND_160 = {1{`RANDOM}};
-  REG_13_8 = _RAND_160[0:0];
-  _RAND_161 = {1{`RANDOM}};
-  REG_13_9 = _RAND_161[0:0];
-  _RAND_162 = {1{`RANDOM}};
-  REG_13_10 = _RAND_162[0:0];
-  _RAND_163 = {1{`RANDOM}};
-  REG_13_11 = _RAND_163[0:0];
-  _RAND_164 = {1{`RANDOM}};
-  REG_13_12 = _RAND_164[0:0];
-  _RAND_165 = {1{`RANDOM}};
-  REG_13_14 = _RAND_165[0:0];
-  _RAND_166 = {1{`RANDOM}};
-  REG_13_15 = _RAND_166[0:0];
-  _RAND_167 = {1{`RANDOM}};
-  REG_14_0 = _RAND_167[0:0];
-  _RAND_168 = {1{`RANDOM}};
-  REG_14_1 = _RAND_168[0:0];
-  _RAND_169 = {1{`RANDOM}};
-  REG_14_2 = _RAND_169[0:0];
-  _RAND_170 = {1{`RANDOM}};
-  REG_14_3 = _RAND_170[0:0];
-  _RAND_171 = {1{`RANDOM}};
-  REG_14_4 = _RAND_171[0:0];
-  _RAND_172 = {1{`RANDOM}};
-  REG_14_5 = _RAND_172[0:0];
-  _RAND_173 = {1{`RANDOM}};
-  REG_14_6 = _RAND_173[0:0];
-  _RAND_174 = {1{`RANDOM}};
-  REG_14_7 = _RAND_174[0:0];
-  _RAND_175 = {1{`RANDOM}};
-  REG_14_8 = _RAND_175[0:0];
-  _RAND_176 = {1{`RANDOM}};
-  REG_14_9 = _RAND_176[0:0];
-  _RAND_177 = {1{`RANDOM}};
-  REG_14_10 = _RAND_177[0:0];
-  _RAND_178 = {1{`RANDOM}};
-  REG_14_11 = _RAND_178[0:0];
-  _RAND_179 = {1{`RANDOM}};
-  REG_14_12 = _RAND_179[0:0];
-  _RAND_180 = {1{`RANDOM}};
-  REG_14_13 = _RAND_180[0:0];
-  _RAND_181 = {1{`RANDOM}};
-  REG_14_15 = _RAND_181[0:0];
-  _RAND_182 = {1{`RANDOM}};
-  REG_15_0 = _RAND_182[0:0];
-  _RAND_183 = {1{`RANDOM}};
-  REG_15_1 = _RAND_183[0:0];
-  _RAND_184 = {1{`RANDOM}};
-  REG_15_2 = _RAND_184[0:0];
-  _RAND_185 = {1{`RANDOM}};
-  REG_15_3 = _RAND_185[0:0];
-  _RAND_186 = {1{`RANDOM}};
-  REG_15_4 = _RAND_186[0:0];
-  _RAND_187 = {1{`RANDOM}};
-  REG_15_5 = _RAND_187[0:0];
-  _RAND_188 = {1{`RANDOM}};
-  REG_15_6 = _RAND_188[0:0];
-  _RAND_189 = {1{`RANDOM}};
-  REG_15_7 = _RAND_189[0:0];
-  _RAND_190 = {1{`RANDOM}};
-  REG_15_8 = _RAND_190[0:0];
-  _RAND_191 = {1{`RANDOM}};
-  REG_15_9 = _RAND_191[0:0];
-  _RAND_192 = {1{`RANDOM}};
-  REG_15_10 = _RAND_192[0:0];
-  _RAND_193 = {1{`RANDOM}};
-  REG_15_11 = _RAND_193[0:0];
-  _RAND_194 = {1{`RANDOM}};
-  REG_15_12 = _RAND_194[0:0];
-  _RAND_195 = {1{`RANDOM}};
-  REG_15_13 = _RAND_195[0:0];
-  _RAND_196 = {1{`RANDOM}};
-  REG_15_14 = _RAND_196[0:0];
-`endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end // initial
-`ifdef FIRRTL_AFTER_INITIAL
-`FIRRTL_AFTER_INITIAL
-`endif
-`endif // SYNTHESIS
-endmodule
-module GameLogicTask3(
+module GameLogicTask4(
   input         clock,
   input         reset,
-  input         io_btnC, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  input         io_btnU, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  input         io_btnL, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  input         io_btnR, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  input         io_btnD, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [3:0]  io_songInput, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [3:0]  io_songStop, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_1, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_2, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_3, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_4, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_5, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_6, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_7, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_8, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_9, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_10, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_11, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_12, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_13, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_14, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [10:0] io_spriteXPosition_15, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_1, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_2, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_3, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_4, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_5, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_6, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_7, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_8, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_9, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_10, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_11, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_12, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_13, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_14, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [9:0]  io_spriteYPosition_15, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_1, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_2, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_3, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_4, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_5, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_6, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_7, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_8, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_9, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_10, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_11, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_12, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_13, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_14, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteVisible_15, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_spriteFlipHorizontal_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  input         io_newFrame, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output        io_frameUpdateDone // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
+  input         io_btnU, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  input         io_btnL, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  input         io_btnR, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  input         io_btnD, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output [10:0] io_spriteXPosition_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output [9:0]  io_spriteYPosition_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output        io_spriteFlipHorizontal_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output        io_spriteFlipVertical_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output        io_spriteRotation45_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output        io_spriteRotation90_3, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  input         io_newFrame, // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
+  output        io_frameUpdateDone // @[\\src\\main\\scala\\GameLogicTask4.scala 12:14]
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -7606,1099 +4628,126 @@ module GameLogicTask3(
   reg [31:0] _RAND_6;
   reg [31:0] _RAND_7;
   reg [31:0] _RAND_8;
-  reg [31:0] _RAND_9;
-  reg [31:0] _RAND_10;
-  reg [31:0] _RAND_11;
-  reg [31:0] _RAND_12;
-  reg [31:0] _RAND_13;
-  reg [31:0] _RAND_14;
-  reg [31:0] _RAND_15;
-  reg [31:0] _RAND_16;
-  reg [31:0] _RAND_17;
-  reg [31:0] _RAND_18;
-  reg [31:0] _RAND_19;
-  reg [31:0] _RAND_20;
-  reg [31:0] _RAND_21;
-  reg [31:0] _RAND_22;
-  reg [31:0] _RAND_23;
-  reg [31:0] _RAND_24;
-  reg [31:0] _RAND_25;
-  reg [31:0] _RAND_26;
-  reg [31:0] _RAND_27;
-  reg [31:0] _RAND_28;
-  reg [31:0] _RAND_29;
-  reg [31:0] _RAND_30;
-  reg [31:0] _RAND_31;
-  reg [31:0] _RAND_32;
-  reg [31:0] _RAND_33;
 `endif // RANDOMIZE_REG_INIT
-  wire  boxDetection_clock; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [10:0] boxDetection_io_boxXPosition_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire [9:0] boxDetection_io_boxYPosition_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_0_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_0_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_3_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_4_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_5_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_6_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_7_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_8_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_9_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_10_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_11_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_12_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_13_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_14_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  wire  boxDetection_io_overlap_15_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-  reg [1:0] stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 111:25]
-  reg [10:0] sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 114:28]
-  reg [9:0] sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-  reg  sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 121:41]
-  wire  overlaps_3 = boxDetection_io_overlap_3_0 | boxDetection_io_overlap_3_1 | boxDetection_io_overlap_3_2 |
-    boxDetection_io_overlap_3_4 | boxDetection_io_overlap_3_5 | boxDetection_io_overlap_3_6 |
-    boxDetection_io_overlap_3_7 | boxDetection_io_overlap_3_8 | boxDetection_io_overlap_3_9 |
-    boxDetection_io_overlap_3_10 | boxDetection_io_overlap_3_11 | boxDetection_io_overlap_3_12 |
-    boxDetection_io_overlap_3_13 | boxDetection_io_overlap_3_14 | boxDetection_io_overlap_3_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_4 = boxDetection_io_overlap_4_0 | boxDetection_io_overlap_4_1 | boxDetection_io_overlap_4_2 |
-    boxDetection_io_overlap_4_3 | boxDetection_io_overlap_4_5 | boxDetection_io_overlap_4_6 |
-    boxDetection_io_overlap_4_7 | boxDetection_io_overlap_4_8 | boxDetection_io_overlap_4_9 |
-    boxDetection_io_overlap_4_10 | boxDetection_io_overlap_4_11 | boxDetection_io_overlap_4_12 |
-    boxDetection_io_overlap_4_13 | boxDetection_io_overlap_4_14 | boxDetection_io_overlap_4_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_5 = boxDetection_io_overlap_5_0 | boxDetection_io_overlap_5_1 | boxDetection_io_overlap_5_2 |
-    boxDetection_io_overlap_5_3 | boxDetection_io_overlap_5_4 | boxDetection_io_overlap_5_6 |
-    boxDetection_io_overlap_5_7 | boxDetection_io_overlap_5_8 | boxDetection_io_overlap_5_9 |
-    boxDetection_io_overlap_5_10 | boxDetection_io_overlap_5_11 | boxDetection_io_overlap_5_12 |
-    boxDetection_io_overlap_5_13 | boxDetection_io_overlap_5_14 | boxDetection_io_overlap_5_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_6 = boxDetection_io_overlap_6_0 | boxDetection_io_overlap_6_1 | boxDetection_io_overlap_6_2 |
-    boxDetection_io_overlap_6_3 | boxDetection_io_overlap_6_4 | boxDetection_io_overlap_6_5 |
-    boxDetection_io_overlap_6_7 | boxDetection_io_overlap_6_8 | boxDetection_io_overlap_6_9 |
-    boxDetection_io_overlap_6_10 | boxDetection_io_overlap_6_11 | boxDetection_io_overlap_6_12 |
-    boxDetection_io_overlap_6_13 | boxDetection_io_overlap_6_14 | boxDetection_io_overlap_6_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_7 = boxDetection_io_overlap_7_0 | boxDetection_io_overlap_7_1 | boxDetection_io_overlap_7_2 |
-    boxDetection_io_overlap_7_3 | boxDetection_io_overlap_7_4 | boxDetection_io_overlap_7_5 |
-    boxDetection_io_overlap_7_6 | boxDetection_io_overlap_7_8 | boxDetection_io_overlap_7_9 |
-    boxDetection_io_overlap_7_10 | boxDetection_io_overlap_7_11 | boxDetection_io_overlap_7_12 |
-    boxDetection_io_overlap_7_13 | boxDetection_io_overlap_7_14 | boxDetection_io_overlap_7_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_8 = boxDetection_io_overlap_8_0 | boxDetection_io_overlap_8_1 | boxDetection_io_overlap_8_2 |
-    boxDetection_io_overlap_8_3 | boxDetection_io_overlap_8_4 | boxDetection_io_overlap_8_5 |
-    boxDetection_io_overlap_8_6 | boxDetection_io_overlap_8_7 | boxDetection_io_overlap_8_9 |
-    boxDetection_io_overlap_8_10 | boxDetection_io_overlap_8_11 | boxDetection_io_overlap_8_12 |
-    boxDetection_io_overlap_8_13 | boxDetection_io_overlap_8_14 | boxDetection_io_overlap_8_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_9 = boxDetection_io_overlap_9_0 | boxDetection_io_overlap_9_1 | boxDetection_io_overlap_9_2 |
-    boxDetection_io_overlap_9_3 | boxDetection_io_overlap_9_4 | boxDetection_io_overlap_9_5 |
-    boxDetection_io_overlap_9_6 | boxDetection_io_overlap_9_7 | boxDetection_io_overlap_9_8 |
-    boxDetection_io_overlap_9_10 | boxDetection_io_overlap_9_11 | boxDetection_io_overlap_9_12 |
-    boxDetection_io_overlap_9_13 | boxDetection_io_overlap_9_14 | boxDetection_io_overlap_9_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_10 = boxDetection_io_overlap_10_0 | boxDetection_io_overlap_10_1 | boxDetection_io_overlap_10_2 |
-    boxDetection_io_overlap_10_3 | boxDetection_io_overlap_10_4 | boxDetection_io_overlap_10_5 |
-    boxDetection_io_overlap_10_6 | boxDetection_io_overlap_10_7 | boxDetection_io_overlap_10_8 |
-    boxDetection_io_overlap_10_9 | boxDetection_io_overlap_10_11 | boxDetection_io_overlap_10_12 |
-    boxDetection_io_overlap_10_13 | boxDetection_io_overlap_10_14 | boxDetection_io_overlap_10_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_11 = boxDetection_io_overlap_11_0 | boxDetection_io_overlap_11_1 | boxDetection_io_overlap_11_2 |
-    boxDetection_io_overlap_11_3 | boxDetection_io_overlap_11_4 | boxDetection_io_overlap_11_5 |
-    boxDetection_io_overlap_11_6 | boxDetection_io_overlap_11_7 | boxDetection_io_overlap_11_8 |
-    boxDetection_io_overlap_11_9 | boxDetection_io_overlap_11_10 | boxDetection_io_overlap_11_12 |
-    boxDetection_io_overlap_11_13 | boxDetection_io_overlap_11_14 | boxDetection_io_overlap_11_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_12 = boxDetection_io_overlap_12_0 | boxDetection_io_overlap_12_1 | boxDetection_io_overlap_12_2 |
-    boxDetection_io_overlap_12_3 | boxDetection_io_overlap_12_4 | boxDetection_io_overlap_12_5 |
-    boxDetection_io_overlap_12_6 | boxDetection_io_overlap_12_7 | boxDetection_io_overlap_12_8 |
-    boxDetection_io_overlap_12_9 | boxDetection_io_overlap_12_10 | boxDetection_io_overlap_12_11 |
-    boxDetection_io_overlap_12_13 | boxDetection_io_overlap_12_14 | boxDetection_io_overlap_12_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_13 = boxDetection_io_overlap_13_0 | boxDetection_io_overlap_13_1 | boxDetection_io_overlap_13_2 |
-    boxDetection_io_overlap_13_3 | boxDetection_io_overlap_13_4 | boxDetection_io_overlap_13_5 |
-    boxDetection_io_overlap_13_6 | boxDetection_io_overlap_13_7 | boxDetection_io_overlap_13_8 |
-    boxDetection_io_overlap_13_9 | boxDetection_io_overlap_13_10 | boxDetection_io_overlap_13_11 |
-    boxDetection_io_overlap_13_12 | boxDetection_io_overlap_13_14 | boxDetection_io_overlap_13_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_14 = boxDetection_io_overlap_14_0 | boxDetection_io_overlap_14_1 | boxDetection_io_overlap_14_2 |
-    boxDetection_io_overlap_14_3 | boxDetection_io_overlap_14_4 | boxDetection_io_overlap_14_5 |
-    boxDetection_io_overlap_14_6 | boxDetection_io_overlap_14_7 | boxDetection_io_overlap_14_8 |
-    boxDetection_io_overlap_14_9 | boxDetection_io_overlap_14_10 | boxDetection_io_overlap_14_11 |
-    boxDetection_io_overlap_14_12 | boxDetection_io_overlap_14_13 | boxDetection_io_overlap_14_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  wire  overlaps_15 = boxDetection_io_overlap_15_0 | boxDetection_io_overlap_15_1 | boxDetection_io_overlap_15_2 |
-    boxDetection_io_overlap_15_3 | boxDetection_io_overlap_15_4 | boxDetection_io_overlap_15_5 |
-    boxDetection_io_overlap_15_6 | boxDetection_io_overlap_15_7 | boxDetection_io_overlap_15_8 |
-    boxDetection_io_overlap_15_9 | boxDetection_io_overlap_15_10 | boxDetection_io_overlap_15_11 |
-    boxDetection_io_overlap_15_12 | boxDetection_io_overlap_15_13 | boxDetection_io_overlap_15_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 136:18]
-  reg [10:0] movingPos_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg [10:0] movingPos_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-  reg  turn_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  reg  turn_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-  wire [1:0] _movingPos_1_T_2 = 2'sh0 - 2'sh1; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [1:0] _movingPos_1_T_3 = turn_1 ? $signed(_movingPos_1_T_2) : $signed(2'sh1); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_135 = {{9{_movingPos_1_T_3[1]}},_movingPos_1_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_1_T_6 = $signed(movingPos_1) + $signed(_GEN_135); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_1 = $signed(movingPos_1) > 11'sh280 | turn_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [2:0] _movingPos_2_T_2 = 3'sh0 - 3'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [2:0] _movingPos_2_T_3 = turn_2 ? $signed(_movingPos_2_T_2) : $signed(3'sh2); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_136 = {{8{_movingPos_2_T_3[2]}},_movingPos_2_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_2_T_6 = $signed(movingPos_2) + $signed(_GEN_136); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_3 = $signed(movingPos_2) > 11'sh280 | turn_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [2:0] _movingPos_3_T_2 = 3'sh0 - 3'sh3; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [2:0] _movingPos_3_T_3 = turn_3 ? $signed(_movingPos_3_T_2) : $signed(3'sh3); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_137 = {{8{_movingPos_3_T_3[2]}},_movingPos_3_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_3_T_6 = $signed(movingPos_3) + $signed(_GEN_137); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_5 = $signed(movingPos_3) > 11'sh280 | turn_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [3:0] _movingPos_4_T_2 = 4'sh0 - 4'sh4; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [3:0] _movingPos_4_T_3 = turn_4 ? $signed(_movingPos_4_T_2) : $signed(4'sh4); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_138 = {{7{_movingPos_4_T_3[3]}},_movingPos_4_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_4_T_6 = $signed(movingPos_4) + $signed(_GEN_138); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_7 = $signed(movingPos_4) > 11'sh280 | turn_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [3:0] _movingPos_5_T_2 = 4'sh0 - 4'sh5; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [3:0] _movingPos_5_T_3 = turn_5 ? $signed(_movingPos_5_T_2) : $signed(4'sh5); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_139 = {{7{_movingPos_5_T_3[3]}},_movingPos_5_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_5_T_6 = $signed(movingPos_5) + $signed(_GEN_139); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_9 = $signed(movingPos_5) > 11'sh280 | turn_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [3:0] _movingPos_6_T_2 = 4'sh0 - 4'sh6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [3:0] _movingPos_6_T_3 = turn_6 ? $signed(_movingPos_6_T_2) : $signed(4'sh6); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_140 = {{7{_movingPos_6_T_3[3]}},_movingPos_6_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_6_T_6 = $signed(movingPos_6) + $signed(_GEN_140); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_11 = $signed(movingPos_6) > 11'sh280 | turn_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [3:0] _movingPos_7_T_2 = 4'sh0 - 4'sh7; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [3:0] _movingPos_7_T_3 = turn_7 ? $signed(_movingPos_7_T_2) : $signed(4'sh7); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_141 = {{7{_movingPos_7_T_3[3]}},_movingPos_7_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_7_T_6 = $signed(movingPos_7) + $signed(_GEN_141); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_13 = $signed(movingPos_7) > 11'sh280 | turn_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_8_T_2 = 5'sh0 - 5'sh8; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_8_T_3 = turn_8 ? $signed(_movingPos_8_T_2) : $signed(5'sh8); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_142 = {{6{_movingPos_8_T_3[4]}},_movingPos_8_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_8_T_6 = $signed(movingPos_8) + $signed(_GEN_142); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_15 = $signed(movingPos_8) > 11'sh280 | turn_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_9_T_2 = 5'sh0 - 5'sh9; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_9_T_3 = turn_9 ? $signed(_movingPos_9_T_2) : $signed(5'sh9); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_143 = {{6{_movingPos_9_T_3[4]}},_movingPos_9_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_9_T_6 = $signed(movingPos_9) + $signed(_GEN_143); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_17 = $signed(movingPos_9) > 11'sh280 | turn_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_10_T_2 = 5'sh0 - 5'sha; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_10_T_3 = turn_10 ? $signed(_movingPos_10_T_2) : $signed(5'sha); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_144 = {{6{_movingPos_10_T_3[4]}},_movingPos_10_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_10_T_6 = $signed(movingPos_10) + $signed(_GEN_144); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_19 = $signed(movingPos_10) > 11'sh280 | turn_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_11_T_2 = 5'sh0 - 5'shb; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_11_T_3 = turn_11 ? $signed(_movingPos_11_T_2) : $signed(5'shb); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_145 = {{6{_movingPos_11_T_3[4]}},_movingPos_11_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_11_T_6 = $signed(movingPos_11) + $signed(_GEN_145); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_21 = $signed(movingPos_11) > 11'sh280 | turn_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_12_T_2 = 5'sh0 - 5'shc; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_12_T_3 = turn_12 ? $signed(_movingPos_12_T_2) : $signed(5'shc); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_146 = {{6{_movingPos_12_T_3[4]}},_movingPos_12_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_12_T_6 = $signed(movingPos_12) + $signed(_GEN_146); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_23 = $signed(movingPos_12) > 11'sh280 | turn_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_13_T_2 = 5'sh0 - 5'shd; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_13_T_3 = turn_13 ? $signed(_movingPos_13_T_2) : $signed(5'shd); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_147 = {{6{_movingPos_13_T_3[4]}},_movingPos_13_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_13_T_6 = $signed(movingPos_13) + $signed(_GEN_147); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_25 = $signed(movingPos_13) > 11'sh280 | turn_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_14_T_2 = 5'sh0 - 5'she; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_14_T_3 = turn_14 ? $signed(_movingPos_14_T_2) : $signed(5'she); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_148 = {{6{_movingPos_14_T_3[4]}},_movingPos_14_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_14_T_6 = $signed(movingPos_14) + $signed(_GEN_148); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_27 = $signed(movingPos_14) > 11'sh280 | turn_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [4:0] _movingPos_15_T_2 = 5'sh0 - 5'shf; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:53]
-  wire [4:0] _movingPos_15_T_3 = turn_15 ? $signed(_movingPos_15_T_2) : $signed(5'shf); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:43]
-  wire [10:0] _GEN_149 = {{6{_movingPos_15_T_3[4]}},_movingPos_15_T_3}; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire [10:0] _movingPos_15_T_6 = $signed(movingPos_15) + $signed(_GEN_149); // @[\\src\\main\\scala\\GameLogicTask3.scala 207:38]
-  wire  _GEN_29 = $signed(movingPos_15) > 11'sh280 | turn_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19 209:35 210:19]
-  wire [9:0] _sprite0YReg_T_2 = $signed(sprite0YReg) + 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 219:38]
-  wire [9:0] _GEN_31 = $signed(sprite0YReg) < 10'sh1a8 ? $signed(_sprite0YReg_T_2) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 219:23 115:28]
-  wire  _GEN_32 = $signed(sprite0YReg) < 10'sh1a8 ? 1'h0 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 220:36 121:41]
-  wire [1:0] _GEN_33 = $signed(sprite0YReg) < 10'sh1a8 ? 2'h3 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 221:23 90:14]
-  wire [9:0] _sprite0YReg_T_5 = $signed(sprite0YReg) - 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 226:38]
-  wire [9:0] _GEN_34 = $signed(sprite0YReg) > 10'sh60 ? $signed(_sprite0YReg_T_5) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 225:36 226:23 115:28]
-  wire  _GEN_35 = $signed(sprite0YReg) > 10'sh60 | sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 225:36 227:36 121:41]
-  wire [1:0] _GEN_36 = $signed(sprite0YReg) > 10'sh60 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 225:36 228:23 90:14]
-  wire [9:0] _GEN_37 = io_btnU ? $signed(_GEN_34) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27 115:28]
-  wire  _GEN_38 = io_btnU ? _GEN_35 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27 121:41]
-  wire [1:0] _GEN_39 = io_btnU ? _GEN_36 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27 90:14]
-  wire  _GEN_41 = io_btnD ? _GEN_32 : _GEN_38; // @[\\src\\main\\scala\\GameLogicTask3.scala 217:20]
-  wire [1:0] _GEN_42 = io_btnD ? _GEN_33 : _GEN_39; // @[\\src\\main\\scala\\GameLogicTask3.scala 217:20]
-  wire [1:0] _GEN_43 = io_btnC ? 2'h1 : _GEN_42; // @[\\src\\main\\scala\\GameLogicTask3.scala 234:20 235:21]
-  wire [10:0] _sprite0XReg_T_2 = $signed(sprite0XReg) + 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 239:38]
-  wire [10:0] _GEN_44 = $signed(sprite0XReg) < 11'sh240 ? $signed(_sprite0XReg_T_2) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 238:47 239:23 114:28]
-  wire  _GEN_45 = $signed(sprite0XReg) < 11'sh240 ? 1'h0 : _GEN_41; // @[\\src\\main\\scala\\GameLogicTask3.scala 238:47 240:36]
-  wire [2:0] _GEN_46 = $signed(sprite0XReg) < 11'sh240 ? 3'h4 : {{1'd0}, _GEN_43}; // @[\\src\\main\\scala\\GameLogicTask3.scala 238:47 241:23]
-  wire [10:0] _sprite0XReg_T_5 = $signed(sprite0XReg) - 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 246:38]
-  wire [10:0] _GEN_47 = $signed(sprite0XReg) > 11'sh20 ? $signed(_sprite0XReg_T_5) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 245:34 246:23 114:28]
-  wire  _GEN_48 = $signed(sprite0XReg) > 11'sh20 | _GEN_41; // @[\\src\\main\\scala\\GameLogicTask3.scala 245:34 247:36]
-  wire [1:0] _GEN_49 = $signed(sprite0XReg) > 11'sh20 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 245:34 248:22 91:14]
-  wire [10:0] _GEN_50 = io_btnL ? $signed(_GEN_47) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 244:27 114:28]
-  wire  _GEN_51 = io_btnL ? _GEN_48 : _GEN_41; // @[\\src\\main\\scala\\GameLogicTask3.scala 244:27]
-  wire [1:0] _GEN_52 = io_btnL ? _GEN_49 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 244:27 91:14]
-  wire [2:0] _GEN_55 = io_btnR ? _GEN_46 : {{1'd0}, _GEN_43}; // @[\\src\\main\\scala\\GameLogicTask3.scala 237:21]
-  wire [1:0] _GEN_56 = io_btnR ? 2'h0 : _GEN_52; // @[\\src\\main\\scala\\GameLogicTask3.scala 237:21 91:14]
-  wire [8:0] _GEN_60 = 2'h1 == stateReg ? $signed(9'shc8) : $signed(9'sh0); // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 192:27 208:31]
-  wire [2:0] _GEN_92 = 2'h1 == stateReg ? _GEN_55 : 3'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 90:14]
-  wire [1:0] _GEN_94 = 2'h1 == stateReg ? _GEN_56 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 91:14]
-  wire  _GEN_96 = 2'h1 == stateReg ? 1'h0 : 2'h2 == stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 106:22]
-  wire [8:0] _GEN_99 = 2'h0 == stateReg ? $signed(9'sh0) : $signed(_GEN_60); // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 192:27]
-  wire [2:0] _GEN_131 = 2'h0 == stateReg ? 3'h0 : _GEN_92; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 90:14]
-  wire [1:0] _GEN_133 = 2'h0 == stateReg ? 2'h0 : _GEN_94; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 91:14]
-  BoxDetection2 boxDetection ( // @[\\src\\main\\scala\\GameLogicTask3.scala 123:28]
-    .clock(boxDetection_clock),
-    .io_boxXPosition_0(boxDetection_io_boxXPosition_0),
-    .io_boxXPosition_1(boxDetection_io_boxXPosition_1),
-    .io_boxXPosition_2(boxDetection_io_boxXPosition_2),
-    .io_boxXPosition_3(boxDetection_io_boxXPosition_3),
-    .io_boxXPosition_4(boxDetection_io_boxXPosition_4),
-    .io_boxXPosition_5(boxDetection_io_boxXPosition_5),
-    .io_boxXPosition_6(boxDetection_io_boxXPosition_6),
-    .io_boxXPosition_7(boxDetection_io_boxXPosition_7),
-    .io_boxXPosition_8(boxDetection_io_boxXPosition_8),
-    .io_boxXPosition_9(boxDetection_io_boxXPosition_9),
-    .io_boxXPosition_10(boxDetection_io_boxXPosition_10),
-    .io_boxXPosition_11(boxDetection_io_boxXPosition_11),
-    .io_boxXPosition_12(boxDetection_io_boxXPosition_12),
-    .io_boxXPosition_13(boxDetection_io_boxXPosition_13),
-    .io_boxXPosition_14(boxDetection_io_boxXPosition_14),
-    .io_boxXPosition_15(boxDetection_io_boxXPosition_15),
-    .io_boxYPosition_0(boxDetection_io_boxYPosition_0),
-    .io_boxYPosition_1(boxDetection_io_boxYPosition_1),
-    .io_boxYPosition_2(boxDetection_io_boxYPosition_2),
-    .io_boxYPosition_3(boxDetection_io_boxYPosition_3),
-    .io_boxYPosition_4(boxDetection_io_boxYPosition_4),
-    .io_boxYPosition_5(boxDetection_io_boxYPosition_5),
-    .io_boxYPosition_6(boxDetection_io_boxYPosition_6),
-    .io_boxYPosition_7(boxDetection_io_boxYPosition_7),
-    .io_boxYPosition_8(boxDetection_io_boxYPosition_8),
-    .io_boxYPosition_9(boxDetection_io_boxYPosition_9),
-    .io_boxYPosition_10(boxDetection_io_boxYPosition_10),
-    .io_boxYPosition_11(boxDetection_io_boxYPosition_11),
-    .io_boxYPosition_12(boxDetection_io_boxYPosition_12),
-    .io_boxYPosition_13(boxDetection_io_boxYPosition_13),
-    .io_boxYPosition_14(boxDetection_io_boxYPosition_14),
-    .io_boxYPosition_15(boxDetection_io_boxYPosition_15),
-    .io_overlap_0_1(boxDetection_io_overlap_0_1),
-    .io_overlap_0_2(boxDetection_io_overlap_0_2),
-    .io_overlap_3_0(boxDetection_io_overlap_3_0),
-    .io_overlap_3_1(boxDetection_io_overlap_3_1),
-    .io_overlap_3_2(boxDetection_io_overlap_3_2),
-    .io_overlap_3_4(boxDetection_io_overlap_3_4),
-    .io_overlap_3_5(boxDetection_io_overlap_3_5),
-    .io_overlap_3_6(boxDetection_io_overlap_3_6),
-    .io_overlap_3_7(boxDetection_io_overlap_3_7),
-    .io_overlap_3_8(boxDetection_io_overlap_3_8),
-    .io_overlap_3_9(boxDetection_io_overlap_3_9),
-    .io_overlap_3_10(boxDetection_io_overlap_3_10),
-    .io_overlap_3_11(boxDetection_io_overlap_3_11),
-    .io_overlap_3_12(boxDetection_io_overlap_3_12),
-    .io_overlap_3_13(boxDetection_io_overlap_3_13),
-    .io_overlap_3_14(boxDetection_io_overlap_3_14),
-    .io_overlap_3_15(boxDetection_io_overlap_3_15),
-    .io_overlap_4_0(boxDetection_io_overlap_4_0),
-    .io_overlap_4_1(boxDetection_io_overlap_4_1),
-    .io_overlap_4_2(boxDetection_io_overlap_4_2),
-    .io_overlap_4_3(boxDetection_io_overlap_4_3),
-    .io_overlap_4_5(boxDetection_io_overlap_4_5),
-    .io_overlap_4_6(boxDetection_io_overlap_4_6),
-    .io_overlap_4_7(boxDetection_io_overlap_4_7),
-    .io_overlap_4_8(boxDetection_io_overlap_4_8),
-    .io_overlap_4_9(boxDetection_io_overlap_4_9),
-    .io_overlap_4_10(boxDetection_io_overlap_4_10),
-    .io_overlap_4_11(boxDetection_io_overlap_4_11),
-    .io_overlap_4_12(boxDetection_io_overlap_4_12),
-    .io_overlap_4_13(boxDetection_io_overlap_4_13),
-    .io_overlap_4_14(boxDetection_io_overlap_4_14),
-    .io_overlap_4_15(boxDetection_io_overlap_4_15),
-    .io_overlap_5_0(boxDetection_io_overlap_5_0),
-    .io_overlap_5_1(boxDetection_io_overlap_5_1),
-    .io_overlap_5_2(boxDetection_io_overlap_5_2),
-    .io_overlap_5_3(boxDetection_io_overlap_5_3),
-    .io_overlap_5_4(boxDetection_io_overlap_5_4),
-    .io_overlap_5_6(boxDetection_io_overlap_5_6),
-    .io_overlap_5_7(boxDetection_io_overlap_5_7),
-    .io_overlap_5_8(boxDetection_io_overlap_5_8),
-    .io_overlap_5_9(boxDetection_io_overlap_5_9),
-    .io_overlap_5_10(boxDetection_io_overlap_5_10),
-    .io_overlap_5_11(boxDetection_io_overlap_5_11),
-    .io_overlap_5_12(boxDetection_io_overlap_5_12),
-    .io_overlap_5_13(boxDetection_io_overlap_5_13),
-    .io_overlap_5_14(boxDetection_io_overlap_5_14),
-    .io_overlap_5_15(boxDetection_io_overlap_5_15),
-    .io_overlap_6_0(boxDetection_io_overlap_6_0),
-    .io_overlap_6_1(boxDetection_io_overlap_6_1),
-    .io_overlap_6_2(boxDetection_io_overlap_6_2),
-    .io_overlap_6_3(boxDetection_io_overlap_6_3),
-    .io_overlap_6_4(boxDetection_io_overlap_6_4),
-    .io_overlap_6_5(boxDetection_io_overlap_6_5),
-    .io_overlap_6_7(boxDetection_io_overlap_6_7),
-    .io_overlap_6_8(boxDetection_io_overlap_6_8),
-    .io_overlap_6_9(boxDetection_io_overlap_6_9),
-    .io_overlap_6_10(boxDetection_io_overlap_6_10),
-    .io_overlap_6_11(boxDetection_io_overlap_6_11),
-    .io_overlap_6_12(boxDetection_io_overlap_6_12),
-    .io_overlap_6_13(boxDetection_io_overlap_6_13),
-    .io_overlap_6_14(boxDetection_io_overlap_6_14),
-    .io_overlap_6_15(boxDetection_io_overlap_6_15),
-    .io_overlap_7_0(boxDetection_io_overlap_7_0),
-    .io_overlap_7_1(boxDetection_io_overlap_7_1),
-    .io_overlap_7_2(boxDetection_io_overlap_7_2),
-    .io_overlap_7_3(boxDetection_io_overlap_7_3),
-    .io_overlap_7_4(boxDetection_io_overlap_7_4),
-    .io_overlap_7_5(boxDetection_io_overlap_7_5),
-    .io_overlap_7_6(boxDetection_io_overlap_7_6),
-    .io_overlap_7_8(boxDetection_io_overlap_7_8),
-    .io_overlap_7_9(boxDetection_io_overlap_7_9),
-    .io_overlap_7_10(boxDetection_io_overlap_7_10),
-    .io_overlap_7_11(boxDetection_io_overlap_7_11),
-    .io_overlap_7_12(boxDetection_io_overlap_7_12),
-    .io_overlap_7_13(boxDetection_io_overlap_7_13),
-    .io_overlap_7_14(boxDetection_io_overlap_7_14),
-    .io_overlap_7_15(boxDetection_io_overlap_7_15),
-    .io_overlap_8_0(boxDetection_io_overlap_8_0),
-    .io_overlap_8_1(boxDetection_io_overlap_8_1),
-    .io_overlap_8_2(boxDetection_io_overlap_8_2),
-    .io_overlap_8_3(boxDetection_io_overlap_8_3),
-    .io_overlap_8_4(boxDetection_io_overlap_8_4),
-    .io_overlap_8_5(boxDetection_io_overlap_8_5),
-    .io_overlap_8_6(boxDetection_io_overlap_8_6),
-    .io_overlap_8_7(boxDetection_io_overlap_8_7),
-    .io_overlap_8_9(boxDetection_io_overlap_8_9),
-    .io_overlap_8_10(boxDetection_io_overlap_8_10),
-    .io_overlap_8_11(boxDetection_io_overlap_8_11),
-    .io_overlap_8_12(boxDetection_io_overlap_8_12),
-    .io_overlap_8_13(boxDetection_io_overlap_8_13),
-    .io_overlap_8_14(boxDetection_io_overlap_8_14),
-    .io_overlap_8_15(boxDetection_io_overlap_8_15),
-    .io_overlap_9_0(boxDetection_io_overlap_9_0),
-    .io_overlap_9_1(boxDetection_io_overlap_9_1),
-    .io_overlap_9_2(boxDetection_io_overlap_9_2),
-    .io_overlap_9_3(boxDetection_io_overlap_9_3),
-    .io_overlap_9_4(boxDetection_io_overlap_9_4),
-    .io_overlap_9_5(boxDetection_io_overlap_9_5),
-    .io_overlap_9_6(boxDetection_io_overlap_9_6),
-    .io_overlap_9_7(boxDetection_io_overlap_9_7),
-    .io_overlap_9_8(boxDetection_io_overlap_9_8),
-    .io_overlap_9_10(boxDetection_io_overlap_9_10),
-    .io_overlap_9_11(boxDetection_io_overlap_9_11),
-    .io_overlap_9_12(boxDetection_io_overlap_9_12),
-    .io_overlap_9_13(boxDetection_io_overlap_9_13),
-    .io_overlap_9_14(boxDetection_io_overlap_9_14),
-    .io_overlap_9_15(boxDetection_io_overlap_9_15),
-    .io_overlap_10_0(boxDetection_io_overlap_10_0),
-    .io_overlap_10_1(boxDetection_io_overlap_10_1),
-    .io_overlap_10_2(boxDetection_io_overlap_10_2),
-    .io_overlap_10_3(boxDetection_io_overlap_10_3),
-    .io_overlap_10_4(boxDetection_io_overlap_10_4),
-    .io_overlap_10_5(boxDetection_io_overlap_10_5),
-    .io_overlap_10_6(boxDetection_io_overlap_10_6),
-    .io_overlap_10_7(boxDetection_io_overlap_10_7),
-    .io_overlap_10_8(boxDetection_io_overlap_10_8),
-    .io_overlap_10_9(boxDetection_io_overlap_10_9),
-    .io_overlap_10_11(boxDetection_io_overlap_10_11),
-    .io_overlap_10_12(boxDetection_io_overlap_10_12),
-    .io_overlap_10_13(boxDetection_io_overlap_10_13),
-    .io_overlap_10_14(boxDetection_io_overlap_10_14),
-    .io_overlap_10_15(boxDetection_io_overlap_10_15),
-    .io_overlap_11_0(boxDetection_io_overlap_11_0),
-    .io_overlap_11_1(boxDetection_io_overlap_11_1),
-    .io_overlap_11_2(boxDetection_io_overlap_11_2),
-    .io_overlap_11_3(boxDetection_io_overlap_11_3),
-    .io_overlap_11_4(boxDetection_io_overlap_11_4),
-    .io_overlap_11_5(boxDetection_io_overlap_11_5),
-    .io_overlap_11_6(boxDetection_io_overlap_11_6),
-    .io_overlap_11_7(boxDetection_io_overlap_11_7),
-    .io_overlap_11_8(boxDetection_io_overlap_11_8),
-    .io_overlap_11_9(boxDetection_io_overlap_11_9),
-    .io_overlap_11_10(boxDetection_io_overlap_11_10),
-    .io_overlap_11_12(boxDetection_io_overlap_11_12),
-    .io_overlap_11_13(boxDetection_io_overlap_11_13),
-    .io_overlap_11_14(boxDetection_io_overlap_11_14),
-    .io_overlap_11_15(boxDetection_io_overlap_11_15),
-    .io_overlap_12_0(boxDetection_io_overlap_12_0),
-    .io_overlap_12_1(boxDetection_io_overlap_12_1),
-    .io_overlap_12_2(boxDetection_io_overlap_12_2),
-    .io_overlap_12_3(boxDetection_io_overlap_12_3),
-    .io_overlap_12_4(boxDetection_io_overlap_12_4),
-    .io_overlap_12_5(boxDetection_io_overlap_12_5),
-    .io_overlap_12_6(boxDetection_io_overlap_12_6),
-    .io_overlap_12_7(boxDetection_io_overlap_12_7),
-    .io_overlap_12_8(boxDetection_io_overlap_12_8),
-    .io_overlap_12_9(boxDetection_io_overlap_12_9),
-    .io_overlap_12_10(boxDetection_io_overlap_12_10),
-    .io_overlap_12_11(boxDetection_io_overlap_12_11),
-    .io_overlap_12_13(boxDetection_io_overlap_12_13),
-    .io_overlap_12_14(boxDetection_io_overlap_12_14),
-    .io_overlap_12_15(boxDetection_io_overlap_12_15),
-    .io_overlap_13_0(boxDetection_io_overlap_13_0),
-    .io_overlap_13_1(boxDetection_io_overlap_13_1),
-    .io_overlap_13_2(boxDetection_io_overlap_13_2),
-    .io_overlap_13_3(boxDetection_io_overlap_13_3),
-    .io_overlap_13_4(boxDetection_io_overlap_13_4),
-    .io_overlap_13_5(boxDetection_io_overlap_13_5),
-    .io_overlap_13_6(boxDetection_io_overlap_13_6),
-    .io_overlap_13_7(boxDetection_io_overlap_13_7),
-    .io_overlap_13_8(boxDetection_io_overlap_13_8),
-    .io_overlap_13_9(boxDetection_io_overlap_13_9),
-    .io_overlap_13_10(boxDetection_io_overlap_13_10),
-    .io_overlap_13_11(boxDetection_io_overlap_13_11),
-    .io_overlap_13_12(boxDetection_io_overlap_13_12),
-    .io_overlap_13_14(boxDetection_io_overlap_13_14),
-    .io_overlap_13_15(boxDetection_io_overlap_13_15),
-    .io_overlap_14_0(boxDetection_io_overlap_14_0),
-    .io_overlap_14_1(boxDetection_io_overlap_14_1),
-    .io_overlap_14_2(boxDetection_io_overlap_14_2),
-    .io_overlap_14_3(boxDetection_io_overlap_14_3),
-    .io_overlap_14_4(boxDetection_io_overlap_14_4),
-    .io_overlap_14_5(boxDetection_io_overlap_14_5),
-    .io_overlap_14_6(boxDetection_io_overlap_14_6),
-    .io_overlap_14_7(boxDetection_io_overlap_14_7),
-    .io_overlap_14_8(boxDetection_io_overlap_14_8),
-    .io_overlap_14_9(boxDetection_io_overlap_14_9),
-    .io_overlap_14_10(boxDetection_io_overlap_14_10),
-    .io_overlap_14_11(boxDetection_io_overlap_14_11),
-    .io_overlap_14_12(boxDetection_io_overlap_14_12),
-    .io_overlap_14_13(boxDetection_io_overlap_14_13),
-    .io_overlap_14_15(boxDetection_io_overlap_14_15),
-    .io_overlap_15_0(boxDetection_io_overlap_15_0),
-    .io_overlap_15_1(boxDetection_io_overlap_15_1),
-    .io_overlap_15_2(boxDetection_io_overlap_15_2),
-    .io_overlap_15_3(boxDetection_io_overlap_15_3),
-    .io_overlap_15_4(boxDetection_io_overlap_15_4),
-    .io_overlap_15_5(boxDetection_io_overlap_15_5),
-    .io_overlap_15_6(boxDetection_io_overlap_15_6),
-    .io_overlap_15_7(boxDetection_io_overlap_15_7),
-    .io_overlap_15_8(boxDetection_io_overlap_15_8),
-    .io_overlap_15_9(boxDetection_io_overlap_15_9),
-    .io_overlap_15_10(boxDetection_io_overlap_15_10),
-    .io_overlap_15_11(boxDetection_io_overlap_15_11),
-    .io_overlap_15_12(boxDetection_io_overlap_15_12),
-    .io_overlap_15_13(boxDetection_io_overlap_15_13),
-    .io_overlap_15_14(boxDetection_io_overlap_15_14)
-  );
-  assign io_songInput = {{1'd0}, _GEN_131};
-  assign io_songStop = {{2'd0}, _GEN_133};
-  assign io_spriteXPosition_0 = sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 179:25]
-  assign io_spriteXPosition_1 = movingPos_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_2 = movingPos_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_3 = movingPos_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_4 = movingPos_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_5 = movingPos_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_6 = movingPos_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_7 = movingPos_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_8 = movingPos_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_9 = movingPos_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_10 = movingPos_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_11 = movingPos_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_12 = movingPos_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_13 = movingPos_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_14 = movingPos_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteXPosition_15 = movingPos_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 191:27]
-  assign io_spriteYPosition_0 = sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 180:25]
-  assign io_spriteYPosition_1 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_2 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_3 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_4 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_5 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_6 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_7 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_8 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_9 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_10 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_11 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_12 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_13 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_14 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteYPosition_15 = {{1{_GEN_99[8]}},_GEN_99};
-  assign io_spriteVisible_1 = ~boxDetection_io_overlap_0_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 158:26]
-  assign io_spriteVisible_2 = ~boxDetection_io_overlap_0_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 165:27]
-  assign io_spriteVisible_3 = ~overlaps_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_4 = ~overlaps_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_5 = ~overlaps_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_6 = ~overlaps_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_7 = ~overlaps_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_8 = ~overlaps_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_9 = ~overlaps_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_10 = ~overlaps_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_11 = ~overlaps_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_12 = ~overlaps_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_13 = ~overlaps_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_14 = ~overlaps_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteVisible_15 = ~overlaps_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 138:28]
-  assign io_spriteFlipHorizontal_0 = sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 181:30]
-  assign io_frameUpdateDone = 2'h0 == stateReg ? 1'h0 : _GEN_96; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20 106:22]
-  assign boxDetection_clock = clock;
-  assign boxDetection_io_boxXPosition_0 = io_spriteXPosition_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_1 = io_spriteXPosition_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_2 = io_spriteXPosition_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_3 = io_spriteXPosition_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_4 = io_spriteXPosition_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_5 = io_spriteXPosition_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_6 = io_spriteXPosition_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_7 = io_spriteXPosition_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_8 = io_spriteXPosition_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_9 = io_spriteXPosition_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_10 = io_spriteXPosition_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_11 = io_spriteXPosition_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_12 = io_spriteXPosition_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_13 = io_spriteXPosition_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_14 = io_spriteXPosition_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxXPosition_15 = io_spriteXPosition_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 126:37]
-  assign boxDetection_io_boxYPosition_0 = io_spriteYPosition_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_1 = io_spriteYPosition_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_2 = io_spriteYPosition_2; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_3 = io_spriteYPosition_3; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_4 = io_spriteYPosition_4; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_5 = io_spriteYPosition_5; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_6 = io_spriteYPosition_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_7 = io_spriteYPosition_7; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_8 = io_spriteYPosition_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_9 = io_spriteYPosition_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_10 = io_spriteYPosition_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_11 = io_spriteYPosition_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_12 = io_spriteYPosition_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_13 = io_spriteYPosition_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_14 = io_spriteYPosition_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
-  assign boxDetection_io_boxYPosition_15 = io_spriteYPosition_15; // @[\\src\\main\\scala\\GameLogicTask3.scala 127:37]
+  reg [1:0] stateReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 88:25]
+  reg [10:0] sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 90:28]
+  reg [9:0] sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 91:28]
+  reg  rot45Reg; // @[\\src\\main\\scala\\GameLogicTask4.scala 93:25]
+  reg  rot90Reg; // @[\\src\\main\\scala\\GameLogicTask4.scala 94:25]
+  reg  horiReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 95:24]
+  reg  vertReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 96:24]
+  reg [7:0] frameCounter; // @[\\src\\main\\scala\\GameLogicTask4.scala 98:29]
+  reg [4:0] rotCounter; // @[\\src\\main\\scala\\GameLogicTask4.scala 99:27]
+  wire [7:0] _frameCounter_T_1 = frameCounter + 8'h1; // @[\\src\\main\\scala\\GameLogicTask4.scala 132:34]
+  wire [4:0] _rotCounter_T_1 = rotCounter + 5'h1; // @[\\src\\main\\scala\\GameLogicTask4.scala 135:32]
+  wire  _T_4 = rotCounter == 5'h1; // @[\\src\\main\\scala\\GameLogicTask4.scala 157:23]
+  wire  _T_5 = rotCounter == 5'h2; // @[\\src\\main\\scala\\GameLogicTask4.scala 160:23]
+  wire  _GEN_8 = rotCounter == 5'h3 | _T_5; // @[\\src\\main\\scala\\GameLogicTask4.scala 163:32 164:18]
+  wire  _GEN_9 = rotCounter == 5'h3 | _T_4; // @[\\src\\main\\scala\\GameLogicTask4.scala 163:32 165:18]
+  wire  _T_7 = rotCounter == 5'h4; // @[\\src\\main\\scala\\GameLogicTask4.scala 167:23]
+  wire  _GEN_11 = rotCounter == 5'h5 | _T_7; // @[\\src\\main\\scala\\GameLogicTask4.scala 171:32 172:17]
+  wire  _GEN_12 = rotCounter == 5'h5 | _GEN_9; // @[\\src\\main\\scala\\GameLogicTask4.scala 171:32 174:18]
+  wire  _GEN_13 = rotCounter == 5'h6 | _GEN_11; // @[\\src\\main\\scala\\GameLogicTask4.scala 176:32 177:17]
+  wire  _GEN_14 = rotCounter == 5'h6 | _GEN_8; // @[\\src\\main\\scala\\GameLogicTask4.scala 176:32 179:18]
+  wire  _GEN_15 = rotCounter == 5'h7 | _GEN_13; // @[\\src\\main\\scala\\GameLogicTask4.scala 181:32 182:17]
+  wire  _GEN_16 = rotCounter == 5'h7 | _GEN_14; // @[\\src\\main\\scala\\GameLogicTask4.scala 181:32 184:18]
+  wire  _GEN_17 = rotCounter == 5'h7 | _GEN_12; // @[\\src\\main\\scala\\GameLogicTask4.scala 181:32 185:18]
+  wire [9:0] _sprite0YReg_T_2 = $signed(sprite0YReg) + 10'sh2; // @[\\src\\main\\scala\\GameLogicTask4.scala 189:38]
+  wire [9:0] _GEN_18 = $signed(sprite0YReg) < 10'sh1a8 ? $signed(_sprite0YReg_T_2) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 188:47 189:23 91:28]
+  wire [9:0] _sprite0YReg_T_5 = $signed(sprite0YReg) - 10'sh2; // @[\\src\\main\\scala\\GameLogicTask4.scala 194:38]
+  wire [9:0] _GEN_19 = $signed(sprite0YReg) > 10'sh60 ? $signed(_sprite0YReg_T_5) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 193:36 194:23 91:28]
+  wire [9:0] _GEN_20 = io_btnU ? $signed(_GEN_19) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 192:27 91:28]
+  wire [10:0] _sprite0XReg_T_2 = $signed(sprite0XReg) + 11'sh2; // @[\\src\\main\\scala\\GameLogicTask4.scala 201:38]
+  wire [10:0] _GEN_22 = $signed(sprite0XReg) < 11'sh240 ? $signed(_sprite0XReg_T_2) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 200:47 201:23 90:28]
+  wire [10:0] _sprite0XReg_T_5 = $signed(sprite0XReg) - 11'sh2; // @[\\src\\main\\scala\\GameLogicTask4.scala 206:38]
+  wire [10:0] _GEN_23 = $signed(sprite0XReg) > 11'sh20 ? $signed(_sprite0XReg_T_5) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 205:34 206:23 90:28]
+  wire [10:0] _GEN_24 = io_btnL ? $signed(_GEN_23) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask4.scala 204:27 90:28]
+  wire  _GEN_35 = 2'h1 == stateReg ? 1'h0 : 2'h2 == stateReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20 82:22]
+  assign io_spriteXPosition_3 = sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 103:25]
+  assign io_spriteYPosition_3 = sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 104:25]
+  assign io_spriteFlipHorizontal_3 = horiReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 107:30]
+  assign io_spriteFlipVertical_3 = vertReg; // @[\\src\\main\\scala\\GameLogicTask4.scala 108:28]
+  assign io_spriteRotation45_3 = rot45Reg; // @[\\src\\main\\scala\\GameLogicTask4.scala 105:26]
+  assign io_spriteRotation90_3 = rot90Reg; // @[\\src\\main\\scala\\GameLogicTask4.scala 106:26]
+  assign io_frameUpdateDone = 2'h0 == stateReg ? 1'h0 : _GEN_35; // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20 82:22]
   always @(posedge clock) begin
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 111:25]
-      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 111:25]
-    end else if (2'h0 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 200:25]
-        stateReg <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask3.scala 201:18]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 88:25]
+      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 88:25]
+    end else if (2'h0 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 146:25]
+        stateReg <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask4.scala 147:18]
       end
-    end else if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      stateReg <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask3.scala 266:16]
-    end else if (2'h2 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 271:16]
+    end else if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      stateReg <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask4.scala 209:16]
+    end else if (2'h2 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 213:16]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 114:28]
-      sprite0XReg <= 11'sh20; // @[\\src\\main\\scala\\GameLogicTask3.scala 114:28]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 237:21]
-          sprite0XReg <= _GEN_44;
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 90:28]
+      sprite0XReg <= 11'sh20; // @[\\src\\main\\scala\\GameLogicTask4.scala 90:28]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 199:21]
+          sprite0XReg <= _GEN_22;
         end else begin
-          sprite0XReg <= _GEN_50;
+          sprite0XReg <= _GEN_24;
         end
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-      sprite0YReg <= 10'sh148; // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if (io_btnD) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 217:20]
-          sprite0YReg <= _GEN_31;
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 91:28]
+      sprite0YReg <= 10'sh168; // @[\\src\\main\\scala\\GameLogicTask4.scala 91:28]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        if (io_btnD) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 187:21]
+          sprite0YReg <= _GEN_18;
         end else begin
-          sprite0YReg <= _GEN_37;
+          sprite0YReg <= _GEN_20;
         end
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 121:41]
-      sprite0FlipHorizontalReg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 121:41]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 237:21]
-          sprite0FlipHorizontalReg <= _GEN_45;
-        end else begin
-          sprite0FlipHorizontalReg <= _GEN_51;
-        end
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 93:25]
+      rot45Reg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 93:25]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        rot45Reg <= _GEN_17;
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_1 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_1 <= _movingPos_1_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 94:25]
+      rot90Reg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 94:25]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        rot90Reg <= _GEN_16;
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_2 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_2 <= _movingPos_2_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 95:24]
+      horiReg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 95:24]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        horiReg <= _GEN_15;
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_3 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_3 <= _movingPos_3_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 96:24]
+      vertReg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 96:24]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 144:20]
+        vertReg <= _GEN_15;
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_4 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_4 <= _movingPos_4_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 98:29]
+      frameCounter <= 8'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 98:29]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 131:21]
+      if (frameCounter == 8'h78) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 133:34]
+        frameCounter <= 8'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 134:20]
+      end else begin
+        frameCounter <= _frameCounter_T_1; // @[\\src\\main\\scala\\GameLogicTask4.scala 132:18]
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_5 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_5 <= _movingPos_5_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_6 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_6 <= _movingPos_6_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_7 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_7 <= _movingPos_7_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_8 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_8 <= _movingPos_8_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_9 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_9 <= _movingPos_9_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_10 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_10 <= _movingPos_10_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_11 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_11 <= _movingPos_11_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_12 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_12 <= _movingPos_12_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_13 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_13 <= _movingPos_13_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_14 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_14 <= _movingPos_14_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-      movingPos_15 <= 11'sh0; // @[\\src\\main\\scala\\GameLogicTask3.scala 188:26]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        movingPos_15 <= _movingPos_15_T_6; // @[\\src\\main\\scala\\GameLogicTask3.scala 207:22]
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_1 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_1) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_1 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_1 <= _GEN_1;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_2 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_2) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_2 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_2 <= _GEN_3;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_3 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_3) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_3 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_3 <= _GEN_5;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_4 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_4) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_4 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_4 <= _GEN_7;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_5 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_5) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_5 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_5 <= _GEN_9;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_6 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_6) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_6 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_6 <= _GEN_11;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_7 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_7) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_7 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_7 <= _GEN_13;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_8 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_8) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_8 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_8 <= _GEN_15;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_9 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_9) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_9 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_9 <= _GEN_17;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_10 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_10) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_10 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_10 <= _GEN_19;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_11 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_11) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_11 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_11 <= _GEN_21;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_12 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_12) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_12 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_12 <= _GEN_23;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_13 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_13) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_13 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_13 <= _GEN_25;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_14 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_14) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_14 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_14 <= _GEN_27;
-        end
-      end
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-      turn_15 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 196:19]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 198:20]
-        if ($signed(movingPos_15) < 11'sh0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 212:32]
-          turn_15 <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 213:18]
-        end else begin
-          turn_15 <= _GEN_29;
-        end
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 99:27]
+      rotCounter <= 5'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 99:27]
+    end else if (rotCounter > 5'h7) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 139:26]
+      rotCounter <= 5'h0; // @[\\src\\main\\scala\\GameLogicTask4.scala 140:16]
+    end else if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 131:21]
+      if (frameCounter == 8'h78) begin // @[\\src\\main\\scala\\GameLogicTask4.scala 133:34]
+        rotCounter <= _rotCounter_T_1; // @[\\src\\main\\scala\\GameLogicTask4.scala 135:18]
       end
     end
   end
@@ -8745,67 +4794,17 @@ initial begin
   _RAND_2 = {1{`RANDOM}};
   sprite0YReg = _RAND_2[9:0];
   _RAND_3 = {1{`RANDOM}};
-  sprite0FlipHorizontalReg = _RAND_3[0:0];
+  rot45Reg = _RAND_3[0:0];
   _RAND_4 = {1{`RANDOM}};
-  movingPos_1 = _RAND_4[10:0];
+  rot90Reg = _RAND_4[0:0];
   _RAND_5 = {1{`RANDOM}};
-  movingPos_2 = _RAND_5[10:0];
+  horiReg = _RAND_5[0:0];
   _RAND_6 = {1{`RANDOM}};
-  movingPos_3 = _RAND_6[10:0];
+  vertReg = _RAND_6[0:0];
   _RAND_7 = {1{`RANDOM}};
-  movingPos_4 = _RAND_7[10:0];
+  frameCounter = _RAND_7[7:0];
   _RAND_8 = {1{`RANDOM}};
-  movingPos_5 = _RAND_8[10:0];
-  _RAND_9 = {1{`RANDOM}};
-  movingPos_6 = _RAND_9[10:0];
-  _RAND_10 = {1{`RANDOM}};
-  movingPos_7 = _RAND_10[10:0];
-  _RAND_11 = {1{`RANDOM}};
-  movingPos_8 = _RAND_11[10:0];
-  _RAND_12 = {1{`RANDOM}};
-  movingPos_9 = _RAND_12[10:0];
-  _RAND_13 = {1{`RANDOM}};
-  movingPos_10 = _RAND_13[10:0];
-  _RAND_14 = {1{`RANDOM}};
-  movingPos_11 = _RAND_14[10:0];
-  _RAND_15 = {1{`RANDOM}};
-  movingPos_12 = _RAND_15[10:0];
-  _RAND_16 = {1{`RANDOM}};
-  movingPos_13 = _RAND_16[10:0];
-  _RAND_17 = {1{`RANDOM}};
-  movingPos_14 = _RAND_17[10:0];
-  _RAND_18 = {1{`RANDOM}};
-  movingPos_15 = _RAND_18[10:0];
-  _RAND_19 = {1{`RANDOM}};
-  turn_1 = _RAND_19[0:0];
-  _RAND_20 = {1{`RANDOM}};
-  turn_2 = _RAND_20[0:0];
-  _RAND_21 = {1{`RANDOM}};
-  turn_3 = _RAND_21[0:0];
-  _RAND_22 = {1{`RANDOM}};
-  turn_4 = _RAND_22[0:0];
-  _RAND_23 = {1{`RANDOM}};
-  turn_5 = _RAND_23[0:0];
-  _RAND_24 = {1{`RANDOM}};
-  turn_6 = _RAND_24[0:0];
-  _RAND_25 = {1{`RANDOM}};
-  turn_7 = _RAND_25[0:0];
-  _RAND_26 = {1{`RANDOM}};
-  turn_8 = _RAND_26[0:0];
-  _RAND_27 = {1{`RANDOM}};
-  turn_9 = _RAND_27[0:0];
-  _RAND_28 = {1{`RANDOM}};
-  turn_10 = _RAND_28[0:0];
-  _RAND_29 = {1{`RANDOM}};
-  turn_11 = _RAND_29[0:0];
-  _RAND_30 = {1{`RANDOM}};
-  turn_12 = _RAND_30[0:0];
-  _RAND_31 = {1{`RANDOM}};
-  turn_13 = _RAND_31[0:0];
-  _RAND_32 = {1{`RANDOM}};
-  turn_14 = _RAND_32[0:0];
-  _RAND_33 = {1{`RANDOM}};
-  turn_15 = _RAND_33[0:0];
+  rotCounter = _RAND_8[4:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -8817,7 +4816,6 @@ endmodule
 module GameTop(
   input        clock,
   input        reset,
-  input        io_btnC, // @[\\src\\main\\scala\\GameTop.scala 14:14]
   input        io_btnU, // @[\\src\\main\\scala\\GameTop.scala 14:14]
   input        io_btnL, // @[\\src\\main\\scala\\GameTop.scala 14:14]
   input        io_btnR, // @[\\src\\main\\scala\\GameTop.scala 14:14]
@@ -8849,61 +4847,15 @@ module GameTop(
   reg [31:0] _RAND_15;
   reg [31:0] _RAND_16;
   reg [31:0] _RAND_17;
-  reg [31:0] _RAND_18;
-  reg [31:0] _RAND_19;
-  reg [31:0] _RAND_20;
-  reg [31:0] _RAND_21;
 `endif // RANDOMIZE_REG_INIT
   wire  graphicEngineVGA_clock; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_reset; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_1; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_2; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire [10:0] graphicEngineVGA_io_spriteXPosition_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_4; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_5; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_6; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_7; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_8; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_9; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_10; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_11; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_12; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_13; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_14; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [10:0] graphicEngineVGA_io_spriteXPosition_15; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_1; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_2; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire [9:0] graphicEngineVGA_io_spriteYPosition_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_4; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_5; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_6; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_7; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_8; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_9; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_10; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_11; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_12; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_13; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_14; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [9:0] graphicEngineVGA_io_spriteYPosition_15; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_1; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_2; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_4; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_5; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_6; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_7; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_8; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_9; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_10; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_11; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_12; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_13; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_14; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteVisible_15; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire  graphicEngineVGA_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire  graphicEngineVGA_io_spriteFlipHorizontal_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire  graphicEngineVGA_io_spriteFlipVertical_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire  graphicEngineVGA_io_spriteRotation45_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire  graphicEngineVGA_io_spriteRotation90_3; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[\\src\\main\\scala\\GameTop.scala 46:32]
@@ -8915,76 +4867,25 @@ module GameTop(
   wire  soundEngine_clock; // @[\\src\\main\\scala\\GameTop.scala 48:27]
   wire  soundEngine_reset; // @[\\src\\main\\scala\\GameTop.scala 48:27]
   wire  soundEngine_io_output_0; // @[\\src\\main\\scala\\GameTop.scala 48:27]
-  wire [3:0] soundEngine_io_input; // @[\\src\\main\\scala\\GameTop.scala 48:27]
-  wire [3:0] soundEngine_io_stop; // @[\\src\\main\\scala\\GameTop.scala 48:27]
-  wire  gameLogic_clock; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_reset; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_btnC; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_btnU; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_btnL; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_btnR; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_btnD; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [3:0] gameLogic_io_songInput; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [3:0] gameLogic_io_songStop; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_1; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_2; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_3; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_4; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_5; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_6; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_7; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_8; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_9; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_10; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_11; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_12; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_13; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_14; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [10:0] gameLogic_io_spriteXPosition_15; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_1; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_2; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_3; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_4; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_5; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_6; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_7; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_8; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_9; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_10; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_11; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_12; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_13; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_14; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [9:0] gameLogic_io_spriteYPosition_15; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_1; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_2; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_3; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_4; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_5; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_6; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_7; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_8; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_9; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_10; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_11; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_12; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_13; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_14; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteVisible_15; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire  gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 56:25]
+  wire  gameLogic_clock; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_reset; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_btnU; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_btnL; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_btnR; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_btnD; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire [10:0] gameLogic_io_spriteXPosition_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire [9:0] gameLogic_io_spriteYPosition_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_spriteFlipHorizontal_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_spriteFlipVertical_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_spriteRotation45_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_spriteRotation90_3; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 57:25]
+  wire  gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 57:25]
   reg [20:0] debounceCounter; // @[\\src\\main\\scala\\GameTop.scala 67:32]
   wire  debounceSampleEn = debounceCounter == 21'h1e847f; // @[\\src\\main\\scala\\GameTop.scala 69:24]
   wire [20:0] _debounceCounter_T_1 = debounceCounter + 21'h1; // @[\\src\\main\\scala\\GameTop.scala 73:40]
   reg [21:0] resetReleaseCounter; // @[\\src\\main\\scala\\GameTop.scala 80:36]
   wire [21:0] _resetReleaseCounter_T_1 = resetReleaseCounter + 22'h1; // @[\\src\\main\\scala\\GameTop.scala 86:48]
-  reg  btnCState_pipeReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-  reg  btnCState_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-  reg  btnCState_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-  reg  btnCState; // @[\\src\\main\\scala\\GameTop.scala 92:28]
   reg  btnUState_pipeReg_0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
   reg  btnUState_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
   reg  btnUState_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
@@ -9004,54 +4905,12 @@ module GameTop(
   GraphicEngineVGA graphicEngineVGA ( // @[\\src\\main\\scala\\GameTop.scala 46:32]
     .clock(graphicEngineVGA_clock),
     .reset(graphicEngineVGA_reset),
-    .io_spriteXPosition_0(graphicEngineVGA_io_spriteXPosition_0),
-    .io_spriteXPosition_1(graphicEngineVGA_io_spriteXPosition_1),
-    .io_spriteXPosition_2(graphicEngineVGA_io_spriteXPosition_2),
     .io_spriteXPosition_3(graphicEngineVGA_io_spriteXPosition_3),
-    .io_spriteXPosition_4(graphicEngineVGA_io_spriteXPosition_4),
-    .io_spriteXPosition_5(graphicEngineVGA_io_spriteXPosition_5),
-    .io_spriteXPosition_6(graphicEngineVGA_io_spriteXPosition_6),
-    .io_spriteXPosition_7(graphicEngineVGA_io_spriteXPosition_7),
-    .io_spriteXPosition_8(graphicEngineVGA_io_spriteXPosition_8),
-    .io_spriteXPosition_9(graphicEngineVGA_io_spriteXPosition_9),
-    .io_spriteXPosition_10(graphicEngineVGA_io_spriteXPosition_10),
-    .io_spriteXPosition_11(graphicEngineVGA_io_spriteXPosition_11),
-    .io_spriteXPosition_12(graphicEngineVGA_io_spriteXPosition_12),
-    .io_spriteXPosition_13(graphicEngineVGA_io_spriteXPosition_13),
-    .io_spriteXPosition_14(graphicEngineVGA_io_spriteXPosition_14),
-    .io_spriteXPosition_15(graphicEngineVGA_io_spriteXPosition_15),
-    .io_spriteYPosition_0(graphicEngineVGA_io_spriteYPosition_0),
-    .io_spriteYPosition_1(graphicEngineVGA_io_spriteYPosition_1),
-    .io_spriteYPosition_2(graphicEngineVGA_io_spriteYPosition_2),
     .io_spriteYPosition_3(graphicEngineVGA_io_spriteYPosition_3),
-    .io_spriteYPosition_4(graphicEngineVGA_io_spriteYPosition_4),
-    .io_spriteYPosition_5(graphicEngineVGA_io_spriteYPosition_5),
-    .io_spriteYPosition_6(graphicEngineVGA_io_spriteYPosition_6),
-    .io_spriteYPosition_7(graphicEngineVGA_io_spriteYPosition_7),
-    .io_spriteYPosition_8(graphicEngineVGA_io_spriteYPosition_8),
-    .io_spriteYPosition_9(graphicEngineVGA_io_spriteYPosition_9),
-    .io_spriteYPosition_10(graphicEngineVGA_io_spriteYPosition_10),
-    .io_spriteYPosition_11(graphicEngineVGA_io_spriteYPosition_11),
-    .io_spriteYPosition_12(graphicEngineVGA_io_spriteYPosition_12),
-    .io_spriteYPosition_13(graphicEngineVGA_io_spriteYPosition_13),
-    .io_spriteYPosition_14(graphicEngineVGA_io_spriteYPosition_14),
-    .io_spriteYPosition_15(graphicEngineVGA_io_spriteYPosition_15),
-    .io_spriteVisible_1(graphicEngineVGA_io_spriteVisible_1),
-    .io_spriteVisible_2(graphicEngineVGA_io_spriteVisible_2),
-    .io_spriteVisible_3(graphicEngineVGA_io_spriteVisible_3),
-    .io_spriteVisible_4(graphicEngineVGA_io_spriteVisible_4),
-    .io_spriteVisible_5(graphicEngineVGA_io_spriteVisible_5),
-    .io_spriteVisible_6(graphicEngineVGA_io_spriteVisible_6),
-    .io_spriteVisible_7(graphicEngineVGA_io_spriteVisible_7),
-    .io_spriteVisible_8(graphicEngineVGA_io_spriteVisible_8),
-    .io_spriteVisible_9(graphicEngineVGA_io_spriteVisible_9),
-    .io_spriteVisible_10(graphicEngineVGA_io_spriteVisible_10),
-    .io_spriteVisible_11(graphicEngineVGA_io_spriteVisible_11),
-    .io_spriteVisible_12(graphicEngineVGA_io_spriteVisible_12),
-    .io_spriteVisible_13(graphicEngineVGA_io_spriteVisible_13),
-    .io_spriteVisible_14(graphicEngineVGA_io_spriteVisible_14),
-    .io_spriteVisible_15(graphicEngineVGA_io_spriteVisible_15),
-    .io_spriteFlipHorizontal_0(graphicEngineVGA_io_spriteFlipHorizontal_0),
+    .io_spriteFlipHorizontal_3(graphicEngineVGA_io_spriteFlipHorizontal_3),
+    .io_spriteFlipVertical_3(graphicEngineVGA_io_spriteFlipVertical_3),
+    .io_spriteRotation45_3(graphicEngineVGA_io_spriteRotation45_3),
+    .io_spriteRotation90_3(graphicEngineVGA_io_spriteRotation90_3),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -9064,68 +4923,21 @@ module GameTop(
   SoundEngine soundEngine ( // @[\\src\\main\\scala\\GameTop.scala 48:27]
     .clock(soundEngine_clock),
     .reset(soundEngine_reset),
-    .io_output_0(soundEngine_io_output_0),
-    .io_input(soundEngine_io_input),
-    .io_stop(soundEngine_io_stop)
+    .io_output_0(soundEngine_io_output_0)
   );
-  GameLogicTask3 gameLogic ( // @[\\src\\main\\scala\\GameTop.scala 56:25]
+  GameLogicTask4 gameLogic ( // @[\\src\\main\\scala\\GameTop.scala 57:25]
     .clock(gameLogic_clock),
     .reset(gameLogic_reset),
-    .io_btnC(gameLogic_io_btnC),
     .io_btnU(gameLogic_io_btnU),
     .io_btnL(gameLogic_io_btnL),
     .io_btnR(gameLogic_io_btnR),
     .io_btnD(gameLogic_io_btnD),
-    .io_songInput(gameLogic_io_songInput),
-    .io_songStop(gameLogic_io_songStop),
-    .io_spriteXPosition_0(gameLogic_io_spriteXPosition_0),
-    .io_spriteXPosition_1(gameLogic_io_spriteXPosition_1),
-    .io_spriteXPosition_2(gameLogic_io_spriteXPosition_2),
     .io_spriteXPosition_3(gameLogic_io_spriteXPosition_3),
-    .io_spriteXPosition_4(gameLogic_io_spriteXPosition_4),
-    .io_spriteXPosition_5(gameLogic_io_spriteXPosition_5),
-    .io_spriteXPosition_6(gameLogic_io_spriteXPosition_6),
-    .io_spriteXPosition_7(gameLogic_io_spriteXPosition_7),
-    .io_spriteXPosition_8(gameLogic_io_spriteXPosition_8),
-    .io_spriteXPosition_9(gameLogic_io_spriteXPosition_9),
-    .io_spriteXPosition_10(gameLogic_io_spriteXPosition_10),
-    .io_spriteXPosition_11(gameLogic_io_spriteXPosition_11),
-    .io_spriteXPosition_12(gameLogic_io_spriteXPosition_12),
-    .io_spriteXPosition_13(gameLogic_io_spriteXPosition_13),
-    .io_spriteXPosition_14(gameLogic_io_spriteXPosition_14),
-    .io_spriteXPosition_15(gameLogic_io_spriteXPosition_15),
-    .io_spriteYPosition_0(gameLogic_io_spriteYPosition_0),
-    .io_spriteYPosition_1(gameLogic_io_spriteYPosition_1),
-    .io_spriteYPosition_2(gameLogic_io_spriteYPosition_2),
     .io_spriteYPosition_3(gameLogic_io_spriteYPosition_3),
-    .io_spriteYPosition_4(gameLogic_io_spriteYPosition_4),
-    .io_spriteYPosition_5(gameLogic_io_spriteYPosition_5),
-    .io_spriteYPosition_6(gameLogic_io_spriteYPosition_6),
-    .io_spriteYPosition_7(gameLogic_io_spriteYPosition_7),
-    .io_spriteYPosition_8(gameLogic_io_spriteYPosition_8),
-    .io_spriteYPosition_9(gameLogic_io_spriteYPosition_9),
-    .io_spriteYPosition_10(gameLogic_io_spriteYPosition_10),
-    .io_spriteYPosition_11(gameLogic_io_spriteYPosition_11),
-    .io_spriteYPosition_12(gameLogic_io_spriteYPosition_12),
-    .io_spriteYPosition_13(gameLogic_io_spriteYPosition_13),
-    .io_spriteYPosition_14(gameLogic_io_spriteYPosition_14),
-    .io_spriteYPosition_15(gameLogic_io_spriteYPosition_15),
-    .io_spriteVisible_1(gameLogic_io_spriteVisible_1),
-    .io_spriteVisible_2(gameLogic_io_spriteVisible_2),
-    .io_spriteVisible_3(gameLogic_io_spriteVisible_3),
-    .io_spriteVisible_4(gameLogic_io_spriteVisible_4),
-    .io_spriteVisible_5(gameLogic_io_spriteVisible_5),
-    .io_spriteVisible_6(gameLogic_io_spriteVisible_6),
-    .io_spriteVisible_7(gameLogic_io_spriteVisible_7),
-    .io_spriteVisible_8(gameLogic_io_spriteVisible_8),
-    .io_spriteVisible_9(gameLogic_io_spriteVisible_9),
-    .io_spriteVisible_10(gameLogic_io_spriteVisible_10),
-    .io_spriteVisible_11(gameLogic_io_spriteVisible_11),
-    .io_spriteVisible_12(gameLogic_io_spriteVisible_12),
-    .io_spriteVisible_13(gameLogic_io_spriteVisible_13),
-    .io_spriteVisible_14(gameLogic_io_spriteVisible_14),
-    .io_spriteVisible_15(gameLogic_io_spriteVisible_15),
-    .io_spriteFlipHorizontal_0(gameLogic_io_spriteFlipHorizontal_0),
+    .io_spriteFlipHorizontal_3(gameLogic_io_spriteFlipHorizontal_3),
+    .io_spriteFlipVertical_3(gameLogic_io_spriteFlipVertical_3),
+    .io_spriteRotation45_3(gameLogic_io_spriteRotation45_3),
+    .io_spriteRotation90_3(gameLogic_io_spriteRotation90_3),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone)
   );
@@ -9138,67 +4950,22 @@ module GameTop(
   assign io_missingFrameError = graphicEngineVGA_io_missingFrameError; // @[\\src\\main\\scala\\GameTop.scala 125:24]
   assign graphicEngineVGA_clock = clock;
   assign graphicEngineVGA_reset = resetReleaseCounter == 22'h3d08ff ? 1'h0 : 1'h1; // @[\\src\\main\\scala\\GameTop.scala 82:67 83:18 85:18]
-  assign graphicEngineVGA_io_spriteXPosition_0 = gameLogic_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_1 = gameLogic_io_spriteXPosition_1; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_2 = gameLogic_io_spriteXPosition_2; // @[\\src\\main\\scala\\GameTop.scala 130:39]
   assign graphicEngineVGA_io_spriteXPosition_3 = gameLogic_io_spriteXPosition_3; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_4 = gameLogic_io_spriteXPosition_4; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_5 = gameLogic_io_spriteXPosition_5; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_6 = gameLogic_io_spriteXPosition_6; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_7 = gameLogic_io_spriteXPosition_7; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_8 = gameLogic_io_spriteXPosition_8; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_9 = gameLogic_io_spriteXPosition_9; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_10 = gameLogic_io_spriteXPosition_10; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_11 = gameLogic_io_spriteXPosition_11; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_12 = gameLogic_io_spriteXPosition_12; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_13 = gameLogic_io_spriteXPosition_13; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_14 = gameLogic_io_spriteXPosition_14; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteXPosition_15 = gameLogic_io_spriteXPosition_15; // @[\\src\\main\\scala\\GameTop.scala 130:39]
-  assign graphicEngineVGA_io_spriteYPosition_0 = gameLogic_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_1 = gameLogic_io_spriteYPosition_1; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_2 = gameLogic_io_spriteYPosition_2; // @[\\src\\main\\scala\\GameTop.scala 131:39]
   assign graphicEngineVGA_io_spriteYPosition_3 = gameLogic_io_spriteYPosition_3; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_4 = gameLogic_io_spriteYPosition_4; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_5 = gameLogic_io_spriteYPosition_5; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_6 = gameLogic_io_spriteYPosition_6; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_7 = gameLogic_io_spriteYPosition_7; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_8 = gameLogic_io_spriteYPosition_8; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_9 = gameLogic_io_spriteYPosition_9; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_10 = gameLogic_io_spriteYPosition_10; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_11 = gameLogic_io_spriteYPosition_11; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_12 = gameLogic_io_spriteYPosition_12; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_13 = gameLogic_io_spriteYPosition_13; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_14 = gameLogic_io_spriteYPosition_14; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteYPosition_15 = gameLogic_io_spriteYPosition_15; // @[\\src\\main\\scala\\GameTop.scala 131:39]
-  assign graphicEngineVGA_io_spriteVisible_1 = gameLogic_io_spriteVisible_1; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_2 = gameLogic_io_spriteVisible_2; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_3 = gameLogic_io_spriteVisible_3; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_4 = gameLogic_io_spriteVisible_4; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_5 = gameLogic_io_spriteVisible_5; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_6 = gameLogic_io_spriteVisible_6; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_7 = gameLogic_io_spriteVisible_7; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_8 = gameLogic_io_spriteVisible_8; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_9 = gameLogic_io_spriteVisible_9; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_10 = gameLogic_io_spriteVisible_10; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_11 = gameLogic_io_spriteVisible_11; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_12 = gameLogic_io_spriteVisible_12; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_13 = gameLogic_io_spriteVisible_13; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_14 = gameLogic_io_spriteVisible_14; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteVisible_15 = gameLogic_io_spriteVisible_15; // @[\\src\\main\\scala\\GameTop.scala 132:37]
-  assign graphicEngineVGA_io_spriteFlipHorizontal_0 = gameLogic_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 133:44]
-  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 154:39]
+  assign graphicEngineVGA_io_spriteFlipHorizontal_3 = gameLogic_io_spriteFlipHorizontal_3; // @[\\src\\main\\scala\\GameTop.scala 133:44]
+  assign graphicEngineVGA_io_spriteFlipVertical_3 = gameLogic_io_spriteFlipVertical_3; // @[\\src\\main\\scala\\GameTop.scala 134:42]
+  assign graphicEngineVGA_io_spriteRotation45_3 = gameLogic_io_spriteRotation45_3; // @[\\src\\main\\scala\\GameTop.scala 139:40]
+  assign graphicEngineVGA_io_spriteRotation90_3 = gameLogic_io_spriteRotation90_3; // @[\\src\\main\\scala\\GameTop.scala 140:40]
+  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 156:39]
   assign soundEngine_clock = clock;
   assign soundEngine_reset = reset;
-  assign soundEngine_io_input = gameLogic_io_songInput; // @[\\src\\main\\scala\\GameTop.scala 119:24]
-  assign soundEngine_io_stop = gameLogic_io_songStop; // @[\\src\\main\\scala\\GameTop.scala 120:23]
   assign gameLogic_clock = clock;
   assign gameLogic_reset = resetReleaseCounter == 22'h3d08ff ? 1'h0 : 1'h1; // @[\\src\\main\\scala\\GameTop.scala 82:67 83:18 85:18]
-  assign gameLogic_io_btnC = btnCState; // @[\\src\\main\\scala\\GameTop.scala 97:21]
   assign gameLogic_io_btnU = btnUState; // @[\\src\\main\\scala\\GameTop.scala 98:21]
   assign gameLogic_io_btnL = btnLState; // @[\\src\\main\\scala\\GameTop.scala 99:21]
   assign gameLogic_io_btnR = btnRState; // @[\\src\\main\\scala\\GameTop.scala 100:21]
   assign gameLogic_io_btnD = btnDState; // @[\\src\\main\\scala\\GameTop.scala 101:21]
-  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 153:25]
+  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 155:25]
   always @(posedge clock) begin
     if (reset) begin // @[\\src\\main\\scala\\GameTop.scala 67:32]
       debounceCounter <= 21'h0; // @[\\src\\main\\scala\\GameTop.scala 67:32]
@@ -9211,26 +4978,6 @@ module GameTop(
       resetReleaseCounter <= 22'h0; // @[\\src\\main\\scala\\GameTop.scala 80:36]
     end else if (!(resetReleaseCounter == 22'h3d08ff)) begin // @[\\src\\main\\scala\\GameTop.scala 82:67]
       resetReleaseCounter <= _resetReleaseCounter_T_1; // @[\\src\\main\\scala\\GameTop.scala 86:25]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-      btnCState_pipeReg_0 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-    end else begin
-      btnCState_pipeReg_0 <= btnCState_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-      btnCState_pipeReg_1 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-    end else begin
-      btnCState_pipeReg_1 <= btnCState_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-      btnCState_pipeReg_2 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
-    end else begin
-      btnCState_pipeReg_2 <= io_btnC; // @[\\src\\main\\scala\\GameUtilities.scala 41:30]
-    end
-    if (reset) begin // @[\\src\\main\\scala\\GameTop.scala 92:28]
-      btnCState <= 1'h0; // @[\\src\\main\\scala\\GameTop.scala 92:28]
-    end else if (debounceSampleEn) begin // @[\\src\\main\\scala\\GameTop.scala 92:28]
-      btnCState <= btnCState_pipeReg_0; // @[\\src\\main\\scala\\GameTop.scala 92:28]
     end
     if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
       btnUState_pipeReg_0 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
@@ -9354,45 +5101,37 @@ initial begin
   _RAND_1 = {1{`RANDOM}};
   resetReleaseCounter = _RAND_1[21:0];
   _RAND_2 = {1{`RANDOM}};
-  btnCState_pipeReg_0 = _RAND_2[0:0];
+  btnUState_pipeReg_0 = _RAND_2[0:0];
   _RAND_3 = {1{`RANDOM}};
-  btnCState_pipeReg_1 = _RAND_3[0:0];
+  btnUState_pipeReg_1 = _RAND_3[0:0];
   _RAND_4 = {1{`RANDOM}};
-  btnCState_pipeReg_2 = _RAND_4[0:0];
+  btnUState_pipeReg_2 = _RAND_4[0:0];
   _RAND_5 = {1{`RANDOM}};
-  btnCState = _RAND_5[0:0];
+  btnUState = _RAND_5[0:0];
   _RAND_6 = {1{`RANDOM}};
-  btnUState_pipeReg_0 = _RAND_6[0:0];
+  btnLState_pipeReg_0 = _RAND_6[0:0];
   _RAND_7 = {1{`RANDOM}};
-  btnUState_pipeReg_1 = _RAND_7[0:0];
+  btnLState_pipeReg_1 = _RAND_7[0:0];
   _RAND_8 = {1{`RANDOM}};
-  btnUState_pipeReg_2 = _RAND_8[0:0];
+  btnLState_pipeReg_2 = _RAND_8[0:0];
   _RAND_9 = {1{`RANDOM}};
-  btnUState = _RAND_9[0:0];
+  btnLState = _RAND_9[0:0];
   _RAND_10 = {1{`RANDOM}};
-  btnLState_pipeReg_0 = _RAND_10[0:0];
+  btnRState_pipeReg_0 = _RAND_10[0:0];
   _RAND_11 = {1{`RANDOM}};
-  btnLState_pipeReg_1 = _RAND_11[0:0];
+  btnRState_pipeReg_1 = _RAND_11[0:0];
   _RAND_12 = {1{`RANDOM}};
-  btnLState_pipeReg_2 = _RAND_12[0:0];
+  btnRState_pipeReg_2 = _RAND_12[0:0];
   _RAND_13 = {1{`RANDOM}};
-  btnLState = _RAND_13[0:0];
+  btnRState = _RAND_13[0:0];
   _RAND_14 = {1{`RANDOM}};
-  btnRState_pipeReg_0 = _RAND_14[0:0];
+  btnDState_pipeReg_0 = _RAND_14[0:0];
   _RAND_15 = {1{`RANDOM}};
-  btnRState_pipeReg_1 = _RAND_15[0:0];
+  btnDState_pipeReg_1 = _RAND_15[0:0];
   _RAND_16 = {1{`RANDOM}};
-  btnRState_pipeReg_2 = _RAND_16[0:0];
+  btnDState_pipeReg_2 = _RAND_16[0:0];
   _RAND_17 = {1{`RANDOM}};
-  btnRState = _RAND_17[0:0];
-  _RAND_18 = {1{`RANDOM}};
-  btnDState_pipeReg_0 = _RAND_18[0:0];
-  _RAND_19 = {1{`RANDOM}};
-  btnDState_pipeReg_1 = _RAND_19[0:0];
-  _RAND_20 = {1{`RANDOM}};
-  btnDState_pipeReg_2 = _RAND_20[0:0];
-  _RAND_21 = {1{`RANDOM}};
-  btnDState = _RAND_21[0:0];
+  btnDState = _RAND_17[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -9447,7 +5186,6 @@ module Top(
 `endif // RANDOMIZE_REG_INIT
   wire  gameTop_clock; // @[\\src\\main\\scala\\Top.scala 44:23]
   wire  gameTop_reset; // @[\\src\\main\\scala\\Top.scala 44:23]
-  wire  gameTop_io_btnC; // @[\\src\\main\\scala\\Top.scala 44:23]
   wire  gameTop_io_btnU; // @[\\src\\main\\scala\\Top.scala 44:23]
   wire  gameTop_io_btnL; // @[\\src\\main\\scala\\Top.scala 44:23]
   wire  gameTop_io_btnR; // @[\\src\\main\\scala\\Top.scala 44:23]
@@ -9471,7 +5209,6 @@ module Top(
   GameTop gameTop ( // @[\\src\\main\\scala\\Top.scala 44:23]
     .clock(gameTop_clock),
     .reset(gameTop_reset),
-    .io_btnC(gameTop_io_btnC),
     .io_btnU(gameTop_io_btnU),
     .io_btnL(gameTop_io_btnL),
     .io_btnR(gameTop_io_btnR),
@@ -9503,7 +5240,6 @@ module Top(
   assign io_viewBoxOutOfRangeError = 1'h0; // @[\\src\\main\\scala\\Top.scala 62:14]
   assign gameTop_clock = clock;
   assign gameTop_reset = |_gameTop_reset_T; // @[\\src\\main\\scala\\Top.scala 59:40]
-  assign gameTop_io_btnC = io_btnC; // @[\\src\\main\\scala\\Top.scala 62:14]
   assign gameTop_io_btnU = io_btnU; // @[\\src\\main\\scala\\Top.scala 62:14]
   assign gameTop_io_btnL = io_btnL; // @[\\src\\main\\scala\\Top.scala 62:14]
   assign gameTop_io_btnR = io_btnR; // @[\\src\\main\\scala\\Top.scala 62:14]

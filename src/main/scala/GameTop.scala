@@ -53,8 +53,8 @@ class GameTop extends Module {
   //val gameLogic = Module(new GameLogicTask0(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask1(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask2(SPRITE_NUMBER, BACK_TILE_NUMBER))
-  val gameLogic = Module(new GameLogicTask3(SPRITE_NUMBER, BACK_TILE_NUMBER))
-  //val gameLogic = Module(new GameLogicTask4(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  //val gameLogic = Module(new GameLogicTask3(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  val gameLogic = Module(new GameLogicTask4(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask5(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask6(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask7(SPRITE_NUMBER, BACK_TILE_NUMBER))
@@ -136,7 +136,9 @@ class GameTop extends Module {
   //new
   graphicEngineVGA.io.spriteScaleHorizontal := gameLogic.io.spriteScaleHorizontal
   graphicEngineVGA.io.spriteScaleVertical := gameLogic.io.spriteScaleVertical
-  graphicEngineVGA.io.spriteRotation := gameLogic.io.spriteRotation
+  graphicEngineVGA.io.spriteRotation45 := gameLogic.io.spriteRotation45
+  graphicEngineVGA.io.spriteRotation90 := gameLogic.io.spriteRotation90
+
 
 
 
