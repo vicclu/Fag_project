@@ -3,217 +3,217 @@
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamSpWf",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemory:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.41025641025641024
+    "index":0.4129032258064516
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_32",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemory:Memory_32",
-    "index":0.4166666666666667
+    "index":0.41935483870967744
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamSpWf_1",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemory:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.4230769230769231
+    "index":0.4258064516129032
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_33",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemory:Memory_32",
-    "index":0.42948717948717946
+    "index":0.432258064516129
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_49",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.6538461538461539
+    "index":0.6580645161290323
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_51",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_51",
-    "index":0.6602564102564102
+    "index":0.6645161290322581
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_50",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.6666666666666666
+    "index":0.6709677419354839
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_52",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_51",
-    "index":0.6730769230769231
+    "index":0.6774193548387096
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_51",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.6794871794871795
+    "index":0.6838709677419355
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_53",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_51",
-    "index":0.6858974358974359
+    "index":0.6903225806451613
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_52",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.6923076923076923
+    "index":0.6967741935483871
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_54",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_51",
-    "index":0.6987179487179487
+    "index":0.7032258064516129
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_53",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7051282051282052
+    "index":0.7096774193548387
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_55",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_51",
-    "index":0.7115384615384616
+    "index":0.7161290322580646
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_54",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.717948717948718
+    "index":0.7225806451612903
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_56",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_51",
-    "index":0.7243589743589743
+    "index":0.7290322580645161
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_55",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7307692307692307
+    "index":0.7354838709677419
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_57",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_51",
-    "index":0.7371794871794872
+    "index":0.7419354838709677
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_56",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7435897435897436
+    "index":0.7483870967741936
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_58",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_51",
-    "index":0.75
+    "index":0.7548387096774194
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_57",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7564102564102564
+    "index":0.7612903225806451
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_59",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_51",
-    "index":0.7628205128205128
+    "index":0.7677419354838709
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_58",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7692307692307693
+    "index":0.7741935483870968
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_60",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_51",
-    "index":0.7756410256410257
+    "index":0.7806451612903226
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_59",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.782051282051282
+    "index":0.7870967741935484
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_61",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_51",
-    "index":0.7884615384615384
+    "index":0.7935483870967742
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_60",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.7948717948717948
+    "index":0.8
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_62",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_51",
-    "index":0.8012820512820513
+    "index":0.8064516129032258
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_61",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.8076923076923077
+    "index":0.8129032258064516
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_63",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_51",
-    "index":0.8141025641025641
+    "index":0.8193548387096774
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_62",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.8205128205128205
+    "index":0.8258064516129032
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_64",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_51",
-    "index":0.8269230769230769
+    "index":0.832258064516129
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_63",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.8333333333333334
+    "index":0.8387096774193549
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_65",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_51",
-    "index":0.8397435897435898
+    "index":0.8451612903225807
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_64",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_51/ramsSpWf:RamInitSpWf_49",
-    "index":0.8461538461538461
+    "index":0.8516129032258064
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_66",
     "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_51",
-    "index":0.8525641025641025
+    "index":0.8580645161290322
   },
   {
     "class":"firrtl.EmitCircuitAnnotation",
