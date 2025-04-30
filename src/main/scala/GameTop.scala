@@ -130,6 +130,7 @@ class GameTop extends Module {
   graphicEngineVGA.io.spriteXPosition := gameLogic.io.spriteXPosition
   graphicEngineVGA.io.spriteYPosition := gameLogic.io.spriteYPosition
   graphicEngineVGA.io.spriteVisible := gameLogic.io.spriteVisible
+  graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
   graphicEngineVGA.io.spriteFlipHorizontal := gameLogic.io.spriteFlipHorizontal
   graphicEngineVGA.io.spriteFlipVertical := gameLogic.io.spriteFlipVertical
 

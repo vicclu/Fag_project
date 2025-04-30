@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="fagprojekt_8523" />
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="fag_project,fagprojekt_8523" />
     <profile name="sbt 2" modules="fagprojekt">
       <option name="reflectiveCalls" value="true" />
       <option name="deprecationWarnings" value="true" />
@@ -9,6 +10,15 @@
       <option name="featureWarnings" value="true" />
       <plugins>
         <plugin path="C:\Users\dingv\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\edu\berkeley\cs\chisel3-plugin_2.13.14\3.6.1\chisel3-plugin_2.13.14-3.6.1.jar" />
+      </plugins>
+    </profile>
+    <profile name="sbt 3" modules="fag_project.main,fag_project.test">
+      <option name="reflectiveCalls" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <plugins>
+        <plugin path="C:\Users\mathi\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\edu\berkeley\cs\chisel3-plugin_2.13.14\3.6.1\chisel3-plugin_2.13.14-3.6.1.jar" />
       </plugins>
     </profile>
   </component>

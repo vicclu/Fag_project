@@ -39,6 +39,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteRotation = Output(Vec(SpriteNumber, Bool()))
+    val spriteOpacityLevel = Output(UInt(2.W))
+
 
 
     //Viewbox control output
@@ -59,6 +61,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
 
+  io.spriteOpacityLevel := Cat(io.sw(1),io.sw(0)).asUInt
   // Or one by one...
   //io.led(0) := false.B
   //io.led(0) := false.B
@@ -238,7 +241,6 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 //          count := 0.U
 //        }
 //      }
-
 
       stateReg := done
     }

@@ -21,6 +21,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteScaleHorizontal = Input(Vec(SpriteNumber, UInt(2.W)))
     val spriteRotation = Input(Vec(SpriteNumber, Bool()))
     val spriteScaleVertical = Input(Vec(SpriteNumber, UInt(2.W)))
+    val spriteOpacityLevel = Input(UInt(2.W))
 
     //Viewbox control input
     val viewBoxX = Input(UInt(10.W)) //0 to 640
@@ -330,25 +331,43 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   }
 
 
-  //Reduction tree for the pixel colour from the sprite memories
-  val multiHotPriortyReductionTree = Module(new MultiHotPriortyReductionTree(SpriteNumber, UInt(6.W)))
+
+
+  val spriteBlender = Module(new SpriteBlender(SpriteNumber))
+
+
+  io.vgaRed := spriteBlender.io.vgaRed
+  io.vgaBlue := spriteBlender.io.vgaBlue
+  io.vgaGreen := spriteBlender.io.vgaGreen
+
+
+  spriteBlender.io.spriteOpacityLevel := io.spriteOpacityLevel
+  spriteBlender.io.pixelColorBack := pixelColorBack
+  spriteBlender.io.spriteVisibleReg := spriteVisibleReg
+  spriteBlender.io.inSprite := inSprite
+  //spriteBlender.io.newFrame := newFrameStikyReg
+  spriteBlender.io.pixelX := pixelX
+  spriteBlender.io.pixelY := pixelY
+  spriteBlender.io.spriteXPosition := spriteXPositionReg
+  spriteBlender.io.spriteYPosition := spriteYPositionReg
+
   for (i <- 0 until SpriteNumber) {
-    multiHotPriortyReductionTree.io.dataInput(i) := RegNext(spriteMemories(i).io.dataRead(5, 0))
-    multiHotPriortyReductionTree.io.selectInput(i) := RegPipeline(spriteVisibleReg(i), 2) & RegPipeline(inSprite(i), 2) & ~(RegNext(spriteMemories(i).io.dataRead(6)))
+    val spriteX = spriteXPositionReg(i).asUInt
+    val spriteY = spriteYPositionReg(i).asUInt
+
+    val localX = pixelX - spriteX
+    val localY = pixelY - spriteY
+
+    val inSprite = pixelX >= spriteX && pixelX < (spriteX + 32.U) &&
+      pixelY >= spriteY && pixelY < (spriteY + 32.U)
+
+    // Feed sprite pixel address to SpriteBlender
+    spriteBlender.io.spritePixelAddr(i) := Mux(inSprite, localY * 32.U + localX, 0.U)
+
+    // Pass inBounds as inSprite
+    spriteBlender.io.inSprite(i) := inSprite
   }
-  val pixelColorSprite = RegNext(multiHotPriortyReductionTree.io.dataOutput)
-  val pixelColorSpriteValid = RegNext(multiHotPriortyReductionTree.io.selectOutput)
 
-
-  // Generation of the last pixel colour selection and pipeline stage
-  val pixelColorInDisplay = Mux(pixelColorSpriteValid, pixelColorSprite, pixelColorBack)
-  val pixelColourVGA = Mux(RegPipeline(inDisplayArea, 3), pixelColorInDisplay, 0.U)
-  val pixelColorRed = Cat(pixelColourVGA(5,4), pixelColourVGA(5,4))
-  val pixelColorGreen = Cat(pixelColourVGA(3,2), pixelColourVGA(3,2))
-  val pixelColorBlue = Cat(pixelColourVGA(1,0), pixelColourVGA(1,0))
-  io.vgaRed := RegNext(pixelColorRed)
-  io.vgaGreen := RegNext(pixelColorGreen)
-  io.vgaBlue := RegNext(pixelColorBlue)
 
 }
 
