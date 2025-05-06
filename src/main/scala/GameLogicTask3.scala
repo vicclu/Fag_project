@@ -175,7 +175,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
   io.spriteRotation45(2) := true.B
-  io.spriteRotation45(0) := true.B
+  io.spriteRotation45(0) := io.sw(2)
 
 
 
