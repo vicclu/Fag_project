@@ -87,6 +87,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
+  io.spriteRotation90 :=  Seq.fill(SpriteNumber)(false.B)
+    io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
 
   io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.B)
   io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.B)

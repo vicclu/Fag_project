@@ -294,8 +294,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       val spriteXpositiontmp = Mux(spriteRotationReg45(i), spriteXPositionReg(i) - 7.S,spriteXPositionReg(i))
       val spriteYpositiontmp = Mux(spriteRotationReg45(i), spriteYPositionReg(i) - 7.S,spriteYPositionReg(i))
 
-      inSpriteX(i) := (0.U(1.W) ## pixelX).asSInt -& spriteXpositiontmp
-      inSpriteY(i) := (0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp
+      inSpriteX(i) := RegNext((0.U(1.W) ## pixelX).asSInt -& spriteXpositiontmp)
+      inSpriteY(i) := RegNext((0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp)
 
     val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
       2.U -> (boundingWidth<<1).asSInt,
@@ -341,7 +341,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteMemories(i).io.enable      := true.B
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := Mux(spriteRotationReg(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+    spriteMemories(i).io.address     := Mux(spriteRotationReg45(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+    spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
     spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
 
   }

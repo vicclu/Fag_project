@@ -20,6 +20,7 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val pixelX = Input(UInt(10.W))
     val pixelY = Input(UInt(10.W))
     val spritePixelAddr = Input(Vec(SpriteNumber, UInt(10.W)))
+    val datareader = Input(Vec(SpriteNumber, UInt(7.W)))
 
     val vgaRed = Output(UInt(4.W))
     val vgaGreen = Output(UInt(4.W))
@@ -52,9 +53,9 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
 
   val multiHotPriortyReductionTree = Module(new MultiHotPriortyReductionTree(SpriteNumber, UInt(7.W)))
   for (i <- 0 until SpriteNumber) {
-    val spriteDataReg = spriteMemories(i).io.dataRead //Ændring for horizontal lines
-    multiHotPriortyReductionTree.io.dataInput(i) := spriteDataReg(6, 0)
-    val spriteAlphaBit = spriteDataReg(6)
+
+    multiHotPriortyReductionTree.io.dataInput(i) := io.datareader(i)(6, 0)
+    val spriteAlphaBit = io.datareader(i)(6)
 
     multiHotPriortyReductionTree.io.selectInput(i) :=
       RegPipeline(spriteVisibleReg(i), 2) &
