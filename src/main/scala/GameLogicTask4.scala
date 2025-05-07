@@ -51,12 +51,18 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     // Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
+
+    val spriteOpacityLevel = Output(UInt(2.W))
+
   })
 
   /////////////////////////////////////////////////////////////////
   // Default output values
 
   io.led := Seq.fill(8)(false.B)
+
+  io.spriteOpacityLevel := 3.U
+
 
   io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
   io.spriteYPosition := Seq.fill(SpriteNumber)(0.S)
