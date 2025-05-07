@@ -417,12 +417,7 @@ for (i <- 0 until 2) {
   io.vgaBlue := spriteBlender.io.vgaBlue
   io.vgaGreen := spriteBlender.io.vgaGreen
 
-  val pixelColorSprite = RegNext(spriteBlender.io.pixelColorSprite)
-  val pixelColorSpriteValid = RegNext(spriteBlender.io.pixelColorSpriteValid)
 
-
-  // Generation of the last pixel colour selection and pipeline stage
-  val pixelColorInDisplay = Mux(pixelColorSpriteValid, pixelColorSprite, pixelColorBack)
   //  io.vgaRed := RegNext(pixelColorRed)
   //  io.vgaGreen := RegNext(pixelColorGreen)
   //  io.vgaBlue := RegNext(pixelColorBlue)

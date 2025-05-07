@@ -26,8 +26,7 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val vgaRed = Output(UInt(4.W))
     val vgaGreen = Output(UInt(4.W))
     val vgaBlue = Output(UInt(4.W))
-    val pixelColorSprite = Output(UInt(7.W))
-    val pixelColorSpriteValid = Output(Bool())
+
 
   })
   val pixelColorBack = io.pixelColorBack
@@ -71,8 +70,7 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
 
   val topSpriteIndex = multiHotPriortyReductionTree.io.indexOutput
   val topSpriteColor = multiHotPriortyReductionTree.io.dataOutput
-  io.pixelColorSprite := RegNext(multiHotPriortyReductionTree.io.dataOutput)
-  io.pixelColorSpriteValid := RegNext(anySpriteSelected)
+
 
 
   val topSpriteAlpha = topSpriteColor(6).asBool
