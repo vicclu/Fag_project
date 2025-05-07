@@ -1376,42 +1376,59 @@ module MultiHotPriortyReductionTree(
   input        io_selectInput_14, // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
   input        io_selectInput_15, // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
   output [6:0] io_dataOutput, // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
-  output       io_selectOutput // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
+  output       io_selectOutput, // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
+  output [3:0] io_indexOutput // @[\\src\\main\\scala\\GameUtilities.scala 110:14]
 );
-  wire  selectNodeOutputs_7 = io_selectInput_0 | io_selectInput_1; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_8 = io_selectInput_2 | io_selectInput_3; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_3 = selectNodeOutputs_7 | selectNodeOutputs_8; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_9 = io_selectInput_4 | io_selectInput_5; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_10 = io_selectInput_6 | io_selectInput_7; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_4 = selectNodeOutputs_9 | selectNodeOutputs_10; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_1 = selectNodeOutputs_3 | selectNodeOutputs_4; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire [6:0] dataNodeOutputs_7 = io_selectInput_0 ? io_dataInput_0 : io_dataInput_1; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_8 = io_selectInput_2 ? io_dataInput_2 : io_dataInput_3; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_3 = selectNodeOutputs_7 ? dataNodeOutputs_7 : dataNodeOutputs_8; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_9 = io_selectInput_4 ? io_dataInput_4 : io_dataInput_5; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_10 = io_selectInput_6 ? io_dataInput_6 : io_dataInput_7; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_4 = selectNodeOutputs_9 ? dataNodeOutputs_9 : dataNodeOutputs_10; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_1 = selectNodeOutputs_3 ? dataNodeOutputs_3 : dataNodeOutputs_4; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire  selectNodeOutputs_11 = io_selectInput_8 | io_selectInput_9; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_12 = io_selectInput_10 | io_selectInput_11; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_5 = selectNodeOutputs_11 | selectNodeOutputs_12; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire [6:0] dataNodeOutputs_11 = io_selectInput_8 ? io_dataInput_8 : io_dataInput_9; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_12 = io_selectInput_10 ? io_dataInput_10 : io_dataInput_11; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_5 = selectNodeOutputs_11 ? dataNodeOutputs_11 : dataNodeOutputs_12; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire  selectNodeOutputs_13 = io_selectInput_12 | io_selectInput_13; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire [6:0] dataNodeOutputs_13 = io_selectInput_12 ? io_dataInput_12 : io_dataInput_13; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_14 = io_selectInput_14 ? io_dataInput_14 : io_dataInput_15; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_6 = selectNodeOutputs_13 ? dataNodeOutputs_13 : dataNodeOutputs_14; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire [6:0] dataNodeOutputs_2 = selectNodeOutputs_5 ? dataNodeOutputs_5 : dataNodeOutputs_6; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  wire  selectNodeOutputs_14 = io_selectInput_14 | io_selectInput_15; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_6 = selectNodeOutputs_13 | selectNodeOutputs_14; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  wire  selectNodeOutputs_2 = selectNodeOutputs_5 | selectNodeOutputs_6; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
-  assign io_dataOutput = selectNodeOutputs_1 ? dataNodeOutputs_1 : dataNodeOutputs_2; // @[\\src\\main\\scala\\GameUtilities.scala 144:34]
-  assign io_selectOutput = selectNodeOutputs_1 | selectNodeOutputs_2; // @[\\src\\main\\scala\\GameUtilities.scala 145:54]
+  wire  selectNodeOutputs_7 = io_selectInput_0 | io_selectInput_1; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_8 = io_selectInput_2 | io_selectInput_3; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_3 = selectNodeOutputs_7 | selectNodeOutputs_8; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_9 = io_selectInput_4 | io_selectInput_5; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_10 = io_selectInput_6 | io_selectInput_7; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_4 = selectNodeOutputs_9 | selectNodeOutputs_10; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_1 = selectNodeOutputs_3 | selectNodeOutputs_4; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire [6:0] dataNodeOutputs_7 = io_selectInput_0 ? io_dataInput_0 : io_dataInput_1; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_8 = io_selectInput_2 ? io_dataInput_2 : io_dataInput_3; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_3 = selectNodeOutputs_7 ? dataNodeOutputs_7 : dataNodeOutputs_8; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_9 = io_selectInput_4 ? io_dataInput_4 : io_dataInput_5; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_10 = io_selectInput_6 ? io_dataInput_6 : io_dataInput_7; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_4 = selectNodeOutputs_9 ? dataNodeOutputs_9 : dataNodeOutputs_10; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_1 = selectNodeOutputs_3 ? dataNodeOutputs_3 : dataNodeOutputs_4; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire  selectNodeOutputs_11 = io_selectInput_8 | io_selectInput_9; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_12 = io_selectInput_10 | io_selectInput_11; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_5 = selectNodeOutputs_11 | selectNodeOutputs_12; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire [6:0] dataNodeOutputs_11 = io_selectInput_8 ? io_dataInput_8 : io_dataInput_9; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_12 = io_selectInput_10 ? io_dataInput_10 : io_dataInput_11; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_5 = selectNodeOutputs_11 ? dataNodeOutputs_11 : dataNodeOutputs_12; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire  selectNodeOutputs_13 = io_selectInput_12 | io_selectInput_13; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire [6:0] dataNodeOutputs_13 = io_selectInput_12 ? io_dataInput_12 : io_dataInput_13; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_14 = io_selectInput_14 ? io_dataInput_14 : io_dataInput_15; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_6 = selectNodeOutputs_13 ? dataNodeOutputs_13 : dataNodeOutputs_14; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire [6:0] dataNodeOutputs_2 = selectNodeOutputs_5 ? dataNodeOutputs_5 : dataNodeOutputs_6; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  wire  selectNodeOutputs_14 = io_selectInput_14 | io_selectInput_15; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_6 = selectNodeOutputs_13 | selectNodeOutputs_14; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire  selectNodeOutputs_2 = selectNodeOutputs_5 | selectNodeOutputs_6; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  wire [3:0] indexNodeOutputs_7 = io_selectInput_0 ? 4'h0 : 4'h1; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_8 = io_selectInput_2 ? 4'h2 : 4'h3; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_3 = selectNodeOutputs_7 ? indexNodeOutputs_7 : indexNodeOutputs_8; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_9 = io_selectInput_4 ? 4'h4 : 4'h5; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_10 = io_selectInput_6 ? 4'h6 : 4'h7; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_4 = selectNodeOutputs_9 ? indexNodeOutputs_9 : indexNodeOutputs_10; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_1 = selectNodeOutputs_3 ? indexNodeOutputs_3 : indexNodeOutputs_4; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_11 = io_selectInput_8 ? 4'h8 : 4'h9; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_12 = io_selectInput_10 ? 4'ha : 4'hb; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_5 = selectNodeOutputs_11 ? indexNodeOutputs_11 : indexNodeOutputs_12; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_13 = io_selectInput_12 ? 4'hc : 4'hd; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_14 = io_selectInput_14 ? 4'he : 4'hf; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_6 = selectNodeOutputs_13 ? indexNodeOutputs_13 : indexNodeOutputs_14; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  wire [3:0] indexNodeOutputs_2 = selectNodeOutputs_5 ? indexNodeOutputs_5 : indexNodeOutputs_6; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+  assign io_dataOutput = selectNodeOutputs_1 ? dataNodeOutputs_1 : dataNodeOutputs_2; // @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+  assign io_selectOutput = selectNodeOutputs_1 | selectNodeOutputs_2; // @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+  assign io_indexOutput = selectNodeOutputs_1 ? indexNodeOutputs_1 : indexNodeOutputs_2; // @[\\src\\main\\scala\\GameUtilities.scala 152:35]
 endmodule
 module SpriteBlender(
   input        clock,
-  input  [1:0] io_spriteOpacityLevel, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
+  input  [1:0] io_spriteOpacityLevel_0, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
+  input  [1:0] io_spriteOpacityLevel_1, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
   input  [5:0] io_pixelColorBack, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
   input        io_spriteVisibleReg_7, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
   input        io_spriteVisibleReg_8, // @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
@@ -1526,142 +1543,167 @@ module SpriteBlender(
   reg [31:0] _RAND_65;
   reg [31:0] _RAND_66;
   reg [31:0] _RAND_67;
+  reg [31:0] _RAND_68;
+  reg [31:0] _RAND_69;
+  reg [31:0] _RAND_70;
+  reg [31:0] _RAND_71;
+  reg [31:0] _RAND_72;
+  reg [31:0] _RAND_73;
+  reg [31:0] _RAND_74;
+  reg [31:0] _RAND_75;
+  reg [31:0] _RAND_76;
+  reg [31:0] _RAND_77;
+  reg [31:0] _RAND_78;
+  reg [31:0] _RAND_79;
+  reg [31:0] _RAND_80;
+  reg [31:0] _RAND_81;
+  reg [31:0] _RAND_82;
+  reg [31:0] _RAND_83;
+  reg [31:0] _RAND_84;
+  reg [31:0] _RAND_85;
+  reg [31:0] _RAND_86;
+  reg [31:0] _RAND_87;
+  reg [31:0] _RAND_88;
+  reg [31:0] _RAND_89;
+  reg [31:0] _RAND_90;
+  reg [31:0] _RAND_91;
+  reg [31:0] _RAND_92;
+  reg [31:0] _RAND_93;
+  reg [31:0] _RAND_94;
+  reg [31:0] _RAND_95;
+  reg [31:0] _RAND_96;
+  reg [31:0] _RAND_97;
 `endif // RANDOMIZE_REG_INIT
-  wire  spriteMemories_0_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_0_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_0_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_1_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_1_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_1_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_2_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_2_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_2_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_3_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_3_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_3_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_4_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_4_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_4_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_5_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_5_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_5_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_6_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_6_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_6_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_7_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_7_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_7_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_8_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_8_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_8_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_9_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_9_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_9_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_10_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_10_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_10_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_11_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_11_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_11_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_12_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_12_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_12_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_13_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_13_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_13_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_14_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_14_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_14_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_15_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [9:0] spriteMemories_15_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire  spriteMemories_15_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire [6:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
-  reg [6:0] spriteDataReg; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit = spriteDataReg[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteMemories_0_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_0_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_0_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_1_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_1_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_1_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_2_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_2_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_2_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_3_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_3_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_3_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_4_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_4_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_4_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_5_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_5_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_5_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_6_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_6_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_6_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_7_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_7_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_7_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_8_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_8_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_8_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_9_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_9_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_9_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_10_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_10_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_10_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_11_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_11_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_11_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_12_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_12_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_12_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_13_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_13_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_13_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_14_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_14_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_14_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_15_clock; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [9:0] spriteMemories_15_io_address; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire  spriteMemories_15_io_enable; // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_0; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_1; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_2; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_3; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_4; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_5; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_6; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_7; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_8; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_9; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_10; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_11; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_12; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_13; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_14; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataInput_15; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_0; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_1; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_2; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_3; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_4; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_5; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_6; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_7; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_8; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_9; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_10; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_11; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_12; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_13; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_14; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectInput_15; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [6:0] multiHotPriortyReductionTree_io_dataOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire  multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  wire [3:0] multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+  reg [5:0] pixelColorBackReg_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 30:42]
+  reg [5:0] pixelColorBackReg; // @[\\src\\main\\scala\\SpriteBlender.scala 30:34]
+  wire  spriteAlphaBit = spriteMemories_0_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_0_T_1 = ~spriteAlphaBit; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_1; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_1 = spriteDataReg_1[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_1 = spriteMemories_1_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_1_T_1 = ~spriteAlphaBit_1; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_2; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_2 = spriteDataReg_2[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_2 = spriteMemories_2_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_2_T_1 = ~spriteAlphaBit_2; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_3; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_3 = spriteDataReg_3[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_3 = spriteMemories_3_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_3_T_1 = ~spriteAlphaBit_3; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_4; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_4 = spriteDataReg_4[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_4 = spriteMemories_4_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_4_T_1 = ~spriteAlphaBit_4; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_5; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_5 = spriteDataReg_5[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_5 = spriteMemories_5_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_5_T_1 = ~spriteAlphaBit_5; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_6; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_6 = spriteDataReg_6[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_6 = spriteMemories_6_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_6_T_1 = ~spriteAlphaBit_6; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_7; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_7 = spriteDataReg_7[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_7 = spriteMemories_7_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1669,8 +1711,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_7_T = multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_7_T_1 = ~spriteAlphaBit_7; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_8; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_8 = spriteDataReg_8[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_8 = spriteMemories_8_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1678,8 +1719,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_8_T = multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_8_T_1 = ~spriteAlphaBit_8; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_9; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_9 = spriteDataReg_9[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_9 = spriteMemories_9_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1687,8 +1727,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_9_T = multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_9_T_1 = ~spriteAlphaBit_9; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_10; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_10 = spriteDataReg_10[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_10 = spriteMemories_10_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1696,8 +1735,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_10_T = multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_10_T_1 = ~spriteAlphaBit_10; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_11; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_11 = spriteDataReg_11[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_11 = spriteMemories_11_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1705,8 +1743,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_11_T = multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_11_T_1 = ~spriteAlphaBit_11; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_12; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_12 = spriteDataReg_12[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_12 = spriteMemories_12_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1714,8 +1751,7 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_12_T = multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_12_T_1 = ~spriteAlphaBit_12; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_13; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_13 = spriteDataReg_13[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_13 = spriteMemories_13_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1723,13 +1759,11 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_13_T = multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_13_T_1 = ~spriteAlphaBit_13; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_14; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_14 = spriteDataReg_14[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_14 = spriteMemories_14_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   wire  _multiHotPriortyReductionTree_io_selectInput_14_T_1 = ~spriteAlphaBit_14; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg [6:0] spriteDataReg_15; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
-  wire  spriteAlphaBit_15 = spriteDataReg_15[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:39]
+  wire  spriteAlphaBit_15 = spriteMemories_15_io_dataRead[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
   reg  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
@@ -1737,143 +1771,270 @@ module SpriteBlender(
   wire  _multiHotPriortyReductionTree_io_selectInput_15_T = multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 &
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0; // @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
   wire  _multiHotPriortyReductionTree_io_selectInput_15_T_1 = ~spriteAlphaBit_15; // @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
-  reg  anySpriteSelected; // @[\\src\\main\\scala\\SpriteBlender.scala 82:34]
-  wire  selectedSpriteAlpha = multiHotPriortyReductionTree_io_dataOutput[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 85:52]
-  wire [5:0] selectedSpriteColor = multiHotPriortyReductionTree_io_dataOutput[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 86:52]
-  wire [5:0] a = io_spriteOpacityLevel > 2'h0 ? selectedSpriteColor : io_pixelColorBack; // @[\\src\\main\\scala\\SpriteBlender.scala 118:14]
-  wire [5:0] b = io_spriteOpacityLevel == 2'h3 ? selectedSpriteColor : io_pixelColorBack; // @[\\src\\main\\scala\\SpriteBlender.scala 119:14]
-  wire  comparerR = selectedSpriteColor[5:4] > io_pixelColorBack[5:4]; // @[\\src\\main\\scala\\SpriteBlender.scala 120:44]
-  wire  comparerG = selectedSpriteColor[3:2] > io_pixelColorBack[3:2]; // @[\\src\\main\\scala\\SpriteBlender.scala 121:44]
-  wire  comparerB = selectedSpriteColor[1:0] > io_pixelColorBack[1:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 122:44]
-  wire [2:0] _zR_T = {io_spriteOpacityLevel,comparerR}; // @[\\src\\main\\scala\\SpriteBlender.scala 124:19]
-  wire  zR = _zR_T == 3'h3 | _zR_T == 3'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 124:59]
-  wire [2:0] _zG_T = {io_spriteOpacityLevel,comparerG}; // @[\\src\\main\\scala\\SpriteBlender.scala 125:19]
-  wire  zG = _zG_T == 3'h3 | _zG_T == 3'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 125:59]
-  wire [2:0] _zB_T = {io_spriteOpacityLevel,comparerB}; // @[\\src\\main\\scala\\SpriteBlender.scala 126:19]
-  wire  zB = _zB_T == 3'h3 | _zB_T == 3'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 126:59]
-  wire [2:0] _blendedColorR_T_1 = {1'h0,a[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 133:34]
-  wire [1:0] _blendedColorR_T_2 = {1'h0,zR}; // @[\\src\\main\\scala\\SpriteBlender.scala 133:56]
-  wire [2:0] _GEN_0 = {{1'd0}, _blendedColorR_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 133:45]
-  wire [2:0] _blendedColorR_T_4 = _blendedColorR_T_1 + _GEN_0; // @[\\src\\main\\scala\\SpriteBlender.scala 133:45]
-  wire [2:0] _blendedColorR_T_6 = {1'h0,b[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 133:74]
-  wire [2:0] _blendedColorR_T_8 = _blendedColorR_T_4 + _blendedColorR_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 133:62]
-  wire [1:0] blendedColorR = _blendedColorR_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 133:86]
-  wire [2:0] _blendedColorG_T_1 = {1'h0,a[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 134:34]
-  wire [1:0] _blendedColorG_T_2 = {1'h0,zG}; // @[\\src\\main\\scala\\SpriteBlender.scala 134:56]
-  wire [2:0] _GEN_1 = {{1'd0}, _blendedColorG_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 134:45]
-  wire [2:0] _blendedColorG_T_4 = _blendedColorG_T_1 + _GEN_1; // @[\\src\\main\\scala\\SpriteBlender.scala 134:45]
-  wire [2:0] _blendedColorG_T_6 = {1'h0,b[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 134:74]
-  wire [2:0] _blendedColorG_T_8 = _blendedColorG_T_4 + _blendedColorG_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 134:62]
-  wire [1:0] blendedColorG = _blendedColorG_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 134:86]
-  wire [2:0] _blendedColorB_T_1 = {1'h0,a[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 135:34]
-  wire [1:0] _blendedColorB_T_2 = {1'h0,zB}; // @[\\src\\main\\scala\\SpriteBlender.scala 135:56]
-  wire [2:0] _GEN_2 = {{1'd0}, _blendedColorB_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 135:45]
-  wire [2:0] _blendedColorB_T_4 = _blendedColorB_T_1 + _GEN_2; // @[\\src\\main\\scala\\SpriteBlender.scala 135:45]
-  wire [2:0] _blendedColorB_T_6 = {1'h0,b[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 135:74]
-  wire [2:0] _blendedColorB_T_8 = _blendedColorB_T_4 + _blendedColorB_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 135:62]
-  wire [1:0] blendedColorB = _blendedColorB_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 135:86]
-  wire [5:0] _blendedColor_T_2 = {blendedColorR,blendedColorG,blendedColorB}; // @[\\src\\main\\scala\\SpriteBlender.scala 145:8]
-  wire [5:0] blendedColor = anySpriteSelected & ~selectedSpriteAlpha ? _blendedColor_T_2 : io_pixelColorBack; // @[\\src\\main\\scala\\SpriteBlender.scala 144:22]
-  reg [3:0] io_vgaRed_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 161:23]
-  reg [3:0] io_vgaGreen_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 162:25]
-  reg [3:0] io_vgaBlue_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 163:24]
-  Memory_35 spriteMemories_0 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  wire  topSpriteAlpha = multiHotPriortyReductionTree_io_dataOutput[6]; // @[\\src\\main\\scala\\SpriteBlender.scala 81:38]
+  wire [5:0] topSpriteRGB = multiHotPriortyReductionTree_io_dataOutput[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 82:36]
+  reg  inside_pipeReg__0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid = inside_pipeReg__0 & _multiHotPriortyReductionTree_io_selectInput_0_T_1 & 4'h0 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_0 = spriteMemories_0_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_1_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_1 = inside_pipeReg_1_0 & _multiHotPriortyReductionTree_io_selectInput_1_T_1 & 4'h1 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_1 = spriteMemories_1_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_2_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_2_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_2 = inside_pipeReg_2_0 & _multiHotPriortyReductionTree_io_selectInput_2_T_1 & 4'h2 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_2 = spriteMemories_2_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_3_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_3_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_3 = inside_pipeReg_3_0 & _multiHotPriortyReductionTree_io_selectInput_3_T_1 & 4'h3 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_3 = spriteMemories_3_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_4_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_4_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_4 = inside_pipeReg_4_0 & _multiHotPriortyReductionTree_io_selectInput_4_T_1 & 4'h4 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_4 = spriteMemories_4_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_5_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_5_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_5 = inside_pipeReg_5_0 & _multiHotPriortyReductionTree_io_selectInput_5_T_1 & 4'h5 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_5 = spriteMemories_5_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_6_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_6_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_6 = inside_pipeReg_6_0 & _multiHotPriortyReductionTree_io_selectInput_6_T_1 & 4'h6 !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_6 = spriteMemories_6_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_7_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_7_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_7_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_7_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_7 = visible_pipeReg_7_0 & inside_pipeReg_7_0 & _multiHotPriortyReductionTree_io_selectInput_7_T_1 & 4'h7
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_7 = spriteMemories_7_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_8_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_8_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_8_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_8_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_8 = visible_pipeReg_8_0 & inside_pipeReg_8_0 & _multiHotPriortyReductionTree_io_selectInput_8_T_1 & 4'h8
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_8 = spriteMemories_8_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_9_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_9_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_9_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_9_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_9 = visible_pipeReg_9_0 & inside_pipeReg_9_0 & _multiHotPriortyReductionTree_io_selectInput_9_T_1 & 4'h9
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_9 = spriteMemories_9_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_10_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_10_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_10_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_10_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_10 = visible_pipeReg_10_0 & inside_pipeReg_10_0 & _multiHotPriortyReductionTree_io_selectInput_10_T_1 & 4'ha
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_10 = spriteMemories_10_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_11_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_11_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_11_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_11_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_11 = visible_pipeReg_11_0 & inside_pipeReg_11_0 & _multiHotPriortyReductionTree_io_selectInput_11_T_1 & 4'hb
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_11 = spriteMemories_11_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_12_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_12_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_12_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_12_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_12 = visible_pipeReg_12_0 & inside_pipeReg_12_0 & _multiHotPriortyReductionTree_io_selectInput_12_T_1 & 4'hc
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_12 = spriteMemories_12_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_13_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_13_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_13_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_13_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_13 = visible_pipeReg_13_0 & inside_pipeReg_13_0 & _multiHotPriortyReductionTree_io_selectInput_13_T_1 & 4'hd
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_13 = spriteMemories_13_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  inside_pipeReg_14_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_14_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_14 = inside_pipeReg_14_0 & _multiHotPriortyReductionTree_io_selectInput_14_T_1 & 4'he !=
+    multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_14 = spriteMemories_14_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  reg  visible_pipeReg_15_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  visible_pipeReg_15_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_15_0; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  reg  inside_pipeReg_15_1; // @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+  wire  valid_15 = visible_pipeReg_15_0 & inside_pipeReg_15_0 & _multiHotPriortyReductionTree_io_selectInput_15_T_1 & 4'hf
+     != multiHotPriortyReductionTree_io_indexOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+  wire [5:0] secondSpriteCandidates_15 = spriteMemories_15_io_dataRead[5:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+  wire [5:0] _secondSpriteColor_T = valid_14 ? secondSpriteCandidates_14 : secondSpriteCandidates_15; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_1 = valid_13 ? secondSpriteCandidates_13 : _secondSpriteColor_T; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_2 = valid_12 ? secondSpriteCandidates_12 : _secondSpriteColor_T_1; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_3 = valid_11 ? secondSpriteCandidates_11 : _secondSpriteColor_T_2; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_4 = valid_10 ? secondSpriteCandidates_10 : _secondSpriteColor_T_3; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_5 = valid_9 ? secondSpriteCandidates_9 : _secondSpriteColor_T_4; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_6 = valid_8 ? secondSpriteCandidates_8 : _secondSpriteColor_T_5; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_7 = valid_7 ? secondSpriteCandidates_7 : _secondSpriteColor_T_6; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_8 = valid_6 ? secondSpriteCandidates_6 : _secondSpriteColor_T_7; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_9 = valid_5 ? secondSpriteCandidates_5 : _secondSpriteColor_T_8; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_10 = valid_4 ? secondSpriteCandidates_4 : _secondSpriteColor_T_9; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_11 = valid_3 ? secondSpriteCandidates_3 : _secondSpriteColor_T_10; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_12 = valid_2 ? secondSpriteCandidates_2 : _secondSpriteColor_T_11; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] _secondSpriteColor_T_13 = valid_1 ? secondSpriteCandidates_1 : _secondSpriteColor_T_12; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire [5:0] secondSpriteColor = valid ? secondSpriteCandidates_0 : _secondSpriteColor_T_13; // @[src/main/scala/chisel3/util/Mux.scala 50:70]
+  wire  secondSpriteFound = valid | valid_1 | valid_2 | valid_3 | valid_4 | valid_5 | valid_6 | valid_7 | valid_8 |
+    valid_9 | valid_10 | valid_11 | valid_12 | valid_13 | valid_14 | valid_15; // @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+  wire [5:0] underColor = secondSpriteFound ? secondSpriteColor : pixelColorBackReg; // @[\\src\\main\\scala\\SpriteBlender.scala 103:23]
+  wire [1:0] _GEN_1 = 4'h1 == multiHotPriortyReductionTree_io_indexOutput ? io_spriteOpacityLevel_1 :
+    io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_2 = 4'h2 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_1; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_3 = 4'h3 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_2; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_4 = 4'h4 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_3; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_5 = 4'h5 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_4; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_6 = 4'h6 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_5; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_7 = 4'h7 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_6; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_8 = 4'h8 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_7; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_9 = 4'h9 == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_8; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_10 = 4'ha == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_9; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_11 = 4'hb == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_10; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_12 = 4'hc == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_11; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_13 = 4'hd == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_12; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_14 = 4'he == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_13; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [1:0] _GEN_15 = 4'hf == multiHotPriortyReductionTree_io_indexOutput ? 2'h1 : _GEN_14; // @[\\src\\main\\scala\\SpriteBlender.scala 118:{32,32}]
+  wire [5:0] a = _GEN_15 > 2'h0 ? topSpriteRGB : underColor; // @[\\src\\main\\scala\\SpriteBlender.scala 118:14]
+  wire [5:0] b = _GEN_15 == 2'h3 ? topSpriteRGB : underColor; // @[\\src\\main\\scala\\SpriteBlender.scala 119:14]
+  wire  comparerR = topSpriteRGB[5:4] > underColor[5:4]; // @[\\src\\main\\scala\\SpriteBlender.scala 120:37]
+  wire  comparerG = topSpriteRGB[3:2] > underColor[3:2]; // @[\\src\\main\\scala\\SpriteBlender.scala 121:37]
+  wire  comparerB = topSpriteRGB[1:0] > underColor[1:0]; // @[\\src\\main\\scala\\SpriteBlender.scala 122:37]
+  wire [6:0] _zR_T = {topSpriteRGB,comparerR}; // @[\\src\\main\\scala\\SpriteBlender.scala 124:19]
+  wire  zR = _zR_T == 7'h3 | _zR_T == 7'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 124:53]
+  wire [6:0] _zG_T = {topSpriteRGB,comparerG}; // @[\\src\\main\\scala\\SpriteBlender.scala 125:19]
+  wire  zG = _zG_T == 7'h3 | _zG_T == 7'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 125:53]
+  wire [6:0] _zB_T = {topSpriteRGB,comparerB}; // @[\\src\\main\\scala\\SpriteBlender.scala 126:19]
+  wire  zB = _zB_T == 7'h3 | _zB_T == 7'h4; // @[\\src\\main\\scala\\SpriteBlender.scala 126:53]
+  wire [2:0] _blendedColorR_T_1 = {1'h0,a[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 141:34]
+  wire [1:0] _blendedColorR_T_2 = {1'h0,zR}; // @[\\src\\main\\scala\\SpriteBlender.scala 141:56]
+  wire [2:0] _GEN_16 = {{1'd0}, _blendedColorR_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 141:45]
+  wire [2:0] _blendedColorR_T_4 = _blendedColorR_T_1 + _GEN_16; // @[\\src\\main\\scala\\SpriteBlender.scala 141:45]
+  wire [2:0] _blendedColorR_T_6 = {1'h0,b[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 141:74]
+  wire [2:0] _blendedColorR_T_8 = _blendedColorR_T_4 + _blendedColorR_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 141:62]
+  wire [1:0] blendedColorR = _blendedColorR_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 141:86]
+  wire [2:0] _blendedColorG_T_1 = {1'h0,a[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 142:34]
+  wire [1:0] _blendedColorG_T_2 = {1'h0,zG}; // @[\\src\\main\\scala\\SpriteBlender.scala 142:56]
+  wire [2:0] _GEN_17 = {{1'd0}, _blendedColorG_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 142:45]
+  wire [2:0] _blendedColorG_T_4 = _blendedColorG_T_1 + _GEN_17; // @[\\src\\main\\scala\\SpriteBlender.scala 142:45]
+  wire [2:0] _blendedColorG_T_6 = {1'h0,b[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 142:74]
+  wire [2:0] _blendedColorG_T_8 = _blendedColorG_T_4 + _blendedColorG_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 142:62]
+  wire [1:0] blendedColorG = _blendedColorG_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 142:86]
+  wire [2:0] _blendedColorB_T_1 = {1'h0,a[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 143:34]
+  wire [1:0] _blendedColorB_T_2 = {1'h0,zB}; // @[\\src\\main\\scala\\SpriteBlender.scala 143:56]
+  wire [2:0] _GEN_18 = {{1'd0}, _blendedColorB_T_2}; // @[\\src\\main\\scala\\SpriteBlender.scala 143:45]
+  wire [2:0] _blendedColorB_T_4 = _blendedColorB_T_1 + _GEN_18; // @[\\src\\main\\scala\\SpriteBlender.scala 143:45]
+  wire [2:0] _blendedColorB_T_6 = {1'h0,b[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 143:74]
+  wire [2:0] _blendedColorB_T_8 = _blendedColorB_T_4 + _blendedColorB_T_6; // @[\\src\\main\\scala\\SpriteBlender.scala 143:62]
+  wire [1:0] blendedColorB = _blendedColorB_T_8[2:1]; // @[\\src\\main\\scala\\SpriteBlender.scala 143:86]
+  wire [5:0] _blendedColor_T_2 = {blendedColorR,blendedColorG,blendedColorB}; // @[\\src\\main\\scala\\SpriteBlender.scala 152:8]
+  wire [5:0] blendedColor = multiHotPriortyReductionTree_io_selectOutput & ~topSpriteAlpha ? _blendedColor_T_2 :
+    pixelColorBackReg; // @[\\src\\main\\scala\\SpriteBlender.scala 151:22]
+  Memory_35 spriteMemories_0 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_0_clock),
     .io_address(spriteMemories_0_io_address),
     .io_dataRead(spriteMemories_0_io_dataRead),
     .io_enable(spriteMemories_0_io_enable)
   );
-  Memory_36 spriteMemories_1 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_36 spriteMemories_1 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_1_clock),
     .io_address(spriteMemories_1_io_address),
     .io_dataRead(spriteMemories_1_io_dataRead),
     .io_enable(spriteMemories_1_io_enable)
   );
-  Memory_37 spriteMemories_2 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_37 spriteMemories_2 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_2_clock),
     .io_address(spriteMemories_2_io_address),
     .io_dataRead(spriteMemories_2_io_dataRead),
     .io_enable(spriteMemories_2_io_enable)
   );
-  Memory_38 spriteMemories_3 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_38 spriteMemories_3 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_3_clock),
     .io_address(spriteMemories_3_io_address),
     .io_dataRead(spriteMemories_3_io_dataRead),
     .io_enable(spriteMemories_3_io_enable)
   );
-  Memory_39 spriteMemories_4 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_39 spriteMemories_4 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_4_clock),
     .io_address(spriteMemories_4_io_address),
     .io_dataRead(spriteMemories_4_io_dataRead),
     .io_enable(spriteMemories_4_io_enable)
   );
-  Memory_40 spriteMemories_5 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_40 spriteMemories_5 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_5_clock),
     .io_address(spriteMemories_5_io_address),
     .io_dataRead(spriteMemories_5_io_dataRead),
     .io_enable(spriteMemories_5_io_enable)
   );
-  Memory_41 spriteMemories_6 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_41 spriteMemories_6 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_6_clock),
     .io_address(spriteMemories_6_io_address),
     .io_dataRead(spriteMemories_6_io_dataRead),
     .io_enable(spriteMemories_6_io_enable)
   );
-  Memory_42 spriteMemories_7 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_42 spriteMemories_7 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_7_clock),
     .io_address(spriteMemories_7_io_address),
     .io_dataRead(spriteMemories_7_io_dataRead),
     .io_enable(spriteMemories_7_io_enable)
   );
-  Memory_43 spriteMemories_8 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_43 spriteMemories_8 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_8_clock),
     .io_address(spriteMemories_8_io_address),
     .io_dataRead(spriteMemories_8_io_dataRead),
     .io_enable(spriteMemories_8_io_enable)
   );
-  Memory_44 spriteMemories_9 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_44 spriteMemories_9 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_9_clock),
     .io_address(spriteMemories_9_io_address),
     .io_dataRead(spriteMemories_9_io_dataRead),
     .io_enable(spriteMemories_9_io_enable)
   );
-  Memory_45 spriteMemories_10 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_45 spriteMemories_10 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_10_clock),
     .io_address(spriteMemories_10_io_address),
     .io_dataRead(spriteMemories_10_io_dataRead),
     .io_enable(spriteMemories_10_io_enable)
   );
-  Memory_46 spriteMemories_11 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_46 spriteMemories_11 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_11_clock),
     .io_address(spriteMemories_11_io_address),
     .io_dataRead(spriteMemories_11_io_dataRead),
     .io_enable(spriteMemories_11_io_enable)
   );
-  Memory_47 spriteMemories_12 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_47 spriteMemories_12 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_12_clock),
     .io_address(spriteMemories_12_io_address),
     .io_dataRead(spriteMemories_12_io_dataRead),
     .io_enable(spriteMemories_12_io_enable)
   );
-  Memory_48 spriteMemories_13 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_48 spriteMemories_13 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_13_clock),
     .io_address(spriteMemories_13_io_address),
     .io_dataRead(spriteMemories_13_io_dataRead),
     .io_enable(spriteMemories_13_io_enable)
   );
-  Memory_49 spriteMemories_14 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_49 spriteMemories_14 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_14_clock),
     .io_address(spriteMemories_14_io_address),
     .io_dataRead(spriteMemories_14_io_dataRead),
     .io_enable(spriteMemories_14_io_enable)
   );
-  Memory_50 spriteMemories_15 ( // @[\\src\\main\\scala\\SpriteBlender.scala 44:30]
+  Memory_50 spriteMemories_15 ( // @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
     .clock(spriteMemories_15_clock),
     .io_address(spriteMemories_15_io_address),
     .io_dataRead(spriteMemories_15_io_dataRead),
     .io_enable(spriteMemories_15_io_enable)
   );
-  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\SpriteBlender.scala 57:44]
+  MultiHotPriortyReductionTree multiHotPriortyReductionTree ( // @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
     .io_dataInput_0(multiHotPriortyReductionTree_io_dataInput_0),
     .io_dataInput_1(multiHotPriortyReductionTree_io_dataInput_1),
     .io_dataInput_2(multiHotPriortyReductionTree_io_dataInput_2),
@@ -1907,75 +2068,76 @@ module SpriteBlender(
     .io_selectInput_14(multiHotPriortyReductionTree_io_selectInput_14),
     .io_selectInput_15(multiHotPriortyReductionTree_io_selectInput_15),
     .io_dataOutput(multiHotPriortyReductionTree_io_dataOutput),
-    .io_selectOutput(multiHotPriortyReductionTree_io_selectOutput)
+    .io_selectOutput(multiHotPriortyReductionTree_io_selectOutput),
+    .io_indexOutput(multiHotPriortyReductionTree_io_indexOutput)
   );
-  assign io_vgaRed = io_vgaRed_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 161:13]
-  assign io_vgaGreen = io_vgaGreen_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 162:15]
-  assign io_vgaBlue = io_vgaBlue_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 163:14]
+  assign io_vgaRed = {blendedColor[5:4],blendedColor[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 158:26]
+  assign io_vgaGreen = {blendedColor[3:2],blendedColor[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 159:28]
+  assign io_vgaBlue = {blendedColor[1:0],blendedColor[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 160:27]
   assign spriteMemories_0_clock = clock;
-  assign spriteMemories_0_io_address = io_spritePixelAddr_0; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_0_io_enable = io_inSprite_0; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_0_io_address = io_spritePixelAddr_0; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_0_io_enable = io_inSprite_0; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_1_clock = clock;
-  assign spriteMemories_1_io_address = io_spritePixelAddr_1; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_1_io_enable = io_inSprite_1; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_1_io_address = io_spritePixelAddr_1; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_1_io_enable = io_inSprite_1; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_2_clock = clock;
-  assign spriteMemories_2_io_address = io_spritePixelAddr_2; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_2_io_enable = io_inSprite_2; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_2_io_address = io_spritePixelAddr_2; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_2_io_enable = io_inSprite_2; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_3_clock = clock;
-  assign spriteMemories_3_io_address = io_spritePixelAddr_3; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_3_io_enable = io_inSprite_3; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_3_io_address = io_spritePixelAddr_3; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_3_io_enable = io_inSprite_3; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_4_clock = clock;
-  assign spriteMemories_4_io_address = io_spritePixelAddr_4; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_4_io_enable = io_inSprite_4; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_4_io_address = io_spritePixelAddr_4; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_4_io_enable = io_inSprite_4; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_5_clock = clock;
-  assign spriteMemories_5_io_address = io_spritePixelAddr_5; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_5_io_enable = io_inSprite_5; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_5_io_address = io_spritePixelAddr_5; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_5_io_enable = io_inSprite_5; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_6_clock = clock;
-  assign spriteMemories_6_io_address = io_spritePixelAddr_6; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_6_io_enable = io_inSprite_6; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_6_io_address = io_spritePixelAddr_6; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_6_io_enable = io_inSprite_6; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_7_clock = clock;
-  assign spriteMemories_7_io_address = io_spritePixelAddr_7; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_7_io_enable = io_spriteVisibleReg_7 & io_inSprite_7; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_7_io_address = io_spritePixelAddr_7; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_7_io_enable = io_spriteVisibleReg_7 & io_inSprite_7; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_8_clock = clock;
-  assign spriteMemories_8_io_address = io_spritePixelAddr_8; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_8_io_enable = io_spriteVisibleReg_8 & io_inSprite_8; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_8_io_address = io_spritePixelAddr_8; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_8_io_enable = io_spriteVisibleReg_8 & io_inSprite_8; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_9_clock = clock;
-  assign spriteMemories_9_io_address = io_spritePixelAddr_9; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_9_io_enable = io_spriteVisibleReg_9 & io_inSprite_9; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_9_io_address = io_spritePixelAddr_9; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_9_io_enable = io_spriteVisibleReg_9 & io_inSprite_9; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_10_clock = clock;
-  assign spriteMemories_10_io_address = io_spritePixelAddr_10; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_10_io_enable = io_spriteVisibleReg_10 & io_inSprite_10; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_10_io_address = io_spritePixelAddr_10; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_10_io_enable = io_spriteVisibleReg_10 & io_inSprite_10; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_11_clock = clock;
-  assign spriteMemories_11_io_address = io_spritePixelAddr_11; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_11_io_enable = io_spriteVisibleReg_11 & io_inSprite_11; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_11_io_address = io_spritePixelAddr_11; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_11_io_enable = io_spriteVisibleReg_11 & io_inSprite_11; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_12_clock = clock;
-  assign spriteMemories_12_io_address = io_spritePixelAddr_12; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_12_io_enable = io_spriteVisibleReg_12 & io_inSprite_12; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_12_io_address = io_spritePixelAddr_12; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_12_io_enable = io_spriteVisibleReg_12 & io_inSprite_12; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_13_clock = clock;
-  assign spriteMemories_13_io_address = io_spritePixelAddr_13; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_13_io_enable = io_spriteVisibleReg_13 & io_inSprite_13; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_13_io_address = io_spritePixelAddr_13; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_13_io_enable = io_spriteVisibleReg_13 & io_inSprite_13; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_14_clock = clock;
-  assign spriteMemories_14_io_address = io_spritePixelAddr_14; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_14_io_enable = io_inSprite_14; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
+  assign spriteMemories_14_io_address = io_spritePixelAddr_14; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_14_io_enable = io_inSprite_14; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
   assign spriteMemories_15_clock = clock;
-  assign spriteMemories_15_io_address = io_spritePixelAddr_15; // @[\\src\\main\\scala\\SpriteBlender.scala 52:34]
-  assign spriteMemories_15_io_enable = io_spriteVisibleReg_15 & io_inSprite_15; // @[\\src\\main\\scala\\SpriteBlender.scala 50:56]
-  assign multiHotPriortyReductionTree_io_dataInput_0 = spriteDataReg; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_1 = spriteDataReg_1; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_2 = spriteDataReg_2; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_3 = spriteDataReg_3; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_4 = spriteDataReg_4; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_5 = spriteDataReg_5; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_6 = spriteDataReg_6; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_7 = spriteDataReg_7; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_8 = spriteDataReg_8; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_9 = spriteDataReg_9; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_10 = spriteDataReg_10; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_11 = spriteDataReg_11; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_12 = spriteDataReg_12; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_13 = spriteDataReg_13; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_14 = spriteDataReg_14; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
-  assign multiHotPriortyReductionTree_io_dataInput_15 = spriteDataReg_15; // @[\\src\\main\\scala\\SpriteBlender.scala 61:66]
+  assign spriteMemories_15_io_address = io_spritePixelAddr_15; // @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+  assign spriteMemories_15_io_enable = io_spriteVisibleReg_15 & io_inSprite_15; // @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+  assign multiHotPriortyReductionTree_io_dataInput_0 = spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_1 = spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_2 = spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_3 = spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_4 = spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_5 = spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_6 = spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_7 = spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_8 = spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_9 = spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_10 = spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_11 = spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_12 = spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_13 = spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_14 = spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+  assign multiHotPriortyReductionTree_io_dataInput_15 = spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
   assign multiHotPriortyReductionTree_io_selectInput_0 = multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 &
     _multiHotPriortyReductionTree_io_selectInput_0_T_1; // @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
   assign multiHotPriortyReductionTree_io_selectInput_1 = multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 &
@@ -2009,98 +2171,128 @@ module SpriteBlender(
   assign multiHotPriortyReductionTree_io_selectInput_15 = _multiHotPriortyReductionTree_io_selectInput_15_T &
     _multiHotPriortyReductionTree_io_selectInput_15_T_1; // @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
   always @(posedge clock) begin
-    spriteDataReg <= spriteMemories_0_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
+    pixelColorBackReg_REG <= io_pixelColorBack; // @[\\src\\main\\scala\\SpriteBlender.scala 30:42]
+    pixelColorBackReg <= pixelColorBackReg_REG; // @[\\src\\main\\scala\\SpriteBlender.scala 30:34]
     multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 <= io_inSprite_0; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_1 <= spriteMemories_1_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 <= io_inSprite_1; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_2 <= spriteMemories_2_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 <= io_inSprite_2; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_3 <= spriteMemories_3_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 <= io_inSprite_3; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_4 <= spriteMemories_4_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 <= io_inSprite_4; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_5 <= spriteMemories_5_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 <= io_inSprite_5; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_6 <= spriteMemories_6_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 <= io_inSprite_6; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_7 <= spriteMemories_7_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 <= io_spriteVisibleReg_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 <= io_inSprite_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_8 <= spriteMemories_8_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 <= io_spriteVisibleReg_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 <= io_inSprite_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_9 <= spriteMemories_9_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 <= multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1
       ; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 <= io_spriteVisibleReg_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 <= io_inSprite_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_10 <= spriteMemories_10_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 <= io_spriteVisibleReg_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 <= io_inSprite_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_11 <= spriteMemories_11_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 <= io_spriteVisibleReg_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 <= io_inSprite_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_12 <= spriteMemories_12_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 <= io_spriteVisibleReg_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 <= io_inSprite_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_13 <= spriteMemories_13_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 <= io_spriteVisibleReg_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 <= io_inSprite_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_14 <= spriteMemories_14_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 <= io_inSprite_14; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    spriteDataReg_15 <= spriteMemories_15_io_dataRead; // @[\\src\\main\\scala\\SpriteBlender.scala 60:32]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 <= io_spriteVisibleReg_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 <=
       multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
     multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 <= io_inSprite_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
-    anySpriteSelected <= multiHotPriortyReductionTree_io_selectOutput; // @[\\src\\main\\scala\\SpriteBlender.scala 82:34]
-    io_vgaRed_REG <= {blendedColor[5:4],blendedColor[5:4]}; // @[\\src\\main\\scala\\SpriteBlender.scala 151:26]
-    io_vgaGreen_REG <= {blendedColor[3:2],blendedColor[3:2]}; // @[\\src\\main\\scala\\SpriteBlender.scala 152:28]
-    io_vgaBlue_REG <= {blendedColor[1:0],blendedColor[1:0]}; // @[\\src\\main\\scala\\SpriteBlender.scala 153:27]
+    inside_pipeReg__0 <= inside_pipeReg__1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg__1 <= io_inSprite_0; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_1_0 <= inside_pipeReg_1_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_1_1 <= io_inSprite_1; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_2_0 <= inside_pipeReg_2_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_2_1 <= io_inSprite_2; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_3_0 <= inside_pipeReg_3_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_3_1 <= io_inSprite_3; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_4_0 <= inside_pipeReg_4_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_4_1 <= io_inSprite_4; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_5_0 <= inside_pipeReg_5_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_5_1 <= io_inSprite_5; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_6_0 <= inside_pipeReg_6_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_6_1 <= io_inSprite_6; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_7_0 <= visible_pipeReg_7_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_7_1 <= io_spriteVisibleReg_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_7_0 <= inside_pipeReg_7_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_7_1 <= io_inSprite_7; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_8_0 <= visible_pipeReg_8_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_8_1 <= io_spriteVisibleReg_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_8_0 <= inside_pipeReg_8_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_8_1 <= io_inSprite_8; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_9_0 <= visible_pipeReg_9_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_9_1 <= io_spriteVisibleReg_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_9_0 <= inside_pipeReg_9_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_9_1 <= io_inSprite_9; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_10_0 <= visible_pipeReg_10_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_10_1 <= io_spriteVisibleReg_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_10_0 <= inside_pipeReg_10_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_10_1 <= io_inSprite_10; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_11_0 <= visible_pipeReg_11_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_11_1 <= io_spriteVisibleReg_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_11_0 <= inside_pipeReg_11_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_11_1 <= io_inSprite_11; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_12_0 <= visible_pipeReg_12_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_12_1 <= io_spriteVisibleReg_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_12_0 <= inside_pipeReg_12_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_12_1 <= io_inSprite_12; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_13_0 <= visible_pipeReg_13_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_13_1 <= io_spriteVisibleReg_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_13_0 <= inside_pipeReg_13_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_13_1 <= io_inSprite_13; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_14_0 <= inside_pipeReg_14_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_14_1 <= io_inSprite_14; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_15_0 <= visible_pipeReg_15_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    visible_pipeReg_15_1 <= io_spriteVisibleReg_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_15_0 <= inside_pipeReg_15_1; // @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    inside_pipeReg_15_1 <= io_inSprite_15; // @[\\src\\main\\scala\\GameUtilities.scala 23:30]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -2139,141 +2331,201 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  spriteDataReg = _RAND_0[6:0];
+  pixelColorBackReg_REG = _RAND_0[5:0];
   _RAND_1 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_1[0:0];
+  pixelColorBackReg = _RAND_1[5:0];
   _RAND_2 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_2[0:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_0 = _RAND_2[0:0];
   _RAND_3 = {1{`RANDOM}};
-  spriteDataReg_1 = _RAND_3[6:0];
+  multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1_1 = _RAND_3[0:0];
   _RAND_4 = {1{`RANDOM}};
   multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_0 = _RAND_4[0:0];
   _RAND_5 = {1{`RANDOM}};
   multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1_1 = _RAND_5[0:0];
   _RAND_6 = {1{`RANDOM}};
-  spriteDataReg_2 = _RAND_6[6:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_6[0:0];
   _RAND_7 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_0 = _RAND_7[0:0];
+  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_7[0:0];
   _RAND_8 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1_1 = _RAND_8[0:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_8[0:0];
   _RAND_9 = {1{`RANDOM}};
-  spriteDataReg_3 = _RAND_9[6:0];
+  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_9[0:0];
   _RAND_10 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_0 = _RAND_10[0:0];
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_10[0:0];
   _RAND_11 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1_1 = _RAND_11[0:0];
+  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_11[0:0];
   _RAND_12 = {1{`RANDOM}};
-  spriteDataReg_4 = _RAND_12[6:0];
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_12[0:0];
   _RAND_13 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_0 = _RAND_13[0:0];
+  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_13[0:0];
   _RAND_14 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1_1 = _RAND_14[0:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_14[0:0];
   _RAND_15 = {1{`RANDOM}};
-  spriteDataReg_5 = _RAND_15[6:0];
+  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_15[0:0];
   _RAND_16 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_0 = _RAND_16[0:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_16[0:0];
   _RAND_17 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1_1 = _RAND_17[0:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_17[0:0];
   _RAND_18 = {1{`RANDOM}};
-  spriteDataReg_6 = _RAND_18[6:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_18[0:0];
   _RAND_19 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_0 = _RAND_19[0:0];
+  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_19[0:0];
   _RAND_20 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1_1 = _RAND_20[0:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_20[0:0];
   _RAND_21 = {1{`RANDOM}};
-  spriteDataReg_7 = _RAND_21[6:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_21[0:0];
   _RAND_22 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__0 = _RAND_22[0:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_22[0:0];
   _RAND_23 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg__1 = _RAND_23[0:0];
+  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_23[0:0];
   _RAND_24 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_0 = _RAND_24[0:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_24[0:0];
   _RAND_25 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1_1 = _RAND_25[0:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_25[0:0];
   _RAND_26 = {1{`RANDOM}};
-  spriteDataReg_8 = _RAND_26[6:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_26[0:0];
   _RAND_27 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__0 = _RAND_27[0:0];
+  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_27[0:0];
   _RAND_28 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg__1 = _RAND_28[0:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_28[0:0];
   _RAND_29 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_0 = _RAND_29[0:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_29[0:0];
   _RAND_30 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1_1 = _RAND_30[0:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_30[0:0];
   _RAND_31 = {1{`RANDOM}};
-  spriteDataReg_9 = _RAND_31[6:0];
+  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_31[0:0];
   _RAND_32 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__0 = _RAND_32[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_32[0:0];
   _RAND_33 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg__1 = _RAND_33[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_33[0:0];
   _RAND_34 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_0 = _RAND_34[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_34[0:0];
   _RAND_35 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1_1 = _RAND_35[0:0];
+  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_35[0:0];
   _RAND_36 = {1{`RANDOM}};
-  spriteDataReg_10 = _RAND_36[6:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_36[0:0];
   _RAND_37 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__0 = _RAND_37[0:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_37[0:0];
   _RAND_38 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg__1 = _RAND_38[0:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_38[0:0];
   _RAND_39 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_0 = _RAND_39[0:0];
+  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_39[0:0];
   _RAND_40 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1_1 = _RAND_40[0:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_40[0:0];
   _RAND_41 = {1{`RANDOM}};
-  spriteDataReg_11 = _RAND_41[6:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_41[0:0];
   _RAND_42 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__0 = _RAND_42[0:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_42[0:0];
   _RAND_43 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg__1 = _RAND_43[0:0];
+  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_43[0:0];
   _RAND_44 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_0 = _RAND_44[0:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_44[0:0];
   _RAND_45 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1_1 = _RAND_45[0:0];
+  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_45[0:0];
   _RAND_46 = {1{`RANDOM}};
-  spriteDataReg_12 = _RAND_46[6:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_46[0:0];
   _RAND_47 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__0 = _RAND_47[0:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_47[0:0];
   _RAND_48 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg__1 = _RAND_48[0:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_48[0:0];
   _RAND_49 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_0 = _RAND_49[0:0];
+  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_49[0:0];
   _RAND_50 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1_1 = _RAND_50[0:0];
+  inside_pipeReg__0 = _RAND_50[0:0];
   _RAND_51 = {1{`RANDOM}};
-  spriteDataReg_13 = _RAND_51[6:0];
+  inside_pipeReg__1 = _RAND_51[0:0];
   _RAND_52 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__0 = _RAND_52[0:0];
+  inside_pipeReg_1_0 = _RAND_52[0:0];
   _RAND_53 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg__1 = _RAND_53[0:0];
+  inside_pipeReg_1_1 = _RAND_53[0:0];
   _RAND_54 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_0 = _RAND_54[0:0];
+  inside_pipeReg_2_0 = _RAND_54[0:0];
   _RAND_55 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1_1 = _RAND_55[0:0];
+  inside_pipeReg_2_1 = _RAND_55[0:0];
   _RAND_56 = {1{`RANDOM}};
-  spriteDataReg_14 = _RAND_56[6:0];
+  inside_pipeReg_3_0 = _RAND_56[0:0];
   _RAND_57 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_0 = _RAND_57[0:0];
+  inside_pipeReg_3_1 = _RAND_57[0:0];
   _RAND_58 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1_1 = _RAND_58[0:0];
+  inside_pipeReg_4_0 = _RAND_58[0:0];
   _RAND_59 = {1{`RANDOM}};
-  spriteDataReg_15 = _RAND_59[6:0];
+  inside_pipeReg_4_1 = _RAND_59[0:0];
   _RAND_60 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__0 = _RAND_60[0:0];
+  inside_pipeReg_5_0 = _RAND_60[0:0];
   _RAND_61 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg__1 = _RAND_61[0:0];
+  inside_pipeReg_5_1 = _RAND_61[0:0];
   _RAND_62 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_0 = _RAND_62[0:0];
+  inside_pipeReg_6_0 = _RAND_62[0:0];
   _RAND_63 = {1{`RANDOM}};
-  multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1_1 = _RAND_63[0:0];
+  inside_pipeReg_6_1 = _RAND_63[0:0];
   _RAND_64 = {1{`RANDOM}};
-  anySpriteSelected = _RAND_64[0:0];
+  visible_pipeReg_7_0 = _RAND_64[0:0];
   _RAND_65 = {1{`RANDOM}};
-  io_vgaRed_REG = _RAND_65[3:0];
+  visible_pipeReg_7_1 = _RAND_65[0:0];
   _RAND_66 = {1{`RANDOM}};
-  io_vgaGreen_REG = _RAND_66[3:0];
+  inside_pipeReg_7_0 = _RAND_66[0:0];
   _RAND_67 = {1{`RANDOM}};
-  io_vgaBlue_REG = _RAND_67[3:0];
+  inside_pipeReg_7_1 = _RAND_67[0:0];
+  _RAND_68 = {1{`RANDOM}};
+  visible_pipeReg_8_0 = _RAND_68[0:0];
+  _RAND_69 = {1{`RANDOM}};
+  visible_pipeReg_8_1 = _RAND_69[0:0];
+  _RAND_70 = {1{`RANDOM}};
+  inside_pipeReg_8_0 = _RAND_70[0:0];
+  _RAND_71 = {1{`RANDOM}};
+  inside_pipeReg_8_1 = _RAND_71[0:0];
+  _RAND_72 = {1{`RANDOM}};
+  visible_pipeReg_9_0 = _RAND_72[0:0];
+  _RAND_73 = {1{`RANDOM}};
+  visible_pipeReg_9_1 = _RAND_73[0:0];
+  _RAND_74 = {1{`RANDOM}};
+  inside_pipeReg_9_0 = _RAND_74[0:0];
+  _RAND_75 = {1{`RANDOM}};
+  inside_pipeReg_9_1 = _RAND_75[0:0];
+  _RAND_76 = {1{`RANDOM}};
+  visible_pipeReg_10_0 = _RAND_76[0:0];
+  _RAND_77 = {1{`RANDOM}};
+  visible_pipeReg_10_1 = _RAND_77[0:0];
+  _RAND_78 = {1{`RANDOM}};
+  inside_pipeReg_10_0 = _RAND_78[0:0];
+  _RAND_79 = {1{`RANDOM}};
+  inside_pipeReg_10_1 = _RAND_79[0:0];
+  _RAND_80 = {1{`RANDOM}};
+  visible_pipeReg_11_0 = _RAND_80[0:0];
+  _RAND_81 = {1{`RANDOM}};
+  visible_pipeReg_11_1 = _RAND_81[0:0];
+  _RAND_82 = {1{`RANDOM}};
+  inside_pipeReg_11_0 = _RAND_82[0:0];
+  _RAND_83 = {1{`RANDOM}};
+  inside_pipeReg_11_1 = _RAND_83[0:0];
+  _RAND_84 = {1{`RANDOM}};
+  visible_pipeReg_12_0 = _RAND_84[0:0];
+  _RAND_85 = {1{`RANDOM}};
+  visible_pipeReg_12_1 = _RAND_85[0:0];
+  _RAND_86 = {1{`RANDOM}};
+  inside_pipeReg_12_0 = _RAND_86[0:0];
+  _RAND_87 = {1{`RANDOM}};
+  inside_pipeReg_12_1 = _RAND_87[0:0];
+  _RAND_88 = {1{`RANDOM}};
+  visible_pipeReg_13_0 = _RAND_88[0:0];
+  _RAND_89 = {1{`RANDOM}};
+  visible_pipeReg_13_1 = _RAND_89[0:0];
+  _RAND_90 = {1{`RANDOM}};
+  inside_pipeReg_13_0 = _RAND_90[0:0];
+  _RAND_91 = {1{`RANDOM}};
+  inside_pipeReg_13_1 = _RAND_91[0:0];
+  _RAND_92 = {1{`RANDOM}};
+  inside_pipeReg_14_0 = _RAND_92[0:0];
+  _RAND_93 = {1{`RANDOM}};
+  inside_pipeReg_14_1 = _RAND_93[0:0];
+  _RAND_94 = {1{`RANDOM}};
+  visible_pipeReg_15_0 = _RAND_94[0:0];
+  _RAND_95 = {1{`RANDOM}};
+  visible_pipeReg_15_1 = _RAND_95[0:0];
+  _RAND_96 = {1{`RANDOM}};
+  inside_pipeReg_15_0 = _RAND_96[0:0];
+  _RAND_97 = {1{`RANDOM}};
+  inside_pipeReg_15_1 = _RAND_97[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -2288,7 +2540,8 @@ module GraphicEngineVGA(
   input  [10:0] io_spriteXPosition_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input  [9:0]  io_spriteYPosition_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input         io_spriteFlipHorizontal_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
-  input  [1:0]  io_spriteOpacityLevel, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input  [1:0]  io_spriteOpacityLevel_0, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
+  input  [1:0]  io_spriteOpacityLevel_1, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   output        io_newFrame, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   input         io_frameUpdateDone, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
   output        io_missingFrameError, // @[\\src\\main\\scala\\GraphicEngineVGA.scala 12:14]
@@ -2391,7 +2644,6 @@ module GraphicEngineVGA(
   reg [31:0] _RAND_89;
   reg [31:0] _RAND_90;
   reg [31:0] _RAND_91;
-  reg [31:0] _RAND_92;
 `endif // RANDOMIZE_REG_INIT
   wire  backTileMemories_0_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 166:32]
   wire [9:0] backTileMemories_0_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 166:32]
@@ -2569,52 +2821,53 @@ module GraphicEngineVGA(
   wire  rotation45deg_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:29]
   wire [11:0] rotation45deg_io_address; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:29]
   wire [13:0] rotation45deg_io_dataRead; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 258:29]
-  wire  spriteBlender_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [1:0] spriteBlender_io_spriteOpacityLevel; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [5:0] spriteBlender_io_pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire  spriteBlender_io_inSprite_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [9:0] spriteBlender_io_spritePixelAddr_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [3:0] spriteBlender_io_vgaRed; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [3:0] spriteBlender_io_vgaGreen; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
-  wire [3:0] spriteBlender_io_vgaBlue; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
+  wire  spriteBlender_clock; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [1:0] spriteBlender_io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [1:0] spriteBlender_io_spriteOpacityLevel_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [5:0] spriteBlender_io_pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire  spriteBlender_io_inSprite_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [9:0] spriteBlender_io_spritePixelAddr_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [3:0] spriteBlender_io_vgaRed; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [3:0] spriteBlender_io_vgaGreen; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
+  wire [3:0] spriteBlender_io_vgaBlue; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
   reg [1:0] ScaleCounterReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
   reg [9:0] CounterXReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 70:28]
   reg [9:0] CounterYReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 71:28]
@@ -2925,99 +3178,98 @@ module GraphicEngineVGA(
   wire [15:0] _GEN_288 = {{6'd0}, CounterXReg}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 276:47]
   wire [15:0] _boxIndex_T_62 = _boxIndex_T_60 + _GEN_288; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 276:47]
   wire [15:0] boxIndex_15 = _boxIndex_T_62 + 16'h52d; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 276:56]
-  reg [5:0] spriteBlender_io_pixelColorBack_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:45]
-  wire [10:0] localX = pixelXBack - spriteXPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY = CounterYReg - spriteYPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_2 = spriteXPositionReg_0 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_5 = CounterYReg >= spriteYPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_6 = pixelXBack >= spriteXPositionReg_0 & pixelXBack < _inSprite_T_2 & _inSprite_T_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_8 = spriteYPositionReg_0 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_1 = _inSprite_T_6 & CounterYReg < _inSprite_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T = localY * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_296 = {{5'd0}, localX}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T_2 = _spriteBlender_io_spritePixelAddr_0_T + _GEN_296; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T_3 = inSprite_1 ? _spriteBlender_io_spritePixelAddr_0_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_1 = pixelXBack - spriteXPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_1 = CounterYReg - spriteYPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_12 = spriteXPositionReg_1 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_15 = CounterYReg >= spriteYPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_16 = pixelXBack >= spriteXPositionReg_1 & pixelXBack < _inSprite_T_12 & _inSprite_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_18 = spriteYPositionReg_1 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_2 = _inSprite_T_16 & CounterYReg < _inSprite_T_18; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T = localY_1 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_300 = {{5'd0}, localX_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T_2 = _spriteBlender_io_spritePixelAddr_1_T + _GEN_300; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T_3 = inSprite_2 ? _spriteBlender_io_spritePixelAddr_1_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_2 = pixelXBack - spriteXPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_2 = CounterYReg - spriteYPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_22 = spriteXPositionReg_2 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_25 = CounterYReg >= spriteYPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_26 = pixelXBack >= spriteXPositionReg_2 & pixelXBack < _inSprite_T_22 & _inSprite_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_28 = spriteYPositionReg_2 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_3 = _inSprite_T_26 & CounterYReg < _inSprite_T_28; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T = localY_2 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_304 = {{5'd0}, localX_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T_2 = _spriteBlender_io_spritePixelAddr_2_T + _GEN_304; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T_3 = inSprite_3 ? _spriteBlender_io_spritePixelAddr_2_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_3 = pixelXBack - spriteXPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_3 = CounterYReg - spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_32 = spriteXPositionReg_3 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_35 = CounterYReg >= spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_36 = pixelXBack >= spriteXPositionReg_3 & pixelXBack < _inSprite_T_32 & _inSprite_T_35; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_38 = spriteYPositionReg_3 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_4 = _inSprite_T_36 & CounterYReg < _inSprite_T_38; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T = localY_3 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_308 = {{5'd0}, localX_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T_2 = _spriteBlender_io_spritePixelAddr_3_T + _GEN_308; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T_3 = inSprite_4 ? _spriteBlender_io_spritePixelAddr_3_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_4 = pixelXBack - spriteXPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_4 = CounterYReg - spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_42 = spriteXPositionReg_4 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_45 = CounterYReg >= spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_46 = pixelXBack >= spriteXPositionReg_4 & pixelXBack < _inSprite_T_42 & _inSprite_T_45; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_48 = spriteYPositionReg_4 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_5 = _inSprite_T_46 & CounterYReg < _inSprite_T_48; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T = localY_4 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_312 = {{5'd0}, localX_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T_2 = _spriteBlender_io_spritePixelAddr_4_T + _GEN_312; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T_3 = inSprite_5 ? _spriteBlender_io_spritePixelAddr_4_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_5 = pixelXBack - spriteXPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_5 = CounterYReg - spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_52 = spriteXPositionReg_5 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_55 = CounterYReg >= spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_56 = pixelXBack >= spriteXPositionReg_5 & pixelXBack < _inSprite_T_52 & _inSprite_T_55; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_58 = spriteYPositionReg_5 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_6 = _inSprite_T_56 & CounterYReg < _inSprite_T_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T = localY_5 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_316 = {{5'd0}, localX_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T_2 = _spriteBlender_io_spritePixelAddr_5_T + _GEN_316; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T_3 = inSprite_6 ? _spriteBlender_io_spritePixelAddr_5_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_6 = pixelXBack - spriteXPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_6 = CounterYReg - spriteYPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire [10:0] _inSprite_T_62 = spriteXPositionReg_6 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_65 = CounterYReg >= spriteYPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:14]
-  wire  _inSprite_T_66 = pixelXBack >= spriteXPositionReg_6 & pixelXBack < _inSprite_T_62 & _inSprite_T_65; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:67]
-  wire [9:0] _inSprite_T_68 = spriteYPositionReg_6 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:46]
-  wire  inSprite_7 = _inSprite_T_66 & CounterYReg < _inSprite_T_68; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T = localY_6 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_320 = {{5'd0}, localX_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T_2 = _spriteBlender_io_spritePixelAddr_6_T + _GEN_320; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T_3 = inSprite_7 ? _spriteBlender_io_spritePixelAddr_6_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_7 = pixelXBack - 11'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [9:0] localY_7 = CounterYReg - 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 359:25]
-  wire  _inSprite_T_73 = pixelXBack < 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:48]
-  wire  inSprite_8 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T = localY_7 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:65]
-  wire [15:0] _GEN_323 = {{5'd0}, localX_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T_2 = _spriteBlender_io_spritePixelAddr_7_T + _GEN_323; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T_3 = inSprite_8 ? _spriteBlender_io_spritePixelAddr_7_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
-  wire [10:0] localX_14 = pixelXBack - spriteXPositionReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 358:25]
-  wire [10:0] _inSprite_T_142 = spriteXPositionReg_14 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:59]
-  wire  _inSprite_T_144 = pixelXBack >= spriteXPositionReg_14 & pixelXBack < _inSprite_T_142; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:38]
-  wire  inSprite_15 = _inSprite_T_144 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  wire [15:0] _GEN_345 = {{5'd0}, localX_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_14_T_2 = _spriteBlender_io_spritePixelAddr_7_T + _GEN_345; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:72]
-  wire [15:0] _spriteBlender_io_spritePixelAddr_14_T_3 = inSprite_15 ? _spriteBlender_io_spritePixelAddr_14_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:47]
+  wire [10:0] localX = pixelXBack - spriteXPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY = CounterYReg - spriteYPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_2 = spriteXPositionReg_0 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_5 = CounterYReg >= spriteYPositionReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_6 = pixelXBack >= spriteXPositionReg_0 & pixelXBack < _inSprite_T_2 & _inSprite_T_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_8 = spriteYPositionReg_0 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_1 = _inSprite_T_6 & CounterYReg < _inSprite_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T = localY * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_296 = {{5'd0}, localX}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T_2 = _spriteBlender_io_spritePixelAddr_0_T + _GEN_296; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_0_T_3 = inSprite_1 ? _spriteBlender_io_spritePixelAddr_0_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_1 = pixelXBack - spriteXPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_1 = CounterYReg - spriteYPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_12 = spriteXPositionReg_1 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_15 = CounterYReg >= spriteYPositionReg_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_16 = pixelXBack >= spriteXPositionReg_1 & pixelXBack < _inSprite_T_12 & _inSprite_T_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_18 = spriteYPositionReg_1 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_2 = _inSprite_T_16 & CounterYReg < _inSprite_T_18; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T = localY_1 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_300 = {{5'd0}, localX_1}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T_2 = _spriteBlender_io_spritePixelAddr_1_T + _GEN_300; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_1_T_3 = inSprite_2 ? _spriteBlender_io_spritePixelAddr_1_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_2 = pixelXBack - spriteXPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_2 = CounterYReg - spriteYPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_22 = spriteXPositionReg_2 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_25 = CounterYReg >= spriteYPositionReg_2; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_26 = pixelXBack >= spriteXPositionReg_2 & pixelXBack < _inSprite_T_22 & _inSprite_T_25; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_28 = spriteYPositionReg_2 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_3 = _inSprite_T_26 & CounterYReg < _inSprite_T_28; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T = localY_2 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_304 = {{5'd0}, localX_2}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T_2 = _spriteBlender_io_spritePixelAddr_2_T + _GEN_304; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_2_T_3 = inSprite_3 ? _spriteBlender_io_spritePixelAddr_2_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_3 = pixelXBack - spriteXPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_3 = CounterYReg - spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_32 = spriteXPositionReg_3 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_35 = CounterYReg >= spriteYPositionReg_3; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_36 = pixelXBack >= spriteXPositionReg_3 & pixelXBack < _inSprite_T_32 & _inSprite_T_35; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_38 = spriteYPositionReg_3 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_4 = _inSprite_T_36 & CounterYReg < _inSprite_T_38; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T = localY_3 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_308 = {{5'd0}, localX_3}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T_2 = _spriteBlender_io_spritePixelAddr_3_T + _GEN_308; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_3_T_3 = inSprite_4 ? _spriteBlender_io_spritePixelAddr_3_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_4 = pixelXBack - spriteXPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_4 = CounterYReg - spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_42 = spriteXPositionReg_4 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_45 = CounterYReg >= spriteYPositionReg_4; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_46 = pixelXBack >= spriteXPositionReg_4 & pixelXBack < _inSprite_T_42 & _inSprite_T_45; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_48 = spriteYPositionReg_4 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_5 = _inSprite_T_46 & CounterYReg < _inSprite_T_48; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T = localY_4 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_312 = {{5'd0}, localX_4}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T_2 = _spriteBlender_io_spritePixelAddr_4_T + _GEN_312; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_4_T_3 = inSprite_5 ? _spriteBlender_io_spritePixelAddr_4_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_5 = pixelXBack - spriteXPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_5 = CounterYReg - spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_52 = spriteXPositionReg_5 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_55 = CounterYReg >= spriteYPositionReg_5; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_56 = pixelXBack >= spriteXPositionReg_5 & pixelXBack < _inSprite_T_52 & _inSprite_T_55; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_58 = spriteYPositionReg_5 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_6 = _inSprite_T_56 & CounterYReg < _inSprite_T_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T = localY_5 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_316 = {{5'd0}, localX_5}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T_2 = _spriteBlender_io_spritePixelAddr_5_T + _GEN_316; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_5_T_3 = inSprite_6 ? _spriteBlender_io_spritePixelAddr_5_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_6 = pixelXBack - spriteXPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_6 = CounterYReg - spriteYPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire [10:0] _inSprite_T_62 = spriteXPositionReg_6 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_65 = CounterYReg >= spriteYPositionReg_6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:14]
+  wire  _inSprite_T_66 = pixelXBack >= spriteXPositionReg_6 & pixelXBack < _inSprite_T_62 & _inSprite_T_65; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:67]
+  wire [9:0] _inSprite_T_68 = spriteYPositionReg_6 + 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:46]
+  wire  inSprite_7 = _inSprite_T_66 & CounterYReg < _inSprite_T_68; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T = localY_6 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_320 = {{5'd0}, localX_6}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T_2 = _spriteBlender_io_spritePixelAddr_6_T + _GEN_320; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_6_T_3 = inSprite_7 ? _spriteBlender_io_spritePixelAddr_6_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_7 = pixelXBack - 11'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [9:0] localY_7 = CounterYReg - 10'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 348:25]
+  wire  _inSprite_T_73 = pixelXBack < 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:48]
+  wire  inSprite_8 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T = localY_7 * 6'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:65]
+  wire [15:0] _GEN_323 = {{5'd0}, localX_7}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T_2 = _spriteBlender_io_spritePixelAddr_7_T + _GEN_323; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_7_T_3 = inSprite_8 ? _spriteBlender_io_spritePixelAddr_7_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
+  wire [10:0] localX_14 = pixelXBack - spriteXPositionReg_14; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 347:25]
+  wire [10:0] _inSprite_T_142 = spriteXPositionReg_14 + 11'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:59]
+  wire  _inSprite_T_144 = pixelXBack >= spriteXPositionReg_14 & pixelXBack < _inSprite_T_142; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 350:38]
+  wire  inSprite_15 = _inSprite_T_144 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  wire [15:0] _GEN_345 = {{5'd0}, localX_14}; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_14_T_2 = _spriteBlender_io_spritePixelAddr_7_T + _GEN_345; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:72]
+  wire [15:0] _spriteBlender_io_spritePixelAddr_14_T_3 = inSprite_15 ? _spriteBlender_io_spritePixelAddr_14_T_2 : 16'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:47]
   Memory backTileMemories_0 ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 166:32]
     .clock(backTileMemories_0_clock),
     .io_address(backTileMemories_0_io_address),
@@ -3298,9 +3550,10 @@ module GraphicEngineVGA(
     .io_address(rotation45deg_io_address),
     .io_dataRead(rotation45deg_io_dataRead)
   );
-  SpriteBlender spriteBlender ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:29]
+  SpriteBlender spriteBlender ( // @[\\src\\main\\scala\\GraphicEngineVGA.scala 333:29]
     .clock(spriteBlender_clock),
-    .io_spriteOpacityLevel(spriteBlender_io_spriteOpacityLevel),
+    .io_spriteOpacityLevel_0(spriteBlender_io_spriteOpacityLevel_0),
+    .io_spriteOpacityLevel_1(spriteBlender_io_spriteOpacityLevel_1),
     .io_pixelColorBack(spriteBlender_io_pixelColorBack),
     .io_spriteVisibleReg_7(spriteBlender_io_spriteVisibleReg_7),
     .io_spriteVisibleReg_8(spriteBlender_io_spriteVisibleReg_8),
@@ -3348,9 +3601,9 @@ module GraphicEngineVGA(
   );
   assign io_newFrame = run & _GEN_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 76:13 74:15]
   assign io_missingFrameError = missingFrameErrorReg; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 136:24]
-  assign io_vgaRed = spriteBlender_io_vgaRed; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 339:13]
-  assign io_vgaBlue = spriteBlender_io_vgaBlue; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 340:14]
-  assign io_vgaGreen = spriteBlender_io_vgaGreen; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 341:15]
+  assign io_vgaRed = spriteBlender_io_vgaRed; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 360:13]
+  assign io_vgaBlue = spriteBlender_io_vgaBlue; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 361:14]
+  assign io_vgaGreen = spriteBlender_io_vgaGreen; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:15]
   assign io_Hsync = io_Hsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 98:12]
   assign io_Vsync = io_Vsync_pipeReg_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 99:12]
   assign backTileMemories_0_clock = clock;
@@ -3479,48 +3732,49 @@ module GraphicEngineVGA(
   assign rotation45deg_clock = clock;
   assign rotation45deg_io_address = boxIndex_15[11:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 278:30]
   assign spriteBlender_clock = clock;
-  assign spriteBlender_io_spriteOpacityLevel = io_spriteOpacityLevel; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 344:39]
-  assign spriteBlender_io_pixelColorBack = spriteBlender_io_pixelColorBack_REG; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:35]
-  assign spriteBlender_io_spriteVisibleReg_7 = spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_8 = spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_9 = spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_10 = spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_11 = spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_12 = spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_13 = spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_spriteVisibleReg_15 = spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 346:37]
-  assign spriteBlender_io_inSprite_0 = _inSprite_T_6 & CounterYReg < _inSprite_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_1 = _inSprite_T_16 & CounterYReg < _inSprite_T_18; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_2 = _inSprite_T_26 & CounterYReg < _inSprite_T_28; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_3 = _inSprite_T_36 & CounterYReg < _inSprite_T_38; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_4 = _inSprite_T_46 & CounterYReg < _inSprite_T_48; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_5 = _inSprite_T_56 & CounterYReg < _inSprite_T_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_6 = _inSprite_T_66 & CounterYReg < _inSprite_T_68; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_7 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_8 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_9 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_10 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_11 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_12 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_13 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_14 = _inSprite_T_144 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_inSprite_15 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 362:25]
-  assign spriteBlender_io_spritePixelAddr_0 = _spriteBlender_io_spritePixelAddr_0_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_1 = _spriteBlender_io_spritePixelAddr_1_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_2 = _spriteBlender_io_spritePixelAddr_2_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_3 = _spriteBlender_io_spritePixelAddr_3_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_4 = _spriteBlender_io_spritePixelAddr_4_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_5 = _spriteBlender_io_spritePixelAddr_5_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_6 = _spriteBlender_io_spritePixelAddr_6_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_7 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_8 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_9 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_10 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_11 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_12 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_13 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_14 = _spriteBlender_io_spritePixelAddr_14_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
-  assign spriteBlender_io_spritePixelAddr_15 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 365:41]
+  assign spriteBlender_io_spriteOpacityLevel_0 = io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 334:39]
+  assign spriteBlender_io_spriteOpacityLevel_1 = io_spriteOpacityLevel_1; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 334:39]
+  assign spriteBlender_io_pixelColorBack = pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 335:35]
+  assign spriteBlender_io_spriteVisibleReg_7 = spriteVisibleReg_7; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_8 = spriteVisibleReg_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_9 = spriteVisibleReg_9; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_10 = spriteVisibleReg_10; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_11 = spriteVisibleReg_11; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_12 = spriteVisibleReg_12; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_13 = spriteVisibleReg_13; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_spriteVisibleReg_15 = spriteVisibleReg_15; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 336:37]
+  assign spriteBlender_io_inSprite_0 = _inSprite_T_6 & CounterYReg < _inSprite_T_8; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_1 = _inSprite_T_16 & CounterYReg < _inSprite_T_18; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_2 = _inSprite_T_26 & CounterYReg < _inSprite_T_28; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_3 = _inSprite_T_36 & CounterYReg < _inSprite_T_38; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_4 = _inSprite_T_46 & CounterYReg < _inSprite_T_48; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_5 = _inSprite_T_56 & CounterYReg < _inSprite_T_58; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_6 = _inSprite_T_66 & CounterYReg < _inSprite_T_68; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_7 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_8 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_9 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_10 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_11 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_12 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_13 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_14 = _inSprite_T_144 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_inSprite_15 = _inSprite_T_73 & CounterYReg < 10'h20; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 351:25]
+  assign spriteBlender_io_spritePixelAddr_0 = _spriteBlender_io_spritePixelAddr_0_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_1 = _spriteBlender_io_spritePixelAddr_1_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_2 = _spriteBlender_io_spritePixelAddr_2_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_3 = _spriteBlender_io_spritePixelAddr_3_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_4 = _spriteBlender_io_spritePixelAddr_4_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_5 = _spriteBlender_io_spritePixelAddr_5_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_6 = _spriteBlender_io_spritePixelAddr_6_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_7 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_8 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_9 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_10 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_11 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_12 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_13 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_14 = _spriteBlender_io_spritePixelAddr_14_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
+  assign spriteBlender_io_spritePixelAddr_15 = _spriteBlender_io_spritePixelAddr_7_T_3[9:0]; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 354:41]
   always @(posedge clock) begin
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
       ScaleCounterReg <= 2'h0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 69:32]
@@ -3579,12 +3833,12 @@ module GraphicEngineVGA(
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
       spriteXPositionReg_1 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteXPositionReg_1 <= 11'sh96; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_1 <= 11'shb6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
       spriteXPositionReg_2 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end else if (io_newFrame) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
-      spriteXPositionReg_2 <= 11'sh96; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
+      spriteXPositionReg_2 <= 11'shd6; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
     end
     if (reset) begin // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
       spriteXPositionReg_3 <= 11'sh0; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 118:37]
@@ -3788,7 +4042,6 @@ module GraphicEngineVGA(
     end else begin
       pixelColorBack <= fullBackgroundColor[5:0];
     end
-    spriteBlender_io_pixelColorBack_REG <= pixelColorBack; // @[\\src\\main\\scala\\GraphicEngineVGA.scala 345:45]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -4010,8 +4263,6 @@ initial begin
   fullBackgroundColor_REG = _RAND_90[4:0];
   _RAND_91 = {1{`RANDOM}};
   pixelColorBack = _RAND_91[5:0];
-  _RAND_92 = {1{`RANDOM}};
-  spriteBlender_io_pixelColorBack_REG = _RAND_92[5:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -5149,7 +5400,8 @@ module GameLogicTask3(
   output [10:0] io_spriteXPosition_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
   output [9:0]  io_spriteYPosition_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
   output        io_spriteFlipHorizontal_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
-  output [1:0]  io_spriteOpacityLevel, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
+  output [1:0]  io_spriteOpacityLevel_0, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
+  output [1:0]  io_spriteOpacityLevel_1, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
   input         io_newFrame, // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
   output        io_frameUpdateDone // @[\\src\\main\\scala\\GameLogicTask3.scala 12:14]
 );
@@ -5158,92 +5410,111 @@ module GameLogicTask3(
   reg [31:0] _RAND_1;
   reg [31:0] _RAND_2;
   reg [31:0] _RAND_3;
+  reg [31:0] _RAND_4;
+  reg [31:0] _RAND_5;
 `endif // RANDOMIZE_REG_INIT
-  reg [1:0] stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 112:25]
-  reg [10:0] sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-  reg [9:0] sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 116:28]
-  reg  sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 119:41]
-  wire [9:0] _sprite0YReg_T_2 = $signed(sprite0YReg) + 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 199:38]
-  wire [9:0] _GEN_1 = $signed(sprite0YReg) < 10'sh1a8 ? $signed(_sprite0YReg_T_2) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 198:47 199:23 116:28]
-  wire  _GEN_2 = $signed(sprite0YReg) < 10'sh1a8 ? 1'h0 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:47 200:36 119:41]
-  wire [1:0] _GEN_3 = $signed(sprite0YReg) < 10'sh1a8 ? 2'h3 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 198:47 201:23 91:14]
-  wire [9:0] _sprite0YReg_T_5 = $signed(sprite0YReg) - 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 206:38]
-  wire [9:0] _GEN_4 = $signed(sprite0YReg) > 10'sh60 ? $signed(_sprite0YReg_T_5) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 205:36 206:23 116:28]
-  wire  _GEN_5 = $signed(sprite0YReg) > 10'sh60 | sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 205:36 207:36 119:41]
-  wire [1:0] _GEN_6 = $signed(sprite0YReg) > 10'sh60 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 205:36 208:23 91:14]
-  wire [9:0] _GEN_7 = io_btnU ? $signed(_GEN_4) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 204:27 116:28]
-  wire  _GEN_8 = io_btnU ? _GEN_5 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 204:27 119:41]
-  wire [1:0] _GEN_9 = io_btnU ? _GEN_6 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 204:27 91:14]
-  wire  _GEN_11 = io_btnD ? _GEN_2 : _GEN_8; // @[\\src\\main\\scala\\GameLogicTask3.scala 197:20]
-  wire [1:0] _GEN_12 = io_btnD ? _GEN_3 : _GEN_9; // @[\\src\\main\\scala\\GameLogicTask3.scala 197:20]
-  wire [1:0] _GEN_13 = io_btnC ? 2'h1 : _GEN_12; // @[\\src\\main\\scala\\GameLogicTask3.scala 214:20 215:21]
-  wire [10:0] _sprite0XReg_T_2 = $signed(sprite0XReg) + 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 219:38]
-  wire [10:0] _GEN_14 = $signed(sprite0XReg) < 11'sh240 ? $signed(_sprite0XReg_T_2) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 219:23 115:28]
-  wire  _GEN_15 = $signed(sprite0XReg) < 11'sh240 ? 1'h0 : _GEN_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 220:36]
-  wire [2:0] _GEN_16 = $signed(sprite0XReg) < 11'sh240 ? 3'h4 : {{1'd0}, _GEN_13}; // @[\\src\\main\\scala\\GameLogicTask3.scala 218:47 221:23]
-  wire [10:0] _sprite0XReg_T_5 = $signed(sprite0XReg) - 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 226:38]
-  wire [10:0] _GEN_17 = $signed(sprite0XReg) > 11'sh20 ? $signed(_sprite0XReg_T_5) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 225:34 226:23 115:28]
-  wire  _GEN_18 = $signed(sprite0XReg) > 11'sh20 | _GEN_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 225:34 227:36]
-  wire [1:0] _GEN_19 = $signed(sprite0XReg) > 11'sh20 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 225:34 228:22 92:14]
-  wire [10:0] _GEN_20 = io_btnL ? $signed(_GEN_17) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27 115:28]
-  wire  _GEN_21 = io_btnL ? _GEN_18 : _GEN_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27]
-  wire [1:0] _GEN_22 = io_btnL ? _GEN_19 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 224:27 92:14]
-  wire [2:0] _GEN_25 = io_btnR ? _GEN_16 : {{1'd0}, _GEN_13}; // @[\\src\\main\\scala\\GameLogicTask3.scala 217:21]
-  wire [1:0] _GEN_26 = io_btnR ? 2'h0 : _GEN_22; // @[\\src\\main\\scala\\GameLogicTask3.scala 217:21 92:14]
-  wire [2:0] _GEN_31 = 2'h1 == stateReg ? _GEN_25 : 3'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 91:14]
-  wire [1:0] _GEN_33 = 2'h1 == stateReg ? _GEN_26 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 92:14]
-  wire  _GEN_35 = 2'h1 == stateReg ? 1'h0 : 2'h2 == stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 107:22]
-  wire [2:0] _GEN_39 = 2'h0 == stateReg ? 3'h0 : _GEN_31; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 91:14]
-  wire [1:0] _GEN_41 = 2'h0 == stateReg ? 2'h0 : _GEN_33; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 92:14]
-  assign io_songInput = {{1'd0}, _GEN_39};
-  assign io_songStop = {{2'd0}, _GEN_41};
-  assign io_spriteXPosition_0 = sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 179:25]
-  assign io_spriteYPosition_0 = sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 180:25]
-  assign io_spriteFlipHorizontal_0 = sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 181:30]
-  assign io_spriteOpacityLevel = {io_sw_1,io_sw_0}; // @[\\src\\main\\scala\\GameLogicTask3.scala 64:31]
-  assign io_frameUpdateDone = 2'h0 == stateReg ? 1'h0 : _GEN_35; // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20 107:22]
+  reg [1:0] spriteOpacities_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+  reg [1:0] spriteOpacities_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+  reg [1:0] stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 125:25]
+  reg [10:0] sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 128:28]
+  reg [9:0] sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 129:28]
+  reg  sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 132:41]
+  wire [9:0] _sprite0YReg_T_2 = $signed(sprite0YReg) + 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 212:38]
+  wire [9:0] _GEN_3 = $signed(sprite0YReg) < 10'sh1a8 ? $signed(_sprite0YReg_T_2) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 211:47 212:23 129:28]
+  wire  _GEN_4 = $signed(sprite0YReg) < 10'sh1a8 ? 1'h0 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 211:47 213:36 132:41]
+  wire [1:0] _GEN_5 = $signed(sprite0YReg) < 10'sh1a8 ? 2'h3 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 104:14 211:47 214:23]
+  wire [9:0] _sprite0YReg_T_5 = $signed(sprite0YReg) - 10'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 219:38]
+  wire [9:0] _GEN_6 = $signed(sprite0YReg) > 10'sh60 ? $signed(_sprite0YReg_T_5) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 218:36 219:23 129:28]
+  wire  _GEN_7 = $signed(sprite0YReg) > 10'sh60 | sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 218:36 220:36 132:41]
+  wire [1:0] _GEN_8 = $signed(sprite0YReg) > 10'sh60 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 104:14 218:36 221:23]
+  wire [9:0] _GEN_9 = io_btnU ? $signed(_GEN_6) : $signed(sprite0YReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 217:27 129:28]
+  wire  _GEN_10 = io_btnU ? _GEN_7 : sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 217:27 132:41]
+  wire [1:0] _GEN_11 = io_btnU ? _GEN_8 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 104:14 217:27]
+  wire  _GEN_13 = io_btnD ? _GEN_4 : _GEN_10; // @[\\src\\main\\scala\\GameLogicTask3.scala 210:20]
+  wire [1:0] _GEN_14 = io_btnD ? _GEN_5 : _GEN_11; // @[\\src\\main\\scala\\GameLogicTask3.scala 210:20]
+  wire [1:0] _GEN_15 = io_btnC ? 2'h1 : _GEN_14; // @[\\src\\main\\scala\\GameLogicTask3.scala 227:20 228:21]
+  wire [10:0] _sprite0XReg_T_2 = $signed(sprite0XReg) + 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 232:38]
+  wire [10:0] _GEN_16 = $signed(sprite0XReg) < 11'sh240 ? $signed(_sprite0XReg_T_2) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 231:47 232:23 128:28]
+  wire  _GEN_17 = $signed(sprite0XReg) < 11'sh240 ? 1'h0 : _GEN_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 231:47 233:36]
+  wire [2:0] _GEN_18 = $signed(sprite0XReg) < 11'sh240 ? 3'h4 : {{1'd0}, _GEN_15}; // @[\\src\\main\\scala\\GameLogicTask3.scala 231:47 234:23]
+  wire [10:0] _sprite0XReg_T_5 = $signed(sprite0XReg) - 11'sh2; // @[\\src\\main\\scala\\GameLogicTask3.scala 239:38]
+  wire [10:0] _GEN_19 = $signed(sprite0XReg) > 11'sh20 ? $signed(_sprite0XReg_T_5) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 238:34 239:23 128:28]
+  wire  _GEN_20 = $signed(sprite0XReg) > 11'sh20 | _GEN_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 238:34 240:36]
+  wire [1:0] _GEN_21 = $signed(sprite0XReg) > 11'sh20 ? 2'h2 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 105:14 238:34 241:22]
+  wire [10:0] _GEN_22 = io_btnL ? $signed(_GEN_19) : $signed(sprite0XReg); // @[\\src\\main\\scala\\GameLogicTask3.scala 237:27 128:28]
+  wire  _GEN_23 = io_btnL ? _GEN_20 : _GEN_13; // @[\\src\\main\\scala\\GameLogicTask3.scala 237:27]
+  wire [1:0] _GEN_24 = io_btnL ? _GEN_21 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 105:14 237:27]
+  wire [2:0] _GEN_27 = io_btnR ? _GEN_18 : {{1'd0}, _GEN_15}; // @[\\src\\main\\scala\\GameLogicTask3.scala 230:21]
+  wire [1:0] _GEN_28 = io_btnR ? 2'h0 : _GEN_24; // @[\\src\\main\\scala\\GameLogicTask3.scala 105:14 230:21]
+  wire [2:0] _GEN_33 = 2'h1 == stateReg ? _GEN_27 : 3'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 104:14 202:20]
+  wire [1:0] _GEN_35 = 2'h1 == stateReg ? _GEN_28 : 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 105:14 202:20]
+  wire  _GEN_37 = 2'h1 == stateReg ? 1'h0 : 2'h2 == stateReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20 120:22]
+  wire [2:0] _GEN_41 = 2'h0 == stateReg ? 3'h0 : _GEN_33; // @[\\src\\main\\scala\\GameLogicTask3.scala 104:14 202:20]
+  wire [1:0] _GEN_43 = 2'h0 == stateReg ? 2'h0 : _GEN_35; // @[\\src\\main\\scala\\GameLogicTask3.scala 105:14 202:20]
+  assign io_songInput = {{1'd0}, _GEN_41};
+  assign io_songStop = {{2'd0}, _GEN_43};
+  assign io_spriteXPosition_0 = sprite0XReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 192:25]
+  assign io_spriteYPosition_0 = sprite0YReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 193:25]
+  assign io_spriteFlipHorizontal_0 = sprite0FlipHorizontalReg; // @[\\src\\main\\scala\\GameLogicTask3.scala 194:30]
+  assign io_spriteOpacityLevel_0 = spriteOpacities_0; // @[\\src\\main\\scala\\GameLogicTask3.scala 76:25]
+  assign io_spriteOpacityLevel_1 = spriteOpacities_1; // @[\\src\\main\\scala\\GameLogicTask3.scala 76:25]
+  assign io_frameUpdateDone = 2'h0 == stateReg ? 1'h0 : _GEN_37; // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20 120:22]
   always @(posedge clock) begin
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 112:25]
-      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 112:25]
-    end else if (2'h0 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 191:25]
-        stateReg <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask3.scala 192:18]
-      end
-    end else if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      stateReg <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask3.scala 245:16]
-    end else if (2'h2 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 250:16]
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+      spriteOpacities_0 <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+    end else if (io_sw_1) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 65:17]
+      spriteOpacities_0 <= 2'h3; // @[\\src\\main\\scala\\GameLogicTask3.scala 66:24]
+    end else begin
+      spriteOpacities_0 <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask3.scala 68:24]
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-      sprite0XReg <= 11'sh20; // @[\\src\\main\\scala\\GameLogicTask3.scala 115:28]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 217:21]
-          sprite0XReg <= _GEN_14;
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+      spriteOpacities_1 <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask3.scala 64:32]
+    end else if (io_sw_0) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 70:17]
+      spriteOpacities_1 <= 2'h3; // @[\\src\\main\\scala\\GameLogicTask3.scala 71:24]
+    end else begin
+      spriteOpacities_1 <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask3.scala 73:24]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 125:25]
+      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 125:25]
+    end else if (2'h0 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      if (io_newFrame) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 204:25]
+        stateReg <= 2'h1; // @[\\src\\main\\scala\\GameLogicTask3.scala 205:18]
+      end
+    end else if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      stateReg <= 2'h2; // @[\\src\\main\\scala\\GameLogicTask3.scala 258:16]
+    end else if (2'h2 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      stateReg <= 2'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 263:16]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 128:28]
+      sprite0XReg <= 11'sh20; // @[\\src\\main\\scala\\GameLogicTask3.scala 128:28]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 230:21]
+          sprite0XReg <= _GEN_16;
         end else begin
-          sprite0XReg <= _GEN_20;
+          sprite0XReg <= _GEN_22;
         end
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 116:28]
-      sprite0YReg <= 10'sh148; // @[\\src\\main\\scala\\GameLogicTask3.scala 116:28]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-        if (io_btnD) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 197:20]
-          sprite0YReg <= _GEN_1;
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 129:28]
+      sprite0YReg <= 10'sh148; // @[\\src\\main\\scala\\GameLogicTask3.scala 129:28]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+        if (io_btnD) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 210:20]
+          sprite0YReg <= _GEN_3;
         end else begin
-          sprite0YReg <= _GEN_7;
+          sprite0YReg <= _GEN_9;
         end
       end
     end
-    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 119:41]
-      sprite0FlipHorizontalReg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 119:41]
-    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 189:20]
-        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 217:21]
-          sprite0FlipHorizontalReg <= _GEN_15;
+    if (reset) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 132:41]
+      sprite0FlipHorizontalReg <= 1'h0; // @[\\src\\main\\scala\\GameLogicTask3.scala 132:41]
+    end else if (!(2'h0 == stateReg)) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+      if (2'h1 == stateReg) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 202:20]
+        if (io_btnR) begin // @[\\src\\main\\scala\\GameLogicTask3.scala 230:21]
+          sprite0FlipHorizontalReg <= _GEN_17;
         end else begin
-          sprite0FlipHorizontalReg <= _GEN_21;
+          sprite0FlipHorizontalReg <= _GEN_23;
         end
       end
     end
@@ -5285,13 +5556,17 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  stateReg = _RAND_0[1:0];
+  spriteOpacities_0 = _RAND_0[1:0];
   _RAND_1 = {1{`RANDOM}};
-  sprite0XReg = _RAND_1[10:0];
+  spriteOpacities_1 = _RAND_1[1:0];
   _RAND_2 = {1{`RANDOM}};
-  sprite0YReg = _RAND_2[9:0];
+  stateReg = _RAND_2[1:0];
   _RAND_3 = {1{`RANDOM}};
-  sprite0FlipHorizontalReg = _RAND_3[0:0];
+  sprite0XReg = _RAND_3[10:0];
+  _RAND_4 = {1{`RANDOM}};
+  sprite0YReg = _RAND_4[9:0];
+  _RAND_5 = {1{`RANDOM}};
+  sprite0FlipHorizontalReg = _RAND_5[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -5355,7 +5630,8 @@ module GameTop(
   wire [10:0] graphicEngineVGA_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire [9:0] graphicEngineVGA_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
-  wire [1:0] graphicEngineVGA_io_spriteOpacityLevel; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire [1:0] graphicEngineVGA_io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\GameTop.scala 46:32]
+  wire [1:0] graphicEngineVGA_io_spriteOpacityLevel_1; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 46:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[\\src\\main\\scala\\GameTop.scala 46:32]
@@ -5383,7 +5659,8 @@ module GameTop(
   wire [10:0] gameLogic_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
   wire [9:0] gameLogic_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
   wire  gameLogic_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
-  wire [1:0] gameLogic_io_spriteOpacityLevel; // @[\\src\\main\\scala\\GameTop.scala 56:25]
+  wire [1:0] gameLogic_io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\GameTop.scala 56:25]
+  wire [1:0] gameLogic_io_spriteOpacityLevel_1; // @[\\src\\main\\scala\\GameTop.scala 56:25]
   wire  gameLogic_io_newFrame; // @[\\src\\main\\scala\\GameTop.scala 56:25]
   wire  gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 56:25]
   reg [20:0] debounceCounter; // @[\\src\\main\\scala\\GameTop.scala 67:32]
@@ -5425,7 +5702,8 @@ module GameTop(
     .io_spriteXPosition_0(graphicEngineVGA_io_spriteXPosition_0),
     .io_spriteYPosition_0(graphicEngineVGA_io_spriteYPosition_0),
     .io_spriteFlipHorizontal_0(graphicEngineVGA_io_spriteFlipHorizontal_0),
-    .io_spriteOpacityLevel(graphicEngineVGA_io_spriteOpacityLevel),
+    .io_spriteOpacityLevel_0(graphicEngineVGA_io_spriteOpacityLevel_0),
+    .io_spriteOpacityLevel_1(graphicEngineVGA_io_spriteOpacityLevel_1),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -5457,7 +5735,8 @@ module GameTop(
     .io_spriteXPosition_0(gameLogic_io_spriteXPosition_0),
     .io_spriteYPosition_0(gameLogic_io_spriteYPosition_0),
     .io_spriteFlipHorizontal_0(gameLogic_io_spriteFlipHorizontal_0),
-    .io_spriteOpacityLevel(gameLogic_io_spriteOpacityLevel),
+    .io_spriteOpacityLevel_0(gameLogic_io_spriteOpacityLevel_0),
+    .io_spriteOpacityLevel_1(gameLogic_io_spriteOpacityLevel_1),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone)
   );
@@ -5473,7 +5752,8 @@ module GameTop(
   assign graphicEngineVGA_io_spriteXPosition_0 = gameLogic_io_spriteXPosition_0; // @[\\src\\main\\scala\\GameTop.scala 130:39]
   assign graphicEngineVGA_io_spriteYPosition_0 = gameLogic_io_spriteYPosition_0; // @[\\src\\main\\scala\\GameTop.scala 131:39]
   assign graphicEngineVGA_io_spriteFlipHorizontal_0 = gameLogic_io_spriteFlipHorizontal_0; // @[\\src\\main\\scala\\GameTop.scala 134:44]
-  assign graphicEngineVGA_io_spriteOpacityLevel = gameLogic_io_spriteOpacityLevel; // @[\\src\\main\\scala\\GameTop.scala 133:42]
+  assign graphicEngineVGA_io_spriteOpacityLevel_0 = gameLogic_io_spriteOpacityLevel_0; // @[\\src\\main\\scala\\GameTop.scala 133:42]
+  assign graphicEngineVGA_io_spriteOpacityLevel_1 = gameLogic_io_spriteOpacityLevel_1; // @[\\src\\main\\scala\\GameTop.scala 133:42]
   assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[\\src\\main\\scala\\GameTop.scala 155:39]
   assign soundEngine_clock = clock;
   assign soundEngine_reset = reset;

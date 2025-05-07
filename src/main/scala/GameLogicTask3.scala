@@ -39,7 +39,8 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteRotation = Output(Vec(SpriteNumber, Bool()))
-    val spriteOpacityLevel = Output(UInt(2.W))
+    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
+
 
 
 
@@ -60,8 +61,20 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // Setting all led outputs to zero
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
+  val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(1.U(2.W))))
+  when(io.sw(1)){
+    spriteOpacities(0) := 3.U
+  }.otherwise{
+    spriteOpacities(0) := 2.U
+  }
+  when(io.sw(0)){
+    spriteOpacities(1) := 3.U
+  }.otherwise{
+    spriteOpacities(1) := 2.U
+  }
 
-  io.spriteOpacityLevel := Cat(io.sw(1),io.sw(0)).asUInt
+  io.spriteOpacityLevel := spriteOpacities
+
   // Or one by one...
   //io.led(0) := false.B
   //io.led(0) := false.B
@@ -121,7 +134,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   //Sprite 1
   io.spriteVisible(1) := true.B
-  val sprite1XReg = RegInit(150.S(11.W))
+  val sprite1XReg = RegInit(182.S(11.W))
   val sprite1YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(1) := sprite1XReg
   io.spriteYPosition(1) := sprite1YReg
@@ -130,7 +143,7 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteScaleVertical(1) := 1.U
 
   io.spriteVisible(2) := true.B
-  val sprite2XReg = RegInit(150.S(11.W))
+  val sprite2XReg = RegInit(214.S(11.W))
   val sprite2YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg

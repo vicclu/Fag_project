@@ -21,7 +21,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteScaleHorizontal = Input(Vec(SpriteNumber, UInt(2.W)))
     val spriteRotation = Input(Vec(SpriteNumber, Bool()))
     val spriteScaleVertical = Input(Vec(SpriteNumber, UInt(2.W)))
-    val spriteOpacityLevel = Input(UInt(2.W))
+    val spriteOpacityLevel = Input(Vec(SpriteNumber, UInt(2.W)))
 
     //Viewbox control input
     val viewBoxX = Input(UInt(10.W)) //0 to 640
@@ -330,22 +330,11 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteMemories(i).io.address     := memX + 32.U(6.W) * memY
   }
 
-
-
-
   val spriteBlender = Module(new SpriteBlender(SpriteNumber))
-
-
-  io.vgaRed := spriteBlender.io.vgaRed
-  io.vgaBlue := spriteBlender.io.vgaBlue
-  io.vgaGreen := spriteBlender.io.vgaGreen
-
-
   spriteBlender.io.spriteOpacityLevel := io.spriteOpacityLevel
   spriteBlender.io.pixelColorBack := pixelColorBack
   spriteBlender.io.spriteVisibleReg := spriteVisibleReg
   spriteBlender.io.inSprite := inSprite
-  //spriteBlender.io.newFrame := newFrameStikyReg
   spriteBlender.io.pixelX := pixelX
   spriteBlender.io.pixelY := pixelY
   spriteBlender.io.spriteXPosition := spriteXPositionReg
@@ -368,7 +357,9 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     spriteBlender.io.inSprite(i) := inSprite
   }
 
-
+  io.vgaRed := spriteBlender.io.vgaRed
+  io.vgaBlue := spriteBlender.io.vgaBlue
+  io.vgaGreen := spriteBlender.io.vgaGreen
 }
 
 //////////////////////////////////////////////////////////////////////////////

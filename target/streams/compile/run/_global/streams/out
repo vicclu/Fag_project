@@ -1,17 +1,14 @@
-[0m[[0m[31merror[0m] [0m[0mchisel3.package$ChiselException: Connection between sink (GraphicEngineVGA.backgroundColor: Wire[UInt<6>]) and source (GraphicEngineVGA.backgroundColor_?: Reg[UInt<7>[32]]) failed @: Sink (UInt<6>) and Source (UInt<7>[32]) have different types.[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.<init>(GraphicEngineVGA.scala:250)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$2(GameTop.scala:46)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$1(GameTop.scala:46)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.<init>(GameTop.scala:46)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Top.$anonfun$gameTop$2(Top.scala:44)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Top.$anonfun$gameTop$1(Top.scala:44)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Top.<init>(Top.scala:44)[0m
-[0m[[0m[31merror[0m] [0m[0m	at Top$.$anonfun$new$6(Top.scala:70)[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.package$ChiselException: Connection between sink (GraphicEngineVGA.backgroundColor: Wire[UInt<6>]) and source (GraphicEngineVGA.backgroundColor_?: Reg[UInt<7>[32]]) failed @: Sink (UInt<6>) and Source (UInt<7>[32]) have different types.[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module SpriteBlender] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender.secondSpriteFound[0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_60	 @[\\src\\main\\scala\\SpriteBlender.scala 95:11][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_61	 @[\\src\\main\\scala\\SpriteBlender.scala 95:30][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_63	 @[\\src\\main\\scala\\SpriteBlender.scala 95:39][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._GEN_31	 @[\\src\\main\\scala\\SpriteBlender.scala 95:68 \\src\\main\\scala\\SpriteBlender.scala 97:25][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender.secondSpriteFound	[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.transforms.CheckCombLoops$CombLoopException: : [module SpriteBlender] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender.secondSpriteFound[0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_60	 @[\\src\\main\\scala\\SpriteBlender.scala 95:11][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_61	 @[\\src\\main\\scala\\SpriteBlender.scala 95:30][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._T_63	 @[\\src\\main\\scala\\SpriteBlender.scala 95:39][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender._GEN_31	 @[\\src\\main\\scala\\SpriteBlender.scala 95:68 \\src\\main\\scala\\SpriteBlender.scala 97:25][0m
+[0m[[0m[31merror[0m] [0m[0mSpriteBlender.secondSpriteFound	[0m
