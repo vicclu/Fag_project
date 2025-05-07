@@ -134,7 +134,7 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
             viewBoxYReg(1) := viewBoxYReg(1) - 2.U
           }
           when(io.sw(4)){
-            viewBoxYReg(1) := viewBoxYReg(1) - 8.U
+            viewBoxYReg(1) := viewBoxYReg(1) - 1.U
           }
         }
 
@@ -149,7 +149,7 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
           viewBoxYReg(1) := viewBoxYReg(1) + 2.U
         }
         when(io.sw(4)){
-          viewBoxYReg(1) := viewBoxYReg(1) + 8.U
+          viewBoxYReg(1) := viewBoxYReg(1) + 1.U
         }
       }}
       when(io.btnL) {
@@ -162,7 +162,7 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
           viewBoxXReg(1) := viewBoxXReg(1) - 2.U
         }
         when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) - 8.U
+          viewBoxXReg(1) := viewBoxXReg(1) - 1.U
         }}
       }
 
@@ -176,7 +176,7 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
           viewBoxXReg(1) := viewBoxXReg(1) + 2.U
         }
         when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) + 8.U
+          viewBoxXReg(1) := viewBoxXReg(1) + 1.U
         }}
       }
       stateReg := done

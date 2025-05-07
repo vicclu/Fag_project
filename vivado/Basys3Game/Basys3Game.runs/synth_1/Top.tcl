@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
 set_msg_config  -id {Power 33-332}  -string {{WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -136,10 +135,11 @@ read_mem {
   C:/Users/soren/Fag_project/memory_init/sprite_init_12.mem
   C:/Users/soren/Fag_project/memory_init/backtile_init_28.mem
   C:/Users/soren/Fag_project/memory_init/sprite_init_2.mem
-  C:/Users/soren/Fag_project/memory_init/backbuffer_init.mem
   C:/Users/soren/Fag_project/memory_init/backtile_init_20.mem
   C:/Users/soren/Fag_project/memory_init/backtile_init_4.mem
   C:/Users/soren/Fag_project/memory_init/sprite_init_11.mem
+  C:/Users/soren/Fag_project/memory_init/backbuffer_init1.mem
+  C:/Users/soren/Fag_project/memory_init/backbuffer_init0.mem
 }
 read_verilog -library xil_defaultlib {
   C:/Users/soren/Fag_project/RamInitSpWf.v
