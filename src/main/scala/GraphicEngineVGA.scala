@@ -33,9 +33,6 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val backBufferWriteAddress = Input(UInt(11.W))
     val backBufferWriteEnable = Input(Bool())
 
-    //Opacity
-    val spriteOpacityLevel = Input(UInt(2.W))
-
 
     //Status
     val newFrame = Output(Bool())
@@ -398,15 +395,6 @@ for (i <- 0 until 2) {
 
   }
 
-  val spriteBlender = Module(new SpriteBlender(SpriteNumber))
-  spriteBlender.io.spriteOpacityLevel := io.spriteOpacityLevel
-  spriteBlender.io.pixelColorBack := pixelColorBack
-  spriteBlender.io.spriteVisibleReg := spriteVisibleReg
-  spriteBlender.io.inSprite := inSprite
-  spriteBlender.io.pixelX := pixelX
-  spriteBlender.io.pixelY := pixelY
-  spriteBlender.io.spriteXPosition := spriteXPositionReg
-  spriteBlender.io.spriteYPosition := spriteYPositionReg
 
   for (i <- 0 until SpriteNumber) {
     val spriteX = spriteXPositionReg(i).asUInt
@@ -428,6 +416,19 @@ for (i <- 0 until 2) {
   io.vgaRed := spriteBlender.io.vgaRed
   io.vgaBlue := spriteBlender.io.vgaBlue
   io.vgaGreen := spriteBlender.io.vgaGreen
+
+  val pixelColorSprite = RegNext(spriteBlender.io.pixelColorSprite)
+  val pixelColorSpriteValid = RegNext(spriteBlender.io.pixelColorSpriteValid)
+
+
+  // Generation of the last pixel colour selection and pipeline stage
+  val pixelColorInDisplay = Mux(pixelColorSpriteValid, pixelColorSprite, pixelColorBack)
+  //  io.vgaRed := RegNext(pixelColorRed)
+  //  io.vgaGreen := RegNext(pixelColorGreen)
+  //  io.vgaBlue := RegNext(pixelColorBlue)
+  io.vgaRed :=  Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaRed,0.U)
+  io.vgaGreen:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaGreen,0.U)
+  io.vgaBlue:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaBlue,0.U)
 }
 
 //////////////////////////////////////////////////////////////////////////////

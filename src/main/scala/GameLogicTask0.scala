@@ -52,14 +52,14 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
 
-    val spriteOpacityLevel = Output(UInt(2.W))
+    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
   })
 
   // Setting all led outputs to zero
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
 
-  io.spriteOpacityLevel := 3.U
+  io.spriteOpacityLevel :=  Seq.fill(SpriteNumber)(1.U)
 
 
   io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)

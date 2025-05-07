@@ -12,7 +12,7 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 554.199 ; gain = 181.816
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 558.031 ; gain = 183.465
 Command: synth_design -top Top -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
@@ -20,13 +20,13 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14608
+INFO: [Synth 8-7075] Helper process launched with PID 14152
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1390.637 ; gain = 438.609
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1390.527 ; gain = 438.863
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/soren/Fag_project/Top.v:6423]
-INFO: [Synth 8-6157] synthesizing module 'GameTop' [C:/Users/soren/Fag_project/Top.v:6022]
-INFO: [Synth 8-6157] synthesizing module 'GraphicEngineVGA' [C:/Users/soren/Fag_project/Top.v:2333]
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/soren/Fag_project/Top.v:6378]
+INFO: [Synth 8-6157] synthesizing module 'GameTop' [C:/Users/soren/Fag_project/Top.v:5977]
+INFO: [Synth 8-6157] synthesizing module 'GraphicEngineVGA' [C:/Users/soren/Fag_project/Top.v:2485]
 INFO: [Synth 8-6157] synthesizing module 'Memory' [C:/Users/soren/Fag_project/Top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
@@ -313,141 +313,141 @@ INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized33' [C:/User
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_0.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized33' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 INFO: [Synth 8-6155] done synthesizing module 'Memory_70' (0#1) [C:/Users/soren/Fag_project/Top.v:913]
-INFO: [Synth 8-6157] synthesizing module 'Memory_71' [C:/Users/soren/Fag_project/Top.v:940]
+INFO: [Synth 8-6157] synthesizing module 'Memory_71' [C:/Users/soren/Fag_project/Top.v:939]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized34' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_1.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_1.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized34' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_71' (0#1) [C:/Users/soren/Fag_project/Top.v:940]
-INFO: [Synth 8-6157] synthesizing module 'Memory_72' [C:/Users/soren/Fag_project/Top.v:967]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_71' (0#1) [C:/Users/soren/Fag_project/Top.v:939]
+INFO: [Synth 8-6157] synthesizing module 'Memory_72' [C:/Users/soren/Fag_project/Top.v:965]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized35' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_2.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_2.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized35' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_72' (0#1) [C:/Users/soren/Fag_project/Top.v:967]
-INFO: [Synth 8-6157] synthesizing module 'Memory_73' [C:/Users/soren/Fag_project/Top.v:994]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_72' (0#1) [C:/Users/soren/Fag_project/Top.v:965]
+INFO: [Synth 8-6157] synthesizing module 'Memory_73' [C:/Users/soren/Fag_project/Top.v:991]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized36' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_3.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_3.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized36' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_73' (0#1) [C:/Users/soren/Fag_project/Top.v:994]
-INFO: [Synth 8-6157] synthesizing module 'Memory_74' [C:/Users/soren/Fag_project/Top.v:1021]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_73' (0#1) [C:/Users/soren/Fag_project/Top.v:991]
+INFO: [Synth 8-6157] synthesizing module 'Memory_74' [C:/Users/soren/Fag_project/Top.v:1017]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized37' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_4.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_4.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized37' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_74' (0#1) [C:/Users/soren/Fag_project/Top.v:1021]
-INFO: [Synth 8-6157] synthesizing module 'Memory_75' [C:/Users/soren/Fag_project/Top.v:1048]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_74' (0#1) [C:/Users/soren/Fag_project/Top.v:1017]
+INFO: [Synth 8-6157] synthesizing module 'Memory_75' [C:/Users/soren/Fag_project/Top.v:1043]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized38' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_5.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_5.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized38' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_75' (0#1) [C:/Users/soren/Fag_project/Top.v:1048]
-INFO: [Synth 8-6157] synthesizing module 'Memory_76' [C:/Users/soren/Fag_project/Top.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_75' (0#1) [C:/Users/soren/Fag_project/Top.v:1043]
+INFO: [Synth 8-6157] synthesizing module 'Memory_76' [C:/Users/soren/Fag_project/Top.v:1069]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized39' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_6.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_6.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized39' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_76' (0#1) [C:/Users/soren/Fag_project/Top.v:1075]
-INFO: [Synth 8-6157] synthesizing module 'Memory_77' [C:/Users/soren/Fag_project/Top.v:1102]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_76' (0#1) [C:/Users/soren/Fag_project/Top.v:1069]
+INFO: [Synth 8-6157] synthesizing module 'Memory_77' [C:/Users/soren/Fag_project/Top.v:1095]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized40' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_7.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_7.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized40' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_77' (0#1) [C:/Users/soren/Fag_project/Top.v:1102]
-INFO: [Synth 8-6157] synthesizing module 'Memory_78' [C:/Users/soren/Fag_project/Top.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_77' (0#1) [C:/Users/soren/Fag_project/Top.v:1095]
+INFO: [Synth 8-6157] synthesizing module 'Memory_78' [C:/Users/soren/Fag_project/Top.v:1121]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized41' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_8.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_8.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized41' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_78' (0#1) [C:/Users/soren/Fag_project/Top.v:1129]
-INFO: [Synth 8-6157] synthesizing module 'Memory_79' [C:/Users/soren/Fag_project/Top.v:1156]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_78' (0#1) [C:/Users/soren/Fag_project/Top.v:1121]
+INFO: [Synth 8-6157] synthesizing module 'Memory_79' [C:/Users/soren/Fag_project/Top.v:1147]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized42' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_9.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_9.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized42' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_79' (0#1) [C:/Users/soren/Fag_project/Top.v:1156]
-INFO: [Synth 8-6157] synthesizing module 'Memory_80' [C:/Users/soren/Fag_project/Top.v:1183]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_79' (0#1) [C:/Users/soren/Fag_project/Top.v:1147]
+INFO: [Synth 8-6157] synthesizing module 'Memory_80' [C:/Users/soren/Fag_project/Top.v:1173]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized43' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_10.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_10.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized43' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_80' (0#1) [C:/Users/soren/Fag_project/Top.v:1183]
-INFO: [Synth 8-6157] synthesizing module 'Memory_81' [C:/Users/soren/Fag_project/Top.v:1210]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_80' (0#1) [C:/Users/soren/Fag_project/Top.v:1173]
+INFO: [Synth 8-6157] synthesizing module 'Memory_81' [C:/Users/soren/Fag_project/Top.v:1199]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized44' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_11.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_11.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized44' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_81' (0#1) [C:/Users/soren/Fag_project/Top.v:1210]
-INFO: [Synth 8-6157] synthesizing module 'Memory_82' [C:/Users/soren/Fag_project/Top.v:1237]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_81' (0#1) [C:/Users/soren/Fag_project/Top.v:1199]
+INFO: [Synth 8-6157] synthesizing module 'Memory_82' [C:/Users/soren/Fag_project/Top.v:1225]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf__parameterized45' [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_12.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_12.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized45' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_82' (0#1) [C:/Users/soren/Fag_project/Top.v:1237]
-INFO: [Synth 8-6157] synthesizing module 'Memory_83' [C:/Users/soren/Fag_project/Top.v:1264]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_82' (0#1) [C:/Users/soren/Fag_project/Top.v:1225]
+INFO: [Synth 8-6157] synthesizing module 'Memory_83' [C:/Users/soren/Fag_project/Top.v:1251]
 INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_13.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_13.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized46' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_83' (0#1) [C:/Users/soren/Fag_project/Top.v:1264]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_83' (0#1) [C:/Users/soren/Fag_project/Top.v:1251]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_14.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_14.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized47' (0#1) [C:/Users/soren/Fag_project/RamInitSpWf.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'Memory_84' (0#1) [C:/Users/soren/Fag_project/Top.v:1291]
+INFO: [Synth 8-6155] done synthesizing module 'Memory_84' (0#1) [C:/Users/soren/Fag_project/Top.v:1277]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/sprite_init_15.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_15.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3860]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3863]
 	Parameter ADDR_WIDTH bound to: 12 - type: integer 
 	Parameter DATA_WIDTH bound to: 15 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/rotation45deg.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/rotation45deg.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3864]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3868]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3872]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3876]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3880]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3884]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3888]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3892]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3896]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3900]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3904]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3908]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3912]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3916]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3920]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3867]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3871]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3875]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3879]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3883]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3887]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3891]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3895]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3899]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3903]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3907]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3911]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3915]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3919]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/soren/Fag_project/Top.v:3923]
 	Parameter ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/tone_init_0.mem - type: string 
@@ -480,59 +480,121 @@ INFO: [Synth 8-3876] $readmem data file 'memory_init/tone_init_6.mem' is read su
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter LOAD_FILE bound to: memory_init/tone_init_7.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file 'memory_init/tone_init_7.mem' is read successfully [C:/Users/soren/Fag_project/RamInitSpWf.v:34]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_15_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3383]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_14_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3367]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_13_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3351]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_12_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3335]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_11_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3319]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_10_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3303]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_9_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3287]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_8_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3271]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_7_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3255]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_6_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3239]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_5_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3223]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_4_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3207]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_3_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3191]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_2_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3175]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_1_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3154]
-WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_0_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3132]
-WARNING: [Synth 8-6014] Unused sequential element backBufferShadowMemories_1_io_address_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4144]
-WARNING: [Synth 8-6014] Unused sequential element backBufferShadowMemories_1_io_writeEnable_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4146]
-WARNING: [Synth 8-6014] Unused sequential element backBufferMemories_1_io_address_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3058]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_2_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3177]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_2_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3175]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_3_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3193]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_3_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3191]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_4_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3209]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_4_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3207]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_5_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3225]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_5_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3223]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_6_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3241]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_6_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3239]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_7_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3257]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_7_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3255]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_8_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3273]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_8_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3271]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_9_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3289]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_9_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3287]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_10_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3305]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_10_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3303]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_11_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3321]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_11_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3319]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_12_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3337]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_12_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3335]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_13_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3353]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_13_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3351]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_14_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3369]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_14_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3367]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteX_15_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3385]
-WARNING: [Synth 8-6014] Unused sequential element inSpriteY_15_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3383]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3999]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4536]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_2_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4537]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3998]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4539]
-WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_2_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4540]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg__1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2126]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_1_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2128]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_1_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2130]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_2_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2132]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_2_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2134]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_3_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2136]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_3_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2138]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_4_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2140]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_4_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2142]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_5_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2144]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_5_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2146]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_6_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2148]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_6_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2150]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_7_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2152]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_7_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2154]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_8_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2156]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_8_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2158]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_9_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2160]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_9_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2162]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_10_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2164]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_10_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2166]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_11_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2168]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_11_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2170]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_12_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2172]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_12_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2174]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_13_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2176]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_13_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2178]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_14_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2180]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_14_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2182]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_15_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2184]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_15_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:2186]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg__0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1783]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_1_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1790]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_1_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1790]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_2_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1797]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_2_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1797]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_3_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1804]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_3_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1804]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_4_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1811]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_4_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1811]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_5_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1818]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_5_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1818]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_6_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1825]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_6_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1825]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_7_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1832]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_7_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1832]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_8_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1839]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_8_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1839]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_9_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1846]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_9_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1846]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_10_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1853]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_10_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1853]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_11_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1860]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_11_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1860]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_12_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1867]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_12_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1867]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_13_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1874]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_13_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1874]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_14_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1881]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_14_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1881]
+WARNING: [Synth 8-6014] Unused sequential element visible_pipeReg_15_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1888]
+WARNING: [Synth 8-6014] Unused sequential element inside_pipeReg_15_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:1888]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_15_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3402]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_14_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3392]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_13_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3382]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_12_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3372]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_11_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3362]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_10_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3352]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_9_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3342]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_8_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3332]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_7_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3322]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_6_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3312]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_5_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3302]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_4_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3292]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_3_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3282]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_2_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3272]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_1_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3262]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inSpriteY_0_REG_reg' and it is trimmed from '12' to '11' bits. [C:/Users/soren/Fag_project/Top.v:3252]
+WARNING: [Synth 8-6014] Unused sequential element backBufferShadowMemories_1_io_address_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4131]
+WARNING: [Synth 8-6014] Unused sequential element backBufferShadowMemories_1_io_writeEnable_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4133]
+WARNING: [Synth 8-6014] Unused sequential element backBufferMemories_1_io_address_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3178]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_2_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3273]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_2_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3272]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_3_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3283]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_3_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3282]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_4_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3293]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_4_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3292]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_5_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3303]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_5_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3302]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_6_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3313]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_6_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3312]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_7_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3323]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_7_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3322]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_8_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3333]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_8_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3332]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_9_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3343]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_9_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3342]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_10_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3353]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_10_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3352]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_11_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3363]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_11_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3362]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_12_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3373]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_12_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3372]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_13_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3383]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_13_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3382]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_14_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3393]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_14_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3392]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteX_15_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3403]
+WARNING: [Synth 8-6014] Unused sequential element inSpriteY_15_REG_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3402]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3986]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4491]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaGreen_pipeReg_2_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4492]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_0_reg was removed.  [C:/Users/soren/Fag_project/Top.v:3985]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_1_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4494]
+WARNING: [Synth 8-6014] Unused sequential element io_vgaBlue_pipeReg_2_reg was removed.  [C:/Users/soren/Fag_project/Top.v:4495]
 WARNING: [Synth 8-3917] design Top has port io_led_0 driven by constant 0
 WARNING: [Synth 8-3917] design Top has port io_led_1 driven by constant 0
 WARNING: [Synth 8-3917] design Top has port io_led_2 driven by constant 0
@@ -550,18 +612,18 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1550.406 ; gain = 598.379
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1551.770 ; gain = 600.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1550.406 ; gain = 598.379
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1551.770 ; gain = 600.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1550.406 ; gain = 598.379
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1551.770 ; gain = 600.105
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1550.406 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1551.770 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -572,27 +634,27 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1629.016 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1651.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1629.016 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1651.480 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'stateReg_reg' in module 'GameLogicTask0'
 ---------------------------------------------------------------------------------------------------
@@ -605,7 +667,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'stateReg_reg' in module 'Ga
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'stateReg_reg' using encoding 'one-hot' in module 'GameLogicTask0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/rotation45deg_1' (Memory_86) to 'gameTop/graphicEngineVGA/rotation45deg_2'
 INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/rotation45deg_1' (Memory_86) to 'gameTop/graphicEngineVGA/rotation45deg_3'
@@ -626,45 +688,47 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   12 Bit       Adders := 1     
-	   3 Input   11 Bit       Adders := 1     
-	   2 Input   11 Bit       Adders := 4     
-	   2 Input   10 Bit       Adders := 9     
-	   3 Input   10 Bit       Adders := 1     
+	   3 Input   12 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 5     
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 10    
 	   2 Input    9 Bit       Adders := 15    
+	   3 Input    3 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 8     
 	               20 Bit    Registers := 8     
 	               15 Bit    Registers := 2     
-	               12 Bit    Registers := 12    
-	               11 Bit    Registers := 4     
-	               10 Bit    Registers := 11    
+	               12 Bit    Registers := 11    
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 7     
 	                9 Bit    Registers := 12    
-	                7 Bit    Registers := 160   
-	                6 Bit    Registers := 1     
+	                7 Bit    Registers := 144   
+	                6 Bit    Registers := 3     
 	                5 Bit    Registers := 8     
-	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 134   
 +---RAMs : 
 	              60K Bit	(4096 X 15 bit)          RAMs := 2     
 	              16K Bit	(512 X 32 bit)          RAMs := 8     
 	              10K Bit	(2048 X 5 bit)          RAMs := 6     
-	               7K Bit	(1024 X 7 bit)          RAMs := 96    
+	               7K Bit	(1024 X 7 bit)          RAMs := 80    
 +---Muxes : 
 	   3 Input   11 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 4     
 	   3 Input   10 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 10    
+	   2 Input   10 Bit        Muxes := 9     
 	   2 Input    9 Bit        Muxes := 9     
 	   2 Input    7 Bit        Muxes := 15    
-	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 3     
 	   2 Input    5 Bit        Muxes := 2     
+	   9 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 46    
+	   2 Input    1 Bit        Muxes := 47    
 	   3 Input    1 Bit        Muxes := 9     
 	   4 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
@@ -700,27 +764,11 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/rotation45deg_0/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/rotation45deg_1/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_0/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_1/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_2/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_3/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_4/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_5/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_6/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_7/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_8/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_9/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_10/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_11/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_12/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_13/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_14/ramsSpWf/RAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element gameTop/graphicEngineVGA/spriteBlender/spriteMemories_15/ramsSpWf/RAM_reg was removed. 
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (gameTop/graphicEngineVGA/boxIndex_1) is unused and will be removed from module Top.
 WARNING: [Synth 8-3332] Sequential element (gameTop/graphicEngineVGA/boxIndex_1__0) is unused and will be removed from module Top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -834,13 +882,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1019,7 +1067,7 @@ INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/sprite
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/spriteMemories_1/ramsSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/spriteMemories_3/ramsSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1037,37 +1085,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1100,44 +1148,44 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |   255|
-|3     |LUT1     |    61|
-|4     |LUT2     |   263|
-|5     |LUT3     |    76|
-|6     |LUT4     |   352|
-|7     |LUT5     |   103|
-|8     |LUT6     |   228|
-|9     |MUXF7    |    42|
+|2     |CARRY4   |   263|
+|3     |LUT1     |    72|
+|4     |LUT2     |   275|
+|5     |LUT3     |    97|
+|6     |LUT4     |   390|
+|7     |LUT5     |   133|
+|8     |LUT6     |   296|
+|9     |MUXF7    |    43|
 |10    |RAMB18E1 |    26|
 |28    |SRL16E   |     3|
-|29    |FDRE     |   968|
+|29    |FDRE     |   962|
 |30    |FDSE     |    16|
 |31    |IBUF     |     8|
 |32    |OBUF     |    26|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1651.480 ; gain = 699.816
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 1629.016 ; gain = 598.379
-Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.016 ; gain = 676.988
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:44 . Memory (MB): peak = 1651.480 ; gain = 600.105
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1651.480 ; gain = 699.816
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1629.016 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 323 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1651.480 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 332 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1629.016 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1651.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: dc65a7d
+Synth Design complete | Checksum: c966c480
 INFO: [Common 17-83] Releasing license: Synthesis
-358 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
+359 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1629.016 ; gain = 1074.816
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1629.016 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1651.480 ; gain = 1093.449
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1651.480 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/soren/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1/Top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May  7 02:39:00 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed May  7 03:56:58 2025...

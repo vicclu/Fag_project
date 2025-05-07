@@ -21,10 +21,14 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val pixelX = Input(UInt(10.W))
     val pixelY = Input(UInt(10.W))
     val spritePixelAddr = Input(Vec(SpriteNumber, UInt(10.W)))
+    val datareader = Input(Vec(SpriteNumber, UInt(7.W)))
 
     val vgaRed = Output(UInt(4.W))
     val vgaGreen = Output(UInt(4.W))
     val vgaBlue = Output(UInt(4.W))
+    val pixelColorSprite = Output(UInt(7.W))
+    val pixelColorSpriteValid = Output(Bool())
+
   })
   val pixelColorBack = io.pixelColorBack
   val pixelColorBackReg = RegNext(RegNext(pixelColorBack))
@@ -40,23 +44,13 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
   val pixelY = io.pixelY
 
 
-  val spriteMemories = for (i <- 0 until SpriteNumber) yield {
-    val spriteMemory = Module(new Memory(7, 10, "memory_init/sprite_init_" + i.toString + ".mem"))
-    spriteMemory
-  }
 
-  for (i <- 0 until SpriteNumber) {
-    spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.enable := spriteVisibleReg(i) && inSprite(i)
-    spriteMemories(i).io.dataWrite := 0.U
-    spriteMemories(i).io.address := io.spritePixelAddr(i)
-  }
 
 
 
   val multiHotPriortyReductionTree = Module(new MultiHotPriortyReductionTree(SpriteNumber, UInt(7.W)))
   for (i <- 0 until SpriteNumber) {
-    val spriteData = spriteMemories(i).io.dataRead
+    val spriteData = io.datareader(i)
     multiHotPriortyReductionTree.io.dataInput(i) := spriteData(6, 0)
     val spriteAlphaBit = spriteData(6)
 
@@ -77,6 +71,10 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
 
   val topSpriteIndex = multiHotPriortyReductionTree.io.indexOutput
   val topSpriteColor = multiHotPriortyReductionTree.io.dataOutput
+  io.pixelColorSprite := RegNext(multiHotPriortyReductionTree.io.dataOutput)
+  io.pixelColorSpriteValid := RegNext(anySpriteSelected)
+
+
   val topSpriteAlpha = topSpriteColor(6).asBool
   val topSpriteRGB = topSpriteColor(5, 0)
   val topSpriteOpacity = io.spriteOpacityLevel(topSpriteIndex)
@@ -86,7 +84,7 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
   val secondSpriteValids = Wire(Vec(SpriteNumber, Bool()))
 
   for (i <- 0 until SpriteNumber) {
-    val spriteData = spriteMemories(i).io.dataRead
+    val spriteData =  io.datareader(i)
     val visible = RegPipeline(spriteVisibleReg(i), 2)
     val inside = RegPipeline(inSprite(i), 2)
     val alphaBit = spriteData(6)
@@ -99,7 +97,7 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
   // Use PriorityMux to pick the first valid second-top sprite
   val secondSpriteColor = PriorityMux(secondSpriteValids, secondSpriteCandidates)
   val secondSpriteFound = secondSpriteValids.reduce(_ || _)
-  val secondSpriteOpacity = io.spriteOpacityLevel()
+  val secondSpriteOpacity = io.spriteOpacityLevel(0)
 
   val underColor = Mux(secondSpriteFound, secondSpriteColor, pixelColorBackReg)
 
