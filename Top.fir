@@ -2946,6 +2946,406 @@ circuit Top :
     ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
     io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
 
+  extmodule RamInitSpWf_50 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_0.mem"
+
+  module Memory_52 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_50 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_51 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_1.mem"
+
+  module Memory_53 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_51 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_52 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_2.mem"
+
+  module Memory_54 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_52 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_53 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_3.mem"
+
+  module Memory_55 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_53 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_54 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_4.mem"
+
+  module Memory_56 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_54 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_55 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_5.mem"
+
+  module Memory_57 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_55 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_56 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_6.mem"
+
+  module Memory_58 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_56 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_57 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_7.mem"
+
+  module Memory_59 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_57 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_58 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_8.mem"
+
+  module Memory_60 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_58 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_59 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_9.mem"
+
+  module Memory_61 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_59 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_60 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_10.mem"
+
+  module Memory_62 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_60 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_61 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_11.mem"
+
+  module Memory_63 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_61 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_62 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_12.mem"
+
+  module Memory_64 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_62 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_63 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_13.mem"
+
+  module Memory_65 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_63 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_64 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_14.mem"
+
+  module Memory_66 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_64 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
+  extmodule RamInitSpWf_65 :
+    input clk : Clock
+    input we : UInt<1>
+    input en : UInt<1>
+    input addr : UInt<10>
+    input di : UInt<7>
+    output dout : UInt<7>
+    defname = RamInitSpWf
+    parameter ADDR_WIDTH = 10
+    parameter DATA_WIDTH = 7
+    parameter LOAD_FILE = "memory_init/sprite_init_15.mem"
+
+  module Memory_67 :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip address : UInt<10>, dataRead : UInt<7>, flip enable : UInt<1>, flip writeEnable : UInt<1>, flip dataWrite : UInt<7>} @[\\src\\main\\scala\\Memory.scala 48:14]
+
+    inst ramsSpWf of RamInitSpWf_65 @[\\src\\main\\scala\\Memory.scala 65:26]
+    ramsSpWf.clk <= clock @[\\src\\main\\scala\\Memory.scala 66:21]
+    ramsSpWf.we <= io.writeEnable @[\\src\\main\\scala\\Memory.scala 67:20]
+    ramsSpWf.en <= io.enable @[\\src\\main\\scala\\Memory.scala 68:20]
+    ramsSpWf.addr <= io.address @[\\src\\main\\scala\\Memory.scala 69:22]
+    ramsSpWf.di <= io.dataWrite @[\\src\\main\\scala\\Memory.scala 70:20]
+    io.dataRead <= ramsSpWf.dout @[\\src\\main\\scala\\Memory.scala 71:17]
+
   module MultiHotPriortyReductionTree :
     input clock : Clock
     input reset : Reset
@@ -3521,102 +3921,923 @@ circuit Top :
     input reset : Reset
     output io : { flip dataInput : UInt<6>[16], flip selectInput : UInt<1>[16], dataOutput : UInt<6>, selectOutput : UInt<1>} @[\\src\\main\\scala\\GameUtilities.scala 53:14]
 
-    wire dataNodeOutputs : UInt<6>[31] @[\\src\\main\\scala\\GameUtilities.scala 64:29]
-    wire selectNodeOutputs : UInt<1>[31] @[\\src\\main\\scala\\GameUtilities.scala 65:31]
-    dataNodeOutputs[15] <= io.dataInput[0] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[15] <= io.selectInput[0] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[16] <= io.dataInput[1] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[16] <= io.selectInput[1] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[17] <= io.dataInput[2] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[17] <= io.selectInput[2] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[18] <= io.dataInput[3] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[18] <= io.selectInput[3] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[19] <= io.dataInput[4] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[19] <= io.selectInput[4] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[20] <= io.dataInput[5] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[20] <= io.selectInput[5] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[21] <= io.dataInput[6] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[21] <= io.selectInput[6] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[22] <= io.dataInput[7] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[22] <= io.selectInput[7] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[23] <= io.dataInput[8] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[23] <= io.selectInput[8] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[24] <= io.dataInput[9] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[24] <= io.selectInput[9] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[25] <= io.dataInput[10] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[25] <= io.selectInput[10] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[26] <= io.dataInput[11] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[26] <= io.selectInput[11] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[27] <= io.dataInput[12] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[27] <= io.selectInput[12] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[28] <= io.dataInput[13] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[28] <= io.selectInput[13] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[29] <= io.dataInput[14] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[29] <= io.selectInput[14] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    dataNodeOutputs[30] <= io.dataInput[15] @[\\src\\main\\scala\\GameUtilities.scala 68:28]
-    selectNodeOutputs[30] <= io.selectInput[15] @[\\src\\main\\scala\\GameUtilities.scala 69:30]
-    io.dataOutput <= dataNodeOutputs[0] @[\\src\\main\\scala\\GameUtilities.scala 72:17]
-    io.selectOutput <= selectNodeOutputs[0] @[\\src\\main\\scala\\GameUtilities.scala 73:19]
-    node _dataNodeOutputs_0_T = mux(selectNodeOutputs[1], dataNodeOutputs[1], dataNodeOutputs[2]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[0] <= _dataNodeOutputs_0_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_0_T = or(selectNodeOutputs[1], selectNodeOutputs[2]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[0] <= _selectNodeOutputs_0_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_1_T = mux(selectNodeOutputs[3], dataNodeOutputs[3], dataNodeOutputs[4]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[1] <= _dataNodeOutputs_1_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_1_T = or(selectNodeOutputs[3], selectNodeOutputs[4]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[1] <= _selectNodeOutputs_1_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_2_T = mux(selectNodeOutputs[5], dataNodeOutputs[5], dataNodeOutputs[6]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[2] <= _dataNodeOutputs_2_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_2_T = or(selectNodeOutputs[5], selectNodeOutputs[6]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[2] <= _selectNodeOutputs_2_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_3_T = mux(selectNodeOutputs[7], dataNodeOutputs[7], dataNodeOutputs[8]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[3] <= _dataNodeOutputs_3_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_3_T = or(selectNodeOutputs[7], selectNodeOutputs[8]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[3] <= _selectNodeOutputs_3_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_4_T = mux(selectNodeOutputs[9], dataNodeOutputs[9], dataNodeOutputs[10]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[4] <= _dataNodeOutputs_4_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_4_T = or(selectNodeOutputs[9], selectNodeOutputs[10]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[4] <= _selectNodeOutputs_4_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_5_T = mux(selectNodeOutputs[11], dataNodeOutputs[11], dataNodeOutputs[12]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[5] <= _dataNodeOutputs_5_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_5_T = or(selectNodeOutputs[11], selectNodeOutputs[12]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[5] <= _selectNodeOutputs_5_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_6_T = mux(selectNodeOutputs[13], dataNodeOutputs[13], dataNodeOutputs[14]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[6] <= _dataNodeOutputs_6_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_6_T = or(selectNodeOutputs[13], selectNodeOutputs[14]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[6] <= _selectNodeOutputs_6_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_7_T = mux(selectNodeOutputs[15], dataNodeOutputs[15], dataNodeOutputs[16]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[7] <= _dataNodeOutputs_7_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_7_T = or(selectNodeOutputs[15], selectNodeOutputs[16]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[7] <= _selectNodeOutputs_7_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_8_T = mux(selectNodeOutputs[17], dataNodeOutputs[17], dataNodeOutputs[18]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[8] <= _dataNodeOutputs_8_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_8_T = or(selectNodeOutputs[17], selectNodeOutputs[18]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[8] <= _selectNodeOutputs_8_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_9_T = mux(selectNodeOutputs[19], dataNodeOutputs[19], dataNodeOutputs[20]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[9] <= _dataNodeOutputs_9_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_9_T = or(selectNodeOutputs[19], selectNodeOutputs[20]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[9] <= _selectNodeOutputs_9_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_10_T = mux(selectNodeOutputs[21], dataNodeOutputs[21], dataNodeOutputs[22]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[10] <= _dataNodeOutputs_10_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_10_T = or(selectNodeOutputs[21], selectNodeOutputs[22]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[10] <= _selectNodeOutputs_10_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_11_T = mux(selectNodeOutputs[23], dataNodeOutputs[23], dataNodeOutputs[24]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[11] <= _dataNodeOutputs_11_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_11_T = or(selectNodeOutputs[23], selectNodeOutputs[24]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[11] <= _selectNodeOutputs_11_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_12_T = mux(selectNodeOutputs[25], dataNodeOutputs[25], dataNodeOutputs[26]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[12] <= _dataNodeOutputs_12_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_12_T = or(selectNodeOutputs[25], selectNodeOutputs[26]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[12] <= _selectNodeOutputs_12_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_13_T = mux(selectNodeOutputs[27], dataNodeOutputs[27], dataNodeOutputs[28]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[13] <= _dataNodeOutputs_13_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_13_T = or(selectNodeOutputs[27], selectNodeOutputs[28]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[13] <= _selectNodeOutputs_13_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
-    node _dataNodeOutputs_14_T = mux(selectNodeOutputs[29], dataNodeOutputs[29], dataNodeOutputs[30]) @[\\src\\main\\scala\\GameUtilities.scala 85:34]
-    dataNodeOutputs[14] <= _dataNodeOutputs_14_T @[\\src\\main\\scala\\GameUtilities.scala 85:28]
-    node _selectNodeOutputs_14_T = or(selectNodeOutputs[29], selectNodeOutputs[30]) @[\\src\\main\\scala\\GameUtilities.scala 86:54]
-    selectNodeOutputs[14] <= _selectNodeOutputs_14_T @[\\src\\main\\scala\\GameUtilities.scala 86:30]
+    wire dataNodeOutputs : UInt<7>[31] @[\\src\\main\\scala\\GameUtilities.scala 124:29]
+    wire selectNodeOutputs : UInt<1>[31] @[\\src\\main\\scala\\GameUtilities.scala 125:31]
+    wire indexNodeOutputs : UInt<4>[31] @[\\src\\main\\scala\\GameUtilities.scala 126:30]
+    dataNodeOutputs[15] <= io.dataInput[0] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[15] <= io.selectInput[0] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[15] <= UInt<1>("h0") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[16] <= io.dataInput[1] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[16] <= io.selectInput[1] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[16] <= UInt<1>("h1") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[17] <= io.dataInput[2] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[17] <= io.selectInput[2] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[17] <= UInt<2>("h2") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[18] <= io.dataInput[3] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[18] <= io.selectInput[3] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[18] <= UInt<2>("h3") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[19] <= io.dataInput[4] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[19] <= io.selectInput[4] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[19] <= UInt<3>("h4") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[20] <= io.dataInput[5] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[20] <= io.selectInput[5] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[20] <= UInt<3>("h5") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[21] <= io.dataInput[6] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[21] <= io.selectInput[6] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[21] <= UInt<3>("h6") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[22] <= io.dataInput[7] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[22] <= io.selectInput[7] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[22] <= UInt<3>("h7") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[23] <= io.dataInput[8] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[23] <= io.selectInput[8] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[23] <= UInt<4>("h8") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[24] <= io.dataInput[9] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[24] <= io.selectInput[9] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[24] <= UInt<4>("h9") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[25] <= io.dataInput[10] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[25] <= io.selectInput[10] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[25] <= UInt<4>("ha") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[26] <= io.dataInput[11] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[26] <= io.selectInput[11] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[26] <= UInt<4>("hb") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[27] <= io.dataInput[12] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[27] <= io.selectInput[12] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[27] <= UInt<4>("hc") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[28] <= io.dataInput[13] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[28] <= io.selectInput[13] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[28] <= UInt<4>("hd") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[29] <= io.dataInput[14] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[29] <= io.selectInput[14] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[29] <= UInt<4>("he") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    dataNodeOutputs[30] <= io.dataInput[15] @[\\src\\main\\scala\\GameUtilities.scala 130:28]
+    selectNodeOutputs[30] <= io.selectInput[15] @[\\src\\main\\scala\\GameUtilities.scala 131:30]
+    indexNodeOutputs[30] <= UInt<4>("hf") @[\\src\\main\\scala\\GameUtilities.scala 132:29]
+    io.dataOutput <= dataNodeOutputs[0] @[\\src\\main\\scala\\GameUtilities.scala 136:17]
+    io.selectOutput <= selectNodeOutputs[0] @[\\src\\main\\scala\\GameUtilities.scala 137:19]
+    io.indexOutput <= indexNodeOutputs[0] @[\\src\\main\\scala\\GameUtilities.scala 138:18]
+    node _dataNodeOutputs_0_T = mux(selectNodeOutputs[1], dataNodeOutputs[1], dataNodeOutputs[2]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[0] <= _dataNodeOutputs_0_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_0_T = or(selectNodeOutputs[1], selectNodeOutputs[2]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[0] <= _selectNodeOutputs_0_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_0_T = mux(selectNodeOutputs[1], indexNodeOutputs[1], indexNodeOutputs[2]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[0] <= _indexNodeOutputs_0_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_1_T = mux(selectNodeOutputs[3], dataNodeOutputs[3], dataNodeOutputs[4]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[1] <= _dataNodeOutputs_1_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_1_T = or(selectNodeOutputs[3], selectNodeOutputs[4]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[1] <= _selectNodeOutputs_1_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_1_T = mux(selectNodeOutputs[3], indexNodeOutputs[3], indexNodeOutputs[4]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[1] <= _indexNodeOutputs_1_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_2_T = mux(selectNodeOutputs[5], dataNodeOutputs[5], dataNodeOutputs[6]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[2] <= _dataNodeOutputs_2_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_2_T = or(selectNodeOutputs[5], selectNodeOutputs[6]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[2] <= _selectNodeOutputs_2_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_2_T = mux(selectNodeOutputs[5], indexNodeOutputs[5], indexNodeOutputs[6]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[2] <= _indexNodeOutputs_2_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_3_T = mux(selectNodeOutputs[7], dataNodeOutputs[7], dataNodeOutputs[8]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[3] <= _dataNodeOutputs_3_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_3_T = or(selectNodeOutputs[7], selectNodeOutputs[8]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[3] <= _selectNodeOutputs_3_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_3_T = mux(selectNodeOutputs[7], indexNodeOutputs[7], indexNodeOutputs[8]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[3] <= _indexNodeOutputs_3_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_4_T = mux(selectNodeOutputs[9], dataNodeOutputs[9], dataNodeOutputs[10]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[4] <= _dataNodeOutputs_4_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_4_T = or(selectNodeOutputs[9], selectNodeOutputs[10]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[4] <= _selectNodeOutputs_4_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_4_T = mux(selectNodeOutputs[9], indexNodeOutputs[9], indexNodeOutputs[10]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[4] <= _indexNodeOutputs_4_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_5_T = mux(selectNodeOutputs[11], dataNodeOutputs[11], dataNodeOutputs[12]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[5] <= _dataNodeOutputs_5_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_5_T = or(selectNodeOutputs[11], selectNodeOutputs[12]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[5] <= _selectNodeOutputs_5_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_5_T = mux(selectNodeOutputs[11], indexNodeOutputs[11], indexNodeOutputs[12]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[5] <= _indexNodeOutputs_5_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_6_T = mux(selectNodeOutputs[13], dataNodeOutputs[13], dataNodeOutputs[14]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[6] <= _dataNodeOutputs_6_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_6_T = or(selectNodeOutputs[13], selectNodeOutputs[14]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[6] <= _selectNodeOutputs_6_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_6_T = mux(selectNodeOutputs[13], indexNodeOutputs[13], indexNodeOutputs[14]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[6] <= _indexNodeOutputs_6_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_7_T = mux(selectNodeOutputs[15], dataNodeOutputs[15], dataNodeOutputs[16]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[7] <= _dataNodeOutputs_7_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_7_T = or(selectNodeOutputs[15], selectNodeOutputs[16]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[7] <= _selectNodeOutputs_7_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_7_T = mux(selectNodeOutputs[15], indexNodeOutputs[15], indexNodeOutputs[16]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[7] <= _indexNodeOutputs_7_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_8_T = mux(selectNodeOutputs[17], dataNodeOutputs[17], dataNodeOutputs[18]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[8] <= _dataNodeOutputs_8_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_8_T = or(selectNodeOutputs[17], selectNodeOutputs[18]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[8] <= _selectNodeOutputs_8_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_8_T = mux(selectNodeOutputs[17], indexNodeOutputs[17], indexNodeOutputs[18]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[8] <= _indexNodeOutputs_8_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_9_T = mux(selectNodeOutputs[19], dataNodeOutputs[19], dataNodeOutputs[20]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[9] <= _dataNodeOutputs_9_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_9_T = or(selectNodeOutputs[19], selectNodeOutputs[20]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[9] <= _selectNodeOutputs_9_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_9_T = mux(selectNodeOutputs[19], indexNodeOutputs[19], indexNodeOutputs[20]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[9] <= _indexNodeOutputs_9_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_10_T = mux(selectNodeOutputs[21], dataNodeOutputs[21], dataNodeOutputs[22]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[10] <= _dataNodeOutputs_10_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_10_T = or(selectNodeOutputs[21], selectNodeOutputs[22]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[10] <= _selectNodeOutputs_10_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_10_T = mux(selectNodeOutputs[21], indexNodeOutputs[21], indexNodeOutputs[22]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[10] <= _indexNodeOutputs_10_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_11_T = mux(selectNodeOutputs[23], dataNodeOutputs[23], dataNodeOutputs[24]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[11] <= _dataNodeOutputs_11_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_11_T = or(selectNodeOutputs[23], selectNodeOutputs[24]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[11] <= _selectNodeOutputs_11_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_11_T = mux(selectNodeOutputs[23], indexNodeOutputs[23], indexNodeOutputs[24]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[11] <= _indexNodeOutputs_11_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_12_T = mux(selectNodeOutputs[25], dataNodeOutputs[25], dataNodeOutputs[26]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[12] <= _dataNodeOutputs_12_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_12_T = or(selectNodeOutputs[25], selectNodeOutputs[26]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[12] <= _selectNodeOutputs_12_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_12_T = mux(selectNodeOutputs[25], indexNodeOutputs[25], indexNodeOutputs[26]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[12] <= _indexNodeOutputs_12_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_13_T = mux(selectNodeOutputs[27], dataNodeOutputs[27], dataNodeOutputs[28]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[13] <= _dataNodeOutputs_13_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_13_T = or(selectNodeOutputs[27], selectNodeOutputs[28]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[13] <= _selectNodeOutputs_13_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_13_T = mux(selectNodeOutputs[27], indexNodeOutputs[27], indexNodeOutputs[28]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[13] <= _indexNodeOutputs_13_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+    node _dataNodeOutputs_14_T = mux(selectNodeOutputs[29], dataNodeOutputs[29], dataNodeOutputs[30]) @[\\src\\main\\scala\\GameUtilities.scala 150:34]
+    dataNodeOutputs[14] <= _dataNodeOutputs_14_T @[\\src\\main\\scala\\GameUtilities.scala 150:28]
+    node _selectNodeOutputs_14_T = or(selectNodeOutputs[29], selectNodeOutputs[30]) @[\\src\\main\\scala\\GameUtilities.scala 151:54]
+    selectNodeOutputs[14] <= _selectNodeOutputs_14_T @[\\src\\main\\scala\\GameUtilities.scala 151:30]
+    node _indexNodeOutputs_14_T = mux(selectNodeOutputs[29], indexNodeOutputs[29], indexNodeOutputs[30]) @[\\src\\main\\scala\\GameUtilities.scala 152:35]
+    indexNodeOutputs[14] <= _indexNodeOutputs_14_T @[\\src\\main\\scala\\GameUtilities.scala 152:29]
+
+  module SpriteBlender :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip spriteOpacityLevel : UInt<2>[16], flip pixelColorBack : UInt<6>, flip spriteVisibleReg : UInt<1>[16], flip inSprite : UInt<1>[16], flip spriteXPosition : SInt<11>[16], flip spriteYPosition : SInt<10>[16], flip pixelX : UInt<10>, flip pixelY : UInt<10>, flip spritePixelAddr : UInt<10>[16], vgaRed : UInt<4>, vgaGreen : UInt<4>, vgaBlue : UInt<4>} @[\\src\\main\\scala\\SpriteBlender.scala 12:14]
+
+    reg pixelColorBackReg_REG : UInt, clock with :
+      reset => (UInt<1>("h0"), pixelColorBackReg_REG) @[\\src\\main\\scala\\SpriteBlender.scala 30:42]
+    pixelColorBackReg_REG <= io.pixelColorBack @[\\src\\main\\scala\\SpriteBlender.scala 30:42]
+    reg pixelColorBackReg : UInt, clock with :
+      reset => (UInt<1>("h0"), pixelColorBackReg) @[\\src\\main\\scala\\SpriteBlender.scala 30:34]
+    pixelColorBackReg <= pixelColorBackReg_REG @[\\src\\main\\scala\\SpriteBlender.scala 30:34]
+    inst spriteMemories_0 of Memory_52 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_0.clock <= clock
+    spriteMemories_0.reset <= reset
+    inst spriteMemories_1 of Memory_53 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_1.clock <= clock
+    spriteMemories_1.reset <= reset
+    inst spriteMemories_2 of Memory_54 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_2.clock <= clock
+    spriteMemories_2.reset <= reset
+    inst spriteMemories_3 of Memory_55 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_3.clock <= clock
+    spriteMemories_3.reset <= reset
+    inst spriteMemories_4 of Memory_56 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_4.clock <= clock
+    spriteMemories_4.reset <= reset
+    inst spriteMemories_5 of Memory_57 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_5.clock <= clock
+    spriteMemories_5.reset <= reset
+    inst spriteMemories_6 of Memory_58 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_6.clock <= clock
+    spriteMemories_6.reset <= reset
+    inst spriteMemories_7 of Memory_59 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_7.clock <= clock
+    spriteMemories_7.reset <= reset
+    inst spriteMemories_8 of Memory_60 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_8.clock <= clock
+    spriteMemories_8.reset <= reset
+    inst spriteMemories_9 of Memory_61 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_9.clock <= clock
+    spriteMemories_9.reset <= reset
+    inst spriteMemories_10 of Memory_62 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_10.clock <= clock
+    spriteMemories_10.reset <= reset
+    inst spriteMemories_11 of Memory_63 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_11.clock <= clock
+    spriteMemories_11.reset <= reset
+    inst spriteMemories_12 of Memory_64 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_12.clock <= clock
+    spriteMemories_12.reset <= reset
+    inst spriteMemories_13 of Memory_65 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_13.clock <= clock
+    spriteMemories_13.reset <= reset
+    inst spriteMemories_14 of Memory_66 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_14.clock <= clock
+    spriteMemories_14.reset <= reset
+    inst spriteMemories_15 of Memory_67 @[\\src\\main\\scala\\SpriteBlender.scala 45:30]
+    spriteMemories_15.clock <= clock
+    spriteMemories_15.reset <= reset
+    spriteMemories_0.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_0_io_enable_T = and(io.spriteVisibleReg[0], io.inSprite[0]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_0.io.enable <= _spriteMemories_0_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_0.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_0.io.address <= io.spritePixelAddr[0] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_1.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_1_io_enable_T = and(io.spriteVisibleReg[1], io.inSprite[1]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_1.io.enable <= _spriteMemories_1_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_1.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_1.io.address <= io.spritePixelAddr[1] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_2.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_2_io_enable_T = and(io.spriteVisibleReg[2], io.inSprite[2]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_2.io.enable <= _spriteMemories_2_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_2.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_2.io.address <= io.spritePixelAddr[2] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_3.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_3_io_enable_T = and(io.spriteVisibleReg[3], io.inSprite[3]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_3.io.enable <= _spriteMemories_3_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_3.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_3.io.address <= io.spritePixelAddr[3] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_4.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_4_io_enable_T = and(io.spriteVisibleReg[4], io.inSprite[4]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_4.io.enable <= _spriteMemories_4_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_4.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_4.io.address <= io.spritePixelAddr[4] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_5.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_5_io_enable_T = and(io.spriteVisibleReg[5], io.inSprite[5]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_5.io.enable <= _spriteMemories_5_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_5.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_5.io.address <= io.spritePixelAddr[5] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_6.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_6_io_enable_T = and(io.spriteVisibleReg[6], io.inSprite[6]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_6.io.enable <= _spriteMemories_6_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_6.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_6.io.address <= io.spritePixelAddr[6] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_7.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_7_io_enable_T = and(io.spriteVisibleReg[7], io.inSprite[7]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_7.io.enable <= _spriteMemories_7_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_7.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_7.io.address <= io.spritePixelAddr[7] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_8.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_8_io_enable_T = and(io.spriteVisibleReg[8], io.inSprite[8]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_8.io.enable <= _spriteMemories_8_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_8.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_8.io.address <= io.spritePixelAddr[8] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_9.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_9_io_enable_T = and(io.spriteVisibleReg[9], io.inSprite[9]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_9.io.enable <= _spriteMemories_9_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_9.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_9.io.address <= io.spritePixelAddr[9] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_10.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_10_io_enable_T = and(io.spriteVisibleReg[10], io.inSprite[10]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_10.io.enable <= _spriteMemories_10_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_10.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_10.io.address <= io.spritePixelAddr[10] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_11.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_11_io_enable_T = and(io.spriteVisibleReg[11], io.inSprite[11]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_11.io.enable <= _spriteMemories_11_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_11.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_11.io.address <= io.spritePixelAddr[11] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_12.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_12_io_enable_T = and(io.spriteVisibleReg[12], io.inSprite[12]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_12.io.enable <= _spriteMemories_12_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_12.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_12.io.address <= io.spritePixelAddr[12] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_13.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_13_io_enable_T = and(io.spriteVisibleReg[13], io.inSprite[13]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_13.io.enable <= _spriteMemories_13_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_13.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_13.io.address <= io.spritePixelAddr[13] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_14.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_14_io_enable_T = and(io.spriteVisibleReg[14], io.inSprite[14]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_14.io.enable <= _spriteMemories_14_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_14.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_14.io.address <= io.spritePixelAddr[14] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    spriteMemories_15.io.writeEnable <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 50:38]
+    node _spriteMemories_15_io_enable_T = and(io.spriteVisibleReg[15], io.inSprite[15]) @[\\src\\main\\scala\\SpriteBlender.scala 51:56]
+    spriteMemories_15.io.enable <= _spriteMemories_15_io_enable_T @[\\src\\main\\scala\\SpriteBlender.scala 51:33]
+    spriteMemories_15.io.dataWrite <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 52:36]
+    spriteMemories_15.io.address <= io.spritePixelAddr[15] @[\\src\\main\\scala\\SpriteBlender.scala 53:34]
+    inst multiHotPriortyReductionTree of MultiHotPriortyReductionTree @[\\src\\main\\scala\\SpriteBlender.scala 58:44]
+    multiHotPriortyReductionTree.clock <= clock
+    multiHotPriortyReductionTree.reset <= reset
+    node _multiHotPriortyReductionTree_io_dataInput_0_T = bits(spriteMemories_0.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[0] <= _multiHotPriortyReductionTree_io_dataInput_0_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit = bits(spriteMemories_0.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_0_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_0_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg[1] <= io.spriteVisibleReg[0] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_0_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1[1] <= io.inSprite[0] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_0_T = and(multiHotPriortyReductionTree_io_selectInput_0_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_0_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_0_T_1 = not(spriteAlphaBit) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_0_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_0_T, _multiHotPriortyReductionTree_io_selectInput_0_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[0] <= _multiHotPriortyReductionTree_io_selectInput_0_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_1_T = bits(spriteMemories_1.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[1] <= _multiHotPriortyReductionTree_io_dataInput_1_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_1 = bits(spriteMemories_1.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_1_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_1_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg[1] <= io.spriteVisibleReg[1] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_1_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1[1] <= io.inSprite[1] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_1_T = and(multiHotPriortyReductionTree_io_selectInput_1_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_1_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_1_T_1 = not(spriteAlphaBit_1) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_1_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_1_T, _multiHotPriortyReductionTree_io_selectInput_1_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[1] <= _multiHotPriortyReductionTree_io_selectInput_1_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_2_T = bits(spriteMemories_2.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[2] <= _multiHotPriortyReductionTree_io_dataInput_2_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_2 = bits(spriteMemories_2.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_2_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_2_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg[1] <= io.spriteVisibleReg[2] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_2_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1[1] <= io.inSprite[2] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_2_T = and(multiHotPriortyReductionTree_io_selectInput_2_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_2_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_2_T_1 = not(spriteAlphaBit_2) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_2_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_2_T, _multiHotPriortyReductionTree_io_selectInput_2_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[2] <= _multiHotPriortyReductionTree_io_selectInput_2_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_3_T = bits(spriteMemories_3.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[3] <= _multiHotPriortyReductionTree_io_dataInput_3_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_3 = bits(spriteMemories_3.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_3_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_3_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg[1] <= io.spriteVisibleReg[3] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_3_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1[1] <= io.inSprite[3] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_3_T = and(multiHotPriortyReductionTree_io_selectInput_3_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_3_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_3_T_1 = not(spriteAlphaBit_3) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_3_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_3_T, _multiHotPriortyReductionTree_io_selectInput_3_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[3] <= _multiHotPriortyReductionTree_io_selectInput_3_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_4_T = bits(spriteMemories_4.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[4] <= _multiHotPriortyReductionTree_io_dataInput_4_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_4 = bits(spriteMemories_4.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_4_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_4_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg[1] <= io.spriteVisibleReg[4] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_4_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1[1] <= io.inSprite[4] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_4_T = and(multiHotPriortyReductionTree_io_selectInput_4_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_4_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_4_T_1 = not(spriteAlphaBit_4) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_4_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_4_T, _multiHotPriortyReductionTree_io_selectInput_4_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[4] <= _multiHotPriortyReductionTree_io_selectInput_4_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_5_T = bits(spriteMemories_5.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[5] <= _multiHotPriortyReductionTree_io_dataInput_5_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_5 = bits(spriteMemories_5.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_5_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_5_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg[1] <= io.spriteVisibleReg[5] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_5_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1[1] <= io.inSprite[5] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_5_T = and(multiHotPriortyReductionTree_io_selectInput_5_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_5_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_5_T_1 = not(spriteAlphaBit_5) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_5_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_5_T, _multiHotPriortyReductionTree_io_selectInput_5_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[5] <= _multiHotPriortyReductionTree_io_selectInput_5_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_6_T = bits(spriteMemories_6.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[6] <= _multiHotPriortyReductionTree_io_dataInput_6_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_6 = bits(spriteMemories_6.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_6_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_6_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg[1] <= io.spriteVisibleReg[6] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_6_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1[1] <= io.inSprite[6] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_6_T = and(multiHotPriortyReductionTree_io_selectInput_6_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_6_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_6_T_1 = not(spriteAlphaBit_6) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_6_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_6_T, _multiHotPriortyReductionTree_io_selectInput_6_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[6] <= _multiHotPriortyReductionTree_io_selectInput_6_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_7_T = bits(spriteMemories_7.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[7] <= _multiHotPriortyReductionTree_io_dataInput_7_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_7 = bits(spriteMemories_7.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_7_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_7_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg[1] <= io.spriteVisibleReg[7] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_7_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1[1] <= io.inSprite[7] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_7_T = and(multiHotPriortyReductionTree_io_selectInput_7_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_7_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_7_T_1 = not(spriteAlphaBit_7) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_7_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_7_T, _multiHotPriortyReductionTree_io_selectInput_7_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[7] <= _multiHotPriortyReductionTree_io_selectInput_7_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_8_T = bits(spriteMemories_8.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[8] <= _multiHotPriortyReductionTree_io_dataInput_8_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_8 = bits(spriteMemories_8.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_8_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_8_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg[1] <= io.spriteVisibleReg[8] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_8_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1[1] <= io.inSprite[8] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_8_T = and(multiHotPriortyReductionTree_io_selectInput_8_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_8_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_8_T_1 = not(spriteAlphaBit_8) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_8_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_8_T, _multiHotPriortyReductionTree_io_selectInput_8_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[8] <= _multiHotPriortyReductionTree_io_selectInput_8_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_9_T = bits(spriteMemories_9.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[9] <= _multiHotPriortyReductionTree_io_dataInput_9_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_9 = bits(spriteMemories_9.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_9_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_9_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg[1] <= io.spriteVisibleReg[9] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_9_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1[1] <= io.inSprite[9] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_9_T = and(multiHotPriortyReductionTree_io_selectInput_9_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_9_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_9_T_1 = not(spriteAlphaBit_9) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_9_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_9_T, _multiHotPriortyReductionTree_io_selectInput_9_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[9] <= _multiHotPriortyReductionTree_io_selectInput_9_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_10_T = bits(spriteMemories_10.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[10] <= _multiHotPriortyReductionTree_io_dataInput_10_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_10 = bits(spriteMemories_10.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_10_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_10_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg[1] <= io.spriteVisibleReg[10] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_10_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1[1] <= io.inSprite[10] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_10_T = and(multiHotPriortyReductionTree_io_selectInput_10_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_10_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_10_T_1 = not(spriteAlphaBit_10) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_10_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_10_T, _multiHotPriortyReductionTree_io_selectInput_10_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[10] <= _multiHotPriortyReductionTree_io_selectInput_10_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_11_T = bits(spriteMemories_11.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[11] <= _multiHotPriortyReductionTree_io_dataInput_11_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_11 = bits(spriteMemories_11.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_11_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_11_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg[1] <= io.spriteVisibleReg[11] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_11_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1[1] <= io.inSprite[11] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_11_T = and(multiHotPriortyReductionTree_io_selectInput_11_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_11_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_11_T_1 = not(spriteAlphaBit_11) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_11_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_11_T, _multiHotPriortyReductionTree_io_selectInput_11_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[11] <= _multiHotPriortyReductionTree_io_selectInput_11_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_12_T = bits(spriteMemories_12.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[12] <= _multiHotPriortyReductionTree_io_dataInput_12_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_12 = bits(spriteMemories_12.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_12_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_12_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg[1] <= io.spriteVisibleReg[12] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_12_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1[1] <= io.inSprite[12] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_12_T = and(multiHotPriortyReductionTree_io_selectInput_12_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_12_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_12_T_1 = not(spriteAlphaBit_12) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_12_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_12_T, _multiHotPriortyReductionTree_io_selectInput_12_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[12] <= _multiHotPriortyReductionTree_io_selectInput_12_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_13_T = bits(spriteMemories_13.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[13] <= _multiHotPriortyReductionTree_io_dataInput_13_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_13 = bits(spriteMemories_13.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_13_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_13_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg[1] <= io.spriteVisibleReg[13] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_13_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1[1] <= io.inSprite[13] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_13_T = and(multiHotPriortyReductionTree_io_selectInput_13_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_13_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_13_T_1 = not(spriteAlphaBit_13) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_13_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_13_T, _multiHotPriortyReductionTree_io_selectInput_13_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[13] <= _multiHotPriortyReductionTree_io_selectInput_13_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_14_T = bits(spriteMemories_14.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[14] <= _multiHotPriortyReductionTree_io_dataInput_14_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_14 = bits(spriteMemories_14.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_14_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_14_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg[1] <= io.spriteVisibleReg[14] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_14_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1[1] <= io.inSprite[14] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_14_T = and(multiHotPriortyReductionTree_io_selectInput_14_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_14_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_14_T_1 = not(spriteAlphaBit_14) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_14_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_14_T, _multiHotPriortyReductionTree_io_selectInput_14_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[14] <= _multiHotPriortyReductionTree_io_selectInput_14_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node _multiHotPriortyReductionTree_io_dataInput_15_T = bits(spriteMemories_15.io.dataRead, 6, 0) @[\\src\\main\\scala\\SpriteBlender.scala 61:63]
+    multiHotPriortyReductionTree.io.dataInput[15] <= _multiHotPriortyReductionTree_io_dataInput_15_T @[\\src\\main\\scala\\SpriteBlender.scala 61:50]
+    node spriteAlphaBit_15 = bits(spriteMemories_15.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 62:36]
+    reg multiHotPriortyReductionTree_io_selectInput_15_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_15_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg[1] <= io.spriteVisibleReg[15] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg[0] <= multiHotPriortyReductionTree_io_selectInput_15_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1[1] <= io.inSprite[15] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1[0] <= multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node _multiHotPriortyReductionTree_io_selectInput_15_T = and(multiHotPriortyReductionTree_io_selectInput_15_pipeReg[0], multiHotPriortyReductionTree_io_selectInput_15_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 65:43]
+    node _multiHotPriortyReductionTree_io_selectInput_15_T_1 = not(spriteAlphaBit_15) @[\\src\\main\\scala\\SpriteBlender.scala 67:9]
+    node _multiHotPriortyReductionTree_io_selectInput_15_T_2 = and(_multiHotPriortyReductionTree_io_selectInput_15_T, _multiHotPriortyReductionTree_io_selectInput_15_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 66:37]
+    multiHotPriortyReductionTree.io.selectInput[15] <= _multiHotPriortyReductionTree_io_selectInput_15_T_2 @[\\src\\main\\scala\\SpriteBlender.scala 64:52]
+    node topSpriteAlpha = bits(multiHotPriortyReductionTree.io.dataOutput, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 81:38]
+    node topSpriteRGB = bits(multiHotPriortyReductionTree.io.dataOutput, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 82:36]
+    wire secondSpriteCandidates : UInt<6>[16] @[\\src\\main\\scala\\SpriteBlender.scala 85:36]
+    wire secondSpriteValids : UInt<1>[16] @[\\src\\main\\scala\\SpriteBlender.scala 86:32]
+    reg visible_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg[1] <= io.spriteVisibleReg[0] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg[0] <= visible_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg[1] <= io.inSprite[0] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg[0] <= inside_pipeReg[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit = bits(spriteMemories_0.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T = and(visible_pipeReg[0], inside_pipeReg[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_1 = eq(alphaBit, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_2 = and(_valid_T, _valid_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_3 = neq(UInt<1>("h0"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid = and(_valid_T_2, _valid_T_3) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_0_T = bits(spriteMemories_0.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[0] <= _secondSpriteCandidates_0_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[0] <= valid @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_1[1] <= io.spriteVisibleReg[1] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_1[0] <= visible_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_1 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_1) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_1[1] <= io.inSprite[1] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_1[0] <= inside_pipeReg_1[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_1 = bits(spriteMemories_1.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_4 = and(visible_pipeReg_1[0], inside_pipeReg_1[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_5 = eq(alphaBit_1, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_6 = and(_valid_T_4, _valid_T_5) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_7 = neq(UInt<1>("h1"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_1 = and(_valid_T_6, _valid_T_7) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_1_T = bits(spriteMemories_1.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[1] <= _secondSpriteCandidates_1_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[1] <= valid_1 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_2 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_2) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_2[1] <= io.spriteVisibleReg[2] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_2[0] <= visible_pipeReg_2[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_2 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_2) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_2[1] <= io.inSprite[2] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_2[0] <= inside_pipeReg_2[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_2 = bits(spriteMemories_2.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_8 = and(visible_pipeReg_2[0], inside_pipeReg_2[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_9 = eq(alphaBit_2, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_10 = and(_valid_T_8, _valid_T_9) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_11 = neq(UInt<2>("h2"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_2 = and(_valid_T_10, _valid_T_11) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_2_T = bits(spriteMemories_2.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[2] <= _secondSpriteCandidates_2_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[2] <= valid_2 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_3 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_3) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_3[1] <= io.spriteVisibleReg[3] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_3[0] <= visible_pipeReg_3[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_3 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_3) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_3[1] <= io.inSprite[3] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_3[0] <= inside_pipeReg_3[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_3 = bits(spriteMemories_3.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_12 = and(visible_pipeReg_3[0], inside_pipeReg_3[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_13 = eq(alphaBit_3, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_14 = and(_valid_T_12, _valid_T_13) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_15 = neq(UInt<2>("h3"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_3 = and(_valid_T_14, _valid_T_15) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_3_T = bits(spriteMemories_3.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[3] <= _secondSpriteCandidates_3_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[3] <= valid_3 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_4 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_4) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_4[1] <= io.spriteVisibleReg[4] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_4[0] <= visible_pipeReg_4[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_4 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_4) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_4[1] <= io.inSprite[4] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_4[0] <= inside_pipeReg_4[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_4 = bits(spriteMemories_4.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_16 = and(visible_pipeReg_4[0], inside_pipeReg_4[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_17 = eq(alphaBit_4, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_18 = and(_valid_T_16, _valid_T_17) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_19 = neq(UInt<3>("h4"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_4 = and(_valid_T_18, _valid_T_19) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_4_T = bits(spriteMemories_4.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[4] <= _secondSpriteCandidates_4_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[4] <= valid_4 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_5 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_5) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_5[1] <= io.spriteVisibleReg[5] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_5[0] <= visible_pipeReg_5[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_5 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_5) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_5[1] <= io.inSprite[5] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_5[0] <= inside_pipeReg_5[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_5 = bits(spriteMemories_5.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_20 = and(visible_pipeReg_5[0], inside_pipeReg_5[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_21 = eq(alphaBit_5, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_22 = and(_valid_T_20, _valid_T_21) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_23 = neq(UInt<3>("h5"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_5 = and(_valid_T_22, _valid_T_23) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_5_T = bits(spriteMemories_5.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[5] <= _secondSpriteCandidates_5_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[5] <= valid_5 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_6 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_6) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_6[1] <= io.spriteVisibleReg[6] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_6[0] <= visible_pipeReg_6[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_6 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_6) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_6[1] <= io.inSprite[6] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_6[0] <= inside_pipeReg_6[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_6 = bits(spriteMemories_6.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_24 = and(visible_pipeReg_6[0], inside_pipeReg_6[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_25 = eq(alphaBit_6, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_26 = and(_valid_T_24, _valid_T_25) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_27 = neq(UInt<3>("h6"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_6 = and(_valid_T_26, _valid_T_27) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_6_T = bits(spriteMemories_6.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[6] <= _secondSpriteCandidates_6_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[6] <= valid_6 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_7 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_7) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_7[1] <= io.spriteVisibleReg[7] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_7[0] <= visible_pipeReg_7[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_7 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_7) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_7[1] <= io.inSprite[7] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_7[0] <= inside_pipeReg_7[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_7 = bits(spriteMemories_7.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_28 = and(visible_pipeReg_7[0], inside_pipeReg_7[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_29 = eq(alphaBit_7, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_30 = and(_valid_T_28, _valid_T_29) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_31 = neq(UInt<3>("h7"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_7 = and(_valid_T_30, _valid_T_31) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_7_T = bits(spriteMemories_7.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[7] <= _secondSpriteCandidates_7_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[7] <= valid_7 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_8 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_8) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_8[1] <= io.spriteVisibleReg[8] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_8[0] <= visible_pipeReg_8[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_8 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_8) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_8[1] <= io.inSprite[8] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_8[0] <= inside_pipeReg_8[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_8 = bits(spriteMemories_8.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_32 = and(visible_pipeReg_8[0], inside_pipeReg_8[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_33 = eq(alphaBit_8, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_34 = and(_valid_T_32, _valid_T_33) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_35 = neq(UInt<4>("h8"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_8 = and(_valid_T_34, _valid_T_35) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_8_T = bits(spriteMemories_8.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[8] <= _secondSpriteCandidates_8_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[8] <= valid_8 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_9 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_9) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_9[1] <= io.spriteVisibleReg[9] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_9[0] <= visible_pipeReg_9[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_9 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_9) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_9[1] <= io.inSprite[9] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_9[0] <= inside_pipeReg_9[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_9 = bits(spriteMemories_9.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_36 = and(visible_pipeReg_9[0], inside_pipeReg_9[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_37 = eq(alphaBit_9, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_38 = and(_valid_T_36, _valid_T_37) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_39 = neq(UInt<4>("h9"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_9 = and(_valid_T_38, _valid_T_39) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_9_T = bits(spriteMemories_9.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[9] <= _secondSpriteCandidates_9_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[9] <= valid_9 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_10 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_10) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_10[1] <= io.spriteVisibleReg[10] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_10[0] <= visible_pipeReg_10[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_10 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_10) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_10[1] <= io.inSprite[10] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_10[0] <= inside_pipeReg_10[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_10 = bits(spriteMemories_10.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_40 = and(visible_pipeReg_10[0], inside_pipeReg_10[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_41 = eq(alphaBit_10, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_42 = and(_valid_T_40, _valid_T_41) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_43 = neq(UInt<4>("ha"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_10 = and(_valid_T_42, _valid_T_43) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_10_T = bits(spriteMemories_10.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[10] <= _secondSpriteCandidates_10_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[10] <= valid_10 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_11 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_11) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_11[1] <= io.spriteVisibleReg[11] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_11[0] <= visible_pipeReg_11[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_11 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_11) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_11[1] <= io.inSprite[11] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_11[0] <= inside_pipeReg_11[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_11 = bits(spriteMemories_11.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_44 = and(visible_pipeReg_11[0], inside_pipeReg_11[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_45 = eq(alphaBit_11, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_46 = and(_valid_T_44, _valid_T_45) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_47 = neq(UInt<4>("hb"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_11 = and(_valid_T_46, _valid_T_47) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_11_T = bits(spriteMemories_11.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[11] <= _secondSpriteCandidates_11_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[11] <= valid_11 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_12 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_12) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_12[1] <= io.spriteVisibleReg[12] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_12[0] <= visible_pipeReg_12[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_12 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_12) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_12[1] <= io.inSprite[12] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_12[0] <= inside_pipeReg_12[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_12 = bits(spriteMemories_12.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_48 = and(visible_pipeReg_12[0], inside_pipeReg_12[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_49 = eq(alphaBit_12, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_50 = and(_valid_T_48, _valid_T_49) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_51 = neq(UInt<4>("hc"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_12 = and(_valid_T_50, _valid_T_51) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_12_T = bits(spriteMemories_12.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[12] <= _secondSpriteCandidates_12_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[12] <= valid_12 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_13 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_13) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_13[1] <= io.spriteVisibleReg[13] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_13[0] <= visible_pipeReg_13[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_13 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_13) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_13[1] <= io.inSprite[13] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_13[0] <= inside_pipeReg_13[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_13 = bits(spriteMemories_13.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_52 = and(visible_pipeReg_13[0], inside_pipeReg_13[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_53 = eq(alphaBit_13, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_54 = and(_valid_T_52, _valid_T_53) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_55 = neq(UInt<4>("hd"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_13 = and(_valid_T_54, _valid_T_55) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_13_T = bits(spriteMemories_13.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[13] <= _secondSpriteCandidates_13_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[13] <= valid_13 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_14 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_14) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_14[1] <= io.spriteVisibleReg[14] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_14[0] <= visible_pipeReg_14[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_14 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_14) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_14[1] <= io.inSprite[14] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_14[0] <= inside_pipeReg_14[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_14 = bits(spriteMemories_14.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_56 = and(visible_pipeReg_14[0], inside_pipeReg_14[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_57 = eq(alphaBit_14, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_58 = and(_valid_T_56, _valid_T_57) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_59 = neq(UInt<4>("he"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_14 = and(_valid_T_58, _valid_T_59) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_14_T = bits(spriteMemories_14.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[14] <= _secondSpriteCandidates_14_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[14] <= valid_14 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    reg visible_pipeReg_15 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), visible_pipeReg_15) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    visible_pipeReg_15[1] <= io.spriteVisibleReg[15] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    visible_pipeReg_15[0] <= visible_pipeReg_15[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    reg inside_pipeReg_15 : UInt<1>[2], clock with :
+      reset => (UInt<1>("h0"), inside_pipeReg_15) @[\\src\\main\\scala\\GameUtilities.scala 21:24]
+    inside_pipeReg_15[1] <= io.inSprite[15] @[\\src\\main\\scala\\GameUtilities.scala 23:30]
+    inside_pipeReg_15[0] <= inside_pipeReg_15[1] @[\\src\\main\\scala\\GameUtilities.scala 25:20]
+    node alphaBit_15 = bits(spriteMemories_15.io.dataRead, 6, 6) @[\\src\\main\\scala\\SpriteBlender.scala 92:30]
+    node _valid_T_60 = and(visible_pipeReg_15[0], inside_pipeReg_15[0]) @[\\src\\main\\scala\\SpriteBlender.scala 93:25]
+    node _valid_T_61 = eq(alphaBit_15, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 93:38]
+    node _valid_T_62 = and(_valid_T_60, _valid_T_61) @[\\src\\main\\scala\\SpriteBlender.scala 93:35]
+    node _valid_T_63 = neq(UInt<4>("hf"), multiHotPriortyReductionTree.io.indexOutput) @[\\src\\main\\scala\\SpriteBlender.scala 93:63]
+    node valid_15 = and(_valid_T_62, _valid_T_63) @[\\src\\main\\scala\\SpriteBlender.scala 93:55]
+    node _secondSpriteCandidates_15_T = bits(spriteMemories_15.io.dataRead, 5, 0) @[\\src\\main\\scala\\SpriteBlender.scala 95:44]
+    secondSpriteCandidates[15] <= _secondSpriteCandidates_15_T @[\\src\\main\\scala\\SpriteBlender.scala 95:31]
+    secondSpriteValids[15] <= valid_15 @[\\src\\main\\scala\\SpriteBlender.scala 96:27]
+    node _secondSpriteColor_T = mux(secondSpriteValids[14], secondSpriteCandidates[14], secondSpriteCandidates[15]) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_1 = mux(secondSpriteValids[13], secondSpriteCandidates[13], _secondSpriteColor_T) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_2 = mux(secondSpriteValids[12], secondSpriteCandidates[12], _secondSpriteColor_T_1) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_3 = mux(secondSpriteValids[11], secondSpriteCandidates[11], _secondSpriteColor_T_2) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_4 = mux(secondSpriteValids[10], secondSpriteCandidates[10], _secondSpriteColor_T_3) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_5 = mux(secondSpriteValids[9], secondSpriteCandidates[9], _secondSpriteColor_T_4) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_6 = mux(secondSpriteValids[8], secondSpriteCandidates[8], _secondSpriteColor_T_5) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_7 = mux(secondSpriteValids[7], secondSpriteCandidates[7], _secondSpriteColor_T_6) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_8 = mux(secondSpriteValids[6], secondSpriteCandidates[6], _secondSpriteColor_T_7) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_9 = mux(secondSpriteValids[5], secondSpriteCandidates[5], _secondSpriteColor_T_8) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_10 = mux(secondSpriteValids[4], secondSpriteCandidates[4], _secondSpriteColor_T_9) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_11 = mux(secondSpriteValids[3], secondSpriteCandidates[3], _secondSpriteColor_T_10) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_12 = mux(secondSpriteValids[2], secondSpriteCandidates[2], _secondSpriteColor_T_11) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteColor_T_13 = mux(secondSpriteValids[1], secondSpriteCandidates[1], _secondSpriteColor_T_12) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node secondSpriteColor = mux(secondSpriteValids[0], secondSpriteCandidates[0], _secondSpriteColor_T_13) @[src/main/scala/chisel3/util/Mux.scala 50:70]
+    node _secondSpriteFound_T = or(secondSpriteValids[0], secondSpriteValids[1]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_1 = or(_secondSpriteFound_T, secondSpriteValids[2]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_2 = or(_secondSpriteFound_T_1, secondSpriteValids[3]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_3 = or(_secondSpriteFound_T_2, secondSpriteValids[4]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_4 = or(_secondSpriteFound_T_3, secondSpriteValids[5]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_5 = or(_secondSpriteFound_T_4, secondSpriteValids[6]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_6 = or(_secondSpriteFound_T_5, secondSpriteValids[7]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_7 = or(_secondSpriteFound_T_6, secondSpriteValids[8]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_8 = or(_secondSpriteFound_T_7, secondSpriteValids[9]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_9 = or(_secondSpriteFound_T_8, secondSpriteValids[10]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_10 = or(_secondSpriteFound_T_9, secondSpriteValids[11]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_11 = or(_secondSpriteFound_T_10, secondSpriteValids[12]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_12 = or(_secondSpriteFound_T_11, secondSpriteValids[13]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node _secondSpriteFound_T_13 = or(_secondSpriteFound_T_12, secondSpriteValids[14]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node secondSpriteFound = or(_secondSpriteFound_T_13, secondSpriteValids[15]) @[\\src\\main\\scala\\SpriteBlender.scala 101:55]
+    node underColor = mux(secondSpriteFound, secondSpriteColor, pixelColorBackReg) @[\\src\\main\\scala\\SpriteBlender.scala 103:23]
+    wire blendedColor : UInt<6> @[\\src\\main\\scala\\SpriteBlender.scala 112:26]
+    node _a_T = gt(io.spriteOpacityLevel[multiHotPriortyReductionTree.io.indexOutput], UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 118:32]
+    node a = mux(_a_T, topSpriteRGB, underColor) @[\\src\\main\\scala\\SpriteBlender.scala 118:14]
+    node _b_T = eq(io.spriteOpacityLevel[multiHotPriortyReductionTree.io.indexOutput], UInt<2>("h3")) @[\\src\\main\\scala\\SpriteBlender.scala 119:32]
+    node b = mux(_b_T, topSpriteRGB, underColor) @[\\src\\main\\scala\\SpriteBlender.scala 119:14]
+    node _comparerR_T = bits(topSpriteRGB, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 120:31]
+    node _comparerR_T_1 = bits(underColor, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 120:49]
+    node comparerR = gt(_comparerR_T, _comparerR_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 120:37]
+    node _comparerG_T = bits(topSpriteRGB, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 121:31]
+    node _comparerG_T_1 = bits(underColor, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 121:49]
+    node comparerG = gt(_comparerG_T, _comparerG_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 121:37]
+    node _comparerB_T = bits(topSpriteRGB, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 122:31]
+    node _comparerB_T_1 = bits(underColor, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 122:49]
+    node comparerB = gt(_comparerB_T, _comparerB_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 122:37]
+    node _zR_T = cat(topSpriteRGB, comparerR) @[\\src\\main\\scala\\SpriteBlender.scala 124:19]
+    node _zR_T_1 = eq(_zR_T, UInt<2>("h3")) @[\\src\\main\\scala\\SpriteBlender.scala 124:45]
+    node _zR_T_2 = cat(topSpriteRGB, comparerR) @[\\src\\main\\scala\\SpriteBlender.scala 124:60]
+    node _zR_T_3 = eq(_zR_T_2, UInt<3>("h4")) @[\\src\\main\\scala\\SpriteBlender.scala 124:86]
+    node _zR_T_4 = or(_zR_T_1, _zR_T_3) @[\\src\\main\\scala\\SpriteBlender.scala 124:53]
+    node zR = mux(_zR_T_4, UInt<1>("h1"), UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 124:15]
+    node _zG_T = cat(topSpriteRGB, comparerG) @[\\src\\main\\scala\\SpriteBlender.scala 125:19]
+    node _zG_T_1 = eq(_zG_T, UInt<2>("h3")) @[\\src\\main\\scala\\SpriteBlender.scala 125:45]
+    node _zG_T_2 = cat(topSpriteRGB, comparerG) @[\\src\\main\\scala\\SpriteBlender.scala 125:60]
+    node _zG_T_3 = eq(_zG_T_2, UInt<3>("h4")) @[\\src\\main\\scala\\SpriteBlender.scala 125:86]
+    node _zG_T_4 = or(_zG_T_1, _zG_T_3) @[\\src\\main\\scala\\SpriteBlender.scala 125:53]
+    node zG = mux(_zG_T_4, UInt<1>("h1"), UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 125:15]
+    node _zB_T = cat(topSpriteRGB, comparerB) @[\\src\\main\\scala\\SpriteBlender.scala 126:19]
+    node _zB_T_1 = eq(_zB_T, UInt<2>("h3")) @[\\src\\main\\scala\\SpriteBlender.scala 126:45]
+    node _zB_T_2 = cat(topSpriteRGB, comparerB) @[\\src\\main\\scala\\SpriteBlender.scala 126:60]
+    node _zB_T_3 = eq(_zB_T_2, UInt<3>("h4")) @[\\src\\main\\scala\\SpriteBlender.scala 126:86]
+    node _zB_T_4 = or(_zB_T_1, _zB_T_3) @[\\src\\main\\scala\\SpriteBlender.scala 126:53]
+    node zB = mux(_zB_T_4, UInt<1>("h1"), UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 126:15]
+    node _blendedColorR_T = bits(a, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 141:38]
+    node _blendedColorR_T_1 = cat(UInt<1>("h0"), _blendedColorR_T) @[\\src\\main\\scala\\SpriteBlender.scala 141:34]
+    node _blendedColorR_T_2 = cat(UInt<1>("h0"), zR) @[\\src\\main\\scala\\SpriteBlender.scala 141:56]
+    node _blendedColorR_T_3 = add(_blendedColorR_T_1, _blendedColorR_T_2) @[\\src\\main\\scala\\SpriteBlender.scala 141:45]
+    node _blendedColorR_T_4 = tail(_blendedColorR_T_3, 1) @[\\src\\main\\scala\\SpriteBlender.scala 141:45]
+    node _blendedColorR_T_5 = bits(b, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 141:78]
+    node _blendedColorR_T_6 = cat(UInt<1>("h0"), _blendedColorR_T_5) @[\\src\\main\\scala\\SpriteBlender.scala 141:74]
+    node _blendedColorR_T_7 = add(_blendedColorR_T_4, _blendedColorR_T_6) @[\\src\\main\\scala\\SpriteBlender.scala 141:62]
+    node _blendedColorR_T_8 = tail(_blendedColorR_T_7, 1) @[\\src\\main\\scala\\SpriteBlender.scala 141:62]
+    node blendedColorR = shr(_blendedColorR_T_8, 1) @[\\src\\main\\scala\\SpriteBlender.scala 141:86]
+    node _blendedColorG_T = bits(a, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 142:38]
+    node _blendedColorG_T_1 = cat(UInt<1>("h0"), _blendedColorG_T) @[\\src\\main\\scala\\SpriteBlender.scala 142:34]
+    node _blendedColorG_T_2 = cat(UInt<1>("h0"), zG) @[\\src\\main\\scala\\SpriteBlender.scala 142:56]
+    node _blendedColorG_T_3 = add(_blendedColorG_T_1, _blendedColorG_T_2) @[\\src\\main\\scala\\SpriteBlender.scala 142:45]
+    node _blendedColorG_T_4 = tail(_blendedColorG_T_3, 1) @[\\src\\main\\scala\\SpriteBlender.scala 142:45]
+    node _blendedColorG_T_5 = bits(b, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 142:78]
+    node _blendedColorG_T_6 = cat(UInt<1>("h0"), _blendedColorG_T_5) @[\\src\\main\\scala\\SpriteBlender.scala 142:74]
+    node _blendedColorG_T_7 = add(_blendedColorG_T_4, _blendedColorG_T_6) @[\\src\\main\\scala\\SpriteBlender.scala 142:62]
+    node _blendedColorG_T_8 = tail(_blendedColorG_T_7, 1) @[\\src\\main\\scala\\SpriteBlender.scala 142:62]
+    node blendedColorG = shr(_blendedColorG_T_8, 1) @[\\src\\main\\scala\\SpriteBlender.scala 142:86]
+    node _blendedColorB_T = bits(a, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 143:38]
+    node _blendedColorB_T_1 = cat(UInt<1>("h0"), _blendedColorB_T) @[\\src\\main\\scala\\SpriteBlender.scala 143:34]
+    node _blendedColorB_T_2 = cat(UInt<1>("h0"), zB) @[\\src\\main\\scala\\SpriteBlender.scala 143:56]
+    node _blendedColorB_T_3 = add(_blendedColorB_T_1, _blendedColorB_T_2) @[\\src\\main\\scala\\SpriteBlender.scala 143:45]
+    node _blendedColorB_T_4 = tail(_blendedColorB_T_3, 1) @[\\src\\main\\scala\\SpriteBlender.scala 143:45]
+    node _blendedColorB_T_5 = bits(b, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 143:78]
+    node _blendedColorB_T_6 = cat(UInt<1>("h0"), _blendedColorB_T_5) @[\\src\\main\\scala\\SpriteBlender.scala 143:74]
+    node _blendedColorB_T_7 = add(_blendedColorB_T_4, _blendedColorB_T_6) @[\\src\\main\\scala\\SpriteBlender.scala 143:62]
+    node _blendedColorB_T_8 = tail(_blendedColorB_T_7, 1) @[\\src\\main\\scala\\SpriteBlender.scala 143:62]
+    node blendedColorB = shr(_blendedColorB_T_8, 1) @[\\src\\main\\scala\\SpriteBlender.scala 143:86]
+    node _blendedColor_T = eq(topSpriteAlpha, UInt<1>("h0")) @[\\src\\main\\scala\\SpriteBlender.scala 151:44]
+    node _blendedColor_T_1 = and(multiHotPriortyReductionTree.io.selectOutput, _blendedColor_T) @[\\src\\main\\scala\\SpriteBlender.scala 151:41]
+    node blendedColor_hi = cat(blendedColorR, blendedColorG) @[\\src\\main\\scala\\SpriteBlender.scala 152:8]
+    node _blendedColor_T_2 = cat(blendedColor_hi, blendedColorB) @[\\src\\main\\scala\\SpriteBlender.scala 152:8]
+    node _blendedColor_T_3 = mux(_blendedColor_T_1, _blendedColor_T_2, pixelColorBackReg) @[\\src\\main\\scala\\SpriteBlender.scala 151:22]
+    blendedColor <= _blendedColor_T_3 @[\\src\\main\\scala\\SpriteBlender.scala 151:16]
+    node _pixelColorRed_T = bits(blendedColor, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 158:39]
+    node _pixelColorRed_T_1 = bits(blendedColor, 5, 4) @[\\src\\main\\scala\\SpriteBlender.scala 158:58]
+    node pixelColorRed = cat(_pixelColorRed_T, _pixelColorRed_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 158:26]
+    node _pixelColorGreen_T = bits(blendedColor, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 159:41]
+    node _pixelColorGreen_T_1 = bits(blendedColor, 3, 2) @[\\src\\main\\scala\\SpriteBlender.scala 159:60]
+    node pixelColorGreen = cat(_pixelColorGreen_T, _pixelColorGreen_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 159:28]
+    node _pixelColorBlue_T = bits(blendedColor, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 160:40]
+    node _pixelColorBlue_T_1 = bits(blendedColor, 1, 0) @[\\src\\main\\scala\\SpriteBlender.scala 160:59]
+    node pixelColorBlue = cat(_pixelColorBlue_T, _pixelColorBlue_T_1) @[\\src\\main\\scala\\SpriteBlender.scala 160:27]
+    io.vgaRed <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 163:13]
+    io.vgaGreen <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 164:15]
+    io.vgaBlue <= UInt<1>("h0") @[\\src\\main\\scala\\SpriteBlender.scala 165:14]
+    io.vgaRed <= pixelColorRed @[\\src\\main\\scala\\SpriteBlender.scala 168:13]
+    io.vgaGreen <= pixelColorGreen @[\\src\\main\\scala\\SpriteBlender.scala 169:15]
+    io.vgaBlue <= pixelColorBlue @[\\src\\main\\scala\\SpriteBlender.scala 170:14]
 
   module GraphicEngineVGA :
     input clock : Clock

@@ -40,6 +40,9 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteRotation45 = Output(Vec(SpriteNumber, Bool()))
     val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
+    val spriteRotation = Output(Vec(SpriteNumber, Bool()))
+    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
+
 
 
 
@@ -62,6 +65,19 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // Setting all led outputs to zero
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
+  val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(1.U(2.W))))
+  when(io.sw(1)){
+    spriteOpacities(0) := 3.U
+  }.otherwise{
+    spriteOpacities(0) := 2.U
+  }
+  when(io.sw(0)){
+    spriteOpacities(1) := 3.U
+  }.otherwise{
+    spriteOpacities(1) := 2.U
+  }
+
+  io.spriteOpacityLevel := spriteOpacities
 
 
 
@@ -162,16 +178,18 @@ class GameLogicTask3(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 //  boxDetection.io.boxYPosition(1) :=   sprite2YReg
 
   //Sprite 1
-  io.spriteVisible(1) := !boxDetection.io.overlap(0)(1)
-
-  io.spriteOpacityLevel := (io.sw(1) ## io.sw(0)).asUInt
-
+  io.spriteVisible(1) := true.B
+  val sprite1XReg = RegInit(182.S(11.W))
+  val sprite1YReg = RegInit((360-32).S(10.W))
+  io.spriteXPosition(1) := sprite1XReg
+  io.spriteYPosition(1) := sprite1YReg
   io.spriteFlipHorizontal(1) := true.B
   io.spriteScaleHorizontal(1) := 1.U
   io.spriteScaleVertical(1) := 1.U
 
-  io.spriteVisible(2) :=  ~boxDetection.io.overlap(0)(2)
-
+  io.spriteVisible(2) := true.B
+  val sprite2XReg = RegInit(214.S(11.W))
+  val sprite2YReg = RegInit((360-32).S(10.W))
   io.spriteXPosition(2) := sprite2XReg
   io.spriteYPosition(2) := sprite2YReg
   io.spriteRotation45(2) := true.B
@@ -269,7 +287,6 @@ val turn = RegInit(VecInit(Seq.fill(16)(false.B)))
 //          count := 0.U
 //        }
 //      }
-
 
       stateReg := done
     }

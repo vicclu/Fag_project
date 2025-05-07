@@ -6002,7 +6002,7 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  stateReg = _RAND_0[1:0];
+  spriteOpacities_0 = _RAND_0[1:0];
   _RAND_1 = {1{`RANDOM}};
   viewBoxXReg_0 = _RAND_1[9:0];
   _RAND_2 = {1{`RANDOM}};
@@ -6322,6 +6322,46 @@ module GameTop(
       gameLogic_io_sw_4_r <= 1'h0; // @[\\src\\main\\scala\\GameTop.scala 114:36]
     end else if (debounceSampleEn) begin // @[\\src\\main\\scala\\GameTop.scala 114:36]
       gameLogic_io_sw_4_r <= gameLogic_io_sw_4_pipeReg_0; // @[\\src\\main\\scala\\GameTop.scala 114:36]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_0_pipeReg_0 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_0_pipeReg_0 <= gameLogic_io_sw_0_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_0_pipeReg_1 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_0_pipeReg_1 <= gameLogic_io_sw_0_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_0_pipeReg_2 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_0_pipeReg_2 <= io_sw_0; // @[\\src\\main\\scala\\GameUtilities.scala 41:30]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameTop.scala 112:36]
+      gameLogic_io_sw_0_r <= 1'h0; // @[\\src\\main\\scala\\GameTop.scala 112:36]
+    end else if (debounceSampleEn) begin // @[\\src\\main\\scala\\GameTop.scala 112:36]
+      gameLogic_io_sw_0_r <= gameLogic_io_sw_0_pipeReg_0; // @[\\src\\main\\scala\\GameTop.scala 112:36]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_1_pipeReg_0 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_1_pipeReg_0 <= gameLogic_io_sw_1_pipeReg_1; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_1_pipeReg_1 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_1_pipeReg_1 <= gameLogic_io_sw_1_pipeReg_2; // @[\\src\\main\\scala\\GameUtilities.scala 43:20]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+      gameLogic_io_sw_1_pipeReg_2 <= 1'h0; // @[\\src\\main\\scala\\GameUtilities.scala 39:28]
+    end else begin
+      gameLogic_io_sw_1_pipeReg_2 <= io_sw_1; // @[\\src\\main\\scala\\GameUtilities.scala 41:30]
+    end
+    if (reset) begin // @[\\src\\main\\scala\\GameTop.scala 112:36]
+      gameLogic_io_sw_1_r <= 1'h0; // @[\\src\\main\\scala\\GameTop.scala 112:36]
+    end else if (debounceSampleEn) begin // @[\\src\\main\\scala\\GameTop.scala 112:36]
+      gameLogic_io_sw_1_r <= gameLogic_io_sw_1_pipeReg_0; // @[\\src\\main\\scala\\GameTop.scala 112:36]
     end
   end
 // Register and memory initialization
