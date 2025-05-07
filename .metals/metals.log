@@ -924,3 +924,98 @@ WARNING: Unmatched cancel notification for request id 45
 2025.05.07 10:55:22 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
 2025.05.07 10:55:24 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
 2025.05.07 10:56:16 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 10:58:57 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 10:58:57 WARN  no build target for: C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala
+2025.05.07 10:58:57 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 10:58:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20
+2025.05.07 10:58:57 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 10:58:58 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:27:57 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:33:10 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:33:12 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:34 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:34 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:35 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:35 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:37 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:37 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:37 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:37 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:52 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:53 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:34:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:35:11 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:35:11 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:35:11 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:47:39 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:47:39 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:47:40 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:50:30 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:50:32 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:50:44 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:50:45 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:58:30 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 12:58:31 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:01:56 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:01:56 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:01:58 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:05:53 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:05:53 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:05:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:13:07 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:13:10 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:14:25 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:14:26 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:14:37 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:14:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 122
+2025.05.07 13:14:39 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:17:31 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:17:33 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:18:14 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:18:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 136
+2025.05.07 13:18:16 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:23:46 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:23:46 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:23:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 144
+2025.05.07 13:23:47 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:23:56 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:23:56 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:23:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 150
+2025.05.07 13:23:58 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:24:09 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:24:11 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:26:12 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:26:14 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:28:45 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:28:47 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:29:48 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:29:50 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:30:11 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:30:13 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:30:32 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:30:32 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:30:34 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:33:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:33:54 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:33:55 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:36:06 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:36:08 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:37:13 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:37:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 218
+2025.05.07 13:37:14 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:40:03 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+May 07, 2025 1:40:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 225
+2025.05.07 13:40:04 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:49:10 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 13:49:10 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5
+2025.05.07 14:06:00 INFO  no build target found for C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala. Using presentation compiler with project's scala-library version: 3.3.5

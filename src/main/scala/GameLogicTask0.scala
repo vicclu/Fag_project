@@ -40,8 +40,8 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
 
     // Viewbox control
-    val viewBoxX = Output(UInt(10.W))
-    val viewBoxY = Output(UInt(9.W))
+    val viewBoxX = Output(Vec(2, UInt(10.W)))
+    val viewBoxY = Output(Vec(2, UInt(9.W)))
 
     // Background buffer output
     val backBufferWriteData = Output(UInt(log2Up(BackTileNumber).W))
@@ -72,8 +72,9 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
   io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
 
-  io.viewBoxX := 0.U
-  io.viewBoxY := 0.U
+
+  io.viewBoxX := Seq.fill(2)(0.U(10.W))
+  io.viewBoxY := Seq.fill(2)(0.U(9.W))
 
   io.backBufferWriteData := 0.U
   io.backBufferWriteAddress := 0.U
@@ -108,7 +109,13 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteYPosition(0) := sprite0YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
-  //FSMD switch
+  val viewBoxXReg = Seq.fill(2)(RegInit(0.U(10.W)))
+  val viewBoxYReg = Seq.fill(2)(RegInit(0.U(9.W)))
+
+  io.viewBoxX := viewBoxXReg
+  io.viewBoxY := viewBoxYReg
+
+
   switch(stateReg) {
     is(idle) {
       when(io.newFrame) {
@@ -117,25 +124,60 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     }
 
     is(compute1) {
-      when(io.btnD){
-        when(sprite0YReg < (480 - 32 - 24).S) {
-          sprite0YReg := sprite0YReg + 2.S
+      when(io.btnU) {
+        when(viewBoxYReg(0) > 0.U) {
+          viewBoxYReg(0) := viewBoxYReg(0) - 2.U
+
         }
-      } .elsewhen(io.btnU){
-        when(sprite0YReg > (96).S) {
-          sprite0YReg := sprite0YReg - 2.S
+        when(viewBoxYReg(1) > 0.U) {
+          when(io.sw(3)){
+            viewBoxYReg(1) := viewBoxYReg(1) - 2.U
+          }
+          when(io.sw(4)){
+            viewBoxYReg(1) := viewBoxYReg(1) - 8.U
+          }
         }
+
       }
+      when(io.btnD) {
+        when(viewBoxYReg(0) < 480.U) {
+          viewBoxYReg(0) := viewBoxYReg(0) + 2.U
+
+        }
+        when(viewBoxYReg(1) < 480.U) {
+        when(io.sw(3)){
+          viewBoxYReg(1) := viewBoxYReg(1) + 2.U
+        }
+        when(io.sw(4)){
+          viewBoxYReg(1) := viewBoxYReg(1) + 8.U
+        }
+      }}
+      when(io.btnL) {
+        when(viewBoxXReg(0) > 0.U) {
+          viewBoxXReg(0) := viewBoxXReg(0) - 2.U
+
+        }
+        when(viewBoxXReg(1) > 0.U) {
+        when(io.sw(3)){
+          viewBoxXReg(1) := viewBoxXReg(1) - 2.U
+        }
+        when(io.sw(4)){
+          viewBoxXReg(1) := viewBoxXReg(1) - 8.U
+        }}
+      }
+
       when(io.btnR) {
-        when(sprite0XReg < (640 - 32 - 32).S) {
-          sprite0XReg := sprite0XReg + 2.S
-          sprite0FlipHorizontalReg := false.B
+        when(viewBoxXReg(0) < 640.U) {
+          viewBoxXReg(0) := viewBoxXReg(0) + 2.U
+
         }
-      } .elsewhen(io.btnL){
-        when(sprite0XReg > 32.S) {
-          sprite0XReg := sprite0XReg - 2.S
-          sprite0FlipHorizontalReg := true.B
+        when(viewBoxXReg(1) < 640.U) {
+        when(io.sw(3)){
+          viewBoxXReg(1) := viewBoxXReg(1) + 2.U
         }
+        when(io.sw(4)){
+          viewBoxXReg(1) := viewBoxXReg(1) + 8.U
+        }}
       }
       stateReg := done
     }
@@ -145,7 +187,6 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       stateReg := idle
     }
   }
-
 
 }
 

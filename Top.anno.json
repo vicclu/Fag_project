@@ -1,627 +1,1395 @@
 [
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamSpWf",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_0:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.3282051282051282
+    "original":"~Top|RamInitSpWf",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_0:Memory/ramsSpWf:RamInitSpWf",
+    "index":0.0
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_0:Memory",
+    "index":0.003861003861003861
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_1",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_1:Memory_1/ramsSpWf:RamInitSpWf_1",
+    "index":0.007722007722007722
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_1",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_1:Memory_1",
+    "index":0.011583011583011582
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_2",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_2:Memory_2/ramsSpWf:RamInitSpWf_2",
+    "index":0.015444015444015444
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_2",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_2:Memory_2",
+    "index":0.019305019305019305
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_3",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_3:Memory_3/ramsSpWf:RamInitSpWf_3",
+    "index":0.023166023166023165
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_3",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_3:Memory_3",
+    "index":0.02702702702702703
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_4",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_4:Memory_4/ramsSpWf:RamInitSpWf_4",
+    "index":0.03088803088803089
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_4",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_4:Memory_4",
+    "index":0.03474903474903475
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_5",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_5:Memory_5/ramsSpWf:RamInitSpWf_5",
+    "index":0.03861003861003861
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_5",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_5:Memory_5",
+    "index":0.04247104247104247
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_6",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_6:Memory_6/ramsSpWf:RamInitSpWf_6",
+    "index":0.04633204633204633
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_6",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_6:Memory_6",
+    "index":0.05019305019305019
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_7",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_7:Memory_7/ramsSpWf:RamInitSpWf_7",
+    "index":0.05405405405405406
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_7",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_7:Memory_7",
+    "index":0.05791505791505792
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_8",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_8:Memory_8/ramsSpWf:RamInitSpWf_8",
+    "index":0.06177606177606178
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_8",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_8:Memory_8",
+    "index":0.06563706563706563
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_9",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_9:Memory_9/ramsSpWf:RamInitSpWf_9",
+    "index":0.0694980694980695
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_9",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_9:Memory_9",
+    "index":0.07335907335907337
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_10",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_10:Memory_10/ramsSpWf:RamInitSpWf_10",
+    "index":0.07722007722007722
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_10",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_10:Memory_10",
+    "index":0.08108108108108109
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_11",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_11:Memory_11/ramsSpWf:RamInitSpWf_11",
+    "index":0.08494208494208494
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_11",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_11:Memory_11",
+    "index":0.0888030888030888
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_12",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_12:Memory_12/ramsSpWf:RamInitSpWf_12",
+    "index":0.09266409266409266
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_12",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_12:Memory_12",
+    "index":0.09652509652509653
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_13",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_13:Memory_13/ramsSpWf:RamInitSpWf_13",
+    "index":0.10038610038610038
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_13",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_13:Memory_13",
+    "index":0.10424710424710425
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_14",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_14:Memory_14/ramsSpWf:RamInitSpWf_14",
+    "index":0.10810810810810811
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_14",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_14:Memory_14",
+    "index":0.11196911196911197
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_15",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_15:Memory_15/ramsSpWf:RamInitSpWf_15",
+    "index":0.11583011583011583
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_15",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_15:Memory_15",
+    "index":0.11969111969111969
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_16",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_16:Memory_16/ramsSpWf:RamInitSpWf_16",
+    "index":0.12355212355212356
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_16",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_16:Memory_16",
+    "index":0.1274131274131274
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_17",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_17:Memory_17/ramsSpWf:RamInitSpWf_17",
+    "index":0.13127413127413126
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_17",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_17:Memory_17",
+    "index":0.13513513513513514
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_18",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_18:Memory_18/ramsSpWf:RamInitSpWf_18",
+    "index":0.138996138996139
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_18",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_18:Memory_18",
+    "index":0.14285714285714285
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_19",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_19:Memory_19/ramsSpWf:RamInitSpWf_19",
+    "index":0.14671814671814673
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_19",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_19:Memory_19",
+    "index":0.15057915057915058
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_20",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_20:Memory_20/ramsSpWf:RamInitSpWf_20",
+    "index":0.15444015444015444
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_20",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_20:Memory_20",
+    "index":0.1583011583011583
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_21",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_21:Memory_21/ramsSpWf:RamInitSpWf_21",
+    "index":0.16216216216216217
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_21",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_21:Memory_21",
+    "index":0.16602316602316602
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_22",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_22:Memory_22/ramsSpWf:RamInitSpWf_22",
+    "index":0.16988416988416988
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_22",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_22:Memory_22",
+    "index":0.17374517374517376
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_23",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_23:Memory_23/ramsSpWf:RamInitSpWf_23",
+    "index":0.1776061776061776
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_23",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_23:Memory_23",
+    "index":0.18146718146718147
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_24",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_24:Memory_24/ramsSpWf:RamInitSpWf_24",
+    "index":0.18532818532818532
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_24",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_24:Memory_24",
+    "index":0.1891891891891892
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_25",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_25:Memory_25/ramsSpWf:RamInitSpWf_25",
+    "index":0.19305019305019305
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_25",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_25:Memory_25",
+    "index":0.1969111969111969
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_26",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_26:Memory_26/ramsSpWf:RamInitSpWf_26",
+    "index":0.20077220077220076
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_26",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_26:Memory_26",
+    "index":0.20463320463320464
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_27",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_27:Memory_27/ramsSpWf:RamInitSpWf_27",
+    "index":0.2084942084942085
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_27",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_27:Memory_27",
+    "index":0.21235521235521235
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_28",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_28:Memory_28/ramsSpWf:RamInitSpWf_28",
+    "index":0.21621621621621623
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_28",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_28:Memory_28",
+    "index":0.22007722007722008
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_29",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_29:Memory_29/ramsSpWf:RamInitSpWf_29",
+    "index":0.22393822393822393
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_29",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_29:Memory_29",
+    "index":0.2277992277992278
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_30",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_30:Memory_30/ramsSpWf:RamInitSpWf_30",
+    "index":0.23166023166023167
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_30",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_30:Memory_30",
+    "index":0.23552123552123552
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_31",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_31:Memory_31/ramsSpWf:RamInitSpWf_31",
+    "index":0.23938223938223938
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_31",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories1_31:Memory_31",
+    "index":0.24324324324324326
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_32",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_0:Memory/ramsSpWf:RamInitSpWf",
+    "index":0.2471042471042471
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_32",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_0:Memory_32",
-    "index":0.3333333333333333
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_0:Memory",
+    "index":0.25096525096525096
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamSpWf_1",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_1:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.3384615384615385
+    "original":"~Top|RamInitSpWf_33",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_1:Memory_1/ramsSpWf:RamInitSpWf_1",
+    "index":0.2548262548262548
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_33",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_1:Memory_32",
-    "index":0.3435897435897436
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamSpWf_2",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_0:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.3487179487179487
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_34",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_0:Memory_32",
-    "index":0.35384615384615387
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamSpWf_3",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_1:Memory_32/ramsSpWf:RamSpWf",
-    "index":0.358974358974359
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_35",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_1:Memory_32",
-    "index":0.3641025641025641
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_1:Memory_1",
+    "index":0.25868725868725867
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_34",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_0:Memory_38/ramsSpWf:RamInitSpWf_34",
-    "index":0.38974358974358975
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_2:Memory_2/ramsSpWf:RamInitSpWf_2",
+    "index":0.2625482625482625
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_38",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_0:Memory_38",
-    "index":0.39487179487179486
+    "original":"~Top|Memory_34",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_2:Memory_2",
+    "index":0.26640926640926643
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_35",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_1:Memory_39/ramsSpWf:RamInitSpWf_35",
-    "index":0.4
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_3:Memory_3/ramsSpWf:RamInitSpWf_3",
+    "index":0.2702702702702703
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_39",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_1:Memory_39",
-    "index":0.40512820512820513
+    "original":"~Top|Memory_35",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_3:Memory_3",
+    "index":0.27413127413127414
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_36",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_2:Memory_40/ramsSpWf:RamInitSpWf_36",
-    "index":0.41025641025641024
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_4:Memory_4/ramsSpWf:RamInitSpWf_4",
+    "index":0.277992277992278
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_40",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_2:Memory_40",
-    "index":0.4153846153846154
+    "original":"~Top|Memory_36",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_4:Memory_4",
+    "index":0.28185328185328185
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_37",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_3:Memory_41/ramsSpWf:RamInitSpWf_37",
-    "index":0.4205128205128205
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_5:Memory_5/ramsSpWf:RamInitSpWf_5",
+    "index":0.2857142857142857
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_41",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_3:Memory_41",
-    "index":0.4256410256410256
+    "original":"~Top|Memory_37",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_5:Memory_5",
+    "index":0.28957528957528955
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_38",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_4:Memory_42/ramsSpWf:RamInitSpWf_38",
-    "index":0.4307692307692308
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_6:Memory_6/ramsSpWf:RamInitSpWf_6",
+    "index":0.29343629343629346
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_42",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_4:Memory_42",
-    "index":0.4358974358974359
+    "original":"~Top|Memory_38",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_6:Memory_6",
+    "index":0.2972972972972973
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_39",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_5:Memory_43/ramsSpWf:RamInitSpWf_39",
-    "index":0.441025641025641
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_7:Memory_7/ramsSpWf:RamInitSpWf_7",
+    "index":0.30115830115830117
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_43",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_5:Memory_43",
-    "index":0.4461538461538462
+    "original":"~Top|Memory_39",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_7:Memory_7",
+    "index":0.305019305019305
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_40",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_6:Memory_44/ramsSpWf:RamInitSpWf_40",
-    "index":0.4512820512820513
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_8:Memory_8/ramsSpWf:RamInitSpWf_8",
+    "index":0.3088803088803089
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_44",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_6:Memory_44",
-    "index":0.4564102564102564
+    "original":"~Top|Memory_40",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_8:Memory_8",
+    "index":0.3127413127413127
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_41",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_7:Memory_45/ramsSpWf:RamInitSpWf_41",
-    "index":0.46153846153846156
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_9:Memory_9/ramsSpWf:RamInitSpWf_9",
+    "index":0.3166023166023166
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_45",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_7:Memory_45",
-    "index":0.4666666666666667
+    "original":"~Top|Memory_41",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_9:Memory_9",
+    "index":0.3204633204633205
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_42",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_8:Memory_46/ramsSpWf:RamInitSpWf_42",
-    "index":0.4717948717948718
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_10:Memory_10/ramsSpWf:RamInitSpWf_10",
+    "index":0.32432432432432434
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_46",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_8:Memory_46",
-    "index":0.47692307692307695
+    "original":"~Top|Memory_42",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_10:Memory_10",
+    "index":0.3281853281853282
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_43",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_9:Memory_47/ramsSpWf:RamInitSpWf_43",
-    "index":0.48205128205128206
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_11:Memory_11/ramsSpWf:RamInitSpWf_11",
+    "index":0.33204633204633205
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_47",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_9:Memory_47",
-    "index":0.48717948717948717
+    "original":"~Top|Memory_43",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_11:Memory_11",
+    "index":0.3359073359073359
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_44",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_10:Memory_48/ramsSpWf:RamInitSpWf_44",
-    "index":0.49230769230769234
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_12:Memory_12/ramsSpWf:RamInitSpWf_12",
+    "index":0.33976833976833976
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_48",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_10:Memory_48",
-    "index":0.49743589743589745
+    "original":"~Top|Memory_44",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_12:Memory_12",
+    "index":0.3436293436293436
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_45",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_11:Memory_49/ramsSpWf:RamInitSpWf_45",
-    "index":0.5025641025641026
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_13:Memory_13/ramsSpWf:RamInitSpWf_13",
+    "index":0.3474903474903475
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_49",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_11:Memory_49",
-    "index":0.5076923076923077
+    "original":"~Top|Memory_45",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_13:Memory_13",
+    "index":0.35135135135135137
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_46",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_12:Memory_50/ramsSpWf:RamInitSpWf_46",
-    "index":0.5128205128205128
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_14:Memory_14/ramsSpWf:RamInitSpWf_14",
+    "index":0.3552123552123552
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_50",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_12:Memory_50",
-    "index":0.517948717948718
+    "original":"~Top|Memory_46",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_14:Memory_14",
+    "index":0.3590733590733591
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_47",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_13:Memory_51/ramsSpWf:RamInitSpWf_47",
-    "index":0.5230769230769231
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_15:Memory_15/ramsSpWf:RamInitSpWf_15",
+    "index":0.36293436293436293
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_51",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_13:Memory_51",
-    "index":0.5282051282051282
+    "original":"~Top|Memory_47",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_15:Memory_15",
+    "index":0.3667953667953668
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_48",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_14:Memory_52/ramsSpWf:RamInitSpWf_48",
-    "index":0.5333333333333333
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_16:Memory_16/ramsSpWf:RamInitSpWf_16",
+    "index":0.37065637065637064
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_52",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_14:Memory_52",
-    "index":0.5384615384615384
+    "original":"~Top|Memory_48",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_16:Memory_16",
+    "index":0.3745173745173745
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_49",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_15:Memory_53/ramsSpWf:RamInitSpWf_49",
-    "index":0.5435897435897435
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_17:Memory_17/ramsSpWf:RamInitSpWf_17",
+    "index":0.3783783783783784
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_53",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_15:Memory_53",
-    "index":0.5487179487179488
+    "original":"~Top|Memory_49",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_17:Memory_17",
+    "index":0.38223938223938225
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_50",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.5538461538461539
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_18:Memory_18/ramsSpWf:RamInitSpWf_18",
+    "index":0.3861003861003861
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_54",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_54",
-    "index":0.558974358974359
+    "original":"~Top|Memory_50",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_18:Memory_18",
+    "index":0.38996138996138996
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_51",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.5641025641025641
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_19:Memory_19/ramsSpWf:RamInitSpWf_19",
+    "index":0.3938223938223938
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_55",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_54",
-    "index":0.5692307692307692
+    "original":"~Top|Memory_51",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_19:Memory_19",
+    "index":0.39768339768339767
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_52",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.5743589743589743
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_20:Memory_20/ramsSpWf:RamInitSpWf_20",
+    "index":0.4015444015444015
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_56",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_54",
-    "index":0.5794871794871795
+    "original":"~Top|Memory_52",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_20:Memory_20",
+    "index":0.40540540540540543
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_53",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.5846153846153846
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_21:Memory_21/ramsSpWf:RamInitSpWf_21",
+    "index":0.4092664092664093
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_57",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_54",
-    "index":0.5897435897435898
+    "original":"~Top|Memory_53",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_21:Memory_21",
+    "index":0.41312741312741313
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_54",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.5948717948717949
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_22:Memory_22/ramsSpWf:RamInitSpWf_22",
+    "index":0.416988416988417
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_58",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_54",
-    "index":0.6
+    "original":"~Top|Memory_54",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_22:Memory_22",
+    "index":0.42084942084942084
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_55",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6051282051282051
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_23:Memory_23/ramsSpWf:RamInitSpWf_23",
+    "index":0.4247104247104247
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_59",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_54",
-    "index":0.6102564102564103
+    "original":"~Top|Memory_55",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_23:Memory_23",
+    "index":0.42857142857142855
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_56",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6153846153846154
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_24:Memory_24/ramsSpWf:RamInitSpWf_24",
+    "index":0.43243243243243246
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_60",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_54",
-    "index":0.6205128205128205
+    "original":"~Top|Memory_56",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_24:Memory_24",
+    "index":0.4362934362934363
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_57",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6256410256410256
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_25:Memory_25/ramsSpWf:RamInitSpWf_25",
+    "index":0.44015444015444016
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_61",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_54",
-    "index":0.6307692307692307
+    "original":"~Top|Memory_57",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_25:Memory_25",
+    "index":0.444015444015444
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_58",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6358974358974359
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_26:Memory_26/ramsSpWf:RamInitSpWf_26",
+    "index":0.44787644787644787
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_62",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_54",
-    "index":0.6410256410256411
+    "original":"~Top|Memory_58",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_26:Memory_26",
+    "index":0.4517374517374517
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_59",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6461538461538462
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_27:Memory_27/ramsSpWf:RamInitSpWf_27",
+    "index":0.4555984555984556
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_63",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_54",
-    "index":0.6512820512820513
+    "original":"~Top|Memory_59",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_27:Memory_27",
+    "index":0.4594594594594595
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_60",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6564102564102564
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_28:Memory_28/ramsSpWf:RamInitSpWf_28",
+    "index":0.46332046332046334
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_64",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_54",
-    "index":0.6615384615384615
+    "original":"~Top|Memory_60",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_28:Memory_28",
+    "index":0.4671814671814672
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_61",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6666666666666666
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_29:Memory_29/ramsSpWf:RamInitSpWf_29",
+    "index":0.47104247104247104
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_65",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_54",
-    "index":0.6717948717948717
+    "original":"~Top|Memory_61",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_29:Memory_29",
+    "index":0.4749034749034749
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_62",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.676923076923077
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_30:Memory_30/ramsSpWf:RamInitSpWf_30",
+    "index":0.47876447876447875
   },
   {
     "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_66",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_54",
-    "index":0.6820512820512821
+    "original":"~Top|Memory_62",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_30:Memory_30",
+    "index":0.4826254826254826
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_63",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6871794871794872
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_31:Memory_31/ramsSpWf:RamInitSpWf_31",
+    "index":0.4864864864864865
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_63",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backTileMemories2_31:Memory_31",
+    "index":0.49034749034749037
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamSpWf",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_0:Memory_64/ramsSpWf:RamSpWf",
+    "index":0.4942084942084942
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_64",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_0:Memory_64",
+    "index":0.4980694980694981
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamSpWf_1",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_1:Memory_64/ramsSpWf:RamSpWf",
+    "index":0.5019305019305019
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_65",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferMemories_1:Memory_64",
+    "index":0.5057915057915058
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamSpWf_2",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_0:Memory_64/ramsSpWf:RamSpWf",
+    "index":0.5096525096525096
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_66",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_0:Memory_64",
+    "index":0.5135135135135135
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamSpWf_3",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_1:Memory_64/ramsSpWf:RamSpWf",
+    "index":0.5173745173745173
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_67",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_54",
-    "index":0.6923076923076923
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamInitSpWf_64",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.6974358974358974
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_68",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_54",
-    "index":0.7025641025641025
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|RamInitSpWf_65",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_54/ramsSpWf:RamInitSpWf_50",
-    "index":0.7076923076923077
-  },
-  {
-    "class":"firrtl.transforms.DedupedResult",
-    "original":"~Top|Memory_69",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_54",
-    "index":0.7128205128205128
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/backBufferShadowMemories_1:Memory_64",
+    "index":0.5212355212355212
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_66",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_0:Memory_38/ramsSpWf:RamInitSpWf_34",
-    "index":0.717948717948718
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_0:Memory_70/ramsSpWf:RamInitSpWf_66",
+    "index":0.5405405405405406
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_70",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_0:Memory_38",
-    "index":0.7230769230769231
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_0:Memory_70",
+    "index":0.5444015444015444
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_67",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_1:Memory_39/ramsSpWf:RamInitSpWf_35",
-    "index":0.7282051282051282
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_1:Memory_71/ramsSpWf:RamInitSpWf_67",
+    "index":0.5482625482625483
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_71",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_1:Memory_39",
-    "index":0.7333333333333333
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_1:Memory_71",
+    "index":0.5521235521235521
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_68",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_2:Memory_40/ramsSpWf:RamInitSpWf_36",
-    "index":0.7384615384615385
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_2:Memory_72/ramsSpWf:RamInitSpWf_68",
+    "index":0.555984555984556
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_72",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_2:Memory_40",
-    "index":0.7435897435897436
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_2:Memory_72",
+    "index":0.5598455598455598
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_69",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_3:Memory_41/ramsSpWf:RamInitSpWf_37",
-    "index":0.7487179487179487
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_3:Memory_73/ramsSpWf:RamInitSpWf_69",
+    "index":0.5637065637065637
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_73",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_3:Memory_41",
-    "index":0.7538461538461538
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_3:Memory_73",
+    "index":0.5675675675675675
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_70",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_4:Memory_42/ramsSpWf:RamInitSpWf_38",
-    "index":0.7589743589743589
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_4:Memory_74/ramsSpWf:RamInitSpWf_70",
+    "index":0.5714285714285714
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_74",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_4:Memory_42",
-    "index":0.764102564102564
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_4:Memory_74",
+    "index":0.5752895752895753
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_71",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_5:Memory_43/ramsSpWf:RamInitSpWf_39",
-    "index":0.7692307692307693
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_5:Memory_75/ramsSpWf:RamInitSpWf_71",
+    "index":0.5791505791505791
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_75",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_5:Memory_43",
-    "index":0.7743589743589744
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_5:Memory_75",
+    "index":0.583011583011583
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_72",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_6:Memory_44/ramsSpWf:RamInitSpWf_40",
-    "index":0.7794871794871795
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_6:Memory_76/ramsSpWf:RamInitSpWf_72",
+    "index":0.5868725868725869
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_76",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_6:Memory_44",
-    "index":0.7846153846153846
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_6:Memory_76",
+    "index":0.5907335907335908
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_73",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_7:Memory_45/ramsSpWf:RamInitSpWf_41",
-    "index":0.7897435897435897
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_7:Memory_77/ramsSpWf:RamInitSpWf_73",
+    "index":0.5945945945945946
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_77",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_7:Memory_45",
-    "index":0.7948717948717948
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_7:Memory_77",
+    "index":0.5984555984555985
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_74",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_8:Memory_46/ramsSpWf:RamInitSpWf_42",
-    "index":0.8
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_8:Memory_78/ramsSpWf:RamInitSpWf_74",
+    "index":0.6023166023166023
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_78",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_8:Memory_46",
-    "index":0.8051282051282052
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_8:Memory_78",
+    "index":0.6061776061776062
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_75",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_9:Memory_47/ramsSpWf:RamInitSpWf_43",
-    "index":0.8102564102564103
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_9:Memory_79/ramsSpWf:RamInitSpWf_75",
+    "index":0.61003861003861
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_79",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_9:Memory_47",
-    "index":0.8153846153846154
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_9:Memory_79",
+    "index":0.6138996138996139
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_76",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_10:Memory_48/ramsSpWf:RamInitSpWf_44",
-    "index":0.8205128205128205
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_10:Memory_80/ramsSpWf:RamInitSpWf_76",
+    "index":0.6177606177606177
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_80",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_10:Memory_48",
-    "index":0.8256410256410256
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_10:Memory_80",
+    "index":0.6216216216216216
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_77",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_11:Memory_49/ramsSpWf:RamInitSpWf_45",
-    "index":0.8307692307692308
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_11:Memory_81/ramsSpWf:RamInitSpWf_77",
+    "index":0.6254826254826255
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_81",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_11:Memory_49",
-    "index":0.8358974358974359
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_11:Memory_81",
+    "index":0.6293436293436293
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_78",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_12:Memory_50/ramsSpWf:RamInitSpWf_46",
-    "index":0.841025641025641
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_12:Memory_82/ramsSpWf:RamInitSpWf_78",
+    "index":0.6332046332046332
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_82",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_12:Memory_50",
-    "index":0.8461538461538461
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_12:Memory_82",
+    "index":0.637065637065637
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_79",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_13:Memory_51/ramsSpWf:RamInitSpWf_47",
-    "index":0.8512820512820513
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_13:Memory_83/ramsSpWf:RamInitSpWf_79",
+    "index":0.640926640926641
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_83",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_13:Memory_51",
-    "index":0.8564102564102564
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_13:Memory_83",
+    "index":0.6447876447876448
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_80",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_14:Memory_52/ramsSpWf:RamInitSpWf_48",
-    "index":0.8615384615384616
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_14:Memory_84/ramsSpWf:RamInitSpWf_80",
+    "index":0.6486486486486487
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_84",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_14:Memory_52",
-    "index":0.8666666666666667
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_14:Memory_84",
+    "index":0.6525096525096525
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|RamInitSpWf_81",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_15:Memory_53/ramsSpWf:RamInitSpWf_49",
-    "index":0.8717948717948718
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_15:Memory_85/ramsSpWf:RamInitSpWf_81",
+    "index":0.6563706563706564
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~Top|Memory_85",
-    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_15:Memory_53",
-    "index":0.8769230769230769
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteMemories_15:Memory_85",
+    "index":0.6602316602316602
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_82",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.6640926640926641
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_86",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_0:Memory_86",
+    "index":0.667953667953668
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_83",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.6718146718146718
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_87",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_1:Memory_86",
+    "index":0.6756756756756757
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_84",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.6795366795366795
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_88",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_2:Memory_86",
+    "index":0.6833976833976834
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_85",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.6872586872586872
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_89",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_3:Memory_86",
+    "index":0.6911196911196911
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_86",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.694980694980695
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_90",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_4:Memory_86",
+    "index":0.6988416988416989
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_87",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7027027027027027
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_91",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_5:Memory_86",
+    "index":0.7065637065637066
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_88",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7104247104247104
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_92",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_6:Memory_86",
+    "index":0.7142857142857143
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_89",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7181467181467182
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_93",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_7:Memory_86",
+    "index":0.722007722007722
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_90",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7258687258687259
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_94",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_8:Memory_86",
+    "index":0.7297297297297297
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_91",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7335907335907336
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_95",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_9:Memory_86",
+    "index":0.7374517374517374
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_92",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7413127413127413
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_96",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_10:Memory_86",
+    "index":0.7451737451737451
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_93",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.749034749034749
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_97",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_11:Memory_86",
+    "index":0.752895752895753
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_94",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7567567567567568
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_98",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_12:Memory_86",
+    "index":0.7606177606177607
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_95",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7644787644787645
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_99",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_13:Memory_86",
+    "index":0.7683397683397684
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_96",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7722007722007722
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_100",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_14:Memory_86",
+    "index":0.7760617760617761
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_97",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_86/ramsSpWf:RamInitSpWf_82",
+    "index":0.7799227799227799
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_101",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/rotation45deg_15:Memory_86",
+    "index":0.7837837837837838
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_98",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_0:Memory_70/ramsSpWf:RamInitSpWf_66",
+    "index":0.7876447876447876
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_102",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_0:Memory_70",
+    "index":0.7915057915057915
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_99",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_1:Memory_71/ramsSpWf:RamInitSpWf_67",
+    "index":0.7953667953667953
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_103",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_1:Memory_71",
+    "index":0.7992277992277992
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_100",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_2:Memory_72/ramsSpWf:RamInitSpWf_68",
+    "index":0.803088803088803
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_104",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_2:Memory_72",
+    "index":0.806949806949807
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_101",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_3:Memory_73/ramsSpWf:RamInitSpWf_69",
+    "index":0.8108108108108109
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_105",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_3:Memory_73",
+    "index":0.8146718146718147
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_102",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_4:Memory_74/ramsSpWf:RamInitSpWf_70",
+    "index":0.8185328185328186
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_106",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_4:Memory_74",
+    "index":0.8223938223938224
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_103",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_5:Memory_75/ramsSpWf:RamInitSpWf_71",
+    "index":0.8262548262548263
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_107",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_5:Memory_75",
+    "index":0.8301158301158301
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_104",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_6:Memory_76/ramsSpWf:RamInitSpWf_72",
+    "index":0.833976833976834
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_108",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_6:Memory_76",
+    "index":0.8378378378378378
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_105",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_7:Memory_77/ramsSpWf:RamInitSpWf_73",
+    "index":0.8416988416988417
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_109",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_7:Memory_77",
+    "index":0.8455598455598455
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_106",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_8:Memory_78/ramsSpWf:RamInitSpWf_74",
+    "index":0.8494208494208494
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_110",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_8:Memory_78",
+    "index":0.8532818532818532
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_107",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_9:Memory_79/ramsSpWf:RamInitSpWf_75",
+    "index":0.8571428571428571
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_111",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_9:Memory_79",
+    "index":0.861003861003861
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_108",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_10:Memory_80/ramsSpWf:RamInitSpWf_76",
+    "index":0.8648648648648649
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_112",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_10:Memory_80",
+    "index":0.8687258687258688
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_109",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_11:Memory_81/ramsSpWf:RamInitSpWf_77",
+    "index":0.8725868725868726
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_113",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_11:Memory_81",
+    "index":0.8764478764478765
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_110",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_12:Memory_82/ramsSpWf:RamInitSpWf_78",
+    "index":0.8803088803088803
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_114",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_12:Memory_82",
+    "index":0.8841698841698842
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_111",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_13:Memory_83/ramsSpWf:RamInitSpWf_79",
+    "index":0.888030888030888
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_115",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_13:Memory_83",
+    "index":0.8918918918918919
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_112",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_14:Memory_84/ramsSpWf:RamInitSpWf_80",
+    "index":0.8957528957528957
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_116",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_14:Memory_84",
+    "index":0.8996138996138996
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|RamInitSpWf_113",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_15:Memory_85/ramsSpWf:RamInitSpWf_81",
+    "index":0.9034749034749034
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~Top|Memory_117",
+    "duplicate":"~Top|Top/gameTop:GameTop/graphicEngineVGA:GraphicEngineVGA/spriteBlender:SpriteBlender/spriteMemories_15:Memory_85",
+    "index":0.9073359073359073
   },
   {
     "class":"firrtl.EmitCircuitAnnotation",
@@ -629,43 +1397,145 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_89",
+    "target":"Top.RamInitSpWf_121",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_88",
+    "target":"Top.RamInitSpWf_120",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_87",
+    "target":"Top.RamInitSpWf_119",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_86",
+    "target":"Top.RamInitSpWf_118",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_85",
+    "target":"Top.RamInitSpWf_117",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_84",
+    "target":"Top.RamInitSpWf_116",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_83",
+    "target":"Top.RamInitSpWf_115",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_114",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_81",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_80",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_79",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_78",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_77",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_76",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_75",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_74",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_73",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_72",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_71",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_70",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_69",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_68",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_67",
+    "name":"RamInitSpWf.v",
+    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Top.RamInitSpWf_66",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
@@ -677,115 +1547,13 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_49",
+    "target":"Top.RamInitSpWf_65",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_48",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_47",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_46",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_45",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_44",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_43",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_42",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_41",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_40",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_39",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_38",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_37",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_36",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_35",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_34",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_50",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_33",
-    "name":"RamInitSpWf.v",
-    "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"Top.RamInitSpWf_32",
+    "target":"Top.RamInitSpWf_64",
     "name":"RamInitSpWf.v",
     "text":"//////////////////////////////////////////////////////////////////////////////\n// Authors: Luca Pezzarossa\n// Copyright: Technical University of Denmark - 2024\n// Comments:\n// Single-Port Block RAM Write-First Mode with initialization form MEM file\n// (recommended template from AMD/Xilinx)\n//////////////////////////////////////////////////////////////////////////////\n\n`timescale 1ns / 1ps\n\nmodule RamInitSpWf ( clk,\n                    we, \n                    en, \n                    addr, \n                    di, \n                    dout);\n\n    parameter\n              ADDR_WIDTH = 8,\n              DATA_WIDTH = 8,\n              LOAD_FILE = \"\";\n\n    input clk;\n    input we;\n    input en;\n    input [ADDR_WIDTH-1:0] addr;\n    input [DATA_WIDTH-1:0] di;\n    output [DATA_WIDTH-1:0] dout;\n\n    reg [DATA_WIDTH-1:0] RAM [(2**ADDR_WIDTH)-1:0];\n    reg [DATA_WIDTH-1:0] dout;\n    \n    initial begin\n        $readmemb(LOAD_FILE, RAM);\n    end\n\n    always @(posedge clk)\n        begin\n        if (en)\n            begin\n                if (we)\n                    begin\n                    RAM[addr] <= di;\n                    dout <= di;\n                    end\n                else\n                    dout <= RAM[addr];\n            end\n        end\nendmodule\n\n//////////////////////////////////////////////////////////////////////////////\n// End of file\n//////////////////////////////////////////////////////////////////////////////"
   },
