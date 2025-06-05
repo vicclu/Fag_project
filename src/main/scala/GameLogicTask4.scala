@@ -8,9 +8,8 @@
 import chisel3._
 import chisel3.util._
 
-class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
+class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
   val io = IO(new Bundle {
-    // Buttons
     val btnC = Input(Bool())
     val btnU = Input(Bool())
     val btnL = Input(Bool())
@@ -40,8 +39,8 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
 
     // Viewbox control
-    val viewBoxX = Output(UInt(10.W))
-    val viewBoxY = Output(UInt(9.W))
+    val viewBoxX = Output(Vec(BackgroundNumber, UInt(10.W)))
+    val viewBoxY = Output(Vec(BackgroundNumber, UInt(9.W)))
 
     // Background buffer output
     val backBufferWriteData = Output(UInt(log2Up(BackTileNumber).W))
@@ -52,8 +51,7 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
 
-    val spriteOpacityLevel = Output(UInt(2.W))
-
+    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
   })
 
   /////////////////////////////////////////////////////////////////
@@ -61,7 +59,8 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
   io.led := Seq.fill(8)(false.B)
 
-  io.spriteOpacityLevel := 3.U
+
+  io.spriteOpacityLevel :=  Seq.fill(SpriteNumber)(1.U)
 
 
   io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
@@ -74,8 +73,11 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
   io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
 
-  io.viewBoxX := 0.U
-  io.viewBoxY := 0.U
+
+
+  io.viewBoxX := Seq.fill(BackgroundNumber)(0.U(10.W))
+  io.viewBoxY := Seq.fill(BackgroundNumber)(0.U(9.W))
+
 
   io.backBufferWriteData := 0.U
   io.backBufferWriteAddress := 0.U
@@ -96,22 +98,29 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val sprite0XReg = RegInit(32.S(11.W))
   val sprite0YReg = RegInit(360.S(10.W))
 
-  val rot45Reg = RegInit(false.B)
-  val rot90Reg = RegInit(false.B)
-  val horiReg = RegInit(false.B)
-  val vertReg = RegInit(false.B)
+  val rot45Reg3 = RegInit(false.B)
+  val rot90Reg3 = RegInit(false.B)
+  val horiReg3 = RegInit(false.B)
+  val vertReg3 = RegInit(false.B)
 
   val frameCounter = RegInit(0.U(8.W))
   val rotCounter = RegInit(0.U(5.W))
 
-  io.spriteVisible(3) := true.B
 
+  io.spriteVisible(0) := true.B
+  io.spriteXPosition(0) := 200.S
+  io.spriteYPosition(0) := 200.S
+  io.spriteRotation45(0) := true.B
+  io.spriteScaleHorizontal(0) := 3.U
+
+
+  io.spriteVisible(3) := true.B
   io.spriteXPosition(3) := sprite0XReg
   io.spriteYPosition(3) := sprite0YReg
-  io.spriteRotation45(3) := rot45Reg
-  io.spriteRotation90(3) := rot90Reg
-  io.spriteFlipHorizontal(3) := horiReg
-  io.spriteFlipVertical(3) := vertReg
+  io.spriteRotation45(3) := rot45Reg3
+  io.spriteRotation90(3) := rot90Reg3
+  io.spriteFlipHorizontal(3) := horiReg3
+  io.spriteFlipVertical(3) := vertReg3
 
   io.spriteVisible(4) := true.B
   io.spriteXPosition(4) :=100.S
@@ -132,7 +141,10 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteScaleHorizontal(3) := 2.U
   io.spriteScaleVertical(3) := 2.U
 
-
+  val viewBoxXReg = Seq.fill(BackgroundNumber)(RegInit(0.U(10.W)))
+  val viewBoxYReg = Seq.fill(BackgroundNumber)(RegInit(0.U(9.W)))
+  io.viewBoxX := viewBoxXReg
+  io.viewBoxY := viewBoxYReg
 
   when(io.newFrame) {
     frameCounter := frameCounter + 1.U
@@ -156,39 +168,39 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int) extends Module {
 
     is(compute1) {
 
-      rot45Reg := false.B
-      rot90Reg := false.B
-      horiReg := false.B
-      vertReg := false.B
+      rot45Reg3 := false.B
+      rot90Reg3 := false.B
+      horiReg3 := false.B
+      vertReg3 := false.B
       when(rotCounter === 1.U) {
-        rot45Reg := true.B
+        rot45Reg3 := true.B
       }
       when(rotCounter === 2.U) {
-        rot90Reg := true.B
+        rot90Reg3 := true.B
       }
       when(rotCounter === 3.U) {
-        rot90Reg := true.B
-        rot45Reg := true.B
+        rot90Reg3 := true.B
+        rot45Reg3 := true.B
       }
       when(rotCounter === 4.U) {
-        horiReg := true.B
-        vertReg := true.B
+        horiReg3 := true.B
+        vertReg3 := true.B
       }
       when(rotCounter === 5.U) {
-        horiReg := true.B
-        vertReg := true.B
-        rot45Reg := true.B
+        horiReg3 := true.B
+        vertReg3 := true.B
+        rot45Reg3 := true.B
       }
       when(rotCounter === 6.U) {
-        horiReg := true.B
-        vertReg := true.B
-        rot90Reg := true.B
+        horiReg3 := true.B
+        vertReg3 := true.B
+        rot90Reg3 := true.B
       }
       when(rotCounter === 7.U) {
-        horiReg := true.B
-        vertReg := true.B
-        rot90Reg := true.B
-        rot45Reg := true.B
+        horiReg3 := true.B
+        vertReg3 := true.B
+        rot90Reg3 := true.B
+        rot45Reg3 := true.B
       }
       when(io.btnD) {
         when(sprite0YReg < (480 - 32 - 24).S) {

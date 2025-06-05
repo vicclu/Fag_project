@@ -8,7 +8,7 @@
 import chisel3._
 import chisel3.util._
 
-class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
+class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
   val io = IO(new Bundle {
     // Buttons
     val btnC = Input(Bool())
