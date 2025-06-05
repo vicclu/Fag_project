@@ -306,11 +306,15 @@ for (i <- 0 until BackgroundNumber) {
 
   //Computing background colour
   val backgroundColor = Wire(UInt(6.W))
-  val fullBackgroundColor = Wire(Vec(2,UInt(7.W)))
-  for (i <- 0 until 2) {
+  val fullBackgroundColor = Wire(Vec(BackgroundNumber,UInt(7.W)))
+  for (i <- 0 until BackgroundNumber) {
     fullBackgroundColor(i) := backTileMemoryDataRead(i)(RegNext(backBufferMemories(i).io.dataRead)) //Pipelining the backBufferMemory output
   }
-  backgroundColor := Mux(fullBackgroundColor(0)(6), Mux(fullBackgroundColor(1)(6),0.U(6.W),fullBackgroundColor(1)(5, 0)), fullBackgroundColor(0)(5, 0))
+  backgroundColor := PriorityMux(
+    (0 until BackgroundNumber).map(i =>
+      (!fullBackgroundColor(i)(6), fullBackgroundColor(i)(5,0))
+    ) :+ (true.B, 0.U(6.W))
+  )
   val pixelColorBack = RegNext(backgroundColor)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -356,6 +360,7 @@ for (i <- 0 until BackgroundNumber) {
       inSpriteY(i) := RegNext((0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp)
 
     val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
+      3.U -> (boundingWidth << 1).asSInt,
       2.U -> (boundingWidth<<1).asSInt,
       1.U -> (boundingWidth>>1).asSInt,
       0.U -> (boundingWidth).asSInt
@@ -376,6 +381,7 @@ for (i <- 0 until BackgroundNumber) {
 
     // Memory address:
     val memX = (MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq(
+      3.U -> flippedX.asUInt,
       2.U -> (flippedX >> 1).asUInt,
       1.U -> (flippedX.asUInt * 2.U),
       0.U -> flippedX.asUInt))

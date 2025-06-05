@@ -1,12 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0mchisel3.package$ChiselException: Cannot reassign to read-only GraphicEngineVGA.xLim: OpResult[SInt<8>][0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.IndexOutOfBoundsException: 2 is out of bounds (min 0, max 1)[0m
 [0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$new$120(GraphicEngineVGA.scala:385)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.WhenContext.<init>(When.scala:135)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.when$.apply(When.scala:38)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$new$93(GraphicEngineVGA.scala:384)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$new$87(GraphicEngineVGA.scala:311)[0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:190)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.<init>(GraphicEngineVGA.scala:346)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.<init>(GraphicEngineVGA.scala:310)[0m
 [0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$2(GameTop.scala:47)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
 [0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$1(GameTop.scala:47)[0m
@@ -20,4 +16,4 @@
 [0m[[0m[31merror[0m] [0m[0m	at Top$.$anonfun$new$6(Top.scala:70)[0m
 [0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
 [0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.package$ChiselException: Cannot reassign to read-only GraphicEngineVGA.xLim: OpResult[SInt<8>][0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.lang.IndexOutOfBoundsException: 2 is out of bounds (min 0, max 1)[0m
