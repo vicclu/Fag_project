@@ -113,6 +113,16 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
   io.spriteRotation45(0) := true.B
   io.spriteScaleHorizontal(0) := 3.U
 
+  io.spriteVisible(1) := true.B
+  io.spriteXPosition(1) := 200.S
+  io.spriteYPosition(1) := 250.S
+  io.spriteScaleHorizontal(1) := 2.U
+
+  io.spriteVisible(2) := true.B
+  io.spriteXPosition(2) := 300.S
+  io.spriteYPosition(2) := 200.S
+  io.spriteRotation45(2) := true.B
+  io.spriteScaleHorizontal(2) := 3.U
 
   io.spriteVisible(3) := true.B
   io.spriteXPosition(3) := sprite0XReg
@@ -123,11 +133,11 @@ class GameLogicTask4(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
   io.spriteFlipVertical(3) := vertReg3
 
   io.spriteVisible(4) := true.B
-  io.spriteXPosition(4) :=100.S
-  io.spriteYPosition(4) := 100.S
-  io.spriteScaleVertical(4) := 1.U
+  io.spriteXPosition(4) := 300.S
+  io.spriteYPosition(4) := 250.S
   io.spriteScaleHorizontal(4) := 2.U
-  io.spriteRotation45(4) := true.B
+
+
 
   io.spriteVisible(5) := true.B
   io.spriteXPosition(5) := 100.S

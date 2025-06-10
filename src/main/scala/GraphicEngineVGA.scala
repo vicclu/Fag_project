@@ -359,7 +359,7 @@ for (i <- 0 until BackgroundNumber) {
       inSpriteX(i) := RegNext((0.U(1.W) ## pixelX).asSInt -& spriteXpositiontmp)
       inSpriteY(i) := RegNext((0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp)
 
-    val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
+    val xLim = MuxLookup(spriteScaleHorizontalReg(i) , boundingWidth, Seq(
       3.U -> (boundingWidth << 1).asSInt,
       2.U -> (boundingWidth<<1).asSInt,
       1.U -> (boundingWidth>>1).asSInt,
@@ -402,16 +402,32 @@ for (i <- 0 until BackgroundNumber) {
     // ((flippedY >= 1.S) && (flippedY < yLim - 1.S))
     inSprite(i) := (Mux(spriteRotationReg45(i),inBoundingBox , inScaledX && inScaledY))
 
-    val boxIndex = ((memY * boundingWidth.asUInt) + memX)
 
-
+    val boxIndex = (memY * boundingWidth.asUInt) + memX
     rotation45deg(i).io.address := (boxIndex)
+    val rotIndex =  Mux(memX>46.U,rotation45deg(i).io.dataRead(13,7)(4,0).asUInt/2.U + 15.U,rotation45deg(i).io.dataRead(13,7)(4,0).asUInt/2.U) + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt
+//    val rotIndex =  (rotation45deg(i).io.dataRead(13,7)(4,0).asUInt/2.U) + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt
+
+
+
     spriteMemories(i).io.enable      := true.B
     spriteMemories(i).io.dataWrite   := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := Mux(spriteRotationReg45(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+    spriteMemories(i).io.address     := Mux(spriteRotationReg45(i), rotIndex ,boxIndex)
     spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
     spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
+
+//
+//    val boxIndex = ((memY * boundingWidth.asUInt) + Mux(memX>23.U,memX-24.U,memX))
+//
+//
+//    rotation45deg(i).io.address := (boxIndex)
+//    spriteMemories(i).io.enable      := true.B
+//    spriteMemories(i).io.dataWrite   := 0.U
+//    spriteMemories(i).io.writeEnable := false.B
+//    spriteMemories(i).io.address     := Mux(spriteRotationReg45(i),  Mux(memX>23.U,rotation45deg(i).io.dataRead(13,7)(4,0).asUInt/2.U+15.U,rotation45deg(i).io.dataRead(13,7)(4,0).asUInt/2.U) + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
+//    spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
+//    spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
 
   }
 
