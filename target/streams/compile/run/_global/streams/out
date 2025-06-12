@@ -1,23 +1,17 @@
-[0m[[0m[31merror[0m] [0m[0mchisel3.package$ChiselException: Connection between sink (SpriteBlender.io.spriteVisibleReg[0]: IO[Bool]) and source (Bool(false)) failed @: io.spriteVisibleReg[0] in SpriteBlender cannot be written from module SpriteBlender.[0m
+[0m[[0m[31merror[0m] [0m[0mchisel3.package$ChiselException: Cannot reassign to read-only GraphicEngineVGA.xLim: OpResult[SInt<8>][0m
 [0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at SpriteBlender.$anonfun$new$43(SpriteBlender.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$new$120(GraphicEngineVGA.scala:385)[0m
 [0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.WhenContext.<init>(When.scala:135)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.when$.apply(When.scala:38)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SpriteBlender.$anonfun$new$41(SpriteBlender.scala:119)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SpriteBlender.$anonfun$new$41$adapted(SpriteBlender.scala:118)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Range.foreach(Range.scala:190)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SpriteBlender.<init>(SpriteBlender.scala:118)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$spriteBlender$2(GraphicEngineVGA.scala:323)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$new$93(GraphicEngineVGA.scala:384)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:190)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.<init>(GraphicEngineVGA.scala:346)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$2(GameTop.scala:47)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.$anonfun$spriteBlender$1(GraphicEngineVGA.scala:323)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$1(GameTop.scala:47)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GraphicEngineVGA.<init>(GraphicEngineVGA.scala:323)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$2(GameTop.scala:46)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.$anonfun$graphicEngineVGA$1(GameTop.scala:46)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
-[0m[[0m[31merror[0m] [0m[0m	at GameTop.<init>(GameTop.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at GameTop.<init>(GameTop.scala:47)[0m
 [0m[[0m[31merror[0m] [0m[0m	at Top.$anonfun$gameTop$2(Top.scala:44)[0m
 [0m[[0m[31merror[0m] [0m[0m	at chisel3.Module$.do_apply(Module.scala:53)[0m
 [0m[[0m[31merror[0m] [0m[0m	at Top.$anonfun$gameTop$1(Top.scala:44)[0m
@@ -26,4 +20,4 @@
 [0m[[0m[31merror[0m] [0m[0m	at Top$.$anonfun$new$6(Top.scala:70)[0m
 [0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
 [0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.package$ChiselException: Connection between sink (SpriteBlender.io.spriteVisibleReg[0]: IO[Bool]) and source (Bool(false)) failed @: io.spriteVisibleReg[0] in SpriteBlender cannot be written from module SpriteBlender.[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.package$ChiselException: Cannot reassign to read-only GraphicEngineVGA.xLim: OpResult[SInt<8>][0m
