@@ -396,31 +396,27 @@ for (i <- 0 until 2) {
   }
 
 
-  for (i <- 0 until SpriteNumber) {
-    val spriteX = spriteXPositionReg(i).asUInt
-    val spriteY = spriteYPositionReg(i).asUInt
-
-    val localX = pixelX - spriteX
-    val localY = pixelY - spriteY
-
-    val inSprite = pixelX >= spriteX && pixelX < (spriteX + 32.U) &&
-      pixelY >= spriteY && pixelY < (spriteY + 32.U)
-
-    // Feed sprite pixel address to SpriteBlender
-    spriteBlender.io.spritePixelAddr(i) := Mux(inSprite, localY * 32.U + localX, 0.U)
-
-    // Pass inBounds as inSprite
-    spriteBlender.io.inSprite(i) := inSprite
-  }
+//  for (i <- 0 until SpriteNumber) {
+//    val spriteX = spriteXPositionReg(i).asUInt
+//    val spriteY = spriteYPositionReg(i).asUInt
+//
+//    val localX = pixelX - spriteX
+//    val localY = pixelY - spriteY
+//
+//    val inSprite = pixelX >= spriteX && pixelX < (spriteX + 32.U) &&
+//      pixelY >= spriteY && pixelY < (spriteY + 32.U)
+//
+//    // Feed sprite pixel address to SpriteBlender
+//    spriteBlender.io.spritePixelAddr(i) := Mux(inSprite, localY * 32.U + localX, 0.U)
+//
+//    // Pass inBounds as inSprite
+//    spriteBlender.io.inSprite(i) := inSprite
+//  }
 
   io.vgaRed := spriteBlender.io.vgaRed
   io.vgaBlue := spriteBlender.io.vgaBlue
   io.vgaGreen := spriteBlender.io.vgaGreen
 
-
-  //  io.vgaRed := RegNext(pixelColorRed)
-  //  io.vgaGreen := RegNext(pixelColorGreen)
-  //  io.vgaBlue := RegNext(pixelColorBlue)
   io.vgaRed :=  Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaRed,0.U)
   io.vgaGreen:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaGreen,0.U)
   io.vgaBlue:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaBlue,0.U)
