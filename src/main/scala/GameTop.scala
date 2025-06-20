@@ -32,9 +32,6 @@ class GameTop extends Module {
     //Leds
     val led = Output(Vec(8, Bool()))
 
-    //Sound
-    val soundOutput = Output(Vec(1, Bool()))
-
     //Errors
     val missingFrameError = Output(Bool())
     val backBufferWriteError = Output(Bool())
@@ -43,25 +40,20 @@ class GameTop extends Module {
 
   val SPRITE_NUMBER = 16
   val BACK_TILE_NUMBER = 32
-  val BACKGROUND_NUMBER = 4
-  val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER, BACKGROUND_NUMBER))
-  val SOUND_NUMBER = 8
-  val soundEngine = Module(new SoundEngine(SOUND_NUMBER))
+  val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER))
 
   //Uncomment one of the following lines to use the module related to the learning tasks
   //Use the module GameLogic to implement your game
   //val gameLogic = Module(new GameLogic(SPRITE_NUMBER, BACK_TILE_NUMBER))
-  //val gameLogic = Module(new GameLogicTask0(SPRITE_NUMBER, BACK_TILE_NUMBER, BACKGROUND_NUMBER))
+  val gameLogic = Module(new GameLogicTask0(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask1(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask2(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask3(SPRITE_NUMBER, BACK_TILE_NUMBER))
-  val gameLogic = Module(new GameLogicTask4(SPRITE_NUMBER, BACK_TILE_NUMBER, BACKGROUND_NUMBER))
+  //val gameLogic = Module(new GameLogicTask4(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask5(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask6(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask7(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask8(SPRITE_NUMBER, BACK_TILE_NUMBER))
-graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
-
 
   //Debouncing
   val CLOCK_FREQUENCY_HZ = 100000000 //100 MHz
@@ -118,12 +110,6 @@ graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
   //Leds
   io.led := gameLogic.io.led
 
-  //Sound
-  soundEngine.io.input := gameLogic.io.songInput
-  soundEngine.io.stop :=gameLogic.io.songStop
-  soundEngine.io.speed :=gameLogic.io.songSpeed
-  io.soundOutput := soundEngine.io.output
-
   //Errors
   io.missingFrameError := graphicEngineVGA.io.missingFrameError
   io.backBufferWriteError := graphicEngineVGA.io.backBufferWriteError
@@ -133,18 +119,12 @@ graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
   graphicEngineVGA.io.spriteXPosition := gameLogic.io.spriteXPosition
   graphicEngineVGA.io.spriteYPosition := gameLogic.io.spriteYPosition
   graphicEngineVGA.io.spriteVisible := gameLogic.io.spriteVisible
-  graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
   graphicEngineVGA.io.spriteFlipHorizontal := gameLogic.io.spriteFlipHorizontal
   graphicEngineVGA.io.spriteFlipVertical := gameLogic.io.spriteFlipVertical
 
-  //new
+  //Sprite scaling input
   graphicEngineVGA.io.spriteScaleHorizontal := gameLogic.io.spriteScaleHorizontal
   graphicEngineVGA.io.spriteScaleVertical := gameLogic.io.spriteScaleVertical
-  graphicEngineVGA.io.spriteRotation45 := gameLogic.io.spriteRotation45
-  graphicEngineVGA.io.spriteRotation90 := gameLogic.io.spriteRotation90
-
-
-
 
   //Viewbox control input
   graphicEngineVGA.io.viewBoxX := gameLogic.io.viewBoxX

@@ -8,82 +8,88 @@
 import chisel3._
 import chisel3.util._
 
-class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
+class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val io = IO(new Bundle {
-    // Buttons
+    //Buttons
     val btnC = Input(Bool())
     val btnU = Input(Bool())
     val btnL = Input(Bool())
     val btnR = Input(Bool())
     val btnD = Input(Bool())
 
-    // Switches
+    //Switches
     val sw = Input(Vec(8, Bool()))
 
-    // LEDs
+    //Leds
     val led = Output(Vec(8, Bool()))
 
-    // Sound
-    val songInput = Output(UInt(4.W))
-    val songStop = Output(UInt(4.W))
-    val songSpeed = Output(UInt(4.W))
-
-    // Graphic Engine VGA
-    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W)))
-    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W)))
+    //GraphicEngineVGA
+    //Sprite control input
+    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W))) //-1024 to 1023
+    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W))) //-512 to 511
     val spriteVisible = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
+
+    //Sprite scaling input
     val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
     val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
-    val spriteRotation45 = Output(Vec(SpriteNumber, Bool()))
-    val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
 
-    // Viewbox control
-    val viewBoxX = Output(Vec(2, UInt(10.W)))
-    val viewBoxY = Output(Vec(2, UInt(9.W)))
+    //Viewbox control output
+    val viewBoxX = Output(UInt(10.W)) //0 to 640
+    val viewBoxY = Output(UInt(9.W)) //0 to 480
 
-    // Background buffer output
+    //Background buffer output
     val backBufferWriteData = Output(UInt(log2Up(BackTileNumber).W))
     val backBufferWriteAddress = Output(UInt(11.W))
     val backBufferWriteEnable = Output(Bool())
 
-    // Status
+    //Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
-
-    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
   })
 
   // Setting all led outputs to zero
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
 
-  io.spriteOpacityLevel :=  Seq.fill(SpriteNumber)(1.U)
+  // Or one by one...
+  //io.led(0) := false.B
+  //io.led(0) := false.B
+  //io.led(1) := false.B
+  //io.led(2) := false.B
+  //io.led(3) := false.B
+  //io.led(4) := false.B
+  //io.led(5) := false.B
+  //io.led(6) := false.B
+  //io.led(7) := false.B
 
+  // Or with a for loop.
+  //for (i <- 0 until 8) {
+  //  io.led(i) := false.B
+  //}
 
+  //Setting all sprite control outputs to zero
   io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
   io.spriteYPosition := Seq.fill(SpriteNumber)(0.S)
   io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
+
+  //Setting sprite scaling outputs to zero
   io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.U(2.W))
   io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.U(2.W))
-  io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
-  io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
 
+  //Setting the viewbox control outputs to zero
+  io.viewBoxX := 0.U
+  io.viewBoxY := 0.U
 
-  io.viewBoxX := Seq.fill(2)(0.U(10.W))
-  io.viewBoxY := Seq.fill(2)(0.U(9.W))
-
+  //Setting the background buffer outputs to zero
   io.backBufferWriteData := 0.U
   io.backBufferWriteAddress := 0.U
   io.backBufferWriteEnable := false.B
 
-  io.songInput := 0.U
-  io.songSpeed := 0.U
-  io.songStop := 0.U
-
+  //Setting frame done to zero
   io.frameUpdateDone := false.B
 
   /////////////////////////////////////////////////////////////////
@@ -91,31 +97,127 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
   // (you might need to change the initialization values above)
   /////////////////////////////////////////////////////////////////
 
-  val idle :: compute1 :: done :: Nil = Enum(3)
+  val idle :: compute1  :: done :: Nil = Enum(3)
   val stateReg = RegInit(idle)
 
-  //Two registers holding the sprite sprite X and Y with the sprite initial position
-  val sprite0XReg = RegInit(32.S(11.W))
-  val sprite0YReg = RegInit((360-32).S(10.W))
 
-  //A registers holding the sprite horizontal flip
-  val sprite0FlipHorizontalReg = RegInit(false.B)
 
-  //Making sprite 0 visible
+  // Sprite 0
   io.spriteVisible(0) := true.B
+  io.spriteXPosition(0) := 0.S
+  io.spriteYPosition(0) := 100.S
+  io.spriteScaleHorizontal(0) := 2.U
+  io.spriteScaleVertical(0) := 2.U
 
-  //Connecting resiters to the graphic engine
-  io.spriteXPosition(0) := sprite0XReg
-  io.spriteYPosition(0) := sprite0YReg
-  io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
+//  // Sprite 1
+//  io.spriteVisible(1) := true.B
+//  io.spriteXPosition(1) := 64.S
+//  io.spriteYPosition(1) := 100.S
+//  io.spriteScaleHorizontal(1) := 2.U
+//  io.spriteScaleVertical(1) := 2.U
 
-  val viewBoxXReg = Seq.fill(2)(RegInit(0.U(10.W)))
-  val viewBoxYReg = Seq.fill(2)(RegInit(0.U(9.W)))
+//  // Sprite 2
+//  io.spriteVisible(2) := true.B
+//  io.spriteXPosition(2) := 128.S
+//  io.spriteYPosition(2) := 100.S
+//  io.spriteScaleHorizontal(2) := 1.U
+//  io.spriteScaleVertical(2) := 1.U
+//
+//  // Sprite 3
+//  io.spriteVisible(3) := true.B
+//  io.spriteXPosition(3) := 192.S
+//  io.spriteYPosition(3) := 100.S
+//  io.spriteScaleHorizontal(3) := 1.U
+//  io.spriteScaleVertical(3) := 1.U
+//
+//  // Sprite 4
+//  io.spriteVisible(4) := true.B
+//  io.spriteXPosition(4) := 256.S
+//  io.spriteYPosition(4) := 100.S
+//  io.spriteScaleHorizontal(4) := 1.U
+//  io.spriteScaleVertical(4) := 1.U
+//
+//  // Sprite 5
+//  io.spriteVisible(5) := true.B
+//  io.spriteXPosition(5) := 320.S
+//  io.spriteYPosition(5) := 100.S
+//  io.spriteScaleHorizontal(5) := 1.U
+//  io.spriteScaleVertical(5) := 1.U
+//
+//  // Sprite 6
+//  io.spriteVisible(6) := true.B
+//  io.spriteXPosition(6) := 384.S
+//  io.spriteYPosition(6) := 100.S
+//  io.spriteScaleHorizontal(6) := 1.U
+//  io.spriteScaleVertical(6) := 1.U
+//
+//  // Sprite 7
+//  io.spriteVisible(7) := true.B
+//  io.spriteXPosition(7) := 448.S
+//  io.spriteYPosition(7) := 100.S
+//  io.spriteScaleHorizontal(7) := 1.U
+//  io.spriteScaleVertical(7) := 1.U
+//
+//  // Sprite 8
+//  io.spriteVisible(8) := true.B
+//  io.spriteXPosition(8) := 512.S
+//  io.spriteYPosition(8) := 100.S
+//  io.spriteScaleHorizontal(8) := 1.U
+//  io.spriteScaleVertical(8) := 1.U
+//
+//  // Sprite 9
+//  io.spriteVisible(9) := true.B
+//  io.spriteXPosition(9) := 576.S
+//  io.spriteYPosition(9) := 100.S
+//  io.spriteScaleHorizontal(9) := 1.U
+//  io.spriteScaleVertical(9) := 1.U
+//
+//  // Sprite 10 — wrap to second row
+//  io.spriteVisible(10) := true.B
+//  io.spriteXPosition(10) := 0.S
+//  io.spriteYPosition(10) := 164.S
+//  io.spriteScaleHorizontal(10) := 1.U
+//  io.spriteScaleVertical(10) := 1.U
+//
+//  // Sprite 11
+//  io.spriteVisible(11) := true.B
+//  io.spriteXPosition(11) := 64.S
+//  io.spriteYPosition(11) := 164.S
+//  io.spriteScaleHorizontal(11) := 1.U
+//  io.spriteScaleVertical(11) := 1.U
+//
+//  // Sprite 12
+//  io.spriteVisible(12) := true.B
+//  io.spriteXPosition(12) := 128.S
+//  io.spriteYPosition(12) := 164.S
+//  io.spriteScaleHorizontal(12) := 1.U
+//  io.spriteScaleVertical(12) := 1.U
+//
+//  // Sprite 13
+//  io.spriteVisible(13) := true.B
+//  io.spriteXPosition(13) := 192.S
+//  io.spriteYPosition(13) := 164.S
+//  io.spriteScaleHorizontal(13) := 1.U
+//  io.spriteScaleVertical(13) := 1.U
+//
+//  // Sprite 14
+//  io.spriteVisible(14) := true.B
+//  io.spriteXPosition(14) := 256.S
+//  io.spriteYPosition(14) := 164.S
+//  io.spriteScaleHorizontal(14) := 1.U
+//  io.spriteScaleVertical(14) := 1.U
+//
+//  // Sprite 15
+//  io.spriteVisible(15) := true.B
+//  io.spriteXPosition(15) := 320.S
+//  io.spriteYPosition(15) := 164.S
+//  io.spriteScaleHorizontal(15) := 1.U
+//  io.spriteScaleVertical(15) := 1.U
 
-  io.viewBoxX := viewBoxXReg
-  io.viewBoxY := viewBoxYReg
 
 
+
+  //FSMD switch
   switch(stateReg) {
     is(idle) {
       when(io.newFrame) {
@@ -124,69 +226,16 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
     }
 
     is(compute1) {
-      when(io.btnU) {
-        when(viewBoxYReg(0) > 0.U) {
-          viewBoxYReg(0) := viewBoxYReg(0) - 2.U
-
-        }
-        when(viewBoxYReg(1) > 0.U) {
-          when(io.sw(3)){
-            viewBoxYReg(1) := viewBoxYReg(1) - 2.U
-          }
-          when(io.sw(4)){
-            viewBoxYReg(1) := viewBoxYReg(1) - 1.U
-          }
-        }
-
-      }
-      when(io.btnD) {
-        when(viewBoxYReg(0) < 480.U) {
-          viewBoxYReg(0) := viewBoxYReg(0) + 2.U
-
-        }
-        when(viewBoxYReg(1) < 480.U) {
-        when(io.sw(3)){
-          viewBoxYReg(1) := viewBoxYReg(1) + 2.U
-        }
-        when(io.sw(4)){
-          viewBoxYReg(1) := viewBoxYReg(1) + 1.U
-        }
-      }}
-      when(io.btnL) {
-        when(viewBoxXReg(0) > 0.U) {
-          viewBoxXReg(0) := viewBoxXReg(0) - 2.U
-
-        }
-        when(viewBoxXReg(1) > 0.U) {
-        when(io.sw(3)){
-          viewBoxXReg(1) := viewBoxXReg(1) - 2.U
-        }
-        when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) - 1.U
-        }}
-      }
-
-      when(io.btnR) {
-        when(viewBoxXReg(0) < 640.U) {
-          viewBoxXReg(0) := viewBoxXReg(0) + 2.U
-
-        }
-        when(viewBoxXReg(1) < 640.U) {
-        when(io.sw(3)){
-          viewBoxXReg(1) := viewBoxXReg(1) + 2.U
-        }
-        when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) + 1.U
-        }}
-      }
       stateReg := done
     }
+
 
     is(done) {
       io.frameUpdateDone := true.B
       stateReg := idle
     }
   }
+
 
 }
 
