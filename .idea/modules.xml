@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fag_project.iml" filepath="$PROJECT_DIR$/.idea/modules/fag_project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fag_project-build.iml" filepath="$PROJECT_DIR$/.idea/modules/fag_project-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fagprojekt.iml" filepath="$PROJECT_DIR$/.idea/modules/fagprojekt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fagprojekt-build.iml" filepath="$PROJECT_DIR$/.idea/modules/fagprojekt-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fagprojekt.fagprojekt-build.iml" filepath="$PROJECT_DIR$/.idea/modules/fagprojekt.fagprojekt-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/code_v1-0.iml" filepath="$PROJECT_DIR$/.idea/modules/code_v1-0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/code_v1-0-build.iml" filepath="$PROJECT_DIR$/.idea/modules/code_v1-0-build.iml" />
     </modules>
   </component>
 </project>

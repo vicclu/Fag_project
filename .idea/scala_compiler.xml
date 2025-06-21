@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="fag_project,fagprojekt_8523" />
-    <profile name="sbt 2" modules="fagprojekt">
-      <option name="reflectiveCalls" value="true" />
-      <option name="deprecationWarnings" value="true" />
-      <option name="uncheckedWarnings" value="true" />
-      <option name="featureWarnings" value="true" />
-      <plugins>
-        <plugin path="C:\Users\dingv\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\edu\berkeley\cs\chisel3-plugin_2.13.14\3.6.1\chisel3-plugin_2.13.14-3.6.1.jar" />
-      </plugins>
-    </profile>
-    <profile name="sbt 3" modules="fag_project">
-      <option name="reflectiveCalls" value="true" />
-      <option name="deprecationWarnings" value="true" />
-      <option name="uncheckedWarnings" value="true" />
-      <option name="featureWarnings" value="true" />
-      <plugins>
-        <plugin path="C:\Users\soren\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\edu\berkeley\cs\chisel3-plugin_2.13.14\3.6.1\chisel3-plugin_2.13.14-3.6.1.jar" />
-      </plugins>
+    <profile name="sbt 1" modules="code_v1-0_7395" />
+    <profile name="sbt 2" modules="code_v1-0">
+      <parameters>
+        <parameter value="-Xsource:2.11" />
+      </parameters>
     </profile>
   </component>
 </project>
