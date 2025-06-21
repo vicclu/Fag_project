@@ -1387,6 +1387,8 @@ module GraphicEngineVGA(
   input  [10:0] io_spriteXPosition_14,
   input         io_spriteVisible_0,
   input         io_spriteVisible_1,
+  input         io_spriteVisible_2,
+  input         io_spriteVisible_3,
   output        io_newFrame,
   input         io_frameUpdateDone,
   output        io_missingFrameError,
@@ -1876,8 +1878,8 @@ module GraphicEngineVGA(
   reg  spriteVisibleReg_15; // @[Reg.scala 27:20]
   wire  _GEN_45 = io_newFrame ? io_spriteVisible_0 : spriteVisibleReg_0; // @[Reg.scala 28:19]
   wire  _GEN_46 = io_newFrame ? io_spriteVisible_1 : spriteVisibleReg_1; // @[Reg.scala 28:19]
-  wire  _GEN_47 = io_newFrame ? 1'h0 : spriteVisibleReg_2; // @[Reg.scala 28:19]
-  wire  _GEN_48 = io_newFrame ? 1'h0 : spriteVisibleReg_3; // @[Reg.scala 28:19]
+  wire  _GEN_47 = io_newFrame ? io_spriteVisible_2 : spriteVisibleReg_2; // @[Reg.scala 28:19]
+  wire  _GEN_48 = io_newFrame ? io_spriteVisible_3 : spriteVisibleReg_3; // @[Reg.scala 28:19]
   wire  _GEN_49 = io_newFrame ? 1'h0 : spriteVisibleReg_4; // @[Reg.scala 28:19]
   wire  _GEN_50 = io_newFrame ? 1'h0 : spriteVisibleReg_5; // @[Reg.scala 28:19]
   wire  _GEN_51 = io_newFrame ? 1'h0 : spriteVisibleReg_6; // @[Reg.scala 28:19]
@@ -3630,8 +3632,12 @@ module BoxDetection(
   input         clock,
   input  [10:0] io_boxXPosition_0,
   input  [10:0] io_boxXPosition_1,
+  input  [10:0] io_boxXPosition_2,
+  input  [10:0] io_boxXPosition_3,
   input  [9:0]  io_boxYPosition_0,
   input  [9:0]  io_boxYPosition_1,
+  input  [9:0]  io_boxYPosition_2,
+  input  [9:0]  io_boxYPosition_3,
   output        io_overlap_0_1,
   output        io_overlap_0_2,
   output        io_overlap_0_3,
@@ -3661,7 +3667,37 @@ module BoxDetection(
   output        io_overlap_1_12,
   output        io_overlap_1_13,
   output        io_overlap_1_14,
-  output        io_overlap_1_15
+  output        io_overlap_1_15,
+  output        io_overlap_2_0,
+  output        io_overlap_2_1,
+  output        io_overlap_2_3,
+  output        io_overlap_2_4,
+  output        io_overlap_2_5,
+  output        io_overlap_2_6,
+  output        io_overlap_2_7,
+  output        io_overlap_2_8,
+  output        io_overlap_2_9,
+  output        io_overlap_2_10,
+  output        io_overlap_2_11,
+  output        io_overlap_2_12,
+  output        io_overlap_2_13,
+  output        io_overlap_2_14,
+  output        io_overlap_2_15,
+  output        io_overlap_3_0,
+  output        io_overlap_3_1,
+  output        io_overlap_3_2,
+  output        io_overlap_3_4,
+  output        io_overlap_3_5,
+  output        io_overlap_3_6,
+  output        io_overlap_3_7,
+  output        io_overlap_3_8,
+  output        io_overlap_3_9,
+  output        io_overlap_3_10,
+  output        io_overlap_3_11,
+  output        io_overlap_3_12,
+  output        io_overlap_3_13,
+  output        io_overlap_3_14,
+  output        io_overlap_3_15
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -3694,6 +3730,36 @@ module BoxDetection(
   reg [31:0] _RAND_27;
   reg [31:0] _RAND_28;
   reg [31:0] _RAND_29;
+  reg [31:0] _RAND_30;
+  reg [31:0] _RAND_31;
+  reg [31:0] _RAND_32;
+  reg [31:0] _RAND_33;
+  reg [31:0] _RAND_34;
+  reg [31:0] _RAND_35;
+  reg [31:0] _RAND_36;
+  reg [31:0] _RAND_37;
+  reg [31:0] _RAND_38;
+  reg [31:0] _RAND_39;
+  reg [31:0] _RAND_40;
+  reg [31:0] _RAND_41;
+  reg [31:0] _RAND_42;
+  reg [31:0] _RAND_43;
+  reg [31:0] _RAND_44;
+  reg [31:0] _RAND_45;
+  reg [31:0] _RAND_46;
+  reg [31:0] _RAND_47;
+  reg [31:0] _RAND_48;
+  reg [31:0] _RAND_49;
+  reg [31:0] _RAND_50;
+  reg [31:0] _RAND_51;
+  reg [31:0] _RAND_52;
+  reg [31:0] _RAND_53;
+  reg [31:0] _RAND_54;
+  reg [31:0] _RAND_55;
+  reg [31:0] _RAND_56;
+  reg [31:0] _RAND_57;
+  reg [31:0] _RAND_58;
+  reg [31:0] _RAND_59;
 `endif // RANDOMIZE_REG_INIT
   wire [10:0] _T_2 = $signed(io_boxXPosition_0) + 11'sh20; // @[BoxDetection.scala 18:36]
   wire [9:0] _T_5 = $signed(io_boxYPosition_0) + 10'sh20; // @[BoxDetection.scala 19:36]
@@ -3705,20 +3771,76 @@ module BoxDetection(
   wire  _T_28 = $signed(io_boxYPosition_0) < $signed(_T_24); // @[BoxDetection.scala 28:16]
   wire  _T_29 = _T_27 & _T_28; // @[BoxDetection.scala 27:60]
   wire  _T_30 = $signed(io_boxYPosition_1) < $signed(_T_5); // @[BoxDetection.scala 28:35]
-  wire  _T_38 = $signed(io_boxXPosition_0) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_39 = 11'sh0 < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire [10:0] _T_34 = $signed(io_boxXPosition_2) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_37 = $signed(io_boxYPosition_2) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_38 = $signed(io_boxXPosition_0) < $signed(_T_34); // @[BoxDetection.scala 27:32]
+  wire  _T_39 = $signed(io_boxXPosition_2) < $signed(_T_2); // @[BoxDetection.scala 27:51]
   wire  _T_40 = _T_38 & _T_39; // @[BoxDetection.scala 27:41]
-  wire  _T_41 = $signed(io_boxYPosition_0) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_41 = $signed(io_boxYPosition_0) < $signed(_T_37); // @[BoxDetection.scala 28:16]
   wire  _T_42 = _T_40 & _T_41; // @[BoxDetection.scala 27:60]
-  wire  _T_43 = 10'sh0 < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire  _T_43 = $signed(io_boxYPosition_2) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_47 = $signed(io_boxXPosition_3) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_50 = $signed(io_boxYPosition_3) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_51 = $signed(io_boxXPosition_0) < $signed(_T_47); // @[BoxDetection.scala 27:32]
+  wire  _T_52 = $signed(io_boxXPosition_3) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_53 = _T_51 & _T_52; // @[BoxDetection.scala 27:41]
+  wire  _T_54 = $signed(io_boxYPosition_0) < $signed(_T_50); // @[BoxDetection.scala 28:16]
+  wire  _T_55 = _T_53 & _T_54; // @[BoxDetection.scala 27:60]
+  wire  _T_56 = $signed(io_boxYPosition_3) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire  _T_64 = $signed(io_boxXPosition_0) < 11'sh20; // @[BoxDetection.scala 27:32]
+  wire  _T_65 = 11'sh0 < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_66 = _T_64 & _T_65; // @[BoxDetection.scala 27:41]
+  wire  _T_67 = $signed(io_boxYPosition_0) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_68 = _T_66 & _T_67; // @[BoxDetection.scala 27:60]
+  wire  _T_69 = 10'sh0 < $signed(_T_5); // @[BoxDetection.scala 28:35]
   wire  _T_228 = _T_26 & _T_25; // @[BoxDetection.scala 27:41]
   wire  _T_230 = _T_228 & _T_30; // @[BoxDetection.scala 27:60]
-  wire  _T_252 = $signed(io_boxXPosition_1) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_253 = 11'sh0 < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_252 = $signed(io_boxXPosition_1) < $signed(_T_34); // @[BoxDetection.scala 27:32]
+  wire  _T_253 = $signed(io_boxXPosition_2) < $signed(_T_21); // @[BoxDetection.scala 27:51]
   wire  _T_254 = _T_252 & _T_253; // @[BoxDetection.scala 27:41]
-  wire  _T_255 = $signed(io_boxYPosition_1) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_255 = $signed(io_boxYPosition_1) < $signed(_T_37); // @[BoxDetection.scala 28:16]
   wire  _T_256 = _T_254 & _T_255; // @[BoxDetection.scala 27:60]
-  wire  _T_257 = 10'sh0 < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_257 = $signed(io_boxYPosition_2) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_265 = $signed(io_boxXPosition_1) < $signed(_T_47); // @[BoxDetection.scala 27:32]
+  wire  _T_266 = $signed(io_boxXPosition_3) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_267 = _T_265 & _T_266; // @[BoxDetection.scala 27:41]
+  wire  _T_268 = $signed(io_boxYPosition_1) < $signed(_T_50); // @[BoxDetection.scala 28:16]
+  wire  _T_269 = _T_267 & _T_268; // @[BoxDetection.scala 27:60]
+  wire  _T_270 = $signed(io_boxYPosition_3) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_278 = $signed(io_boxXPosition_1) < 11'sh20; // @[BoxDetection.scala 27:32]
+  wire  _T_279 = 11'sh0 < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_280 = _T_278 & _T_279; // @[BoxDetection.scala 27:41]
+  wire  _T_281 = $signed(io_boxYPosition_1) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_282 = _T_280 & _T_281; // @[BoxDetection.scala 27:60]
+  wire  _T_283 = 10'sh0 < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_442 = _T_39 & _T_38; // @[BoxDetection.scala 27:41]
+  wire  _T_444 = _T_442 & _T_43; // @[BoxDetection.scala 27:60]
+  wire  _T_455 = _T_253 & _T_252; // @[BoxDetection.scala 27:41]
+  wire  _T_457 = _T_455 & _T_257; // @[BoxDetection.scala 27:60]
+  wire  _T_479 = $signed(io_boxXPosition_2) < $signed(_T_47); // @[BoxDetection.scala 27:32]
+  wire  _T_480 = $signed(io_boxXPosition_3) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_481 = _T_479 & _T_480; // @[BoxDetection.scala 27:41]
+  wire  _T_482 = $signed(io_boxYPosition_2) < $signed(_T_50); // @[BoxDetection.scala 28:16]
+  wire  _T_483 = _T_481 & _T_482; // @[BoxDetection.scala 27:60]
+  wire  _T_484 = $signed(io_boxYPosition_3) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_492 = $signed(io_boxXPosition_2) < 11'sh20; // @[BoxDetection.scala 27:32]
+  wire  _T_493 = 11'sh0 < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_494 = _T_492 & _T_493; // @[BoxDetection.scala 27:41]
+  wire  _T_495 = $signed(io_boxYPosition_2) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_496 = _T_494 & _T_495; // @[BoxDetection.scala 27:60]
+  wire  _T_497 = 10'sh0 < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_656 = _T_52 & _T_51; // @[BoxDetection.scala 27:41]
+  wire  _T_658 = _T_656 & _T_56; // @[BoxDetection.scala 27:60]
+  wire  _T_669 = _T_266 & _T_265; // @[BoxDetection.scala 27:41]
+  wire  _T_671 = _T_669 & _T_270; // @[BoxDetection.scala 27:60]
+  wire  _T_682 = _T_480 & _T_479; // @[BoxDetection.scala 27:41]
+  wire  _T_684 = _T_682 & _T_484; // @[BoxDetection.scala 27:60]
+  wire  _T_706 = $signed(io_boxXPosition_3) < 11'sh20; // @[BoxDetection.scala 27:32]
+  wire  _T_707 = 11'sh0 < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_708 = _T_706 & _T_707; // @[BoxDetection.scala 27:41]
+  wire  _T_709 = $signed(io_boxYPosition_3) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_710 = _T_708 & _T_709; // @[BoxDetection.scala 27:60]
+  wire  _T_711 = 10'sh0 < $signed(_T_50); // @[BoxDetection.scala 28:35]
   reg  _T_3424_0_1; // @[BoxDetection.scala 32:24]
   reg  _T_3424_0_2; // @[BoxDetection.scala 32:24]
   reg  _T_3424_0_3; // @[BoxDetection.scala 32:24]
@@ -3749,6 +3871,36 @@ module BoxDetection(
   reg  _T_3424_1_13; // @[BoxDetection.scala 32:24]
   reg  _T_3424_1_14; // @[BoxDetection.scala 32:24]
   reg  _T_3424_1_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_2_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_3_15; // @[BoxDetection.scala 32:24]
   assign io_overlap_0_1 = _T_3424_0_1; // @[BoxDetection.scala 32:14]
   assign io_overlap_0_2 = _T_3424_0_2; // @[BoxDetection.scala 32:14]
   assign io_overlap_0_3 = _T_3424_0_3; // @[BoxDetection.scala 32:14]
@@ -3779,6 +3931,36 @@ module BoxDetection(
   assign io_overlap_1_13 = _T_3424_1_13; // @[BoxDetection.scala 32:14]
   assign io_overlap_1_14 = _T_3424_1_14; // @[BoxDetection.scala 32:14]
   assign io_overlap_1_15 = _T_3424_1_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_0 = _T_3424_2_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_1 = _T_3424_2_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_3 = _T_3424_2_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_4 = _T_3424_2_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_5 = _T_3424_2_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_6 = _T_3424_2_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_7 = _T_3424_2_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_8 = _T_3424_2_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_9 = _T_3424_2_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_10 = _T_3424_2_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_11 = _T_3424_2_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_12 = _T_3424_2_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_13 = _T_3424_2_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_14 = _T_3424_2_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_2_15 = _T_3424_2_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_0 = _T_3424_3_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_1 = _T_3424_3_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_2 = _T_3424_3_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_4 = _T_3424_3_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_5 = _T_3424_3_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_6 = _T_3424_3_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_7 = _T_3424_3_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_8 = _T_3424_3_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_9 = _T_3424_3_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_10 = _T_3424_3_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_11 = _T_3424_3_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_12 = _T_3424_3_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_13 = _T_3424_3_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_14 = _T_3424_3_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_3_15 = _T_3424_3_15; // @[BoxDetection.scala 32:14]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -3874,6 +4056,66 @@ initial begin
   _T_3424_1_14 = _RAND_28[0:0];
   _RAND_29 = {1{`RANDOM}};
   _T_3424_1_15 = _RAND_29[0:0];
+  _RAND_30 = {1{`RANDOM}};
+  _T_3424_2_0 = _RAND_30[0:0];
+  _RAND_31 = {1{`RANDOM}};
+  _T_3424_2_1 = _RAND_31[0:0];
+  _RAND_32 = {1{`RANDOM}};
+  _T_3424_2_3 = _RAND_32[0:0];
+  _RAND_33 = {1{`RANDOM}};
+  _T_3424_2_4 = _RAND_33[0:0];
+  _RAND_34 = {1{`RANDOM}};
+  _T_3424_2_5 = _RAND_34[0:0];
+  _RAND_35 = {1{`RANDOM}};
+  _T_3424_2_6 = _RAND_35[0:0];
+  _RAND_36 = {1{`RANDOM}};
+  _T_3424_2_7 = _RAND_36[0:0];
+  _RAND_37 = {1{`RANDOM}};
+  _T_3424_2_8 = _RAND_37[0:0];
+  _RAND_38 = {1{`RANDOM}};
+  _T_3424_2_9 = _RAND_38[0:0];
+  _RAND_39 = {1{`RANDOM}};
+  _T_3424_2_10 = _RAND_39[0:0];
+  _RAND_40 = {1{`RANDOM}};
+  _T_3424_2_11 = _RAND_40[0:0];
+  _RAND_41 = {1{`RANDOM}};
+  _T_3424_2_12 = _RAND_41[0:0];
+  _RAND_42 = {1{`RANDOM}};
+  _T_3424_2_13 = _RAND_42[0:0];
+  _RAND_43 = {1{`RANDOM}};
+  _T_3424_2_14 = _RAND_43[0:0];
+  _RAND_44 = {1{`RANDOM}};
+  _T_3424_2_15 = _RAND_44[0:0];
+  _RAND_45 = {1{`RANDOM}};
+  _T_3424_3_0 = _RAND_45[0:0];
+  _RAND_46 = {1{`RANDOM}};
+  _T_3424_3_1 = _RAND_46[0:0];
+  _RAND_47 = {1{`RANDOM}};
+  _T_3424_3_2 = _RAND_47[0:0];
+  _RAND_48 = {1{`RANDOM}};
+  _T_3424_3_4 = _RAND_48[0:0];
+  _RAND_49 = {1{`RANDOM}};
+  _T_3424_3_5 = _RAND_49[0:0];
+  _RAND_50 = {1{`RANDOM}};
+  _T_3424_3_6 = _RAND_50[0:0];
+  _RAND_51 = {1{`RANDOM}};
+  _T_3424_3_7 = _RAND_51[0:0];
+  _RAND_52 = {1{`RANDOM}};
+  _T_3424_3_8 = _RAND_52[0:0];
+  _RAND_53 = {1{`RANDOM}};
+  _T_3424_3_9 = _RAND_53[0:0];
+  _RAND_54 = {1{`RANDOM}};
+  _T_3424_3_10 = _RAND_54[0:0];
+  _RAND_55 = {1{`RANDOM}};
+  _T_3424_3_11 = _RAND_55[0:0];
+  _RAND_56 = {1{`RANDOM}};
+  _T_3424_3_12 = _RAND_56[0:0];
+  _RAND_57 = {1{`RANDOM}};
+  _T_3424_3_13 = _RAND_57[0:0];
+  _RAND_58 = {1{`RANDOM}};
+  _T_3424_3_14 = _RAND_58[0:0];
+  _RAND_59 = {1{`RANDOM}};
+  _T_3424_3_15 = _RAND_59[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3884,34 +4126,64 @@ end // initial
   always @(posedge clock) begin
     _T_3424_0_1 <= _T_29 & _T_30;
     _T_3424_0_2 <= _T_42 & _T_43;
-    _T_3424_0_3 <= _T_42 & _T_43;
-    _T_3424_0_4 <= _T_42 & _T_43;
-    _T_3424_0_5 <= _T_42 & _T_43;
-    _T_3424_0_6 <= _T_42 & _T_43;
-    _T_3424_0_7 <= _T_42 & _T_43;
-    _T_3424_0_8 <= _T_42 & _T_43;
-    _T_3424_0_9 <= _T_42 & _T_43;
-    _T_3424_0_10 <= _T_42 & _T_43;
-    _T_3424_0_11 <= _T_42 & _T_43;
-    _T_3424_0_12 <= _T_42 & _T_43;
-    _T_3424_0_13 <= _T_42 & _T_43;
-    _T_3424_0_14 <= _T_42 & _T_43;
-    _T_3424_0_15 <= _T_42 & _T_43;
+    _T_3424_0_3 <= _T_55 & _T_56;
+    _T_3424_0_4 <= _T_68 & _T_69;
+    _T_3424_0_5 <= _T_68 & _T_69;
+    _T_3424_0_6 <= _T_68 & _T_69;
+    _T_3424_0_7 <= _T_68 & _T_69;
+    _T_3424_0_8 <= _T_68 & _T_69;
+    _T_3424_0_9 <= _T_68 & _T_69;
+    _T_3424_0_10 <= _T_68 & _T_69;
+    _T_3424_0_11 <= _T_68 & _T_69;
+    _T_3424_0_12 <= _T_68 & _T_69;
+    _T_3424_0_13 <= _T_68 & _T_69;
+    _T_3424_0_14 <= _T_68 & _T_69;
+    _T_3424_0_15 <= _T_68 & _T_69;
     _T_3424_1_0 <= _T_230 & _T_28;
     _T_3424_1_2 <= _T_256 & _T_257;
-    _T_3424_1_3 <= _T_256 & _T_257;
-    _T_3424_1_4 <= _T_256 & _T_257;
-    _T_3424_1_5 <= _T_256 & _T_257;
-    _T_3424_1_6 <= _T_256 & _T_257;
-    _T_3424_1_7 <= _T_256 & _T_257;
-    _T_3424_1_8 <= _T_256 & _T_257;
-    _T_3424_1_9 <= _T_256 & _T_257;
-    _T_3424_1_10 <= _T_256 & _T_257;
-    _T_3424_1_11 <= _T_256 & _T_257;
-    _T_3424_1_12 <= _T_256 & _T_257;
-    _T_3424_1_13 <= _T_256 & _T_257;
-    _T_3424_1_14 <= _T_256 & _T_257;
-    _T_3424_1_15 <= _T_256 & _T_257;
+    _T_3424_1_3 <= _T_269 & _T_270;
+    _T_3424_1_4 <= _T_282 & _T_283;
+    _T_3424_1_5 <= _T_282 & _T_283;
+    _T_3424_1_6 <= _T_282 & _T_283;
+    _T_3424_1_7 <= _T_282 & _T_283;
+    _T_3424_1_8 <= _T_282 & _T_283;
+    _T_3424_1_9 <= _T_282 & _T_283;
+    _T_3424_1_10 <= _T_282 & _T_283;
+    _T_3424_1_11 <= _T_282 & _T_283;
+    _T_3424_1_12 <= _T_282 & _T_283;
+    _T_3424_1_13 <= _T_282 & _T_283;
+    _T_3424_1_14 <= _T_282 & _T_283;
+    _T_3424_1_15 <= _T_282 & _T_283;
+    _T_3424_2_0 <= _T_444 & _T_41;
+    _T_3424_2_1 <= _T_457 & _T_255;
+    _T_3424_2_3 <= _T_483 & _T_484;
+    _T_3424_2_4 <= _T_496 & _T_497;
+    _T_3424_2_5 <= _T_496 & _T_497;
+    _T_3424_2_6 <= _T_496 & _T_497;
+    _T_3424_2_7 <= _T_496 & _T_497;
+    _T_3424_2_8 <= _T_496 & _T_497;
+    _T_3424_2_9 <= _T_496 & _T_497;
+    _T_3424_2_10 <= _T_496 & _T_497;
+    _T_3424_2_11 <= _T_496 & _T_497;
+    _T_3424_2_12 <= _T_496 & _T_497;
+    _T_3424_2_13 <= _T_496 & _T_497;
+    _T_3424_2_14 <= _T_496 & _T_497;
+    _T_3424_2_15 <= _T_496 & _T_497;
+    _T_3424_3_0 <= _T_658 & _T_54;
+    _T_3424_3_1 <= _T_671 & _T_268;
+    _T_3424_3_2 <= _T_684 & _T_482;
+    _T_3424_3_4 <= _T_710 & _T_711;
+    _T_3424_3_5 <= _T_710 & _T_711;
+    _T_3424_3_6 <= _T_710 & _T_711;
+    _T_3424_3_7 <= _T_710 & _T_711;
+    _T_3424_3_8 <= _T_710 & _T_711;
+    _T_3424_3_9 <= _T_710 & _T_711;
+    _T_3424_3_10 <= _T_710 & _T_711;
+    _T_3424_3_11 <= _T_710 & _T_711;
+    _T_3424_3_12 <= _T_710 & _T_711;
+    _T_3424_3_13 <= _T_710 & _T_711;
+    _T_3424_3_14 <= _T_710 & _T_711;
+    _T_3424_3_15 <= _T_710 & _T_711;
   end
 endmodule
 module GameLogicTask0(
@@ -3934,14 +4206,22 @@ module GameLogicTask0(
   output [10:0] io_spriteXPosition_14,
   output [9:0]  io_spriteYPosition_0,
   output [9:0]  io_spriteYPosition_1,
+  output [9:0]  io_spriteYPosition_2,
+  output [9:0]  io_spriteYPosition_3,
   output        io_spriteVisible_0,
   output        io_spriteVisible_1,
+  output        io_spriteVisible_2,
+  output        io_spriteVisible_3,
   input         io_newFrame,
   output        io_frameUpdateDone,
   output [10:0] io_boxXPosition_0,
   output [10:0] io_boxXPosition_1,
+  output [10:0] io_boxXPosition_2,
+  output [10:0] io_boxXPosition_3,
   output [9:0]  io_boxYPosition_0,
   output [9:0]  io_boxYPosition_1,
+  output [9:0]  io_boxYPosition_2,
+  output [9:0]  io_boxYPosition_3,
   input         io_overlap_0_1,
   input         io_overlap_0_2,
   input         io_overlap_0_3,
@@ -3971,7 +4251,37 @@ module GameLogicTask0(
   input         io_overlap_1_12,
   input         io_overlap_1_13,
   input         io_overlap_1_14,
-  input         io_overlap_1_15
+  input         io_overlap_1_15,
+  input         io_overlap_2_0,
+  input         io_overlap_2_1,
+  input         io_overlap_2_3,
+  input         io_overlap_2_4,
+  input         io_overlap_2_5,
+  input         io_overlap_2_6,
+  input         io_overlap_2_7,
+  input         io_overlap_2_8,
+  input         io_overlap_2_9,
+  input         io_overlap_2_10,
+  input         io_overlap_2_11,
+  input         io_overlap_2_12,
+  input         io_overlap_2_13,
+  input         io_overlap_2_14,
+  input         io_overlap_2_15,
+  input         io_overlap_3_0,
+  input         io_overlap_3_1,
+  input         io_overlap_3_2,
+  input         io_overlap_3_4,
+  input         io_overlap_3_5,
+  input         io_overlap_3_6,
+  input         io_overlap_3_7,
+  input         io_overlap_3_8,
+  input         io_overlap_3_9,
+  input         io_overlap_3_10,
+  input         io_overlap_3_11,
+  input         io_overlap_3_12,
+  input         io_overlap_3_13,
+  input         io_overlap_3_14,
+  input         io_overlap_3_15
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -4034,6 +4344,34 @@ module GameLogicTask0(
   wire  _T_26 = _T_25 | io_overlap_1_13; // @[GameLogicTask0.scala 86:57]
   wire  _T_27 = _T_26 | io_overlap_1_14; // @[GameLogicTask0.scala 86:57]
   wire  _T_28 = _T_27 | io_overlap_1_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_30 = io_overlap_2_0 | io_overlap_2_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_31 = _T_30 | io_overlap_2_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_32 = _T_31 | io_overlap_2_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_33 = _T_32 | io_overlap_2_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_34 = _T_33 | io_overlap_2_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_35 = _T_34 | io_overlap_2_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_36 = _T_35 | io_overlap_2_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_37 = _T_36 | io_overlap_2_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_38 = _T_37 | io_overlap_2_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_39 = _T_38 | io_overlap_2_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_40 = _T_39 | io_overlap_2_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_41 = _T_40 | io_overlap_2_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_42 = _T_41 | io_overlap_2_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_43 = _T_42 | io_overlap_2_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_45 = io_overlap_3_0 | io_overlap_3_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_46 = _T_45 | io_overlap_3_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_47 = _T_46 | io_overlap_3_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_48 = _T_47 | io_overlap_3_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_49 = _T_48 | io_overlap_3_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_50 = _T_49 | io_overlap_3_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_51 = _T_50 | io_overlap_3_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_52 = _T_51 | io_overlap_3_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_53 = _T_52 | io_overlap_3_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_54 = _T_53 | io_overlap_3_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_55 = _T_54 | io_overlap_3_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_56 = _T_55 | io_overlap_3_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_57 = _T_56 | io_overlap_3_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_58 = _T_57 | io_overlap_3_15; // @[GameLogicTask0.scala 86:57]
   reg [1:0] stateReg; // @[GameLogicTask0.scala 106:25]
   reg [10:0] spriteXReg_0; // @[GameLogicTask0.scala 114:31]
   reg [10:0] spriteXReg_1; // @[GameLogicTask0.scala 114:31]
@@ -4162,13 +4500,21 @@ module GameLogicTask0(
   assign io_spriteXPosition_14 = spriteXReg_14; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
   assign io_spriteYPosition_0 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteYPosition_1 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_2 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_3 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteVisible_0 = ~_T_13; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_spriteVisible_1 = ~_T_28; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_2 = ~_T_43; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_3 = ~_T_58; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_frameUpdateDone = _T_240 ? 1'h0 : _GEN_64; // @[GameLogicTask0.scala 98:22 GameLogicTask0.scala 161:26]
   assign io_boxXPosition_0 = io_spriteXPosition_0; // @[GameLogicTask0.scala 166:23]
   assign io_boxXPosition_1 = io_spriteXPosition_1; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_2 = io_spriteXPosition_2; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_3 = io_spriteXPosition_3; // @[GameLogicTask0.scala 166:23]
   assign io_boxYPosition_0 = io_spriteYPosition_0; // @[GameLogicTask0.scala 167:23]
   assign io_boxYPosition_1 = io_spriteYPosition_1; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_2 = io_spriteYPosition_2; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_3 = io_spriteYPosition_3; // @[GameLogicTask0.scala 167:23]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -4649,6 +4995,8 @@ module GameTop(
   wire [10:0] graphicEngineVGA_io_spriteXPosition_14; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_spriteVisible_0; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_spriteVisible_1; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_2; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_3; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_newFrame; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 43:32]
@@ -4660,8 +5008,12 @@ module GameTop(
   wire  boxDetection_clock; // @[GameTop.scala 44:28]
   wire [10:0] boxDetection_io_boxXPosition_0; // @[GameTop.scala 44:28]
   wire [10:0] boxDetection_io_boxXPosition_1; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_2; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_3; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_0; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_1; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_2; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_3; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_1; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_2; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_3; // @[GameTop.scala 44:28]
@@ -4692,6 +5044,36 @@ module GameTop(
   wire  boxDetection_io_overlap_1_13; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_1_14; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_1_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_2_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_3_15; // @[GameTop.scala 44:28]
   wire  gameLogic_clock; // @[GameTop.scala 48:25]
   wire  gameLogic_reset; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_spriteXPosition_0; // @[GameTop.scala 48:25]
@@ -4711,14 +5093,22 @@ module GameTop(
   wire [10:0] gameLogic_io_spriteXPosition_14; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_0; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_1; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_2; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_3; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_0; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_3; // @[GameTop.scala 48:25]
   wire  gameLogic_io_newFrame; // @[GameTop.scala 48:25]
   wire  gameLogic_io_frameUpdateDone; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_boxXPosition_0; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_boxXPosition_1; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_2; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_3; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_0; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_1; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_2; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_3; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_1; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_2; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_3; // @[GameTop.scala 48:25]
@@ -4749,6 +5139,36 @@ module GameTop(
   wire  gameLogic_io_overlap_1_13; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_1_14; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_1_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_2_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_3_15; // @[GameTop.scala 48:25]
   reg [21:0] resetReleaseCounter; // @[GameTop.scala 83:36]
   wire  _T_3 = resetReleaseCounter == 22'h3d08ff; // @[GameTop.scala 85:28]
   wire [21:0] _T_5 = resetReleaseCounter + 22'h1; // @[GameTop.scala 89:48]
@@ -4772,6 +5192,8 @@ module GameTop(
     .io_spriteXPosition_14(graphicEngineVGA_io_spriteXPosition_14),
     .io_spriteVisible_0(graphicEngineVGA_io_spriteVisible_0),
     .io_spriteVisible_1(graphicEngineVGA_io_spriteVisible_1),
+    .io_spriteVisible_2(graphicEngineVGA_io_spriteVisible_2),
+    .io_spriteVisible_3(graphicEngineVGA_io_spriteVisible_3),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -4785,8 +5207,12 @@ module GameTop(
     .clock(boxDetection_clock),
     .io_boxXPosition_0(boxDetection_io_boxXPosition_0),
     .io_boxXPosition_1(boxDetection_io_boxXPosition_1),
+    .io_boxXPosition_2(boxDetection_io_boxXPosition_2),
+    .io_boxXPosition_3(boxDetection_io_boxXPosition_3),
     .io_boxYPosition_0(boxDetection_io_boxYPosition_0),
     .io_boxYPosition_1(boxDetection_io_boxYPosition_1),
+    .io_boxYPosition_2(boxDetection_io_boxYPosition_2),
+    .io_boxYPosition_3(boxDetection_io_boxYPosition_3),
     .io_overlap_0_1(boxDetection_io_overlap_0_1),
     .io_overlap_0_2(boxDetection_io_overlap_0_2),
     .io_overlap_0_3(boxDetection_io_overlap_0_3),
@@ -4816,7 +5242,37 @@ module GameTop(
     .io_overlap_1_12(boxDetection_io_overlap_1_12),
     .io_overlap_1_13(boxDetection_io_overlap_1_13),
     .io_overlap_1_14(boxDetection_io_overlap_1_14),
-    .io_overlap_1_15(boxDetection_io_overlap_1_15)
+    .io_overlap_1_15(boxDetection_io_overlap_1_15),
+    .io_overlap_2_0(boxDetection_io_overlap_2_0),
+    .io_overlap_2_1(boxDetection_io_overlap_2_1),
+    .io_overlap_2_3(boxDetection_io_overlap_2_3),
+    .io_overlap_2_4(boxDetection_io_overlap_2_4),
+    .io_overlap_2_5(boxDetection_io_overlap_2_5),
+    .io_overlap_2_6(boxDetection_io_overlap_2_6),
+    .io_overlap_2_7(boxDetection_io_overlap_2_7),
+    .io_overlap_2_8(boxDetection_io_overlap_2_8),
+    .io_overlap_2_9(boxDetection_io_overlap_2_9),
+    .io_overlap_2_10(boxDetection_io_overlap_2_10),
+    .io_overlap_2_11(boxDetection_io_overlap_2_11),
+    .io_overlap_2_12(boxDetection_io_overlap_2_12),
+    .io_overlap_2_13(boxDetection_io_overlap_2_13),
+    .io_overlap_2_14(boxDetection_io_overlap_2_14),
+    .io_overlap_2_15(boxDetection_io_overlap_2_15),
+    .io_overlap_3_0(boxDetection_io_overlap_3_0),
+    .io_overlap_3_1(boxDetection_io_overlap_3_1),
+    .io_overlap_3_2(boxDetection_io_overlap_3_2),
+    .io_overlap_3_4(boxDetection_io_overlap_3_4),
+    .io_overlap_3_5(boxDetection_io_overlap_3_5),
+    .io_overlap_3_6(boxDetection_io_overlap_3_6),
+    .io_overlap_3_7(boxDetection_io_overlap_3_7),
+    .io_overlap_3_8(boxDetection_io_overlap_3_8),
+    .io_overlap_3_9(boxDetection_io_overlap_3_9),
+    .io_overlap_3_10(boxDetection_io_overlap_3_10),
+    .io_overlap_3_11(boxDetection_io_overlap_3_11),
+    .io_overlap_3_12(boxDetection_io_overlap_3_12),
+    .io_overlap_3_13(boxDetection_io_overlap_3_13),
+    .io_overlap_3_14(boxDetection_io_overlap_3_14),
+    .io_overlap_3_15(boxDetection_io_overlap_3_15)
   );
   GameLogicTask0 gameLogic ( // @[GameTop.scala 48:25]
     .clock(gameLogic_clock),
@@ -4838,14 +5294,22 @@ module GameTop(
     .io_spriteXPosition_14(gameLogic_io_spriteXPosition_14),
     .io_spriteYPosition_0(gameLogic_io_spriteYPosition_0),
     .io_spriteYPosition_1(gameLogic_io_spriteYPosition_1),
+    .io_spriteYPosition_2(gameLogic_io_spriteYPosition_2),
+    .io_spriteYPosition_3(gameLogic_io_spriteYPosition_3),
     .io_spriteVisible_0(gameLogic_io_spriteVisible_0),
     .io_spriteVisible_1(gameLogic_io_spriteVisible_1),
+    .io_spriteVisible_2(gameLogic_io_spriteVisible_2),
+    .io_spriteVisible_3(gameLogic_io_spriteVisible_3),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone),
     .io_boxXPosition_0(gameLogic_io_boxXPosition_0),
     .io_boxXPosition_1(gameLogic_io_boxXPosition_1),
+    .io_boxXPosition_2(gameLogic_io_boxXPosition_2),
+    .io_boxXPosition_3(gameLogic_io_boxXPosition_3),
     .io_boxYPosition_0(gameLogic_io_boxYPosition_0),
     .io_boxYPosition_1(gameLogic_io_boxYPosition_1),
+    .io_boxYPosition_2(gameLogic_io_boxYPosition_2),
+    .io_boxYPosition_3(gameLogic_io_boxYPosition_3),
     .io_overlap_0_1(gameLogic_io_overlap_0_1),
     .io_overlap_0_2(gameLogic_io_overlap_0_2),
     .io_overlap_0_3(gameLogic_io_overlap_0_3),
@@ -4875,7 +5339,37 @@ module GameTop(
     .io_overlap_1_12(gameLogic_io_overlap_1_12),
     .io_overlap_1_13(gameLogic_io_overlap_1_13),
     .io_overlap_1_14(gameLogic_io_overlap_1_14),
-    .io_overlap_1_15(gameLogic_io_overlap_1_15)
+    .io_overlap_1_15(gameLogic_io_overlap_1_15),
+    .io_overlap_2_0(gameLogic_io_overlap_2_0),
+    .io_overlap_2_1(gameLogic_io_overlap_2_1),
+    .io_overlap_2_3(gameLogic_io_overlap_2_3),
+    .io_overlap_2_4(gameLogic_io_overlap_2_4),
+    .io_overlap_2_5(gameLogic_io_overlap_2_5),
+    .io_overlap_2_6(gameLogic_io_overlap_2_6),
+    .io_overlap_2_7(gameLogic_io_overlap_2_7),
+    .io_overlap_2_8(gameLogic_io_overlap_2_8),
+    .io_overlap_2_9(gameLogic_io_overlap_2_9),
+    .io_overlap_2_10(gameLogic_io_overlap_2_10),
+    .io_overlap_2_11(gameLogic_io_overlap_2_11),
+    .io_overlap_2_12(gameLogic_io_overlap_2_12),
+    .io_overlap_2_13(gameLogic_io_overlap_2_13),
+    .io_overlap_2_14(gameLogic_io_overlap_2_14),
+    .io_overlap_2_15(gameLogic_io_overlap_2_15),
+    .io_overlap_3_0(gameLogic_io_overlap_3_0),
+    .io_overlap_3_1(gameLogic_io_overlap_3_1),
+    .io_overlap_3_2(gameLogic_io_overlap_3_2),
+    .io_overlap_3_4(gameLogic_io_overlap_3_4),
+    .io_overlap_3_5(gameLogic_io_overlap_3_5),
+    .io_overlap_3_6(gameLogic_io_overlap_3_6),
+    .io_overlap_3_7(gameLogic_io_overlap_3_7),
+    .io_overlap_3_8(gameLogic_io_overlap_3_8),
+    .io_overlap_3_9(gameLogic_io_overlap_3_9),
+    .io_overlap_3_10(gameLogic_io_overlap_3_10),
+    .io_overlap_3_11(gameLogic_io_overlap_3_11),
+    .io_overlap_3_12(gameLogic_io_overlap_3_12),
+    .io_overlap_3_13(gameLogic_io_overlap_3_13),
+    .io_overlap_3_14(gameLogic_io_overlap_3_14),
+    .io_overlap_3_15(gameLogic_io_overlap_3_15)
   );
   assign io_vgaRed = graphicEngineVGA_io_vgaRed; // @[GameTop.scala 107:13]
   assign io_vgaBlue = graphicEngineVGA_io_vgaBlue; // @[GameTop.scala 109:14]
@@ -4902,12 +5396,18 @@ module GameTop(
   assign graphicEngineVGA_io_spriteXPosition_14 = gameLogic_io_spriteXPosition_14; // @[GameTop.scala 127:39]
   assign graphicEngineVGA_io_spriteVisible_0 = gameLogic_io_spriteVisible_0; // @[GameTop.scala 129:37]
   assign graphicEngineVGA_io_spriteVisible_1 = gameLogic_io_spriteVisible_1; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_2 = gameLogic_io_spriteVisible_2; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_3 = gameLogic_io_spriteVisible_3; // @[GameTop.scala 129:37]
   assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 144:39]
   assign boxDetection_clock = clock;
   assign boxDetection_io_boxXPosition_0 = gameLogic_io_boxXPosition_0; // @[GameTop.scala 58:37]
   assign boxDetection_io_boxXPosition_1 = gameLogic_io_boxXPosition_1; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_2 = gameLogic_io_boxXPosition_2; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_3 = gameLogic_io_boxXPosition_3; // @[GameTop.scala 58:37]
   assign boxDetection_io_boxYPosition_0 = gameLogic_io_boxYPosition_0; // @[GameTop.scala 59:37]
   assign boxDetection_io_boxYPosition_1 = gameLogic_io_boxYPosition_1; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_2 = gameLogic_io_boxYPosition_2; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_3 = gameLogic_io_boxYPosition_3; // @[GameTop.scala 59:37]
   assign gameLogic_clock = clock;
   assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 92:19]
   assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 143:25]
@@ -4941,6 +5441,36 @@ module GameTop(
   assign gameLogic_io_overlap_1_13 = boxDetection_io_overlap_1_13; // @[GameTop.scala 62:29]
   assign gameLogic_io_overlap_1_14 = boxDetection_io_overlap_1_14; // @[GameTop.scala 62:29]
   assign gameLogic_io_overlap_1_15 = boxDetection_io_overlap_1_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_0 = boxDetection_io_overlap_2_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_1 = boxDetection_io_overlap_2_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_3 = boxDetection_io_overlap_2_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_4 = boxDetection_io_overlap_2_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_5 = boxDetection_io_overlap_2_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_6 = boxDetection_io_overlap_2_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_7 = boxDetection_io_overlap_2_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_8 = boxDetection_io_overlap_2_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_9 = boxDetection_io_overlap_2_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_10 = boxDetection_io_overlap_2_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_11 = boxDetection_io_overlap_2_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_12 = boxDetection_io_overlap_2_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_13 = boxDetection_io_overlap_2_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_14 = boxDetection_io_overlap_2_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_2_15 = boxDetection_io_overlap_2_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_0 = boxDetection_io_overlap_3_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_1 = boxDetection_io_overlap_3_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_2 = boxDetection_io_overlap_3_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_4 = boxDetection_io_overlap_3_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_5 = boxDetection_io_overlap_3_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_6 = boxDetection_io_overlap_3_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_7 = boxDetection_io_overlap_3_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_8 = boxDetection_io_overlap_3_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_9 = boxDetection_io_overlap_3_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_10 = boxDetection_io_overlap_3_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_11 = boxDetection_io_overlap_3_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_12 = boxDetection_io_overlap_3_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_13 = boxDetection_io_overlap_3_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_14 = boxDetection_io_overlap_3_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_3_15 = boxDetection_io_overlap_3_15; // @[GameTop.scala 62:29]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
