@@ -3338,9 +3338,11 @@ module Memory_58(
   assign RamInitSpWf_di = 32'h0; // @[Memory.scala 70:20]
 endmodule
 module SoundEngine(
-  input   clock,
-  input   reset,
-  output  io_output
+  input        clock,
+  input        reset,
+  output       io_output,
+  input  [3:0] io_input,
+  input  [3:0] io_stop
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -3399,6 +3401,14 @@ module SoundEngine(
   reg [31:0] _RAND_53;
   reg [31:0] _RAND_54;
   reg [31:0] _RAND_55;
+  reg [31:0] _RAND_56;
+  reg [31:0] _RAND_57;
+  reg [31:0] _RAND_58;
+  reg [31:0] _RAND_59;
+  reg [31:0] _RAND_60;
+  reg [31:0] _RAND_61;
+  reg [31:0] _RAND_62;
+  reg [31:0] _RAND_63;
 `endif // RANDOMIZE_REG_INIT
   wire  tone_0_clock; // @[SoundEngine.scala 36:23]
   wire [8:0] tone_0_io_address; // @[SoundEngine.scala 36:23]
@@ -3464,6 +3474,38 @@ module SoundEngine(
   reg [8:0] toneIndex_5; // @[SoundEngine.scala 20:28]
   reg [8:0] toneIndex_6; // @[SoundEngine.scala 20:28]
   reg [8:0] toneIndex_7; // @[SoundEngine.scala 20:28]
+  reg  songPlaying_0; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_1; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_2; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_3; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_4; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_5; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_6; // @[SoundEngine.scala 21:28]
+  reg  songPlaying_7; // @[SoundEngine.scala 21:28]
+  wire  _T_9 = io_input > 4'h0; // @[SoundEngine.scala 27:17]
+  wire  _T_10 = io_input <= 4'h8; // @[SoundEngine.scala 27:35]
+  wire  _T_11 = _T_9 & _T_10; // @[SoundEngine.scala 27:23]
+  wire [3:0] _T_13 = io_input - 4'h1; // @[SoundEngine.scala 28:25]
+  wire  _GEN_152 = 3'h0 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_8 = _GEN_152 | songPlaying_0; // @[SoundEngine.scala 28:31]
+  wire  _GEN_153 = 3'h1 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_9 = _GEN_153 | songPlaying_1; // @[SoundEngine.scala 28:31]
+  wire  _GEN_154 = 3'h2 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_10 = _GEN_154 | songPlaying_2; // @[SoundEngine.scala 28:31]
+  wire  _GEN_155 = 3'h3 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_11 = _GEN_155 | songPlaying_3; // @[SoundEngine.scala 28:31]
+  wire  _GEN_156 = 3'h4 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_12 = _GEN_156 | songPlaying_4; // @[SoundEngine.scala 28:31]
+  wire  _GEN_157 = 3'h5 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_13 = _GEN_157 | songPlaying_5; // @[SoundEngine.scala 28:31]
+  wire  _GEN_158 = 3'h6 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_14 = _GEN_158 | songPlaying_6; // @[SoundEngine.scala 28:31]
+  wire  _GEN_159 = 3'h7 == _T_13[2:0]; // @[SoundEngine.scala 28:31]
+  wire  _GEN_15 = _GEN_159 | songPlaying_7; // @[SoundEngine.scala 28:31]
+  wire  _T_15 = io_stop > 4'h0; // @[SoundEngine.scala 30:16]
+  wire  _T_16 = io_stop <= 4'h8; // @[SoundEngine.scala 30:33]
+  wire  _T_17 = _T_15 & _T_16; // @[SoundEngine.scala 30:22]
+  wire [3:0] _T_19 = io_stop - 4'h1; // @[SoundEngine.scala 31:25]
   reg [19:0] freqReg_0; // @[SoundEngine.scala 49:24]
   reg [19:0] freqReg_1; // @[SoundEngine.scala 49:24]
   reg [19:0] freqReg_2; // @[SoundEngine.scala 49:24]
@@ -3480,102 +3522,110 @@ module SoundEngine(
   reg [11:0] durReg_5; // @[SoundEngine.scala 50:24]
   reg [11:0] durReg_6; // @[SoundEngine.scala 50:24]
   reg [11:0] durReg_7; // @[SoundEngine.scala 50:24]
+  wire  _T_39 = ~songPlaying_0; // @[SoundEngine.scala 56:25]
   wire  _T_40 = slowCounter_0 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_42 = cntMilliSecond_0 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_44 = slowCounter_0 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_45 = freqReg_0 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_47 = waveCnt_0 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_152 = {{12'd0}, freqReg_0}; // @[SoundEngine.scala 81:23]
-  wire  _T_48 = waveCnt_0 >= _GEN_152; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_160 = {{12'd0}, freqReg_0}; // @[SoundEngine.scala 81:23]
+  wire  _T_48 = waveCnt_0 >= _GEN_160; // @[SoundEngine.scala 81:23]
   wire  _T_49 = ~channel_0; // @[SoundEngine.scala 83:23]
-  wire  _GEN_48 = _T_48 & _T_49; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_153 = {{8'd0}, durReg_0}; // @[SoundEngine.scala 88:28]
-  wire  _T_50 = cntMilliSecond_0 >= _GEN_153; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_161 = {{8'd0}, durReg_0}; // @[SoundEngine.scala 88:28]
+  wire  _T_50 = cntMilliSecond_0 >= _GEN_161; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_52 = toneIndex_0 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_53 = durReg_0 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_54 = ~songPlaying_1; // @[SoundEngine.scala 56:25]
   wire  _T_55 = slowCounter_1 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_57 = cntMilliSecond_1 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_59 = slowCounter_1 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_60 = freqReg_1 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_62 = waveCnt_1 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_154 = {{12'd0}, freqReg_1}; // @[SoundEngine.scala 81:23]
-  wire  _T_63 = waveCnt_1 >= _GEN_154; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_162 = {{12'd0}, freqReg_1}; // @[SoundEngine.scala 81:23]
+  wire  _T_63 = waveCnt_1 >= _GEN_162; // @[SoundEngine.scala 81:23]
   wire  _T_64 = ~channel_1; // @[SoundEngine.scala 83:23]
-  wire  _GEN_62 = _T_63 & _T_64; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_155 = {{8'd0}, durReg_1}; // @[SoundEngine.scala 88:28]
-  wire  _T_65 = cntMilliSecond_1 >= _GEN_155; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_163 = {{8'd0}, durReg_1}; // @[SoundEngine.scala 88:28]
+  wire  _T_65 = cntMilliSecond_1 >= _GEN_163; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_67 = toneIndex_1 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_68 = durReg_1 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_69 = ~songPlaying_2; // @[SoundEngine.scala 56:25]
   wire  _T_70 = slowCounter_2 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_72 = cntMilliSecond_2 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_74 = slowCounter_2 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_75 = freqReg_2 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_77 = waveCnt_2 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_156 = {{12'd0}, freqReg_2}; // @[SoundEngine.scala 81:23]
-  wire  _T_78 = waveCnt_2 >= _GEN_156; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_164 = {{12'd0}, freqReg_2}; // @[SoundEngine.scala 81:23]
+  wire  _T_78 = waveCnt_2 >= _GEN_164; // @[SoundEngine.scala 81:23]
   wire  _T_79 = ~channel_2; // @[SoundEngine.scala 83:23]
-  wire  _GEN_76 = _T_78 & _T_79; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_157 = {{8'd0}, durReg_2}; // @[SoundEngine.scala 88:28]
-  wire  _T_80 = cntMilliSecond_2 >= _GEN_157; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_165 = {{8'd0}, durReg_2}; // @[SoundEngine.scala 88:28]
+  wire  _T_80 = cntMilliSecond_2 >= _GEN_165; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_82 = toneIndex_2 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_83 = durReg_2 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_84 = ~songPlaying_3; // @[SoundEngine.scala 56:25]
   wire  _T_85 = slowCounter_3 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_87 = cntMilliSecond_3 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_89 = slowCounter_3 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_90 = freqReg_3 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_92 = waveCnt_3 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_158 = {{12'd0}, freqReg_3}; // @[SoundEngine.scala 81:23]
-  wire  _T_93 = waveCnt_3 >= _GEN_158; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_166 = {{12'd0}, freqReg_3}; // @[SoundEngine.scala 81:23]
+  wire  _T_93 = waveCnt_3 >= _GEN_166; // @[SoundEngine.scala 81:23]
   wire  _T_94 = ~channel_3; // @[SoundEngine.scala 83:23]
-  wire  _GEN_90 = _T_93 & _T_94; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_159 = {{8'd0}, durReg_3}; // @[SoundEngine.scala 88:28]
-  wire  _T_95 = cntMilliSecond_3 >= _GEN_159; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_167 = {{8'd0}, durReg_3}; // @[SoundEngine.scala 88:28]
+  wire  _T_95 = cntMilliSecond_3 >= _GEN_167; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_97 = toneIndex_3 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_98 = durReg_3 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_99 = ~songPlaying_4; // @[SoundEngine.scala 56:25]
   wire  _T_100 = slowCounter_4 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_102 = cntMilliSecond_4 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_104 = slowCounter_4 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_105 = freqReg_4 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_107 = waveCnt_4 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_160 = {{12'd0}, freqReg_4}; // @[SoundEngine.scala 81:23]
-  wire  _T_108 = waveCnt_4 >= _GEN_160; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_168 = {{12'd0}, freqReg_4}; // @[SoundEngine.scala 81:23]
+  wire  _T_108 = waveCnt_4 >= _GEN_168; // @[SoundEngine.scala 81:23]
   wire  _T_109 = ~channel_4; // @[SoundEngine.scala 83:23]
-  wire  _GEN_104 = _T_108 & _T_109; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_161 = {{8'd0}, durReg_4}; // @[SoundEngine.scala 88:28]
-  wire  _T_110 = cntMilliSecond_4 >= _GEN_161; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_169 = {{8'd0}, durReg_4}; // @[SoundEngine.scala 88:28]
+  wire  _T_110 = cntMilliSecond_4 >= _GEN_169; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_112 = toneIndex_4 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_113 = durReg_4 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_114 = ~songPlaying_5; // @[SoundEngine.scala 56:25]
   wire  _T_115 = slowCounter_5 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_117 = cntMilliSecond_5 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_119 = slowCounter_5 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_120 = freqReg_5 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_122 = waveCnt_5 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_162 = {{12'd0}, freqReg_5}; // @[SoundEngine.scala 81:23]
-  wire  _T_123 = waveCnt_5 >= _GEN_162; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_170 = {{12'd0}, freqReg_5}; // @[SoundEngine.scala 81:23]
+  wire  _T_123 = waveCnt_5 >= _GEN_170; // @[SoundEngine.scala 81:23]
   wire  _T_124 = ~channel_5; // @[SoundEngine.scala 83:23]
-  wire  _GEN_118 = _T_123 & _T_124; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_163 = {{8'd0}, durReg_5}; // @[SoundEngine.scala 88:28]
-  wire  _T_125 = cntMilliSecond_5 >= _GEN_163; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_171 = {{8'd0}, durReg_5}; // @[SoundEngine.scala 88:28]
+  wire  _T_125 = cntMilliSecond_5 >= _GEN_171; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_127 = toneIndex_5 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_128 = durReg_5 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_129 = ~songPlaying_6; // @[SoundEngine.scala 56:25]
   wire  _T_130 = slowCounter_6 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_132 = cntMilliSecond_6 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_134 = slowCounter_6 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_135 = freqReg_6 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_137 = waveCnt_6 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_164 = {{12'd0}, freqReg_6}; // @[SoundEngine.scala 81:23]
-  wire  _T_138 = waveCnt_6 >= _GEN_164; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_172 = {{12'd0}, freqReg_6}; // @[SoundEngine.scala 81:23]
+  wire  _T_138 = waveCnt_6 >= _GEN_172; // @[SoundEngine.scala 81:23]
   wire  _T_139 = ~channel_6; // @[SoundEngine.scala 83:23]
-  wire  _GEN_132 = _T_138 & _T_139; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_165 = {{8'd0}, durReg_6}; // @[SoundEngine.scala 88:28]
-  wire  _T_140 = cntMilliSecond_6 >= _GEN_165; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_173 = {{8'd0}, durReg_6}; // @[SoundEngine.scala 88:28]
+  wire  _T_140 = cntMilliSecond_6 >= _GEN_173; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_142 = toneIndex_6 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_143 = durReg_6 == 12'hfff; // @[SoundEngine.scala 93:20]
+  wire  _T_144 = ~songPlaying_7; // @[SoundEngine.scala 56:25]
   wire  _T_145 = slowCounter_7 == 20'h186a0; // @[SoundEngine.scala 66:25]
   wire [19:0] _T_147 = cntMilliSecond_7 + 20'h1; // @[SoundEngine.scala 68:46]
   wire [19:0] _T_149 = slowCounter_7 + 20'h1; // @[SoundEngine.scala 70:40]
   wire  _T_150 = freqReg_7 == 20'h0; // @[SoundEngine.scala 76:21]
   wire [31:0] _T_152 = waveCnt_7 + 32'h1; // @[SoundEngine.scala 80:32]
-  wire [31:0] _GEN_166 = {{12'd0}, freqReg_7}; // @[SoundEngine.scala 81:23]
-  wire  _T_153 = waveCnt_7 >= _GEN_166; // @[SoundEngine.scala 81:23]
+  wire [31:0] _GEN_174 = {{12'd0}, freqReg_7}; // @[SoundEngine.scala 81:23]
+  wire  _T_153 = waveCnt_7 >= _GEN_174; // @[SoundEngine.scala 81:23]
   wire  _T_154 = ~channel_7; // @[SoundEngine.scala 83:23]
-  wire  _GEN_146 = _T_153 & _T_154; // @[SoundEngine.scala 81:38]
-  wire [19:0] _GEN_167 = {{8'd0}, durReg_7}; // @[SoundEngine.scala 88:28]
-  wire  _T_155 = cntMilliSecond_7 >= _GEN_167; // @[SoundEngine.scala 88:28]
+  wire [19:0] _GEN_175 = {{8'd0}, durReg_7}; // @[SoundEngine.scala 88:28]
+  wire  _T_155 = cntMilliSecond_7 >= _GEN_175; // @[SoundEngine.scala 88:28]
   wire [8:0] _T_157 = toneIndex_7 + 9'h1; // @[SoundEngine.scala 90:36]
+  wire  _T_158 = durReg_7 == 12'hfff; // @[SoundEngine.scala 93:20]
   wire  _T_159 = channel_0 | channel_1; // @[SoundEngine.scala 98:32]
   wire  _T_160 = _T_159 | channel_2; // @[SoundEngine.scala 98:32]
   wire  _T_161 = _T_160 | channel_3; // @[SoundEngine.scala 98:32]
@@ -3755,37 +3805,53 @@ initial begin
   _RAND_39 = {1{`RANDOM}};
   toneIndex_7 = _RAND_39[8:0];
   _RAND_40 = {1{`RANDOM}};
-  freqReg_0 = _RAND_40[19:0];
+  songPlaying_0 = _RAND_40[0:0];
   _RAND_41 = {1{`RANDOM}};
-  freqReg_1 = _RAND_41[19:0];
+  songPlaying_1 = _RAND_41[0:0];
   _RAND_42 = {1{`RANDOM}};
-  freqReg_2 = _RAND_42[19:0];
+  songPlaying_2 = _RAND_42[0:0];
   _RAND_43 = {1{`RANDOM}};
-  freqReg_3 = _RAND_43[19:0];
+  songPlaying_3 = _RAND_43[0:0];
   _RAND_44 = {1{`RANDOM}};
-  freqReg_4 = _RAND_44[19:0];
+  songPlaying_4 = _RAND_44[0:0];
   _RAND_45 = {1{`RANDOM}};
-  freqReg_5 = _RAND_45[19:0];
+  songPlaying_5 = _RAND_45[0:0];
   _RAND_46 = {1{`RANDOM}};
-  freqReg_6 = _RAND_46[19:0];
+  songPlaying_6 = _RAND_46[0:0];
   _RAND_47 = {1{`RANDOM}};
-  freqReg_7 = _RAND_47[19:0];
+  songPlaying_7 = _RAND_47[0:0];
   _RAND_48 = {1{`RANDOM}};
-  durReg_0 = _RAND_48[11:0];
+  freqReg_0 = _RAND_48[19:0];
   _RAND_49 = {1{`RANDOM}};
-  durReg_1 = _RAND_49[11:0];
+  freqReg_1 = _RAND_49[19:0];
   _RAND_50 = {1{`RANDOM}};
-  durReg_2 = _RAND_50[11:0];
+  freqReg_2 = _RAND_50[19:0];
   _RAND_51 = {1{`RANDOM}};
-  durReg_3 = _RAND_51[11:0];
+  freqReg_3 = _RAND_51[19:0];
   _RAND_52 = {1{`RANDOM}};
-  durReg_4 = _RAND_52[11:0];
+  freqReg_4 = _RAND_52[19:0];
   _RAND_53 = {1{`RANDOM}};
-  durReg_5 = _RAND_53[11:0];
+  freqReg_5 = _RAND_53[19:0];
   _RAND_54 = {1{`RANDOM}};
-  durReg_6 = _RAND_54[11:0];
+  freqReg_6 = _RAND_54[19:0];
   _RAND_55 = {1{`RANDOM}};
-  durReg_7 = _RAND_55[11:0];
+  freqReg_7 = _RAND_55[19:0];
+  _RAND_56 = {1{`RANDOM}};
+  durReg_0 = _RAND_56[11:0];
+  _RAND_57 = {1{`RANDOM}};
+  durReg_1 = _RAND_57[11:0];
+  _RAND_58 = {1{`RANDOM}};
+  durReg_2 = _RAND_58[11:0];
+  _RAND_59 = {1{`RANDOM}};
+  durReg_3 = _RAND_59[11:0];
+  _RAND_60 = {1{`RANDOM}};
+  durReg_4 = _RAND_60[11:0];
+  _RAND_61 = {1{`RANDOM}};
+  durReg_5 = _RAND_61[11:0];
+  _RAND_62 = {1{`RANDOM}};
+  durReg_6 = _RAND_62[11:0];
+  _RAND_63 = {1{`RANDOM}};
+  durReg_7 = _RAND_63[11:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3798,57 +3864,73 @@ end // initial
       channel_0 <= 1'h0;
     end else if (_T_45) begin
       channel_0 <= 1'h0;
-    end else begin
-      channel_0 <= _GEN_48;
+    end else if (_T_48) begin
+      channel_0 <= _T_49;
+    end else if (_T_39) begin
+      channel_0 <= 1'h0;
     end
     if (reset) begin
       channel_1 <= 1'h0;
     end else if (_T_60) begin
       channel_1 <= 1'h0;
-    end else begin
-      channel_1 <= _GEN_62;
+    end else if (_T_63) begin
+      channel_1 <= _T_64;
+    end else if (_T_54) begin
+      channel_1 <= 1'h0;
     end
     if (reset) begin
       channel_2 <= 1'h0;
     end else if (_T_75) begin
       channel_2 <= 1'h0;
-    end else begin
-      channel_2 <= _GEN_76;
+    end else if (_T_78) begin
+      channel_2 <= _T_79;
+    end else if (_T_69) begin
+      channel_2 <= 1'h0;
     end
     if (reset) begin
       channel_3 <= 1'h0;
     end else if (_T_90) begin
       channel_3 <= 1'h0;
-    end else begin
-      channel_3 <= _GEN_90;
+    end else if (_T_93) begin
+      channel_3 <= _T_94;
+    end else if (_T_84) begin
+      channel_3 <= 1'h0;
     end
     if (reset) begin
       channel_4 <= 1'h0;
     end else if (_T_105) begin
       channel_4 <= 1'h0;
-    end else begin
-      channel_4 <= _GEN_104;
+    end else if (_T_108) begin
+      channel_4 <= _T_109;
+    end else if (_T_99) begin
+      channel_4 <= 1'h0;
     end
     if (reset) begin
       channel_5 <= 1'h0;
     end else if (_T_120) begin
       channel_5 <= 1'h0;
-    end else begin
-      channel_5 <= _GEN_118;
+    end else if (_T_123) begin
+      channel_5 <= _T_124;
+    end else if (_T_114) begin
+      channel_5 <= 1'h0;
     end
     if (reset) begin
       channel_6 <= 1'h0;
     end else if (_T_135) begin
       channel_6 <= 1'h0;
-    end else begin
-      channel_6 <= _GEN_132;
+    end else if (_T_138) begin
+      channel_6 <= _T_139;
+    end else if (_T_129) begin
+      channel_6 <= 1'h0;
     end
     if (reset) begin
       channel_7 <= 1'h0;
     end else if (_T_150) begin
       channel_7 <= 1'h0;
-    end else begin
-      channel_7 <= _GEN_146;
+    end else if (_T_153) begin
+      channel_7 <= _T_154;
+    end else if (_T_144) begin
+      channel_7 <= 1'h0;
     end
     if (reset) begin
       cntMilliSecond_0 <= 20'h0;
@@ -3856,7 +3938,7 @@ end // initial
       cntMilliSecond_0 <= 20'h0;
     end else if (_T_40) begin
       cntMilliSecond_0 <= _T_42;
-    end else begin
+    end else if (_T_39) begin
       cntMilliSecond_0 <= 20'h0;
     end
     if (reset) begin
@@ -3865,7 +3947,7 @@ end // initial
       cntMilliSecond_1 <= 20'h0;
     end else if (_T_55) begin
       cntMilliSecond_1 <= _T_57;
-    end else begin
+    end else if (_T_54) begin
       cntMilliSecond_1 <= 20'h0;
     end
     if (reset) begin
@@ -3874,7 +3956,7 @@ end // initial
       cntMilliSecond_2 <= 20'h0;
     end else if (_T_70) begin
       cntMilliSecond_2 <= _T_72;
-    end else begin
+    end else if (_T_69) begin
       cntMilliSecond_2 <= 20'h0;
     end
     if (reset) begin
@@ -3883,7 +3965,7 @@ end // initial
       cntMilliSecond_3 <= 20'h0;
     end else if (_T_85) begin
       cntMilliSecond_3 <= _T_87;
-    end else begin
+    end else if (_T_84) begin
       cntMilliSecond_3 <= 20'h0;
     end
     if (reset) begin
@@ -3892,7 +3974,7 @@ end // initial
       cntMilliSecond_4 <= 20'h0;
     end else if (_T_100) begin
       cntMilliSecond_4 <= _T_102;
-    end else begin
+    end else if (_T_99) begin
       cntMilliSecond_4 <= 20'h0;
     end
     if (reset) begin
@@ -3901,7 +3983,7 @@ end // initial
       cntMilliSecond_5 <= 20'h0;
     end else if (_T_115) begin
       cntMilliSecond_5 <= _T_117;
-    end else begin
+    end else if (_T_114) begin
       cntMilliSecond_5 <= 20'h0;
     end
     if (reset) begin
@@ -3910,7 +3992,7 @@ end // initial
       cntMilliSecond_6 <= 20'h0;
     end else if (_T_130) begin
       cntMilliSecond_6 <= _T_132;
-    end else begin
+    end else if (_T_129) begin
       cntMilliSecond_6 <= 20'h0;
     end
     if (reset) begin
@@ -3919,7 +4001,7 @@ end // initial
       cntMilliSecond_7 <= 20'h0;
     end else if (_T_145) begin
       cntMilliSecond_7 <= _T_147;
-    end else begin
+    end else if (_T_144) begin
       cntMilliSecond_7 <= 20'h0;
     end
     if (reset) begin
@@ -4054,57 +4136,161 @@ end // initial
       toneIndex_0 <= 9'h0;
     end else if (_T_50) begin
       toneIndex_0 <= _T_52;
-    end else begin
+    end else if (_T_39) begin
       toneIndex_0 <= 9'h0;
     end
     if (reset) begin
       toneIndex_1 <= 9'h0;
     end else if (_T_65) begin
       toneIndex_1 <= _T_67;
-    end else begin
+    end else if (_T_54) begin
       toneIndex_1 <= 9'h0;
     end
     if (reset) begin
       toneIndex_2 <= 9'h0;
     end else if (_T_80) begin
       toneIndex_2 <= _T_82;
-    end else begin
+    end else if (_T_69) begin
       toneIndex_2 <= 9'h0;
     end
     if (reset) begin
       toneIndex_3 <= 9'h0;
     end else if (_T_95) begin
       toneIndex_3 <= _T_97;
-    end else begin
+    end else if (_T_84) begin
       toneIndex_3 <= 9'h0;
     end
     if (reset) begin
       toneIndex_4 <= 9'h0;
     end else if (_T_110) begin
       toneIndex_4 <= _T_112;
-    end else begin
+    end else if (_T_99) begin
       toneIndex_4 <= 9'h0;
     end
     if (reset) begin
       toneIndex_5 <= 9'h0;
     end else if (_T_125) begin
       toneIndex_5 <= _T_127;
-    end else begin
+    end else if (_T_114) begin
       toneIndex_5 <= 9'h0;
     end
     if (reset) begin
       toneIndex_6 <= 9'h0;
     end else if (_T_140) begin
       toneIndex_6 <= _T_142;
-    end else begin
+    end else if (_T_129) begin
       toneIndex_6 <= 9'h0;
     end
     if (reset) begin
       toneIndex_7 <= 9'h0;
     end else if (_T_155) begin
       toneIndex_7 <= _T_157;
-    end else begin
+    end else if (_T_144) begin
       toneIndex_7 <= 9'h0;
+    end
+    if (reset) begin
+      songPlaying_0 <= 1'h0;
+    end else if (_T_53) begin
+      songPlaying_0 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h0 == _T_19[2:0]) begin
+        songPlaying_0 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_0 <= _GEN_8;
+      end
+    end else if (_T_11) begin
+      songPlaying_0 <= _GEN_8;
+    end
+    if (reset) begin
+      songPlaying_1 <= 1'h0;
+    end else if (_T_68) begin
+      songPlaying_1 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h1 == _T_19[2:0]) begin
+        songPlaying_1 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_1 <= _GEN_9;
+      end
+    end else if (_T_11) begin
+      songPlaying_1 <= _GEN_9;
+    end
+    if (reset) begin
+      songPlaying_2 <= 1'h0;
+    end else if (_T_83) begin
+      songPlaying_2 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h2 == _T_19[2:0]) begin
+        songPlaying_2 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_2 <= _GEN_10;
+      end
+    end else if (_T_11) begin
+      songPlaying_2 <= _GEN_10;
+    end
+    if (reset) begin
+      songPlaying_3 <= 1'h0;
+    end else if (_T_98) begin
+      songPlaying_3 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h3 == _T_19[2:0]) begin
+        songPlaying_3 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_3 <= _GEN_11;
+      end
+    end else if (_T_11) begin
+      songPlaying_3 <= _GEN_11;
+    end
+    if (reset) begin
+      songPlaying_4 <= 1'h0;
+    end else if (_T_113) begin
+      songPlaying_4 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h4 == _T_19[2:0]) begin
+        songPlaying_4 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_4 <= _GEN_12;
+      end
+    end else if (_T_11) begin
+      songPlaying_4 <= _GEN_12;
+    end
+    if (reset) begin
+      songPlaying_5 <= 1'h0;
+    end else if (_T_128) begin
+      songPlaying_5 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h5 == _T_19[2:0]) begin
+        songPlaying_5 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_5 <= _GEN_13;
+      end
+    end else if (_T_11) begin
+      songPlaying_5 <= _GEN_13;
+    end
+    if (reset) begin
+      songPlaying_6 <= 1'h0;
+    end else if (_T_143) begin
+      songPlaying_6 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h6 == _T_19[2:0]) begin
+        songPlaying_6 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_6 <= _GEN_14;
+      end
+    end else if (_T_11) begin
+      songPlaying_6 <= _GEN_14;
+    end
+    if (reset) begin
+      songPlaying_7 <= 1'h0;
+    end else if (_T_158) begin
+      songPlaying_7 <= 1'h0;
+    end else if (_T_17) begin
+      if (3'h7 == _T_19[2:0]) begin
+        songPlaying_7 <= 1'h0;
+      end else if (_T_11) begin
+        songPlaying_7 <= _GEN_15;
+      end
+    end else if (_T_11) begin
+      songPlaying_7 <= _GEN_15;
     end
     freqReg_0 <= tone_0_io_dataRead[31:12];
     freqReg_1 <= tone_1_io_dataRead[31:12];
@@ -4125,10 +4311,18 @@ end // initial
   end
 endmodule
 module GameLogicTask0(
-  input   clock,
-  input   reset,
-  input   io_newFrame,
-  output  io_frameUpdateDone
+  input        clock,
+  input        reset,
+  input        io_btnU,
+  input        io_btnL,
+  input        io_btnR,
+  input        io_btnD,
+  input        io_sw_0,
+  input        io_sw_1,
+  input        io_newFrame,
+  output       io_frameUpdateDone,
+  output [3:0] io_songInput,
+  output [3:0] io_songStop
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -4136,9 +4330,34 @@ module GameLogicTask0(
   reg [1:0] stateReg; // @[GameLogicTask0.scala 100:25]
   wire  _T = 2'h0 == stateReg; // @[Conditional.scala 37:30]
   wire  _T_1 = 2'h1 == stateReg; // @[Conditional.scala 37:30]
-  wire  _T_2 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
-  wire  _GEN_4 = _T_1 ? 1'h0 : _T_2; // @[Conditional.scala 39:67]
-  assign io_frameUpdateDone = _T ? 1'h0 : _GEN_4; // @[GameLogicTask0.scala 92:22 GameLogicTask0.scala 213:26]
+  wire  _T_2 = ~io_sw_0; // @[GameLogicTask0.scala 208:39]
+  wire [2:0] _T_3 = _T_2 ? 3'h1 : 3'h5; // @[GameLogicTask0.scala 208:29]
+  wire [2:0] _GEN_1 = io_sw_1 ? _T_3 : 3'h0; // @[GameLogicTask0.scala 207:26]
+  wire [2:0] _GEN_2 = io_sw_1 ? 3'h0 : _T_3; // @[GameLogicTask0.scala 207:26]
+  wire [2:0] _T_7 = _T_2 ? 3'h2 : 3'h6; // @[GameLogicTask0.scala 215:29]
+  wire [2:0] _GEN_3 = io_sw_1 ? _T_7 : 3'h0; // @[GameLogicTask0.scala 214:27]
+  wire [2:0] _GEN_4 = io_sw_1 ? 3'h0 : _T_7; // @[GameLogicTask0.scala 214:27]
+  wire [2:0] _GEN_5 = io_btnU ? _GEN_3 : 3'h0; // @[GameLogicTask0.scala 213:27]
+  wire [2:0] _GEN_6 = io_btnU ? _GEN_4 : 3'h0; // @[GameLogicTask0.scala 213:27]
+  wire [2:0] _GEN_7 = io_btnD ? _GEN_1 : _GEN_5; // @[GameLogicTask0.scala 206:21]
+  wire [2:0] _GEN_8 = io_btnD ? _GEN_2 : _GEN_6; // @[GameLogicTask0.scala 206:21]
+  wire [2:0] _T_11 = _T_2 ? 3'h3 : 3'h7; // @[GameLogicTask0.scala 223:29]
+  wire [2:0] _GEN_9 = io_sw_1 ? _T_11 : _GEN_7; // @[GameLogicTask0.scala 222:23]
+  wire [2:0] _GEN_10 = io_sw_1 ? _GEN_8 : _T_11; // @[GameLogicTask0.scala 222:23]
+  wire [3:0] _T_15 = _T_2 ? 4'h4 : 4'h8; // @[GameLogicTask0.scala 230:29]
+  wire [3:0] _GEN_11 = io_sw_1 ? _T_15 : {{1'd0}, _GEN_7}; // @[GameLogicTask0.scala 229:23]
+  wire [3:0] _GEN_12 = io_sw_1 ? {{1'd0}, _GEN_8} : _T_15; // @[GameLogicTask0.scala 229:23]
+  wire [3:0] _GEN_13 = io_btnL ? _GEN_11 : {{1'd0}, _GEN_7}; // @[GameLogicTask0.scala 228:27]
+  wire [3:0] _GEN_14 = io_btnL ? _GEN_12 : {{1'd0}, _GEN_8}; // @[GameLogicTask0.scala 228:27]
+  wire [3:0] _GEN_15 = io_btnR ? {{1'd0}, _GEN_9} : _GEN_13; // @[GameLogicTask0.scala 221:21]
+  wire [3:0] _GEN_16 = io_btnR ? {{1'd0}, _GEN_10} : _GEN_14; // @[GameLogicTask0.scala 221:21]
+  wire  _T_18 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
+  wire [3:0] _GEN_19 = _T_1 ? _GEN_15 : 4'h0; // @[Conditional.scala 39:67]
+  wire [3:0] _GEN_20 = _T_1 ? _GEN_16 : 4'h0; // @[Conditional.scala 39:67]
+  wire  _GEN_22 = _T_1 ? 1'h0 : _T_18; // @[Conditional.scala 39:67]
+  assign io_frameUpdateDone = _T ? 1'h0 : _GEN_22; // @[GameLogicTask0.scala 92:22 GameLogicTask0.scala 240:26]
+  assign io_songInput = _T ? 4'h0 : _GEN_20; // @[GameLogicTask0.scala 52:16 GameLogicTask0.scala 210:23 GameLogicTask0.scala 217:23 GameLogicTask0.scala 225:23 GameLogicTask0.scala 232:23]
+  assign io_songStop = _T ? 4'h0 : _GEN_19; // @[GameLogicTask0.scala 54:15 GameLogicTask0.scala 208:23 GameLogicTask0.scala 215:23 GameLogicTask0.scala 223:23 GameLogicTask0.scala 230:23]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -4192,7 +4411,7 @@ end // initial
       end
     end else if (_T_1) begin
       stateReg <= 2'h2;
-    end else if (_T_2) begin
+    end else if (_T_18) begin
       stateReg <= 2'h0;
     end
   end
@@ -4200,16 +4419,47 @@ endmodule
 module GameTop(
   input        clock,
   input        reset,
+  input        io_btnU,
+  input        io_btnL,
+  input        io_btnR,
+  input        io_btnD,
   output [3:0] io_vgaRed,
   output [3:0] io_vgaBlue,
   output [3:0] io_vgaGreen,
   output       io_Hsync,
   output       io_Vsync,
+  input        io_sw_0,
+  input        io_sw_1,
   output       io_soundOutput,
   output       io_missingFrameError
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
+  reg [31:0] _RAND_1;
+  reg [31:0] _RAND_2;
+  reg [31:0] _RAND_3;
+  reg [31:0] _RAND_4;
+  reg [31:0] _RAND_5;
+  reg [31:0] _RAND_6;
+  reg [31:0] _RAND_7;
+  reg [31:0] _RAND_8;
+  reg [31:0] _RAND_9;
+  reg [31:0] _RAND_10;
+  reg [31:0] _RAND_11;
+  reg [31:0] _RAND_12;
+  reg [31:0] _RAND_13;
+  reg [31:0] _RAND_14;
+  reg [31:0] _RAND_15;
+  reg [31:0] _RAND_16;
+  reg [31:0] _RAND_17;
+  reg [31:0] _RAND_18;
+  reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
+  reg [31:0] _RAND_21;
+  reg [31:0] _RAND_22;
+  reg [31:0] _RAND_23;
+  reg [31:0] _RAND_24;
+  reg [31:0] _RAND_25;
 `endif // RANDOMIZE_REG_INIT
   wire  graphicEngineVGA_clock; // @[GameTop.scala 44:32]
   wire  graphicEngineVGA_reset; // @[GameTop.scala 44:32]
@@ -4224,13 +4474,50 @@ module GameTop(
   wire  soundEngine_clock; // @[GameTop.scala 46:27]
   wire  soundEngine_reset; // @[GameTop.scala 46:27]
   wire  soundEngine_io_output; // @[GameTop.scala 46:27]
+  wire [3:0] soundEngine_io_input; // @[GameTop.scala 46:27]
+  wire [3:0] soundEngine_io_stop; // @[GameTop.scala 46:27]
   wire  gameLogic_clock; // @[GameTop.scala 50:25]
   wire  gameLogic_reset; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_btnU; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_btnL; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_btnR; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_btnD; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_sw_0; // @[GameTop.scala 50:25]
+  wire  gameLogic_io_sw_1; // @[GameTop.scala 50:25]
   wire  gameLogic_io_newFrame; // @[GameTop.scala 50:25]
   wire  gameLogic_io_frameUpdateDone; // @[GameTop.scala 50:25]
+  wire [3:0] gameLogic_io_songInput; // @[GameTop.scala 50:25]
+  wire [3:0] gameLogic_io_songStop; // @[GameTop.scala 50:25]
+  reg [20:0] debounceCounter; // @[GameTop.scala 64:32]
+  wire  debounceSampleEn = debounceCounter == 21'h1e847f; // @[GameTop.scala 66:24]
+  wire [20:0] _T_2 = debounceCounter + 21'h1; // @[GameTop.scala 70:40]
   reg [21:0] resetReleaseCounter; // @[GameTop.scala 77:36]
   wire  _T_3 = resetReleaseCounter == 22'h3d08ff; // @[GameTop.scala 79:28]
   wire [21:0] _T_5 = resetReleaseCounter + 22'h1; // @[GameTop.scala 83:48]
+  reg  _T_9_0; // @[GameUtilities.scala 39:28]
+  reg  _T_9_1; // @[GameUtilities.scala 39:28]
+  reg  _T_9_2; // @[GameUtilities.scala 39:28]
+  reg  btnUState; // @[Reg.scala 27:20]
+  reg  _T_11_0; // @[GameUtilities.scala 39:28]
+  reg  _T_11_1; // @[GameUtilities.scala 39:28]
+  reg  _T_11_2; // @[GameUtilities.scala 39:28]
+  reg  btnLState; // @[Reg.scala 27:20]
+  reg  _T_13_0; // @[GameUtilities.scala 39:28]
+  reg  _T_13_1; // @[GameUtilities.scala 39:28]
+  reg  _T_13_2; // @[GameUtilities.scala 39:28]
+  reg  btnRState; // @[Reg.scala 27:20]
+  reg  _T_15_0; // @[GameUtilities.scala 39:28]
+  reg  _T_15_1; // @[GameUtilities.scala 39:28]
+  reg  _T_15_2; // @[GameUtilities.scala 39:28]
+  reg  btnDState; // @[Reg.scala 27:20]
+  reg  _T_17_0; // @[GameUtilities.scala 39:28]
+  reg  _T_17_1; // @[GameUtilities.scala 39:28]
+  reg  _T_17_2; // @[GameUtilities.scala 39:28]
+  reg  _T_18; // @[Reg.scala 27:20]
+  reg  _T_20_0; // @[GameUtilities.scala 39:28]
+  reg  _T_20_1; // @[GameUtilities.scala 39:28]
+  reg  _T_20_2; // @[GameUtilities.scala 39:28]
+  reg  _T_21; // @[Reg.scala 27:20]
   GraphicEngineVGA graphicEngineVGA ( // @[GameTop.scala 44:32]
     .clock(graphicEngineVGA_clock),
     .reset(graphicEngineVGA_reset),
@@ -4246,13 +4533,23 @@ module GameTop(
   SoundEngine soundEngine ( // @[GameTop.scala 46:27]
     .clock(soundEngine_clock),
     .reset(soundEngine_reset),
-    .io_output(soundEngine_io_output)
+    .io_output(soundEngine_io_output),
+    .io_input(soundEngine_io_input),
+    .io_stop(soundEngine_io_stop)
   );
   GameLogicTask0 gameLogic ( // @[GameTop.scala 50:25]
     .clock(gameLogic_clock),
     .reset(gameLogic_reset),
+    .io_btnU(gameLogic_io_btnU),
+    .io_btnL(gameLogic_io_btnL),
+    .io_btnR(gameLogic_io_btnR),
+    .io_btnD(gameLogic_io_btnD),
+    .io_sw_0(gameLogic_io_sw_0),
+    .io_sw_1(gameLogic_io_sw_1),
     .io_newFrame(gameLogic_io_newFrame),
-    .io_frameUpdateDone(gameLogic_io_frameUpdateDone)
+    .io_frameUpdateDone(gameLogic_io_frameUpdateDone),
+    .io_songInput(gameLogic_io_songInput),
+    .io_songStop(gameLogic_io_songStop)
   );
   assign io_vgaRed = graphicEngineVGA_io_vgaRed; // @[GameTop.scala 101:13]
   assign io_vgaBlue = graphicEngineVGA_io_vgaBlue; // @[GameTop.scala 103:14]
@@ -4266,8 +4563,16 @@ module GameTop(
   assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 142:39]
   assign soundEngine_clock = clock;
   assign soundEngine_reset = reset;
+  assign soundEngine_io_input = gameLogic_io_songInput; // @[GameTop.scala 115:24]
+  assign soundEngine_io_stop = gameLogic_io_songStop; // @[GameTop.scala 116:23]
   assign gameLogic_clock = clock;
   assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 86:19]
+  assign gameLogic_io_btnU = btnUState; // @[GameTop.scala 95:21]
+  assign gameLogic_io_btnL = btnLState; // @[GameTop.scala 96:21]
+  assign gameLogic_io_btnR = btnRState; // @[GameTop.scala 97:21]
+  assign gameLogic_io_btnD = btnDState; // @[GameTop.scala 98:21]
+  assign gameLogic_io_sw_0 = _T_18; // @[GameTop.scala 109:24]
+  assign gameLogic_io_sw_1 = _T_21; // @[GameTop.scala 109:24]
   assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 141:25]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
@@ -4305,7 +4610,57 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  resetReleaseCounter = _RAND_0[21:0];
+  debounceCounter = _RAND_0[20:0];
+  _RAND_1 = {1{`RANDOM}};
+  resetReleaseCounter = _RAND_1[21:0];
+  _RAND_2 = {1{`RANDOM}};
+  _T_9_0 = _RAND_2[0:0];
+  _RAND_3 = {1{`RANDOM}};
+  _T_9_1 = _RAND_3[0:0];
+  _RAND_4 = {1{`RANDOM}};
+  _T_9_2 = _RAND_4[0:0];
+  _RAND_5 = {1{`RANDOM}};
+  btnUState = _RAND_5[0:0];
+  _RAND_6 = {1{`RANDOM}};
+  _T_11_0 = _RAND_6[0:0];
+  _RAND_7 = {1{`RANDOM}};
+  _T_11_1 = _RAND_7[0:0];
+  _RAND_8 = {1{`RANDOM}};
+  _T_11_2 = _RAND_8[0:0];
+  _RAND_9 = {1{`RANDOM}};
+  btnLState = _RAND_9[0:0];
+  _RAND_10 = {1{`RANDOM}};
+  _T_13_0 = _RAND_10[0:0];
+  _RAND_11 = {1{`RANDOM}};
+  _T_13_1 = _RAND_11[0:0];
+  _RAND_12 = {1{`RANDOM}};
+  _T_13_2 = _RAND_12[0:0];
+  _RAND_13 = {1{`RANDOM}};
+  btnRState = _RAND_13[0:0];
+  _RAND_14 = {1{`RANDOM}};
+  _T_15_0 = _RAND_14[0:0];
+  _RAND_15 = {1{`RANDOM}};
+  _T_15_1 = _RAND_15[0:0];
+  _RAND_16 = {1{`RANDOM}};
+  _T_15_2 = _RAND_16[0:0];
+  _RAND_17 = {1{`RANDOM}};
+  btnDState = _RAND_17[0:0];
+  _RAND_18 = {1{`RANDOM}};
+  _T_17_0 = _RAND_18[0:0];
+  _RAND_19 = {1{`RANDOM}};
+  _T_17_1 = _RAND_19[0:0];
+  _RAND_20 = {1{`RANDOM}};
+  _T_17_2 = _RAND_20[0:0];
+  _RAND_21 = {1{`RANDOM}};
+  _T_18 = _RAND_21[0:0];
+  _RAND_22 = {1{`RANDOM}};
+  _T_20_0 = _RAND_22[0:0];
+  _RAND_23 = {1{`RANDOM}};
+  _T_20_1 = _RAND_23[0:0];
+  _RAND_24 = {1{`RANDOM}};
+  _T_20_2 = _RAND_24[0:0];
+  _RAND_25 = {1{`RANDOM}};
+  _T_21 = _RAND_25[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -4315,9 +4670,136 @@ end // initial
 `endif // SYNTHESIS
   always @(posedge clock) begin
     if (reset) begin
+      debounceCounter <= 21'h0;
+    end else if (debounceSampleEn) begin
+      debounceCounter <= 21'h0;
+    end else begin
+      debounceCounter <= _T_2;
+    end
+    if (reset) begin
       resetReleaseCounter <= 22'h0;
     end else if (!(_T_3)) begin
       resetReleaseCounter <= _T_5;
+    end
+    if (reset) begin
+      _T_9_0 <= 1'h0;
+    end else begin
+      _T_9_0 <= _T_9_1;
+    end
+    if (reset) begin
+      _T_9_1 <= 1'h0;
+    end else begin
+      _T_9_1 <= _T_9_2;
+    end
+    if (reset) begin
+      _T_9_2 <= 1'h0;
+    end else begin
+      _T_9_2 <= io_btnU;
+    end
+    if (reset) begin
+      btnUState <= 1'h0;
+    end else if (debounceSampleEn) begin
+      btnUState <= _T_9_0;
+    end
+    if (reset) begin
+      _T_11_0 <= 1'h0;
+    end else begin
+      _T_11_0 <= _T_11_1;
+    end
+    if (reset) begin
+      _T_11_1 <= 1'h0;
+    end else begin
+      _T_11_1 <= _T_11_2;
+    end
+    if (reset) begin
+      _T_11_2 <= 1'h0;
+    end else begin
+      _T_11_2 <= io_btnL;
+    end
+    if (reset) begin
+      btnLState <= 1'h0;
+    end else if (debounceSampleEn) begin
+      btnLState <= _T_11_0;
+    end
+    if (reset) begin
+      _T_13_0 <= 1'h0;
+    end else begin
+      _T_13_0 <= _T_13_1;
+    end
+    if (reset) begin
+      _T_13_1 <= 1'h0;
+    end else begin
+      _T_13_1 <= _T_13_2;
+    end
+    if (reset) begin
+      _T_13_2 <= 1'h0;
+    end else begin
+      _T_13_2 <= io_btnR;
+    end
+    if (reset) begin
+      btnRState <= 1'h0;
+    end else if (debounceSampleEn) begin
+      btnRState <= _T_13_0;
+    end
+    if (reset) begin
+      _T_15_0 <= 1'h0;
+    end else begin
+      _T_15_0 <= _T_15_1;
+    end
+    if (reset) begin
+      _T_15_1 <= 1'h0;
+    end else begin
+      _T_15_1 <= _T_15_2;
+    end
+    if (reset) begin
+      _T_15_2 <= 1'h0;
+    end else begin
+      _T_15_2 <= io_btnD;
+    end
+    if (reset) begin
+      btnDState <= 1'h0;
+    end else if (debounceSampleEn) begin
+      btnDState <= _T_15_0;
+    end
+    if (reset) begin
+      _T_17_0 <= 1'h0;
+    end else begin
+      _T_17_0 <= _T_17_1;
+    end
+    if (reset) begin
+      _T_17_1 <= 1'h0;
+    end else begin
+      _T_17_1 <= _T_17_2;
+    end
+    if (reset) begin
+      _T_17_2 <= 1'h0;
+    end else begin
+      _T_17_2 <= io_sw_0;
+    end
+    if (reset) begin
+      _T_18 <= 1'h0;
+    end else if (debounceSampleEn) begin
+      _T_18 <= _T_17_0;
+    end
+    if (reset) begin
+      _T_20_0 <= 1'h0;
+    end else begin
+      _T_20_0 <= _T_20_1;
+    end
+    if (reset) begin
+      _T_20_1 <= 1'h0;
+    end else begin
+      _T_20_1 <= _T_20_2;
+    end
+    if (reset) begin
+      _T_20_2 <= 1'h0;
+    end else begin
+      _T_20_2 <= io_sw_1;
+    end
+    if (reset) begin
+      _T_21 <= 1'h0;
+    end else if (debounceSampleEn) begin
+      _T_21 <= _T_20_0;
     end
   end
 endmodule
@@ -4367,11 +4849,17 @@ module Top(
 `endif // RANDOMIZE_REG_INIT
   wire  gameTop_clock; // @[Top.scala 43:23]
   wire  gameTop_reset; // @[Top.scala 43:23]
+  wire  gameTop_io_btnU; // @[Top.scala 43:23]
+  wire  gameTop_io_btnL; // @[Top.scala 43:23]
+  wire  gameTop_io_btnR; // @[Top.scala 43:23]
+  wire  gameTop_io_btnD; // @[Top.scala 43:23]
   wire [3:0] gameTop_io_vgaRed; // @[Top.scala 43:23]
   wire [3:0] gameTop_io_vgaBlue; // @[Top.scala 43:23]
   wire [3:0] gameTop_io_vgaGreen; // @[Top.scala 43:23]
   wire  gameTop_io_Hsync; // @[Top.scala 43:23]
   wire  gameTop_io_Vsync; // @[Top.scala 43:23]
+  wire  gameTop_io_sw_0; // @[Top.scala 43:23]
+  wire  gameTop_io_sw_1; // @[Top.scala 43:23]
   wire  gameTop_io_soundOutput; // @[Top.scala 43:23]
   wire  gameTop_io_missingFrameError; // @[Top.scala 43:23]
   reg  _T_1; // @[Top.scala 48:48]
@@ -4386,11 +4874,17 @@ module Top(
   GameTop gameTop ( // @[Top.scala 43:23]
     .clock(gameTop_clock),
     .reset(gameTop_reset),
+    .io_btnU(gameTop_io_btnU),
+    .io_btnL(gameTop_io_btnL),
+    .io_btnR(gameTop_io_btnR),
+    .io_btnD(gameTop_io_btnD),
     .io_vgaRed(gameTop_io_vgaRed),
     .io_vgaBlue(gameTop_io_vgaBlue),
     .io_vgaGreen(gameTop_io_vgaGreen),
     .io_Hsync(gameTop_io_Hsync),
     .io_Vsync(gameTop_io_Vsync),
+    .io_sw_0(gameTop_io_sw_0),
+    .io_sw_1(gameTop_io_sw_1),
     .io_soundOutput(gameTop_io_soundOutput),
     .io_missingFrameError(gameTop_io_missingFrameError)
   );
@@ -4413,6 +4907,12 @@ module Top(
   assign io_viewBoxOutOfRangeError = 1'h0; // @[Top.scala 61:14]
   assign gameTop_clock = clock;
   assign gameTop_reset = |_T_7; // @[Top.scala 58:17]
+  assign gameTop_io_btnU = io_btnU; // @[Top.scala 61:14]
+  assign gameTop_io_btnL = io_btnL; // @[Top.scala 61:14]
+  assign gameTop_io_btnR = io_btnR; // @[Top.scala 61:14]
+  assign gameTop_io_btnD = io_btnD; // @[Top.scala 61:14]
+  assign gameTop_io_sw_0 = io_sw_0; // @[Top.scala 61:14]
+  assign gameTop_io_sw_1 = io_sw_1; // @[Top.scala 61:14]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif

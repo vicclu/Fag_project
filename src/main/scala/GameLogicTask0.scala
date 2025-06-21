@@ -203,6 +203,36 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     }
 
     is(compute1) {
+       when(io.btnD){
+           when(io.sw(1)){
+          io.songStop := Mux(io.sw(0) === 0.U, 1.U, 5.U)
+        } .otherwise{
+         io.songInput := Mux(io.sw(0) === 0.U, 1.U, 5.U)
+        }
+      
+      } .elsewhen(io.btnU){
+            when(io.sw(1)){
+          io.songStop := Mux(io.sw(0) === 0.U, 2.U, 6.U)
+        } .otherwise{
+         io.songInput :=Mux(io.sw(0) === 0.U, 2.U, 6.U)
+        }
+    
+      }
+      when(io.btnR) {
+        when(io.sw(1)){
+          io.songStop := Mux(io.sw(0) === 0.U, 3.U, 7.U)
+        } .otherwise{
+         io.songInput :=  Mux(io.sw(0) === 0.U, 3.U, 7.U)
+        }
+       
+      } .elsewhen(io.btnL){
+        when(io.sw(1)){
+          io.songStop := Mux(io.sw(0) === 0.U, 4.U, 8.U)
+        } .otherwise{
+         io.songInput := Mux(io.sw(0) === 0.U, 4.U, 8.U)
+        }
+     
+      }
       stateReg := done
     }
 
