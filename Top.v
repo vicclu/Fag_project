@@ -1393,6 +1393,14 @@ module GraphicEngineVGA(
   input         io_spriteVisible_5,
   input         io_spriteVisible_6,
   input         io_spriteVisible_7,
+  input         io_spriteVisible_8,
+  input         io_spriteVisible_9,
+  input         io_spriteVisible_10,
+  input         io_spriteVisible_11,
+  input         io_spriteVisible_12,
+  input         io_spriteVisible_13,
+  input         io_spriteVisible_14,
+  input         io_spriteVisible_15,
   output        io_newFrame,
   input         io_frameUpdateDone,
   output        io_missingFrameError,
@@ -1888,14 +1896,14 @@ module GraphicEngineVGA(
   wire  _GEN_50 = io_newFrame ? io_spriteVisible_5 : spriteVisibleReg_5; // @[Reg.scala 28:19]
   wire  _GEN_51 = io_newFrame ? io_spriteVisible_6 : spriteVisibleReg_6; // @[Reg.scala 28:19]
   wire  _GEN_52 = io_newFrame ? io_spriteVisible_7 : spriteVisibleReg_7; // @[Reg.scala 28:19]
-  wire  _GEN_53 = io_newFrame ? 1'h0 : spriteVisibleReg_8; // @[Reg.scala 28:19]
-  wire  _GEN_54 = io_newFrame ? 1'h0 : spriteVisibleReg_9; // @[Reg.scala 28:19]
-  wire  _GEN_55 = io_newFrame ? 1'h0 : spriteVisibleReg_10; // @[Reg.scala 28:19]
-  wire  _GEN_56 = io_newFrame ? 1'h0 : spriteVisibleReg_11; // @[Reg.scala 28:19]
-  wire  _GEN_57 = io_newFrame ? 1'h0 : spriteVisibleReg_12; // @[Reg.scala 28:19]
-  wire  _GEN_58 = io_newFrame ? 1'h0 : spriteVisibleReg_13; // @[Reg.scala 28:19]
-  wire  _GEN_59 = io_newFrame ? 1'h0 : spriteVisibleReg_14; // @[Reg.scala 28:19]
-  wire  _GEN_60 = io_newFrame ? 1'h0 : spriteVisibleReg_15; // @[Reg.scala 28:19]
+  wire  _GEN_53 = io_newFrame ? io_spriteVisible_8 : spriteVisibleReg_8; // @[Reg.scala 28:19]
+  wire  _GEN_54 = io_newFrame ? io_spriteVisible_9 : spriteVisibleReg_9; // @[Reg.scala 28:19]
+  wire  _GEN_55 = io_newFrame ? io_spriteVisible_10 : spriteVisibleReg_10; // @[Reg.scala 28:19]
+  wire  _GEN_56 = io_newFrame ? io_spriteVisible_11 : spriteVisibleReg_11; // @[Reg.scala 28:19]
+  wire  _GEN_57 = io_newFrame ? io_spriteVisible_12 : spriteVisibleReg_12; // @[Reg.scala 28:19]
+  wire  _GEN_58 = io_newFrame ? io_spriteVisible_13 : spriteVisibleReg_13; // @[Reg.scala 28:19]
+  wire  _GEN_59 = io_newFrame ? io_spriteVisible_14 : spriteVisibleReg_14; // @[Reg.scala 28:19]
+  wire  _GEN_60 = io_newFrame ? io_spriteVisible_15 : spriteVisibleReg_15; // @[Reg.scala 28:19]
   reg  missingFrameErrorReg; // @[GraphicEngineVGA.scala 120:37]
   wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[GraphicEngineVGA.scala 131:27]
   wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[GraphicEngineVGA.scala 132:27]
@@ -3642,6 +3650,14 @@ module BoxDetection(
   input  [10:0] io_boxXPosition_5,
   input  [10:0] io_boxXPosition_6,
   input  [10:0] io_boxXPosition_7,
+  input  [10:0] io_boxXPosition_8,
+  input  [10:0] io_boxXPosition_9,
+  input  [10:0] io_boxXPosition_10,
+  input  [10:0] io_boxXPosition_11,
+  input  [10:0] io_boxXPosition_12,
+  input  [10:0] io_boxXPosition_13,
+  input  [10:0] io_boxXPosition_14,
+  input  [10:0] io_boxXPosition_15,
   input  [9:0]  io_boxYPosition_0,
   input  [9:0]  io_boxYPosition_1,
   input  [9:0]  io_boxYPosition_2,
@@ -3650,6 +3666,14 @@ module BoxDetection(
   input  [9:0]  io_boxYPosition_5,
   input  [9:0]  io_boxYPosition_6,
   input  [9:0]  io_boxYPosition_7,
+  input  [9:0]  io_boxYPosition_8,
+  input  [9:0]  io_boxYPosition_9,
+  input  [9:0]  io_boxYPosition_10,
+  input  [9:0]  io_boxYPosition_11,
+  input  [9:0]  io_boxYPosition_12,
+  input  [9:0]  io_boxYPosition_13,
+  input  [9:0]  io_boxYPosition_14,
+  input  [9:0]  io_boxYPosition_15,
   output        io_overlap_0_1,
   output        io_overlap_0_2,
   output        io_overlap_0_3,
@@ -3769,7 +3793,127 @@ module BoxDetection(
   output        io_overlap_7_12,
   output        io_overlap_7_13,
   output        io_overlap_7_14,
-  output        io_overlap_7_15
+  output        io_overlap_7_15,
+  output        io_overlap_8_0,
+  output        io_overlap_8_1,
+  output        io_overlap_8_2,
+  output        io_overlap_8_3,
+  output        io_overlap_8_4,
+  output        io_overlap_8_5,
+  output        io_overlap_8_6,
+  output        io_overlap_8_7,
+  output        io_overlap_8_9,
+  output        io_overlap_8_10,
+  output        io_overlap_8_11,
+  output        io_overlap_8_12,
+  output        io_overlap_8_13,
+  output        io_overlap_8_14,
+  output        io_overlap_8_15,
+  output        io_overlap_9_0,
+  output        io_overlap_9_1,
+  output        io_overlap_9_2,
+  output        io_overlap_9_3,
+  output        io_overlap_9_4,
+  output        io_overlap_9_5,
+  output        io_overlap_9_6,
+  output        io_overlap_9_7,
+  output        io_overlap_9_8,
+  output        io_overlap_9_10,
+  output        io_overlap_9_11,
+  output        io_overlap_9_12,
+  output        io_overlap_9_13,
+  output        io_overlap_9_14,
+  output        io_overlap_9_15,
+  output        io_overlap_10_0,
+  output        io_overlap_10_1,
+  output        io_overlap_10_2,
+  output        io_overlap_10_3,
+  output        io_overlap_10_4,
+  output        io_overlap_10_5,
+  output        io_overlap_10_6,
+  output        io_overlap_10_7,
+  output        io_overlap_10_8,
+  output        io_overlap_10_9,
+  output        io_overlap_10_11,
+  output        io_overlap_10_12,
+  output        io_overlap_10_13,
+  output        io_overlap_10_14,
+  output        io_overlap_10_15,
+  output        io_overlap_11_0,
+  output        io_overlap_11_1,
+  output        io_overlap_11_2,
+  output        io_overlap_11_3,
+  output        io_overlap_11_4,
+  output        io_overlap_11_5,
+  output        io_overlap_11_6,
+  output        io_overlap_11_7,
+  output        io_overlap_11_8,
+  output        io_overlap_11_9,
+  output        io_overlap_11_10,
+  output        io_overlap_11_12,
+  output        io_overlap_11_13,
+  output        io_overlap_11_14,
+  output        io_overlap_11_15,
+  output        io_overlap_12_0,
+  output        io_overlap_12_1,
+  output        io_overlap_12_2,
+  output        io_overlap_12_3,
+  output        io_overlap_12_4,
+  output        io_overlap_12_5,
+  output        io_overlap_12_6,
+  output        io_overlap_12_7,
+  output        io_overlap_12_8,
+  output        io_overlap_12_9,
+  output        io_overlap_12_10,
+  output        io_overlap_12_11,
+  output        io_overlap_12_13,
+  output        io_overlap_12_14,
+  output        io_overlap_12_15,
+  output        io_overlap_13_0,
+  output        io_overlap_13_1,
+  output        io_overlap_13_2,
+  output        io_overlap_13_3,
+  output        io_overlap_13_4,
+  output        io_overlap_13_5,
+  output        io_overlap_13_6,
+  output        io_overlap_13_7,
+  output        io_overlap_13_8,
+  output        io_overlap_13_9,
+  output        io_overlap_13_10,
+  output        io_overlap_13_11,
+  output        io_overlap_13_12,
+  output        io_overlap_13_14,
+  output        io_overlap_13_15,
+  output        io_overlap_14_0,
+  output        io_overlap_14_1,
+  output        io_overlap_14_2,
+  output        io_overlap_14_3,
+  output        io_overlap_14_4,
+  output        io_overlap_14_5,
+  output        io_overlap_14_6,
+  output        io_overlap_14_7,
+  output        io_overlap_14_8,
+  output        io_overlap_14_9,
+  output        io_overlap_14_10,
+  output        io_overlap_14_11,
+  output        io_overlap_14_12,
+  output        io_overlap_14_13,
+  output        io_overlap_14_15,
+  output        io_overlap_15_0,
+  output        io_overlap_15_1,
+  output        io_overlap_15_2,
+  output        io_overlap_15_3,
+  output        io_overlap_15_4,
+  output        io_overlap_15_5,
+  output        io_overlap_15_6,
+  output        io_overlap_15_7,
+  output        io_overlap_15_8,
+  output        io_overlap_15_9,
+  output        io_overlap_15_10,
+  output        io_overlap_15_11,
+  output        io_overlap_15_12,
+  output        io_overlap_15_13,
+  output        io_overlap_15_14
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -3892,6 +4036,126 @@ module BoxDetection(
   reg [31:0] _RAND_117;
   reg [31:0] _RAND_118;
   reg [31:0] _RAND_119;
+  reg [31:0] _RAND_120;
+  reg [31:0] _RAND_121;
+  reg [31:0] _RAND_122;
+  reg [31:0] _RAND_123;
+  reg [31:0] _RAND_124;
+  reg [31:0] _RAND_125;
+  reg [31:0] _RAND_126;
+  reg [31:0] _RAND_127;
+  reg [31:0] _RAND_128;
+  reg [31:0] _RAND_129;
+  reg [31:0] _RAND_130;
+  reg [31:0] _RAND_131;
+  reg [31:0] _RAND_132;
+  reg [31:0] _RAND_133;
+  reg [31:0] _RAND_134;
+  reg [31:0] _RAND_135;
+  reg [31:0] _RAND_136;
+  reg [31:0] _RAND_137;
+  reg [31:0] _RAND_138;
+  reg [31:0] _RAND_139;
+  reg [31:0] _RAND_140;
+  reg [31:0] _RAND_141;
+  reg [31:0] _RAND_142;
+  reg [31:0] _RAND_143;
+  reg [31:0] _RAND_144;
+  reg [31:0] _RAND_145;
+  reg [31:0] _RAND_146;
+  reg [31:0] _RAND_147;
+  reg [31:0] _RAND_148;
+  reg [31:0] _RAND_149;
+  reg [31:0] _RAND_150;
+  reg [31:0] _RAND_151;
+  reg [31:0] _RAND_152;
+  reg [31:0] _RAND_153;
+  reg [31:0] _RAND_154;
+  reg [31:0] _RAND_155;
+  reg [31:0] _RAND_156;
+  reg [31:0] _RAND_157;
+  reg [31:0] _RAND_158;
+  reg [31:0] _RAND_159;
+  reg [31:0] _RAND_160;
+  reg [31:0] _RAND_161;
+  reg [31:0] _RAND_162;
+  reg [31:0] _RAND_163;
+  reg [31:0] _RAND_164;
+  reg [31:0] _RAND_165;
+  reg [31:0] _RAND_166;
+  reg [31:0] _RAND_167;
+  reg [31:0] _RAND_168;
+  reg [31:0] _RAND_169;
+  reg [31:0] _RAND_170;
+  reg [31:0] _RAND_171;
+  reg [31:0] _RAND_172;
+  reg [31:0] _RAND_173;
+  reg [31:0] _RAND_174;
+  reg [31:0] _RAND_175;
+  reg [31:0] _RAND_176;
+  reg [31:0] _RAND_177;
+  reg [31:0] _RAND_178;
+  reg [31:0] _RAND_179;
+  reg [31:0] _RAND_180;
+  reg [31:0] _RAND_181;
+  reg [31:0] _RAND_182;
+  reg [31:0] _RAND_183;
+  reg [31:0] _RAND_184;
+  reg [31:0] _RAND_185;
+  reg [31:0] _RAND_186;
+  reg [31:0] _RAND_187;
+  reg [31:0] _RAND_188;
+  reg [31:0] _RAND_189;
+  reg [31:0] _RAND_190;
+  reg [31:0] _RAND_191;
+  reg [31:0] _RAND_192;
+  reg [31:0] _RAND_193;
+  reg [31:0] _RAND_194;
+  reg [31:0] _RAND_195;
+  reg [31:0] _RAND_196;
+  reg [31:0] _RAND_197;
+  reg [31:0] _RAND_198;
+  reg [31:0] _RAND_199;
+  reg [31:0] _RAND_200;
+  reg [31:0] _RAND_201;
+  reg [31:0] _RAND_202;
+  reg [31:0] _RAND_203;
+  reg [31:0] _RAND_204;
+  reg [31:0] _RAND_205;
+  reg [31:0] _RAND_206;
+  reg [31:0] _RAND_207;
+  reg [31:0] _RAND_208;
+  reg [31:0] _RAND_209;
+  reg [31:0] _RAND_210;
+  reg [31:0] _RAND_211;
+  reg [31:0] _RAND_212;
+  reg [31:0] _RAND_213;
+  reg [31:0] _RAND_214;
+  reg [31:0] _RAND_215;
+  reg [31:0] _RAND_216;
+  reg [31:0] _RAND_217;
+  reg [31:0] _RAND_218;
+  reg [31:0] _RAND_219;
+  reg [31:0] _RAND_220;
+  reg [31:0] _RAND_221;
+  reg [31:0] _RAND_222;
+  reg [31:0] _RAND_223;
+  reg [31:0] _RAND_224;
+  reg [31:0] _RAND_225;
+  reg [31:0] _RAND_226;
+  reg [31:0] _RAND_227;
+  reg [31:0] _RAND_228;
+  reg [31:0] _RAND_229;
+  reg [31:0] _RAND_230;
+  reg [31:0] _RAND_231;
+  reg [31:0] _RAND_232;
+  reg [31:0] _RAND_233;
+  reg [31:0] _RAND_234;
+  reg [31:0] _RAND_235;
+  reg [31:0] _RAND_236;
+  reg [31:0] _RAND_237;
+  reg [31:0] _RAND_238;
+  reg [31:0] _RAND_239;
 `endif // RANDOMIZE_REG_INIT
   wire [10:0] _T_2 = $signed(io_boxXPosition_0) + 11'sh20; // @[BoxDetection.scala 18:36]
   wire [9:0] _T_5 = $signed(io_boxYPosition_0) + 10'sh20; // @[BoxDetection.scala 19:36]
@@ -3951,12 +4215,70 @@ module BoxDetection(
   wire  _T_106 = $signed(io_boxYPosition_0) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_107 = _T_105 & _T_106; // @[BoxDetection.scala 27:60]
   wire  _T_108 = $signed(io_boxYPosition_7) < $signed(_T_5); // @[BoxDetection.scala 28:35]
-  wire  _T_116 = $signed(io_boxXPosition_0) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_117 = 11'sh0 < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire [10:0] _T_112 = $signed(io_boxXPosition_8) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_115 = $signed(io_boxYPosition_8) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_116 = $signed(io_boxXPosition_0) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_117 = $signed(io_boxXPosition_8) < $signed(_T_2); // @[BoxDetection.scala 27:51]
   wire  _T_118 = _T_116 & _T_117; // @[BoxDetection.scala 27:41]
-  wire  _T_119 = $signed(io_boxYPosition_0) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_119 = $signed(io_boxYPosition_0) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_120 = _T_118 & _T_119; // @[BoxDetection.scala 27:60]
-  wire  _T_121 = 10'sh0 < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire  _T_121 = $signed(io_boxYPosition_8) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_125 = $signed(io_boxXPosition_9) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_128 = $signed(io_boxYPosition_9) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_129 = $signed(io_boxXPosition_0) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_130 = $signed(io_boxXPosition_9) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_131 = _T_129 & _T_130; // @[BoxDetection.scala 27:41]
+  wire  _T_132 = $signed(io_boxYPosition_0) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_133 = _T_131 & _T_132; // @[BoxDetection.scala 27:60]
+  wire  _T_134 = $signed(io_boxYPosition_9) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_138 = $signed(io_boxXPosition_10) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_141 = $signed(io_boxYPosition_10) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_142 = $signed(io_boxXPosition_0) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_143 = $signed(io_boxXPosition_10) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_144 = _T_142 & _T_143; // @[BoxDetection.scala 27:41]
+  wire  _T_145 = $signed(io_boxYPosition_0) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_146 = _T_144 & _T_145; // @[BoxDetection.scala 27:60]
+  wire  _T_147 = $signed(io_boxYPosition_10) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_151 = $signed(io_boxXPosition_11) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_154 = $signed(io_boxYPosition_11) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_155 = $signed(io_boxXPosition_0) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_156 = $signed(io_boxXPosition_11) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_157 = _T_155 & _T_156; // @[BoxDetection.scala 27:41]
+  wire  _T_158 = $signed(io_boxYPosition_0) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_159 = _T_157 & _T_158; // @[BoxDetection.scala 27:60]
+  wire  _T_160 = $signed(io_boxYPosition_11) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_164 = $signed(io_boxXPosition_12) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_167 = $signed(io_boxYPosition_12) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_168 = $signed(io_boxXPosition_0) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_169 = $signed(io_boxXPosition_12) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_170 = _T_168 & _T_169; // @[BoxDetection.scala 27:41]
+  wire  _T_171 = $signed(io_boxYPosition_0) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_172 = _T_170 & _T_171; // @[BoxDetection.scala 27:60]
+  wire  _T_173 = $signed(io_boxYPosition_12) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_177 = $signed(io_boxXPosition_13) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_180 = $signed(io_boxYPosition_13) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_181 = $signed(io_boxXPosition_0) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_182 = $signed(io_boxXPosition_13) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_183 = _T_181 & _T_182; // @[BoxDetection.scala 27:41]
+  wire  _T_184 = $signed(io_boxYPosition_0) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_185 = _T_183 & _T_184; // @[BoxDetection.scala 27:60]
+  wire  _T_186 = $signed(io_boxYPosition_13) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_190 = $signed(io_boxXPosition_14) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_193 = $signed(io_boxYPosition_14) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_194 = $signed(io_boxXPosition_0) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_195 = $signed(io_boxXPosition_14) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_196 = _T_194 & _T_195; // @[BoxDetection.scala 27:41]
+  wire  _T_197 = $signed(io_boxYPosition_0) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_198 = _T_196 & _T_197; // @[BoxDetection.scala 27:60]
+  wire  _T_199 = $signed(io_boxYPosition_14) < $signed(_T_5); // @[BoxDetection.scala 28:35]
+  wire [10:0] _T_203 = $signed(io_boxXPosition_15) + 11'sh20; // @[BoxDetection.scala 24:38]
+  wire [9:0] _T_206 = $signed(io_boxYPosition_15) + 10'sh20; // @[BoxDetection.scala 25:38]
+  wire  _T_207 = $signed(io_boxXPosition_0) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_208 = $signed(io_boxXPosition_15) < $signed(_T_2); // @[BoxDetection.scala 27:51]
+  wire  _T_209 = _T_207 & _T_208; // @[BoxDetection.scala 27:41]
+  wire  _T_210 = $signed(io_boxYPosition_0) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_211 = _T_209 & _T_210; // @[BoxDetection.scala 27:60]
+  wire  _T_212 = $signed(io_boxYPosition_15) < $signed(_T_5); // @[BoxDetection.scala 28:35]
   wire  _T_228 = _T_26 & _T_25; // @[BoxDetection.scala 27:41]
   wire  _T_230 = _T_228 & _T_30; // @[BoxDetection.scala 27:60]
   wire  _T_252 = $signed(io_boxXPosition_1) < $signed(_T_34); // @[BoxDetection.scala 27:32]
@@ -3995,12 +4317,54 @@ module BoxDetection(
   wire  _T_320 = $signed(io_boxYPosition_1) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_321 = _T_319 & _T_320; // @[BoxDetection.scala 27:60]
   wire  _T_322 = $signed(io_boxYPosition_7) < $signed(_T_24); // @[BoxDetection.scala 28:35]
-  wire  _T_330 = $signed(io_boxXPosition_1) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_331 = 11'sh0 < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_330 = $signed(io_boxXPosition_1) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_331 = $signed(io_boxXPosition_8) < $signed(_T_21); // @[BoxDetection.scala 27:51]
   wire  _T_332 = _T_330 & _T_331; // @[BoxDetection.scala 27:41]
-  wire  _T_333 = $signed(io_boxYPosition_1) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_333 = $signed(io_boxYPosition_1) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_334 = _T_332 & _T_333; // @[BoxDetection.scala 27:60]
-  wire  _T_335 = 10'sh0 < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_335 = $signed(io_boxYPosition_8) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_343 = $signed(io_boxXPosition_1) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_344 = $signed(io_boxXPosition_9) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_345 = _T_343 & _T_344; // @[BoxDetection.scala 27:41]
+  wire  _T_346 = $signed(io_boxYPosition_1) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_347 = _T_345 & _T_346; // @[BoxDetection.scala 27:60]
+  wire  _T_348 = $signed(io_boxYPosition_9) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_356 = $signed(io_boxXPosition_1) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_357 = $signed(io_boxXPosition_10) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_358 = _T_356 & _T_357; // @[BoxDetection.scala 27:41]
+  wire  _T_359 = $signed(io_boxYPosition_1) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_360 = _T_358 & _T_359; // @[BoxDetection.scala 27:60]
+  wire  _T_361 = $signed(io_boxYPosition_10) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_369 = $signed(io_boxXPosition_1) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_370 = $signed(io_boxXPosition_11) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_371 = _T_369 & _T_370; // @[BoxDetection.scala 27:41]
+  wire  _T_372 = $signed(io_boxYPosition_1) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_373 = _T_371 & _T_372; // @[BoxDetection.scala 27:60]
+  wire  _T_374 = $signed(io_boxYPosition_11) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_382 = $signed(io_boxXPosition_1) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_383 = $signed(io_boxXPosition_12) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_384 = _T_382 & _T_383; // @[BoxDetection.scala 27:41]
+  wire  _T_385 = $signed(io_boxYPosition_1) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_386 = _T_384 & _T_385; // @[BoxDetection.scala 27:60]
+  wire  _T_387 = $signed(io_boxYPosition_12) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_395 = $signed(io_boxXPosition_1) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_396 = $signed(io_boxXPosition_13) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_397 = _T_395 & _T_396; // @[BoxDetection.scala 27:41]
+  wire  _T_398 = $signed(io_boxYPosition_1) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_399 = _T_397 & _T_398; // @[BoxDetection.scala 27:60]
+  wire  _T_400 = $signed(io_boxYPosition_13) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_408 = $signed(io_boxXPosition_1) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_409 = $signed(io_boxXPosition_14) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_410 = _T_408 & _T_409; // @[BoxDetection.scala 27:41]
+  wire  _T_411 = $signed(io_boxYPosition_1) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_412 = _T_410 & _T_411; // @[BoxDetection.scala 27:60]
+  wire  _T_413 = $signed(io_boxYPosition_14) < $signed(_T_24); // @[BoxDetection.scala 28:35]
+  wire  _T_421 = $signed(io_boxXPosition_1) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_422 = $signed(io_boxXPosition_15) < $signed(_T_21); // @[BoxDetection.scala 27:51]
+  wire  _T_423 = _T_421 & _T_422; // @[BoxDetection.scala 27:41]
+  wire  _T_424 = $signed(io_boxYPosition_1) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_425 = _T_423 & _T_424; // @[BoxDetection.scala 27:60]
+  wire  _T_426 = $signed(io_boxYPosition_15) < $signed(_T_24); // @[BoxDetection.scala 28:35]
   wire  _T_442 = _T_39 & _T_38; // @[BoxDetection.scala 27:41]
   wire  _T_444 = _T_442 & _T_43; // @[BoxDetection.scala 27:60]
   wire  _T_455 = _T_253 & _T_252; // @[BoxDetection.scala 27:41]
@@ -4035,12 +4399,54 @@ module BoxDetection(
   wire  _T_534 = $signed(io_boxYPosition_2) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_535 = _T_533 & _T_534; // @[BoxDetection.scala 27:60]
   wire  _T_536 = $signed(io_boxYPosition_7) < $signed(_T_37); // @[BoxDetection.scala 28:35]
-  wire  _T_544 = $signed(io_boxXPosition_2) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_545 = 11'sh0 < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_544 = $signed(io_boxXPosition_2) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_545 = $signed(io_boxXPosition_8) < $signed(_T_34); // @[BoxDetection.scala 27:51]
   wire  _T_546 = _T_544 & _T_545; // @[BoxDetection.scala 27:41]
-  wire  _T_547 = $signed(io_boxYPosition_2) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_547 = $signed(io_boxYPosition_2) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_548 = _T_546 & _T_547; // @[BoxDetection.scala 27:60]
-  wire  _T_549 = 10'sh0 < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_549 = $signed(io_boxYPosition_8) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_557 = $signed(io_boxXPosition_2) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_558 = $signed(io_boxXPosition_9) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_559 = _T_557 & _T_558; // @[BoxDetection.scala 27:41]
+  wire  _T_560 = $signed(io_boxYPosition_2) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_561 = _T_559 & _T_560; // @[BoxDetection.scala 27:60]
+  wire  _T_562 = $signed(io_boxYPosition_9) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_570 = $signed(io_boxXPosition_2) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_571 = $signed(io_boxXPosition_10) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_572 = _T_570 & _T_571; // @[BoxDetection.scala 27:41]
+  wire  _T_573 = $signed(io_boxYPosition_2) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_574 = _T_572 & _T_573; // @[BoxDetection.scala 27:60]
+  wire  _T_575 = $signed(io_boxYPosition_10) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_583 = $signed(io_boxXPosition_2) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_584 = $signed(io_boxXPosition_11) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_585 = _T_583 & _T_584; // @[BoxDetection.scala 27:41]
+  wire  _T_586 = $signed(io_boxYPosition_2) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_587 = _T_585 & _T_586; // @[BoxDetection.scala 27:60]
+  wire  _T_588 = $signed(io_boxYPosition_11) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_596 = $signed(io_boxXPosition_2) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_597 = $signed(io_boxXPosition_12) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_598 = _T_596 & _T_597; // @[BoxDetection.scala 27:41]
+  wire  _T_599 = $signed(io_boxYPosition_2) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_600 = _T_598 & _T_599; // @[BoxDetection.scala 27:60]
+  wire  _T_601 = $signed(io_boxYPosition_12) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_609 = $signed(io_boxXPosition_2) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_610 = $signed(io_boxXPosition_13) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_611 = _T_609 & _T_610; // @[BoxDetection.scala 27:41]
+  wire  _T_612 = $signed(io_boxYPosition_2) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_613 = _T_611 & _T_612; // @[BoxDetection.scala 27:60]
+  wire  _T_614 = $signed(io_boxYPosition_13) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_622 = $signed(io_boxXPosition_2) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_623 = $signed(io_boxXPosition_14) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_624 = _T_622 & _T_623; // @[BoxDetection.scala 27:41]
+  wire  _T_625 = $signed(io_boxYPosition_2) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_626 = _T_624 & _T_625; // @[BoxDetection.scala 27:60]
+  wire  _T_627 = $signed(io_boxYPosition_14) < $signed(_T_37); // @[BoxDetection.scala 28:35]
+  wire  _T_635 = $signed(io_boxXPosition_2) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_636 = $signed(io_boxXPosition_15) < $signed(_T_34); // @[BoxDetection.scala 27:51]
+  wire  _T_637 = _T_635 & _T_636; // @[BoxDetection.scala 27:41]
+  wire  _T_638 = $signed(io_boxYPosition_2) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_639 = _T_637 & _T_638; // @[BoxDetection.scala 27:60]
+  wire  _T_640 = $signed(io_boxYPosition_15) < $signed(_T_37); // @[BoxDetection.scala 28:35]
   wire  _T_656 = _T_52 & _T_51; // @[BoxDetection.scala 27:41]
   wire  _T_658 = _T_656 & _T_56; // @[BoxDetection.scala 27:60]
   wire  _T_669 = _T_266 & _T_265; // @[BoxDetection.scala 27:41]
@@ -4071,12 +4477,54 @@ module BoxDetection(
   wire  _T_748 = $signed(io_boxYPosition_3) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_749 = _T_747 & _T_748; // @[BoxDetection.scala 27:60]
   wire  _T_750 = $signed(io_boxYPosition_7) < $signed(_T_50); // @[BoxDetection.scala 28:35]
-  wire  _T_758 = $signed(io_boxXPosition_3) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_759 = 11'sh0 < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_758 = $signed(io_boxXPosition_3) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_759 = $signed(io_boxXPosition_8) < $signed(_T_47); // @[BoxDetection.scala 27:51]
   wire  _T_760 = _T_758 & _T_759; // @[BoxDetection.scala 27:41]
-  wire  _T_761 = $signed(io_boxYPosition_3) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_761 = $signed(io_boxYPosition_3) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_762 = _T_760 & _T_761; // @[BoxDetection.scala 27:60]
-  wire  _T_763 = 10'sh0 < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_763 = $signed(io_boxYPosition_8) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_771 = $signed(io_boxXPosition_3) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_772 = $signed(io_boxXPosition_9) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_773 = _T_771 & _T_772; // @[BoxDetection.scala 27:41]
+  wire  _T_774 = $signed(io_boxYPosition_3) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_775 = _T_773 & _T_774; // @[BoxDetection.scala 27:60]
+  wire  _T_776 = $signed(io_boxYPosition_9) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_784 = $signed(io_boxXPosition_3) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_785 = $signed(io_boxXPosition_10) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_786 = _T_784 & _T_785; // @[BoxDetection.scala 27:41]
+  wire  _T_787 = $signed(io_boxYPosition_3) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_788 = _T_786 & _T_787; // @[BoxDetection.scala 27:60]
+  wire  _T_789 = $signed(io_boxYPosition_10) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_797 = $signed(io_boxXPosition_3) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_798 = $signed(io_boxXPosition_11) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_799 = _T_797 & _T_798; // @[BoxDetection.scala 27:41]
+  wire  _T_800 = $signed(io_boxYPosition_3) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_801 = _T_799 & _T_800; // @[BoxDetection.scala 27:60]
+  wire  _T_802 = $signed(io_boxYPosition_11) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_810 = $signed(io_boxXPosition_3) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_811 = $signed(io_boxXPosition_12) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_812 = _T_810 & _T_811; // @[BoxDetection.scala 27:41]
+  wire  _T_813 = $signed(io_boxYPosition_3) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_814 = _T_812 & _T_813; // @[BoxDetection.scala 27:60]
+  wire  _T_815 = $signed(io_boxYPosition_12) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_823 = $signed(io_boxXPosition_3) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_824 = $signed(io_boxXPosition_13) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_825 = _T_823 & _T_824; // @[BoxDetection.scala 27:41]
+  wire  _T_826 = $signed(io_boxYPosition_3) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_827 = _T_825 & _T_826; // @[BoxDetection.scala 27:60]
+  wire  _T_828 = $signed(io_boxYPosition_13) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_836 = $signed(io_boxXPosition_3) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_837 = $signed(io_boxXPosition_14) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_838 = _T_836 & _T_837; // @[BoxDetection.scala 27:41]
+  wire  _T_839 = $signed(io_boxYPosition_3) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_840 = _T_838 & _T_839; // @[BoxDetection.scala 27:60]
+  wire  _T_841 = $signed(io_boxYPosition_14) < $signed(_T_50); // @[BoxDetection.scala 28:35]
+  wire  _T_849 = $signed(io_boxXPosition_3) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_850 = $signed(io_boxXPosition_15) < $signed(_T_47); // @[BoxDetection.scala 27:51]
+  wire  _T_851 = _T_849 & _T_850; // @[BoxDetection.scala 27:41]
+  wire  _T_852 = $signed(io_boxYPosition_3) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_853 = _T_851 & _T_852; // @[BoxDetection.scala 27:60]
+  wire  _T_854 = $signed(io_boxYPosition_15) < $signed(_T_50); // @[BoxDetection.scala 28:35]
   wire  _T_870 = _T_65 & _T_64; // @[BoxDetection.scala 27:41]
   wire  _T_872 = _T_870 & _T_69; // @[BoxDetection.scala 27:60]
   wire  _T_883 = _T_279 & _T_278; // @[BoxDetection.scala 27:41]
@@ -4103,12 +4551,54 @@ module BoxDetection(
   wire  _T_962 = $signed(io_boxYPosition_4) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_963 = _T_961 & _T_962; // @[BoxDetection.scala 27:60]
   wire  _T_964 = $signed(io_boxYPosition_7) < $signed(_T_63); // @[BoxDetection.scala 28:35]
-  wire  _T_972 = $signed(io_boxXPosition_4) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_973 = 11'sh0 < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_972 = $signed(io_boxXPosition_4) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_973 = $signed(io_boxXPosition_8) < $signed(_T_60); // @[BoxDetection.scala 27:51]
   wire  _T_974 = _T_972 & _T_973; // @[BoxDetection.scala 27:41]
-  wire  _T_975 = $signed(io_boxYPosition_4) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_975 = $signed(io_boxYPosition_4) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_976 = _T_974 & _T_975; // @[BoxDetection.scala 27:60]
-  wire  _T_977 = 10'sh0 < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_977 = $signed(io_boxYPosition_8) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_985 = $signed(io_boxXPosition_4) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_986 = $signed(io_boxXPosition_9) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_987 = _T_985 & _T_986; // @[BoxDetection.scala 27:41]
+  wire  _T_988 = $signed(io_boxYPosition_4) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_989 = _T_987 & _T_988; // @[BoxDetection.scala 27:60]
+  wire  _T_990 = $signed(io_boxYPosition_9) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_998 = $signed(io_boxXPosition_4) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_999 = $signed(io_boxXPosition_10) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1000 = _T_998 & _T_999; // @[BoxDetection.scala 27:41]
+  wire  _T_1001 = $signed(io_boxYPosition_4) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_1002 = _T_1000 & _T_1001; // @[BoxDetection.scala 27:60]
+  wire  _T_1003 = $signed(io_boxYPosition_10) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_1011 = $signed(io_boxXPosition_4) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_1012 = $signed(io_boxXPosition_11) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1013 = _T_1011 & _T_1012; // @[BoxDetection.scala 27:41]
+  wire  _T_1014 = $signed(io_boxYPosition_4) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_1015 = _T_1013 & _T_1014; // @[BoxDetection.scala 27:60]
+  wire  _T_1016 = $signed(io_boxYPosition_11) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_1024 = $signed(io_boxXPosition_4) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_1025 = $signed(io_boxXPosition_12) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1026 = _T_1024 & _T_1025; // @[BoxDetection.scala 27:41]
+  wire  _T_1027 = $signed(io_boxYPosition_4) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_1028 = _T_1026 & _T_1027; // @[BoxDetection.scala 27:60]
+  wire  _T_1029 = $signed(io_boxYPosition_12) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_1037 = $signed(io_boxXPosition_4) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_1038 = $signed(io_boxXPosition_13) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1039 = _T_1037 & _T_1038; // @[BoxDetection.scala 27:41]
+  wire  _T_1040 = $signed(io_boxYPosition_4) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_1041 = _T_1039 & _T_1040; // @[BoxDetection.scala 27:60]
+  wire  _T_1042 = $signed(io_boxYPosition_13) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_1050 = $signed(io_boxXPosition_4) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_1051 = $signed(io_boxXPosition_14) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1052 = _T_1050 & _T_1051; // @[BoxDetection.scala 27:41]
+  wire  _T_1053 = $signed(io_boxYPosition_4) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_1054 = _T_1052 & _T_1053; // @[BoxDetection.scala 27:60]
+  wire  _T_1055 = $signed(io_boxYPosition_14) < $signed(_T_63); // @[BoxDetection.scala 28:35]
+  wire  _T_1063 = $signed(io_boxXPosition_4) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_1064 = $signed(io_boxXPosition_15) < $signed(_T_60); // @[BoxDetection.scala 27:51]
+  wire  _T_1065 = _T_1063 & _T_1064; // @[BoxDetection.scala 27:41]
+  wire  _T_1066 = $signed(io_boxYPosition_4) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_1067 = _T_1065 & _T_1066; // @[BoxDetection.scala 27:60]
+  wire  _T_1068 = $signed(io_boxYPosition_15) < $signed(_T_63); // @[BoxDetection.scala 28:35]
   wire  _T_1084 = _T_78 & _T_77; // @[BoxDetection.scala 27:41]
   wire  _T_1086 = _T_1084 & _T_82; // @[BoxDetection.scala 27:60]
   wire  _T_1097 = _T_292 & _T_291; // @[BoxDetection.scala 27:41]
@@ -4131,12 +4621,54 @@ module BoxDetection(
   wire  _T_1176 = $signed(io_boxYPosition_5) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_1177 = _T_1175 & _T_1176; // @[BoxDetection.scala 27:60]
   wire  _T_1178 = $signed(io_boxYPosition_7) < $signed(_T_76); // @[BoxDetection.scala 28:35]
-  wire  _T_1186 = $signed(io_boxXPosition_5) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_1187 = 11'sh0 < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1186 = $signed(io_boxXPosition_5) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_1187 = $signed(io_boxXPosition_8) < $signed(_T_73); // @[BoxDetection.scala 27:51]
   wire  _T_1188 = _T_1186 & _T_1187; // @[BoxDetection.scala 27:41]
-  wire  _T_1189 = $signed(io_boxYPosition_5) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_1189 = $signed(io_boxYPosition_5) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_1190 = _T_1188 & _T_1189; // @[BoxDetection.scala 27:60]
-  wire  _T_1191 = 10'sh0 < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1191 = $signed(io_boxYPosition_8) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1199 = $signed(io_boxXPosition_5) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_1200 = $signed(io_boxXPosition_9) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1201 = _T_1199 & _T_1200; // @[BoxDetection.scala 27:41]
+  wire  _T_1202 = $signed(io_boxYPosition_5) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_1203 = _T_1201 & _T_1202; // @[BoxDetection.scala 27:60]
+  wire  _T_1204 = $signed(io_boxYPosition_9) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1212 = $signed(io_boxXPosition_5) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_1213 = $signed(io_boxXPosition_10) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1214 = _T_1212 & _T_1213; // @[BoxDetection.scala 27:41]
+  wire  _T_1215 = $signed(io_boxYPosition_5) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_1216 = _T_1214 & _T_1215; // @[BoxDetection.scala 27:60]
+  wire  _T_1217 = $signed(io_boxYPosition_10) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1225 = $signed(io_boxXPosition_5) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_1226 = $signed(io_boxXPosition_11) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1227 = _T_1225 & _T_1226; // @[BoxDetection.scala 27:41]
+  wire  _T_1228 = $signed(io_boxYPosition_5) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_1229 = _T_1227 & _T_1228; // @[BoxDetection.scala 27:60]
+  wire  _T_1230 = $signed(io_boxYPosition_11) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1238 = $signed(io_boxXPosition_5) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_1239 = $signed(io_boxXPosition_12) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1240 = _T_1238 & _T_1239; // @[BoxDetection.scala 27:41]
+  wire  _T_1241 = $signed(io_boxYPosition_5) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_1242 = _T_1240 & _T_1241; // @[BoxDetection.scala 27:60]
+  wire  _T_1243 = $signed(io_boxYPosition_12) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1251 = $signed(io_boxXPosition_5) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_1252 = $signed(io_boxXPosition_13) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1253 = _T_1251 & _T_1252; // @[BoxDetection.scala 27:41]
+  wire  _T_1254 = $signed(io_boxYPosition_5) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_1255 = _T_1253 & _T_1254; // @[BoxDetection.scala 27:60]
+  wire  _T_1256 = $signed(io_boxYPosition_13) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1264 = $signed(io_boxXPosition_5) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_1265 = $signed(io_boxXPosition_14) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1266 = _T_1264 & _T_1265; // @[BoxDetection.scala 27:41]
+  wire  _T_1267 = $signed(io_boxYPosition_5) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_1268 = _T_1266 & _T_1267; // @[BoxDetection.scala 27:60]
+  wire  _T_1269 = $signed(io_boxYPosition_14) < $signed(_T_76); // @[BoxDetection.scala 28:35]
+  wire  _T_1277 = $signed(io_boxXPosition_5) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_1278 = $signed(io_boxXPosition_15) < $signed(_T_73); // @[BoxDetection.scala 27:51]
+  wire  _T_1279 = _T_1277 & _T_1278; // @[BoxDetection.scala 27:41]
+  wire  _T_1280 = $signed(io_boxYPosition_5) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_1281 = _T_1279 & _T_1280; // @[BoxDetection.scala 27:60]
+  wire  _T_1282 = $signed(io_boxYPosition_15) < $signed(_T_76); // @[BoxDetection.scala 28:35]
   wire  _T_1298 = _T_91 & _T_90; // @[BoxDetection.scala 27:41]
   wire  _T_1300 = _T_1298 & _T_95; // @[BoxDetection.scala 27:60]
   wire  _T_1311 = _T_305 & _T_304; // @[BoxDetection.scala 27:41]
@@ -4155,12 +4687,54 @@ module BoxDetection(
   wire  _T_1390 = $signed(io_boxYPosition_6) < $signed(_T_102); // @[BoxDetection.scala 28:16]
   wire  _T_1391 = _T_1389 & _T_1390; // @[BoxDetection.scala 27:60]
   wire  _T_1392 = $signed(io_boxYPosition_7) < $signed(_T_89); // @[BoxDetection.scala 28:35]
-  wire  _T_1400 = $signed(io_boxXPosition_6) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_1401 = 11'sh0 < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1400 = $signed(io_boxXPosition_6) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_1401 = $signed(io_boxXPosition_8) < $signed(_T_86); // @[BoxDetection.scala 27:51]
   wire  _T_1402 = _T_1400 & _T_1401; // @[BoxDetection.scala 27:41]
-  wire  _T_1403 = $signed(io_boxYPosition_6) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_1403 = $signed(io_boxYPosition_6) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_1404 = _T_1402 & _T_1403; // @[BoxDetection.scala 27:60]
-  wire  _T_1405 = 10'sh0 < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1405 = $signed(io_boxYPosition_8) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1413 = $signed(io_boxXPosition_6) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_1414 = $signed(io_boxXPosition_9) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1415 = _T_1413 & _T_1414; // @[BoxDetection.scala 27:41]
+  wire  _T_1416 = $signed(io_boxYPosition_6) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_1417 = _T_1415 & _T_1416; // @[BoxDetection.scala 27:60]
+  wire  _T_1418 = $signed(io_boxYPosition_9) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1426 = $signed(io_boxXPosition_6) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_1427 = $signed(io_boxXPosition_10) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1428 = _T_1426 & _T_1427; // @[BoxDetection.scala 27:41]
+  wire  _T_1429 = $signed(io_boxYPosition_6) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_1430 = _T_1428 & _T_1429; // @[BoxDetection.scala 27:60]
+  wire  _T_1431 = $signed(io_boxYPosition_10) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1439 = $signed(io_boxXPosition_6) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_1440 = $signed(io_boxXPosition_11) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1441 = _T_1439 & _T_1440; // @[BoxDetection.scala 27:41]
+  wire  _T_1442 = $signed(io_boxYPosition_6) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_1443 = _T_1441 & _T_1442; // @[BoxDetection.scala 27:60]
+  wire  _T_1444 = $signed(io_boxYPosition_11) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1452 = $signed(io_boxXPosition_6) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_1453 = $signed(io_boxXPosition_12) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1454 = _T_1452 & _T_1453; // @[BoxDetection.scala 27:41]
+  wire  _T_1455 = $signed(io_boxYPosition_6) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_1456 = _T_1454 & _T_1455; // @[BoxDetection.scala 27:60]
+  wire  _T_1457 = $signed(io_boxYPosition_12) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1465 = $signed(io_boxXPosition_6) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_1466 = $signed(io_boxXPosition_13) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1467 = _T_1465 & _T_1466; // @[BoxDetection.scala 27:41]
+  wire  _T_1468 = $signed(io_boxYPosition_6) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_1469 = _T_1467 & _T_1468; // @[BoxDetection.scala 27:60]
+  wire  _T_1470 = $signed(io_boxYPosition_13) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1478 = $signed(io_boxXPosition_6) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_1479 = $signed(io_boxXPosition_14) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1480 = _T_1478 & _T_1479; // @[BoxDetection.scala 27:41]
+  wire  _T_1481 = $signed(io_boxYPosition_6) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_1482 = _T_1480 & _T_1481; // @[BoxDetection.scala 27:60]
+  wire  _T_1483 = $signed(io_boxYPosition_14) < $signed(_T_89); // @[BoxDetection.scala 28:35]
+  wire  _T_1491 = $signed(io_boxXPosition_6) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_1492 = $signed(io_boxXPosition_15) < $signed(_T_86); // @[BoxDetection.scala 27:51]
+  wire  _T_1493 = _T_1491 & _T_1492; // @[BoxDetection.scala 27:41]
+  wire  _T_1494 = $signed(io_boxYPosition_6) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_1495 = _T_1493 & _T_1494; // @[BoxDetection.scala 27:60]
+  wire  _T_1496 = $signed(io_boxYPosition_15) < $signed(_T_89); // @[BoxDetection.scala 28:35]
   wire  _T_1512 = _T_104 & _T_103; // @[BoxDetection.scala 27:41]
   wire  _T_1514 = _T_1512 & _T_108; // @[BoxDetection.scala 27:60]
   wire  _T_1525 = _T_318 & _T_317; // @[BoxDetection.scala 27:41]
@@ -4175,12 +4749,406 @@ module BoxDetection(
   wire  _T_1579 = _T_1577 & _T_1178; // @[BoxDetection.scala 27:60]
   wire  _T_1590 = _T_1388 & _T_1387; // @[BoxDetection.scala 27:41]
   wire  _T_1592 = _T_1590 & _T_1392; // @[BoxDetection.scala 27:60]
-  wire  _T_1614 = $signed(io_boxXPosition_7) < 11'sh20; // @[BoxDetection.scala 27:32]
-  wire  _T_1615 = 11'sh0 < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1614 = $signed(io_boxXPosition_7) < $signed(_T_112); // @[BoxDetection.scala 27:32]
+  wire  _T_1615 = $signed(io_boxXPosition_8) < $signed(_T_99); // @[BoxDetection.scala 27:51]
   wire  _T_1616 = _T_1614 & _T_1615; // @[BoxDetection.scala 27:41]
-  wire  _T_1617 = $signed(io_boxYPosition_7) < 10'sh20; // @[BoxDetection.scala 28:16]
+  wire  _T_1617 = $signed(io_boxYPosition_7) < $signed(_T_115); // @[BoxDetection.scala 28:16]
   wire  _T_1618 = _T_1616 & _T_1617; // @[BoxDetection.scala 27:60]
-  wire  _T_1619 = 10'sh0 < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1619 = $signed(io_boxYPosition_8) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1627 = $signed(io_boxXPosition_7) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_1628 = $signed(io_boxXPosition_9) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1629 = _T_1627 & _T_1628; // @[BoxDetection.scala 27:41]
+  wire  _T_1630 = $signed(io_boxYPosition_7) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_1631 = _T_1629 & _T_1630; // @[BoxDetection.scala 27:60]
+  wire  _T_1632 = $signed(io_boxYPosition_9) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1640 = $signed(io_boxXPosition_7) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_1641 = $signed(io_boxXPosition_10) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1642 = _T_1640 & _T_1641; // @[BoxDetection.scala 27:41]
+  wire  _T_1643 = $signed(io_boxYPosition_7) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_1644 = _T_1642 & _T_1643; // @[BoxDetection.scala 27:60]
+  wire  _T_1645 = $signed(io_boxYPosition_10) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1653 = $signed(io_boxXPosition_7) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_1654 = $signed(io_boxXPosition_11) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1655 = _T_1653 & _T_1654; // @[BoxDetection.scala 27:41]
+  wire  _T_1656 = $signed(io_boxYPosition_7) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_1657 = _T_1655 & _T_1656; // @[BoxDetection.scala 27:60]
+  wire  _T_1658 = $signed(io_boxYPosition_11) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1666 = $signed(io_boxXPosition_7) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_1667 = $signed(io_boxXPosition_12) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1668 = _T_1666 & _T_1667; // @[BoxDetection.scala 27:41]
+  wire  _T_1669 = $signed(io_boxYPosition_7) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_1670 = _T_1668 & _T_1669; // @[BoxDetection.scala 27:60]
+  wire  _T_1671 = $signed(io_boxYPosition_12) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1679 = $signed(io_boxXPosition_7) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_1680 = $signed(io_boxXPosition_13) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1681 = _T_1679 & _T_1680; // @[BoxDetection.scala 27:41]
+  wire  _T_1682 = $signed(io_boxYPosition_7) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_1683 = _T_1681 & _T_1682; // @[BoxDetection.scala 27:60]
+  wire  _T_1684 = $signed(io_boxYPosition_13) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1692 = $signed(io_boxXPosition_7) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_1693 = $signed(io_boxXPosition_14) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1694 = _T_1692 & _T_1693; // @[BoxDetection.scala 27:41]
+  wire  _T_1695 = $signed(io_boxYPosition_7) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_1696 = _T_1694 & _T_1695; // @[BoxDetection.scala 27:60]
+  wire  _T_1697 = $signed(io_boxYPosition_14) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1705 = $signed(io_boxXPosition_7) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_1706 = $signed(io_boxXPosition_15) < $signed(_T_99); // @[BoxDetection.scala 27:51]
+  wire  _T_1707 = _T_1705 & _T_1706; // @[BoxDetection.scala 27:41]
+  wire  _T_1708 = $signed(io_boxYPosition_7) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_1709 = _T_1707 & _T_1708; // @[BoxDetection.scala 27:60]
+  wire  _T_1710 = $signed(io_boxYPosition_15) < $signed(_T_102); // @[BoxDetection.scala 28:35]
+  wire  _T_1726 = _T_117 & _T_116; // @[BoxDetection.scala 27:41]
+  wire  _T_1728 = _T_1726 & _T_121; // @[BoxDetection.scala 27:60]
+  wire  _T_1739 = _T_331 & _T_330; // @[BoxDetection.scala 27:41]
+  wire  _T_1741 = _T_1739 & _T_335; // @[BoxDetection.scala 27:60]
+  wire  _T_1752 = _T_545 & _T_544; // @[BoxDetection.scala 27:41]
+  wire  _T_1754 = _T_1752 & _T_549; // @[BoxDetection.scala 27:60]
+  wire  _T_1765 = _T_759 & _T_758; // @[BoxDetection.scala 27:41]
+  wire  _T_1767 = _T_1765 & _T_763; // @[BoxDetection.scala 27:60]
+  wire  _T_1778 = _T_973 & _T_972; // @[BoxDetection.scala 27:41]
+  wire  _T_1780 = _T_1778 & _T_977; // @[BoxDetection.scala 27:60]
+  wire  _T_1791 = _T_1187 & _T_1186; // @[BoxDetection.scala 27:41]
+  wire  _T_1793 = _T_1791 & _T_1191; // @[BoxDetection.scala 27:60]
+  wire  _T_1804 = _T_1401 & _T_1400; // @[BoxDetection.scala 27:41]
+  wire  _T_1806 = _T_1804 & _T_1405; // @[BoxDetection.scala 27:60]
+  wire  _T_1817 = _T_1615 & _T_1614; // @[BoxDetection.scala 27:41]
+  wire  _T_1819 = _T_1817 & _T_1619; // @[BoxDetection.scala 27:60]
+  wire  _T_1841 = $signed(io_boxXPosition_8) < $signed(_T_125); // @[BoxDetection.scala 27:32]
+  wire  _T_1842 = $signed(io_boxXPosition_9) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1843 = _T_1841 & _T_1842; // @[BoxDetection.scala 27:41]
+  wire  _T_1844 = $signed(io_boxYPosition_8) < $signed(_T_128); // @[BoxDetection.scala 28:16]
+  wire  _T_1845 = _T_1843 & _T_1844; // @[BoxDetection.scala 27:60]
+  wire  _T_1846 = $signed(io_boxYPosition_9) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1854 = $signed(io_boxXPosition_8) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_1855 = $signed(io_boxXPosition_10) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1856 = _T_1854 & _T_1855; // @[BoxDetection.scala 27:41]
+  wire  _T_1857 = $signed(io_boxYPosition_8) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_1858 = _T_1856 & _T_1857; // @[BoxDetection.scala 27:60]
+  wire  _T_1859 = $signed(io_boxYPosition_10) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1867 = $signed(io_boxXPosition_8) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_1868 = $signed(io_boxXPosition_11) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1869 = _T_1867 & _T_1868; // @[BoxDetection.scala 27:41]
+  wire  _T_1870 = $signed(io_boxYPosition_8) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_1871 = _T_1869 & _T_1870; // @[BoxDetection.scala 27:60]
+  wire  _T_1872 = $signed(io_boxYPosition_11) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1880 = $signed(io_boxXPosition_8) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_1881 = $signed(io_boxXPosition_12) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1882 = _T_1880 & _T_1881; // @[BoxDetection.scala 27:41]
+  wire  _T_1883 = $signed(io_boxYPosition_8) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_1884 = _T_1882 & _T_1883; // @[BoxDetection.scala 27:60]
+  wire  _T_1885 = $signed(io_boxYPosition_12) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1893 = $signed(io_boxXPosition_8) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_1894 = $signed(io_boxXPosition_13) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1895 = _T_1893 & _T_1894; // @[BoxDetection.scala 27:41]
+  wire  _T_1896 = $signed(io_boxYPosition_8) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_1897 = _T_1895 & _T_1896; // @[BoxDetection.scala 27:60]
+  wire  _T_1898 = $signed(io_boxYPosition_13) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1906 = $signed(io_boxXPosition_8) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_1907 = $signed(io_boxXPosition_14) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1908 = _T_1906 & _T_1907; // @[BoxDetection.scala 27:41]
+  wire  _T_1909 = $signed(io_boxYPosition_8) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_1910 = _T_1908 & _T_1909; // @[BoxDetection.scala 27:60]
+  wire  _T_1911 = $signed(io_boxYPosition_14) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1919 = $signed(io_boxXPosition_8) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_1920 = $signed(io_boxXPosition_15) < $signed(_T_112); // @[BoxDetection.scala 27:51]
+  wire  _T_1921 = _T_1919 & _T_1920; // @[BoxDetection.scala 27:41]
+  wire  _T_1922 = $signed(io_boxYPosition_8) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_1923 = _T_1921 & _T_1922; // @[BoxDetection.scala 27:60]
+  wire  _T_1924 = $signed(io_boxYPosition_15) < $signed(_T_115); // @[BoxDetection.scala 28:35]
+  wire  _T_1940 = _T_130 & _T_129; // @[BoxDetection.scala 27:41]
+  wire  _T_1942 = _T_1940 & _T_134; // @[BoxDetection.scala 27:60]
+  wire  _T_1953 = _T_344 & _T_343; // @[BoxDetection.scala 27:41]
+  wire  _T_1955 = _T_1953 & _T_348; // @[BoxDetection.scala 27:60]
+  wire  _T_1966 = _T_558 & _T_557; // @[BoxDetection.scala 27:41]
+  wire  _T_1968 = _T_1966 & _T_562; // @[BoxDetection.scala 27:60]
+  wire  _T_1979 = _T_772 & _T_771; // @[BoxDetection.scala 27:41]
+  wire  _T_1981 = _T_1979 & _T_776; // @[BoxDetection.scala 27:60]
+  wire  _T_1992 = _T_986 & _T_985; // @[BoxDetection.scala 27:41]
+  wire  _T_1994 = _T_1992 & _T_990; // @[BoxDetection.scala 27:60]
+  wire  _T_2005 = _T_1200 & _T_1199; // @[BoxDetection.scala 27:41]
+  wire  _T_2007 = _T_2005 & _T_1204; // @[BoxDetection.scala 27:60]
+  wire  _T_2018 = _T_1414 & _T_1413; // @[BoxDetection.scala 27:41]
+  wire  _T_2020 = _T_2018 & _T_1418; // @[BoxDetection.scala 27:60]
+  wire  _T_2031 = _T_1628 & _T_1627; // @[BoxDetection.scala 27:41]
+  wire  _T_2033 = _T_2031 & _T_1632; // @[BoxDetection.scala 27:60]
+  wire  _T_2044 = _T_1842 & _T_1841; // @[BoxDetection.scala 27:41]
+  wire  _T_2046 = _T_2044 & _T_1846; // @[BoxDetection.scala 27:60]
+  wire  _T_2068 = $signed(io_boxXPosition_9) < $signed(_T_138); // @[BoxDetection.scala 27:32]
+  wire  _T_2069 = $signed(io_boxXPosition_10) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2070 = _T_2068 & _T_2069; // @[BoxDetection.scala 27:41]
+  wire  _T_2071 = $signed(io_boxYPosition_9) < $signed(_T_141); // @[BoxDetection.scala 28:16]
+  wire  _T_2072 = _T_2070 & _T_2071; // @[BoxDetection.scala 27:60]
+  wire  _T_2073 = $signed(io_boxYPosition_10) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2081 = $signed(io_boxXPosition_9) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_2082 = $signed(io_boxXPosition_11) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2083 = _T_2081 & _T_2082; // @[BoxDetection.scala 27:41]
+  wire  _T_2084 = $signed(io_boxYPosition_9) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_2085 = _T_2083 & _T_2084; // @[BoxDetection.scala 27:60]
+  wire  _T_2086 = $signed(io_boxYPosition_11) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2094 = $signed(io_boxXPosition_9) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_2095 = $signed(io_boxXPosition_12) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2096 = _T_2094 & _T_2095; // @[BoxDetection.scala 27:41]
+  wire  _T_2097 = $signed(io_boxYPosition_9) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_2098 = _T_2096 & _T_2097; // @[BoxDetection.scala 27:60]
+  wire  _T_2099 = $signed(io_boxYPosition_12) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2107 = $signed(io_boxXPosition_9) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_2108 = $signed(io_boxXPosition_13) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2109 = _T_2107 & _T_2108; // @[BoxDetection.scala 27:41]
+  wire  _T_2110 = $signed(io_boxYPosition_9) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_2111 = _T_2109 & _T_2110; // @[BoxDetection.scala 27:60]
+  wire  _T_2112 = $signed(io_boxYPosition_13) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2120 = $signed(io_boxXPosition_9) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_2121 = $signed(io_boxXPosition_14) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2122 = _T_2120 & _T_2121; // @[BoxDetection.scala 27:41]
+  wire  _T_2123 = $signed(io_boxYPosition_9) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_2124 = _T_2122 & _T_2123; // @[BoxDetection.scala 27:60]
+  wire  _T_2125 = $signed(io_boxYPosition_14) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2133 = $signed(io_boxXPosition_9) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_2134 = $signed(io_boxXPosition_15) < $signed(_T_125); // @[BoxDetection.scala 27:51]
+  wire  _T_2135 = _T_2133 & _T_2134; // @[BoxDetection.scala 27:41]
+  wire  _T_2136 = $signed(io_boxYPosition_9) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_2137 = _T_2135 & _T_2136; // @[BoxDetection.scala 27:60]
+  wire  _T_2138 = $signed(io_boxYPosition_15) < $signed(_T_128); // @[BoxDetection.scala 28:35]
+  wire  _T_2154 = _T_143 & _T_142; // @[BoxDetection.scala 27:41]
+  wire  _T_2156 = _T_2154 & _T_147; // @[BoxDetection.scala 27:60]
+  wire  _T_2167 = _T_357 & _T_356; // @[BoxDetection.scala 27:41]
+  wire  _T_2169 = _T_2167 & _T_361; // @[BoxDetection.scala 27:60]
+  wire  _T_2180 = _T_571 & _T_570; // @[BoxDetection.scala 27:41]
+  wire  _T_2182 = _T_2180 & _T_575; // @[BoxDetection.scala 27:60]
+  wire  _T_2193 = _T_785 & _T_784; // @[BoxDetection.scala 27:41]
+  wire  _T_2195 = _T_2193 & _T_789; // @[BoxDetection.scala 27:60]
+  wire  _T_2206 = _T_999 & _T_998; // @[BoxDetection.scala 27:41]
+  wire  _T_2208 = _T_2206 & _T_1003; // @[BoxDetection.scala 27:60]
+  wire  _T_2219 = _T_1213 & _T_1212; // @[BoxDetection.scala 27:41]
+  wire  _T_2221 = _T_2219 & _T_1217; // @[BoxDetection.scala 27:60]
+  wire  _T_2232 = _T_1427 & _T_1426; // @[BoxDetection.scala 27:41]
+  wire  _T_2234 = _T_2232 & _T_1431; // @[BoxDetection.scala 27:60]
+  wire  _T_2245 = _T_1641 & _T_1640; // @[BoxDetection.scala 27:41]
+  wire  _T_2247 = _T_2245 & _T_1645; // @[BoxDetection.scala 27:60]
+  wire  _T_2258 = _T_1855 & _T_1854; // @[BoxDetection.scala 27:41]
+  wire  _T_2260 = _T_2258 & _T_1859; // @[BoxDetection.scala 27:60]
+  wire  _T_2271 = _T_2069 & _T_2068; // @[BoxDetection.scala 27:41]
+  wire  _T_2273 = _T_2271 & _T_2073; // @[BoxDetection.scala 27:60]
+  wire  _T_2295 = $signed(io_boxXPosition_10) < $signed(_T_151); // @[BoxDetection.scala 27:32]
+  wire  _T_2296 = $signed(io_boxXPosition_11) < $signed(_T_138); // @[BoxDetection.scala 27:51]
+  wire  _T_2297 = _T_2295 & _T_2296; // @[BoxDetection.scala 27:41]
+  wire  _T_2298 = $signed(io_boxYPosition_10) < $signed(_T_154); // @[BoxDetection.scala 28:16]
+  wire  _T_2299 = _T_2297 & _T_2298; // @[BoxDetection.scala 27:60]
+  wire  _T_2300 = $signed(io_boxYPosition_11) < $signed(_T_141); // @[BoxDetection.scala 28:35]
+  wire  _T_2308 = $signed(io_boxXPosition_10) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_2309 = $signed(io_boxXPosition_12) < $signed(_T_138); // @[BoxDetection.scala 27:51]
+  wire  _T_2310 = _T_2308 & _T_2309; // @[BoxDetection.scala 27:41]
+  wire  _T_2311 = $signed(io_boxYPosition_10) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_2312 = _T_2310 & _T_2311; // @[BoxDetection.scala 27:60]
+  wire  _T_2313 = $signed(io_boxYPosition_12) < $signed(_T_141); // @[BoxDetection.scala 28:35]
+  wire  _T_2321 = $signed(io_boxXPosition_10) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_2322 = $signed(io_boxXPosition_13) < $signed(_T_138); // @[BoxDetection.scala 27:51]
+  wire  _T_2323 = _T_2321 & _T_2322; // @[BoxDetection.scala 27:41]
+  wire  _T_2324 = $signed(io_boxYPosition_10) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_2325 = _T_2323 & _T_2324; // @[BoxDetection.scala 27:60]
+  wire  _T_2326 = $signed(io_boxYPosition_13) < $signed(_T_141); // @[BoxDetection.scala 28:35]
+  wire  _T_2334 = $signed(io_boxXPosition_10) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_2335 = $signed(io_boxXPosition_14) < $signed(_T_138); // @[BoxDetection.scala 27:51]
+  wire  _T_2336 = _T_2334 & _T_2335; // @[BoxDetection.scala 27:41]
+  wire  _T_2337 = $signed(io_boxYPosition_10) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_2338 = _T_2336 & _T_2337; // @[BoxDetection.scala 27:60]
+  wire  _T_2339 = $signed(io_boxYPosition_14) < $signed(_T_141); // @[BoxDetection.scala 28:35]
+  wire  _T_2347 = $signed(io_boxXPosition_10) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_2348 = $signed(io_boxXPosition_15) < $signed(_T_138); // @[BoxDetection.scala 27:51]
+  wire  _T_2349 = _T_2347 & _T_2348; // @[BoxDetection.scala 27:41]
+  wire  _T_2350 = $signed(io_boxYPosition_10) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_2351 = _T_2349 & _T_2350; // @[BoxDetection.scala 27:60]
+  wire  _T_2352 = $signed(io_boxYPosition_15) < $signed(_T_141); // @[BoxDetection.scala 28:35]
+  wire  _T_2368 = _T_156 & _T_155; // @[BoxDetection.scala 27:41]
+  wire  _T_2370 = _T_2368 & _T_160; // @[BoxDetection.scala 27:60]
+  wire  _T_2381 = _T_370 & _T_369; // @[BoxDetection.scala 27:41]
+  wire  _T_2383 = _T_2381 & _T_374; // @[BoxDetection.scala 27:60]
+  wire  _T_2394 = _T_584 & _T_583; // @[BoxDetection.scala 27:41]
+  wire  _T_2396 = _T_2394 & _T_588; // @[BoxDetection.scala 27:60]
+  wire  _T_2407 = _T_798 & _T_797; // @[BoxDetection.scala 27:41]
+  wire  _T_2409 = _T_2407 & _T_802; // @[BoxDetection.scala 27:60]
+  wire  _T_2420 = _T_1012 & _T_1011; // @[BoxDetection.scala 27:41]
+  wire  _T_2422 = _T_2420 & _T_1016; // @[BoxDetection.scala 27:60]
+  wire  _T_2433 = _T_1226 & _T_1225; // @[BoxDetection.scala 27:41]
+  wire  _T_2435 = _T_2433 & _T_1230; // @[BoxDetection.scala 27:60]
+  wire  _T_2446 = _T_1440 & _T_1439; // @[BoxDetection.scala 27:41]
+  wire  _T_2448 = _T_2446 & _T_1444; // @[BoxDetection.scala 27:60]
+  wire  _T_2459 = _T_1654 & _T_1653; // @[BoxDetection.scala 27:41]
+  wire  _T_2461 = _T_2459 & _T_1658; // @[BoxDetection.scala 27:60]
+  wire  _T_2472 = _T_1868 & _T_1867; // @[BoxDetection.scala 27:41]
+  wire  _T_2474 = _T_2472 & _T_1872; // @[BoxDetection.scala 27:60]
+  wire  _T_2485 = _T_2082 & _T_2081; // @[BoxDetection.scala 27:41]
+  wire  _T_2487 = _T_2485 & _T_2086; // @[BoxDetection.scala 27:60]
+  wire  _T_2498 = _T_2296 & _T_2295; // @[BoxDetection.scala 27:41]
+  wire  _T_2500 = _T_2498 & _T_2300; // @[BoxDetection.scala 27:60]
+  wire  _T_2522 = $signed(io_boxXPosition_11) < $signed(_T_164); // @[BoxDetection.scala 27:32]
+  wire  _T_2523 = $signed(io_boxXPosition_12) < $signed(_T_151); // @[BoxDetection.scala 27:51]
+  wire  _T_2524 = _T_2522 & _T_2523; // @[BoxDetection.scala 27:41]
+  wire  _T_2525 = $signed(io_boxYPosition_11) < $signed(_T_167); // @[BoxDetection.scala 28:16]
+  wire  _T_2526 = _T_2524 & _T_2525; // @[BoxDetection.scala 27:60]
+  wire  _T_2527 = $signed(io_boxYPosition_12) < $signed(_T_154); // @[BoxDetection.scala 28:35]
+  wire  _T_2535 = $signed(io_boxXPosition_11) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_2536 = $signed(io_boxXPosition_13) < $signed(_T_151); // @[BoxDetection.scala 27:51]
+  wire  _T_2537 = _T_2535 & _T_2536; // @[BoxDetection.scala 27:41]
+  wire  _T_2538 = $signed(io_boxYPosition_11) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_2539 = _T_2537 & _T_2538; // @[BoxDetection.scala 27:60]
+  wire  _T_2540 = $signed(io_boxYPosition_13) < $signed(_T_154); // @[BoxDetection.scala 28:35]
+  wire  _T_2548 = $signed(io_boxXPosition_11) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_2549 = $signed(io_boxXPosition_14) < $signed(_T_151); // @[BoxDetection.scala 27:51]
+  wire  _T_2550 = _T_2548 & _T_2549; // @[BoxDetection.scala 27:41]
+  wire  _T_2551 = $signed(io_boxYPosition_11) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_2552 = _T_2550 & _T_2551; // @[BoxDetection.scala 27:60]
+  wire  _T_2553 = $signed(io_boxYPosition_14) < $signed(_T_154); // @[BoxDetection.scala 28:35]
+  wire  _T_2561 = $signed(io_boxXPosition_11) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_2562 = $signed(io_boxXPosition_15) < $signed(_T_151); // @[BoxDetection.scala 27:51]
+  wire  _T_2563 = _T_2561 & _T_2562; // @[BoxDetection.scala 27:41]
+  wire  _T_2564 = $signed(io_boxYPosition_11) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_2565 = _T_2563 & _T_2564; // @[BoxDetection.scala 27:60]
+  wire  _T_2566 = $signed(io_boxYPosition_15) < $signed(_T_154); // @[BoxDetection.scala 28:35]
+  wire  _T_2582 = _T_169 & _T_168; // @[BoxDetection.scala 27:41]
+  wire  _T_2584 = _T_2582 & _T_173; // @[BoxDetection.scala 27:60]
+  wire  _T_2595 = _T_383 & _T_382; // @[BoxDetection.scala 27:41]
+  wire  _T_2597 = _T_2595 & _T_387; // @[BoxDetection.scala 27:60]
+  wire  _T_2608 = _T_597 & _T_596; // @[BoxDetection.scala 27:41]
+  wire  _T_2610 = _T_2608 & _T_601; // @[BoxDetection.scala 27:60]
+  wire  _T_2621 = _T_811 & _T_810; // @[BoxDetection.scala 27:41]
+  wire  _T_2623 = _T_2621 & _T_815; // @[BoxDetection.scala 27:60]
+  wire  _T_2634 = _T_1025 & _T_1024; // @[BoxDetection.scala 27:41]
+  wire  _T_2636 = _T_2634 & _T_1029; // @[BoxDetection.scala 27:60]
+  wire  _T_2647 = _T_1239 & _T_1238; // @[BoxDetection.scala 27:41]
+  wire  _T_2649 = _T_2647 & _T_1243; // @[BoxDetection.scala 27:60]
+  wire  _T_2660 = _T_1453 & _T_1452; // @[BoxDetection.scala 27:41]
+  wire  _T_2662 = _T_2660 & _T_1457; // @[BoxDetection.scala 27:60]
+  wire  _T_2673 = _T_1667 & _T_1666; // @[BoxDetection.scala 27:41]
+  wire  _T_2675 = _T_2673 & _T_1671; // @[BoxDetection.scala 27:60]
+  wire  _T_2686 = _T_1881 & _T_1880; // @[BoxDetection.scala 27:41]
+  wire  _T_2688 = _T_2686 & _T_1885; // @[BoxDetection.scala 27:60]
+  wire  _T_2699 = _T_2095 & _T_2094; // @[BoxDetection.scala 27:41]
+  wire  _T_2701 = _T_2699 & _T_2099; // @[BoxDetection.scala 27:60]
+  wire  _T_2712 = _T_2309 & _T_2308; // @[BoxDetection.scala 27:41]
+  wire  _T_2714 = _T_2712 & _T_2313; // @[BoxDetection.scala 27:60]
+  wire  _T_2725 = _T_2523 & _T_2522; // @[BoxDetection.scala 27:41]
+  wire  _T_2727 = _T_2725 & _T_2527; // @[BoxDetection.scala 27:60]
+  wire  _T_2749 = $signed(io_boxXPosition_12) < $signed(_T_177); // @[BoxDetection.scala 27:32]
+  wire  _T_2750 = $signed(io_boxXPosition_13) < $signed(_T_164); // @[BoxDetection.scala 27:51]
+  wire  _T_2751 = _T_2749 & _T_2750; // @[BoxDetection.scala 27:41]
+  wire  _T_2752 = $signed(io_boxYPosition_12) < $signed(_T_180); // @[BoxDetection.scala 28:16]
+  wire  _T_2753 = _T_2751 & _T_2752; // @[BoxDetection.scala 27:60]
+  wire  _T_2754 = $signed(io_boxYPosition_13) < $signed(_T_167); // @[BoxDetection.scala 28:35]
+  wire  _T_2762 = $signed(io_boxXPosition_12) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_2763 = $signed(io_boxXPosition_14) < $signed(_T_164); // @[BoxDetection.scala 27:51]
+  wire  _T_2764 = _T_2762 & _T_2763; // @[BoxDetection.scala 27:41]
+  wire  _T_2765 = $signed(io_boxYPosition_12) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_2766 = _T_2764 & _T_2765; // @[BoxDetection.scala 27:60]
+  wire  _T_2767 = $signed(io_boxYPosition_14) < $signed(_T_167); // @[BoxDetection.scala 28:35]
+  wire  _T_2775 = $signed(io_boxXPosition_12) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_2776 = $signed(io_boxXPosition_15) < $signed(_T_164); // @[BoxDetection.scala 27:51]
+  wire  _T_2777 = _T_2775 & _T_2776; // @[BoxDetection.scala 27:41]
+  wire  _T_2778 = $signed(io_boxYPosition_12) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_2779 = _T_2777 & _T_2778; // @[BoxDetection.scala 27:60]
+  wire  _T_2780 = $signed(io_boxYPosition_15) < $signed(_T_167); // @[BoxDetection.scala 28:35]
+  wire  _T_2796 = _T_182 & _T_181; // @[BoxDetection.scala 27:41]
+  wire  _T_2798 = _T_2796 & _T_186; // @[BoxDetection.scala 27:60]
+  wire  _T_2809 = _T_396 & _T_395; // @[BoxDetection.scala 27:41]
+  wire  _T_2811 = _T_2809 & _T_400; // @[BoxDetection.scala 27:60]
+  wire  _T_2822 = _T_610 & _T_609; // @[BoxDetection.scala 27:41]
+  wire  _T_2824 = _T_2822 & _T_614; // @[BoxDetection.scala 27:60]
+  wire  _T_2835 = _T_824 & _T_823; // @[BoxDetection.scala 27:41]
+  wire  _T_2837 = _T_2835 & _T_828; // @[BoxDetection.scala 27:60]
+  wire  _T_2848 = _T_1038 & _T_1037; // @[BoxDetection.scala 27:41]
+  wire  _T_2850 = _T_2848 & _T_1042; // @[BoxDetection.scala 27:60]
+  wire  _T_2861 = _T_1252 & _T_1251; // @[BoxDetection.scala 27:41]
+  wire  _T_2863 = _T_2861 & _T_1256; // @[BoxDetection.scala 27:60]
+  wire  _T_2874 = _T_1466 & _T_1465; // @[BoxDetection.scala 27:41]
+  wire  _T_2876 = _T_2874 & _T_1470; // @[BoxDetection.scala 27:60]
+  wire  _T_2887 = _T_1680 & _T_1679; // @[BoxDetection.scala 27:41]
+  wire  _T_2889 = _T_2887 & _T_1684; // @[BoxDetection.scala 27:60]
+  wire  _T_2900 = _T_1894 & _T_1893; // @[BoxDetection.scala 27:41]
+  wire  _T_2902 = _T_2900 & _T_1898; // @[BoxDetection.scala 27:60]
+  wire  _T_2913 = _T_2108 & _T_2107; // @[BoxDetection.scala 27:41]
+  wire  _T_2915 = _T_2913 & _T_2112; // @[BoxDetection.scala 27:60]
+  wire  _T_2926 = _T_2322 & _T_2321; // @[BoxDetection.scala 27:41]
+  wire  _T_2928 = _T_2926 & _T_2326; // @[BoxDetection.scala 27:60]
+  wire  _T_2939 = _T_2536 & _T_2535; // @[BoxDetection.scala 27:41]
+  wire  _T_2941 = _T_2939 & _T_2540; // @[BoxDetection.scala 27:60]
+  wire  _T_2952 = _T_2750 & _T_2749; // @[BoxDetection.scala 27:41]
+  wire  _T_2954 = _T_2952 & _T_2754; // @[BoxDetection.scala 27:60]
+  wire  _T_2976 = $signed(io_boxXPosition_13) < $signed(_T_190); // @[BoxDetection.scala 27:32]
+  wire  _T_2977 = $signed(io_boxXPosition_14) < $signed(_T_177); // @[BoxDetection.scala 27:51]
+  wire  _T_2978 = _T_2976 & _T_2977; // @[BoxDetection.scala 27:41]
+  wire  _T_2979 = $signed(io_boxYPosition_13) < $signed(_T_193); // @[BoxDetection.scala 28:16]
+  wire  _T_2980 = _T_2978 & _T_2979; // @[BoxDetection.scala 27:60]
+  wire  _T_2981 = $signed(io_boxYPosition_14) < $signed(_T_180); // @[BoxDetection.scala 28:35]
+  wire  _T_2989 = $signed(io_boxXPosition_13) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_2990 = $signed(io_boxXPosition_15) < $signed(_T_177); // @[BoxDetection.scala 27:51]
+  wire  _T_2991 = _T_2989 & _T_2990; // @[BoxDetection.scala 27:41]
+  wire  _T_2992 = $signed(io_boxYPosition_13) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_2993 = _T_2991 & _T_2992; // @[BoxDetection.scala 27:60]
+  wire  _T_2994 = $signed(io_boxYPosition_15) < $signed(_T_180); // @[BoxDetection.scala 28:35]
+  wire  _T_3010 = _T_195 & _T_194; // @[BoxDetection.scala 27:41]
+  wire  _T_3012 = _T_3010 & _T_199; // @[BoxDetection.scala 27:60]
+  wire  _T_3023 = _T_409 & _T_408; // @[BoxDetection.scala 27:41]
+  wire  _T_3025 = _T_3023 & _T_413; // @[BoxDetection.scala 27:60]
+  wire  _T_3036 = _T_623 & _T_622; // @[BoxDetection.scala 27:41]
+  wire  _T_3038 = _T_3036 & _T_627; // @[BoxDetection.scala 27:60]
+  wire  _T_3049 = _T_837 & _T_836; // @[BoxDetection.scala 27:41]
+  wire  _T_3051 = _T_3049 & _T_841; // @[BoxDetection.scala 27:60]
+  wire  _T_3062 = _T_1051 & _T_1050; // @[BoxDetection.scala 27:41]
+  wire  _T_3064 = _T_3062 & _T_1055; // @[BoxDetection.scala 27:60]
+  wire  _T_3075 = _T_1265 & _T_1264; // @[BoxDetection.scala 27:41]
+  wire  _T_3077 = _T_3075 & _T_1269; // @[BoxDetection.scala 27:60]
+  wire  _T_3088 = _T_1479 & _T_1478; // @[BoxDetection.scala 27:41]
+  wire  _T_3090 = _T_3088 & _T_1483; // @[BoxDetection.scala 27:60]
+  wire  _T_3101 = _T_1693 & _T_1692; // @[BoxDetection.scala 27:41]
+  wire  _T_3103 = _T_3101 & _T_1697; // @[BoxDetection.scala 27:60]
+  wire  _T_3114 = _T_1907 & _T_1906; // @[BoxDetection.scala 27:41]
+  wire  _T_3116 = _T_3114 & _T_1911; // @[BoxDetection.scala 27:60]
+  wire  _T_3127 = _T_2121 & _T_2120; // @[BoxDetection.scala 27:41]
+  wire  _T_3129 = _T_3127 & _T_2125; // @[BoxDetection.scala 27:60]
+  wire  _T_3140 = _T_2335 & _T_2334; // @[BoxDetection.scala 27:41]
+  wire  _T_3142 = _T_3140 & _T_2339; // @[BoxDetection.scala 27:60]
+  wire  _T_3153 = _T_2549 & _T_2548; // @[BoxDetection.scala 27:41]
+  wire  _T_3155 = _T_3153 & _T_2553; // @[BoxDetection.scala 27:60]
+  wire  _T_3166 = _T_2763 & _T_2762; // @[BoxDetection.scala 27:41]
+  wire  _T_3168 = _T_3166 & _T_2767; // @[BoxDetection.scala 27:60]
+  wire  _T_3179 = _T_2977 & _T_2976; // @[BoxDetection.scala 27:41]
+  wire  _T_3181 = _T_3179 & _T_2981; // @[BoxDetection.scala 27:60]
+  wire  _T_3203 = $signed(io_boxXPosition_14) < $signed(_T_203); // @[BoxDetection.scala 27:32]
+  wire  _T_3204 = $signed(io_boxXPosition_15) < $signed(_T_190); // @[BoxDetection.scala 27:51]
+  wire  _T_3205 = _T_3203 & _T_3204; // @[BoxDetection.scala 27:41]
+  wire  _T_3206 = $signed(io_boxYPosition_14) < $signed(_T_206); // @[BoxDetection.scala 28:16]
+  wire  _T_3207 = _T_3205 & _T_3206; // @[BoxDetection.scala 27:60]
+  wire  _T_3208 = $signed(io_boxYPosition_15) < $signed(_T_193); // @[BoxDetection.scala 28:35]
+  wire  _T_3224 = _T_208 & _T_207; // @[BoxDetection.scala 27:41]
+  wire  _T_3226 = _T_3224 & _T_212; // @[BoxDetection.scala 27:60]
+  wire  _T_3237 = _T_422 & _T_421; // @[BoxDetection.scala 27:41]
+  wire  _T_3239 = _T_3237 & _T_426; // @[BoxDetection.scala 27:60]
+  wire  _T_3250 = _T_636 & _T_635; // @[BoxDetection.scala 27:41]
+  wire  _T_3252 = _T_3250 & _T_640; // @[BoxDetection.scala 27:60]
+  wire  _T_3263 = _T_850 & _T_849; // @[BoxDetection.scala 27:41]
+  wire  _T_3265 = _T_3263 & _T_854; // @[BoxDetection.scala 27:60]
+  wire  _T_3276 = _T_1064 & _T_1063; // @[BoxDetection.scala 27:41]
+  wire  _T_3278 = _T_3276 & _T_1068; // @[BoxDetection.scala 27:60]
+  wire  _T_3289 = _T_1278 & _T_1277; // @[BoxDetection.scala 27:41]
+  wire  _T_3291 = _T_3289 & _T_1282; // @[BoxDetection.scala 27:60]
+  wire  _T_3302 = _T_1492 & _T_1491; // @[BoxDetection.scala 27:41]
+  wire  _T_3304 = _T_3302 & _T_1496; // @[BoxDetection.scala 27:60]
+  wire  _T_3315 = _T_1706 & _T_1705; // @[BoxDetection.scala 27:41]
+  wire  _T_3317 = _T_3315 & _T_1710; // @[BoxDetection.scala 27:60]
+  wire  _T_3328 = _T_1920 & _T_1919; // @[BoxDetection.scala 27:41]
+  wire  _T_3330 = _T_3328 & _T_1924; // @[BoxDetection.scala 27:60]
+  wire  _T_3341 = _T_2134 & _T_2133; // @[BoxDetection.scala 27:41]
+  wire  _T_3343 = _T_3341 & _T_2138; // @[BoxDetection.scala 27:60]
+  wire  _T_3354 = _T_2348 & _T_2347; // @[BoxDetection.scala 27:41]
+  wire  _T_3356 = _T_3354 & _T_2352; // @[BoxDetection.scala 27:60]
+  wire  _T_3367 = _T_2562 & _T_2561; // @[BoxDetection.scala 27:41]
+  wire  _T_3369 = _T_3367 & _T_2566; // @[BoxDetection.scala 27:60]
+  wire  _T_3380 = _T_2776 & _T_2775; // @[BoxDetection.scala 27:41]
+  wire  _T_3382 = _T_3380 & _T_2780; // @[BoxDetection.scala 27:60]
+  wire  _T_3393 = _T_2990 & _T_2989; // @[BoxDetection.scala 27:41]
+  wire  _T_3395 = _T_3393 & _T_2994; // @[BoxDetection.scala 27:60]
+  wire  _T_3406 = _T_3204 & _T_3203; // @[BoxDetection.scala 27:41]
+  wire  _T_3408 = _T_3406 & _T_3208; // @[BoxDetection.scala 27:60]
   reg  _T_3424_0_1; // @[BoxDetection.scala 32:24]
   reg  _T_3424_0_2; // @[BoxDetection.scala 32:24]
   reg  _T_3424_0_3; // @[BoxDetection.scala 32:24]
@@ -4301,6 +5269,126 @@ module BoxDetection(
   reg  _T_3424_7_13; // @[BoxDetection.scala 32:24]
   reg  _T_3424_7_14; // @[BoxDetection.scala 32:24]
   reg  _T_3424_7_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_8_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_9_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_10_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_11_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_12_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_14; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_13_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_14_15; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_0; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_1; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_2; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_3; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_4; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_5; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_6; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_7; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_8; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_9; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_10; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_11; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_12; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_13; // @[BoxDetection.scala 32:24]
+  reg  _T_3424_15_14; // @[BoxDetection.scala 32:24]
   assign io_overlap_0_1 = _T_3424_0_1; // @[BoxDetection.scala 32:14]
   assign io_overlap_0_2 = _T_3424_0_2; // @[BoxDetection.scala 32:14]
   assign io_overlap_0_3 = _T_3424_0_3; // @[BoxDetection.scala 32:14]
@@ -4421,6 +5509,126 @@ module BoxDetection(
   assign io_overlap_7_13 = _T_3424_7_13; // @[BoxDetection.scala 32:14]
   assign io_overlap_7_14 = _T_3424_7_14; // @[BoxDetection.scala 32:14]
   assign io_overlap_7_15 = _T_3424_7_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_0 = _T_3424_8_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_1 = _T_3424_8_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_2 = _T_3424_8_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_3 = _T_3424_8_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_4 = _T_3424_8_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_5 = _T_3424_8_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_6 = _T_3424_8_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_7 = _T_3424_8_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_9 = _T_3424_8_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_10 = _T_3424_8_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_11 = _T_3424_8_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_12 = _T_3424_8_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_13 = _T_3424_8_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_14 = _T_3424_8_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_8_15 = _T_3424_8_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_0 = _T_3424_9_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_1 = _T_3424_9_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_2 = _T_3424_9_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_3 = _T_3424_9_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_4 = _T_3424_9_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_5 = _T_3424_9_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_6 = _T_3424_9_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_7 = _T_3424_9_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_8 = _T_3424_9_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_10 = _T_3424_9_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_11 = _T_3424_9_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_12 = _T_3424_9_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_13 = _T_3424_9_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_14 = _T_3424_9_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_9_15 = _T_3424_9_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_0 = _T_3424_10_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_1 = _T_3424_10_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_2 = _T_3424_10_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_3 = _T_3424_10_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_4 = _T_3424_10_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_5 = _T_3424_10_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_6 = _T_3424_10_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_7 = _T_3424_10_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_8 = _T_3424_10_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_9 = _T_3424_10_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_11 = _T_3424_10_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_12 = _T_3424_10_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_13 = _T_3424_10_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_14 = _T_3424_10_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_10_15 = _T_3424_10_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_0 = _T_3424_11_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_1 = _T_3424_11_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_2 = _T_3424_11_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_3 = _T_3424_11_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_4 = _T_3424_11_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_5 = _T_3424_11_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_6 = _T_3424_11_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_7 = _T_3424_11_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_8 = _T_3424_11_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_9 = _T_3424_11_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_10 = _T_3424_11_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_12 = _T_3424_11_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_13 = _T_3424_11_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_14 = _T_3424_11_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_11_15 = _T_3424_11_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_0 = _T_3424_12_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_1 = _T_3424_12_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_2 = _T_3424_12_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_3 = _T_3424_12_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_4 = _T_3424_12_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_5 = _T_3424_12_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_6 = _T_3424_12_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_7 = _T_3424_12_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_8 = _T_3424_12_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_9 = _T_3424_12_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_10 = _T_3424_12_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_11 = _T_3424_12_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_13 = _T_3424_12_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_14 = _T_3424_12_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_12_15 = _T_3424_12_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_0 = _T_3424_13_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_1 = _T_3424_13_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_2 = _T_3424_13_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_3 = _T_3424_13_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_4 = _T_3424_13_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_5 = _T_3424_13_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_6 = _T_3424_13_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_7 = _T_3424_13_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_8 = _T_3424_13_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_9 = _T_3424_13_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_10 = _T_3424_13_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_11 = _T_3424_13_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_12 = _T_3424_13_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_14 = _T_3424_13_14; // @[BoxDetection.scala 32:14]
+  assign io_overlap_13_15 = _T_3424_13_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_0 = _T_3424_14_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_1 = _T_3424_14_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_2 = _T_3424_14_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_3 = _T_3424_14_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_4 = _T_3424_14_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_5 = _T_3424_14_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_6 = _T_3424_14_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_7 = _T_3424_14_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_8 = _T_3424_14_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_9 = _T_3424_14_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_10 = _T_3424_14_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_11 = _T_3424_14_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_12 = _T_3424_14_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_13 = _T_3424_14_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_14_15 = _T_3424_14_15; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_0 = _T_3424_15_0; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_1 = _T_3424_15_1; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_2 = _T_3424_15_2; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_3 = _T_3424_15_3; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_4 = _T_3424_15_4; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_5 = _T_3424_15_5; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_6 = _T_3424_15_6; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_7 = _T_3424_15_7; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_8 = _T_3424_15_8; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_9 = _T_3424_15_9; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_10 = _T_3424_15_10; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_11 = _T_3424_15_11; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_12 = _T_3424_15_12; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_13 = _T_3424_15_13; // @[BoxDetection.scala 32:14]
+  assign io_overlap_15_14 = _T_3424_15_14; // @[BoxDetection.scala 32:14]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -4696,6 +5904,246 @@ initial begin
   _T_3424_7_14 = _RAND_118[0:0];
   _RAND_119 = {1{`RANDOM}};
   _T_3424_7_15 = _RAND_119[0:0];
+  _RAND_120 = {1{`RANDOM}};
+  _T_3424_8_0 = _RAND_120[0:0];
+  _RAND_121 = {1{`RANDOM}};
+  _T_3424_8_1 = _RAND_121[0:0];
+  _RAND_122 = {1{`RANDOM}};
+  _T_3424_8_2 = _RAND_122[0:0];
+  _RAND_123 = {1{`RANDOM}};
+  _T_3424_8_3 = _RAND_123[0:0];
+  _RAND_124 = {1{`RANDOM}};
+  _T_3424_8_4 = _RAND_124[0:0];
+  _RAND_125 = {1{`RANDOM}};
+  _T_3424_8_5 = _RAND_125[0:0];
+  _RAND_126 = {1{`RANDOM}};
+  _T_3424_8_6 = _RAND_126[0:0];
+  _RAND_127 = {1{`RANDOM}};
+  _T_3424_8_7 = _RAND_127[0:0];
+  _RAND_128 = {1{`RANDOM}};
+  _T_3424_8_9 = _RAND_128[0:0];
+  _RAND_129 = {1{`RANDOM}};
+  _T_3424_8_10 = _RAND_129[0:0];
+  _RAND_130 = {1{`RANDOM}};
+  _T_3424_8_11 = _RAND_130[0:0];
+  _RAND_131 = {1{`RANDOM}};
+  _T_3424_8_12 = _RAND_131[0:0];
+  _RAND_132 = {1{`RANDOM}};
+  _T_3424_8_13 = _RAND_132[0:0];
+  _RAND_133 = {1{`RANDOM}};
+  _T_3424_8_14 = _RAND_133[0:0];
+  _RAND_134 = {1{`RANDOM}};
+  _T_3424_8_15 = _RAND_134[0:0];
+  _RAND_135 = {1{`RANDOM}};
+  _T_3424_9_0 = _RAND_135[0:0];
+  _RAND_136 = {1{`RANDOM}};
+  _T_3424_9_1 = _RAND_136[0:0];
+  _RAND_137 = {1{`RANDOM}};
+  _T_3424_9_2 = _RAND_137[0:0];
+  _RAND_138 = {1{`RANDOM}};
+  _T_3424_9_3 = _RAND_138[0:0];
+  _RAND_139 = {1{`RANDOM}};
+  _T_3424_9_4 = _RAND_139[0:0];
+  _RAND_140 = {1{`RANDOM}};
+  _T_3424_9_5 = _RAND_140[0:0];
+  _RAND_141 = {1{`RANDOM}};
+  _T_3424_9_6 = _RAND_141[0:0];
+  _RAND_142 = {1{`RANDOM}};
+  _T_3424_9_7 = _RAND_142[0:0];
+  _RAND_143 = {1{`RANDOM}};
+  _T_3424_9_8 = _RAND_143[0:0];
+  _RAND_144 = {1{`RANDOM}};
+  _T_3424_9_10 = _RAND_144[0:0];
+  _RAND_145 = {1{`RANDOM}};
+  _T_3424_9_11 = _RAND_145[0:0];
+  _RAND_146 = {1{`RANDOM}};
+  _T_3424_9_12 = _RAND_146[0:0];
+  _RAND_147 = {1{`RANDOM}};
+  _T_3424_9_13 = _RAND_147[0:0];
+  _RAND_148 = {1{`RANDOM}};
+  _T_3424_9_14 = _RAND_148[0:0];
+  _RAND_149 = {1{`RANDOM}};
+  _T_3424_9_15 = _RAND_149[0:0];
+  _RAND_150 = {1{`RANDOM}};
+  _T_3424_10_0 = _RAND_150[0:0];
+  _RAND_151 = {1{`RANDOM}};
+  _T_3424_10_1 = _RAND_151[0:0];
+  _RAND_152 = {1{`RANDOM}};
+  _T_3424_10_2 = _RAND_152[0:0];
+  _RAND_153 = {1{`RANDOM}};
+  _T_3424_10_3 = _RAND_153[0:0];
+  _RAND_154 = {1{`RANDOM}};
+  _T_3424_10_4 = _RAND_154[0:0];
+  _RAND_155 = {1{`RANDOM}};
+  _T_3424_10_5 = _RAND_155[0:0];
+  _RAND_156 = {1{`RANDOM}};
+  _T_3424_10_6 = _RAND_156[0:0];
+  _RAND_157 = {1{`RANDOM}};
+  _T_3424_10_7 = _RAND_157[0:0];
+  _RAND_158 = {1{`RANDOM}};
+  _T_3424_10_8 = _RAND_158[0:0];
+  _RAND_159 = {1{`RANDOM}};
+  _T_3424_10_9 = _RAND_159[0:0];
+  _RAND_160 = {1{`RANDOM}};
+  _T_3424_10_11 = _RAND_160[0:0];
+  _RAND_161 = {1{`RANDOM}};
+  _T_3424_10_12 = _RAND_161[0:0];
+  _RAND_162 = {1{`RANDOM}};
+  _T_3424_10_13 = _RAND_162[0:0];
+  _RAND_163 = {1{`RANDOM}};
+  _T_3424_10_14 = _RAND_163[0:0];
+  _RAND_164 = {1{`RANDOM}};
+  _T_3424_10_15 = _RAND_164[0:0];
+  _RAND_165 = {1{`RANDOM}};
+  _T_3424_11_0 = _RAND_165[0:0];
+  _RAND_166 = {1{`RANDOM}};
+  _T_3424_11_1 = _RAND_166[0:0];
+  _RAND_167 = {1{`RANDOM}};
+  _T_3424_11_2 = _RAND_167[0:0];
+  _RAND_168 = {1{`RANDOM}};
+  _T_3424_11_3 = _RAND_168[0:0];
+  _RAND_169 = {1{`RANDOM}};
+  _T_3424_11_4 = _RAND_169[0:0];
+  _RAND_170 = {1{`RANDOM}};
+  _T_3424_11_5 = _RAND_170[0:0];
+  _RAND_171 = {1{`RANDOM}};
+  _T_3424_11_6 = _RAND_171[0:0];
+  _RAND_172 = {1{`RANDOM}};
+  _T_3424_11_7 = _RAND_172[0:0];
+  _RAND_173 = {1{`RANDOM}};
+  _T_3424_11_8 = _RAND_173[0:0];
+  _RAND_174 = {1{`RANDOM}};
+  _T_3424_11_9 = _RAND_174[0:0];
+  _RAND_175 = {1{`RANDOM}};
+  _T_3424_11_10 = _RAND_175[0:0];
+  _RAND_176 = {1{`RANDOM}};
+  _T_3424_11_12 = _RAND_176[0:0];
+  _RAND_177 = {1{`RANDOM}};
+  _T_3424_11_13 = _RAND_177[0:0];
+  _RAND_178 = {1{`RANDOM}};
+  _T_3424_11_14 = _RAND_178[0:0];
+  _RAND_179 = {1{`RANDOM}};
+  _T_3424_11_15 = _RAND_179[0:0];
+  _RAND_180 = {1{`RANDOM}};
+  _T_3424_12_0 = _RAND_180[0:0];
+  _RAND_181 = {1{`RANDOM}};
+  _T_3424_12_1 = _RAND_181[0:0];
+  _RAND_182 = {1{`RANDOM}};
+  _T_3424_12_2 = _RAND_182[0:0];
+  _RAND_183 = {1{`RANDOM}};
+  _T_3424_12_3 = _RAND_183[0:0];
+  _RAND_184 = {1{`RANDOM}};
+  _T_3424_12_4 = _RAND_184[0:0];
+  _RAND_185 = {1{`RANDOM}};
+  _T_3424_12_5 = _RAND_185[0:0];
+  _RAND_186 = {1{`RANDOM}};
+  _T_3424_12_6 = _RAND_186[0:0];
+  _RAND_187 = {1{`RANDOM}};
+  _T_3424_12_7 = _RAND_187[0:0];
+  _RAND_188 = {1{`RANDOM}};
+  _T_3424_12_8 = _RAND_188[0:0];
+  _RAND_189 = {1{`RANDOM}};
+  _T_3424_12_9 = _RAND_189[0:0];
+  _RAND_190 = {1{`RANDOM}};
+  _T_3424_12_10 = _RAND_190[0:0];
+  _RAND_191 = {1{`RANDOM}};
+  _T_3424_12_11 = _RAND_191[0:0];
+  _RAND_192 = {1{`RANDOM}};
+  _T_3424_12_13 = _RAND_192[0:0];
+  _RAND_193 = {1{`RANDOM}};
+  _T_3424_12_14 = _RAND_193[0:0];
+  _RAND_194 = {1{`RANDOM}};
+  _T_3424_12_15 = _RAND_194[0:0];
+  _RAND_195 = {1{`RANDOM}};
+  _T_3424_13_0 = _RAND_195[0:0];
+  _RAND_196 = {1{`RANDOM}};
+  _T_3424_13_1 = _RAND_196[0:0];
+  _RAND_197 = {1{`RANDOM}};
+  _T_3424_13_2 = _RAND_197[0:0];
+  _RAND_198 = {1{`RANDOM}};
+  _T_3424_13_3 = _RAND_198[0:0];
+  _RAND_199 = {1{`RANDOM}};
+  _T_3424_13_4 = _RAND_199[0:0];
+  _RAND_200 = {1{`RANDOM}};
+  _T_3424_13_5 = _RAND_200[0:0];
+  _RAND_201 = {1{`RANDOM}};
+  _T_3424_13_6 = _RAND_201[0:0];
+  _RAND_202 = {1{`RANDOM}};
+  _T_3424_13_7 = _RAND_202[0:0];
+  _RAND_203 = {1{`RANDOM}};
+  _T_3424_13_8 = _RAND_203[0:0];
+  _RAND_204 = {1{`RANDOM}};
+  _T_3424_13_9 = _RAND_204[0:0];
+  _RAND_205 = {1{`RANDOM}};
+  _T_3424_13_10 = _RAND_205[0:0];
+  _RAND_206 = {1{`RANDOM}};
+  _T_3424_13_11 = _RAND_206[0:0];
+  _RAND_207 = {1{`RANDOM}};
+  _T_3424_13_12 = _RAND_207[0:0];
+  _RAND_208 = {1{`RANDOM}};
+  _T_3424_13_14 = _RAND_208[0:0];
+  _RAND_209 = {1{`RANDOM}};
+  _T_3424_13_15 = _RAND_209[0:0];
+  _RAND_210 = {1{`RANDOM}};
+  _T_3424_14_0 = _RAND_210[0:0];
+  _RAND_211 = {1{`RANDOM}};
+  _T_3424_14_1 = _RAND_211[0:0];
+  _RAND_212 = {1{`RANDOM}};
+  _T_3424_14_2 = _RAND_212[0:0];
+  _RAND_213 = {1{`RANDOM}};
+  _T_3424_14_3 = _RAND_213[0:0];
+  _RAND_214 = {1{`RANDOM}};
+  _T_3424_14_4 = _RAND_214[0:0];
+  _RAND_215 = {1{`RANDOM}};
+  _T_3424_14_5 = _RAND_215[0:0];
+  _RAND_216 = {1{`RANDOM}};
+  _T_3424_14_6 = _RAND_216[0:0];
+  _RAND_217 = {1{`RANDOM}};
+  _T_3424_14_7 = _RAND_217[0:0];
+  _RAND_218 = {1{`RANDOM}};
+  _T_3424_14_8 = _RAND_218[0:0];
+  _RAND_219 = {1{`RANDOM}};
+  _T_3424_14_9 = _RAND_219[0:0];
+  _RAND_220 = {1{`RANDOM}};
+  _T_3424_14_10 = _RAND_220[0:0];
+  _RAND_221 = {1{`RANDOM}};
+  _T_3424_14_11 = _RAND_221[0:0];
+  _RAND_222 = {1{`RANDOM}};
+  _T_3424_14_12 = _RAND_222[0:0];
+  _RAND_223 = {1{`RANDOM}};
+  _T_3424_14_13 = _RAND_223[0:0];
+  _RAND_224 = {1{`RANDOM}};
+  _T_3424_14_15 = _RAND_224[0:0];
+  _RAND_225 = {1{`RANDOM}};
+  _T_3424_15_0 = _RAND_225[0:0];
+  _RAND_226 = {1{`RANDOM}};
+  _T_3424_15_1 = _RAND_226[0:0];
+  _RAND_227 = {1{`RANDOM}};
+  _T_3424_15_2 = _RAND_227[0:0];
+  _RAND_228 = {1{`RANDOM}};
+  _T_3424_15_3 = _RAND_228[0:0];
+  _RAND_229 = {1{`RANDOM}};
+  _T_3424_15_4 = _RAND_229[0:0];
+  _RAND_230 = {1{`RANDOM}};
+  _T_3424_15_5 = _RAND_230[0:0];
+  _RAND_231 = {1{`RANDOM}};
+  _T_3424_15_6 = _RAND_231[0:0];
+  _RAND_232 = {1{`RANDOM}};
+  _T_3424_15_7 = _RAND_232[0:0];
+  _RAND_233 = {1{`RANDOM}};
+  _T_3424_15_8 = _RAND_233[0:0];
+  _RAND_234 = {1{`RANDOM}};
+  _T_3424_15_9 = _RAND_234[0:0];
+  _RAND_235 = {1{`RANDOM}};
+  _T_3424_15_10 = _RAND_235[0:0];
+  _RAND_236 = {1{`RANDOM}};
+  _T_3424_15_11 = _RAND_236[0:0];
+  _RAND_237 = {1{`RANDOM}};
+  _T_3424_15_12 = _RAND_237[0:0];
+  _RAND_238 = {1{`RANDOM}};
+  _T_3424_15_13 = _RAND_238[0:0];
+  _RAND_239 = {1{`RANDOM}};
+  _T_3424_15_14 = _RAND_239[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -4712,13 +6160,13 @@ end // initial
     _T_3424_0_6 <= _T_94 & _T_95;
     _T_3424_0_7 <= _T_107 & _T_108;
     _T_3424_0_8 <= _T_120 & _T_121;
-    _T_3424_0_9 <= _T_120 & _T_121;
-    _T_3424_0_10 <= _T_120 & _T_121;
-    _T_3424_0_11 <= _T_120 & _T_121;
-    _T_3424_0_12 <= _T_120 & _T_121;
-    _T_3424_0_13 <= _T_120 & _T_121;
-    _T_3424_0_14 <= _T_120 & _T_121;
-    _T_3424_0_15 <= _T_120 & _T_121;
+    _T_3424_0_9 <= _T_133 & _T_134;
+    _T_3424_0_10 <= _T_146 & _T_147;
+    _T_3424_0_11 <= _T_159 & _T_160;
+    _T_3424_0_12 <= _T_172 & _T_173;
+    _T_3424_0_13 <= _T_185 & _T_186;
+    _T_3424_0_14 <= _T_198 & _T_199;
+    _T_3424_0_15 <= _T_211 & _T_212;
     _T_3424_1_0 <= _T_230 & _T_28;
     _T_3424_1_2 <= _T_256 & _T_257;
     _T_3424_1_3 <= _T_269 & _T_270;
@@ -4727,13 +6175,13 @@ end // initial
     _T_3424_1_6 <= _T_308 & _T_309;
     _T_3424_1_7 <= _T_321 & _T_322;
     _T_3424_1_8 <= _T_334 & _T_335;
-    _T_3424_1_9 <= _T_334 & _T_335;
-    _T_3424_1_10 <= _T_334 & _T_335;
-    _T_3424_1_11 <= _T_334 & _T_335;
-    _T_3424_1_12 <= _T_334 & _T_335;
-    _T_3424_1_13 <= _T_334 & _T_335;
-    _T_3424_1_14 <= _T_334 & _T_335;
-    _T_3424_1_15 <= _T_334 & _T_335;
+    _T_3424_1_9 <= _T_347 & _T_348;
+    _T_3424_1_10 <= _T_360 & _T_361;
+    _T_3424_1_11 <= _T_373 & _T_374;
+    _T_3424_1_12 <= _T_386 & _T_387;
+    _T_3424_1_13 <= _T_399 & _T_400;
+    _T_3424_1_14 <= _T_412 & _T_413;
+    _T_3424_1_15 <= _T_425 & _T_426;
     _T_3424_2_0 <= _T_444 & _T_41;
     _T_3424_2_1 <= _T_457 & _T_255;
     _T_3424_2_3 <= _T_483 & _T_484;
@@ -4742,13 +6190,13 @@ end // initial
     _T_3424_2_6 <= _T_522 & _T_523;
     _T_3424_2_7 <= _T_535 & _T_536;
     _T_3424_2_8 <= _T_548 & _T_549;
-    _T_3424_2_9 <= _T_548 & _T_549;
-    _T_3424_2_10 <= _T_548 & _T_549;
-    _T_3424_2_11 <= _T_548 & _T_549;
-    _T_3424_2_12 <= _T_548 & _T_549;
-    _T_3424_2_13 <= _T_548 & _T_549;
-    _T_3424_2_14 <= _T_548 & _T_549;
-    _T_3424_2_15 <= _T_548 & _T_549;
+    _T_3424_2_9 <= _T_561 & _T_562;
+    _T_3424_2_10 <= _T_574 & _T_575;
+    _T_3424_2_11 <= _T_587 & _T_588;
+    _T_3424_2_12 <= _T_600 & _T_601;
+    _T_3424_2_13 <= _T_613 & _T_614;
+    _T_3424_2_14 <= _T_626 & _T_627;
+    _T_3424_2_15 <= _T_639 & _T_640;
     _T_3424_3_0 <= _T_658 & _T_54;
     _T_3424_3_1 <= _T_671 & _T_268;
     _T_3424_3_2 <= _T_684 & _T_482;
@@ -4757,13 +6205,13 @@ end // initial
     _T_3424_3_6 <= _T_736 & _T_737;
     _T_3424_3_7 <= _T_749 & _T_750;
     _T_3424_3_8 <= _T_762 & _T_763;
-    _T_3424_3_9 <= _T_762 & _T_763;
-    _T_3424_3_10 <= _T_762 & _T_763;
-    _T_3424_3_11 <= _T_762 & _T_763;
-    _T_3424_3_12 <= _T_762 & _T_763;
-    _T_3424_3_13 <= _T_762 & _T_763;
-    _T_3424_3_14 <= _T_762 & _T_763;
-    _T_3424_3_15 <= _T_762 & _T_763;
+    _T_3424_3_9 <= _T_775 & _T_776;
+    _T_3424_3_10 <= _T_788 & _T_789;
+    _T_3424_3_11 <= _T_801 & _T_802;
+    _T_3424_3_12 <= _T_814 & _T_815;
+    _T_3424_3_13 <= _T_827 & _T_828;
+    _T_3424_3_14 <= _T_840 & _T_841;
+    _T_3424_3_15 <= _T_853 & _T_854;
     _T_3424_4_0 <= _T_872 & _T_67;
     _T_3424_4_1 <= _T_885 & _T_281;
     _T_3424_4_2 <= _T_898 & _T_495;
@@ -4772,13 +6220,13 @@ end // initial
     _T_3424_4_6 <= _T_950 & _T_951;
     _T_3424_4_7 <= _T_963 & _T_964;
     _T_3424_4_8 <= _T_976 & _T_977;
-    _T_3424_4_9 <= _T_976 & _T_977;
-    _T_3424_4_10 <= _T_976 & _T_977;
-    _T_3424_4_11 <= _T_976 & _T_977;
-    _T_3424_4_12 <= _T_976 & _T_977;
-    _T_3424_4_13 <= _T_976 & _T_977;
-    _T_3424_4_14 <= _T_976 & _T_977;
-    _T_3424_4_15 <= _T_976 & _T_977;
+    _T_3424_4_9 <= _T_989 & _T_990;
+    _T_3424_4_10 <= _T_1002 & _T_1003;
+    _T_3424_4_11 <= _T_1015 & _T_1016;
+    _T_3424_4_12 <= _T_1028 & _T_1029;
+    _T_3424_4_13 <= _T_1041 & _T_1042;
+    _T_3424_4_14 <= _T_1054 & _T_1055;
+    _T_3424_4_15 <= _T_1067 & _T_1068;
     _T_3424_5_0 <= _T_1086 & _T_80;
     _T_3424_5_1 <= _T_1099 & _T_294;
     _T_3424_5_2 <= _T_1112 & _T_508;
@@ -4787,13 +6235,13 @@ end // initial
     _T_3424_5_6 <= _T_1164 & _T_1165;
     _T_3424_5_7 <= _T_1177 & _T_1178;
     _T_3424_5_8 <= _T_1190 & _T_1191;
-    _T_3424_5_9 <= _T_1190 & _T_1191;
-    _T_3424_5_10 <= _T_1190 & _T_1191;
-    _T_3424_5_11 <= _T_1190 & _T_1191;
-    _T_3424_5_12 <= _T_1190 & _T_1191;
-    _T_3424_5_13 <= _T_1190 & _T_1191;
-    _T_3424_5_14 <= _T_1190 & _T_1191;
-    _T_3424_5_15 <= _T_1190 & _T_1191;
+    _T_3424_5_9 <= _T_1203 & _T_1204;
+    _T_3424_5_10 <= _T_1216 & _T_1217;
+    _T_3424_5_11 <= _T_1229 & _T_1230;
+    _T_3424_5_12 <= _T_1242 & _T_1243;
+    _T_3424_5_13 <= _T_1255 & _T_1256;
+    _T_3424_5_14 <= _T_1268 & _T_1269;
+    _T_3424_5_15 <= _T_1281 & _T_1282;
     _T_3424_6_0 <= _T_1300 & _T_93;
     _T_3424_6_1 <= _T_1313 & _T_307;
     _T_3424_6_2 <= _T_1326 & _T_521;
@@ -4802,13 +6250,13 @@ end // initial
     _T_3424_6_5 <= _T_1365 & _T_1163;
     _T_3424_6_7 <= _T_1391 & _T_1392;
     _T_3424_6_8 <= _T_1404 & _T_1405;
-    _T_3424_6_9 <= _T_1404 & _T_1405;
-    _T_3424_6_10 <= _T_1404 & _T_1405;
-    _T_3424_6_11 <= _T_1404 & _T_1405;
-    _T_3424_6_12 <= _T_1404 & _T_1405;
-    _T_3424_6_13 <= _T_1404 & _T_1405;
-    _T_3424_6_14 <= _T_1404 & _T_1405;
-    _T_3424_6_15 <= _T_1404 & _T_1405;
+    _T_3424_6_9 <= _T_1417 & _T_1418;
+    _T_3424_6_10 <= _T_1430 & _T_1431;
+    _T_3424_6_11 <= _T_1443 & _T_1444;
+    _T_3424_6_12 <= _T_1456 & _T_1457;
+    _T_3424_6_13 <= _T_1469 & _T_1470;
+    _T_3424_6_14 <= _T_1482 & _T_1483;
+    _T_3424_6_15 <= _T_1495 & _T_1496;
     _T_3424_7_0 <= _T_1514 & _T_106;
     _T_3424_7_1 <= _T_1527 & _T_320;
     _T_3424_7_2 <= _T_1540 & _T_534;
@@ -4817,13 +6265,133 @@ end // initial
     _T_3424_7_5 <= _T_1579 & _T_1176;
     _T_3424_7_6 <= _T_1592 & _T_1390;
     _T_3424_7_8 <= _T_1618 & _T_1619;
-    _T_3424_7_9 <= _T_1618 & _T_1619;
-    _T_3424_7_10 <= _T_1618 & _T_1619;
-    _T_3424_7_11 <= _T_1618 & _T_1619;
-    _T_3424_7_12 <= _T_1618 & _T_1619;
-    _T_3424_7_13 <= _T_1618 & _T_1619;
-    _T_3424_7_14 <= _T_1618 & _T_1619;
-    _T_3424_7_15 <= _T_1618 & _T_1619;
+    _T_3424_7_9 <= _T_1631 & _T_1632;
+    _T_3424_7_10 <= _T_1644 & _T_1645;
+    _T_3424_7_11 <= _T_1657 & _T_1658;
+    _T_3424_7_12 <= _T_1670 & _T_1671;
+    _T_3424_7_13 <= _T_1683 & _T_1684;
+    _T_3424_7_14 <= _T_1696 & _T_1697;
+    _T_3424_7_15 <= _T_1709 & _T_1710;
+    _T_3424_8_0 <= _T_1728 & _T_119;
+    _T_3424_8_1 <= _T_1741 & _T_333;
+    _T_3424_8_2 <= _T_1754 & _T_547;
+    _T_3424_8_3 <= _T_1767 & _T_761;
+    _T_3424_8_4 <= _T_1780 & _T_975;
+    _T_3424_8_5 <= _T_1793 & _T_1189;
+    _T_3424_8_6 <= _T_1806 & _T_1403;
+    _T_3424_8_7 <= _T_1819 & _T_1617;
+    _T_3424_8_9 <= _T_1845 & _T_1846;
+    _T_3424_8_10 <= _T_1858 & _T_1859;
+    _T_3424_8_11 <= _T_1871 & _T_1872;
+    _T_3424_8_12 <= _T_1884 & _T_1885;
+    _T_3424_8_13 <= _T_1897 & _T_1898;
+    _T_3424_8_14 <= _T_1910 & _T_1911;
+    _T_3424_8_15 <= _T_1923 & _T_1924;
+    _T_3424_9_0 <= _T_1942 & _T_132;
+    _T_3424_9_1 <= _T_1955 & _T_346;
+    _T_3424_9_2 <= _T_1968 & _T_560;
+    _T_3424_9_3 <= _T_1981 & _T_774;
+    _T_3424_9_4 <= _T_1994 & _T_988;
+    _T_3424_9_5 <= _T_2007 & _T_1202;
+    _T_3424_9_6 <= _T_2020 & _T_1416;
+    _T_3424_9_7 <= _T_2033 & _T_1630;
+    _T_3424_9_8 <= _T_2046 & _T_1844;
+    _T_3424_9_10 <= _T_2072 & _T_2073;
+    _T_3424_9_11 <= _T_2085 & _T_2086;
+    _T_3424_9_12 <= _T_2098 & _T_2099;
+    _T_3424_9_13 <= _T_2111 & _T_2112;
+    _T_3424_9_14 <= _T_2124 & _T_2125;
+    _T_3424_9_15 <= _T_2137 & _T_2138;
+    _T_3424_10_0 <= _T_2156 & _T_145;
+    _T_3424_10_1 <= _T_2169 & _T_359;
+    _T_3424_10_2 <= _T_2182 & _T_573;
+    _T_3424_10_3 <= _T_2195 & _T_787;
+    _T_3424_10_4 <= _T_2208 & _T_1001;
+    _T_3424_10_5 <= _T_2221 & _T_1215;
+    _T_3424_10_6 <= _T_2234 & _T_1429;
+    _T_3424_10_7 <= _T_2247 & _T_1643;
+    _T_3424_10_8 <= _T_2260 & _T_1857;
+    _T_3424_10_9 <= _T_2273 & _T_2071;
+    _T_3424_10_11 <= _T_2299 & _T_2300;
+    _T_3424_10_12 <= _T_2312 & _T_2313;
+    _T_3424_10_13 <= _T_2325 & _T_2326;
+    _T_3424_10_14 <= _T_2338 & _T_2339;
+    _T_3424_10_15 <= _T_2351 & _T_2352;
+    _T_3424_11_0 <= _T_2370 & _T_158;
+    _T_3424_11_1 <= _T_2383 & _T_372;
+    _T_3424_11_2 <= _T_2396 & _T_586;
+    _T_3424_11_3 <= _T_2409 & _T_800;
+    _T_3424_11_4 <= _T_2422 & _T_1014;
+    _T_3424_11_5 <= _T_2435 & _T_1228;
+    _T_3424_11_6 <= _T_2448 & _T_1442;
+    _T_3424_11_7 <= _T_2461 & _T_1656;
+    _T_3424_11_8 <= _T_2474 & _T_1870;
+    _T_3424_11_9 <= _T_2487 & _T_2084;
+    _T_3424_11_10 <= _T_2500 & _T_2298;
+    _T_3424_11_12 <= _T_2526 & _T_2527;
+    _T_3424_11_13 <= _T_2539 & _T_2540;
+    _T_3424_11_14 <= _T_2552 & _T_2553;
+    _T_3424_11_15 <= _T_2565 & _T_2566;
+    _T_3424_12_0 <= _T_2584 & _T_171;
+    _T_3424_12_1 <= _T_2597 & _T_385;
+    _T_3424_12_2 <= _T_2610 & _T_599;
+    _T_3424_12_3 <= _T_2623 & _T_813;
+    _T_3424_12_4 <= _T_2636 & _T_1027;
+    _T_3424_12_5 <= _T_2649 & _T_1241;
+    _T_3424_12_6 <= _T_2662 & _T_1455;
+    _T_3424_12_7 <= _T_2675 & _T_1669;
+    _T_3424_12_8 <= _T_2688 & _T_1883;
+    _T_3424_12_9 <= _T_2701 & _T_2097;
+    _T_3424_12_10 <= _T_2714 & _T_2311;
+    _T_3424_12_11 <= _T_2727 & _T_2525;
+    _T_3424_12_13 <= _T_2753 & _T_2754;
+    _T_3424_12_14 <= _T_2766 & _T_2767;
+    _T_3424_12_15 <= _T_2779 & _T_2780;
+    _T_3424_13_0 <= _T_2798 & _T_184;
+    _T_3424_13_1 <= _T_2811 & _T_398;
+    _T_3424_13_2 <= _T_2824 & _T_612;
+    _T_3424_13_3 <= _T_2837 & _T_826;
+    _T_3424_13_4 <= _T_2850 & _T_1040;
+    _T_3424_13_5 <= _T_2863 & _T_1254;
+    _T_3424_13_6 <= _T_2876 & _T_1468;
+    _T_3424_13_7 <= _T_2889 & _T_1682;
+    _T_3424_13_8 <= _T_2902 & _T_1896;
+    _T_3424_13_9 <= _T_2915 & _T_2110;
+    _T_3424_13_10 <= _T_2928 & _T_2324;
+    _T_3424_13_11 <= _T_2941 & _T_2538;
+    _T_3424_13_12 <= _T_2954 & _T_2752;
+    _T_3424_13_14 <= _T_2980 & _T_2981;
+    _T_3424_13_15 <= _T_2993 & _T_2994;
+    _T_3424_14_0 <= _T_3012 & _T_197;
+    _T_3424_14_1 <= _T_3025 & _T_411;
+    _T_3424_14_2 <= _T_3038 & _T_625;
+    _T_3424_14_3 <= _T_3051 & _T_839;
+    _T_3424_14_4 <= _T_3064 & _T_1053;
+    _T_3424_14_5 <= _T_3077 & _T_1267;
+    _T_3424_14_6 <= _T_3090 & _T_1481;
+    _T_3424_14_7 <= _T_3103 & _T_1695;
+    _T_3424_14_8 <= _T_3116 & _T_1909;
+    _T_3424_14_9 <= _T_3129 & _T_2123;
+    _T_3424_14_10 <= _T_3142 & _T_2337;
+    _T_3424_14_11 <= _T_3155 & _T_2551;
+    _T_3424_14_12 <= _T_3168 & _T_2765;
+    _T_3424_14_13 <= _T_3181 & _T_2979;
+    _T_3424_14_15 <= _T_3207 & _T_3208;
+    _T_3424_15_0 <= _T_3226 & _T_210;
+    _T_3424_15_1 <= _T_3239 & _T_424;
+    _T_3424_15_2 <= _T_3252 & _T_638;
+    _T_3424_15_3 <= _T_3265 & _T_852;
+    _T_3424_15_4 <= _T_3278 & _T_1066;
+    _T_3424_15_5 <= _T_3291 & _T_1280;
+    _T_3424_15_6 <= _T_3304 & _T_1494;
+    _T_3424_15_7 <= _T_3317 & _T_1708;
+    _T_3424_15_8 <= _T_3330 & _T_1922;
+    _T_3424_15_9 <= _T_3343 & _T_2136;
+    _T_3424_15_10 <= _T_3356 & _T_2350;
+    _T_3424_15_11 <= _T_3369 & _T_2564;
+    _T_3424_15_12 <= _T_3382 & _T_2778;
+    _T_3424_15_13 <= _T_3395 & _T_2992;
+    _T_3424_15_14 <= _T_3408 & _T_3206;
   end
 endmodule
 module GameLogicTask0(
@@ -4844,6 +6412,7 @@ module GameLogicTask0(
   output [10:0] io_spriteXPosition_12,
   output [10:0] io_spriteXPosition_13,
   output [10:0] io_spriteXPosition_14,
+  output [10:0] io_spriteXPosition_15,
   output [9:0]  io_spriteYPosition_0,
   output [9:0]  io_spriteYPosition_1,
   output [9:0]  io_spriteYPosition_2,
@@ -4852,6 +6421,14 @@ module GameLogicTask0(
   output [9:0]  io_spriteYPosition_5,
   output [9:0]  io_spriteYPosition_6,
   output [9:0]  io_spriteYPosition_7,
+  output [9:0]  io_spriteYPosition_8,
+  output [9:0]  io_spriteYPosition_9,
+  output [9:0]  io_spriteYPosition_10,
+  output [9:0]  io_spriteYPosition_11,
+  output [9:0]  io_spriteYPosition_12,
+  output [9:0]  io_spriteYPosition_13,
+  output [9:0]  io_spriteYPosition_14,
+  output [9:0]  io_spriteYPosition_15,
   output        io_spriteVisible_0,
   output        io_spriteVisible_1,
   output        io_spriteVisible_2,
@@ -4860,6 +6437,14 @@ module GameLogicTask0(
   output        io_spriteVisible_5,
   output        io_spriteVisible_6,
   output        io_spriteVisible_7,
+  output        io_spriteVisible_8,
+  output        io_spriteVisible_9,
+  output        io_spriteVisible_10,
+  output        io_spriteVisible_11,
+  output        io_spriteVisible_12,
+  output        io_spriteVisible_13,
+  output        io_spriteVisible_14,
+  output        io_spriteVisible_15,
   input         io_newFrame,
   output        io_frameUpdateDone,
   output [10:0] io_boxXPosition_0,
@@ -4870,6 +6455,14 @@ module GameLogicTask0(
   output [10:0] io_boxXPosition_5,
   output [10:0] io_boxXPosition_6,
   output [10:0] io_boxXPosition_7,
+  output [10:0] io_boxXPosition_8,
+  output [10:0] io_boxXPosition_9,
+  output [10:0] io_boxXPosition_10,
+  output [10:0] io_boxXPosition_11,
+  output [10:0] io_boxXPosition_12,
+  output [10:0] io_boxXPosition_13,
+  output [10:0] io_boxXPosition_14,
+  output [10:0] io_boxXPosition_15,
   output [9:0]  io_boxYPosition_0,
   output [9:0]  io_boxYPosition_1,
   output [9:0]  io_boxYPosition_2,
@@ -4878,6 +6471,14 @@ module GameLogicTask0(
   output [9:0]  io_boxYPosition_5,
   output [9:0]  io_boxYPosition_6,
   output [9:0]  io_boxYPosition_7,
+  output [9:0]  io_boxYPosition_8,
+  output [9:0]  io_boxYPosition_9,
+  output [9:0]  io_boxYPosition_10,
+  output [9:0]  io_boxYPosition_11,
+  output [9:0]  io_boxYPosition_12,
+  output [9:0]  io_boxYPosition_13,
+  output [9:0]  io_boxYPosition_14,
+  output [9:0]  io_boxYPosition_15,
   input         io_overlap_0_1,
   input         io_overlap_0_2,
   input         io_overlap_0_3,
@@ -4997,7 +6598,127 @@ module GameLogicTask0(
   input         io_overlap_7_12,
   input         io_overlap_7_13,
   input         io_overlap_7_14,
-  input         io_overlap_7_15
+  input         io_overlap_7_15,
+  input         io_overlap_8_0,
+  input         io_overlap_8_1,
+  input         io_overlap_8_2,
+  input         io_overlap_8_3,
+  input         io_overlap_8_4,
+  input         io_overlap_8_5,
+  input         io_overlap_8_6,
+  input         io_overlap_8_7,
+  input         io_overlap_8_9,
+  input         io_overlap_8_10,
+  input         io_overlap_8_11,
+  input         io_overlap_8_12,
+  input         io_overlap_8_13,
+  input         io_overlap_8_14,
+  input         io_overlap_8_15,
+  input         io_overlap_9_0,
+  input         io_overlap_9_1,
+  input         io_overlap_9_2,
+  input         io_overlap_9_3,
+  input         io_overlap_9_4,
+  input         io_overlap_9_5,
+  input         io_overlap_9_6,
+  input         io_overlap_9_7,
+  input         io_overlap_9_8,
+  input         io_overlap_9_10,
+  input         io_overlap_9_11,
+  input         io_overlap_9_12,
+  input         io_overlap_9_13,
+  input         io_overlap_9_14,
+  input         io_overlap_9_15,
+  input         io_overlap_10_0,
+  input         io_overlap_10_1,
+  input         io_overlap_10_2,
+  input         io_overlap_10_3,
+  input         io_overlap_10_4,
+  input         io_overlap_10_5,
+  input         io_overlap_10_6,
+  input         io_overlap_10_7,
+  input         io_overlap_10_8,
+  input         io_overlap_10_9,
+  input         io_overlap_10_11,
+  input         io_overlap_10_12,
+  input         io_overlap_10_13,
+  input         io_overlap_10_14,
+  input         io_overlap_10_15,
+  input         io_overlap_11_0,
+  input         io_overlap_11_1,
+  input         io_overlap_11_2,
+  input         io_overlap_11_3,
+  input         io_overlap_11_4,
+  input         io_overlap_11_5,
+  input         io_overlap_11_6,
+  input         io_overlap_11_7,
+  input         io_overlap_11_8,
+  input         io_overlap_11_9,
+  input         io_overlap_11_10,
+  input         io_overlap_11_12,
+  input         io_overlap_11_13,
+  input         io_overlap_11_14,
+  input         io_overlap_11_15,
+  input         io_overlap_12_0,
+  input         io_overlap_12_1,
+  input         io_overlap_12_2,
+  input         io_overlap_12_3,
+  input         io_overlap_12_4,
+  input         io_overlap_12_5,
+  input         io_overlap_12_6,
+  input         io_overlap_12_7,
+  input         io_overlap_12_8,
+  input         io_overlap_12_9,
+  input         io_overlap_12_10,
+  input         io_overlap_12_11,
+  input         io_overlap_12_13,
+  input         io_overlap_12_14,
+  input         io_overlap_12_15,
+  input         io_overlap_13_0,
+  input         io_overlap_13_1,
+  input         io_overlap_13_2,
+  input         io_overlap_13_3,
+  input         io_overlap_13_4,
+  input         io_overlap_13_5,
+  input         io_overlap_13_6,
+  input         io_overlap_13_7,
+  input         io_overlap_13_8,
+  input         io_overlap_13_9,
+  input         io_overlap_13_10,
+  input         io_overlap_13_11,
+  input         io_overlap_13_12,
+  input         io_overlap_13_14,
+  input         io_overlap_13_15,
+  input         io_overlap_14_0,
+  input         io_overlap_14_1,
+  input         io_overlap_14_2,
+  input         io_overlap_14_3,
+  input         io_overlap_14_4,
+  input         io_overlap_14_5,
+  input         io_overlap_14_6,
+  input         io_overlap_14_7,
+  input         io_overlap_14_8,
+  input         io_overlap_14_9,
+  input         io_overlap_14_10,
+  input         io_overlap_14_11,
+  input         io_overlap_14_12,
+  input         io_overlap_14_13,
+  input         io_overlap_14_15,
+  input         io_overlap_15_0,
+  input         io_overlap_15_1,
+  input         io_overlap_15_2,
+  input         io_overlap_15_3,
+  input         io_overlap_15_4,
+  input         io_overlap_15_5,
+  input         io_overlap_15_6,
+  input         io_overlap_15_7,
+  input         io_overlap_15_8,
+  input         io_overlap_15_9,
+  input         io_overlap_15_10,
+  input         io_overlap_15_11,
+  input         io_overlap_15_12,
+  input         io_overlap_15_13,
+  input         io_overlap_15_14
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -5144,6 +6865,118 @@ module GameLogicTask0(
   wire  _T_116 = _T_115 | io_overlap_7_13; // @[GameLogicTask0.scala 86:57]
   wire  _T_117 = _T_116 | io_overlap_7_14; // @[GameLogicTask0.scala 86:57]
   wire  _T_118 = _T_117 | io_overlap_7_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_120 = io_overlap_8_0 | io_overlap_8_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_121 = _T_120 | io_overlap_8_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_122 = _T_121 | io_overlap_8_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_123 = _T_122 | io_overlap_8_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_124 = _T_123 | io_overlap_8_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_125 = _T_124 | io_overlap_8_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_126 = _T_125 | io_overlap_8_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_127 = _T_126 | io_overlap_8_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_128 = _T_127 | io_overlap_8_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_129 = _T_128 | io_overlap_8_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_130 = _T_129 | io_overlap_8_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_131 = _T_130 | io_overlap_8_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_132 = _T_131 | io_overlap_8_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_133 = _T_132 | io_overlap_8_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_135 = io_overlap_9_0 | io_overlap_9_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_136 = _T_135 | io_overlap_9_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_137 = _T_136 | io_overlap_9_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_138 = _T_137 | io_overlap_9_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_139 = _T_138 | io_overlap_9_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_140 = _T_139 | io_overlap_9_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_141 = _T_140 | io_overlap_9_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_142 = _T_141 | io_overlap_9_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_143 = _T_142 | io_overlap_9_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_144 = _T_143 | io_overlap_9_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_145 = _T_144 | io_overlap_9_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_146 = _T_145 | io_overlap_9_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_147 = _T_146 | io_overlap_9_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_148 = _T_147 | io_overlap_9_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_150 = io_overlap_10_0 | io_overlap_10_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_151 = _T_150 | io_overlap_10_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_152 = _T_151 | io_overlap_10_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_153 = _T_152 | io_overlap_10_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_154 = _T_153 | io_overlap_10_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_155 = _T_154 | io_overlap_10_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_156 = _T_155 | io_overlap_10_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_157 = _T_156 | io_overlap_10_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_158 = _T_157 | io_overlap_10_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_159 = _T_158 | io_overlap_10_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_160 = _T_159 | io_overlap_10_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_161 = _T_160 | io_overlap_10_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_162 = _T_161 | io_overlap_10_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_163 = _T_162 | io_overlap_10_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_165 = io_overlap_11_0 | io_overlap_11_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_166 = _T_165 | io_overlap_11_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_167 = _T_166 | io_overlap_11_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_168 = _T_167 | io_overlap_11_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_169 = _T_168 | io_overlap_11_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_170 = _T_169 | io_overlap_11_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_171 = _T_170 | io_overlap_11_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_172 = _T_171 | io_overlap_11_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_173 = _T_172 | io_overlap_11_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_174 = _T_173 | io_overlap_11_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_175 = _T_174 | io_overlap_11_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_176 = _T_175 | io_overlap_11_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_177 = _T_176 | io_overlap_11_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_178 = _T_177 | io_overlap_11_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_180 = io_overlap_12_0 | io_overlap_12_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_181 = _T_180 | io_overlap_12_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_182 = _T_181 | io_overlap_12_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_183 = _T_182 | io_overlap_12_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_184 = _T_183 | io_overlap_12_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_185 = _T_184 | io_overlap_12_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_186 = _T_185 | io_overlap_12_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_187 = _T_186 | io_overlap_12_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_188 = _T_187 | io_overlap_12_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_189 = _T_188 | io_overlap_12_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_190 = _T_189 | io_overlap_12_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_191 = _T_190 | io_overlap_12_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_192 = _T_191 | io_overlap_12_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_193 = _T_192 | io_overlap_12_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_195 = io_overlap_13_0 | io_overlap_13_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_196 = _T_195 | io_overlap_13_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_197 = _T_196 | io_overlap_13_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_198 = _T_197 | io_overlap_13_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_199 = _T_198 | io_overlap_13_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_200 = _T_199 | io_overlap_13_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_201 = _T_200 | io_overlap_13_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_202 = _T_201 | io_overlap_13_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_203 = _T_202 | io_overlap_13_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_204 = _T_203 | io_overlap_13_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_205 = _T_204 | io_overlap_13_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_206 = _T_205 | io_overlap_13_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_207 = _T_206 | io_overlap_13_14; // @[GameLogicTask0.scala 86:57]
+  wire  _T_208 = _T_207 | io_overlap_13_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_210 = io_overlap_14_0 | io_overlap_14_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_211 = _T_210 | io_overlap_14_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_212 = _T_211 | io_overlap_14_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_213 = _T_212 | io_overlap_14_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_214 = _T_213 | io_overlap_14_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_215 = _T_214 | io_overlap_14_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_216 = _T_215 | io_overlap_14_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_217 = _T_216 | io_overlap_14_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_218 = _T_217 | io_overlap_14_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_219 = _T_218 | io_overlap_14_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_220 = _T_219 | io_overlap_14_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_221 = _T_220 | io_overlap_14_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_222 = _T_221 | io_overlap_14_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_223 = _T_222 | io_overlap_14_15; // @[GameLogicTask0.scala 86:57]
+  wire  _T_225 = io_overlap_15_0 | io_overlap_15_1; // @[GameLogicTask0.scala 86:57]
+  wire  _T_226 = _T_225 | io_overlap_15_2; // @[GameLogicTask0.scala 86:57]
+  wire  _T_227 = _T_226 | io_overlap_15_3; // @[GameLogicTask0.scala 86:57]
+  wire  _T_228 = _T_227 | io_overlap_15_4; // @[GameLogicTask0.scala 86:57]
+  wire  _T_229 = _T_228 | io_overlap_15_5; // @[GameLogicTask0.scala 86:57]
+  wire  _T_230 = _T_229 | io_overlap_15_6; // @[GameLogicTask0.scala 86:57]
+  wire  _T_231 = _T_230 | io_overlap_15_7; // @[GameLogicTask0.scala 86:57]
+  wire  _T_232 = _T_231 | io_overlap_15_8; // @[GameLogicTask0.scala 86:57]
+  wire  _T_233 = _T_232 | io_overlap_15_9; // @[GameLogicTask0.scala 86:57]
+  wire  _T_234 = _T_233 | io_overlap_15_10; // @[GameLogicTask0.scala 86:57]
+  wire  _T_235 = _T_234 | io_overlap_15_11; // @[GameLogicTask0.scala 86:57]
+  wire  _T_236 = _T_235 | io_overlap_15_12; // @[GameLogicTask0.scala 86:57]
+  wire  _T_237 = _T_236 | io_overlap_15_13; // @[GameLogicTask0.scala 86:57]
+  wire  _T_238 = _T_237 | io_overlap_15_14; // @[GameLogicTask0.scala 86:57]
   reg [1:0] stateReg; // @[GameLogicTask0.scala 106:25]
   reg [10:0] spriteXReg_0; // @[GameLogicTask0.scala 114:31]
   reg [10:0] spriteXReg_1; // @[GameLogicTask0.scala 114:31]
@@ -5270,6 +7103,7 @@ module GameLogicTask0(
   assign io_spriteXPosition_12 = spriteXReg_12; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
   assign io_spriteXPosition_13 = spriteXReg_13; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
   assign io_spriteXPosition_14 = spriteXReg_14; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_15 = 11'sh0; // @[GameLogicTask0.scala 77:22]
   assign io_spriteYPosition_0 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteYPosition_1 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteYPosition_2 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
@@ -5278,6 +7112,14 @@ module GameLogicTask0(
   assign io_spriteYPosition_5 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteYPosition_6 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
   assign io_spriteYPosition_7 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_8 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_9 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_10 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_11 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_12 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_13 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_14 = 10'sh148; // @[GameLogicTask0.scala 78:22 GameLogicTask0.scala 128:27]
+  assign io_spriteYPosition_15 = 10'sh0; // @[GameLogicTask0.scala 78:22]
   assign io_spriteVisible_0 = ~_T_13; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_spriteVisible_1 = ~_T_28; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_spriteVisible_2 = ~_T_43; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
@@ -5286,6 +7128,14 @@ module GameLogicTask0(
   assign io_spriteVisible_5 = ~_T_88; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_spriteVisible_6 = ~_T_103; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_spriteVisible_7 = ~_T_118; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_8 = ~_T_133; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_9 = ~_T_148; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_10 = ~_T_163; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_11 = ~_T_178; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_12 = ~_T_193; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_13 = ~_T_208; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_14 = ~_T_223; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
+  assign io_spriteVisible_15 = ~_T_238; // @[GameLogicTask0.scala 79:20 GameLogicTask0.scala 86:25]
   assign io_frameUpdateDone = _T_240 ? 1'h0 : _GEN_64; // @[GameLogicTask0.scala 98:22 GameLogicTask0.scala 161:26]
   assign io_boxXPosition_0 = io_spriteXPosition_0; // @[GameLogicTask0.scala 166:23]
   assign io_boxXPosition_1 = io_spriteXPosition_1; // @[GameLogicTask0.scala 166:23]
@@ -5295,6 +7145,14 @@ module GameLogicTask0(
   assign io_boxXPosition_5 = io_spriteXPosition_5; // @[GameLogicTask0.scala 166:23]
   assign io_boxXPosition_6 = io_spriteXPosition_6; // @[GameLogicTask0.scala 166:23]
   assign io_boxXPosition_7 = io_spriteXPosition_7; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_8 = io_spriteXPosition_8; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_9 = io_spriteXPosition_9; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_10 = io_spriteXPosition_10; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_11 = io_spriteXPosition_11; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_12 = io_spriteXPosition_12; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_13 = io_spriteXPosition_13; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_14 = io_spriteXPosition_14; // @[GameLogicTask0.scala 166:23]
+  assign io_boxXPosition_15 = io_spriteXPosition_15; // @[GameLogicTask0.scala 166:23]
   assign io_boxYPosition_0 = io_spriteYPosition_0; // @[GameLogicTask0.scala 167:23]
   assign io_boxYPosition_1 = io_spriteYPosition_1; // @[GameLogicTask0.scala 167:23]
   assign io_boxYPosition_2 = io_spriteYPosition_2; // @[GameLogicTask0.scala 167:23]
@@ -5303,6 +7161,14 @@ module GameLogicTask0(
   assign io_boxYPosition_5 = io_spriteYPosition_5; // @[GameLogicTask0.scala 167:23]
   assign io_boxYPosition_6 = io_spriteYPosition_6; // @[GameLogicTask0.scala 167:23]
   assign io_boxYPosition_7 = io_spriteYPosition_7; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_8 = io_spriteYPosition_8; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_9 = io_spriteYPosition_9; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_10 = io_spriteYPosition_10; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_11 = io_spriteYPosition_11; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_12 = io_spriteYPosition_12; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_13 = io_spriteYPosition_13; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_14 = io_spriteYPosition_14; // @[GameLogicTask0.scala 167:23]
+  assign io_boxYPosition_15 = io_spriteYPosition_15; // @[GameLogicTask0.scala 167:23]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -5789,6 +7655,14 @@ module GameTop(
   wire  graphicEngineVGA_io_spriteVisible_5; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_spriteVisible_6; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_spriteVisible_7; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_8; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_9; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_10; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_11; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_12; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_13; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_14; // @[GameTop.scala 43:32]
+  wire  graphicEngineVGA_io_spriteVisible_15; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_newFrame; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 43:32]
@@ -5806,6 +7680,14 @@ module GameTop(
   wire [10:0] boxDetection_io_boxXPosition_5; // @[GameTop.scala 44:28]
   wire [10:0] boxDetection_io_boxXPosition_6; // @[GameTop.scala 44:28]
   wire [10:0] boxDetection_io_boxXPosition_7; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_8; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_9; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_10; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_11; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_12; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_13; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_14; // @[GameTop.scala 44:28]
+  wire [10:0] boxDetection_io_boxXPosition_15; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_0; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_1; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_2; // @[GameTop.scala 44:28]
@@ -5814,6 +7696,14 @@ module GameTop(
   wire [9:0] boxDetection_io_boxYPosition_5; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_6; // @[GameTop.scala 44:28]
   wire [9:0] boxDetection_io_boxYPosition_7; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_8; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_9; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_10; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_11; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_12; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_13; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_14; // @[GameTop.scala 44:28]
+  wire [9:0] boxDetection_io_boxYPosition_15; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_1; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_2; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_0_3; // @[GameTop.scala 44:28]
@@ -5934,6 +7824,126 @@ module GameTop(
   wire  boxDetection_io_overlap_7_13; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_7_14; // @[GameTop.scala 44:28]
   wire  boxDetection_io_overlap_7_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_8_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_9_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_10_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_11_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_12_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_14; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_13_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_14_15; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_0; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_1; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_2; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_3; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_4; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_5; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_6; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_7; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_8; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_9; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_10; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_11; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_12; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_13; // @[GameTop.scala 44:28]
+  wire  boxDetection_io_overlap_15_14; // @[GameTop.scala 44:28]
   wire  gameLogic_clock; // @[GameTop.scala 48:25]
   wire  gameLogic_reset; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_spriteXPosition_0; // @[GameTop.scala 48:25]
@@ -5951,6 +7961,7 @@ module GameTop(
   wire [10:0] gameLogic_io_spriteXPosition_12; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_spriteXPosition_13; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_spriteXPosition_14; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_15; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_0; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_1; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_2; // @[GameTop.scala 48:25]
@@ -5959,6 +7970,14 @@ module GameTop(
   wire [9:0] gameLogic_io_spriteYPosition_5; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_6; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_spriteYPosition_7; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_8; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_9; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_10; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_11; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_12; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_13; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_14; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_spriteYPosition_15; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_0; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_1; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_2; // @[GameTop.scala 48:25]
@@ -5967,6 +7986,14 @@ module GameTop(
   wire  gameLogic_io_spriteVisible_5; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_6; // @[GameTop.scala 48:25]
   wire  gameLogic_io_spriteVisible_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_spriteVisible_15; // @[GameTop.scala 48:25]
   wire  gameLogic_io_newFrame; // @[GameTop.scala 48:25]
   wire  gameLogic_io_frameUpdateDone; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_boxXPosition_0; // @[GameTop.scala 48:25]
@@ -5977,6 +8004,14 @@ module GameTop(
   wire [10:0] gameLogic_io_boxXPosition_5; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_boxXPosition_6; // @[GameTop.scala 48:25]
   wire [10:0] gameLogic_io_boxXPosition_7; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_8; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_9; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_10; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_11; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_12; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_13; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_14; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_boxXPosition_15; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_0; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_1; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_2; // @[GameTop.scala 48:25]
@@ -5985,6 +8020,14 @@ module GameTop(
   wire [9:0] gameLogic_io_boxYPosition_5; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_6; // @[GameTop.scala 48:25]
   wire [9:0] gameLogic_io_boxYPosition_7; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_8; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_9; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_10; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_11; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_12; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_13; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_14; // @[GameTop.scala 48:25]
+  wire [9:0] gameLogic_io_boxYPosition_15; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_1; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_2; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_0_3; // @[GameTop.scala 48:25]
@@ -6105,6 +8148,126 @@ module GameTop(
   wire  gameLogic_io_overlap_7_13; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_7_14; // @[GameTop.scala 48:25]
   wire  gameLogic_io_overlap_7_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_8_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_9_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_10_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_11_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_12_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_14; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_13_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_14_15; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_0; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_1; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_2; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_3; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_4; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_5; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_6; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_7; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_8; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_9; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_10; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_11; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_12; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_13; // @[GameTop.scala 48:25]
+  wire  gameLogic_io_overlap_15_14; // @[GameTop.scala 48:25]
   reg [21:0] resetReleaseCounter; // @[GameTop.scala 83:36]
   wire  _T_3 = resetReleaseCounter == 22'h3d08ff; // @[GameTop.scala 85:28]
   wire [21:0] _T_5 = resetReleaseCounter + 22'h1; // @[GameTop.scala 89:48]
@@ -6134,6 +8297,14 @@ module GameTop(
     .io_spriteVisible_5(graphicEngineVGA_io_spriteVisible_5),
     .io_spriteVisible_6(graphicEngineVGA_io_spriteVisible_6),
     .io_spriteVisible_7(graphicEngineVGA_io_spriteVisible_7),
+    .io_spriteVisible_8(graphicEngineVGA_io_spriteVisible_8),
+    .io_spriteVisible_9(graphicEngineVGA_io_spriteVisible_9),
+    .io_spriteVisible_10(graphicEngineVGA_io_spriteVisible_10),
+    .io_spriteVisible_11(graphicEngineVGA_io_spriteVisible_11),
+    .io_spriteVisible_12(graphicEngineVGA_io_spriteVisible_12),
+    .io_spriteVisible_13(graphicEngineVGA_io_spriteVisible_13),
+    .io_spriteVisible_14(graphicEngineVGA_io_spriteVisible_14),
+    .io_spriteVisible_15(graphicEngineVGA_io_spriteVisible_15),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -6153,6 +8324,14 @@ module GameTop(
     .io_boxXPosition_5(boxDetection_io_boxXPosition_5),
     .io_boxXPosition_6(boxDetection_io_boxXPosition_6),
     .io_boxXPosition_7(boxDetection_io_boxXPosition_7),
+    .io_boxXPosition_8(boxDetection_io_boxXPosition_8),
+    .io_boxXPosition_9(boxDetection_io_boxXPosition_9),
+    .io_boxXPosition_10(boxDetection_io_boxXPosition_10),
+    .io_boxXPosition_11(boxDetection_io_boxXPosition_11),
+    .io_boxXPosition_12(boxDetection_io_boxXPosition_12),
+    .io_boxXPosition_13(boxDetection_io_boxXPosition_13),
+    .io_boxXPosition_14(boxDetection_io_boxXPosition_14),
+    .io_boxXPosition_15(boxDetection_io_boxXPosition_15),
     .io_boxYPosition_0(boxDetection_io_boxYPosition_0),
     .io_boxYPosition_1(boxDetection_io_boxYPosition_1),
     .io_boxYPosition_2(boxDetection_io_boxYPosition_2),
@@ -6161,6 +8340,14 @@ module GameTop(
     .io_boxYPosition_5(boxDetection_io_boxYPosition_5),
     .io_boxYPosition_6(boxDetection_io_boxYPosition_6),
     .io_boxYPosition_7(boxDetection_io_boxYPosition_7),
+    .io_boxYPosition_8(boxDetection_io_boxYPosition_8),
+    .io_boxYPosition_9(boxDetection_io_boxYPosition_9),
+    .io_boxYPosition_10(boxDetection_io_boxYPosition_10),
+    .io_boxYPosition_11(boxDetection_io_boxYPosition_11),
+    .io_boxYPosition_12(boxDetection_io_boxYPosition_12),
+    .io_boxYPosition_13(boxDetection_io_boxYPosition_13),
+    .io_boxYPosition_14(boxDetection_io_boxYPosition_14),
+    .io_boxYPosition_15(boxDetection_io_boxYPosition_15),
     .io_overlap_0_1(boxDetection_io_overlap_0_1),
     .io_overlap_0_2(boxDetection_io_overlap_0_2),
     .io_overlap_0_3(boxDetection_io_overlap_0_3),
@@ -6280,7 +8467,127 @@ module GameTop(
     .io_overlap_7_12(boxDetection_io_overlap_7_12),
     .io_overlap_7_13(boxDetection_io_overlap_7_13),
     .io_overlap_7_14(boxDetection_io_overlap_7_14),
-    .io_overlap_7_15(boxDetection_io_overlap_7_15)
+    .io_overlap_7_15(boxDetection_io_overlap_7_15),
+    .io_overlap_8_0(boxDetection_io_overlap_8_0),
+    .io_overlap_8_1(boxDetection_io_overlap_8_1),
+    .io_overlap_8_2(boxDetection_io_overlap_8_2),
+    .io_overlap_8_3(boxDetection_io_overlap_8_3),
+    .io_overlap_8_4(boxDetection_io_overlap_8_4),
+    .io_overlap_8_5(boxDetection_io_overlap_8_5),
+    .io_overlap_8_6(boxDetection_io_overlap_8_6),
+    .io_overlap_8_7(boxDetection_io_overlap_8_7),
+    .io_overlap_8_9(boxDetection_io_overlap_8_9),
+    .io_overlap_8_10(boxDetection_io_overlap_8_10),
+    .io_overlap_8_11(boxDetection_io_overlap_8_11),
+    .io_overlap_8_12(boxDetection_io_overlap_8_12),
+    .io_overlap_8_13(boxDetection_io_overlap_8_13),
+    .io_overlap_8_14(boxDetection_io_overlap_8_14),
+    .io_overlap_8_15(boxDetection_io_overlap_8_15),
+    .io_overlap_9_0(boxDetection_io_overlap_9_0),
+    .io_overlap_9_1(boxDetection_io_overlap_9_1),
+    .io_overlap_9_2(boxDetection_io_overlap_9_2),
+    .io_overlap_9_3(boxDetection_io_overlap_9_3),
+    .io_overlap_9_4(boxDetection_io_overlap_9_4),
+    .io_overlap_9_5(boxDetection_io_overlap_9_5),
+    .io_overlap_9_6(boxDetection_io_overlap_9_6),
+    .io_overlap_9_7(boxDetection_io_overlap_9_7),
+    .io_overlap_9_8(boxDetection_io_overlap_9_8),
+    .io_overlap_9_10(boxDetection_io_overlap_9_10),
+    .io_overlap_9_11(boxDetection_io_overlap_9_11),
+    .io_overlap_9_12(boxDetection_io_overlap_9_12),
+    .io_overlap_9_13(boxDetection_io_overlap_9_13),
+    .io_overlap_9_14(boxDetection_io_overlap_9_14),
+    .io_overlap_9_15(boxDetection_io_overlap_9_15),
+    .io_overlap_10_0(boxDetection_io_overlap_10_0),
+    .io_overlap_10_1(boxDetection_io_overlap_10_1),
+    .io_overlap_10_2(boxDetection_io_overlap_10_2),
+    .io_overlap_10_3(boxDetection_io_overlap_10_3),
+    .io_overlap_10_4(boxDetection_io_overlap_10_4),
+    .io_overlap_10_5(boxDetection_io_overlap_10_5),
+    .io_overlap_10_6(boxDetection_io_overlap_10_6),
+    .io_overlap_10_7(boxDetection_io_overlap_10_7),
+    .io_overlap_10_8(boxDetection_io_overlap_10_8),
+    .io_overlap_10_9(boxDetection_io_overlap_10_9),
+    .io_overlap_10_11(boxDetection_io_overlap_10_11),
+    .io_overlap_10_12(boxDetection_io_overlap_10_12),
+    .io_overlap_10_13(boxDetection_io_overlap_10_13),
+    .io_overlap_10_14(boxDetection_io_overlap_10_14),
+    .io_overlap_10_15(boxDetection_io_overlap_10_15),
+    .io_overlap_11_0(boxDetection_io_overlap_11_0),
+    .io_overlap_11_1(boxDetection_io_overlap_11_1),
+    .io_overlap_11_2(boxDetection_io_overlap_11_2),
+    .io_overlap_11_3(boxDetection_io_overlap_11_3),
+    .io_overlap_11_4(boxDetection_io_overlap_11_4),
+    .io_overlap_11_5(boxDetection_io_overlap_11_5),
+    .io_overlap_11_6(boxDetection_io_overlap_11_6),
+    .io_overlap_11_7(boxDetection_io_overlap_11_7),
+    .io_overlap_11_8(boxDetection_io_overlap_11_8),
+    .io_overlap_11_9(boxDetection_io_overlap_11_9),
+    .io_overlap_11_10(boxDetection_io_overlap_11_10),
+    .io_overlap_11_12(boxDetection_io_overlap_11_12),
+    .io_overlap_11_13(boxDetection_io_overlap_11_13),
+    .io_overlap_11_14(boxDetection_io_overlap_11_14),
+    .io_overlap_11_15(boxDetection_io_overlap_11_15),
+    .io_overlap_12_0(boxDetection_io_overlap_12_0),
+    .io_overlap_12_1(boxDetection_io_overlap_12_1),
+    .io_overlap_12_2(boxDetection_io_overlap_12_2),
+    .io_overlap_12_3(boxDetection_io_overlap_12_3),
+    .io_overlap_12_4(boxDetection_io_overlap_12_4),
+    .io_overlap_12_5(boxDetection_io_overlap_12_5),
+    .io_overlap_12_6(boxDetection_io_overlap_12_6),
+    .io_overlap_12_7(boxDetection_io_overlap_12_7),
+    .io_overlap_12_8(boxDetection_io_overlap_12_8),
+    .io_overlap_12_9(boxDetection_io_overlap_12_9),
+    .io_overlap_12_10(boxDetection_io_overlap_12_10),
+    .io_overlap_12_11(boxDetection_io_overlap_12_11),
+    .io_overlap_12_13(boxDetection_io_overlap_12_13),
+    .io_overlap_12_14(boxDetection_io_overlap_12_14),
+    .io_overlap_12_15(boxDetection_io_overlap_12_15),
+    .io_overlap_13_0(boxDetection_io_overlap_13_0),
+    .io_overlap_13_1(boxDetection_io_overlap_13_1),
+    .io_overlap_13_2(boxDetection_io_overlap_13_2),
+    .io_overlap_13_3(boxDetection_io_overlap_13_3),
+    .io_overlap_13_4(boxDetection_io_overlap_13_4),
+    .io_overlap_13_5(boxDetection_io_overlap_13_5),
+    .io_overlap_13_6(boxDetection_io_overlap_13_6),
+    .io_overlap_13_7(boxDetection_io_overlap_13_7),
+    .io_overlap_13_8(boxDetection_io_overlap_13_8),
+    .io_overlap_13_9(boxDetection_io_overlap_13_9),
+    .io_overlap_13_10(boxDetection_io_overlap_13_10),
+    .io_overlap_13_11(boxDetection_io_overlap_13_11),
+    .io_overlap_13_12(boxDetection_io_overlap_13_12),
+    .io_overlap_13_14(boxDetection_io_overlap_13_14),
+    .io_overlap_13_15(boxDetection_io_overlap_13_15),
+    .io_overlap_14_0(boxDetection_io_overlap_14_0),
+    .io_overlap_14_1(boxDetection_io_overlap_14_1),
+    .io_overlap_14_2(boxDetection_io_overlap_14_2),
+    .io_overlap_14_3(boxDetection_io_overlap_14_3),
+    .io_overlap_14_4(boxDetection_io_overlap_14_4),
+    .io_overlap_14_5(boxDetection_io_overlap_14_5),
+    .io_overlap_14_6(boxDetection_io_overlap_14_6),
+    .io_overlap_14_7(boxDetection_io_overlap_14_7),
+    .io_overlap_14_8(boxDetection_io_overlap_14_8),
+    .io_overlap_14_9(boxDetection_io_overlap_14_9),
+    .io_overlap_14_10(boxDetection_io_overlap_14_10),
+    .io_overlap_14_11(boxDetection_io_overlap_14_11),
+    .io_overlap_14_12(boxDetection_io_overlap_14_12),
+    .io_overlap_14_13(boxDetection_io_overlap_14_13),
+    .io_overlap_14_15(boxDetection_io_overlap_14_15),
+    .io_overlap_15_0(boxDetection_io_overlap_15_0),
+    .io_overlap_15_1(boxDetection_io_overlap_15_1),
+    .io_overlap_15_2(boxDetection_io_overlap_15_2),
+    .io_overlap_15_3(boxDetection_io_overlap_15_3),
+    .io_overlap_15_4(boxDetection_io_overlap_15_4),
+    .io_overlap_15_5(boxDetection_io_overlap_15_5),
+    .io_overlap_15_6(boxDetection_io_overlap_15_6),
+    .io_overlap_15_7(boxDetection_io_overlap_15_7),
+    .io_overlap_15_8(boxDetection_io_overlap_15_8),
+    .io_overlap_15_9(boxDetection_io_overlap_15_9),
+    .io_overlap_15_10(boxDetection_io_overlap_15_10),
+    .io_overlap_15_11(boxDetection_io_overlap_15_11),
+    .io_overlap_15_12(boxDetection_io_overlap_15_12),
+    .io_overlap_15_13(boxDetection_io_overlap_15_13),
+    .io_overlap_15_14(boxDetection_io_overlap_15_14)
   );
   GameLogicTask0 gameLogic ( // @[GameTop.scala 48:25]
     .clock(gameLogic_clock),
@@ -6300,6 +8607,7 @@ module GameTop(
     .io_spriteXPosition_12(gameLogic_io_spriteXPosition_12),
     .io_spriteXPosition_13(gameLogic_io_spriteXPosition_13),
     .io_spriteXPosition_14(gameLogic_io_spriteXPosition_14),
+    .io_spriteXPosition_15(gameLogic_io_spriteXPosition_15),
     .io_spriteYPosition_0(gameLogic_io_spriteYPosition_0),
     .io_spriteYPosition_1(gameLogic_io_spriteYPosition_1),
     .io_spriteYPosition_2(gameLogic_io_spriteYPosition_2),
@@ -6308,6 +8616,14 @@ module GameTop(
     .io_spriteYPosition_5(gameLogic_io_spriteYPosition_5),
     .io_spriteYPosition_6(gameLogic_io_spriteYPosition_6),
     .io_spriteYPosition_7(gameLogic_io_spriteYPosition_7),
+    .io_spriteYPosition_8(gameLogic_io_spriteYPosition_8),
+    .io_spriteYPosition_9(gameLogic_io_spriteYPosition_9),
+    .io_spriteYPosition_10(gameLogic_io_spriteYPosition_10),
+    .io_spriteYPosition_11(gameLogic_io_spriteYPosition_11),
+    .io_spriteYPosition_12(gameLogic_io_spriteYPosition_12),
+    .io_spriteYPosition_13(gameLogic_io_spriteYPosition_13),
+    .io_spriteYPosition_14(gameLogic_io_spriteYPosition_14),
+    .io_spriteYPosition_15(gameLogic_io_spriteYPosition_15),
     .io_spriteVisible_0(gameLogic_io_spriteVisible_0),
     .io_spriteVisible_1(gameLogic_io_spriteVisible_1),
     .io_spriteVisible_2(gameLogic_io_spriteVisible_2),
@@ -6316,6 +8632,14 @@ module GameTop(
     .io_spriteVisible_5(gameLogic_io_spriteVisible_5),
     .io_spriteVisible_6(gameLogic_io_spriteVisible_6),
     .io_spriteVisible_7(gameLogic_io_spriteVisible_7),
+    .io_spriteVisible_8(gameLogic_io_spriteVisible_8),
+    .io_spriteVisible_9(gameLogic_io_spriteVisible_9),
+    .io_spriteVisible_10(gameLogic_io_spriteVisible_10),
+    .io_spriteVisible_11(gameLogic_io_spriteVisible_11),
+    .io_spriteVisible_12(gameLogic_io_spriteVisible_12),
+    .io_spriteVisible_13(gameLogic_io_spriteVisible_13),
+    .io_spriteVisible_14(gameLogic_io_spriteVisible_14),
+    .io_spriteVisible_15(gameLogic_io_spriteVisible_15),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone),
     .io_boxXPosition_0(gameLogic_io_boxXPosition_0),
@@ -6326,6 +8650,14 @@ module GameTop(
     .io_boxXPosition_5(gameLogic_io_boxXPosition_5),
     .io_boxXPosition_6(gameLogic_io_boxXPosition_6),
     .io_boxXPosition_7(gameLogic_io_boxXPosition_7),
+    .io_boxXPosition_8(gameLogic_io_boxXPosition_8),
+    .io_boxXPosition_9(gameLogic_io_boxXPosition_9),
+    .io_boxXPosition_10(gameLogic_io_boxXPosition_10),
+    .io_boxXPosition_11(gameLogic_io_boxXPosition_11),
+    .io_boxXPosition_12(gameLogic_io_boxXPosition_12),
+    .io_boxXPosition_13(gameLogic_io_boxXPosition_13),
+    .io_boxXPosition_14(gameLogic_io_boxXPosition_14),
+    .io_boxXPosition_15(gameLogic_io_boxXPosition_15),
     .io_boxYPosition_0(gameLogic_io_boxYPosition_0),
     .io_boxYPosition_1(gameLogic_io_boxYPosition_1),
     .io_boxYPosition_2(gameLogic_io_boxYPosition_2),
@@ -6334,6 +8666,14 @@ module GameTop(
     .io_boxYPosition_5(gameLogic_io_boxYPosition_5),
     .io_boxYPosition_6(gameLogic_io_boxYPosition_6),
     .io_boxYPosition_7(gameLogic_io_boxYPosition_7),
+    .io_boxYPosition_8(gameLogic_io_boxYPosition_8),
+    .io_boxYPosition_9(gameLogic_io_boxYPosition_9),
+    .io_boxYPosition_10(gameLogic_io_boxYPosition_10),
+    .io_boxYPosition_11(gameLogic_io_boxYPosition_11),
+    .io_boxYPosition_12(gameLogic_io_boxYPosition_12),
+    .io_boxYPosition_13(gameLogic_io_boxYPosition_13),
+    .io_boxYPosition_14(gameLogic_io_boxYPosition_14),
+    .io_boxYPosition_15(gameLogic_io_boxYPosition_15),
     .io_overlap_0_1(gameLogic_io_overlap_0_1),
     .io_overlap_0_2(gameLogic_io_overlap_0_2),
     .io_overlap_0_3(gameLogic_io_overlap_0_3),
@@ -6453,7 +8793,127 @@ module GameTop(
     .io_overlap_7_12(gameLogic_io_overlap_7_12),
     .io_overlap_7_13(gameLogic_io_overlap_7_13),
     .io_overlap_7_14(gameLogic_io_overlap_7_14),
-    .io_overlap_7_15(gameLogic_io_overlap_7_15)
+    .io_overlap_7_15(gameLogic_io_overlap_7_15),
+    .io_overlap_8_0(gameLogic_io_overlap_8_0),
+    .io_overlap_8_1(gameLogic_io_overlap_8_1),
+    .io_overlap_8_2(gameLogic_io_overlap_8_2),
+    .io_overlap_8_3(gameLogic_io_overlap_8_3),
+    .io_overlap_8_4(gameLogic_io_overlap_8_4),
+    .io_overlap_8_5(gameLogic_io_overlap_8_5),
+    .io_overlap_8_6(gameLogic_io_overlap_8_6),
+    .io_overlap_8_7(gameLogic_io_overlap_8_7),
+    .io_overlap_8_9(gameLogic_io_overlap_8_9),
+    .io_overlap_8_10(gameLogic_io_overlap_8_10),
+    .io_overlap_8_11(gameLogic_io_overlap_8_11),
+    .io_overlap_8_12(gameLogic_io_overlap_8_12),
+    .io_overlap_8_13(gameLogic_io_overlap_8_13),
+    .io_overlap_8_14(gameLogic_io_overlap_8_14),
+    .io_overlap_8_15(gameLogic_io_overlap_8_15),
+    .io_overlap_9_0(gameLogic_io_overlap_9_0),
+    .io_overlap_9_1(gameLogic_io_overlap_9_1),
+    .io_overlap_9_2(gameLogic_io_overlap_9_2),
+    .io_overlap_9_3(gameLogic_io_overlap_9_3),
+    .io_overlap_9_4(gameLogic_io_overlap_9_4),
+    .io_overlap_9_5(gameLogic_io_overlap_9_5),
+    .io_overlap_9_6(gameLogic_io_overlap_9_6),
+    .io_overlap_9_7(gameLogic_io_overlap_9_7),
+    .io_overlap_9_8(gameLogic_io_overlap_9_8),
+    .io_overlap_9_10(gameLogic_io_overlap_9_10),
+    .io_overlap_9_11(gameLogic_io_overlap_9_11),
+    .io_overlap_9_12(gameLogic_io_overlap_9_12),
+    .io_overlap_9_13(gameLogic_io_overlap_9_13),
+    .io_overlap_9_14(gameLogic_io_overlap_9_14),
+    .io_overlap_9_15(gameLogic_io_overlap_9_15),
+    .io_overlap_10_0(gameLogic_io_overlap_10_0),
+    .io_overlap_10_1(gameLogic_io_overlap_10_1),
+    .io_overlap_10_2(gameLogic_io_overlap_10_2),
+    .io_overlap_10_3(gameLogic_io_overlap_10_3),
+    .io_overlap_10_4(gameLogic_io_overlap_10_4),
+    .io_overlap_10_5(gameLogic_io_overlap_10_5),
+    .io_overlap_10_6(gameLogic_io_overlap_10_6),
+    .io_overlap_10_7(gameLogic_io_overlap_10_7),
+    .io_overlap_10_8(gameLogic_io_overlap_10_8),
+    .io_overlap_10_9(gameLogic_io_overlap_10_9),
+    .io_overlap_10_11(gameLogic_io_overlap_10_11),
+    .io_overlap_10_12(gameLogic_io_overlap_10_12),
+    .io_overlap_10_13(gameLogic_io_overlap_10_13),
+    .io_overlap_10_14(gameLogic_io_overlap_10_14),
+    .io_overlap_10_15(gameLogic_io_overlap_10_15),
+    .io_overlap_11_0(gameLogic_io_overlap_11_0),
+    .io_overlap_11_1(gameLogic_io_overlap_11_1),
+    .io_overlap_11_2(gameLogic_io_overlap_11_2),
+    .io_overlap_11_3(gameLogic_io_overlap_11_3),
+    .io_overlap_11_4(gameLogic_io_overlap_11_4),
+    .io_overlap_11_5(gameLogic_io_overlap_11_5),
+    .io_overlap_11_6(gameLogic_io_overlap_11_6),
+    .io_overlap_11_7(gameLogic_io_overlap_11_7),
+    .io_overlap_11_8(gameLogic_io_overlap_11_8),
+    .io_overlap_11_9(gameLogic_io_overlap_11_9),
+    .io_overlap_11_10(gameLogic_io_overlap_11_10),
+    .io_overlap_11_12(gameLogic_io_overlap_11_12),
+    .io_overlap_11_13(gameLogic_io_overlap_11_13),
+    .io_overlap_11_14(gameLogic_io_overlap_11_14),
+    .io_overlap_11_15(gameLogic_io_overlap_11_15),
+    .io_overlap_12_0(gameLogic_io_overlap_12_0),
+    .io_overlap_12_1(gameLogic_io_overlap_12_1),
+    .io_overlap_12_2(gameLogic_io_overlap_12_2),
+    .io_overlap_12_3(gameLogic_io_overlap_12_3),
+    .io_overlap_12_4(gameLogic_io_overlap_12_4),
+    .io_overlap_12_5(gameLogic_io_overlap_12_5),
+    .io_overlap_12_6(gameLogic_io_overlap_12_6),
+    .io_overlap_12_7(gameLogic_io_overlap_12_7),
+    .io_overlap_12_8(gameLogic_io_overlap_12_8),
+    .io_overlap_12_9(gameLogic_io_overlap_12_9),
+    .io_overlap_12_10(gameLogic_io_overlap_12_10),
+    .io_overlap_12_11(gameLogic_io_overlap_12_11),
+    .io_overlap_12_13(gameLogic_io_overlap_12_13),
+    .io_overlap_12_14(gameLogic_io_overlap_12_14),
+    .io_overlap_12_15(gameLogic_io_overlap_12_15),
+    .io_overlap_13_0(gameLogic_io_overlap_13_0),
+    .io_overlap_13_1(gameLogic_io_overlap_13_1),
+    .io_overlap_13_2(gameLogic_io_overlap_13_2),
+    .io_overlap_13_3(gameLogic_io_overlap_13_3),
+    .io_overlap_13_4(gameLogic_io_overlap_13_4),
+    .io_overlap_13_5(gameLogic_io_overlap_13_5),
+    .io_overlap_13_6(gameLogic_io_overlap_13_6),
+    .io_overlap_13_7(gameLogic_io_overlap_13_7),
+    .io_overlap_13_8(gameLogic_io_overlap_13_8),
+    .io_overlap_13_9(gameLogic_io_overlap_13_9),
+    .io_overlap_13_10(gameLogic_io_overlap_13_10),
+    .io_overlap_13_11(gameLogic_io_overlap_13_11),
+    .io_overlap_13_12(gameLogic_io_overlap_13_12),
+    .io_overlap_13_14(gameLogic_io_overlap_13_14),
+    .io_overlap_13_15(gameLogic_io_overlap_13_15),
+    .io_overlap_14_0(gameLogic_io_overlap_14_0),
+    .io_overlap_14_1(gameLogic_io_overlap_14_1),
+    .io_overlap_14_2(gameLogic_io_overlap_14_2),
+    .io_overlap_14_3(gameLogic_io_overlap_14_3),
+    .io_overlap_14_4(gameLogic_io_overlap_14_4),
+    .io_overlap_14_5(gameLogic_io_overlap_14_5),
+    .io_overlap_14_6(gameLogic_io_overlap_14_6),
+    .io_overlap_14_7(gameLogic_io_overlap_14_7),
+    .io_overlap_14_8(gameLogic_io_overlap_14_8),
+    .io_overlap_14_9(gameLogic_io_overlap_14_9),
+    .io_overlap_14_10(gameLogic_io_overlap_14_10),
+    .io_overlap_14_11(gameLogic_io_overlap_14_11),
+    .io_overlap_14_12(gameLogic_io_overlap_14_12),
+    .io_overlap_14_13(gameLogic_io_overlap_14_13),
+    .io_overlap_14_15(gameLogic_io_overlap_14_15),
+    .io_overlap_15_0(gameLogic_io_overlap_15_0),
+    .io_overlap_15_1(gameLogic_io_overlap_15_1),
+    .io_overlap_15_2(gameLogic_io_overlap_15_2),
+    .io_overlap_15_3(gameLogic_io_overlap_15_3),
+    .io_overlap_15_4(gameLogic_io_overlap_15_4),
+    .io_overlap_15_5(gameLogic_io_overlap_15_5),
+    .io_overlap_15_6(gameLogic_io_overlap_15_6),
+    .io_overlap_15_7(gameLogic_io_overlap_15_7),
+    .io_overlap_15_8(gameLogic_io_overlap_15_8),
+    .io_overlap_15_9(gameLogic_io_overlap_15_9),
+    .io_overlap_15_10(gameLogic_io_overlap_15_10),
+    .io_overlap_15_11(gameLogic_io_overlap_15_11),
+    .io_overlap_15_12(gameLogic_io_overlap_15_12),
+    .io_overlap_15_13(gameLogic_io_overlap_15_13),
+    .io_overlap_15_14(gameLogic_io_overlap_15_14)
   );
   assign io_vgaRed = graphicEngineVGA_io_vgaRed; // @[GameTop.scala 107:13]
   assign io_vgaBlue = graphicEngineVGA_io_vgaBlue; // @[GameTop.scala 109:14]
@@ -6486,6 +8946,14 @@ module GameTop(
   assign graphicEngineVGA_io_spriteVisible_5 = gameLogic_io_spriteVisible_5; // @[GameTop.scala 129:37]
   assign graphicEngineVGA_io_spriteVisible_6 = gameLogic_io_spriteVisible_6; // @[GameTop.scala 129:37]
   assign graphicEngineVGA_io_spriteVisible_7 = gameLogic_io_spriteVisible_7; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_8 = gameLogic_io_spriteVisible_8; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_9 = gameLogic_io_spriteVisible_9; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_10 = gameLogic_io_spriteVisible_10; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_11 = gameLogic_io_spriteVisible_11; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_12 = gameLogic_io_spriteVisible_12; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_13 = gameLogic_io_spriteVisible_13; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_14 = gameLogic_io_spriteVisible_14; // @[GameTop.scala 129:37]
+  assign graphicEngineVGA_io_spriteVisible_15 = gameLogic_io_spriteVisible_15; // @[GameTop.scala 129:37]
   assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 144:39]
   assign boxDetection_clock = clock;
   assign boxDetection_io_boxXPosition_0 = gameLogic_io_boxXPosition_0; // @[GameTop.scala 58:37]
@@ -6496,6 +8964,14 @@ module GameTop(
   assign boxDetection_io_boxXPosition_5 = gameLogic_io_boxXPosition_5; // @[GameTop.scala 58:37]
   assign boxDetection_io_boxXPosition_6 = gameLogic_io_boxXPosition_6; // @[GameTop.scala 58:37]
   assign boxDetection_io_boxXPosition_7 = gameLogic_io_boxXPosition_7; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_8 = gameLogic_io_boxXPosition_8; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_9 = gameLogic_io_boxXPosition_9; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_10 = gameLogic_io_boxXPosition_10; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_11 = gameLogic_io_boxXPosition_11; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_12 = gameLogic_io_boxXPosition_12; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_13 = gameLogic_io_boxXPosition_13; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_14 = gameLogic_io_boxXPosition_14; // @[GameTop.scala 58:37]
+  assign boxDetection_io_boxXPosition_15 = gameLogic_io_boxXPosition_15; // @[GameTop.scala 58:37]
   assign boxDetection_io_boxYPosition_0 = gameLogic_io_boxYPosition_0; // @[GameTop.scala 59:37]
   assign boxDetection_io_boxYPosition_1 = gameLogic_io_boxYPosition_1; // @[GameTop.scala 59:37]
   assign boxDetection_io_boxYPosition_2 = gameLogic_io_boxYPosition_2; // @[GameTop.scala 59:37]
@@ -6504,6 +8980,14 @@ module GameTop(
   assign boxDetection_io_boxYPosition_5 = gameLogic_io_boxYPosition_5; // @[GameTop.scala 59:37]
   assign boxDetection_io_boxYPosition_6 = gameLogic_io_boxYPosition_6; // @[GameTop.scala 59:37]
   assign boxDetection_io_boxYPosition_7 = gameLogic_io_boxYPosition_7; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_8 = gameLogic_io_boxYPosition_8; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_9 = gameLogic_io_boxYPosition_9; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_10 = gameLogic_io_boxYPosition_10; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_11 = gameLogic_io_boxYPosition_11; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_12 = gameLogic_io_boxYPosition_12; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_13 = gameLogic_io_boxYPosition_13; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_14 = gameLogic_io_boxYPosition_14; // @[GameTop.scala 59:37]
+  assign boxDetection_io_boxYPosition_15 = gameLogic_io_boxYPosition_15; // @[GameTop.scala 59:37]
   assign gameLogic_clock = clock;
   assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 92:19]
   assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 143:25]
@@ -6627,6 +9111,126 @@ module GameTop(
   assign gameLogic_io_overlap_7_13 = boxDetection_io_overlap_7_13; // @[GameTop.scala 62:29]
   assign gameLogic_io_overlap_7_14 = boxDetection_io_overlap_7_14; // @[GameTop.scala 62:29]
   assign gameLogic_io_overlap_7_15 = boxDetection_io_overlap_7_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_0 = boxDetection_io_overlap_8_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_1 = boxDetection_io_overlap_8_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_2 = boxDetection_io_overlap_8_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_3 = boxDetection_io_overlap_8_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_4 = boxDetection_io_overlap_8_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_5 = boxDetection_io_overlap_8_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_6 = boxDetection_io_overlap_8_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_7 = boxDetection_io_overlap_8_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_9 = boxDetection_io_overlap_8_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_10 = boxDetection_io_overlap_8_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_11 = boxDetection_io_overlap_8_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_12 = boxDetection_io_overlap_8_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_13 = boxDetection_io_overlap_8_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_14 = boxDetection_io_overlap_8_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_8_15 = boxDetection_io_overlap_8_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_0 = boxDetection_io_overlap_9_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_1 = boxDetection_io_overlap_9_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_2 = boxDetection_io_overlap_9_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_3 = boxDetection_io_overlap_9_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_4 = boxDetection_io_overlap_9_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_5 = boxDetection_io_overlap_9_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_6 = boxDetection_io_overlap_9_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_7 = boxDetection_io_overlap_9_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_8 = boxDetection_io_overlap_9_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_10 = boxDetection_io_overlap_9_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_11 = boxDetection_io_overlap_9_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_12 = boxDetection_io_overlap_9_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_13 = boxDetection_io_overlap_9_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_14 = boxDetection_io_overlap_9_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_9_15 = boxDetection_io_overlap_9_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_0 = boxDetection_io_overlap_10_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_1 = boxDetection_io_overlap_10_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_2 = boxDetection_io_overlap_10_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_3 = boxDetection_io_overlap_10_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_4 = boxDetection_io_overlap_10_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_5 = boxDetection_io_overlap_10_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_6 = boxDetection_io_overlap_10_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_7 = boxDetection_io_overlap_10_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_8 = boxDetection_io_overlap_10_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_9 = boxDetection_io_overlap_10_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_11 = boxDetection_io_overlap_10_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_12 = boxDetection_io_overlap_10_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_13 = boxDetection_io_overlap_10_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_14 = boxDetection_io_overlap_10_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_10_15 = boxDetection_io_overlap_10_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_0 = boxDetection_io_overlap_11_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_1 = boxDetection_io_overlap_11_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_2 = boxDetection_io_overlap_11_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_3 = boxDetection_io_overlap_11_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_4 = boxDetection_io_overlap_11_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_5 = boxDetection_io_overlap_11_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_6 = boxDetection_io_overlap_11_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_7 = boxDetection_io_overlap_11_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_8 = boxDetection_io_overlap_11_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_9 = boxDetection_io_overlap_11_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_10 = boxDetection_io_overlap_11_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_12 = boxDetection_io_overlap_11_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_13 = boxDetection_io_overlap_11_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_14 = boxDetection_io_overlap_11_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_11_15 = boxDetection_io_overlap_11_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_0 = boxDetection_io_overlap_12_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_1 = boxDetection_io_overlap_12_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_2 = boxDetection_io_overlap_12_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_3 = boxDetection_io_overlap_12_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_4 = boxDetection_io_overlap_12_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_5 = boxDetection_io_overlap_12_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_6 = boxDetection_io_overlap_12_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_7 = boxDetection_io_overlap_12_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_8 = boxDetection_io_overlap_12_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_9 = boxDetection_io_overlap_12_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_10 = boxDetection_io_overlap_12_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_11 = boxDetection_io_overlap_12_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_13 = boxDetection_io_overlap_12_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_14 = boxDetection_io_overlap_12_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_12_15 = boxDetection_io_overlap_12_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_0 = boxDetection_io_overlap_13_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_1 = boxDetection_io_overlap_13_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_2 = boxDetection_io_overlap_13_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_3 = boxDetection_io_overlap_13_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_4 = boxDetection_io_overlap_13_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_5 = boxDetection_io_overlap_13_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_6 = boxDetection_io_overlap_13_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_7 = boxDetection_io_overlap_13_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_8 = boxDetection_io_overlap_13_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_9 = boxDetection_io_overlap_13_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_10 = boxDetection_io_overlap_13_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_11 = boxDetection_io_overlap_13_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_12 = boxDetection_io_overlap_13_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_14 = boxDetection_io_overlap_13_14; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_13_15 = boxDetection_io_overlap_13_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_0 = boxDetection_io_overlap_14_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_1 = boxDetection_io_overlap_14_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_2 = boxDetection_io_overlap_14_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_3 = boxDetection_io_overlap_14_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_4 = boxDetection_io_overlap_14_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_5 = boxDetection_io_overlap_14_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_6 = boxDetection_io_overlap_14_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_7 = boxDetection_io_overlap_14_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_8 = boxDetection_io_overlap_14_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_9 = boxDetection_io_overlap_14_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_10 = boxDetection_io_overlap_14_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_11 = boxDetection_io_overlap_14_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_12 = boxDetection_io_overlap_14_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_13 = boxDetection_io_overlap_14_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_14_15 = boxDetection_io_overlap_14_15; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_0 = boxDetection_io_overlap_15_0; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_1 = boxDetection_io_overlap_15_1; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_2 = boxDetection_io_overlap_15_2; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_3 = boxDetection_io_overlap_15_3; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_4 = boxDetection_io_overlap_15_4; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_5 = boxDetection_io_overlap_15_5; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_6 = boxDetection_io_overlap_15_6; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_7 = boxDetection_io_overlap_15_7; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_8 = boxDetection_io_overlap_15_8; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_9 = boxDetection_io_overlap_15_9; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_10 = boxDetection_io_overlap_15_10; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_11 = boxDetection_io_overlap_15_11; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_12 = boxDetection_io_overlap_15_12; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_13 = boxDetection_io_overlap_15_13; // @[GameTop.scala 62:29]
+  assign gameLogic_io_overlap_15_14 = boxDetection_io_overlap_15_14; // @[GameTop.scala 62:29]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif

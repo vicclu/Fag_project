@@ -162,18 +162,18 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       stateReg := idle
     }
   }
- for (i <- 0 until 8) {
+ for (i <- 0 until 16) {
    io.boxXPosition(i) := io.spriteXPosition(i)
    io.boxYPosition(i) := io.spriteYPosition(i)
    io.boxXLength(i) := 32.S
    io.boxYLength(i) := 32.S
  }
-  for (i <- 8 until 16) {
-    io.boxXPosition(i) := 0.S
-    io.boxYPosition(i) := 0.S
-    io.boxXLength(i) := 32.S
-    io.boxYLength(i) := 32.S
-  }
+  // for (i <- 8 until 16) {
+  //   io.boxXPosition(i) := 0.S
+  //   io.boxYPosition(i) := 0.S
+  //   io.boxXLength(i) := 32.S
+  //   io.boxYLength(i) := 32.S
+  // }
 
 }
 
