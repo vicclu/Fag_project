@@ -18,3 +18,13 @@
     <Process Command="vivado" Owner="swaggo" Host="SwigSwag" Pid="100072" HostCore="12" HostMemory="16170380">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="swaggo" Host="SwigSwag" Pid="129279" HostCore="12" HostMemory="16170380">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="swaggo" Host="SwigSwag" Pid="157319" HostCore="12" HostMemory="16170380">
+    </Process>
+</ProcessHandle>
