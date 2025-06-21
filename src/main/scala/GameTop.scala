@@ -41,7 +41,7 @@ class GameTop extends Module {
   val SPRITE_NUMBER = 16
   val BACK_TILE_NUMBER = 32
   val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER))
-
+  val boxDetection = Module(new BoxDetection(SPRITE_NUMBER))
   //Uncomment one of the following lines to use the module related to the learning tasks
   //Use the module GameLogic to implement your game
   //val gameLogic = Module(new GameLogic(SPRITE_NUMBER, BACK_TILE_NUMBER))
@@ -54,6 +54,14 @@ class GameTop extends Module {
   //val gameLogic = Module(new GameLogicTask6(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask7(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask8(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  for (i <- 0 until 16) {
+    boxDetection.io.boxXPosition(i) :=  gameLogic.io.boxXPosition(i)
+    boxDetection.io.boxYPosition(i) :=  gameLogic.io.boxYPosition(i)
+    boxDetection.io.boxXLength(i) :=  gameLogic.io.boxXLength(i)
+    boxDetection.io.boxYLength(i) := gameLogic.io.boxYLength(i)
+    gameLogic.io.overlap(i) := boxDetection.io.overlap(i)
+  }
+
 
   //Debouncing
   val CLOCK_FREQUENCY_HZ = 100000000 //100 MHz

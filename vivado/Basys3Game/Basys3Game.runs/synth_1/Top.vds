@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sat Jun 21 20:57:02 2025
-# Process ID         : 268003
+# Start of session at: Sat Jun 21 21:15:23 2025
+# Process ID         : 295229
 # Current directory  : /home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1
 # Command line       : vivado -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file           : /home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1/Top.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
-# CPU Frequency      : 4072.309 MHz
+# CPU Frequency      : 4094.322 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16558 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18705 MB
-# Available Virtual  : 6331 MB
+# Available Virtual  : 5334 MB
 #-----------------------------------------------------------
 source Top.tcl -notrace
 Command: synth_design -top Top -part xc7a35tcpg236-1
@@ -29,12 +29,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 268101
+INFO: [Synth 8-7075] Helper process launched with PID 295386
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2085.902 ; gain = 202.035 ; free physical = 1590 ; free virtual = 4920
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2086.617 ; gain = 223.004 ; free physical = 1118 ; free virtual = 4312
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top' [/home/swaggo/Code/Fag/Fag_project/Top.v:3521]
-INFO: [Synth 8-6157] synthesizing module 'GameTop' [/home/swaggo/Code/Fag/Fag_project/Top.v:3409]
+INFO: [Synth 8-6157] synthesizing module 'Top' [/home/swaggo/Code/Fag/Fag_project/Top.v:4443]
+INFO: [Synth 8-6157] synthesizing module 'GameTop' [/home/swaggo/Code/Fag/Fag_project/Top.v:4256]
 INFO: [Synth 8-6157] synthesizing module 'GraphicEngineVGA' [/home/swaggo/Code/Fag/Fag_project/Top.v:1370]
 INFO: [Synth 8-6157] synthesizing module 'Memory' [/home/swaggo/Code/Fag/Fag_project/Top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'RamInitSpWf' [/home/swaggo/Code/Fag/Fag_project/RamInitSpWf.v:11]
@@ -433,6 +433,7 @@ INFO: [Synth 8-3876] $readmem data file 'memory_init/sprite_init_15.mem' is read
 INFO: [Synth 8-6155] done synthesizing module 'RamInitSpWf__parameterized47' (0#1) [/home/swaggo/Code/Fag/Fag_project/RamInitSpWf.v:11]
 INFO: [Synth 8-6155] done synthesizing module 'Memory_50' (0#1) [/home/swaggo/Code/Fag/Fag_project/Top.v:1277]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element turnReg_0_reg was removed.  [/home/swaggo/Code/Fag/Fag_project/Top.v:3715]
 WARNING: [Synth 8-3917] design Top has port io_led_0 driven by constant 0
 WARNING: [Synth 8-3917] design Top has port io_led_1 driven by constant 0
 WARNING: [Synth 8-3917] design Top has port io_led_2 driven by constant 0
@@ -457,18 +458,18 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2182.840 ; gain = 298.973 ; free physical = 1459 ; free virtual = 4781
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2185.555 ; gain = 321.941 ; free physical = 962 ; free virtual = 4158
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.652 ; gain = 316.785 ; free physical = 1461 ; free virtual = 4784
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2203.367 ; gain = 339.754 ; free physical = 961 ; free virtual = 4157
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.652 ; gain = 316.785 ; free physical = 1461 ; free virtual = 4784
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2203.367 ; gain = 339.754 ; free physical = 961 ; free virtual = 4157
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2200.652 ; gain = 0.000 ; free physical = 1461 ; free virtual = 4783
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2203.367 ; gain = 0.000 ; free physical = 960 ; free virtual = 4156
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -479,60 +480,62 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2321.391 ; gain = 0.000 ; free physical = 1406 ; free virtual = 4729
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2324.105 ; gain = 0.000 ; free physical = 925 ; free virtual = 4121
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2321.426 ; gain = 0.000 ; free physical = 1406 ; free virtual = 4729
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2324.141 ; gain = 0.000 ; free physical = 925 ; free virtual = 4121
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2321.426 ; gain = 437.559 ; free physical = 1325 ; free virtual = 4654
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2324.141 ; gain = 460.527 ; free physical = 838 ; free virtual = 4035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2329.395 ; gain = 445.527 ; free physical = 1325 ; free virtual = 4654
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2332.109 ; gain = 468.496 ; free physical = 838 ; free virtual = 4035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2329.395 ; gain = 445.527 ; free physical = 1324 ; free virtual = 4653
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2332.109 ; gain = 468.496 ; free physical = 838 ; free virtual = 4035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2329.395 ; gain = 445.527 ; free physical = 1305 ; free virtual = 4636
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2332.109 ; gain = 468.496 ; free physical = 946 ; free virtual = 4144
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   12 Bit       Adders := 9     
-	   3 Input   11 Bit       Adders := 2     
+	   3 Input   12 Bit       Adders := 15    
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 14    
 	   2 Input   10 Bit       Adders := 4     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
-	               11 Bit    Registers := 11    
-	               10 Bit    Registers := 4     
+	               11 Bit    Registers := 32    
+	               10 Bit    Registers := 3     
 	                7 Bit    Registers := 80    
 	                6 Bit    Registers := 18    
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 73    
+	                1 Bit    Registers := 135   
 +---RAMs : 
 	              10K Bit	(2048 X 5 bit)          RAMs := 3     
 	               7K Bit	(1024 X 7 bit)          RAMs := 48    
 +---Muxes : 
-	   3 Input   11 Bit        Muxes := 9     
 	   2 Input   11 Bit        Muxes := 3     
-	   3 Input   10 Bit        Muxes := 2     
+	   3 Input   10 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 16    
-	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 7     
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
 	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 20    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -573,7 +576,7 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2329.395 ; gain = 445.527 ; free physical = 1254 ; free virtual = 4594
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2332.109 ; gain = 468.496 ; free physical = 891 ; free virtual = 4097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -644,13 +647,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2360.395 ; gain = 476.527 ; free physical = 1081 ; free virtual = 4415
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.109 ; gain = 511.496 ; free physical = 759 ; free virtual = 3969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2403.441 ; gain = 519.574 ; free physical = 1048 ; free virtual = 4382
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2413.141 ; gain = 549.527 ; free physical = 736 ; free virtual = 3945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -719,34 +722,34 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_8/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_10/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_12/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_14/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_16/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_18/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_20/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_22/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_24/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_26/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_28/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_30/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_9/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_9/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_11/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_11/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_13/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_13/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_15/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_15/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_17/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_17/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_19/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_19/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_21/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_21/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_23/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_23/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_25/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_25/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_27/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_27/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_29/RamInitSpWf/RAM_reg'
-INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_29/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_31/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_7/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_8/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_8/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_9/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_9/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_10/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_10/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_11/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_11/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_12/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_12/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_13/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_13/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_14/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_14/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_15/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_15/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_16/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_16/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_17/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_17/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_18/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_18/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_19/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_19/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_20/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_20/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_21/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_21/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_22/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_22/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_23/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_23/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_24/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_24/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_25/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_25/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_26/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_26/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_27/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_27/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_28/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_28/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_29/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_29/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_30/RamInitSpWf/RAM_reg'
+INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/backTileMemories_30/RamInitSpWf/RAM_reg' (RAMB18E1_7) to 'gameTop/graphicEngineVGA/backTileMemories_31/RamInitSpWf/RAM_reg'
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/backBufferShadowMemory/RamSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/backBufferRestoreMemory/RamInitSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2404.449 ; gain = 520.582 ; free physical = 1029 ; free virtual = 4364
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2429.156 ; gain = 565.543 ; free physical = 704 ; free virtual = 3914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -764,37 +767,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2556.262 ; gain = 672.395 ; free physical = 611 ; free virtual = 4079
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 2566.969 ; gain = 703.355 ; free physical = 526 ; free virtual = 3736
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2556.262 ; gain = 672.395 ; free physical = 610 ; free virtual = 4079
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 2566.969 ; gain = 703.355 ; free physical = 526 ; free virtual = 3736
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2556.262 ; gain = 672.395 ; free physical = 578 ; free virtual = 4066
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 2566.969 ; gain = 703.355 ; free physical = 525 ; free virtual = 3734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2556.262 ; gain = 672.395 ; free physical = 570 ; free virtual = 4060
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2566.969 ; gain = 703.355 ; free physical = 525 ; free virtual = 3734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2559.230 ; gain = 675.363 ; free physical = 559 ; free virtual = 4049
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2569.938 ; gain = 706.324 ; free physical = 524 ; free virtual = 3734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2559.230 ; gain = 675.363 ; free physical = 555 ; free virtual = 4048
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2569.938 ; gain = 706.324 ; free physical = 524 ; free virtual = 3734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -827,44 +830,46 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |    64|
-|3     |LUT1     |   118|
-|4     |LUT2     |    81|
-|5     |LUT3     |    27|
-|6     |LUT4     |    27|
-|7     |LUT5     |    15|
-|8     |LUT6     |   105|
-|9     |MUXF7    |     7|
-|10    |RAMB18E1 |    20|
-|24    |SRL16E   |     3|
-|25    |FDRE     |   181|
-|26    |IBUF     |     2|
-|27    |OBUF     |    25|
+|2     |CARRY4   |   127|
+|3     |LUT1     |   110|
+|4     |LUT2     |   379|
+|5     |LUT3     |    34|
+|6     |LUT4     |    21|
+|7     |LUT5     |    83|
+|8     |LUT6     |    86|
+|9     |MUXF7    |    31|
+|10    |MUXF8    |    12|
+|11    |RAMB18E1 |    20|
+|25    |SRL16E   |     3|
+|26    |FDRE     |   499|
+|27    |FDSE     |    30|
+|28    |IBUF     |     2|
+|29    |OBUF     |    25|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2559.230 ; gain = 675.363 ; free physical = 555 ; free virtual = 4048
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2569.938 ; gain = 706.324 ; free physical = 524 ; free virtual = 3734
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2559.230 ; gain = 554.590 ; free physical = 510 ; free virtual = 4013
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2559.238 ; gain = 675.363 ; free physical = 510 ; free virtual = 4013
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 2569.938 ; gain = 585.551 ; free physical = 524 ; free virtual = 3734
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2569.945 ; gain = 706.324 ; free physical = 524 ; free virtual = 3734
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2559.238 ; gain = 0.000 ; free physical = 647 ; free virtual = 4152
-INFO: [Netlist 29-17] Analyzing 91 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2569.945 ; gain = 0.000 ; free physical = 692 ; free virtual = 3902
+INFO: [Netlist 29-17] Analyzing 190 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.258 ; gain = 0.000 ; free physical = 478 ; free virtual = 4006
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2625.965 ; gain = 0.000 ; free physical = 677 ; free virtual = 3888
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 520958d
+Synth Design complete | Checksum: 6b3b2bc4
 INFO: [Common 17-83] Releasing license: Synthesis
-292 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+292 Infos, 48 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:35 . Memory (MB): peak = 2615.293 ; gain = 1059.586 ; free physical = 480 ; free virtual = 4005
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1747.071; main = 1747.071; forked = 275.813
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3292.000; main = 2615.262; forked = 962.602
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2639.270 ; gain = 0.000 ; free physical = 472 ; free virtual = 3997
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:43 . Memory (MB): peak = 2626.000 ; gain = 1108.359 ; free physical = 677 ; free virtual = 3888
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1829.363; main = 1748.910; forked = 275.812
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3375.746; main = 2625.969; forked = 962.602
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2649.977 ; gain = 0.000 ; free physical = 677 ; free virtual = 3888
 INFO: [Common 17-1381] The checkpoint '/home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1/Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun 21 20:57:43 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 21 21:16:14 2025...

@@ -43,7 +43,15 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     //Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
+    val boxXPosition = Output(Vec(SpriteNumber, SInt(11.W)))
+    val boxYPosition = Output(Vec(SpriteNumber, SInt(10.W)))
+    val boxXLength   = Output(Vec(SpriteNumber, SInt(7.W)))
+    val boxYLength   = Output(Vec(SpriteNumber, SInt(7.W)))
+    val overlap      = Input(Vec(SpriteNumber, Vec(SpriteNumber, Bool())))
   })
+
+
+
 
   // Setting all led outputs to zero
   // It can be done by the single expression below...
@@ -72,6 +80,11 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
 
+  for (i <- 0 until 16) {
+    // Filter out the i-th element to avoid self-comparison
+    val overlapsWithOthers = (0 until 16).filter(_ != i).map(j => io.overlap(i)(j))
+    io.spriteVisible(i) := !overlapsWithOthers.reduce(_ || _)
+  }
   //Setting the viewbox control outputs to zero
   io.viewBoxX := 0.U
   io.viewBoxY := 0.U
@@ -93,99 +106,32 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val stateReg = RegInit(idle)
 
 
-  // Sprite 0
-  io.spriteVisible(0) := true.B
-  io.spriteXPosition(0) := 0.S
-  io.spriteYPosition(0) := 100.S
+  val spriteYReg =  for (i <- 0 until SpriteNumber) yield {
+    val spriteMemory = RegInit((360-32).S(10.W))
+    spriteMemory
+  }
+  val spriteXReg =  for (i <- 0 until SpriteNumber) yield {
+    val spriteMemory = RegInit(32.S(11.W))
+    spriteMemory
+  }
+
+  //A registers holding the sprite horizontal flip
+  val sprite0FlipHorizontalReg = RegInit(false.B)
 
 
-    // Sprite 1
-    io.spriteVisible(1) := true.B
-    io.spriteXPosition(1) := 64.S
-    io.spriteYPosition(1) := 100.S
+  //Connecting resiters to the graphic engine
+  io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
 
-    // Sprite 2
-    io.spriteVisible(2) := true.B
-    io.spriteXPosition(2) := 128.S
-    io.spriteYPosition(2) := 100.S
+  for (i <- 0 until 15){
+    io.spriteXPosition(i) := spriteXReg(i)
+    io.spriteYPosition(i) := spriteYReg(i)
+  }
 
-
-    // Sprite 3
-    io.spriteVisible(3) := true.B
-    io.spriteXPosition(3) := 192.S
-    io.spriteYPosition(3) := 100.S
-
-
-    // Sprite 4
-    io.spriteVisible(4) := true.B
-    io.spriteXPosition(4) := 256.S
-    io.spriteYPosition(4) := 100.S
-
-    // Sprite 5
-    io.spriteVisible(5) := true.B
-    io.spriteXPosition(5) := 320.S
-    io.spriteYPosition(5) := 100.S
-
-
-    // Sprite 6
-    io.spriteVisible(6) := true.B
-    io.spriteXPosition(6) := 384.S
-    io.spriteYPosition(6) := 100.S
-
-
-    // Sprite 7
-    io.spriteVisible(7) := true.B
-    io.spriteXPosition(7) := 448.S
-    io.spriteYPosition(7) := 100.S
-
-    // Sprite 8
-    io.spriteVisible(8) := true.B
-    io.spriteXPosition(8) := 512.S
-    io.spriteYPosition(8) := 100.S
-
-    // Sprite 9
-    io.spriteVisible(9) := true.B
-    io.spriteXPosition(9) := 576.S
-    io.spriteYPosition(9) := 100.S
-
-    // Sprite 10 — wrap to second row
-    io.spriteVisible(10) := true.B
-    io.spriteXPosition(10) := 0.S
-    io.spriteYPosition(10) := 164.S
-
-
-    // Sprite 11
-    io.spriteVisible(11) := true.B
-    io.spriteXPosition(11) := 64.S
-    io.spriteYPosition(11) := 164.S
-
-
-    // Sprite 12
-    io.spriteVisible(12) := true.B
-    io.spriteXPosition(12) := 128.S
-    io.spriteYPosition(12) := 164.S
-
-
-    // Sprite 13
-    io.spriteVisible(13) := true.B
-    io.spriteXPosition(13) := 192.S
-    io.spriteYPosition(13) := 164.S
-
-    // Sprite 14
-    io.spriteVisible(14) := true.B
-    io.spriteXPosition(14) := 256.S
-    io.spriteYPosition(14) := 164.S
-
-
-    // Sprite 15
-    io.spriteVisible(15) := true.B
-    io.spriteXPosition(15) := 320.S
-    io.spriteYPosition(15) := 164.S
-
-
-
-
+  val turnReg =  for (i <- 0 until SpriteNumber) yield {
+    val spriteMemory = RegInit(false.B)
+    spriteMemory
+  }
 
   //FSMD switch
   switch(stateReg) {
@@ -196,6 +142,18 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     }
 
     is(compute1) {
+
+      for (i <- 0 until 15) {
+        when(spriteXReg(i) >= (640 - 32 - 32).S) {
+          turnReg(i) := true.B
+        }
+        when(spriteXReg(i) <= 0.S){
+          turnReg(i) := false.B
+        }
+
+        spriteXReg(i) := Mux(turnReg(i), spriteXReg(i)-i.S,spriteXReg(i)+i.S)
+
+      }
       stateReg := done
     }
 
@@ -204,7 +162,18 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
       stateReg := idle
     }
   }
-
+//  for (i <- 0 until 16) {
+//    io.boxXPosition(i) := io.spriteXPosition(i)
+//    io.boxYPosition(i) := io.spriteYPosition(i)
+//    io.boxXLength(i) := 32.S
+//    io.boxYLength(i) := 32.S
+//  }
+  for (i <- 0 until 16) {
+    io.boxXPosition(i) := 0.S
+    io.boxYPosition(i) := 0.S
+    io.boxXLength(i) := 32.S
+    io.boxYLength(i) := 32.S
+  }
 
 }
 

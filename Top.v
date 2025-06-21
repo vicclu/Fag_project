@@ -1368,16 +1368,31 @@ module MultiHotPriortyReductionTree(
   assign io_selectOutput = selectNodeOutputs_1 | selectNodeOutputs_2; // @[GameUtilities.scala 73:19]
 endmodule
 module GraphicEngineVGA(
-  input        clock,
-  input        reset,
-  output       io_newFrame,
-  input        io_frameUpdateDone,
-  output       io_missingFrameError,
-  output [3:0] io_vgaRed,
-  output [3:0] io_vgaBlue,
-  output [3:0] io_vgaGreen,
-  output       io_Hsync,
-  output       io_Vsync
+  input         clock,
+  input         reset,
+  input  [10:0] io_spriteXPosition_0,
+  input  [10:0] io_spriteXPosition_1,
+  input  [10:0] io_spriteXPosition_2,
+  input  [10:0] io_spriteXPosition_3,
+  input  [10:0] io_spriteXPosition_4,
+  input  [10:0] io_spriteXPosition_5,
+  input  [10:0] io_spriteXPosition_6,
+  input  [10:0] io_spriteXPosition_7,
+  input  [10:0] io_spriteXPosition_8,
+  input  [10:0] io_spriteXPosition_9,
+  input  [10:0] io_spriteXPosition_10,
+  input  [10:0] io_spriteXPosition_11,
+  input  [10:0] io_spriteXPosition_12,
+  input  [10:0] io_spriteXPosition_13,
+  input  [10:0] io_spriteXPosition_14,
+  output        io_newFrame,
+  input         io_frameUpdateDone,
+  output        io_missingFrameError,
+  output [3:0]  io_vgaRed,
+  output [3:0]  io_vgaBlue,
+  output [3:0]  io_vgaGreen,
+  output        io_Hsync,
+  output        io_Vsync
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -1537,6 +1552,54 @@ module GraphicEngineVGA(
   reg [31:0] _RAND_154;
   reg [31:0] _RAND_155;
   reg [31:0] _RAND_156;
+  reg [31:0] _RAND_157;
+  reg [31:0] _RAND_158;
+  reg [31:0] _RAND_159;
+  reg [31:0] _RAND_160;
+  reg [31:0] _RAND_161;
+  reg [31:0] _RAND_162;
+  reg [31:0] _RAND_163;
+  reg [31:0] _RAND_164;
+  reg [31:0] _RAND_165;
+  reg [31:0] _RAND_166;
+  reg [31:0] _RAND_167;
+  reg [31:0] _RAND_168;
+  reg [31:0] _RAND_169;
+  reg [31:0] _RAND_170;
+  reg [31:0] _RAND_171;
+  reg [31:0] _RAND_172;
+  reg [31:0] _RAND_173;
+  reg [31:0] _RAND_174;
+  reg [31:0] _RAND_175;
+  reg [31:0] _RAND_176;
+  reg [31:0] _RAND_177;
+  reg [31:0] _RAND_178;
+  reg [31:0] _RAND_179;
+  reg [31:0] _RAND_180;
+  reg [31:0] _RAND_181;
+  reg [31:0] _RAND_182;
+  reg [31:0] _RAND_183;
+  reg [31:0] _RAND_184;
+  reg [31:0] _RAND_185;
+  reg [31:0] _RAND_186;
+  reg [31:0] _RAND_187;
+  reg [31:0] _RAND_188;
+  reg [31:0] _RAND_189;
+  reg [31:0] _RAND_190;
+  reg [31:0] _RAND_191;
+  reg [31:0] _RAND_192;
+  reg [31:0] _RAND_193;
+  reg [31:0] _RAND_194;
+  reg [31:0] _RAND_195;
+  reg [31:0] _RAND_196;
+  reg [31:0] _RAND_197;
+  reg [31:0] _RAND_198;
+  reg [31:0] _RAND_199;
+  reg [31:0] _RAND_200;
+  reg [31:0] _RAND_201;
+  reg [31:0] _RAND_202;
+  reg [31:0] _RAND_203;
+  reg [31:0] _RAND_204;
 `endif // RANDOMIZE_REG_INIT
   wire  backTileMemories_0_clock; // @[GraphicEngineVGA.scala 153:32]
   wire [9:0] backTileMemories_0_io_address; // @[GraphicEngineVGA.scala 153:32]
@@ -1763,6 +1826,7 @@ module GraphicEngineVGA(
   wire  _T_19 = frameClockCount == 21'h19a27f; // @[GraphicEngineVGA.scala 101:42]
   wire [20:0] _T_21 = frameClockCount + 21'h1; // @[GraphicEngineVGA.scala 101:92]
   wire  preDisplayArea = frameClockCount >= 21'h199a1b; // @[GraphicEngineVGA.scala 102:40]
+  reg [10:0] spriteXPositionReg_0; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_1; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_2; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_3; // @[Reg.scala 27:20]
@@ -1772,11 +1836,11 @@ module GraphicEngineVGA(
   reg [10:0] spriteXPositionReg_7; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_8; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_9; // @[Reg.scala 27:20]
+  reg [10:0] spriteXPositionReg_10; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_11; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_12; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_13; // @[Reg.scala 27:20]
   reg [10:0] spriteXPositionReg_14; // @[Reg.scala 27:20]
-  reg [10:0] spriteXPositionReg_15; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_0; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_1; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_2; // @[Reg.scala 27:20]
@@ -1792,7 +1856,38 @@ module GraphicEngineVGA(
   reg [9:0] spriteYPositionReg_12; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_13; // @[Reg.scala 27:20]
   reg [9:0] spriteYPositionReg_14; // @[Reg.scala 27:20]
-  reg [9:0] spriteYPositionReg_15; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_0; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_1; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_2; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_3; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_4; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_5; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_6; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_7; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_8; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_9; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_10; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_11; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_12; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_13; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_14; // @[Reg.scala 27:20]
+  reg  spriteVisibleReg_15; // @[Reg.scala 27:20]
+  wire  _GEN_45 = io_newFrame ? 1'h0 : spriteVisibleReg_0; // @[Reg.scala 28:19]
+  wire  _GEN_46 = io_newFrame ? 1'h0 : spriteVisibleReg_1; // @[Reg.scala 28:19]
+  wire  _GEN_47 = io_newFrame ? 1'h0 : spriteVisibleReg_2; // @[Reg.scala 28:19]
+  wire  _GEN_48 = io_newFrame ? 1'h0 : spriteVisibleReg_3; // @[Reg.scala 28:19]
+  wire  _GEN_49 = io_newFrame ? 1'h0 : spriteVisibleReg_4; // @[Reg.scala 28:19]
+  wire  _GEN_50 = io_newFrame ? 1'h0 : spriteVisibleReg_5; // @[Reg.scala 28:19]
+  wire  _GEN_51 = io_newFrame ? 1'h0 : spriteVisibleReg_6; // @[Reg.scala 28:19]
+  wire  _GEN_52 = io_newFrame ? 1'h0 : spriteVisibleReg_7; // @[Reg.scala 28:19]
+  wire  _GEN_53 = io_newFrame ? 1'h0 : spriteVisibleReg_8; // @[Reg.scala 28:19]
+  wire  _GEN_54 = io_newFrame ? 1'h0 : spriteVisibleReg_9; // @[Reg.scala 28:19]
+  wire  _GEN_55 = io_newFrame ? 1'h0 : spriteVisibleReg_10; // @[Reg.scala 28:19]
+  wire  _GEN_56 = io_newFrame ? 1'h0 : spriteVisibleReg_11; // @[Reg.scala 28:19]
+  wire  _GEN_57 = io_newFrame ? 1'h0 : spriteVisibleReg_12; // @[Reg.scala 28:19]
+  wire  _GEN_58 = io_newFrame ? 1'h0 : spriteVisibleReg_13; // @[Reg.scala 28:19]
+  wire  _GEN_59 = io_newFrame ? 1'h0 : spriteVisibleReg_14; // @[Reg.scala 28:19]
+  wire  _GEN_60 = io_newFrame ? 1'h0 : spriteVisibleReg_15; // @[Reg.scala 28:19]
   reg  missingFrameErrorReg; // @[GraphicEngineVGA.scala 120:37]
   wire [10:0] pixelXBack = {{1'd0}, CounterXReg}; // @[GraphicEngineVGA.scala 131:27]
   wire [10:0] pixelYBack = {{1'd0}, CounterYReg}; // @[GraphicEngineVGA.scala 132:27]
@@ -1885,7 +1980,7 @@ module GraphicEngineVGA(
   wire [6:0] fullBackgroundColor = 5'h1f == _T_222 ? backTileMemoryDataRead_31 : _GEN_138; // @[GraphicEngineVGA.scala 235:23]
   reg [5:0] pixelColorBack; // @[GraphicEngineVGA.scala 237:31]
   wire [10:0] _T_229 = {1'h0,CounterXReg}; // @[GraphicEngineVGA.scala 250:47]
-  wire [11:0] inSpriteX_0 = $signed(_T_229) - 11'sh0; // @[GraphicEngineVGA.scala 250:54]
+  wire [11:0] inSpriteX_0 = $signed(_T_229) - $signed(spriteXPositionReg_0); // @[GraphicEngineVGA.scala 250:54]
   wire [10:0] _T_235 = {1'h0,CounterYReg}; // @[GraphicEngineVGA.scala 256:47]
   wire [10:0] _GEN_237 = {{1{spriteYPositionReg_0[9]}},spriteYPositionReg_0}; // @[GraphicEngineVGA.scala 256:54]
   wire [11:0] _T_236 = $signed(_T_235) - $signed(_GEN_237); // @[GraphicEngineVGA.scala 256:54]
@@ -1986,11 +2081,15 @@ module GraphicEngineVGA(
   wire  _T_414 = $signed(inSpriteY_9) >= 11'sh0; // @[GraphicEngineVGA.scala 262:79]
   wire  _T_415 = _T_413 & _T_414; // @[GraphicEngineVGA.scala 262:63]
   wire  _T_416 = $signed(inSpriteY_9) < 11'sh20; // @[GraphicEngineVGA.scala 262:102]
+  wire [11:0] inSpriteX_10 = $signed(_T_229) - $signed(spriteXPositionReg_10); // @[GraphicEngineVGA.scala 250:54]
   wire [10:0] _GEN_257 = {{1{spriteYPositionReg_10[9]}},spriteYPositionReg_10}; // @[GraphicEngineVGA.scala 256:54]
   wire [11:0] _T_426 = $signed(_T_235) - $signed(_GEN_257); // @[GraphicEngineVGA.scala 256:54]
+  wire  _T_430 = $signed(inSpriteX_10) >= 12'sh0; // @[GraphicEngineVGA.scala 262:33]
+  wire  _T_431 = $signed(inSpriteX_10) < 12'sh20; // @[GraphicEngineVGA.scala 262:56]
+  wire  _T_432 = _T_430 & _T_431; // @[GraphicEngineVGA.scala 262:40]
   wire [10:0] inSpriteY_10 = _T_426[10:0]; // @[GraphicEngineVGA.scala 248:23 GraphicEngineVGA.scala 258:20 GraphicEngineVGA.scala 260:20]
   wire  _T_433 = $signed(inSpriteY_10) >= 11'sh0; // @[GraphicEngineVGA.scala 262:79]
-  wire  _T_434 = _T_242 & _T_433; // @[GraphicEngineVGA.scala 262:63]
+  wire  _T_434 = _T_432 & _T_433; // @[GraphicEngineVGA.scala 262:63]
   wire  _T_435 = $signed(inSpriteY_10) < 11'sh20; // @[GraphicEngineVGA.scala 262:102]
   wire [11:0] inSpriteX_11 = $signed(_T_229) - $signed(spriteXPositionReg_11); // @[GraphicEngineVGA.scala 250:54]
   wire [10:0] _GEN_259 = {{1{spriteYPositionReg_11[9]}},spriteYPositionReg_11}; // @[GraphicEngineVGA.scala 256:54]
@@ -2032,9 +2131,8 @@ module GraphicEngineVGA(
   wire  _T_509 = $signed(inSpriteY_14) >= 11'sh0; // @[GraphicEngineVGA.scala 262:79]
   wire  _T_510 = _T_508 & _T_509; // @[GraphicEngineVGA.scala 262:63]
   wire  _T_511 = $signed(inSpriteY_14) < 11'sh20; // @[GraphicEngineVGA.scala 262:102]
-  wire [11:0] inSpriteX_15 = $signed(_T_229) - $signed(spriteXPositionReg_15); // @[GraphicEngineVGA.scala 250:54]
-  wire [10:0] _GEN_267 = {{1{spriteYPositionReg_15[9]}},spriteYPositionReg_15}; // @[GraphicEngineVGA.scala 256:54]
-  wire [11:0] _T_521 = $signed(_T_235) - $signed(_GEN_267); // @[GraphicEngineVGA.scala 256:54]
+  wire [11:0] inSpriteX_15 = $signed(_T_229) - 11'sh0; // @[GraphicEngineVGA.scala 250:54]
+  wire [11:0] _T_521 = $signed(_T_235) - 11'sh0; // @[GraphicEngineVGA.scala 256:54]
   wire  _T_525 = $signed(inSpriteX_15) >= 12'sh0; // @[GraphicEngineVGA.scala 262:33]
   wire  _T_526 = $signed(inSpriteX_15) < 12'sh20; // @[GraphicEngineVGA.scala 262:56]
   wire  _T_527 = _T_525 & _T_526; // @[GraphicEngineVGA.scala 262:40]
@@ -2042,147 +2140,196 @@ module GraphicEngineVGA(
   wire  _T_528 = $signed(inSpriteY_15) >= 11'sh0; // @[GraphicEngineVGA.scala 262:79]
   wire  _T_529 = _T_527 & _T_528; // @[GraphicEngineVGA.scala 262:63]
   wire  _T_530 = $signed(inSpriteY_15) < 11'sh20; // @[GraphicEngineVGA.scala 262:102]
-  wire [5:0] _GEN_269 = {{1'd0}, inSpriteY_0[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_534 = 6'h20 * _GEN_269; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_270 = {{6'd0}, inSpriteX_0[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_536 = _GEN_270 + _T_534; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_271 = {{1'd0}, inSpriteY_1[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_539 = 6'h20 * _GEN_271; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_272 = {{6'd0}, inSpriteX_1[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_541 = _GEN_272 + _T_539; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_273 = {{1'd0}, inSpriteY_2[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_544 = 6'h20 * _GEN_273; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_274 = {{6'd0}, inSpriteX_2[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_546 = _GEN_274 + _T_544; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_275 = {{1'd0}, inSpriteY_3[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_549 = 6'h20 * _GEN_275; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_276 = {{6'd0}, inSpriteX_3[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_551 = _GEN_276 + _T_549; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_277 = {{1'd0}, inSpriteY_4[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_554 = 6'h20 * _GEN_277; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_278 = {{6'd0}, inSpriteX_4[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_556 = _GEN_278 + _T_554; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_279 = {{1'd0}, inSpriteY_5[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_559 = 6'h20 * _GEN_279; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_280 = {{6'd0}, inSpriteX_5[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_561 = _GEN_280 + _T_559; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_281 = {{1'd0}, inSpriteY_6[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_564 = 6'h20 * _GEN_281; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_282 = {{6'd0}, inSpriteX_6[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_566 = _GEN_282 + _T_564; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_283 = {{1'd0}, inSpriteY_7[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_569 = 6'h20 * _GEN_283; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_284 = {{6'd0}, inSpriteX_7[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_571 = _GEN_284 + _T_569; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_285 = {{1'd0}, inSpriteY_8[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_574 = 6'h20 * _GEN_285; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_286 = {{6'd0}, inSpriteX_8[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_576 = _GEN_286 + _T_574; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_287 = {{1'd0}, inSpriteY_9[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_579 = 6'h20 * _GEN_287; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_288 = {{6'd0}, inSpriteX_9[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_581 = _GEN_288 + _T_579; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_289 = {{1'd0}, inSpriteY_10[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_584 = 6'h20 * _GEN_289; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_586 = _GEN_270 + _T_584; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_291 = {{1'd0}, inSpriteY_11[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_589 = 6'h20 * _GEN_291; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_292 = {{6'd0}, inSpriteX_11[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_591 = _GEN_292 + _T_589; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_293 = {{1'd0}, inSpriteY_12[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_594 = 6'h20 * _GEN_293; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_294 = {{6'd0}, inSpriteX_12[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_596 = _GEN_294 + _T_594; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_295 = {{1'd0}, inSpriteY_13[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_599 = 6'h20 * _GEN_295; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_296 = {{6'd0}, inSpriteX_13[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_601 = _GEN_296 + _T_599; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_297 = {{1'd0}, inSpriteY_14[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_604 = 6'h20 * _GEN_297; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_298 = {{6'd0}, inSpriteX_14[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_606 = _GEN_298 + _T_604; // @[GraphicEngineVGA.scala 270:62]
-  wire [5:0] _GEN_299 = {{1'd0}, inSpriteY_15[4:0]}; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _T_609 = 6'h20 * _GEN_299; // @[GraphicEngineVGA.scala 270:74]
-  wire [10:0] _GEN_300 = {{6'd0}, inSpriteX_15[4:0]}; // @[GraphicEngineVGA.scala 270:62]
-  wire [10:0] _T_611 = _GEN_300 + _T_609; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_268 = {{1'd0}, inSpriteY_0[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_534 = 6'h20 * _GEN_268; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_269 = {{6'd0}, inSpriteX_0[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_536 = _GEN_269 + _T_534; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_270 = {{1'd0}, inSpriteY_1[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_539 = 6'h20 * _GEN_270; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_271 = {{6'd0}, inSpriteX_1[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_541 = _GEN_271 + _T_539; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_272 = {{1'd0}, inSpriteY_2[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_544 = 6'h20 * _GEN_272; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_273 = {{6'd0}, inSpriteX_2[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_546 = _GEN_273 + _T_544; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_274 = {{1'd0}, inSpriteY_3[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_549 = 6'h20 * _GEN_274; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_275 = {{6'd0}, inSpriteX_3[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_551 = _GEN_275 + _T_549; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_276 = {{1'd0}, inSpriteY_4[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_554 = 6'h20 * _GEN_276; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_277 = {{6'd0}, inSpriteX_4[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_556 = _GEN_277 + _T_554; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_278 = {{1'd0}, inSpriteY_5[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_559 = 6'h20 * _GEN_278; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_279 = {{6'd0}, inSpriteX_5[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_561 = _GEN_279 + _T_559; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_280 = {{1'd0}, inSpriteY_6[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_564 = 6'h20 * _GEN_280; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_281 = {{6'd0}, inSpriteX_6[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_566 = _GEN_281 + _T_564; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_282 = {{1'd0}, inSpriteY_7[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_569 = 6'h20 * _GEN_282; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_283 = {{6'd0}, inSpriteX_7[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_571 = _GEN_283 + _T_569; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_284 = {{1'd0}, inSpriteY_8[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_574 = 6'h20 * _GEN_284; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_285 = {{6'd0}, inSpriteX_8[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_576 = _GEN_285 + _T_574; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_286 = {{1'd0}, inSpriteY_9[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_579 = 6'h20 * _GEN_286; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_287 = {{6'd0}, inSpriteX_9[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_581 = _GEN_287 + _T_579; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_288 = {{1'd0}, inSpriteY_10[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_584 = 6'h20 * _GEN_288; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_289 = {{6'd0}, inSpriteX_10[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_586 = _GEN_289 + _T_584; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_290 = {{1'd0}, inSpriteY_11[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_589 = 6'h20 * _GEN_290; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_291 = {{6'd0}, inSpriteX_11[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_591 = _GEN_291 + _T_589; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_292 = {{1'd0}, inSpriteY_12[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_594 = 6'h20 * _GEN_292; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_293 = {{6'd0}, inSpriteX_12[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_596 = _GEN_293 + _T_594; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_294 = {{1'd0}, inSpriteY_13[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_599 = 6'h20 * _GEN_294; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_295 = {{6'd0}, inSpriteX_13[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_601 = _GEN_295 + _T_599; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_296 = {{1'd0}, inSpriteY_14[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_604 = 6'h20 * _GEN_296; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_297 = {{6'd0}, inSpriteX_14[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_606 = _GEN_297 + _T_604; // @[GraphicEngineVGA.scala 270:62]
+  wire [5:0] _GEN_298 = {{1'd0}, inSpriteY_15[4:0]}; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _T_609 = 6'h20 * _GEN_298; // @[GraphicEngineVGA.scala 270:74]
+  wire [10:0] _GEN_299 = {{6'd0}, inSpriteX_15[4:0]}; // @[GraphicEngineVGA.scala 270:62]
+  wire [10:0] _T_611 = _GEN_299 + _T_609; // @[GraphicEngineVGA.scala 270:62]
   reg [5:0] _T_613; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_614_0; // @[GameUtilities.scala 21:24]
+  reg  _T_614_1; // @[GameUtilities.scala 21:24]
   reg  _T_615_0; // @[GameUtilities.scala 21:24]
   reg  _T_615_1; // @[GameUtilities.scala 21:24]
+  wire  _T_616 = _T_614_0 & _T_615_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_618; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_619 = ~_T_618; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_622; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_623_0; // @[GameUtilities.scala 21:24]
+  reg  _T_623_1; // @[GameUtilities.scala 21:24]
   reg  _T_624_0; // @[GameUtilities.scala 21:24]
   reg  _T_624_1; // @[GameUtilities.scala 21:24]
+  wire  _T_625 = _T_623_0 & _T_624_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_627; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_628 = ~_T_627; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_631; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_632_0; // @[GameUtilities.scala 21:24]
+  reg  _T_632_1; // @[GameUtilities.scala 21:24]
   reg  _T_633_0; // @[GameUtilities.scala 21:24]
   reg  _T_633_1; // @[GameUtilities.scala 21:24]
+  wire  _T_634 = _T_632_0 & _T_633_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_636; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_637 = ~_T_636; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_640; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_641_0; // @[GameUtilities.scala 21:24]
+  reg  _T_641_1; // @[GameUtilities.scala 21:24]
   reg  _T_642_0; // @[GameUtilities.scala 21:24]
   reg  _T_642_1; // @[GameUtilities.scala 21:24]
+  wire  _T_643 = _T_641_0 & _T_642_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_645; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_646 = ~_T_645; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_649; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_650_0; // @[GameUtilities.scala 21:24]
+  reg  _T_650_1; // @[GameUtilities.scala 21:24]
   reg  _T_651_0; // @[GameUtilities.scala 21:24]
   reg  _T_651_1; // @[GameUtilities.scala 21:24]
+  wire  _T_652 = _T_650_0 & _T_651_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_654; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_655 = ~_T_654; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_658; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_659_0; // @[GameUtilities.scala 21:24]
+  reg  _T_659_1; // @[GameUtilities.scala 21:24]
   reg  _T_660_0; // @[GameUtilities.scala 21:24]
   reg  _T_660_1; // @[GameUtilities.scala 21:24]
+  wire  _T_661 = _T_659_0 & _T_660_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_663; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_664 = ~_T_663; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_667; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_668_0; // @[GameUtilities.scala 21:24]
+  reg  _T_668_1; // @[GameUtilities.scala 21:24]
   reg  _T_669_0; // @[GameUtilities.scala 21:24]
   reg  _T_669_1; // @[GameUtilities.scala 21:24]
+  wire  _T_670 = _T_668_0 & _T_669_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_672; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_673 = ~_T_672; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_676; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_677_0; // @[GameUtilities.scala 21:24]
+  reg  _T_677_1; // @[GameUtilities.scala 21:24]
   reg  _T_678_0; // @[GameUtilities.scala 21:24]
   reg  _T_678_1; // @[GameUtilities.scala 21:24]
+  wire  _T_679 = _T_677_0 & _T_678_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_681; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_682 = ~_T_681; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_685; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_686_0; // @[GameUtilities.scala 21:24]
+  reg  _T_686_1; // @[GameUtilities.scala 21:24]
   reg  _T_687_0; // @[GameUtilities.scala 21:24]
   reg  _T_687_1; // @[GameUtilities.scala 21:24]
+  wire  _T_688 = _T_686_0 & _T_687_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_690; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_691 = ~_T_690; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_694; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_695_0; // @[GameUtilities.scala 21:24]
+  reg  _T_695_1; // @[GameUtilities.scala 21:24]
   reg  _T_696_0; // @[GameUtilities.scala 21:24]
   reg  _T_696_1; // @[GameUtilities.scala 21:24]
+  wire  _T_697 = _T_695_0 & _T_696_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_699; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_700 = ~_T_699; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_703; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_704_0; // @[GameUtilities.scala 21:24]
+  reg  _T_704_1; // @[GameUtilities.scala 21:24]
   reg  _T_705_0; // @[GameUtilities.scala 21:24]
   reg  _T_705_1; // @[GameUtilities.scala 21:24]
+  wire  _T_706 = _T_704_0 & _T_705_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_708; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_709 = ~_T_708; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_712; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_713_0; // @[GameUtilities.scala 21:24]
+  reg  _T_713_1; // @[GameUtilities.scala 21:24]
   reg  _T_714_0; // @[GameUtilities.scala 21:24]
   reg  _T_714_1; // @[GameUtilities.scala 21:24]
+  wire  _T_715 = _T_713_0 & _T_714_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_717; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_718 = ~_T_717; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_721; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_722_0; // @[GameUtilities.scala 21:24]
+  reg  _T_722_1; // @[GameUtilities.scala 21:24]
   reg  _T_723_0; // @[GameUtilities.scala 21:24]
   reg  _T_723_1; // @[GameUtilities.scala 21:24]
+  wire  _T_724 = _T_722_0 & _T_723_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_726; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_727 = ~_T_726; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_730; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_731_0; // @[GameUtilities.scala 21:24]
+  reg  _T_731_1; // @[GameUtilities.scala 21:24]
   reg  _T_732_0; // @[GameUtilities.scala 21:24]
   reg  _T_732_1; // @[GameUtilities.scala 21:24]
+  wire  _T_733 = _T_731_0 & _T_732_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_735; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_736 = ~_T_735; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_739; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_740_0; // @[GameUtilities.scala 21:24]
+  reg  _T_740_1; // @[GameUtilities.scala 21:24]
   reg  _T_741_0; // @[GameUtilities.scala 21:24]
   reg  _T_741_1; // @[GameUtilities.scala 21:24]
+  wire  _T_742 = _T_740_0 & _T_741_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_744; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_745 = ~_T_744; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] _T_748; // @[GraphicEngineVGA.scala 277:60]
+  reg  _T_749_0; // @[GameUtilities.scala 21:24]
+  reg  _T_749_1; // @[GameUtilities.scala 21:24]
   reg  _T_750_0; // @[GameUtilities.scala 21:24]
   reg  _T_750_1; // @[GameUtilities.scala 21:24]
+  wire  _T_751 = _T_749_0 & _T_750_0; // @[GraphicEngineVGA.scala 278:91]
   reg  _T_753; // @[GraphicEngineVGA.scala 278:132]
   wire  _T_754 = ~_T_753; // @[GraphicEngineVGA.scala 278:123]
   reg [5:0] pixelColorSprite; // @[GraphicEngineVGA.scala 280:33]
@@ -2619,22 +2766,22 @@ module GraphicEngineVGA(
   assign multiHotPriortyReductionTree_io_dataInput_13 = _T_730; // @[GraphicEngineVGA.scala 277:50]
   assign multiHotPriortyReductionTree_io_dataInput_14 = _T_739; // @[GraphicEngineVGA.scala 277:50]
   assign multiHotPriortyReductionTree_io_dataInput_15 = _T_748; // @[GraphicEngineVGA.scala 277:50]
-  assign multiHotPriortyReductionTree_io_selectInput_0 = _T_615_0 & _T_619; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_1 = _T_624_0 & _T_628; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_2 = _T_633_0 & _T_637; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_3 = _T_642_0 & _T_646; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_4 = _T_651_0 & _T_655; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_5 = _T_660_0 & _T_664; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_6 = _T_669_0 & _T_673; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_7 = _T_678_0 & _T_682; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_8 = _T_687_0 & _T_691; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_9 = _T_696_0 & _T_700; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_10 = _T_705_0 & _T_709; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_11 = _T_714_0 & _T_718; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_12 = _T_723_0 & _T_727; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_13 = _T_732_0 & _T_736; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_14 = _T_741_0 & _T_745; // @[GraphicEngineVGA.scala 278:52]
-  assign multiHotPriortyReductionTree_io_selectInput_15 = _T_750_0 & _T_754; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_0 = _T_616 & _T_619; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_1 = _T_625 & _T_628; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_2 = _T_634 & _T_637; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_3 = _T_643 & _T_646; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_4 = _T_652 & _T_655; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_5 = _T_661 & _T_664; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_6 = _T_670 & _T_673; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_7 = _T_679 & _T_682; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_8 = _T_688 & _T_691; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_9 = _T_697 & _T_700; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_10 = _T_706 & _T_709; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_11 = _T_715 & _T_718; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_12 = _T_724 & _T_727; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_13 = _T_733 & _T_736; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_14 = _T_742 & _T_745; // @[GraphicEngineVGA.scala 278:52]
+  assign multiHotPriortyReductionTree_io_selectInput_15 = _T_751 & _T_754; // @[GraphicEngineVGA.scala 278:52]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -2697,293 +2844,389 @@ initial begin
   _RAND_12 = {1{`RANDOM}};
   frameClockCount = _RAND_12[20:0];
   _RAND_13 = {1{`RANDOM}};
-  spriteXPositionReg_1 = _RAND_13[10:0];
+  spriteXPositionReg_0 = _RAND_13[10:0];
   _RAND_14 = {1{`RANDOM}};
-  spriteXPositionReg_2 = _RAND_14[10:0];
+  spriteXPositionReg_1 = _RAND_14[10:0];
   _RAND_15 = {1{`RANDOM}};
-  spriteXPositionReg_3 = _RAND_15[10:0];
+  spriteXPositionReg_2 = _RAND_15[10:0];
   _RAND_16 = {1{`RANDOM}};
-  spriteXPositionReg_4 = _RAND_16[10:0];
+  spriteXPositionReg_3 = _RAND_16[10:0];
   _RAND_17 = {1{`RANDOM}};
-  spriteXPositionReg_5 = _RAND_17[10:0];
+  spriteXPositionReg_4 = _RAND_17[10:0];
   _RAND_18 = {1{`RANDOM}};
-  spriteXPositionReg_6 = _RAND_18[10:0];
+  spriteXPositionReg_5 = _RAND_18[10:0];
   _RAND_19 = {1{`RANDOM}};
-  spriteXPositionReg_7 = _RAND_19[10:0];
+  spriteXPositionReg_6 = _RAND_19[10:0];
   _RAND_20 = {1{`RANDOM}};
-  spriteXPositionReg_8 = _RAND_20[10:0];
+  spriteXPositionReg_7 = _RAND_20[10:0];
   _RAND_21 = {1{`RANDOM}};
-  spriteXPositionReg_9 = _RAND_21[10:0];
+  spriteXPositionReg_8 = _RAND_21[10:0];
   _RAND_22 = {1{`RANDOM}};
-  spriteXPositionReg_11 = _RAND_22[10:0];
+  spriteXPositionReg_9 = _RAND_22[10:0];
   _RAND_23 = {1{`RANDOM}};
-  spriteXPositionReg_12 = _RAND_23[10:0];
+  spriteXPositionReg_10 = _RAND_23[10:0];
   _RAND_24 = {1{`RANDOM}};
-  spriteXPositionReg_13 = _RAND_24[10:0];
+  spriteXPositionReg_11 = _RAND_24[10:0];
   _RAND_25 = {1{`RANDOM}};
-  spriteXPositionReg_14 = _RAND_25[10:0];
+  spriteXPositionReg_12 = _RAND_25[10:0];
   _RAND_26 = {1{`RANDOM}};
-  spriteXPositionReg_15 = _RAND_26[10:0];
+  spriteXPositionReg_13 = _RAND_26[10:0];
   _RAND_27 = {1{`RANDOM}};
-  spriteYPositionReg_0 = _RAND_27[9:0];
+  spriteXPositionReg_14 = _RAND_27[10:0];
   _RAND_28 = {1{`RANDOM}};
-  spriteYPositionReg_1 = _RAND_28[9:0];
+  spriteYPositionReg_0 = _RAND_28[9:0];
   _RAND_29 = {1{`RANDOM}};
-  spriteYPositionReg_2 = _RAND_29[9:0];
+  spriteYPositionReg_1 = _RAND_29[9:0];
   _RAND_30 = {1{`RANDOM}};
-  spriteYPositionReg_3 = _RAND_30[9:0];
+  spriteYPositionReg_2 = _RAND_30[9:0];
   _RAND_31 = {1{`RANDOM}};
-  spriteYPositionReg_4 = _RAND_31[9:0];
+  spriteYPositionReg_3 = _RAND_31[9:0];
   _RAND_32 = {1{`RANDOM}};
-  spriteYPositionReg_5 = _RAND_32[9:0];
+  spriteYPositionReg_4 = _RAND_32[9:0];
   _RAND_33 = {1{`RANDOM}};
-  spriteYPositionReg_6 = _RAND_33[9:0];
+  spriteYPositionReg_5 = _RAND_33[9:0];
   _RAND_34 = {1{`RANDOM}};
-  spriteYPositionReg_7 = _RAND_34[9:0];
+  spriteYPositionReg_6 = _RAND_34[9:0];
   _RAND_35 = {1{`RANDOM}};
-  spriteYPositionReg_8 = _RAND_35[9:0];
+  spriteYPositionReg_7 = _RAND_35[9:0];
   _RAND_36 = {1{`RANDOM}};
-  spriteYPositionReg_9 = _RAND_36[9:0];
+  spriteYPositionReg_8 = _RAND_36[9:0];
   _RAND_37 = {1{`RANDOM}};
-  spriteYPositionReg_10 = _RAND_37[9:0];
+  spriteYPositionReg_9 = _RAND_37[9:0];
   _RAND_38 = {1{`RANDOM}};
-  spriteYPositionReg_11 = _RAND_38[9:0];
+  spriteYPositionReg_10 = _RAND_38[9:0];
   _RAND_39 = {1{`RANDOM}};
-  spriteYPositionReg_12 = _RAND_39[9:0];
+  spriteYPositionReg_11 = _RAND_39[9:0];
   _RAND_40 = {1{`RANDOM}};
-  spriteYPositionReg_13 = _RAND_40[9:0];
+  spriteYPositionReg_12 = _RAND_40[9:0];
   _RAND_41 = {1{`RANDOM}};
-  spriteYPositionReg_14 = _RAND_41[9:0];
+  spriteYPositionReg_13 = _RAND_41[9:0];
   _RAND_42 = {1{`RANDOM}};
-  spriteYPositionReg_15 = _RAND_42[9:0];
+  spriteYPositionReg_14 = _RAND_42[9:0];
   _RAND_43 = {1{`RANDOM}};
-  missingFrameErrorReg = _RAND_43[0:0];
+  spriteVisibleReg_0 = _RAND_43[0:0];
   _RAND_44 = {1{`RANDOM}};
-  newFrameStikyReg = _RAND_44[0:0];
+  spriteVisibleReg_1 = _RAND_44[0:0];
   _RAND_45 = {1{`RANDOM}};
-  _T_33 = _RAND_45[0:0];
+  spriteVisibleReg_2 = _RAND_45[0:0];
   _RAND_46 = {1{`RANDOM}};
-  backTileMemoryDataRead_0 = _RAND_46[6:0];
+  spriteVisibleReg_3 = _RAND_46[0:0];
   _RAND_47 = {1{`RANDOM}};
-  backTileMemoryDataRead_1 = _RAND_47[6:0];
+  spriteVisibleReg_4 = _RAND_47[0:0];
   _RAND_48 = {1{`RANDOM}};
-  backTileMemoryDataRead_2 = _RAND_48[6:0];
+  spriteVisibleReg_5 = _RAND_48[0:0];
   _RAND_49 = {1{`RANDOM}};
-  backTileMemoryDataRead_3 = _RAND_49[6:0];
+  spriteVisibleReg_6 = _RAND_49[0:0];
   _RAND_50 = {1{`RANDOM}};
-  backTileMemoryDataRead_4 = _RAND_50[6:0];
+  spriteVisibleReg_7 = _RAND_50[0:0];
   _RAND_51 = {1{`RANDOM}};
-  backTileMemoryDataRead_5 = _RAND_51[6:0];
+  spriteVisibleReg_8 = _RAND_51[0:0];
   _RAND_52 = {1{`RANDOM}};
-  backTileMemoryDataRead_6 = _RAND_52[6:0];
+  spriteVisibleReg_9 = _RAND_52[0:0];
   _RAND_53 = {1{`RANDOM}};
-  backTileMemoryDataRead_7 = _RAND_53[6:0];
+  spriteVisibleReg_10 = _RAND_53[0:0];
   _RAND_54 = {1{`RANDOM}};
-  backTileMemoryDataRead_8 = _RAND_54[6:0];
+  spriteVisibleReg_11 = _RAND_54[0:0];
   _RAND_55 = {1{`RANDOM}};
-  backTileMemoryDataRead_9 = _RAND_55[6:0];
+  spriteVisibleReg_12 = _RAND_55[0:0];
   _RAND_56 = {1{`RANDOM}};
-  backTileMemoryDataRead_10 = _RAND_56[6:0];
+  spriteVisibleReg_13 = _RAND_56[0:0];
   _RAND_57 = {1{`RANDOM}};
-  backTileMemoryDataRead_11 = _RAND_57[6:0];
+  spriteVisibleReg_14 = _RAND_57[0:0];
   _RAND_58 = {1{`RANDOM}};
-  backTileMemoryDataRead_12 = _RAND_58[6:0];
+  spriteVisibleReg_15 = _RAND_58[0:0];
   _RAND_59 = {1{`RANDOM}};
-  backTileMemoryDataRead_13 = _RAND_59[6:0];
+  missingFrameErrorReg = _RAND_59[0:0];
   _RAND_60 = {1{`RANDOM}};
-  backTileMemoryDataRead_14 = _RAND_60[6:0];
+  newFrameStikyReg = _RAND_60[0:0];
   _RAND_61 = {1{`RANDOM}};
-  backTileMemoryDataRead_15 = _RAND_61[6:0];
+  _T_33 = _RAND_61[0:0];
   _RAND_62 = {1{`RANDOM}};
-  backTileMemoryDataRead_16 = _RAND_62[6:0];
+  backTileMemoryDataRead_0 = _RAND_62[6:0];
   _RAND_63 = {1{`RANDOM}};
-  backTileMemoryDataRead_17 = _RAND_63[6:0];
+  backTileMemoryDataRead_1 = _RAND_63[6:0];
   _RAND_64 = {1{`RANDOM}};
-  backTileMemoryDataRead_18 = _RAND_64[6:0];
+  backTileMemoryDataRead_2 = _RAND_64[6:0];
   _RAND_65 = {1{`RANDOM}};
-  backTileMemoryDataRead_19 = _RAND_65[6:0];
+  backTileMemoryDataRead_3 = _RAND_65[6:0];
   _RAND_66 = {1{`RANDOM}};
-  backTileMemoryDataRead_20 = _RAND_66[6:0];
+  backTileMemoryDataRead_4 = _RAND_66[6:0];
   _RAND_67 = {1{`RANDOM}};
-  backTileMemoryDataRead_21 = _RAND_67[6:0];
+  backTileMemoryDataRead_5 = _RAND_67[6:0];
   _RAND_68 = {1{`RANDOM}};
-  backTileMemoryDataRead_22 = _RAND_68[6:0];
+  backTileMemoryDataRead_6 = _RAND_68[6:0];
   _RAND_69 = {1{`RANDOM}};
-  backTileMemoryDataRead_23 = _RAND_69[6:0];
+  backTileMemoryDataRead_7 = _RAND_69[6:0];
   _RAND_70 = {1{`RANDOM}};
-  backTileMemoryDataRead_24 = _RAND_70[6:0];
+  backTileMemoryDataRead_8 = _RAND_70[6:0];
   _RAND_71 = {1{`RANDOM}};
-  backTileMemoryDataRead_25 = _RAND_71[6:0];
+  backTileMemoryDataRead_9 = _RAND_71[6:0];
   _RAND_72 = {1{`RANDOM}};
-  backTileMemoryDataRead_26 = _RAND_72[6:0];
+  backTileMemoryDataRead_10 = _RAND_72[6:0];
   _RAND_73 = {1{`RANDOM}};
-  backTileMemoryDataRead_27 = _RAND_73[6:0];
+  backTileMemoryDataRead_11 = _RAND_73[6:0];
   _RAND_74 = {1{`RANDOM}};
-  backTileMemoryDataRead_28 = _RAND_74[6:0];
+  backTileMemoryDataRead_12 = _RAND_74[6:0];
   _RAND_75 = {1{`RANDOM}};
-  backTileMemoryDataRead_29 = _RAND_75[6:0];
+  backTileMemoryDataRead_13 = _RAND_75[6:0];
   _RAND_76 = {1{`RANDOM}};
-  backTileMemoryDataRead_30 = _RAND_76[6:0];
+  backTileMemoryDataRead_14 = _RAND_76[6:0];
   _RAND_77 = {1{`RANDOM}};
-  backTileMemoryDataRead_31 = _RAND_77[6:0];
+  backTileMemoryDataRead_15 = _RAND_77[6:0];
   _RAND_78 = {1{`RANDOM}};
-  backMemoryCopyCounter = _RAND_78[11:0];
+  backTileMemoryDataRead_16 = _RAND_78[6:0];
   _RAND_79 = {1{`RANDOM}};
-  copyEnabledReg = _RAND_79[0:0];
+  backTileMemoryDataRead_17 = _RAND_79[6:0];
   _RAND_80 = {1{`RANDOM}};
-  _T_203 = _RAND_80[10:0];
+  backTileMemoryDataRead_18 = _RAND_80[6:0];
   _RAND_81 = {1{`RANDOM}};
-  _T_208 = _RAND_81[0:0];
+  backTileMemoryDataRead_19 = _RAND_81[6:0];
   _RAND_82 = {1{`RANDOM}};
-  _T_215 = _RAND_82[10:0];
+  backTileMemoryDataRead_20 = _RAND_82[6:0];
   _RAND_83 = {1{`RANDOM}};
-  _T_222 = _RAND_83[4:0];
+  backTileMemoryDataRead_21 = _RAND_83[6:0];
   _RAND_84 = {1{`RANDOM}};
-  pixelColorBack = _RAND_84[5:0];
+  backTileMemoryDataRead_22 = _RAND_84[6:0];
   _RAND_85 = {1{`RANDOM}};
-  _T_613 = _RAND_85[5:0];
+  backTileMemoryDataRead_23 = _RAND_85[6:0];
   _RAND_86 = {1{`RANDOM}};
-  _T_615_0 = _RAND_86[0:0];
+  backTileMemoryDataRead_24 = _RAND_86[6:0];
   _RAND_87 = {1{`RANDOM}};
-  _T_615_1 = _RAND_87[0:0];
+  backTileMemoryDataRead_25 = _RAND_87[6:0];
   _RAND_88 = {1{`RANDOM}};
-  _T_618 = _RAND_88[0:0];
+  backTileMemoryDataRead_26 = _RAND_88[6:0];
   _RAND_89 = {1{`RANDOM}};
-  _T_622 = _RAND_89[5:0];
+  backTileMemoryDataRead_27 = _RAND_89[6:0];
   _RAND_90 = {1{`RANDOM}};
-  _T_624_0 = _RAND_90[0:0];
+  backTileMemoryDataRead_28 = _RAND_90[6:0];
   _RAND_91 = {1{`RANDOM}};
-  _T_624_1 = _RAND_91[0:0];
+  backTileMemoryDataRead_29 = _RAND_91[6:0];
   _RAND_92 = {1{`RANDOM}};
-  _T_627 = _RAND_92[0:0];
+  backTileMemoryDataRead_30 = _RAND_92[6:0];
   _RAND_93 = {1{`RANDOM}};
-  _T_631 = _RAND_93[5:0];
+  backTileMemoryDataRead_31 = _RAND_93[6:0];
   _RAND_94 = {1{`RANDOM}};
-  _T_633_0 = _RAND_94[0:0];
+  backMemoryCopyCounter = _RAND_94[11:0];
   _RAND_95 = {1{`RANDOM}};
-  _T_633_1 = _RAND_95[0:0];
+  copyEnabledReg = _RAND_95[0:0];
   _RAND_96 = {1{`RANDOM}};
-  _T_636 = _RAND_96[0:0];
+  _T_203 = _RAND_96[10:0];
   _RAND_97 = {1{`RANDOM}};
-  _T_640 = _RAND_97[5:0];
+  _T_208 = _RAND_97[0:0];
   _RAND_98 = {1{`RANDOM}};
-  _T_642_0 = _RAND_98[0:0];
+  _T_215 = _RAND_98[10:0];
   _RAND_99 = {1{`RANDOM}};
-  _T_642_1 = _RAND_99[0:0];
+  _T_222 = _RAND_99[4:0];
   _RAND_100 = {1{`RANDOM}};
-  _T_645 = _RAND_100[0:0];
+  pixelColorBack = _RAND_100[5:0];
   _RAND_101 = {1{`RANDOM}};
-  _T_649 = _RAND_101[5:0];
+  _T_613 = _RAND_101[5:0];
   _RAND_102 = {1{`RANDOM}};
-  _T_651_0 = _RAND_102[0:0];
+  _T_614_0 = _RAND_102[0:0];
   _RAND_103 = {1{`RANDOM}};
-  _T_651_1 = _RAND_103[0:0];
+  _T_614_1 = _RAND_103[0:0];
   _RAND_104 = {1{`RANDOM}};
-  _T_654 = _RAND_104[0:0];
+  _T_615_0 = _RAND_104[0:0];
   _RAND_105 = {1{`RANDOM}};
-  _T_658 = _RAND_105[5:0];
+  _T_615_1 = _RAND_105[0:0];
   _RAND_106 = {1{`RANDOM}};
-  _T_660_0 = _RAND_106[0:0];
+  _T_618 = _RAND_106[0:0];
   _RAND_107 = {1{`RANDOM}};
-  _T_660_1 = _RAND_107[0:0];
+  _T_622 = _RAND_107[5:0];
   _RAND_108 = {1{`RANDOM}};
-  _T_663 = _RAND_108[0:0];
+  _T_623_0 = _RAND_108[0:0];
   _RAND_109 = {1{`RANDOM}};
-  _T_667 = _RAND_109[5:0];
+  _T_623_1 = _RAND_109[0:0];
   _RAND_110 = {1{`RANDOM}};
-  _T_669_0 = _RAND_110[0:0];
+  _T_624_0 = _RAND_110[0:0];
   _RAND_111 = {1{`RANDOM}};
-  _T_669_1 = _RAND_111[0:0];
+  _T_624_1 = _RAND_111[0:0];
   _RAND_112 = {1{`RANDOM}};
-  _T_672 = _RAND_112[0:0];
+  _T_627 = _RAND_112[0:0];
   _RAND_113 = {1{`RANDOM}};
-  _T_676 = _RAND_113[5:0];
+  _T_631 = _RAND_113[5:0];
   _RAND_114 = {1{`RANDOM}};
-  _T_678_0 = _RAND_114[0:0];
+  _T_632_0 = _RAND_114[0:0];
   _RAND_115 = {1{`RANDOM}};
-  _T_678_1 = _RAND_115[0:0];
+  _T_632_1 = _RAND_115[0:0];
   _RAND_116 = {1{`RANDOM}};
-  _T_681 = _RAND_116[0:0];
+  _T_633_0 = _RAND_116[0:0];
   _RAND_117 = {1{`RANDOM}};
-  _T_685 = _RAND_117[5:0];
+  _T_633_1 = _RAND_117[0:0];
   _RAND_118 = {1{`RANDOM}};
-  _T_687_0 = _RAND_118[0:0];
+  _T_636 = _RAND_118[0:0];
   _RAND_119 = {1{`RANDOM}};
-  _T_687_1 = _RAND_119[0:0];
+  _T_640 = _RAND_119[5:0];
   _RAND_120 = {1{`RANDOM}};
-  _T_690 = _RAND_120[0:0];
+  _T_641_0 = _RAND_120[0:0];
   _RAND_121 = {1{`RANDOM}};
-  _T_694 = _RAND_121[5:0];
+  _T_641_1 = _RAND_121[0:0];
   _RAND_122 = {1{`RANDOM}};
-  _T_696_0 = _RAND_122[0:0];
+  _T_642_0 = _RAND_122[0:0];
   _RAND_123 = {1{`RANDOM}};
-  _T_696_1 = _RAND_123[0:0];
+  _T_642_1 = _RAND_123[0:0];
   _RAND_124 = {1{`RANDOM}};
-  _T_699 = _RAND_124[0:0];
+  _T_645 = _RAND_124[0:0];
   _RAND_125 = {1{`RANDOM}};
-  _T_703 = _RAND_125[5:0];
+  _T_649 = _RAND_125[5:0];
   _RAND_126 = {1{`RANDOM}};
-  _T_705_0 = _RAND_126[0:0];
+  _T_650_0 = _RAND_126[0:0];
   _RAND_127 = {1{`RANDOM}};
-  _T_705_1 = _RAND_127[0:0];
+  _T_650_1 = _RAND_127[0:0];
   _RAND_128 = {1{`RANDOM}};
-  _T_708 = _RAND_128[0:0];
+  _T_651_0 = _RAND_128[0:0];
   _RAND_129 = {1{`RANDOM}};
-  _T_712 = _RAND_129[5:0];
+  _T_651_1 = _RAND_129[0:0];
   _RAND_130 = {1{`RANDOM}};
-  _T_714_0 = _RAND_130[0:0];
+  _T_654 = _RAND_130[0:0];
   _RAND_131 = {1{`RANDOM}};
-  _T_714_1 = _RAND_131[0:0];
+  _T_658 = _RAND_131[5:0];
   _RAND_132 = {1{`RANDOM}};
-  _T_717 = _RAND_132[0:0];
+  _T_659_0 = _RAND_132[0:0];
   _RAND_133 = {1{`RANDOM}};
-  _T_721 = _RAND_133[5:0];
+  _T_659_1 = _RAND_133[0:0];
   _RAND_134 = {1{`RANDOM}};
-  _T_723_0 = _RAND_134[0:0];
+  _T_660_0 = _RAND_134[0:0];
   _RAND_135 = {1{`RANDOM}};
-  _T_723_1 = _RAND_135[0:0];
+  _T_660_1 = _RAND_135[0:0];
   _RAND_136 = {1{`RANDOM}};
-  _T_726 = _RAND_136[0:0];
+  _T_663 = _RAND_136[0:0];
   _RAND_137 = {1{`RANDOM}};
-  _T_730 = _RAND_137[5:0];
+  _T_667 = _RAND_137[5:0];
   _RAND_138 = {1{`RANDOM}};
-  _T_732_0 = _RAND_138[0:0];
+  _T_668_0 = _RAND_138[0:0];
   _RAND_139 = {1{`RANDOM}};
-  _T_732_1 = _RAND_139[0:0];
+  _T_668_1 = _RAND_139[0:0];
   _RAND_140 = {1{`RANDOM}};
-  _T_735 = _RAND_140[0:0];
+  _T_669_0 = _RAND_140[0:0];
   _RAND_141 = {1{`RANDOM}};
-  _T_739 = _RAND_141[5:0];
+  _T_669_1 = _RAND_141[0:0];
   _RAND_142 = {1{`RANDOM}};
-  _T_741_0 = _RAND_142[0:0];
+  _T_672 = _RAND_142[0:0];
   _RAND_143 = {1{`RANDOM}};
-  _T_741_1 = _RAND_143[0:0];
+  _T_676 = _RAND_143[5:0];
   _RAND_144 = {1{`RANDOM}};
-  _T_744 = _RAND_144[0:0];
+  _T_677_0 = _RAND_144[0:0];
   _RAND_145 = {1{`RANDOM}};
-  _T_748 = _RAND_145[5:0];
+  _T_677_1 = _RAND_145[0:0];
   _RAND_146 = {1{`RANDOM}};
-  _T_750_0 = _RAND_146[0:0];
+  _T_678_0 = _RAND_146[0:0];
   _RAND_147 = {1{`RANDOM}};
-  _T_750_1 = _RAND_147[0:0];
+  _T_678_1 = _RAND_147[0:0];
   _RAND_148 = {1{`RANDOM}};
-  _T_753 = _RAND_148[0:0];
+  _T_681 = _RAND_148[0:0];
   _RAND_149 = {1{`RANDOM}};
-  pixelColorSprite = _RAND_149[5:0];
+  _T_685 = _RAND_149[5:0];
   _RAND_150 = {1{`RANDOM}};
-  pixelColorSpriteValid = _RAND_150[0:0];
+  _T_686_0 = _RAND_150[0:0];
   _RAND_151 = {1{`RANDOM}};
-  _T_756_0 = _RAND_151[0:0];
+  _T_686_1 = _RAND_151[0:0];
   _RAND_152 = {1{`RANDOM}};
-  _T_756_1 = _RAND_152[0:0];
+  _T_687_0 = _RAND_152[0:0];
   _RAND_153 = {1{`RANDOM}};
-  _T_756_2 = _RAND_153[0:0];
+  _T_687_1 = _RAND_153[0:0];
   _RAND_154 = {1{`RANDOM}};
-  _T_763 = _RAND_154[3:0];
+  _T_690 = _RAND_154[0:0];
   _RAND_155 = {1{`RANDOM}};
-  _T_764 = _RAND_155[3:0];
+  _T_694 = _RAND_155[5:0];
   _RAND_156 = {1{`RANDOM}};
-  _T_765 = _RAND_156[3:0];
+  _T_695_0 = _RAND_156[0:0];
+  _RAND_157 = {1{`RANDOM}};
+  _T_695_1 = _RAND_157[0:0];
+  _RAND_158 = {1{`RANDOM}};
+  _T_696_0 = _RAND_158[0:0];
+  _RAND_159 = {1{`RANDOM}};
+  _T_696_1 = _RAND_159[0:0];
+  _RAND_160 = {1{`RANDOM}};
+  _T_699 = _RAND_160[0:0];
+  _RAND_161 = {1{`RANDOM}};
+  _T_703 = _RAND_161[5:0];
+  _RAND_162 = {1{`RANDOM}};
+  _T_704_0 = _RAND_162[0:0];
+  _RAND_163 = {1{`RANDOM}};
+  _T_704_1 = _RAND_163[0:0];
+  _RAND_164 = {1{`RANDOM}};
+  _T_705_0 = _RAND_164[0:0];
+  _RAND_165 = {1{`RANDOM}};
+  _T_705_1 = _RAND_165[0:0];
+  _RAND_166 = {1{`RANDOM}};
+  _T_708 = _RAND_166[0:0];
+  _RAND_167 = {1{`RANDOM}};
+  _T_712 = _RAND_167[5:0];
+  _RAND_168 = {1{`RANDOM}};
+  _T_713_0 = _RAND_168[0:0];
+  _RAND_169 = {1{`RANDOM}};
+  _T_713_1 = _RAND_169[0:0];
+  _RAND_170 = {1{`RANDOM}};
+  _T_714_0 = _RAND_170[0:0];
+  _RAND_171 = {1{`RANDOM}};
+  _T_714_1 = _RAND_171[0:0];
+  _RAND_172 = {1{`RANDOM}};
+  _T_717 = _RAND_172[0:0];
+  _RAND_173 = {1{`RANDOM}};
+  _T_721 = _RAND_173[5:0];
+  _RAND_174 = {1{`RANDOM}};
+  _T_722_0 = _RAND_174[0:0];
+  _RAND_175 = {1{`RANDOM}};
+  _T_722_1 = _RAND_175[0:0];
+  _RAND_176 = {1{`RANDOM}};
+  _T_723_0 = _RAND_176[0:0];
+  _RAND_177 = {1{`RANDOM}};
+  _T_723_1 = _RAND_177[0:0];
+  _RAND_178 = {1{`RANDOM}};
+  _T_726 = _RAND_178[0:0];
+  _RAND_179 = {1{`RANDOM}};
+  _T_730 = _RAND_179[5:0];
+  _RAND_180 = {1{`RANDOM}};
+  _T_731_0 = _RAND_180[0:0];
+  _RAND_181 = {1{`RANDOM}};
+  _T_731_1 = _RAND_181[0:0];
+  _RAND_182 = {1{`RANDOM}};
+  _T_732_0 = _RAND_182[0:0];
+  _RAND_183 = {1{`RANDOM}};
+  _T_732_1 = _RAND_183[0:0];
+  _RAND_184 = {1{`RANDOM}};
+  _T_735 = _RAND_184[0:0];
+  _RAND_185 = {1{`RANDOM}};
+  _T_739 = _RAND_185[5:0];
+  _RAND_186 = {1{`RANDOM}};
+  _T_740_0 = _RAND_186[0:0];
+  _RAND_187 = {1{`RANDOM}};
+  _T_740_1 = _RAND_187[0:0];
+  _RAND_188 = {1{`RANDOM}};
+  _T_741_0 = _RAND_188[0:0];
+  _RAND_189 = {1{`RANDOM}};
+  _T_741_1 = _RAND_189[0:0];
+  _RAND_190 = {1{`RANDOM}};
+  _T_744 = _RAND_190[0:0];
+  _RAND_191 = {1{`RANDOM}};
+  _T_748 = _RAND_191[5:0];
+  _RAND_192 = {1{`RANDOM}};
+  _T_749_0 = _RAND_192[0:0];
+  _RAND_193 = {1{`RANDOM}};
+  _T_749_1 = _RAND_193[0:0];
+  _RAND_194 = {1{`RANDOM}};
+  _T_750_0 = _RAND_194[0:0];
+  _RAND_195 = {1{`RANDOM}};
+  _T_750_1 = _RAND_195[0:0];
+  _RAND_196 = {1{`RANDOM}};
+  _T_753 = _RAND_196[0:0];
+  _RAND_197 = {1{`RANDOM}};
+  pixelColorSprite = _RAND_197[5:0];
+  _RAND_198 = {1{`RANDOM}};
+  pixelColorSpriteValid = _RAND_198[0:0];
+  _RAND_199 = {1{`RANDOM}};
+  _T_756_0 = _RAND_199[0:0];
+  _RAND_200 = {1{`RANDOM}};
+  _T_756_1 = _RAND_200[0:0];
+  _RAND_201 = {1{`RANDOM}};
+  _T_756_2 = _RAND_201[0:0];
+  _RAND_202 = {1{`RANDOM}};
+  _T_763 = _RAND_202[3:0];
+  _RAND_203 = {1{`RANDOM}};
+  _T_764 = _RAND_203[3:0];
+  _RAND_204 = {1{`RANDOM}};
+  _T_765 = _RAND_204[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3046,155 +3289,171 @@ end // initial
       frameClockCount <= _T_21;
     end
     if (reset) begin
+      spriteXPositionReg_0 <= 11'sh0;
+    end else if (io_newFrame) begin
+      spriteXPositionReg_0 <= io_spriteXPosition_0;
+    end
+    if (reset) begin
       spriteXPositionReg_1 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_1 <= 11'sh40;
+      spriteXPositionReg_1 <= io_spriteXPosition_1;
     end
     if (reset) begin
       spriteXPositionReg_2 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_2 <= 11'sh80;
+      spriteXPositionReg_2 <= io_spriteXPosition_2;
     end
     if (reset) begin
       spriteXPositionReg_3 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_3 <= 11'shc0;
+      spriteXPositionReg_3 <= io_spriteXPosition_3;
     end
     if (reset) begin
       spriteXPositionReg_4 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_4 <= 11'sh100;
+      spriteXPositionReg_4 <= io_spriteXPosition_4;
     end
     if (reset) begin
       spriteXPositionReg_5 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_5 <= 11'sh140;
+      spriteXPositionReg_5 <= io_spriteXPosition_5;
     end
     if (reset) begin
       spriteXPositionReg_6 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_6 <= 11'sh180;
+      spriteXPositionReg_6 <= io_spriteXPosition_6;
     end
     if (reset) begin
       spriteXPositionReg_7 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_7 <= 11'sh1c0;
+      spriteXPositionReg_7 <= io_spriteXPosition_7;
     end
     if (reset) begin
       spriteXPositionReg_8 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_8 <= 11'sh200;
+      spriteXPositionReg_8 <= io_spriteXPosition_8;
     end
     if (reset) begin
       spriteXPositionReg_9 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_9 <= 11'sh240;
+      spriteXPositionReg_9 <= io_spriteXPosition_9;
+    end
+    if (reset) begin
+      spriteXPositionReg_10 <= 11'sh0;
+    end else if (io_newFrame) begin
+      spriteXPositionReg_10 <= io_spriteXPosition_10;
     end
     if (reset) begin
       spriteXPositionReg_11 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_11 <= 11'sh40;
+      spriteXPositionReg_11 <= io_spriteXPosition_11;
     end
     if (reset) begin
       spriteXPositionReg_12 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_12 <= 11'sh80;
+      spriteXPositionReg_12 <= io_spriteXPosition_12;
     end
     if (reset) begin
       spriteXPositionReg_13 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_13 <= 11'shc0;
+      spriteXPositionReg_13 <= io_spriteXPosition_13;
     end
     if (reset) begin
       spriteXPositionReg_14 <= 11'sh0;
     end else if (io_newFrame) begin
-      spriteXPositionReg_14 <= 11'sh100;
-    end
-    if (reset) begin
-      spriteXPositionReg_15 <= 11'sh0;
-    end else if (io_newFrame) begin
-      spriteXPositionReg_15 <= 11'sh140;
+      spriteXPositionReg_14 <= io_spriteXPosition_14;
     end
     if (reset) begin
       spriteYPositionReg_0 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_0 <= 10'sh64;
+      spriteYPositionReg_0 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_1 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_1 <= 10'sh64;
+      spriteYPositionReg_1 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_2 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_2 <= 10'sh64;
+      spriteYPositionReg_2 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_3 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_3 <= 10'sh64;
+      spriteYPositionReg_3 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_4 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_4 <= 10'sh64;
+      spriteYPositionReg_4 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_5 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_5 <= 10'sh64;
+      spriteYPositionReg_5 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_6 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_6 <= 10'sh64;
+      spriteYPositionReg_6 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_7 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_7 <= 10'sh64;
+      spriteYPositionReg_7 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_8 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_8 <= 10'sh64;
+      spriteYPositionReg_8 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_9 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_9 <= 10'sh64;
+      spriteYPositionReg_9 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_10 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_10 <= 10'sha4;
+      spriteYPositionReg_10 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_11 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_11 <= 10'sha4;
+      spriteYPositionReg_11 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_12 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_12 <= 10'sha4;
+      spriteYPositionReg_12 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_13 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_13 <= 10'sha4;
+      spriteYPositionReg_13 <= 10'sh148;
     end
     if (reset) begin
       spriteYPositionReg_14 <= 10'sh0;
     end else if (io_newFrame) begin
-      spriteYPositionReg_14 <= 10'sha4;
+      spriteYPositionReg_14 <= 10'sh148;
     end
-    if (reset) begin
-      spriteYPositionReg_15 <= 10'sh0;
-    end else if (io_newFrame) begin
-      spriteYPositionReg_15 <= 10'sha4;
-    end
+    spriteVisibleReg_0 <= reset | _GEN_45;
+    spriteVisibleReg_1 <= reset | _GEN_46;
+    spriteVisibleReg_2 <= reset | _GEN_47;
+    spriteVisibleReg_3 <= reset | _GEN_48;
+    spriteVisibleReg_4 <= reset | _GEN_49;
+    spriteVisibleReg_5 <= reset | _GEN_50;
+    spriteVisibleReg_6 <= reset | _GEN_51;
+    spriteVisibleReg_7 <= reset | _GEN_52;
+    spriteVisibleReg_8 <= reset | _GEN_53;
+    spriteVisibleReg_9 <= reset | _GEN_54;
+    spriteVisibleReg_10 <= reset | _GEN_55;
+    spriteVisibleReg_11 <= reset | _GEN_56;
+    spriteVisibleReg_12 <= reset | _GEN_57;
+    spriteVisibleReg_13 <= reset | _GEN_58;
+    spriteVisibleReg_14 <= reset | _GEN_59;
+    spriteVisibleReg_15 <= reset | _GEN_60;
     if (reset) begin
       missingFrameErrorReg <= 1'h0;
     end else begin
@@ -3260,66 +3519,98 @@ end // initial
       pixelColorBack <= fullBackgroundColor[5:0];
     end
     _T_613 <= spriteMemories_0_io_dataRead[5:0];
+    _T_614_0 <= _T_614_1;
+    _T_614_1 <= spriteVisibleReg_0;
     _T_615_0 <= _T_615_1;
     _T_615_1 <= _T_244 & _T_245;
     _T_618 <= spriteMemories_0_io_dataRead[6];
     _T_622 <= spriteMemories_1_io_dataRead[5:0];
+    _T_623_0 <= _T_623_1;
+    _T_623_1 <= spriteVisibleReg_1;
     _T_624_0 <= _T_624_1;
     _T_624_1 <= _T_263 & _T_264;
     _T_627 <= spriteMemories_1_io_dataRead[6];
     _T_631 <= spriteMemories_2_io_dataRead[5:0];
+    _T_632_0 <= _T_632_1;
+    _T_632_1 <= spriteVisibleReg_2;
     _T_633_0 <= _T_633_1;
     _T_633_1 <= _T_282 & _T_283;
     _T_636 <= spriteMemories_2_io_dataRead[6];
     _T_640 <= spriteMemories_3_io_dataRead[5:0];
+    _T_641_0 <= _T_641_1;
+    _T_641_1 <= spriteVisibleReg_3;
     _T_642_0 <= _T_642_1;
     _T_642_1 <= _T_301 & _T_302;
     _T_645 <= spriteMemories_3_io_dataRead[6];
     _T_649 <= spriteMemories_4_io_dataRead[5:0];
+    _T_650_0 <= _T_650_1;
+    _T_650_1 <= spriteVisibleReg_4;
     _T_651_0 <= _T_651_1;
     _T_651_1 <= _T_320 & _T_321;
     _T_654 <= spriteMemories_4_io_dataRead[6];
     _T_658 <= spriteMemories_5_io_dataRead[5:0];
+    _T_659_0 <= _T_659_1;
+    _T_659_1 <= spriteVisibleReg_5;
     _T_660_0 <= _T_660_1;
     _T_660_1 <= _T_339 & _T_340;
     _T_663 <= spriteMemories_5_io_dataRead[6];
     _T_667 <= spriteMemories_6_io_dataRead[5:0];
+    _T_668_0 <= _T_668_1;
+    _T_668_1 <= spriteVisibleReg_6;
     _T_669_0 <= _T_669_1;
     _T_669_1 <= _T_358 & _T_359;
     _T_672 <= spriteMemories_6_io_dataRead[6];
     _T_676 <= spriteMemories_7_io_dataRead[5:0];
+    _T_677_0 <= _T_677_1;
+    _T_677_1 <= spriteVisibleReg_7;
     _T_678_0 <= _T_678_1;
     _T_678_1 <= _T_377 & _T_378;
     _T_681 <= spriteMemories_7_io_dataRead[6];
     _T_685 <= spriteMemories_8_io_dataRead[5:0];
+    _T_686_0 <= _T_686_1;
+    _T_686_1 <= spriteVisibleReg_8;
     _T_687_0 <= _T_687_1;
     _T_687_1 <= _T_396 & _T_397;
     _T_690 <= spriteMemories_8_io_dataRead[6];
     _T_694 <= spriteMemories_9_io_dataRead[5:0];
+    _T_695_0 <= _T_695_1;
+    _T_695_1 <= spriteVisibleReg_9;
     _T_696_0 <= _T_696_1;
     _T_696_1 <= _T_415 & _T_416;
     _T_699 <= spriteMemories_9_io_dataRead[6];
     _T_703 <= spriteMemories_10_io_dataRead[5:0];
+    _T_704_0 <= _T_704_1;
+    _T_704_1 <= spriteVisibleReg_10;
     _T_705_0 <= _T_705_1;
     _T_705_1 <= _T_434 & _T_435;
     _T_708 <= spriteMemories_10_io_dataRead[6];
     _T_712 <= spriteMemories_11_io_dataRead[5:0];
+    _T_713_0 <= _T_713_1;
+    _T_713_1 <= spriteVisibleReg_11;
     _T_714_0 <= _T_714_1;
     _T_714_1 <= _T_453 & _T_454;
     _T_717 <= spriteMemories_11_io_dataRead[6];
     _T_721 <= spriteMemories_12_io_dataRead[5:0];
+    _T_722_0 <= _T_722_1;
+    _T_722_1 <= spriteVisibleReg_12;
     _T_723_0 <= _T_723_1;
     _T_723_1 <= _T_472 & _T_473;
     _T_726 <= spriteMemories_12_io_dataRead[6];
     _T_730 <= spriteMemories_13_io_dataRead[5:0];
+    _T_731_0 <= _T_731_1;
+    _T_731_1 <= spriteVisibleReg_13;
     _T_732_0 <= _T_732_1;
     _T_732_1 <= _T_491 & _T_492;
     _T_735 <= spriteMemories_13_io_dataRead[6];
     _T_739 <= spriteMemories_14_io_dataRead[5:0];
+    _T_740_0 <= _T_740_1;
+    _T_740_1 <= spriteVisibleReg_14;
     _T_741_0 <= _T_741_1;
     _T_741_1 <= _T_510 & _T_511;
     _T_744 <= spriteMemories_14_io_dataRead[6];
     _T_748 <= spriteMemories_15_io_dataRead[5:0];
+    _T_749_0 <= _T_749_1;
+    _T_749_1 <= spriteVisibleReg_15;
     _T_750_0 <= _T_750_1;
     _T_750_1 <= _T_529 & _T_530;
     _T_753 <= spriteMemories_15_io_dataRead[6];
@@ -3334,20 +3625,186 @@ end // initial
   end
 endmodule
 module GameLogicTask0(
-  input   clock,
-  input   reset,
-  input   io_newFrame,
-  output  io_frameUpdateDone
+  input         clock,
+  input         reset,
+  output [10:0] io_spriteXPosition_0,
+  output [10:0] io_spriteXPosition_1,
+  output [10:0] io_spriteXPosition_2,
+  output [10:0] io_spriteXPosition_3,
+  output [10:0] io_spriteXPosition_4,
+  output [10:0] io_spriteXPosition_5,
+  output [10:0] io_spriteXPosition_6,
+  output [10:0] io_spriteXPosition_7,
+  output [10:0] io_spriteXPosition_8,
+  output [10:0] io_spriteXPosition_9,
+  output [10:0] io_spriteXPosition_10,
+  output [10:0] io_spriteXPosition_11,
+  output [10:0] io_spriteXPosition_12,
+  output [10:0] io_spriteXPosition_13,
+  output [10:0] io_spriteXPosition_14,
+  input         io_newFrame,
+  output        io_frameUpdateDone
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
+  reg [31:0] _RAND_1;
+  reg [31:0] _RAND_2;
+  reg [31:0] _RAND_3;
+  reg [31:0] _RAND_4;
+  reg [31:0] _RAND_5;
+  reg [31:0] _RAND_6;
+  reg [31:0] _RAND_7;
+  reg [31:0] _RAND_8;
+  reg [31:0] _RAND_9;
+  reg [31:0] _RAND_10;
+  reg [31:0] _RAND_11;
+  reg [31:0] _RAND_12;
+  reg [31:0] _RAND_13;
+  reg [31:0] _RAND_14;
+  reg [31:0] _RAND_15;
+  reg [31:0] _RAND_16;
+  reg [31:0] _RAND_17;
+  reg [31:0] _RAND_18;
+  reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
+  reg [31:0] _RAND_21;
+  reg [31:0] _RAND_22;
+  reg [31:0] _RAND_23;
+  reg [31:0] _RAND_24;
+  reg [31:0] _RAND_25;
+  reg [31:0] _RAND_26;
+  reg [31:0] _RAND_27;
+  reg [31:0] _RAND_28;
+  reg [31:0] _RAND_29;
+  reg [31:0] _RAND_30;
 `endif // RANDOMIZE_REG_INIT
-  reg [1:0] stateReg; // @[GameLogicTask0.scala 93:25]
-  wire  _T = 2'h0 == stateReg; // @[Conditional.scala 37:30]
-  wire  _T_1 = 2'h1 == stateReg; // @[Conditional.scala 37:30]
-  wire  _T_2 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
-  wire  _GEN_4 = _T_1 ? 1'h0 : _T_2; // @[Conditional.scala 39:67]
-  assign io_frameUpdateDone = _T ? 1'h0 : _GEN_4; // @[GameLogicTask0.scala 85:22 GameLogicTask0.scala 203:26]
+  reg [1:0] stateReg; // @[GameLogicTask0.scala 106:25]
+  reg [10:0] spriteXReg_0; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_1; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_2; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_3; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_4; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_5; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_6; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_7; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_8; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_9; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_10; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_11; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_12; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_13; // @[GameLogicTask0.scala 114:31]
+  reg [10:0] spriteXReg_14; // @[GameLogicTask0.scala 114:31]
+  reg  turnReg_0; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_1; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_2; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_3; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_4; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_5; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_6; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_7; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_8; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_9; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_10; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_11; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_12; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_13; // @[GameLogicTask0.scala 132:31]
+  reg  turnReg_14; // @[GameLogicTask0.scala 132:31]
+  wire  _T_240 = 2'h0 == stateReg; // @[Conditional.scala 37:30]
+  wire  _T_241 = 2'h1 == stateReg; // @[Conditional.scala 37:30]
+  wire  _T_242 = $signed(spriteXReg_0) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_1 = _T_242 | turnReg_0; // @[GameLogicTask0.scala 147:50]
+  wire  _T_243 = $signed(spriteXReg_0) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_246 = $signed(spriteXReg_0) - 11'sh0; // @[GameLogicTask0.scala 154:55]
+  wire [11:0] _T_247 = {{1{spriteXReg_0[10]}},spriteXReg_0}; // @[GameLogicTask0.scala 154:73]
+  wire [10:0] _T_249 = _T_247[10:0]; // @[GameLogicTask0.scala 154:73]
+  wire  _T_251 = $signed(spriteXReg_1) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_3 = _T_251 | turnReg_1; // @[GameLogicTask0.scala 147:50]
+  wire  _T_252 = $signed(spriteXReg_1) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_255 = $signed(spriteXReg_1) - 11'sh1; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_258 = $signed(spriteXReg_1) + 11'sh1; // @[GameLogicTask0.scala 154:73]
+  wire  _T_260 = $signed(spriteXReg_2) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_5 = _T_260 | turnReg_2; // @[GameLogicTask0.scala 147:50]
+  wire  _T_261 = $signed(spriteXReg_2) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_264 = $signed(spriteXReg_2) - 11'sh2; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_267 = $signed(spriteXReg_2) + 11'sh2; // @[GameLogicTask0.scala 154:73]
+  wire  _T_269 = $signed(spriteXReg_3) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_7 = _T_269 | turnReg_3; // @[GameLogicTask0.scala 147:50]
+  wire  _T_270 = $signed(spriteXReg_3) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_273 = $signed(spriteXReg_3) - 11'sh3; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_276 = $signed(spriteXReg_3) + 11'sh3; // @[GameLogicTask0.scala 154:73]
+  wire  _T_278 = $signed(spriteXReg_4) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_9 = _T_278 | turnReg_4; // @[GameLogicTask0.scala 147:50]
+  wire  _T_279 = $signed(spriteXReg_4) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_282 = $signed(spriteXReg_4) - 11'sh4; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_285 = $signed(spriteXReg_4) + 11'sh4; // @[GameLogicTask0.scala 154:73]
+  wire  _T_287 = $signed(spriteXReg_5) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_11 = _T_287 | turnReg_5; // @[GameLogicTask0.scala 147:50]
+  wire  _T_288 = $signed(spriteXReg_5) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_291 = $signed(spriteXReg_5) - 11'sh5; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_294 = $signed(spriteXReg_5) + 11'sh5; // @[GameLogicTask0.scala 154:73]
+  wire  _T_296 = $signed(spriteXReg_6) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_13 = _T_296 | turnReg_6; // @[GameLogicTask0.scala 147:50]
+  wire  _T_297 = $signed(spriteXReg_6) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_300 = $signed(spriteXReg_6) - 11'sh6; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_303 = $signed(spriteXReg_6) + 11'sh6; // @[GameLogicTask0.scala 154:73]
+  wire  _T_305 = $signed(spriteXReg_7) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_15 = _T_305 | turnReg_7; // @[GameLogicTask0.scala 147:50]
+  wire  _T_306 = $signed(spriteXReg_7) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_309 = $signed(spriteXReg_7) - 11'sh7; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_312 = $signed(spriteXReg_7) + 11'sh7; // @[GameLogicTask0.scala 154:73]
+  wire  _T_314 = $signed(spriteXReg_8) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_17 = _T_314 | turnReg_8; // @[GameLogicTask0.scala 147:50]
+  wire  _T_315 = $signed(spriteXReg_8) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_318 = $signed(spriteXReg_8) - 11'sh8; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_321 = $signed(spriteXReg_8) + 11'sh8; // @[GameLogicTask0.scala 154:73]
+  wire  _T_323 = $signed(spriteXReg_9) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_19 = _T_323 | turnReg_9; // @[GameLogicTask0.scala 147:50]
+  wire  _T_324 = $signed(spriteXReg_9) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_327 = $signed(spriteXReg_9) - 11'sh9; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_330 = $signed(spriteXReg_9) + 11'sh9; // @[GameLogicTask0.scala 154:73]
+  wire  _T_332 = $signed(spriteXReg_10) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_21 = _T_332 | turnReg_10; // @[GameLogicTask0.scala 147:50]
+  wire  _T_333 = $signed(spriteXReg_10) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_336 = $signed(spriteXReg_10) - 11'sha; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_339 = $signed(spriteXReg_10) + 11'sha; // @[GameLogicTask0.scala 154:73]
+  wire  _T_341 = $signed(spriteXReg_11) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_23 = _T_341 | turnReg_11; // @[GameLogicTask0.scala 147:50]
+  wire  _T_342 = $signed(spriteXReg_11) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_345 = $signed(spriteXReg_11) - 11'shb; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_348 = $signed(spriteXReg_11) + 11'shb; // @[GameLogicTask0.scala 154:73]
+  wire  _T_350 = $signed(spriteXReg_12) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_25 = _T_350 | turnReg_12; // @[GameLogicTask0.scala 147:50]
+  wire  _T_351 = $signed(spriteXReg_12) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_354 = $signed(spriteXReg_12) - 11'shc; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_357 = $signed(spriteXReg_12) + 11'shc; // @[GameLogicTask0.scala 154:73]
+  wire  _T_359 = $signed(spriteXReg_13) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_27 = _T_359 | turnReg_13; // @[GameLogicTask0.scala 147:50]
+  wire  _T_360 = $signed(spriteXReg_13) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_363 = $signed(spriteXReg_13) - 11'shd; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_366 = $signed(spriteXReg_13) + 11'shd; // @[GameLogicTask0.scala 154:73]
+  wire  _T_368 = $signed(spriteXReg_14) >= 11'sh240; // @[GameLogicTask0.scala 147:28]
+  wire  _GEN_29 = _T_368 | turnReg_14; // @[GameLogicTask0.scala 147:50]
+  wire  _T_369 = $signed(spriteXReg_14) <= 11'sh0; // @[GameLogicTask0.scala 150:28]
+  wire [10:0] _T_372 = $signed(spriteXReg_14) - 11'she; // @[GameLogicTask0.scala 154:55]
+  wire [10:0] _T_375 = $signed(spriteXReg_14) + 11'she; // @[GameLogicTask0.scala 154:73]
+  wire  _T_377 = 2'h2 == stateReg; // @[Conditional.scala 37:30]
+  wire  _GEN_64 = _T_241 ? 1'h0 : _T_377; // @[Conditional.scala 39:67]
+  assign io_spriteXPosition_0 = spriteXReg_0; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_1 = spriteXReg_1; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_2 = spriteXReg_2; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_3 = spriteXReg_3; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_4 = spriteXReg_4; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_5 = spriteXReg_5; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_6 = spriteXReg_6; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_7 = spriteXReg_7; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_8 = spriteXReg_8; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_9 = spriteXReg_9; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_10 = spriteXReg_10; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_11 = spriteXReg_11; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_12 = spriteXReg_12; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_13 = spriteXReg_13; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_spriteXPosition_14 = spriteXReg_14; // @[GameLogicTask0.scala 77:22 GameLogicTask0.scala 127:27]
+  assign io_frameUpdateDone = _T_240 ? 1'h0 : _GEN_64; // @[GameLogicTask0.scala 98:22 GameLogicTask0.scala 161:26]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -3385,6 +3842,66 @@ initial begin
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
   stateReg = _RAND_0[1:0];
+  _RAND_1 = {1{`RANDOM}};
+  spriteXReg_0 = _RAND_1[10:0];
+  _RAND_2 = {1{`RANDOM}};
+  spriteXReg_1 = _RAND_2[10:0];
+  _RAND_3 = {1{`RANDOM}};
+  spriteXReg_2 = _RAND_3[10:0];
+  _RAND_4 = {1{`RANDOM}};
+  spriteXReg_3 = _RAND_4[10:0];
+  _RAND_5 = {1{`RANDOM}};
+  spriteXReg_4 = _RAND_5[10:0];
+  _RAND_6 = {1{`RANDOM}};
+  spriteXReg_5 = _RAND_6[10:0];
+  _RAND_7 = {1{`RANDOM}};
+  spriteXReg_6 = _RAND_7[10:0];
+  _RAND_8 = {1{`RANDOM}};
+  spriteXReg_7 = _RAND_8[10:0];
+  _RAND_9 = {1{`RANDOM}};
+  spriteXReg_8 = _RAND_9[10:0];
+  _RAND_10 = {1{`RANDOM}};
+  spriteXReg_9 = _RAND_10[10:0];
+  _RAND_11 = {1{`RANDOM}};
+  spriteXReg_10 = _RAND_11[10:0];
+  _RAND_12 = {1{`RANDOM}};
+  spriteXReg_11 = _RAND_12[10:0];
+  _RAND_13 = {1{`RANDOM}};
+  spriteXReg_12 = _RAND_13[10:0];
+  _RAND_14 = {1{`RANDOM}};
+  spriteXReg_13 = _RAND_14[10:0];
+  _RAND_15 = {1{`RANDOM}};
+  spriteXReg_14 = _RAND_15[10:0];
+  _RAND_16 = {1{`RANDOM}};
+  turnReg_0 = _RAND_16[0:0];
+  _RAND_17 = {1{`RANDOM}};
+  turnReg_1 = _RAND_17[0:0];
+  _RAND_18 = {1{`RANDOM}};
+  turnReg_2 = _RAND_18[0:0];
+  _RAND_19 = {1{`RANDOM}};
+  turnReg_3 = _RAND_19[0:0];
+  _RAND_20 = {1{`RANDOM}};
+  turnReg_4 = _RAND_20[0:0];
+  _RAND_21 = {1{`RANDOM}};
+  turnReg_5 = _RAND_21[0:0];
+  _RAND_22 = {1{`RANDOM}};
+  turnReg_6 = _RAND_22[0:0];
+  _RAND_23 = {1{`RANDOM}};
+  turnReg_7 = _RAND_23[0:0];
+  _RAND_24 = {1{`RANDOM}};
+  turnReg_8 = _RAND_24[0:0];
+  _RAND_25 = {1{`RANDOM}};
+  turnReg_9 = _RAND_25[0:0];
+  _RAND_26 = {1{`RANDOM}};
+  turnReg_10 = _RAND_26[0:0];
+  _RAND_27 = {1{`RANDOM}};
+  turnReg_11 = _RAND_27[0:0];
+  _RAND_28 = {1{`RANDOM}};
+  turnReg_12 = _RAND_28[0:0];
+  _RAND_29 = {1{`RANDOM}};
+  turnReg_13 = _RAND_29[0:0];
+  _RAND_30 = {1{`RANDOM}};
+  turnReg_14 = _RAND_30[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -3395,14 +3912,344 @@ end // initial
   always @(posedge clock) begin
     if (reset) begin
       stateReg <= 2'h0;
-    end else if (_T) begin
+    end else if (_T_240) begin
       if (io_newFrame) begin
         stateReg <= 2'h1;
       end
-    end else if (_T_1) begin
+    end else if (_T_241) begin
       stateReg <= 2'h2;
-    end else if (_T_2) begin
+    end else if (_T_377) begin
       stateReg <= 2'h0;
+    end
+    if (reset) begin
+      spriteXReg_0 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_0) begin
+          spriteXReg_0 <= _T_246;
+        end else begin
+          spriteXReg_0 <= _T_249;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_1 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_1) begin
+          spriteXReg_1 <= _T_255;
+        end else begin
+          spriteXReg_1 <= _T_258;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_2 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_2) begin
+          spriteXReg_2 <= _T_264;
+        end else begin
+          spriteXReg_2 <= _T_267;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_3 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_3) begin
+          spriteXReg_3 <= _T_273;
+        end else begin
+          spriteXReg_3 <= _T_276;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_4 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_4) begin
+          spriteXReg_4 <= _T_282;
+        end else begin
+          spriteXReg_4 <= _T_285;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_5 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_5) begin
+          spriteXReg_5 <= _T_291;
+        end else begin
+          spriteXReg_5 <= _T_294;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_6 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_6) begin
+          spriteXReg_6 <= _T_300;
+        end else begin
+          spriteXReg_6 <= _T_303;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_7 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_7) begin
+          spriteXReg_7 <= _T_309;
+        end else begin
+          spriteXReg_7 <= _T_312;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_8 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_8) begin
+          spriteXReg_8 <= _T_318;
+        end else begin
+          spriteXReg_8 <= _T_321;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_9 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_9) begin
+          spriteXReg_9 <= _T_327;
+        end else begin
+          spriteXReg_9 <= _T_330;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_10 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_10) begin
+          spriteXReg_10 <= _T_336;
+        end else begin
+          spriteXReg_10 <= _T_339;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_11 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_11) begin
+          spriteXReg_11 <= _T_345;
+        end else begin
+          spriteXReg_11 <= _T_348;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_12 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_12) begin
+          spriteXReg_12 <= _T_354;
+        end else begin
+          spriteXReg_12 <= _T_357;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_13 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_13) begin
+          spriteXReg_13 <= _T_363;
+        end else begin
+          spriteXReg_13 <= _T_366;
+        end
+      end
+    end
+    if (reset) begin
+      spriteXReg_14 <= 11'sh20;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (turnReg_14) begin
+          spriteXReg_14 <= _T_372;
+        end else begin
+          spriteXReg_14 <= _T_375;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_0 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_243) begin
+          turnReg_0 <= 1'h0;
+        end else begin
+          turnReg_0 <= _GEN_1;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_1 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_252) begin
+          turnReg_1 <= 1'h0;
+        end else begin
+          turnReg_1 <= _GEN_3;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_2 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_261) begin
+          turnReg_2 <= 1'h0;
+        end else begin
+          turnReg_2 <= _GEN_5;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_3 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_270) begin
+          turnReg_3 <= 1'h0;
+        end else begin
+          turnReg_3 <= _GEN_7;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_4 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_279) begin
+          turnReg_4 <= 1'h0;
+        end else begin
+          turnReg_4 <= _GEN_9;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_5 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_288) begin
+          turnReg_5 <= 1'h0;
+        end else begin
+          turnReg_5 <= _GEN_11;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_6 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_297) begin
+          turnReg_6 <= 1'h0;
+        end else begin
+          turnReg_6 <= _GEN_13;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_7 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_306) begin
+          turnReg_7 <= 1'h0;
+        end else begin
+          turnReg_7 <= _GEN_15;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_8 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_315) begin
+          turnReg_8 <= 1'h0;
+        end else begin
+          turnReg_8 <= _GEN_17;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_9 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_324) begin
+          turnReg_9 <= 1'h0;
+        end else begin
+          turnReg_9 <= _GEN_19;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_10 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_333) begin
+          turnReg_10 <= 1'h0;
+        end else begin
+          turnReg_10 <= _GEN_21;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_11 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_342) begin
+          turnReg_11 <= 1'h0;
+        end else begin
+          turnReg_11 <= _GEN_23;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_12 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_351) begin
+          turnReg_12 <= 1'h0;
+        end else begin
+          turnReg_12 <= _GEN_25;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_13 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_360) begin
+          turnReg_13 <= 1'h0;
+        end else begin
+          turnReg_13 <= _GEN_27;
+        end
+      end
+    end
+    if (reset) begin
+      turnReg_14 <= 1'h0;
+    end else if (!(_T_240)) begin
+      if (_T_241) begin
+        if (_T_369) begin
+          turnReg_14 <= 1'h0;
+        end else begin
+          turnReg_14 <= _GEN_29;
+        end
+      end
     end
   end
 endmodule
@@ -3421,6 +4268,21 @@ module GameTop(
 `endif // RANDOMIZE_REG_INIT
   wire  graphicEngineVGA_clock; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_reset; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_0; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_1; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_2; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_3; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_4; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_5; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_6; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_7; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_8; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_9; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_10; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_11; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_12; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_13; // @[GameTop.scala 43:32]
+  wire [10:0] graphicEngineVGA_io_spriteXPosition_14; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_newFrame; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_frameUpdateDone; // @[GameTop.scala 43:32]
   wire  graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 43:32]
@@ -3431,14 +4293,44 @@ module GameTop(
   wire  graphicEngineVGA_io_Vsync; // @[GameTop.scala 43:32]
   wire  gameLogic_clock; // @[GameTop.scala 48:25]
   wire  gameLogic_reset; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_0; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_1; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_2; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_3; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_4; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_5; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_6; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_7; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_8; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_9; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_10; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_11; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_12; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_13; // @[GameTop.scala 48:25]
+  wire [10:0] gameLogic_io_spriteXPosition_14; // @[GameTop.scala 48:25]
   wire  gameLogic_io_newFrame; // @[GameTop.scala 48:25]
   wire  gameLogic_io_frameUpdateDone; // @[GameTop.scala 48:25]
-  reg [21:0] resetReleaseCounter; // @[GameTop.scala 75:36]
-  wire  _T_3 = resetReleaseCounter == 22'h3d08ff; // @[GameTop.scala 77:28]
-  wire [21:0] _T_5 = resetReleaseCounter + 22'h1; // @[GameTop.scala 81:48]
+  reg [21:0] resetReleaseCounter; // @[GameTop.scala 83:36]
+  wire  _T_3 = resetReleaseCounter == 22'h3d08ff; // @[GameTop.scala 85:28]
+  wire [21:0] _T_5 = resetReleaseCounter + 22'h1; // @[GameTop.scala 89:48]
   GraphicEngineVGA graphicEngineVGA ( // @[GameTop.scala 43:32]
     .clock(graphicEngineVGA_clock),
     .reset(graphicEngineVGA_reset),
+    .io_spriteXPosition_0(graphicEngineVGA_io_spriteXPosition_0),
+    .io_spriteXPosition_1(graphicEngineVGA_io_spriteXPosition_1),
+    .io_spriteXPosition_2(graphicEngineVGA_io_spriteXPosition_2),
+    .io_spriteXPosition_3(graphicEngineVGA_io_spriteXPosition_3),
+    .io_spriteXPosition_4(graphicEngineVGA_io_spriteXPosition_4),
+    .io_spriteXPosition_5(graphicEngineVGA_io_spriteXPosition_5),
+    .io_spriteXPosition_6(graphicEngineVGA_io_spriteXPosition_6),
+    .io_spriteXPosition_7(graphicEngineVGA_io_spriteXPosition_7),
+    .io_spriteXPosition_8(graphicEngineVGA_io_spriteXPosition_8),
+    .io_spriteXPosition_9(graphicEngineVGA_io_spriteXPosition_9),
+    .io_spriteXPosition_10(graphicEngineVGA_io_spriteXPosition_10),
+    .io_spriteXPosition_11(graphicEngineVGA_io_spriteXPosition_11),
+    .io_spriteXPosition_12(graphicEngineVGA_io_spriteXPosition_12),
+    .io_spriteXPosition_13(graphicEngineVGA_io_spriteXPosition_13),
+    .io_spriteXPosition_14(graphicEngineVGA_io_spriteXPosition_14),
     .io_newFrame(graphicEngineVGA_io_newFrame),
     .io_frameUpdateDone(graphicEngineVGA_io_frameUpdateDone),
     .io_missingFrameError(graphicEngineVGA_io_missingFrameError),
@@ -3451,21 +4343,51 @@ module GameTop(
   GameLogicTask0 gameLogic ( // @[GameTop.scala 48:25]
     .clock(gameLogic_clock),
     .reset(gameLogic_reset),
+    .io_spriteXPosition_0(gameLogic_io_spriteXPosition_0),
+    .io_spriteXPosition_1(gameLogic_io_spriteXPosition_1),
+    .io_spriteXPosition_2(gameLogic_io_spriteXPosition_2),
+    .io_spriteXPosition_3(gameLogic_io_spriteXPosition_3),
+    .io_spriteXPosition_4(gameLogic_io_spriteXPosition_4),
+    .io_spriteXPosition_5(gameLogic_io_spriteXPosition_5),
+    .io_spriteXPosition_6(gameLogic_io_spriteXPosition_6),
+    .io_spriteXPosition_7(gameLogic_io_spriteXPosition_7),
+    .io_spriteXPosition_8(gameLogic_io_spriteXPosition_8),
+    .io_spriteXPosition_9(gameLogic_io_spriteXPosition_9),
+    .io_spriteXPosition_10(gameLogic_io_spriteXPosition_10),
+    .io_spriteXPosition_11(gameLogic_io_spriteXPosition_11),
+    .io_spriteXPosition_12(gameLogic_io_spriteXPosition_12),
+    .io_spriteXPosition_13(gameLogic_io_spriteXPosition_13),
+    .io_spriteXPosition_14(gameLogic_io_spriteXPosition_14),
     .io_newFrame(gameLogic_io_newFrame),
     .io_frameUpdateDone(gameLogic_io_frameUpdateDone)
   );
-  assign io_vgaRed = graphicEngineVGA_io_vgaRed; // @[GameTop.scala 99:13]
-  assign io_vgaBlue = graphicEngineVGA_io_vgaBlue; // @[GameTop.scala 101:14]
-  assign io_vgaGreen = graphicEngineVGA_io_vgaGreen; // @[GameTop.scala 100:15]
-  assign io_Hsync = graphicEngineVGA_io_Hsync; // @[GameTop.scala 102:12]
-  assign io_Vsync = graphicEngineVGA_io_Vsync; // @[GameTop.scala 103:12]
-  assign io_missingFrameError = graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 114:24]
+  assign io_vgaRed = graphicEngineVGA_io_vgaRed; // @[GameTop.scala 107:13]
+  assign io_vgaBlue = graphicEngineVGA_io_vgaBlue; // @[GameTop.scala 109:14]
+  assign io_vgaGreen = graphicEngineVGA_io_vgaGreen; // @[GameTop.scala 108:15]
+  assign io_Hsync = graphicEngineVGA_io_Hsync; // @[GameTop.scala 110:12]
+  assign io_Vsync = graphicEngineVGA_io_Vsync; // @[GameTop.scala 111:12]
+  assign io_missingFrameError = graphicEngineVGA_io_missingFrameError; // @[GameTop.scala 122:24]
   assign graphicEngineVGA_clock = clock;
-  assign graphicEngineVGA_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 83:26]
-  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 136:39]
+  assign graphicEngineVGA_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 91:26]
+  assign graphicEngineVGA_io_spriteXPosition_0 = gameLogic_io_spriteXPosition_0; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_1 = gameLogic_io_spriteXPosition_1; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_2 = gameLogic_io_spriteXPosition_2; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_3 = gameLogic_io_spriteXPosition_3; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_4 = gameLogic_io_spriteXPosition_4; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_5 = gameLogic_io_spriteXPosition_5; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_6 = gameLogic_io_spriteXPosition_6; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_7 = gameLogic_io_spriteXPosition_7; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_8 = gameLogic_io_spriteXPosition_8; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_9 = gameLogic_io_spriteXPosition_9; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_10 = gameLogic_io_spriteXPosition_10; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_11 = gameLogic_io_spriteXPosition_11; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_12 = gameLogic_io_spriteXPosition_12; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_13 = gameLogic_io_spriteXPosition_13; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_spriteXPosition_14 = gameLogic_io_spriteXPosition_14; // @[GameTop.scala 127:39]
+  assign graphicEngineVGA_io_frameUpdateDone = gameLogic_io_frameUpdateDone; // @[GameTop.scala 144:39]
   assign gameLogic_clock = clock;
-  assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 84:19]
-  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 135:25]
+  assign gameLogic_reset = _T_3 ? 1'h0 : 1'h1; // @[GameTop.scala 92:19]
+  assign gameLogic_io_newFrame = graphicEngineVGA_io_newFrame; // @[GameTop.scala 143:25]
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
