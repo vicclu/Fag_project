@@ -32,6 +32,8 @@ class Top extends Module {
     //Leds
     val led = Output(Vec(8, Bool()))
 
+    val soundOutput = Output(Bool())
+
     //Errors
     val missingFrameError = Output(Bool())
     val backBufferWriteError = Output(Bool())
