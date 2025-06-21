@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Sat Jun 21 20:43:58 2025
+| Date         : Sat Jun 21 20:49:02 2025
 | Host         : SwigSwag running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -75,6 +75,7 @@ Table of Contents
 +------------------+---------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
 |  clock_IBUF_BUFG | gameTop/debounceSampleEn                                | gameTop/soundEngine/gameTop_reset                            |                2 |              6 |         3.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/graphicEngineVGA/backBufferMemory/RamSpWf/p_0_out[6] |                5 |              6 |         1.20 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_110                              | gameTop/soundEngine/toneIndex_4[8]_i_1_n_0                   |                3 |              9 |         3.00 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_95                               | gameTop/soundEngine/toneIndex_3[8]_i_1_n_0                   |                4 |              9 |         2.25 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_80                               | gameTop/soundEngine/toneIndex_2[8]_i_1_n_0                   |                3 |              9 |         3.00 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_65                               | gameTop/soundEngine/toneIndex_1[8]_i_1_n_0                   |                3 |              9 |         3.00 |
@@ -82,7 +83,6 @@ Table of Contents
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_155                              | gameTop/soundEngine/toneIndex_7[8]_i_1_n_0                   |                2 |              9 |         4.50 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_140                              | gameTop/soundEngine/toneIndex_6[8]_i_1_n_0                   |                2 |              9 |         4.50 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_125                              | gameTop/soundEngine/toneIndex_5[8]_i_1_n_0                   |                2 |              9 |         4.50 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_110                              | gameTop/soundEngine/toneIndex_4[8]_i_1_n_0                   |                3 |              9 |         3.00 |
 |  clock_IBUF_BUFG | gameTop/graphicEngineVGA/ScaleCounterReg_0              | gameTop/graphicEngineVGA/RSTC                                |                4 |             10 |         2.50 |
 |  clock_IBUF_BUFG | gameTop/graphicEngineVGA/CounterXReg                    | gameTop/graphicEngineVGA/RSTD                                |                3 |             10 |         3.33 |
 |  clock_IBUF_BUFG | gameTop/graphicEngineVGA/_T_195                         | gameTop/graphicEngineVGA/backMemoryCopyCounter[0]_i_1_n_0    |                3 |             12 |         4.00 |
@@ -91,32 +91,32 @@ Table of Contents
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/gameTop_reset                            |                8 |             18 |         2.25 |
 |  clock_IBUF_BUFG |                                                         | gameTop/graphicEngineVGA/resetReleaseCounter_reg_6_sn_1      |                8 |             18 |         2.25 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_1[0]_i_1_n_0                 |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_100                              | gameTop/soundEngine/cntMilliSecond_4[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_85                               | gameTop/soundEngine/cntMilliSecond_3[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_70                               | gameTop/soundEngine/cntMilliSecond_2[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_55                               | gameTop/soundEngine/cntMilliSecond_1[0]_i_1_n_0              |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG | gameTop/soundEngine/_T_40                               | gameTop/soundEngine/cntMilliSecond_0[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_145                              | gameTop/soundEngine/cntMilliSecond_7[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_130                              | gameTop/soundEngine/cntMilliSecond_6[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG | gameTop/soundEngine/_T_115                              | gameTop/soundEngine/cntMilliSecond_5[0]_i_1_n_0              |                5 |             20 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_0[0]_i_1_n_0                 |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_2[0]_i_1_n_0                 |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_3[0]_i_1_n_0                 |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_145                              | gameTop/soundEngine/cntMilliSecond_7[0]_i_1_n_0              |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_4[0]_i_1_n_0                 |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_130                              | gameTop/soundEngine/cntMilliSecond_6[0]_i_1_n_0              |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_5[0]_i_1_n_0                 |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_115                              | gameTop/soundEngine/cntMilliSecond_5[0]_i_1_n_0              |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_6[0]_i_1_n_0                 |                5 |             20 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_7[0]_i_1_n_0                 |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_55                               | gameTop/soundEngine/cntMilliSecond_1[0]_i_1_n_0              |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/slowCounter_0[0]_i_1_n_0                 |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_100                              | gameTop/soundEngine/cntMilliSecond_4[0]_i_1_n_0              |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_70                               | gameTop/soundEngine/cntMilliSecond_2[0]_i_1_n_0              |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG | gameTop/soundEngine/_T_85                               | gameTop/soundEngine/cntMilliSecond_3[0]_i_1_n_0              |                5 |             20 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/debounceCounter[0]_i_1_n_0                           |                6 |             21 |         3.50 |
 |  clock_IBUF_BUFG |                                                         | gameTop/graphicEngineVGA/frameClockCount[0]_i_1_n_0          |                6 |             21 |         3.50 |
+|  clock_IBUF_BUFG |                                                         | gameTop/debounceCounter[0]_i_1_n_0                           |                6 |             21 |         3.50 |
 |  clock_IBUF_BUFG | gameTop/graphicEngineVGA/resetReleaseCounter_reg_6_sn_1 | gameTop/soundEngine/gameTop_reset                            |                6 |             22 |         3.67 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_5/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_6/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_7/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_1/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_4/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_3/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_1/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
-|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_0/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_6/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
 |  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_2/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_0/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_7/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                                         | gameTop/soundEngine/tone_5/RamInitSpWf/pipeResetReg_0_reg    |                8 |             32 |         4.00 |
 |  clock_IBUF_BUFG |                                                         |                                                              |               46 |            104 |         2.26 |
 +------------------+---------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
 

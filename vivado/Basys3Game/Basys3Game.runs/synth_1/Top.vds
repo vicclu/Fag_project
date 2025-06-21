@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sat Jun 21 20:42:30 2025
-# Process ID         : 169227
+# Start of session at: Sat Jun 21 20:47:31 2025
+# Process ID         : 207054
 # Current directory  : /home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1
 # Command line       : vivado -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file           : /home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1/Top.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
-# CPU Frequency      : 4097.014 MHz
+# CPU Frequency      : 4099.994 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16558 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18705 MB
-# Available Virtual  : 7070 MB
+# Available Virtual  : 6641 MB
 #-----------------------------------------------------------
 source Top.tcl -notrace
 Command: synth_design -top Top -part xc7a35tcpg236-1
@@ -29,9 +29,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 169342
+INFO: [Synth 8-7075] Helper process launched with PID 207174
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2086.410 ; gain = 158.004 ; free physical = 228 ; free virtual = 5422
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2086.410 ; gain = 163.004 ; free physical = 1308 ; free virtual = 5289
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top' [/home/swaggo/Code/Fag/Fag_project/Top.v:4806]
 INFO: [Synth 8-6157] synthesizing module 'GameTop' [/home/swaggo/Code/Fag/Fag_project/Top.v:4419]
@@ -513,18 +513,18 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2185.379 ; gain = 256.973 ; free physical = 179 ; free virtual = 5263
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2186.348 ; gain = 262.941 ; free physical = 1145 ; free virtual = 5134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2200.223 ; gain = 271.816 ; free physical = 173 ; free virtual = 5258
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2204.160 ; gain = 280.754 ; free physical = 1145 ; free virtual = 5134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2200.223 ; gain = 271.816 ; free physical = 173 ; free virtual = 5258
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2204.160 ; gain = 280.754 ; free physical = 1145 ; free virtual = 5134
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2200.223 ; gain = 0.000 ; free physical = 172 ; free virtual = 5257
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2204.160 ; gain = 0.000 ; free physical = 1130 ; free virtual = 5118
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -535,29 +535,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2325.961 ; gain = 0.000 ; free physical = 180 ; free virtual = 5224
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2326.898 ; gain = 0.000 ; free physical = 1119 ; free virtual = 5107
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2325.996 ; gain = 0.000 ; free physical = 180 ; free virtual = 5224
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2326.934 ; gain = 0.000 ; free physical = 1119 ; free virtual = 5107
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2325.996 ; gain = 397.590 ; free physical = 163 ; free virtual = 5131
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2326.934 ; gain = 403.527 ; free physical = 1045 ; free virtual = 5033
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2333.965 ; gain = 405.559 ; free physical = 163 ; free virtual = 5131
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2334.902 ; gain = 411.496 ; free physical = 1045 ; free virtual = 5033
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2333.965 ; gain = 405.559 ; free physical = 163 ; free virtual = 5131
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2334.902 ; gain = 411.496 ; free physical = 1045 ; free virtual = 5033
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2333.965 ; gain = 405.559 ; free physical = 168 ; free virtual = 5116
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2334.902 ; gain = 411.496 ; free physical = 1046 ; free virtual = 5032
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -628,7 +628,7 @@ WARNING: [Synth 8-7129] Port io_sw_5 in module Top is either unconnected or has 
 WARNING: [Synth 8-7129] Port io_sw_6 in module Top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port io_sw_7 in module Top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2333.965 ; gain = 405.559 ; free physical = 243 ; free virtual = 5039
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2334.902 ; gain = 411.496 ; free physical = 866 ; free virtual = 4859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -689,13 +689,13 @@ Block RAM: Preliminary Mapping Report (see note below)
 |RamInitSpWf__parameterized33: | RAM_reg                                                         | 1 K x 7(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 |RamInitSpWf__parameterized33: | RAM_reg                                                         | 1 K x 7(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 |RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized50: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized51: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
 |Top                           | gameTop/graphicEngineVGA/backBufferMemory/RamSpWf/RAM_reg       | 2 K x 5(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 +------------------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
@@ -707,13 +707,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2377.965 ; gain = 449.559 ; free physical = 184 ; free virtual = 4892
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2377.902 ; gain = 454.496 ; free physical = 755 ; free virtual = 4748
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2470.590 ; gain = 542.184 ; free physical = 225 ; free virtual = 4740
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2471.520 ; gain = 548.113 ; free physical = 423 ; free virtual = 4409
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -774,13 +774,13 @@ Block RAM: Final Mapping Report
 |RamInitSpWf__parameterized33: | RAM_reg                                                         | 1 K x 7(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 |RamInitSpWf__parameterized33: | RAM_reg                                                         | 1 K x 7(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 |RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
-|RamInitSpWf__parameterized48: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized50: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized51: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RamInitSpWf__parameterized49: | RAM_reg                                                         | 512 x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 1      | 0      | 
 |Top                           | gameTop/graphicEngineVGA/backBufferMemory/RamSpWf/RAM_reg       | 2 K x 5(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
 +------------------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
@@ -831,7 +831,7 @@ INFO: [Synth 8-223] decloning instance 'gameTop/graphicEngineVGA/spriteMemories_
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/backBufferShadowMemory/RamSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance gameTop/graphicEngineVGA/backBufferRestoreMemory/RamInitSpWf/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2470.590 ; gain = 542.184 ; free physical = 218 ; free virtual = 4734
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2471.520 ; gain = 548.113 ; free physical = 406 ; free virtual = 4408
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -849,37 +849,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2579.402 ; gain = 650.996 ; free physical = 178 ; free virtual = 4592
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2580.332 ; gain = 656.926 ; free physical = 726 ; free virtual = 4716
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2579.402 ; gain = 650.996 ; free physical = 178 ; free virtual = 4592
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2580.332 ; gain = 656.926 ; free physical = 722 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2579.402 ; gain = 650.996 ; free physical = 176 ; free virtual = 4590
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2580.332 ; gain = 656.926 ; free physical = 719 ; free virtual = 4705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2579.402 ; gain = 650.996 ; free physical = 176 ; free virtual = 4590
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2580.332 ; gain = 656.926 ; free physical = 720 ; free virtual = 4705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2582.371 ; gain = 653.965 ; free physical = 176 ; free virtual = 4590
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2583.301 ; gain = 659.895 ; free physical = 720 ; free virtual = 4705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2582.371 ; gain = 653.965 ; free physical = 176 ; free virtual = 4590
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2583.301 ; gain = 659.895 ; free physical = 720 ; free virtual = 4705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -922,25 +922,25 @@ Report Cell Usage:
 |9     |MUXF7    |    31|
 |10    |MUXF8    |    12|
 |11    |RAMB18E1 |    21|
-|25    |SRL16E   |     3|
-|26    |FDRE     |   891|
-|27    |FDSE     |    16|
-|28    |IBUF     |     8|
-|29    |OBUF     |    26|
+|28    |SRL16E   |     3|
+|29    |FDRE     |   891|
+|30    |FDSE     |    16|
+|31    |IBUF     |     8|
+|32    |OBUF     |    26|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2582.371 ; gain = 653.965 ; free physical = 176 ; free virtual = 4590
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2583.301 ; gain = 659.895 ; free physical = 720 ; free virtual = 4705
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2582.371 ; gain = 528.191 ; free physical = 176 ; free virtual = 4590
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2582.379 ; gain = 653.965 ; free physical = 176 ; free virtual = 4590
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2583.301 ; gain = 537.121 ; free physical = 719 ; free virtual = 4705
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2583.309 ; gain = 659.895 ; free physical = 719 ; free virtual = 4705
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2582.379 ; gain = 0.000 ; free physical = 339 ; free virtual = 4752
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2583.309 ; gain = 0.000 ; free physical = 895 ; free virtual = 4881
 INFO: [Netlist 29-17] Analyzing 292 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2638.398 ; gain = 0.000 ; free physical = 1070 ; free virtual = 5484
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2639.328 ; gain = 0.000 ; free physical = 853 ; free virtual = 4833
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -948,10 +948,10 @@ Synth Design complete | Checksum: c5becdc9
 INFO: [Common 17-83] Releasing license: Synthesis
 314 Infos, 65 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:44 . Memory (MB): peak = 2638.434 ; gain = 1122.031 ; free physical = 1069 ; free virtual = 5483
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1887.274; main = 1770.543; forked = 275.809
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3433.195; main = 2638.402; forked = 962.602
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2662.410 ; gain = 0.000 ; free physical = 1070 ; free virtual = 5483
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:43 . Memory (MB): peak = 2639.363 ; gain = 1126.961 ; free physical = 860 ; free virtual = 4840
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1889.107; main = 1761.934; forked = 275.882
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3434.125; main = 2639.332; forked = 962.602
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2663.340 ; gain = 0.000 ; free physical = 860 ; free virtual = 4840
 INFO: [Common 17-1381] The checkpoint '/home/swaggo/Code/Fag/Fag_project/vivado/Basys3Game/Basys3Game.runs/synth_1/Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun 21 20:43:20 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 21 20:48:19 2025...
