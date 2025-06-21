@@ -80,15 +80,11 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
 
-for (i <- 0 until 16) {
-  if (i == 0) {
-    val overlapsWithOthers = (1 until 16).map(j => io.overlap(0)(j))
-    io.spriteVisible(0) := !overlapsWithOthers.reduce(_ || _)
-  } else {
-    io.spriteVisible(i) := true.B
+  for (i <- 0 until 16) {
+    // Filter out the i-th element to avoid self-comparison
+    val overlapsWithOthers = (0 until 16).filter(_ != i).map(j => io.overlap(i)(j))
+    io.spriteVisible(i) := !overlapsWithOthers.reduce(_ || _)
   }
-}
-
   //Setting the viewbox control outputs to zero
   io.viewBoxX := 0.U
   io.viewBoxY := 0.U
@@ -166,7 +162,7 @@ for (i <- 0 until 16) {
       stateReg := idle
     }
   }
-//  for (i <- 0 until 9) {
+//  for (i <- 0 until 16) {
 //    io.boxXPosition(i) := io.spriteXPosition(i)
 //    io.boxYPosition(i) := io.spriteYPosition(i)
 //    io.boxXLength(i) := 32.S
