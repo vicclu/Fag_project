@@ -37,7 +37,7 @@ class GameTop extends Module {
     val backBufferWriteError = Output(Bool())
     val viewBoxOutOfRangeError = Output(Bool())
   })
-val BackgroundNumber = 2
+val BackgroundNumber = 3
   val SPRITE_NUMBER = 16
   val BACK_TILE_NUMBER = 32
   val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER,BackgroundNumber))
