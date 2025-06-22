@@ -199,27 +199,27 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int,BackgroundNumber: In
     }
 
   is(compute1) {
-  //     when(io.btnD){
-  //     for(i <- 0 until BackgroundNumber){
-  //     viewBoxYReg(i) := viewBoxYReg(i) +i.U+1.U
-  //     }
+      when(io.btnD){
+      for(i <- 0 until BackgroundNumber){
+      viewBoxYReg(i) := viewBoxYReg(i) +i.U+1.U
+      }
      
-  //     } .elsewhen(io.btnU){
-  //      for(i <- 0 until BackgroundNumber){
-  //     viewBoxYReg(i) := viewBoxYReg(i) -i.U-1.U
-  //     }
+      } .elsewhen(io.btnU){
+       for(i <- 0 until BackgroundNumber){
+      viewBoxYReg(i) := viewBoxYReg(i) -i.U-1.U
+      }
      
-  //     }
-  //     when(io.btnR) {
-  //      for(i <- 0 until BackgroundNumber){
-  //     viewBoxXReg(i) := viewBoxXReg(i) +i.U+1.U
-  //     }
+      }
+      when(io.btnR) {
+       for(i <- 0 until BackgroundNumber){
+      viewBoxXReg(i) := viewBoxXReg(i) +i.U+1.U
+      }
      
-  //     } .elsewhen(io.btnL){
-  //       for(i <- 0 until BackgroundNumber){
-  //     viewBoxXReg(i) := viewBoxXReg(i) -i.U-1.U
-  //     }
-  //     }
+      } .elsewhen(io.btnL){
+        for(i <- 0 until BackgroundNumber){
+      viewBoxXReg(i) := viewBoxXReg(i) -i.U-1.U
+      }
+      }
       stateReg := done
     }
 
