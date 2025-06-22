@@ -5,87 +5,92 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_48",
+    "target":"Top.RamInitSpWf_81",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_47",
+    "target":"Top.RamInitSpWf_80",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_46",
+    "target":"Top.RamInitSpWf_79",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_45",
+    "target":"Top.RamInitSpWf_78",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_44",
+    "target":"Top.RamInitSpWf_77",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_43",
+    "target":"Top.RamInitSpWf_76",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_42",
+    "target":"Top.RamInitSpWf_75",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_41",
+    "target":"Top.RamInitSpWf_74",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_40",
+    "target":"Top.RamInitSpWf_73",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_39",
+    "target":"Top.RamInitSpWf_72",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_38",
+    "target":"Top.RamInitSpWf_71",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_37",
+    "target":"Top.RamInitSpWf_70",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_36",
+    "target":"Top.RamInitSpWf_69",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_35",
+    "target":"Top.RamInitSpWf_68",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_34",
+    "target":"Top.RamInitSpWf_67",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_33",
+    "target":"Top.RamInitSpWf_66",
     "resourceId":"/RamInitSpWf.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"Top.RamInitSpWf_32",
+    "target":"Top.RamInitSpWf_65",
+    "resourceId":"/RamInitSpWf.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"Top.RamInitSpWf_64",
     "resourceId":"/RamInitSpWf.v"
   },
   {
