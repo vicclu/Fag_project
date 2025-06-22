@@ -37,15 +37,15 @@ class GameTop extends Module {
     val backBufferWriteError = Output(Bool())
     val viewBoxOutOfRangeError = Output(Bool())
   })
-
+val BackgroundNumber = 4
   val SPRITE_NUMBER = 16
   val BACK_TILE_NUMBER = 32
-  val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  val graphicEngineVGA = Module(new GraphicEngineVGA(SPRITE_NUMBER, BACK_TILE_NUMBER,BackgroundNumber))
 
   //Uncomment one of the following lines to use the module related to the learning tasks
   //Use the module GameLogic to implement your game
   //val gameLogic = Module(new GameLogic(SPRITE_NUMBER, BACK_TILE_NUMBER))
-  val gameLogic = Module(new GameLogicTask0(SPRITE_NUMBER, BACK_TILE_NUMBER))
+  val gameLogic = Module(new GameLogicTask0(SPRITE_NUMBER, BACK_TILE_NUMBER,BackgroundNumber))
   //val gameLogic = Module(new GameLogicTask1(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask2(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask3(SPRITE_NUMBER, BACK_TILE_NUMBER))

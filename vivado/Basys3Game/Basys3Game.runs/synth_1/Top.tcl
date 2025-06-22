@@ -124,7 +124,10 @@ read_mem {
   /home/swaggo/Code/Fag/Fag_project/memory_init/backtile_init_20.mem
   /home/swaggo/Code/Fag/Fag_project/memory_init/backtile_init_4.mem
   /home/swaggo/Code/Fag/Fag_project/memory_init/sprite_init_11.mem
-  /home/swaggo/Code/Fag/Fag_project/memory_init/backbuffer_init.mem
+  /home/swaggo/Code/Fag/Fag_project/memory_init/backbuffer_init1.mem
+  /home/swaggo/Code/Fag/Fag_project/memory_init/backbuffer_init0.mem
+  /home/swaggo/Code/Fag/Fag_project/memory_init/backbuffer_init2.mem
+  /home/swaggo/Code/Fag/Fag_project/memory_init/backbuffer_init3.mem
 }
 read_verilog -library xil_defaultlib {
   /home/swaggo/Code/Fag/Fag_project/RamInitSpWf.v
