@@ -60,6 +60,7 @@ class GameTop extends Module {
   //val gameLogic = Module(new GameLogicTask7(SPRITE_NUMBER, BACK_TILE_NUMBER))
   //val gameLogic = Module(new GameLogicTask8(SPRITE_NUMBER, BACK_TILE_NUMBER))
 
+graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
 
   soundEngine.io.input := gameLogic.io.songInput
   soundEngine.io.stop :=gameLogic.io.songStop
@@ -129,8 +130,15 @@ class GameTop extends Module {
   graphicEngineVGA.io.spriteXPosition := gameLogic.io.spriteXPosition
   graphicEngineVGA.io.spriteYPosition := gameLogic.io.spriteYPosition
   graphicEngineVGA.io.spriteVisible := gameLogic.io.spriteVisible
+  graphicEngineVGA.io.spriteOpacityLevel := gameLogic.io.spriteOpacityLevel
   graphicEngineVGA.io.spriteFlipHorizontal := gameLogic.io.spriteFlipHorizontal
   graphicEngineVGA.io.spriteFlipVertical := gameLogic.io.spriteFlipVertical
+
+  //new
+  graphicEngineVGA.io.spriteScaleHorizontal := gameLogic.io.spriteScaleHorizontal
+  graphicEngineVGA.io.spriteScaleVertical := gameLogic.io.spriteScaleVertical
+  graphicEngineVGA.io.spriteRotation45 := gameLogic.io.spriteRotation45
+  graphicEngineVGA.io.spriteRotation90 := gameLogic.io.spriteRotation90
 
   //Viewbox control input
   graphicEngineVGA.io.viewBoxX := gameLogic.io.viewBoxX

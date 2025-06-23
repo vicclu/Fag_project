@@ -10,17 +10,17 @@ import chisel3.util._
 
 class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
   val io = IO(new Bundle {
-    //Buttons
+    // Buttons
     val btnC = Input(Bool())
     val btnU = Input(Bool())
     val btnL = Input(Bool())
     val btnR = Input(Bool())
     val btnD = Input(Bool())
 
-    //Switches
+    // Switches
     val sw = Input(Vec(8, Bool()))
 
-    //Leds
+    // LEDs
     val led = Output(Vec(8, Bool()))
 
     // Sound
@@ -28,37 +28,49 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
     val songStop = Output(UInt(4.W))
     val songSpeed = Output(UInt(4.W))
 
-    //GraphicEngineVGA
-    //Sprite control input
-    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W))) //-1024 to 1023
-    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W))) //-512 to 511
+    // Graphic Engine VGA
+    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W)))
+    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W)))
     val spriteVisible = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
+    val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
+    val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
+    val spriteRotation45 = Output(Vec(SpriteNumber, Bool()))
+    val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
 
-    //Viewbox control output
- val viewBoxX = Output(Vec(2, UInt(10.W)))
+    // Viewbox control
+    val viewBoxX = Output(Vec(2, UInt(10.W)))
     val viewBoxY = Output(Vec(2, UInt(9.W)))
-    //Background buffer output
+
+    // Background buffer output
     val backBufferWriteData = Output(UInt(log2Up(BackTileNumber).W))
     val backBufferWriteAddress = Output(UInt(11.W))
     val backBufferWriteEnable = Output(Bool())
 
-    //Status
+    // Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
+
+    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
   })
   io.songInput := 2.U
   io.songSpeed := 0.U
   io.songStop := 0.U
+ val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(1.U(2.W))))
+    io.spriteOpacityLevel := spriteOpacities
 
   io.led := Seq.fill(8)(false.B)
   //Setting all sprite control outputs to zero
-  io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
+ io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
   io.spriteYPosition := Seq.fill(SpriteNumber)(0.S)
-  io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
+  io.spriteVisible := Seq.fill(SpriteNumber)(true.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
+  io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.U(2.W))
+  io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.U(2.W))
+  io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
+  io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
 
   val astNm = 11
   val shotNm = 5

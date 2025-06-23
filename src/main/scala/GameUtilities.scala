@@ -46,15 +46,16 @@ object RegPipeline {
     }
   }
 }
-
-//A multi hot priority reduction tree (combinatorial)
 class MultiHotPriortyReductionTree[T <: Data](InputNumber: Int, inputOutputType: T) extends Module {
 
   val io = IO(new Bundle {
     val dataInput = Input(Vec(InputNumber, inputOutputType))
     val selectInput = Input(Vec(InputNumber, Bool()))
+    //u8val spriteOpacity = Input(Vec(SpriteNumber, UInt(3.W)))
     val dataOutput = Output(inputOutputType)
     val selectOutput = Output(Bool())
+    val indexOutput = Output(UInt(log2Ceil(InputNumber).W))
+
   })
 
   val N = InputNumber //The number of inputs in the tree
@@ -63,14 +64,19 @@ class MultiHotPriortyReductionTree[T <: Data](InputNumber: Int, inputOutputType:
   val V = S + N //Size of the signal (wire) vector
   val dataNodeOutputs = Wire(Vec(V, inputOutputType))
   val selectNodeOutputs = Wire(Vec(V, Bool()))
+  val indexNodeOutputs = Wire(Vec(V, UInt(log2Ceil(InputNumber).W)))
+  //val SpriteOpacity = io.SpriteOpacity
   //Connecting tree inputs
-  for (i <- 0 until N){
+  for (i <- 0 until N) {
     dataNodeOutputs(S + i) := io.dataInput(i)
     selectNodeOutputs(S + i) := io.selectInput(i)
+    indexNodeOutputs(S + i) := i.U
   }
+
   //Connecting tree outputs
   io.dataOutput := dataNodeOutputs(0)
   io.selectOutput := selectNodeOutputs(0)
+  io.indexOutput := indexNodeOutputs(0)
 
   //Building the tree
   for (i <- 0 until L){
@@ -84,16 +90,17 @@ class MultiHotPriortyReductionTree[T <: Data](InputNumber: Int, inputOutputType:
         val y = n
         dataNodeOutputs(y) := Mux(selectNodeOutputs(a), dataNodeOutputs(a), dataNodeOutputs(b))
         selectNodeOutputs(y) := selectNodeOutputs(a) | selectNodeOutputs(b)
+        indexNodeOutputs(y) := Mux(selectNodeOutputs(a), indexNodeOutputs(a), indexNodeOutputs(b))
       } else {
         //Pass
         val a = n + N
         val y = n
         dataNodeOutputs(y) := dataNodeOutputs(a)
         selectNodeOutputs(y) := selectNodeOutputs(a)
+        indexNodeOutputs(y) := indexNodeOutputs(a)
       }
     }
   }
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
