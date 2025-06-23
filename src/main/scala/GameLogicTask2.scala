@@ -88,9 +88,80 @@ class GameLogicTask2(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   // Write here your game logic
   // (you might need to change the initialization values above)
   /////////////////////////////////////////////////////////////////
-  
+
+
+  val idle :: down :: up :: done :: Nil = Enum(4)
+  val stateReg = RegInit(idle)
+
+  //Two registers holding the sprite sprite X and Y with the sprite initial position
+  val sprite2XReg = RegInit(150.S(11.W))
+  val sprite2YReg = RegInit((200).S(10.W))
+  val sprite1XReg = RegInit(300.S(11.W))
+  val sprite1YReg = RegInit((200).S(10.W))
+
+  //A registers holding the sprite horizontal flip
+  val sprite1FlipHorizontalReg = RegInit(false.B)
+  val sprite2FlipHorizontalReg = RegInit(false.B)
+
+  //Making sprite 0 visible
+  io.spriteVisible(1) := true.B
+
+  //Connecting resiters to the graphic engine
+  io.spriteXPosition(1) := sprite1XReg
+  io.spriteYPosition(1) := sprite1YReg
+  io.spriteFlipHorizontal(1) := sprite1FlipHorizontalReg
+
+  //Making sprite 0 visible
+  io.spriteVisible(2) := true.B
+
+  //Connecting resiters to the graphic engine
+  io.spriteXPosition(2) := sprite2XReg
+  io.spriteYPosition(2) := sprite2YReg
+  io.spriteFlipHorizontal(2) := sprite2FlipHorizontalReg
+
+  val directionDownReg = RegInit(true.B)
+
+  //FSMD switch
+  switch(stateReg) {
+    is(idle) {
+
+      when(io.newFrame) {
+        when(directionDownReg) {
+          stateReg := down
+        } .otherwise {
+          stateReg := up
+        }
+      }//.otherwise(stateReg := min)
+    }
+
+    is(down) {
+      sprite1XReg := sprite1XReg + 2.S
+      sprite2YReg := sprite2YReg + 2.S
+      sprite1FlipHorizontalReg := false.B
+      when(sprite2YReg >= 350.S) {
+        directionDownReg := false.B
+      }
+      stateReg := done
+    }
+
+    is(up) {
+      sprite1XReg := sprite1XReg - 2.S
+      sprite2YReg := sprite2YReg - 2.S
+      sprite1FlipHorizontalReg := true.B
+      when(sprite2YReg <= 200.S) {
+        directionDownReg := true.B
+      }
+      stateReg := done
+      }
+
+    is(done) {
+      io.frameUpdateDone := true.B
+      stateReg := idle
+    }
+  }
 
 }
+
 
 //////////////////////////////////////////////////////////////////////////////
 // End of file

@@ -1,2 +1,2 @@
-C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\RamInitSpWf.v
-C:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\RamSpWf.v
+/home/swaggo/Code/Fag/fag_project_tests/RamInitSpWf.v
+/home/swaggo/Code/Fag/fag_project_tests/RamSpWf.v

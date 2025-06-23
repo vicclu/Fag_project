@@ -31,10 +31,8 @@ class Top extends Module {
 
     //Leds
     val led = Output(Vec(8, Bool()))
-
     //Sound
     val soundOutput = Output(Vec(1, Bool()))
-
     //Errors
     val missingFrameError = Output(Bool())
     val backBufferWriteError = Output(Bool())
@@ -46,7 +44,7 @@ class Top extends Module {
   //Reset syncronization (and negation if needed)
   //Reset is active high in Chisel (reset = 1 means reset, reset = 0 means run)
   //Uncomment one of the following lines to select the reset mode of your FPGA pin
-  val syncResetInput = ~RegNext(RegNext(RegNext(reset.asBool))) //Active low (e.g., for reset button in Nexys A7 or switches in Basys3 and Nexys A7)
+  val syncResetInput = ~RegNext(RegNext(RegNext(reset.asBool()))) //Active low (e.g., for reset button in Nexys A7 or switches in Basys3 and Nexys A7)
   //val syncResetInput = RegNext(RegNext(RegNext(reset.asBool()))) //Active high (e.g., for buttons in Basys3 and Nexys A7)
 
   //Make sure that reset last at least RESET_MIN_DURATION_CC

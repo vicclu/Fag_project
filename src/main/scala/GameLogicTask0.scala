@@ -8,127 +8,80 @@
 import chisel3._
 import chisel3.util._
 
-class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
+class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val io = IO(new Bundle {
-    // Buttons
+    //Buttons
     val btnC = Input(Bool())
     val btnU = Input(Bool())
     val btnL = Input(Bool())
     val btnR = Input(Bool())
     val btnD = Input(Bool())
 
-    // Switches
+    //Switches
     val sw = Input(Vec(8, Bool()))
 
-    // LEDs
+    //Leds
     val led = Output(Vec(8, Bool()))
 
-    // Sound
-    val songInput = Output(UInt(4.W))
-    val songStop = Output(UInt(4.W))
-    val songSpeed = Output(UInt(4.W))
-
-    // Graphic Engine VGA
-    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W)))
-    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W)))
+    //GraphicEngineVGA
+    //Sprite control input
+    val spriteXPosition = Output(Vec(SpriteNumber, SInt(11.W))) //-1024 to 1023
+    val spriteYPosition = Output(Vec(SpriteNumber, SInt(10.W))) //-512 to 511
     val spriteVisible = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
-    val spriteScaleHorizontal = Output(Vec(SpriteNumber, UInt(2.W)))
-    val spriteScaleVertical = Output(Vec(SpriteNumber, UInt(2.W)))
-    val spriteRotation45 = Output(Vec(SpriteNumber, Bool()))
-    val spriteRotation90 = Output(Vec(SpriteNumber, Bool()))
 
-    // Viewbox control
-    val viewBoxX = Output(Vec(2, UInt(10.W)))
-    val viewBoxY = Output(Vec(2, UInt(9.W)))
+    //Viewbox control output
+    val viewBoxX = Output(UInt(10.W)) //0 to 640
+    val viewBoxY = Output(UInt(9.W)) //0 to 480
 
-    // Background buffer output
+    //Background buffer output
     val backBufferWriteData = Output(UInt(log2Up(BackTileNumber).W))
     val backBufferWriteAddress = Output(UInt(11.W))
     val backBufferWriteEnable = Output(Bool())
 
-    // Status
+    //Status
     val newFrame = Input(Bool())
     val frameUpdateDone = Output(Bool())
-
-    val spriteOpacityLevel = Output(Vec(SpriteNumber, UInt(2.W)))
   })
 
   // Setting all led outputs to zero
   // It can be done by the single expression below...
   io.led := Seq.fill(8)(false.B)
 
-  val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(1.U(2.W))))
-  for(i <- 2 until SpriteNumber){
-    spriteOpacities(i) := 1.U
-  }
-  when(io.sw(0)){
-    spriteOpacities(0) := 1.U
-  }
-  when(io.sw(1)){
-    spriteOpacities(0) := 2.U
-  }
-  when(io.sw(2)){
-    spriteOpacities(1) := 1.U
-  }
-  when(io.sw(3)){
-    spriteOpacities(1) := 2.U
-  }
-  when(io.sw(4)){
-    spriteOpacities(1) := 3.U
-  }
-//  when(io.sw(5)){
-//    spriteOpacities(2) := 1.U
-//  }
-//  when(io.sw(6)){
-//    spriteOpacities(2) := 2.U
-//  }
-//  when(io.sw(7)){
-//    spriteOpacities(2) := 3.U
-//  }
+  // Or one by one...
+  //io.led(0) := false.B
+  //io.led(0) := false.B
+  //io.led(1) := false.B
+  //io.led(2) := false.B
+  //io.led(3) := false.B
+  //io.led(4) := false.B
+  //io.led(5) := false.B
+  //io.led(6) := false.B
+  //io.led(7) := false.B
 
+  // Or with a for loop.
+  //for (i <- 0 until 8) {
+  //  io.led(i) := false.B
+  //}
 
-
-
-  io.spriteOpacityLevel := spriteOpacities
-
+  //Setting all sprite control outputs to zero
   io.spriteXPosition := Seq.fill(SpriteNumber)(0.S)
   io.spriteYPosition := Seq.fill(SpriteNumber)(0.S)
-  io.spriteVisible := Seq.fill(SpriteNumber)(true.B)
+  io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
-  io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(0.U(2.W))
-  io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.U(2.W))
-  io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
-  io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
 
-//  io.spriteVisible(1) := true.B
-//  io.spriteVisible(2) := true.B
+  //Setting the viewbox control outputs to zero
+  io.viewBoxX := 0.U
+  io.viewBoxY := 0.U
 
-//  when(io.sw(2)){
-//    io.spriteScaleVertical(0) := 2.U
-//  }.otherwise{
-//    io.spriteScaleVertical(0) := 1.U
-//  }
-//
-//  when(io.sw(3)){
-//    io.spriteRotation45(0) := true.B
-//  }.otherwise{
-//    io.spriteRotation45(0) := false.B
-//  }
-
-  io.viewBoxX := Seq.fill(2)(0.U(10.W))
-  io.viewBoxY := Seq.fill(2)(0.U(9.W))
-
+  //Setting the background buffer outputs to zero
   io.backBufferWriteData := 0.U
   io.backBufferWriteAddress := 0.U
   io.backBufferWriteEnable := false.B
 
-  io.songInput := 0.U
-  io.songSpeed := 0.U
-  io.songStop := 0.U
-
+  //Setting frame done to zero
   io.frameUpdateDone := false.B
 
   /////////////////////////////////////////////////////////////////
@@ -142,37 +95,6 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
   //Two registers holding the sprite sprite X and Y with the sprite initial position
   val sprite0XReg = RegInit(32.S(11.W))
   val sprite0YReg = RegInit((360-32).S(10.W))
-  val sprite1XReg = RegInit(32.S(11.W))
-  val sprite1YReg = RegInit((360-32).S(10.W))
-  val sprite2XReg = RegInit(32.S(11.W))
-  val sprite2YReg = RegInit((360-32).S(10.W))
-  val sprite3XReg = RegInit(32.S(11.W))
-  val sprite3YReg = RegInit((360-32).S(10.W))
-  val sprite4XReg = RegInit(32.S(11.W))
-  val sprite4YReg = RegInit((360-32).S(10.W))
-  val sprite5XReg = RegInit(32.S(11.W))
-  val sprite5YReg = RegInit((360-32).S(10.W))
-  val sprite6XReg = RegInit(32.S(11.W))
-  val sprite6YReg = RegInit((360-32).S(10.W))
-  val sprite7XReg = RegInit(32.S(11.W))
-  val sprite7YReg = RegInit((360-32).S(10.W))
-  val sprite8XReg = RegInit(32.S(11.W))
-  val sprite8YReg = RegInit((360-32).S(10.W))
-  val sprite9XReg = RegInit(32.S(11.W))
-  val sprite9YReg = RegInit((360-32).S(10.W))
-  val sprite10XReg = RegInit(32.S(11.W))
-  val sprite10YReg = RegInit((360-32).S(10.W))
-  val sprite11XReg = RegInit(32.S(11.W))
-  val sprite11YReg = RegInit((360-32).S(10.W))
-  val sprite12XReg = RegInit(32.S(11.W))
-  val sprite12YReg = RegInit((360-32).S(10.W))
-  val sprite13XReg = RegInit(32.S(11.W))
-  val sprite13YReg = RegInit((360-32).S(10.W))
-  val sprite14XReg = RegInit(32.S(11.W))
-  val sprite14YReg = RegInit((360-32).S(10.W))
-  val sprite15XReg = RegInit(32.S(11.W))
-  val sprite15YReg = RegInit((360-32).S(10.W))
-
 
   //A registers holding the sprite horizontal flip
   val sprite0FlipHorizontalReg = RegInit(false.B)
@@ -181,48 +103,11 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
   io.spriteVisible(0) := true.B
 
   //Connecting resiters to the graphic engine
-
   io.spriteXPosition(0) := sprite0XReg
   io.spriteYPosition(0) := sprite0YReg
-  io.spriteXPosition(1) := sprite1XReg
-  io.spriteYPosition(1) := sprite1YReg
-  io.spriteXPosition(2) := sprite2XReg
-  io.spriteYPosition(2) := sprite2YReg
-  io.spriteXPosition(3) := sprite3XReg
-  io.spriteYPosition(3) := sprite3YReg
-  io.spriteXPosition(4) := sprite4XReg
-  io.spriteYPosition(4) := sprite4YReg
-  io.spriteXPosition(5) := sprite5XReg
-  io.spriteYPosition(5) := sprite5YReg
-  io.spriteXPosition(6) := sprite6XReg
-  io.spriteYPosition(6) := sprite6YReg
-  io.spriteXPosition(7) := sprite7XReg
-  io.spriteYPosition(7) := sprite7YReg
-  io.spriteXPosition(8) := sprite8XReg
-  io.spriteYPosition(8) := sprite8YReg
-  io.spriteXPosition(9) := sprite9XReg
-  io.spriteYPosition(9) := sprite9YReg
-  io.spriteXPosition(10) := sprite10XReg
-  io.spriteYPosition(10) := sprite10YReg
-  io.spriteXPosition(11) := sprite11XReg
-  io.spriteYPosition(11) := sprite11YReg
-  io.spriteXPosition(12) := sprite12XReg
-  io.spriteYPosition(12) := sprite12YReg
-  io.spriteXPosition(13) := sprite13XReg
-  io.spriteYPosition(13) := sprite13YReg
-  io.spriteXPosition(14) := sprite14XReg
-  io.spriteYPosition(14) := sprite14YReg
-  io.spriteXPosition(15) := sprite15XReg
-  io.spriteYPosition(15) := sprite15YReg
   io.spriteFlipHorizontal(0) := sprite0FlipHorizontalReg
 
-  val viewBoxXReg = Seq.fill(2)(RegInit(0.U(10.W)))
-  val viewBoxYReg = Seq.fill(2)(RegInit(0.U(9.W)))
-
-  io.viewBoxX := viewBoxXReg
-  io.viewBoxY := viewBoxYReg
-
-
+  //FSMD switch
   switch(stateReg) {
     is(idle) {
       when(io.newFrame) {
@@ -231,60 +116,25 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
     }
 
     is(compute1) {
-      when(io.btnU) {
-        when(viewBoxYReg(0) > 0.U) {
-          viewBoxYReg(0) := viewBoxYReg(0) - 2.U
-
+      when(io.btnD){
+        when(sprite0YReg < (480 - 32 - 24).S) {
+          sprite0YReg := sprite0YReg + 2.S
         }
-        when(viewBoxYReg(1) > 0.U) {
-          when(io.sw(3)){
-            viewBoxYReg(1) := viewBoxYReg(1) - 2.U
-          }
-          when(io.sw(4)){
-            viewBoxYReg(1) := viewBoxYReg(1) - 1.U
-          }
+      } .elsewhen(io.btnU){
+        when(sprite0YReg > (96).S) {
+          sprite0YReg := sprite0YReg - 2.S
         }
-
       }
-      when(io.btnD) {
-        when(viewBoxYReg(0) < 480.U) {
-          viewBoxYReg(0) := viewBoxYReg(0) + 2.U
-
-        }
-        when(viewBoxYReg(1) < 480.U) {
-        when(io.sw(3)){
-          viewBoxYReg(1) := viewBoxYReg(1) + 2.U
-        }
-        when(io.sw(4)){
-          viewBoxYReg(1) := viewBoxYReg(1) + 1.U
-        }
-      }}
-      when(io.btnL) {
-        when(viewBoxXReg(0) > 0.U) {
-          viewBoxXReg(0) := viewBoxXReg(0) - 2.U
-
-        }
-        when(viewBoxXReg(1) > 0.U) {
-        when(io.sw(3)){
-          viewBoxXReg(1) := viewBoxXReg(1) - 2.U
-        }
-        when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) - 1.U
-        }}
-      }
-
       when(io.btnR) {
-        when(viewBoxXReg(0) < 640.U) {
-          viewBoxXReg(0) := viewBoxXReg(0) + 2.U
-
+        when(sprite0XReg < (640 - 32 - 32).S) {
+          sprite0XReg := sprite0XReg + 2.S
+          sprite0FlipHorizontalReg := false.B
         }
-        when(viewBoxXReg(1) < 640.U) {
-        when(io.sw(3)){
-          viewBoxXReg(1) := viewBoxXReg(1) + 2.U
+      } .elsewhen(io.btnL){
+        when(sprite0XReg > 32.S) {
+          sprite0XReg := sprite0XReg - 2.S
+          sprite0FlipHorizontalReg := true.B
         }
-        when(io.sw(4)){
-          viewBoxXReg(1) := viewBoxXReg(1) + 1.U
-        }}
       }
       stateReg := done
     }
@@ -294,6 +144,7 @@ class GameLogicTask0(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: I
       stateReg := idle
     }
   }
+
 
 }
 

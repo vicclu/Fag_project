@@ -1,13 +1,2 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala:358:16: method apply in object MuxLookup is deprecated (since Chisel 3.6): Use MuxLookup(key, default)(mapping) instead[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq([0m
-[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala:364:16: method apply in object MuxLookup is deprecated (since Chisel 3.6): Use MuxLookup(key, default)(mapping) instead[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val yLim = MuxLookup(spriteScaleVerticalReg(i), boundingWidth, Seq([0m
-[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala:379:17: method apply in object MuxLookup is deprecated (since Chisel 3.6): Use MuxLookup(key, default)(mapping) instead[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val memX = (MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq([0m
-[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\dingv\OneDrive\Uni\4.Semester\02123\Fagprojekt\src\main\scala\GraphicEngineVGA.scala:386:17: method apply in object MuxLookup is deprecated (since Chisel 3.6): Use MuxLookup(key, default)(mapping) instead[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val memY = (MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq([0m
-[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 62 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
