@@ -14,10 +14,10 @@ This project implements a hardware design flow using Scala and Verilog, targetin
 
 Before you begin, ensure you have the following installed:
 
-1. **Java JDK (version 8 or higher)**
+1. **Java JDK (version  1.8.0 not higher)**
 2. **Scala**
 3. **SBT (Scala Build Tool)**
-4. **Xilinx Vivado** (2019.2 or later recommended)
+4. **Xilinx Vivado** 
 5. **FPGA board**: Basys3 or Nexys A7
 
 ---
