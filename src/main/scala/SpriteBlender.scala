@@ -19,8 +19,8 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val vgaBlue = Output(UInt(4.W))
   })
 
-//  val pixelColorBack = io.pixelColorBack
-  val pixelColorBackReg = RegNext(RegNext(io.pixelColorBack))
+  val pixelColorBack = io.pixelColorBack
+  val pixelColorBackReg = RegNext(RegNext(pixelColorBack))
   val spriteVisibleReg = io.spriteVisibleReg
   val inSprite = io.inSprite
 //  val spritePixelAddr = io.spritePixelAddr
@@ -60,8 +60,8 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val visible = RegPipeline(spriteVisibleReg(i), 2)
     val inside = RegPipeline(inSprite(i), 2)
     val alphaBit = spriteData(6)
-
     val valid = visible && inside && !alphaBit.asBool && (i.U =/= topSpriteIndex) && (io.spriteOpacityLevel(i) =/= 0.U)
+
     secondSpriteCandidates(i) := spriteData(5, 0)
     secondSpriteValids(i) := valid
   }
@@ -96,6 +96,10 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
     val comparerGBot = secondTopSpriteColor(3,2) > pixelColorBackReg(3,2)
     val comparerBBot = secondTopSpriteColor(1,0) > pixelColorBackReg(1,0)
 
+//    val zRBot = Mux(Cat(secondTopSpriteColor, comparerRBot) === 3.U ||  Cat(secondTopSpriteColor, comparerRBot) === 4.U, 1.U, 0.U)
+//    val zGBot = Mux(Cat(secondTopSpriteColor, comparerGBot) === 3.U ||  Cat(secondTopSpriteColor, comparerGBot) === 4.U, 1.U, 0.U)
+//    val zBBot = Mux(Cat(secondTopSpriteColor, comparerBBot) === 3.U ||  Cat(secondTopSpriteColor, comparerBBot) === 4.U, 1.U, 0.U)
+
     val zRBot = Mux(secondSpriteOpacity === 2.U, comparerRBot,
       Mux(secondSpriteOpacity === 1.U, ~comparerRBot, 0.U))
     val zGBot = Mux(secondSpriteOpacity === 2.U, comparerGBot,
@@ -117,6 +121,10 @@ class SpriteBlender(SpriteNumber: Int) extends Module {
   val comparerR = topSpriteRGB(5,4) > blendedColorBot(5,4)
   val comparerG = topSpriteRGB(3,2) > blendedColorBot(3,2)
   val comparerB = topSpriteRGB(1,0) > blendedColorBot(1,0)
+
+//  val zR = Mux(Cat(topSpriteRGB, comparerR) === 3.U ||  Cat(topSpriteRGB, comparerR) === 4.U, 1.U, 0.U)
+//  val zG = Mux(Cat(topSpriteRGB, comparerG) === 3.U ||  Cat(topSpriteRGB, comparerG) === 4.U, 1.U, 0.U)
+//  val zB = Mux(Cat(topSpriteRGB, comparerB) === 3.U ||  Cat(topSpriteRGB, comparerB) === 4.U, 1.U, 0.U)
 
   val zR = Mux(topSpriteOpacity === 2.U, comparerR,
     Mux(topSpriteOpacity === 1.U, ~comparerR, 0.U))

@@ -8,7 +8,7 @@
 import chisel3._
 import chisel3.util._
 
-class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) extends Module {
+class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   val io = IO(new Bundle {
     //Sprite control input
     val spriteXPosition = Input(Vec(SpriteNumber, SInt(11.W))) //-1024 to 1023
@@ -17,22 +17,14 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
     val spriteFlipHorizontal = Input(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Input(Vec(SpriteNumber, Bool()))
 
-    //new
-    val spriteScaleHorizontal = Input(Vec(SpriteNumber, UInt(2.W)))
-    val spriteRotation45 = Input(Vec(SpriteNumber, Bool()))
-    val spriteRotation90 = Input(Vec(SpriteNumber, Bool()))
-    val spriteScaleVertical = Input(Vec(SpriteNumber, UInt(2.W)))
-    val spriteOpacityLevel = Input(Vec(SpriteNumber, UInt(2.W)))
-
     //Viewbox control input
-    val viewBoxX = Input(Vec(BackgroundNumber,UInt(10.W))) //0 to 640
-    val viewBoxY = Input(Vec(BackgroundNumber,UInt(9.W))) //0 to 480
+    val viewBoxX = Input(UInt(10.W)) //0 to 640
+    val viewBoxY = Input(UInt(9.W)) //0 to 480
 
     //Background buffer input
     val backBufferWriteData = Input(UInt(log2Up(BackTileNumber).W))
     val backBufferWriteAddress = Input(UInt(11.W))
     val backBufferWriteEnable = Input(Bool())
-
 
     //Status
     val newFrame = Output(Bool())
@@ -43,14 +35,15 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
     val backBufferWriteError = Output(Bool())
     val viewBoxOutOfRangeError = Output(Bool())
 
-
-
     //VGA output
     val vgaRed = Output(UInt(4.W))
     val vgaBlue = Output(UInt(4.W))
     val vgaGreen = Output(UInt(4.W))
     val Hsync = Output(Bool())
     val Vsync = Output(Bool())
+
+    //Opacity
+    val spriteOpacityLevel = Input(Vec(SpriteNumber, UInt(2.W)))
   })
 
   ////////////////////////////////////
@@ -74,12 +67,10 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
   val CounterXReg = RegInit(0.U(10.W))
   val CounterYReg = RegInit(0.U(10.W))
 
-
   io.newFrame := false.B
   val run = Wire(Bool())
   when(run) {
     when(ScaleCounterReg === (SCALE_FACTOR - 1).U) {
-
       ScaleCounterReg := 0.U
       when(CounterXReg === (VGA_H_DISPLAY_SIZE + VGA_H_FRONT_PORCH_SIZE + VGA_H_SYNC_PULSE_SIZE + VGA_H_BACK_PORCH_SIZE - 1).U) { // CounterXMax = 800.U // 640 + 16 +  96 + 48
         CounterXReg := 0.U
@@ -110,7 +101,7 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
   val PRE_DISPLAY_COUNT = 2048 + 100 // 2^11 + 100 margin
   val FRAME_CLOCK_COUNT_MAX = SCALE_FACTOR * (VGA_H_DISPLAY_SIZE + VGA_H_FRONT_PORCH_SIZE + VGA_H_SYNC_PULSE_SIZE + VGA_H_BACK_PORCH_SIZE) * (VGA_V_DISPLAY_SIZE + VGA_V_FRONT_PORCH_SIZE + VGA_V_SYNC_PULSE_SIZE + VGA_V_BACK_PORCH_SIZE) - 1
   val frameClockCount = RegInit(0.U(log2Up(FRAME_CLOCK_COUNT_MAX + 1).W))
-  frameClockCount := Mux(frameClockCount === FRAME_CLOCK_COUNT_MAX.U, 0.U, frameClockCount + 1.U)
+  frameClockCount := Mux(frameClockCount === FRAME_CLOCK_COUNT_MAX.U, 0.U, frameClockCount + 1.U )
   val preDisplayArea = frameClockCount >= (FRAME_CLOCK_COUNT_MAX - PRE_DISPLAY_COUNT).U
 
 
@@ -124,22 +115,8 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
   val spriteVisibleReg = RegEnable(io.spriteVisible, VecInit(Seq.fill(SpriteNumber)(true.B)), io.newFrame)
   val spriteFlipHorizontalReg = RegEnable(io.spriteFlipHorizontal, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
   val spriteFlipVerticalReg = RegEnable(io.spriteFlipVertical, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
-
-  val spriteScaleHorizontalReg = RegEnable(io.spriteScaleHorizontal, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
-  val spriteScaleVerticalReg = RegEnable(io.spriteScaleVertical, VecInit(Seq.fill(SpriteNumber)(0.U(2.W))), io.newFrame)
-  val spriteRotationReg45 = RegEnable(io.spriteRotation45, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
-  val spriteRotationReg90 = RegEnable(io.spriteRotation90, VecInit(Seq.fill(SpriteNumber)(false.B)), io.newFrame)
-
-//  val viewBoxXReg = RegEnable(io.viewBoxX, 0.U(10.W), io.newFrame)
-  //val viewBoxYReg = RegEnable(io.viewBoxY, 0.U(9.W), io.newFrame)
-
-  val viewBoxXReg = for (i <- 0 until BackgroundNumber) yield {
-     RegEnable(io.viewBoxX(i), 0.U(10.W), io.newFrame)
-  }
-  val viewBoxYReg = for (i <- 0 until BackgroundNumber) yield {
-    RegEnable(io.viewBoxY(i), 0.U(9.W), io.newFrame)
-  }
-
+  val viewBoxXReg = RegEnable(io.viewBoxX, 0.U(10.W), io.newFrame)
+  val viewBoxYReg = RegEnable(io.viewBoxY, 0.U(9.W), io.newFrame)
 
 
   //Errors
@@ -152,111 +129,65 @@ class GraphicEngineVGA(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber:
 
 
   //Shifted pixel coordinates for background
- // val viewBox1XClipped = Mux(viewBoxXReg(0) >= 640.U, 640.U, viewBoxXReg(0))
-  //val viewBox1YClipped = Mux(viewBoxYReg(0) >= 480.U, 480.U, viewBoxYReg(0))
-  //val pixel1XBack = pixelX +& viewBox1XClipped
-  //val pixel1YBack = pixelY +& viewBox1YClipped
-
-  val viewBoxXClipped = Wire(Vec(BackgroundNumber,UInt(10.W)))
-  val viewBoxYClipped =Wire(Vec(BackgroundNumber,UInt(9.W)))
-  val pixelXBack = Wire(Vec(BackgroundNumber,UInt(11.W)))
-  val pixelYBack = Wire(Vec(BackgroundNumber,UInt(11.W)))
-
-  for (i <- 0 until BackgroundNumber){
-    viewBoxXClipped(i) :=Mux(viewBoxXReg(i) >= 640.U, 640.U, viewBoxXReg(i))
-    viewBoxYClipped(i) :=Mux(viewBoxYReg(i) >= 480.U, 480.U, viewBoxYReg(i))
-    pixelXBack(i) := pixelX +& viewBoxXClipped(i)
-    pixelYBack(i) := pixelY +& viewBoxYClipped(i)
-  }
-
-  when(viewBoxXReg(0) > 640.U || viewBoxYReg(0) > 480.U) {
+  val viewBoxXClipped = Mux(viewBoxXReg >= 640.U, 640.U, viewBoxXReg)
+  val viewBoxYClipped = Mux(viewBoxYReg >= 480.U, 480.U, viewBoxYReg)
+  val pixelXBack = pixelX +& viewBoxXClipped
+  val pixelYBack = pixelY +& viewBoxYClipped
+  when(viewBoxXReg > 640.U || viewBoxYReg > 480.U){
     viewBoxOutOfRangeErrorReg := true.B
   }
 
 
   //Missing frame error
   val newFrameStikyReg = RegInit(false.B)
-  when(io.newFrame) {
+  when (io.newFrame){
     newFrameStikyReg := true.B
   }
-  when(RegNext(io.frameUpdateDone)) {
+  when (RegNext(io.frameUpdateDone)){
     newFrameStikyReg := false.B
   }
-  when(newFrameStikyReg && io.newFrame) {
+  when (newFrameStikyReg && io.newFrame){
     missingFrameErrorReg := true.B
   }
 
-//
-//  //Generating background tiles memories
-//  val backTileMemories1 = for (i <- 0 until BackTileNumber) yield {
-//    val backTileMemory = Module(new Memory(7, 10, "memory_init/backtile_init_" + i.toString + ".mem"))
-//    backTileMemory
-//  }
-//  val backTileMemories2 = for (i <- 0 until BackTileNumber) yield {
-//    val backTileMemory = Module(new Memory(7, 10, "memory_init/backtile_init_" + i.toString + ".mem"))
-//    backTileMemory
-//  }
-//  val backTileMemories =Seq(backTileMemories1,backTileMemories2)
 
-
-
-  val backTileMemories = for (i <- 0 until BackgroundNumber) yield {
-    val backTileMemoryArrays = for (j <- 0 until BackTileNumber) yield {
-      val backTileMemory = Module(new Memory(7, 10, "memory_init/backtile_init_" + j.toString + ".mem"))
-      backTileMemory
-    }
-    backTileMemoryArrays
+  //Generating background tiles memories
+  val backTileMemories = for (i <- 0 until BackTileNumber) yield {
+    val backTileMemory = Module(new Memory(7, 10, "memory_init/backtile_init_" + i.toString + ".mem"))
+    backTileMemory
   }
-
 
 
   // Backtile memory connection
-  val backTileMemoryDataRead = Wire(Vec(BackgroundNumber,Vec(BackTileNumber, UInt(7.W))))
-for(j <- 0 until BackgroundNumber) {
+  val backTileMemoryDataRead = Wire(Vec(BackTileNumber, UInt(7.W)))
   for (i <- 0 until BackTileNumber) {
-    backTileMemories(j)(i).io.enable := true.B
-    backTileMemories(j)(i).io.dataWrite := 0.U
-    backTileMemories(j)(i).io.writeEnable := false.B
-    backTileMemories(j)(i).io.address := pixelXBack(j)(4, 0).asUInt +& 32.U(6.W) * pixelYBack(j)(4, 0).asUInt
-
-    backTileMemoryDataRead(j)(i) := RegNext(backTileMemories(j)(i).io.dataRead) //Pipelining the backTileMemories output
-  }
-}
-
-
-
-    //Instantiating background buffer memory, shadow memory, and restore memory
-  val backBufferMemories = for (i <- 0 until BackgroundNumber) yield{
-    val backBufferMemory = Module(new Memory(log2Up(BackTileNumber), 11))
-    backBufferMemory
-  }
-
-  val backBufferShadowMemories = for (i <- 0 until BackgroundNumber) yield{
-    val backBufferShadowMemory = Module(new Memory(log2Up(BackTileNumber), 11, ""))
-    backBufferShadowMemory
+    backTileMemories(i).io.enable := true.B
+    backTileMemories(i).io.dataWrite := 0.U
+    backTileMemories(i).io.writeEnable := false.B
+    backTileMemories(i).io.address := pixelXBack(4,0).asUInt +& 32.U(6.W) * pixelYBack(4,0).asUInt
+    backTileMemoryDataRead(i) := RegNext(backTileMemories(i).io.dataRead)  //Pipelining the backTileMemories output
   }
 
 
-  val backBufferRestoreMemories = for (i <- 0 until BackgroundNumber) yield{
-    val backBufferRestoreMemory = Module(new Memory(log2Up(BackTileNumber), 11, "memory_init/backbuffer_init"+ i.toString + ".mem"))
-    backBufferRestoreMemory
-  }
-
+  //Instantiating background buffer memory, shadow memory, and restore memory
+  val backBufferMemory = Module(new Memory(log2Up(BackTileNumber), 11))
+  val backBufferShadowMemory = Module(new Memory(log2Up(BackTileNumber), 11, ""))
+  val backBufferRestoreMemory = Module(new Memory(log2Up(BackTileNumber), 11, "memory_init/backbuffer_init.mem"))
 
   //Connecting the background memories and manage restore copy (at reset) and shadow copy (each frame)
   val backMemoryCopyCounter = RegInit(0.U(12.W))
   val BACK_MEMORY_COPY_COUNTER_MAX = 2048 //2^11 number of mem locations to be copied
   val copyEnabled = Wire(Bool())
-  when(preDisplayArea) {
+  when(preDisplayArea){
     when(backMemoryCopyCounter < BACK_MEMORY_COPY_COUNTER_MAX.U) {
       backMemoryCopyCounter := backMemoryCopyCounter + 1.U
       //Copy content
       copyEnabled := true.B
-    }.otherwise {
+    } .otherwise {
       //Done copying
       copyEnabled := false.B
     }
-  }.otherwise {
+  } .otherwise {
     //Not copying
     backMemoryCopyCounter := 0.U
     copyEnabled := false.B
@@ -277,23 +208,20 @@ for(j <- 0 until BackgroundNumber) {
     run := true.B
   }
 
+  backBufferRestoreMemory.io.address := backMemoryRestoreCounter(10, 0)
+  backBufferRestoreMemory.io.enable := true.B
+  backBufferRestoreMemory.io.writeEnable := false.B
+  backBufferRestoreMemory.io.dataWrite := 0.U
 
-for (i <- 0 until BackgroundNumber) {
-  backBufferRestoreMemories(i).io.address := backMemoryRestoreCounter(10, 0)
-  backBufferRestoreMemories(i).io.enable := true.B
-  backBufferRestoreMemories(i).io.writeEnable := false.B
-  backBufferRestoreMemories(i).io.dataWrite := 0.U
+  backBufferShadowMemory.io.address := Mux(restoreEnabled, RegNext(backMemoryRestoreCounter(10, 0)), Mux(copyEnabled, backMemoryCopyCounter(10, 0), RegNext(io.backBufferWriteAddress)))
+  backBufferShadowMemory.io.enable := true.B
+  backBufferShadowMemory.io.writeEnable := Mux(restoreEnabled, RegNext(restoreEnabled), Mux(copyEnabled, false.B, RegNext(io.backBufferWriteEnable)))
+  backBufferShadowMemory.io.dataWrite := Mux(restoreEnabled, backBufferRestoreMemory.io.dataRead, RegNext(io.backBufferWriteData))
 
-  backBufferShadowMemories(i).io.address := Mux(restoreEnabled, RegNext(backMemoryRestoreCounter(10, 0)), Mux(copyEnabled, backMemoryCopyCounter(10, 0), RegNext(io.backBufferWriteAddress)))
-  backBufferShadowMemories(i).io.enable := true.B
-  backBufferShadowMemories(i).io.writeEnable := Mux(restoreEnabled, RegNext(restoreEnabled), Mux(copyEnabled, false.B, RegNext(io.backBufferWriteEnable)))
-  backBufferShadowMemories(i).io.dataWrite := Mux(restoreEnabled, backBufferRestoreMemories(i).io.dataRead, RegNext(io.backBufferWriteData))
-
-  backBufferMemories(i).io.address := Mux(copyEnabledReg, RegNext(backMemoryCopyCounter(10, 0)), pixelXBack(i)(10, 5).asUInt +& 40.U(6.W) * pixelYBack(i)(10, 5).asUInt)
-  backBufferMemories(i).io.enable := true.B
-  backBufferMemories(i).io.writeEnable := copyEnabledReg
-  backBufferMemories(i).io.dataWrite := backBufferShadowMemories(i).io.dataRead
-}
+  backBufferMemory.io.address := Mux(copyEnabledReg, RegNext(backMemoryCopyCounter(10, 0)), pixelXBack(10,5).asUInt +& 40.U(6.W) * pixelYBack(10,5).asUInt)
+  backBufferMemory.io.enable := true.B
+  backBufferMemory.io.writeEnable := copyEnabledReg
+  backBufferMemory.io.dataWrite := backBufferShadowMemory.io.dataRead
 
 
   //Error if writing during copy
@@ -306,14 +234,11 @@ for (i <- 0 until BackgroundNumber) {
 
   //Computing background colour
   val backgroundColor = Wire(UInt(6.W))
-  val fullBackgroundColor = Wire(Vec(2,UInt(7.W)))
-  for (i <- 0 until 2) {
-    fullBackgroundColor(i) := backTileMemoryDataRead(i)(RegNext(backBufferMemories(i).io.dataRead)) //Pipelining the backBufferMemory output
-  }
-  backgroundColor := Mux(fullBackgroundColor(0)(6), Mux(fullBackgroundColor(1)(6),0.U(6.W),fullBackgroundColor(1)(5, 0)), fullBackgroundColor(0)(5, 0))
+  val fullBackgroundColor = Wire(UInt(7.W))
+  fullBackgroundColor := backTileMemoryDataRead(RegNext(backBufferMemory.io.dataRead)) //Pipelining the backBufferMemory output
+  backgroundColor := Mux(fullBackgroundColor(6), 0.U(6.W), fullBackgroundColor(5,0))
   val pixelColorBack = RegNext(backgroundColor)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   //Generating sprite memories
   val spriteMemories = for (i <- 0 until SpriteNumber) yield {
@@ -321,92 +246,40 @@ for (i <- 0 until BackgroundNumber) {
     spriteMemory
   }
 
-  val rotation45deg = for (i <- 0 until SpriteNumber) yield {
-    val spriteMemory = Module(new Memory(15, 12, "memory_init/rotation45deg.mem"))
-    spriteMemory
-  }
   val inSprite = Wire(Vec(SpriteNumber, Bool()))
   val inSpriteX = Wire(Vec(SpriteNumber, SInt(12.W)))
   val inSpriteY = Wire(Vec(SpriteNumber, SInt(11.W)))
-
+  for(i <- 0 until SpriteNumber) {
+    val inSpriteXValue = (0.U(1.W) ## pixelX).asSInt -& spriteXPositionReg(i)
+    when(spriteFlipHorizontalReg(i)){
+      inSpriteX(i) := 31.S - inSpriteXValue
+    } .otherwise {
+      inSpriteX(i) := inSpriteXValue
+    }
+    val inSpriteYValue = (0.U(1.W) ## pixelY).asSInt -& spriteYPositionReg(i)
+    when(spriteFlipVerticalReg(i)){
+      inSpriteY(i) := 31.S - inSpriteYValue
+    } .otherwise {
+      inSpriteY(i) := inSpriteYValue
+    }
+    inSprite(i) := inSpriteX(i) >= 0.S && inSpriteX(i) < 32.S && inSpriteY(i) >= 0.S && inSpriteY(i) < 32.S
+  }
 
   val spriteBlender = Module(new SpriteBlender(SpriteNumber))
-
 
   spriteBlender.io.spriteOpacityLevel := io.spriteOpacityLevel
   spriteBlender.io.pixelColorBack := pixelColorBack
   spriteBlender.io.spriteVisibleReg := spriteVisibleReg
   spriteBlender.io.inSprite:= inSprite
-//  spriteBlender.io.spriteXPosition:=spriteXPositionReg
-//  spriteBlender.io.spriteYPosition:=spriteYPositionReg
-//  spriteBlender.io.pixelX:=pixelX
-//  spriteBlender.io.pixelY:=pixelY
 
-
-  for(i <- 0 until SpriteNumber) {
-      rotation45deg(i).io.enable := true.B
-      rotation45deg(i).io.dataWrite := 0.U
-      rotation45deg(i).io.writeEnable := false.B
-      val boundingWidth = Mux(spriteRotationReg45(i), 46.S, 32.S)
-
-      val spriteXpositiontmp = Mux(spriteRotationReg45(i), spriteXPositionReg(i) - 7.S,spriteXPositionReg(i))
-      val spriteYpositiontmp = Mux(spriteRotationReg45(i), spriteYPositionReg(i) - 7.S,spriteYPositionReg(i))
-
-      inSpriteX(i) := RegNext((0.U(1.W) ## pixelX).asSInt -& spriteXpositiontmp)
-      inSpriteY(i) := RegNext((0.U(1.W) ## pixelY).asSInt -& spriteYpositiontmp)
-
-    val xLim = MuxLookup(spriteScaleHorizontalReg(i), boundingWidth, Seq(
-      2.U -> (boundingWidth<<1).asSInt,
-      1.U -> (boundingWidth>>1).asSInt,
-      0.U -> (boundingWidth).asSInt
-    ))
-    val yLim = MuxLookup(spriteScaleVerticalReg(i), boundingWidth, Seq(
-      2.U -> (boundingWidth<<1).asSInt,
-      1.U -> (boundingWidth>>1).asSInt,
-      0.U -> (boundingWidth).asSInt
-    ))
-
-    val rot90X = Mux(spriteRotationReg90(i), inSpriteY(i), inSpriteX(i))
-    val rot90Y = Mux(spriteRotationReg90(i), (xLim - 1.S)  - inSpriteX(i), inSpriteY(i))
-
-    val flippedX = Mux(spriteFlipHorizontalReg(i), (xLim - 1.S) - rot90X, rot90X)
-    val flippedY = Mux(spriteFlipVerticalReg(i),   (yLim - 1.S) - rot90Y, rot90Y)
-
-
-
-    // Memory address:
-    val memX = (MuxLookup(spriteScaleHorizontalReg(i), flippedX(4,0).asUInt, Seq(
-      2.U -> (flippedX >> 1).asUInt,
-      1.U -> (flippedX.asUInt * 2.U),
-      0.U -> flippedX.asUInt))
-    )
-
-    val memY = (MuxLookup(spriteScaleVerticalReg(i), flippedY(4,0).asUInt, Seq(
-      2.U -> (flippedY >> 1).asUInt,
-      1.U -> (flippedY.asUInt * 2.U),
-      0.U -> flippedY.asUInt)
-    ))
-
-
-    val inScaledX = (flippedX >= 0.S) && (flippedX < xLim)
-    val inScaledY = (flippedY >= 0.S) && (flippedY < yLim)
-    //Reading dataread(14) because it is a visible bit for the rotation 45 deg
-    val inBoundingBox = Mux(spriteScaleVerticalReg(i) === 2.U,inScaledX && inScaledY && rotation45deg(i).io.dataRead(14) === 0.U,
-      ((flippedX >= 1.S) && (flippedX < xLim )) && ((flippedY >= 0.S) && (flippedY < yLim -1.S)) && rotation45deg(i).io.dataRead(14) === 0.U)
-    // ((flippedY >= 1.S) && (flippedY < yLim - 1.S))
-    inSprite(i) := (Mux(spriteRotationReg45(i),inBoundingBox , inScaledX && inScaledY))
-
-    val boxIndex = ((memY * boundingWidth.asUInt) + memX)
-
-
-    rotation45deg(i).io.address := (boxIndex)
-    spriteMemories(i).io.enable      := true.B
-    spriteMemories(i).io.dataWrite   := 0.U
+  // Sprite memory connection
+  for(i <- 0 until SpriteNumber){
+    spriteMemories(i).io.enable := true.B
+    spriteMemories(i).io.dataWrite := 0.U
     spriteMemories(i).io.writeEnable := false.B
-    spriteMemories(i).io.address     := Mux(spriteRotationReg45(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
-    spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
-    //spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
+    spriteMemories(i).io.address := inSpriteX(i)(4,0).asUInt + 32.U(6.W) * inSpriteY(i)(4,0).asUInt
 
+    spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
   }
 
   io.vgaRed := spriteBlender.io.vgaRed
@@ -416,6 +289,7 @@ for (i <- 0 until BackgroundNumber) {
   io.vgaRed :=  Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaRed,0.U)
   io.vgaGreen:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaGreen,0.U)
   io.vgaBlue:= Mux(RegPipeline(inDisplayArea, 3), spriteBlender.io.vgaBlue,0.U)
+
 }
 
 //////////////////////////////////////////////////////////////////////////////

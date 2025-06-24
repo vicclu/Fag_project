@@ -31,10 +31,6 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int) extends Module {
     val spriteFlipHorizontal = Output(Vec(SpriteNumber, Bool()))
     val spriteFlipVertical = Output(Vec(SpriteNumber, Bool()))
 
-    val spriteScaleHorizontal = Output(Vec(SpriteNumber, Bool()))
-
-
-
     //Viewbox control output
     val viewBoxX = Output(UInt(10.W)) //0 to 640
     val viewBoxY = Output(UInt(9.W)) //0 to 480
@@ -75,8 +71,6 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int) extends Module {
   io.spriteVisible := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipHorizontal := Seq.fill(SpriteNumber)(false.B)
   io.spriteFlipVertical := Seq.fill(SpriteNumber)(false.B)
-  io.spriteScaleHorizontal := Seq.fill(SpriteNumber)(false.B)
-
 
   //Setting the viewbox control outputs to zero
   io.viewBoxX := 0.U
