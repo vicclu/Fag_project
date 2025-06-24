@@ -57,7 +57,7 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   io.songInput := 2.U
   io.songSpeed := 0.U
   io.songStop := 0.U
- val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(1.U(2.W))))
+ val spriteOpacities = RegInit(VecInit(Seq.fill(SpriteNumber)(3.U(2.W))))
     io.spriteOpacityLevel := spriteOpacities
 
   io.led := Seq.fill(8)(false.B)
@@ -71,6 +71,7 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   io.spriteScaleVertical := Seq.fill(SpriteNumber)(0.U(2.W))
   io.spriteRotation45 := Seq.fill(SpriteNumber)(false.B)
   io.spriteRotation90 := Seq.fill(SpriteNumber)(false.B)
+
 
   val astNm = 11
   val shotNm = 5
@@ -102,6 +103,7 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   //       (spriteYReg(index2) + Mux(size2 <= 32.S, (32.S - size2) / 2.S, 0.S) < spriteYReg(index1) + size1)
   //   )
   // }
+
 
   def handleStars(index: Int): Unit = {
     val random = Module(new Randomizer(96, 352, index))
@@ -633,14 +635,17 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
     spriteYReg(i) := spriteYReg(0)
     spriteVisibleReg(i) := false.B
   }
-
-  //Assigning the registers to the sprite X positions
+val spriteRotation90Reg = RegInit(VecInit(Seq.fill(SpriteNumber)(false.B)))
+val spriteRotation45Reg = RegInit(VecInit(Seq.fill(SpriteNumber)(false.B)))
+ //Assigning the registers to the sprite X positions
   for (i <- 0 until SpriteNumber) {
     io.spriteXPosition(i) := spriteXReg(i)
     io.spriteYPosition(i) := spriteYReg(i)
     io.spriteVisible(i) := spriteVisibleReg(i)
     io.spriteFlipHorizontal(i) := spriteFlipHorizontalReg(i)
     io.spriteFlipVertical(i) := spriteFlipVerticalReg(i)
+    io.spriteRotation45    (i) := spriteRotation45Reg(i)
+    io.spriteRotation90    (i) := spriteRotation90Reg(i)
   }
   io.viewBoxX := Seq.fill(2)(0.U(10.W))
   io.viewBoxY := Seq.fill(2)(0.U(9.W))
@@ -649,6 +654,10 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   val viewY = RegInit(0.U(9.W))
   io.viewBoxX(0) := viewX
   io.viewBoxY(0) := viewY
+   val viewX1 = RegInit(0.U(10.W))
+  val viewY1 = RegInit(0.U(9.W))
+    io.viewBoxX(1) := viewX1
+  io.viewBoxY(1) := viewY1
 
   //Setting the background buffer outputs to zero
   io.backBufferWriteData := 0.U
@@ -693,6 +702,7 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   val cnt = RegInit(0.S(10.W))
   val cng = cnt === 29.S || cnt === 59.S
   var z = 0
+  val rotationCnt = RegInit(0.S(10.W))
 
   //Counters for background
   val count1 = RegInit(0.U(7.W))
@@ -704,10 +714,15 @@ class GameLogic(SpriteNumber: Int, BackTileNumber: Int, BackgroundNumber: Int) e
   //Making sprite 0 visible
   spriteVisibleReg(0) := show
   spriteVisibleReg(1) := ~show
+  spriteOpacities(0) := 3.U
+    spriteOpacities(1) := 3.U
   // spawn blink
   when(!shipInteract && blink) {
-    spriteVisibleReg(0) := false.B
-    spriteVisibleReg(1) := false.B
+    // spriteVisibleReg(0) := false.B
+    // spriteVisibleReg(1) := false.B
+    spriteOpacities(0) := 1.U
+    spriteOpacities(1) := 1.U
+
   }
   val boxDetection = Module(new BoxDetection(18))
 for (i <- 0 until 18) {
@@ -719,6 +734,8 @@ for (i <- 0 until 18) {
   handleDeadAnimation()
   handlePlanetBuild()
   handleClearScreen()
+  val asteroidToRotate = RegInit(0.U(5))
+  val rotationOfAsteroid =  RegInit(VecInit(Seq.fill(11)(0.U(6.W))))
 
   //FSMD switch
   switch(stateReg) {
@@ -731,6 +748,7 @@ for (i <- 0 until 18) {
     is(background) {
       //giving background animation
       viewX := viewX + speed.asUInt()
+      viewX1 := viewX1 +4.U
 
       stateReg := level1
 
@@ -743,11 +761,14 @@ for (i <- 0 until 18) {
       }
 
       // Resetting Backgroung
+      when(viewX1 >= tile(1).asUInt()){
+       viewX1 := viewX1 - tile(1).asUInt() + 4.asUInt()
+      }
+
+
+
       when(viewX >= tile(1).asUInt()) {
-
         viewX := viewX - tile(1).asUInt() + speed.asUInt()
-
-
         when(levelCng) {
           count1 := count1 + 1.U
         }
@@ -908,8 +929,14 @@ for (i <- 0 until 18) {
     }
 
     is(moveShip) {
+    
+    
+
+
       when(hp > 0.U) {
         // DOWN
+      
+
         when(io.btnD) {
           when(spriteYReg(0) < tile(11)) {
             spriteYReg(0) := spriteYReg(0) + shipSpeed
@@ -1010,6 +1037,56 @@ for (i <- 0 until 18) {
           cngCnt := 0.U
         }
       }
+
+      rotationCnt := Mux(rotationCnt === 1.S, 0.S, rotationCnt + 1.S) 
+      
+   // 1) cycle asteroidToRotate from 0 until astNm-1 whenever cng is true
+when(rotationCnt===0.S) {
+  asteroidToRotate := Mux(asteroidToRotate === (astNm-1).U, 0.U, asteroidToRotate + 1.U)
+}
+
+// 2) for each asteroid i in 0 until astNm, bump its rotation counter when it's its turn,
+//    then update the spriteFlip/Rotation regs that back the io ports:
+// every second frame (or whatever rate you want)
+when (rotationCnt === 0.S) {
+  for (i <- 0 until astNm) {
+
+    //--------------------------------------------
+    // 1. optionally advance the stored rotation
+    //--------------------------------------------
+    when (astInteract(i)) {
+      rotationOfAsteroid(i) :=
+        Mux(rotationOfAsteroid(i) === 7.U, 0.U, rotationOfAsteroid(i) + 1.U)
+    }
+
+    //--------------------------------------------
+    // 2. drive the VGA control signals
+    //--------------------------------------------
+    val idx = i + preAstNm          // sprite index in the array
+
+    switch (rotationOfAsteroid(i)) {
+      is(0.U) { spriteFlipHorizontalReg(idx) := false.B
+                spriteFlipVerticalReg  (idx) := false.B
+                spriteRotation45Reg    (idx) := false.B
+                spriteRotation90Reg    (idx) := false.B }
+      is(1.U) { spriteRotation45Reg    (idx) := true.B  }
+      is(2.U) { spriteRotation45Reg    (idx) := false.B
+                spriteRotation90Reg    (idx) := true.B  }
+      is(3.U) { spriteRotation45Reg    (idx) := true.B
+                spriteRotation90Reg    (idx) := true.B  }
+      is(4.U) { spriteFlipHorizontalReg(idx) := true.B
+                spriteFlipVerticalReg  (idx) := true.B
+                spriteRotation45Reg    (idx) := false.B
+                spriteRotation90Reg    (idx) := false.B }
+      is(5.U) { spriteRotation45Reg    (idx) := true.B  }
+      is(6.U) { spriteRotation45Reg    (idx) := false.B
+                spriteRotation90Reg    (idx) := true.B  }
+      is(7.U) { spriteRotation45Reg    (idx) := true.B
+                spriteRotation90Reg    (idx) := true.B  }
+    }
+  }
+}
+
       for (i <- 0 until astNm) { // check hitboxes
 
         die(i) := astInteract(i) && shipInteract && boxDetection.io.overlap(0)(i + preAstNm)

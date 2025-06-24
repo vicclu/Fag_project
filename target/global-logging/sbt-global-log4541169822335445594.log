@@ -1,0 +1,24 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(10bf0c93-99b6-4e23-921a-ee1cfac5fec9), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/swaggo/Code/Fag/fag_project_tests/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/swaggo/Code/Fag/fag_project_tests/src/main/scala/GameLogic.scala:638:27: inferred type arguments [Seq[chisel3.Bool]] do not conform to method apply's type parameter bounds [T <: chisel3.Data][0m
+[0m[[0m[31merror[0m] [0m[0mval spriteRotation90Reg = RegInit(Seq.fill(SpriteNumber)(false.B))[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/swaggo/Code/Fag/fag_project_tests/src/main/scala/GameLogic.scala:638:43: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Seq[chisel3.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m required: T[0m
+[0m[[0m[31merror[0m] [0m[0mval spriteRotation90Reg = RegInit(Seq.fill(SpriteNumber)(false.B))[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/swaggo/Code/Fag/fag_project_tests/src/main/scala/GameLogic.scala:639:27: inferred type arguments [Seq[chisel3.Bool]] do not conform to method apply's type parameter bounds [T <: chisel3.Data][0m
+[0m[[0m[31merror[0m] [0m[0mval spriteRotation45Reg = RegInit(Seq.fill(SpriteNumber)(false.B))[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/swaggo/Code/Fag/fag_project_tests/src/main/scala/GameLogic.scala:639:43: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Seq[chisel3.Bool][0m
+[0m[[0m[31merror[0m] [0m[0m required: T[0m
+[0m[[0m[31merror[0m] [0m[0mval spriteRotation45Reg = RegInit(Seq.fill(SpriteNumber)(false.B))[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 10 s, completed Jun 23, 2025 7:19:29 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

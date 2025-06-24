@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1750683660">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1750704440">
   <File Type="VDS-TIMING-PB" Name="Top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="Top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Top.dcp"/>
@@ -1047,6 +1047,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../memory_init/backtile_init_11.mem">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../memory_init/rotation45deg.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

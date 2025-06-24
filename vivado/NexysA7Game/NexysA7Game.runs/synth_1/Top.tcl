@@ -246,6 +246,7 @@ read_mem {
   /home/swaggo/Code/Fag/fag_project_tests/memory_init/backbuffer_init0.mem
   /home/swaggo/Code/Fag/fag_project_tests/memory_init/sprite_init_63.mem
   /home/swaggo/Code/Fag/fag_project_tests/memory_init/backtile_init_11.mem
+  /home/swaggo/Code/Fag/fag_project_tests/memory_init/rotation45deg.mem
 }
 read_verilog -library xil_defaultlib {
   /home/swaggo/Code/Fag/fag_project_tests/RamInitSpWf.v
