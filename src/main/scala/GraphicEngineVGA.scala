@@ -337,10 +337,10 @@ for (i <- 0 until BackgroundNumber) {
   spriteBlender.io.pixelColorBack := pixelColorBack
   spriteBlender.io.spriteVisibleReg := spriteVisibleReg
   spriteBlender.io.inSprite:= inSprite
-  spriteBlender.io.spriteXPosition:=spriteXPositionReg
-  spriteBlender.io.spriteYPosition:=spriteYPositionReg
-  spriteBlender.io.pixelX:=pixelX
-  spriteBlender.io.pixelY:=pixelY
+//  spriteBlender.io.spriteXPosition:=spriteXPositionReg
+//  spriteBlender.io.spriteYPosition:=spriteYPositionReg
+//  spriteBlender.io.pixelX:=pixelX
+//  spriteBlender.io.pixelY:=pixelY
 
 
   for(i <- 0 until SpriteNumber) {
@@ -405,7 +405,7 @@ for (i <- 0 until BackgroundNumber) {
     spriteMemories(i).io.writeEnable := false.B
     spriteMemories(i).io.address     := Mux(spriteRotationReg45(i),  rotation45deg(i).io.dataRead(13,7)(4,0).asUInt + 32.U(6.W) * rotation45deg(i).io.dataRead(6,0)(4,0).asUInt,boxIndex)
     spriteBlender.io.datareader(i) := spriteMemories(i).io.dataRead(6,0)
-    spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
+    //spriteBlender.io.spritePixelAddr(i):= Mux(inSprite(i), (pixelY-spriteYPositionReg(i).asUInt )*32.U+ (pixelX-spriteXPositionReg(i).asUInt),0.U)
 
   }
 
