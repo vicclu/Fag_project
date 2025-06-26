@@ -1,2 +1,2 @@
-/home/swaggo/Code/Fag/fag_project_tests/RamInitSpWf.v
-/home/swaggo/Code/Fag/fag_project_tests/RamSpWf.v
+/home/swaggo/Code/Fag/Fag_project/RamInitSpWf.v
+/home/swaggo/Code/Fag/Fag_project/RamSpWf.v

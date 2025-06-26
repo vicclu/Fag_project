@@ -1038,7 +1038,7 @@ for (i <- 0 until 18) {
         }
       }
 
-      rotationCnt := Mux(rotationCnt === 1.S, 0.S, rotationCnt + 1.S) 
+      rotationCnt := Mux(rotationCnt === 2.S, 0.S, rotationCnt + 1.S) 
       
    // 1) cycle asteroidToRotate from 0 until astNm-1 whenever cng is true
 when(rotationCnt===0.S) {
@@ -1062,7 +1062,7 @@ when (rotationCnt === 0.S) {
     //--------------------------------------------
     // 2. drive the VGA control signals
     //--------------------------------------------
-    val idx = i + preAstNm          // sprite index in the array
+    val idx = i + preAstNm +1         // sprite index in the array
 
     switch (rotationOfAsteroid(i)) {
       is(0.U) { spriteFlipHorizontalReg(idx) := false.B
